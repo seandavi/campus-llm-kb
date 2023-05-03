@@ -12,8 +12,10 @@ book:
     - intro.qmd
     - guiding_principles.qmd
     - policy.qmd
+    - implementation.qmd
     - references.qmd
     - appendices.qmd
+
 
 bibliography: references.bib
 
