@@ -1,0 +1,672 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.3.336">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Large Language Model Policy and Practice - 2&nbsp; Guiding principles for AI in healthcare</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./policy.html" rel="next">
+<link href="./intro.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark.min.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+
+
+</head>
+
+<body class="nav-sidebar floating">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./guiding_principles.html"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Guiding principles for AI in healthcare</span></a></li></ol></nav>
+      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+      </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">Large Language Model Policy and Practice</a> 
+        <div class="sidebar-tools-main">
+    <div class="dropdown">
+      <a href="" title="Download" id="quarto-navigation-tool-dropdown-0" class="quarto-navigation-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download"><i class="bi bi-download"></i></a>
+      <ul class="dropdown-menu" aria-labelledby="quarto-navigation-tool-dropdown-0">
+          <li>
+            <a class="dropdown-item sidebar-tools-main-item" href="./Large-Language-Model-Policy-and-Practice.pdf">
+              <i class="bi bi-bi-file-pdf pe-1"></i>
+            Download PDF
+            </a>
+          </li>
+          <li>
+            <a class="dropdown-item sidebar-tools-main-item" href="./Large-Language-Model-Policy-and-Practice.epub">
+              <i class="bi bi-bi-journal pe-1"></i>
+            Download ePub
+            </a>
+          </li>
+      </ul>
+    </div>
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
+</div>
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Overview</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./intro.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./guiding_principles.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Guiding principles for AI in healthcare</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./policy.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">DRAFT policy</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./references.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">References</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./appendices.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Appendices</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#principle-1-ai-tools-should-aim-to-alleviate-existing-health-disparities" id="toc-principle-1-ai-tools-should-aim-to-alleviate-existing-health-disparities" class="nav-link active" data-scroll-target="#principle-1-ai-tools-should-aim-to-alleviate-existing-health-disparities"><span class="header-section-number">2.1</span> Principle 1: AI tools should aim to alleviate existing health disparities</a></li>
+  <li><a href="#principle-2-ai-tools-should-produce-clinically-meaningful-outcomes" id="toc-principle-2-ai-tools-should-produce-clinically-meaningful-outcomes" class="nav-link" data-scroll-target="#principle-2-ai-tools-should-produce-clinically-meaningful-outcomes"><span class="header-section-number">2.2</span> Principle 2: AI tools should produce clinically meaningful outcomes</a></li>
+  <li><a href="#principle-3-ai-tools-should-reduce-overdiagnosis-and-overtreatment" id="toc-principle-3-ai-tools-should-reduce-overdiagnosis-and-overtreatment" class="nav-link" data-scroll-target="#principle-3-ai-tools-should-reduce-overdiagnosis-and-overtreatment"><span class="header-section-number">2.3</span> Principle 3: AI tools should reduce overdiagnosis and overtreatment</a></li>
+  <li><a href="#principle-4-ai-tools-should-have-high-healthcare-value-and-avoid-diverting" id="toc-principle-4-ai-tools-should-have-high-healthcare-value-and-avoid-diverting" class="nav-link" data-scroll-target="#principle-4-ai-tools-should-have-high-healthcare-value-and-avoid-diverting"><span class="header-section-number">2.4</span> Principle 4: AI tools should have high healthcare value and avoid diverting</a></li>
+  <li><a href="#principle-5-ai-tools-should-incorporate-social-structural-environmental" id="toc-principle-5-ai-tools-should-incorporate-social-structural-environmental" class="nav-link" data-scroll-target="#principle-5-ai-tools-should-incorporate-social-structural-environmental"><span class="header-section-number">2.5</span> Principle 5: AI tools should incorporate social, structural, environmental,</a></li>
+  <li><a href="#principle-6-ai-tools-should-be-easily-tailored-to-the-local-population" id="toc-principle-6-ai-tools-should-be-easily-tailored-to-the-local-population" class="nav-link" data-scroll-target="#principle-6-ai-tools-should-be-easily-tailored-to-the-local-population"><span class="header-section-number">2.6</span> Principle 6: AI tools should be easily tailored to the local population</a></li>
+  <li><a href="#principle-7-ai-tools-should-promote-a-learning-healthcare-system" id="toc-principle-7-ai-tools-should-promote-a-learning-healthcare-system" class="nav-link" data-scroll-target="#principle-7-ai-tools-should-promote-a-learning-healthcare-system"><span class="header-section-number">2.7</span> Principle 7: AI tools should promote a learning healthcare system</a></li>
+  <li><a href="#principle-8-ai-tools-should-facilitate-shared-decision-making" id="toc-principle-8-ai-tools-should-facilitate-shared-decision-making" class="nav-link" data-scroll-target="#principle-8-ai-tools-should-facilitate-shared-decision-making"><span class="header-section-number">2.8</span> Principle 8: AI tools should facilitate shared decision-making</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Guiding principles for AI in healthcare</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+</header>
+
+<div id="tbl-healthcare-guiding-principles" class="anchored">
+<table class="table">
+<caption>Table&nbsp;2.1: Questions that can be used when considering each principle in the AI development process <span class="citation" data-cites="Badal2023-bt">(<a href="#ref-Badal2023-bt" role="doc-biblioref">Badal, Lee, and Esserman 2023</a>)</span></caption>
+<colgroup>
+<col style="width: 11%">
+<col style="width: 88%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Principle</th>
+<th>Questions</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1. Alleviate healthcare disparities</td>
+<td>• What health disparities are reported for the present AI application?<br>• How can the AI tool be designed to be accessible to and improve outcomes for the disadvantaged population?<br>• What clinical interventions are needed to realize the benefit, and are these accessible?<br>• How can data collection be supported in underserved communities for tool retraining over time?</td>
+</tr>
+<tr class="even">
+<td>2. Report clinically meaningful outcomes</td>
+<td>• How is clinical benefit defined in this domain?<br>• What is the present threshold for the clinical benefit of existing tools, and how can the AI tool improve upon this threshold?</td>
+</tr>
+<tr class="odd">
+<td>3. Reduce overdiagnosis and overtreatment</td>
+<td>• What disease state is an overdiagnosis?<br>• For every case of overdiagnosis, what are the downstream costs to the patient and healthcare system?<br>• How can this AI application reduce the number of overdiagnoses compared to existing approaches?</td>
+</tr>
+<tr class="even">
+<td>4. Have high healthcare value</td>
+<td>• Is this AI tool addressing a high-priority healthcare need?<br>• What would be the cost to the healthcare system in implementation, maintenance, and update?<br>• What would be the cost to the patient who does and does not benefit from this tool?<br>• Does this tool have high healthcare value, and if not, how can it be improved?</td>
+</tr>
+<tr class="odd">
+<td>5. Incorporate biography</td>
+<td>• What biographical data can be collected or carefully coded for the intended population?<br>• How do these factors vary in the intended population?<br>• How can these factors be included when developing AI tools?</td>
+</tr>
+<tr class="even">
+<td>6. Be easily tailored to the local population</td>
+<td>• Can the training features be easily collected in different settings?<br>• Are these features reliable for training across different populations?<br>• Will the AI/ML workflow be made open-access?</td>
+</tr>
+<tr class="odd">
+<td>7. Promote a learning healthcare system</td>
+<td>• How will this AI application be evaluated over time, and at what intervals?<br>• What are acceptable thresholds for performance?<br>• How will the evaluation results contribute to continuous improvement?</td>
+</tr>
+<tr class="even">
+<td>8. Facilitate shared decision-making</td>
+<td>• Have AI explainability tools been explored and utilized?<br>• Do clinicians and patients find the explainability results helpful?<br>• Have simpler, explainable algorithms been tried and compared to ‘black-box’ algorithms to determine if a simpler model performs just as well?<br>• How can patient values be easily integrated into the use of the AI tool?</td>
+</tr>
+</tbody>
+</table>
+</div>
+<section id="principle-1-ai-tools-should-aim-to-alleviate-existing-health-disparities" class="level2" data-number="2.1">
+<h2 data-number="2.1" class="anchored" data-anchor-id="principle-1-ai-tools-should-aim-to-alleviate-existing-health-disparities"><span class="header-section-number">2.1</span> Principle 1: AI tools should aim to alleviate existing health disparities</h2>
+<p>Reaching health equity requires eliminating the disparitities in health outcomes that are closely linked with social, economic, and environmental disadvantages. At their very core, AI tools require collection of specialized and high-quality data, advanced computing infrastructure for use, capacity to purchase or partner models from commercial entities, and unique technical expertise, all of which are less likely available to healthcare systems that serve the most disadvantaged populations.</p>
+<p>More careful training and model development that accounts for the unique needs of disadvantaged populations is needed to ensure that AI tools do not exacerbate existing health disparities. Creating equitable AI tools may require prioritizing simpler models for deployment, and the trade-off between balancing accuracy and equity can potentially be resolved by designing AI tools that can be easily tailored to the local population. AI tools designed to serve disadvantaged groups must not unnecessarily divert resources from higher priority areas and more effective interventions (<a href="#principle-4-ai-tools-should-have-high-healthcare-value-and-avoid-diverting-resources-from-higher-priority-areas">Principle 4</a>).</p>
+</section>
+<section id="principle-2-ai-tools-should-produce-clinically-meaningful-outcomes" class="level2" data-number="2.2">
+<h2 data-number="2.2" class="anchored" data-anchor-id="principle-2-ai-tools-should-produce-clinically-meaningful-outcomes"><span class="header-section-number">2.2</span> Principle 2: AI tools should produce clinically meaningful outcomes</h2>
+<p>AI tools should be evaluated based on their ability to improve clinically meaningful outcomes. The clinical benefit of AI tools should be defined in the context of the existing standard of care, and the AI tool should be evaluated against this standard. If AI practitioners do not define clinical metrics for clinical benefit <em>a priori</em>, they risk producing tools that clinicians cannot evaluate or use. Clinician partners of AI researchers should evaluate accuracy, fairness, and risks of overdiagnosis and overtreatment (<a href="#principle-3-ai-tools-should-reduce-overdiagnosis-and-overtreatment">Principle 3</a>). They should also evaluate the healthcare value (<a href="#principle-4-ai-tools-should-have-high-healthcare-value-and-avoid-diverting-resources-from-higher-priority-areas">Principle 4</a>) along with the explainability and auditability of AI tools and models (note principles outlined in <a href="#tbl-healthcare-guiding-principles">Table&nbsp;<span class="quarto-unresolved-ref">tbl-healthcare-guiding-principles</span></a>.</p>
+</section>
+<section id="principle-3-ai-tools-should-reduce-overdiagnosis-and-overtreatment" class="level2" data-number="2.3">
+<h2 data-number="2.3" class="anchored" data-anchor-id="principle-3-ai-tools-should-reduce-overdiagnosis-and-overtreatment"><span class="header-section-number">2.3</span> Principle 3: AI tools should reduce overdiagnosis and overtreatment</h2>
+<p>Particularly in the United States, overdiagnosis and overtreatment are major drivers of healthcare costs and patient harm. Overdiagnosis occurs when a disease is diagnosed that would not have caused symptoms or death in a patient’s lifetime. Overtreatment occurs when a patient is treated for a disease that would not have caused symptoms or death in a patient’s lifetime. AI tools should be carefully constructed with the spectrum of disease and interventions to result in decreased overdiagnosis and overtreatment.</p>
+</section>
+<section id="principle-4-ai-tools-should-have-high-healthcare-value-and-avoid-diverting" class="level2" data-number="2.4">
+<h2 data-number="2.4" class="anchored" data-anchor-id="principle-4-ai-tools-should-have-high-healthcare-value-and-avoid-diverting"><span class="header-section-number">2.4</span> Principle 4: AI tools should have high healthcare value and avoid diverting</h2>
+<p>resources from higher-priority areas</p>
+<p>AI tools applied in healthcare should result in the same outcomes for reduced cost or better outcomes for costs comparable to current costs. Costs to gather inputs, build, maintain, update, interpret, and deploy in clinical practice must be estimated and included in weighing the decisions around AI tool application. Note that what might be cost-effective, leading to high healthcare value, in one setting might be extremely cost-ineffective in settings where resources are scarce.</p>
+</section>
+<section id="principle-5-ai-tools-should-incorporate-social-structural-environmental" class="level2" data-number="2.5">
+<h2 data-number="2.5" class="anchored" data-anchor-id="principle-5-ai-tools-should-incorporate-social-structural-environmental"><span class="header-section-number">2.5</span> Principle 5: AI tools should incorporate social, structural, environmental,</h2>
+<p>emotional, and psychological drivers of health</p>
+</section>
+<section id="principle-6-ai-tools-should-be-easily-tailored-to-the-local-population" class="level2" data-number="2.6">
+<h2 data-number="2.6" class="anchored" data-anchor-id="principle-6-ai-tools-should-be-easily-tailored-to-the-local-population"><span class="header-section-number">2.6</span> Principle 6: AI tools should be easily tailored to the local population</h2>
+</section>
+<section id="principle-7-ai-tools-should-promote-a-learning-healthcare-system" class="level2" data-number="2.7">
+<h2 data-number="2.7" class="anchored" data-anchor-id="principle-7-ai-tools-should-promote-a-learning-healthcare-system"><span class="header-section-number">2.7</span> Principle 7: AI tools should promote a learning healthcare system</h2>
+</section>
+<section id="principle-8-ai-tools-should-facilitate-shared-decision-making" class="level2" data-number="2.8">
+<h2 data-number="2.8" class="anchored" data-anchor-id="principle-8-ai-tools-should-facilitate-shared-decision-making"><span class="header-section-number">2.8</span> Principle 8: AI tools should facilitate shared decision-making</h2>
+
+
+<div id="refs" class="references csl-bib-body hanging-indent" role="list">
+<div id="ref-Badal2023-bt" class="csl-entry" role="listitem">
+Badal, Kimberly, Carmen M Lee, and Laura J Esserman. 2023. <span>“Guiding Principles for the Responsible Development of Artificial Intelligence Tools for Healthcare.”</span> <em>Communication &amp; Medicine</em> 3 (1): 47. <a href="https://doi.org/10.1038/s43856-023-00279-9">https://doi.org/10.1038/s43856-023-00279-9</a>.
+</div>
+</div>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const disableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'prefetch';
+    }
+  }
+  const enableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'stylesheet';
+    }
+  }
+  const manageTransitions = (selector, allowTransitions) => {
+    const els = window.document.querySelectorAll(selector);
+    for (let i=0; i < els.length; i++) {
+      const el = els[i];
+      if (allowTransitions) {
+        el.classList.remove('notransition');
+      } else {
+        el.classList.add('notransition');
+      }
+    }
+  }
+  const toggleColorMode = (alternate) => {
+    // Switch the stylesheets
+    const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+    manageTransitions('#quarto-margin-sidebar .nav-link', false);
+    if (alternate) {
+      enableStylesheet(alternateStylesheets);
+      for (const sheetNode of alternateStylesheets) {
+        if (sheetNode.id === "quarto-bootstrap") {
+          toggleBodyColorMode(sheetNode);
+        }
+      }
+    } else {
+      disableStylesheet(alternateStylesheets);
+      toggleBodyColorPrimary();
+    }
+    manageTransitions('#quarto-margin-sidebar .nav-link', true);
+    // Switch the toggles
+    const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+    for (let i=0; i < toggles.length; i++) {
+      const toggle = toggles[i];
+      if (toggle) {
+        if (alternate) {
+          toggle.classList.add("alternate");     
+        } else {
+          toggle.classList.remove("alternate");
+        }
+      }
+    }
+    // Hack to workaround the fact that safari doesn't
+    // properly recolor the scrollbar when toggling (#1455)
+    if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+      manageTransitions("body", false);
+      window.scrollTo(0, 1);
+      setTimeout(() => {
+        window.scrollTo(0, 0);
+        manageTransitions("body", true);
+      }, 40);  
+    }
+  }
+  const isFileUrl = () => { 
+    return window.location.protocol === 'file:';
+  }
+  const hasAlternateSentinel = () => {  
+    let styleSentinel = getColorSchemeSentinel();
+    if (styleSentinel !== null) {
+      return styleSentinel === "alternate";
+    } else {
+      return false;
+    }
+  }
+  const setStyleSentinel = (alternate) => {
+    const value = alternate ? "alternate" : "default";
+    if (!isFileUrl()) {
+      window.localStorage.setItem("quarto-color-scheme", value);
+    } else {
+      localAlternateSentinel = value;
+    }
+  }
+  const getColorSchemeSentinel = () => {
+    if (!isFileUrl()) {
+      const storageValue = window.localStorage.getItem("quarto-color-scheme");
+      return storageValue != null ? storageValue : localAlternateSentinel;
+    } else {
+      return localAlternateSentinel;
+    }
+  }
+  let localAlternateSentinel = 'alternate';
+  // Dark / light mode switch
+  window.quartoToggleColorScheme = () => {
+    // Read the current dark / light value 
+    let toAlternate = !hasAlternateSentinel();
+    toggleColorMode(toAlternate);
+    setStyleSentinel(toAlternate);
+  };
+  // Ensure there is a toggle, if there isn't float one in the top right
+  if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+    const a = window.document.createElement('a');
+    a.classList.add('top-right');
+    a.classList.add('quarto-color-scheme-toggle');
+    a.href = "";
+    a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+    const i = window.document.createElement("i");
+    i.classList.add('bi');
+    a.appendChild(i);
+    window.document.body.appendChild(a);
+  }
+  // Switch to dark mode if need be
+  if (hasAlternateSentinel()) {
+    toggleColorMode(true);
+  } else {
+    toggleColorMode(false);
+  }
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./intro.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./policy.html" class="pagination-link">
+        <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">DRAFT policy</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+</body></html>
