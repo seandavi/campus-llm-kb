@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Large Language Model Policy and Practice - 2&nbsp; Guiding principles for AI in healthcare</title>
+<title>Large Language Model Policy and Practice - 4&nbsp; Implementation</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -49,8 +49,8 @@ div.csl-indent {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./policy.html" rel="next">
-<link href="./intro.html" rel="prev">
+<link href="./references.html" rel="next">
+<link href="./policy.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -94,7 +94,7 @@ div.csl-indent {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./guiding_principles.html"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Guiding principles for AI in healthcare</span></a></li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./implementation.html"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Implementation</span></a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -153,7 +153,7 @@ div.csl-indent {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./guiding_principles.html" class="sidebar-item-text sidebar-link active">
+  <a href="./guiding_principles.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Guiding principles for AI in healthcare</span></span></a>
   </div>
 </li>
@@ -165,7 +165,7 @@ div.csl-indent {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./implementation.html" class="sidebar-item-text sidebar-link">
+  <a href="./implementation.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Implementation</span></span></a>
   </div>
 </li>
@@ -191,14 +191,12 @@ div.csl-indent {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#principle-1-ai-tools-should-aim-to-alleviate-existing-health-disparities" id="toc-principle-1-ai-tools-should-aim-to-alleviate-existing-health-disparities" class="nav-link active" data-scroll-target="#principle-1-ai-tools-should-aim-to-alleviate-existing-health-disparities"><span class="header-section-number">2.1</span> Principle 1: AI tools should aim to alleviate existing health disparities</a></li>
-  <li><a href="#principle-2-ai-tools-should-produce-clinically-meaningful-outcomes" id="toc-principle-2-ai-tools-should-produce-clinically-meaningful-outcomes" class="nav-link" data-scroll-target="#principle-2-ai-tools-should-produce-clinically-meaningful-outcomes"><span class="header-section-number">2.2</span> Principle 2: AI tools should produce clinically meaningful outcomes</a></li>
-  <li><a href="#principle-3-ai-tools-should-reduce-overdiagnosis-and-overtreatment" id="toc-principle-3-ai-tools-should-reduce-overdiagnosis-and-overtreatment" class="nav-link" data-scroll-target="#principle-3-ai-tools-should-reduce-overdiagnosis-and-overtreatment"><span class="header-section-number">2.3</span> Principle 3: AI tools should reduce overdiagnosis and overtreatment</a></li>
-  <li><a href="#principle-4-ai-tools-should-have-high-healthcare-value-and-avoid-diverting" id="toc-principle-4-ai-tools-should-have-high-healthcare-value-and-avoid-diverting" class="nav-link" data-scroll-target="#principle-4-ai-tools-should-have-high-healthcare-value-and-avoid-diverting"><span class="header-section-number">2.4</span> Principle 4: AI tools should have high healthcare value and avoid diverting</a></li>
-  <li><a href="#principle-5-ai-tools-should-incorporate-social-structural-environmental" id="toc-principle-5-ai-tools-should-incorporate-social-structural-environmental" class="nav-link" data-scroll-target="#principle-5-ai-tools-should-incorporate-social-structural-environmental"><span class="header-section-number">2.5</span> Principle 5: AI tools should incorporate social, structural, environmental,</a></li>
-  <li><a href="#principle-6-ai-tools-should-be-easily-tailored-to-the-local-population" id="toc-principle-6-ai-tools-should-be-easily-tailored-to-the-local-population" class="nav-link" data-scroll-target="#principle-6-ai-tools-should-be-easily-tailored-to-the-local-population"><span class="header-section-number">2.6</span> Principle 6: AI tools should be easily tailored to the local population</a></li>
-  <li><a href="#principle-7-ai-tools-should-promote-a-learning-healthcare-system" id="toc-principle-7-ai-tools-should-promote-a-learning-healthcare-system" class="nav-link" data-scroll-target="#principle-7-ai-tools-should-promote-a-learning-healthcare-system"><span class="header-section-number">2.7</span> Principle 7: AI tools should promote a learning healthcare system</a></li>
-  <li><a href="#principle-8-ai-tools-should-facilitate-shared-decision-making" id="toc-principle-8-ai-tools-should-facilitate-shared-decision-making" class="nav-link" data-scroll-target="#principle-8-ai-tools-should-facilitate-shared-decision-making"><span class="header-section-number">2.8</span> Principle 8: AI tools should facilitate shared decision-making</a></li>
+  <li><a href="#barriers-and-obstacles-and-how-to-overcome-them" id="toc-barriers-and-obstacles-and-how-to-overcome-them" class="nav-link active" data-scroll-target="#barriers-and-obstacles-and-how-to-overcome-them"><span class="header-section-number">4.1</span> Barriers and Obstacles and How to Overcome Them</a></li>
+  <li><a href="#overcoming-barriers-and-obstacles" id="toc-overcoming-barriers-and-obstacles" class="nav-link" data-scroll-target="#overcoming-barriers-and-obstacles"><span class="header-section-number">4.2</span> Overcoming Barriers and Obstacles</a>
+  <ul class="collapse">
+  <li><a href="#conventional-strategies-for-overcoming-barriers-and-obstacles" id="toc-conventional-strategies-for-overcoming-barriers-and-obstacles" class="nav-link" data-scroll-target="#conventional-strategies-for-overcoming-barriers-and-obstacles"><span class="header-section-number">4.2.1</span> Conventional Strategies for Overcoming Barriers and Obstacles</a></li>
+  <li><a href="#unconventional-strategies-for-overcoming-barriers-and-obstacles" id="toc-unconventional-strategies-for-overcoming-barriers-and-obstacles" class="nav-link" data-scroll-target="#unconventional-strategies-for-overcoming-barriers-and-obstacles"><span class="header-section-number">4.2.2</span> Unconventional Strategies for Overcoming Barriers and Obstacles</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -207,7 +205,7 @@ div.csl-indent {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Guiding principles for AI in healthcare</span></h1>
+<h1 class="title"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Implementation</span></h1>
 </div>
 
 
@@ -222,92 +220,115 @@ div.csl-indent {
 
 </header>
 
-<div id="tbl-healthcare-guiding-principles" class="anchored">
-<table class="table">
-<caption>Table&nbsp;2.1: Questions that can be used when considering each principle in the AI development process <span class="citation" data-cites="Badal2023-bt">(<a href="#ref-Badal2023-bt" role="doc-biblioref">Badal, Lee, and Esserman 2023</a>)</span></caption>
-<colgroup>
-<col style="width: 11%">
-<col style="width: 88%">
-</colgroup>
-<thead>
-<tr class="header">
-<th>Principle</th>
-<th>Questions</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>1. Alleviate healthcare disparities</td>
-<td>• What health disparities are reported for the present AI application?<br>• How can the AI tool be designed to be accessible to and improve outcomes for the disadvantaged population?<br>• What clinical interventions are needed to realize the benefit, and are these accessible?<br>• How can data collection be supported in underserved communities for tool retraining over time?</td>
-</tr>
-<tr class="even">
-<td>2. Report clinically meaningful outcomes</td>
-<td>• How is clinical benefit defined in this domain?<br>• What is the present threshold for the clinical benefit of existing tools, and how can the AI tool improve upon this threshold?</td>
-</tr>
-<tr class="odd">
-<td>3. Reduce overdiagnosis and overtreatment</td>
-<td>• What disease state is an overdiagnosis?<br>• For every case of overdiagnosis, what are the downstream costs to the patient and healthcare system?<br>• How can this AI application reduce the number of overdiagnoses compared to existing approaches?</td>
-</tr>
-<tr class="even">
-<td>4. Have high healthcare value</td>
-<td>• Is this AI tool addressing a high-priority healthcare need?<br>• What would be the cost to the healthcare system in implementation, maintenance, and update?<br>• What would be the cost to the patient who does and does not benefit from this tool?<br>• Does this tool have high healthcare value, and if not, how can it be improved?</td>
-</tr>
-<tr class="odd">
-<td>5. Incorporate biography</td>
-<td>• What biographical data can be collected or carefully coded for the intended population?<br>• How do these factors vary in the intended population?<br>• How can these factors be included when developing AI tools?</td>
-</tr>
-<tr class="even">
-<td>6. Be easily tailored to the local population</td>
-<td>• Can the training features be easily collected in different settings?<br>• Are these features reliable for training across different populations?<br>• Will the AI/ML workflow be made open-access?</td>
-</tr>
-<tr class="odd">
-<td>7. Promote a learning healthcare system</td>
-<td>• How will this AI application be evaluated over time, and at what intervals?<br>• What are acceptable thresholds for performance?<br>• How will the evaluation results contribute to continuous improvement?</td>
-</tr>
-<tr class="even">
-<td>8. Facilitate shared decision-making</td>
-<td>• Have AI explainability tools been explored and utilized?<br>• Do clinicians and patients find the explainability results helpful?<br>• Have simpler, explainable algorithms been tried and compared to ‘black-box’ algorithms to determine if a simpler model performs just as well?<br>• How can patient values be easily integrated into the use of the AI tool?</td>
-</tr>
-</tbody>
-</table>
-</div>
-<section id="principle-1-ai-tools-should-aim-to-alleviate-existing-health-disparities" class="level2" data-number="2.1">
-<h2 data-number="2.1" class="anchored" data-anchor-id="principle-1-ai-tools-should-aim-to-alleviate-existing-health-disparities"><span class="header-section-number">2.1</span> Principle 1: AI tools should aim to alleviate existing health disparities</h2>
-<p>Reaching health equity requires eliminating the disparitities in health outcomes that are closely linked with social, economic, and environmental disadvantages. At their very core, AI tools require collection of specialized and high-quality data, advanced computing infrastructure for use, capacity to purchase or partner models from commercial entities, and unique technical expertise, all of which are less likely available to healthcare systems that serve the most disadvantaged populations.</p>
-<p>More careful training and model development that accounts for the unique needs of disadvantaged populations is needed to ensure that AI tools do not exacerbate existing health disparities. Creating equitable AI tools may require prioritizing simpler models for deployment, and the trade-off between balancing accuracy and equity can potentially be resolved by designing AI tools that can be easily tailored to the local population. AI tools designed to serve disadvantaged groups must not unnecessarily divert resources from higher priority areas and more effective interventions (<a href="#principle-4-ai-tools-should-have-high-healthcare-value-and-avoid-diverting-resources-from-higher-priority-areas">Principle 4</a>).</p>
+<p>This section will provide you with a step-by-step guide to implementing ChatGPT within your organization <span class="citation" data-cites="lindegaard-vb">Lindegaard (<a href="#ref-lindegaard-vb" role="doc-biblioref">2023</a>)</span>. It will cover the following topics:</p>
+<ol type="1">
+<li><dl>
+<dt>Ownership &amp; Leadership</dt>
+<dd>
+Assign the strategic HR or P&amp;O function as the driving force behind ChatGPT implementation. This department needs to become proficient in the technology and subsequently guide the organization through the process of integration. This includes setting the vision, aligning key stakeholders, and ensuring that the implementation aligns with the organization’s strategic goals.
+</dd>
+</dl></li>
+<li><dl>
+<dt>Cross-functional Collaboration</dt>
+<dd>
+Form a cross-functional team with representatives from HR, IT, Legal, and other relevant departments to ensure that various perspectives are considered, and organizational needs are met during ChatGPT implementation. This collaboration will help address potential challenges, optimize resources, and facilitate effective knowledge transfer across the organization.
+</dd>
+</dl></li>
+<li><dl>
+<dt>Educating Leadership Teams</dt>
+<dd>
+Keep leadership teams informed about ChatGPT to enable swift, informed decision-making. Offer workshops and seminars to provide an in-depth understanding of the technology, its potential benefits, and its limitations. This empowers them to make quick, informed decisions that will shape the organization’s adoption and use of the technology.
+</dd>
+</dl></li>
+<li><dl>
+<dt>Identifying Potential Use Cases</dt>
+<dd>
+Map potential applications across all functions and establish a cohesive implementation plan. Conduct thorough analyses of business processes and functions to identify areas where ChatGPT can bring significant value, prioritize these use cases, and create a detailed roadmap for implementation, including timelines and milestones.
+</dd>
+</dl></li>
+<li><dl>
+<dt>Crafting a Communication Strategy</dt>
+<dd>
+Develop a comprehensive communication strategy that addresses employee concerns and questions about the implementation of ChatGPT. This approach should be transparent, informative, and reassuring to ensure a smooth transition. It should also highlight the benefits of the technology and address potential misconceptions.
+</dd>
+</dl></li>
+<li><dl>
+<dt>Integration with Proprietary Datasets</dt>
+<dd>
+Build APIs and interfaces to combine ChatGPT with organization-specific data for improved innovation and efficiency. Invest in the development of custom solutions that seamlessly integrate ChatGPT with existing systems, databases, and workflows to fully harness the potential of the technology.
+</dd>
+</dl></li>
+<li><dl>
+<dt>Employee Training and Support</dt>
+<dd>
+Provide comprehensive training programs for employees to effectively use ChatGPT in their daily work. Offer hands-on workshops, e-learning modules, and on-the-job training to equip employees with the skills and knowledge necessary to use ChatGPT effectively. Provide ongoing support and resources to help employees adapt to the new technology and address any challenges they may face.
+</dd>
+</dl></li>
+<li><dl>
+<dt>Monitoring Performance and Impact</dt>
+<dd>
+Regularly assess the performance of ChatGPT within the organization and evaluate its impact on specific use cases. Develop key performance indicators (KPIs) and metrics to track the technology’s effectiveness, and use this data to inform future improvements and adaptations.
+</dd>
+</dl></li>
+<li><dl>
+<dt>Continuous Improvement and Adaptation</dt>
+<dd>
+Stay current with AI advancements and adapt ChatGPT implementation to maximize benefits. The AI landscape is constantly evolving, and it’s crucial to stay up-to-date with advancements in the field. Continuously evaluate the performance of ChatGPT and be prepared to adapt its implementation to maximize its benefits and stay ahead of the competition.
+</dd>
+</dl></li>
+<li>Ethical Considerations : Develop guidelines for responsible use and educate employees on potential risks and challenges of AI technologies like ChatGPT. Be mindful of the ethical implications of using AI-powered technologies. Develop guidelines and best practices for responsible use, and ensure that employees understand the potential risks and challenges associated with AI, such as algorithmic bias or unintended consequences.</li>
+</ol>
+<section id="barriers-and-obstacles-and-how-to-overcome-them" class="level2" data-number="4.1">
+<h2 data-number="4.1" class="anchored" data-anchor-id="barriers-and-obstacles-and-how-to-overcome-them"><span class="header-section-number">4.1</span> Barriers and Obstacles and How to Overcome Them</h2>
+<p>Inevitably, you will encounter barriers and obstacles during your ChatGPT implementation journey. Recognizing these challenges and understanding how to overcome them is essential to ensure a successful adoption.&nbsp;</p>
+<p>In this section, we will discuss the most common hurdles and provide strategies for navigating them, empowering you to lead your organization through the complexities of AI integration.</p>
+<p><em>Resistance to Change</em></p>
+<p>Employees and leaders may be resistant to adopting new technologies due to fear of job loss or discomfort with the unknown. To overcome this, emphasize the benefits of ChatGPT, such as increased efficiency and improved decision-making, and provide ample training and support. Encourage open discussions and showcase successful examples of AI adoption.</p>
+<p><em>Lack of Technical Expertise</em></p>
+<p>Limited knowledge of AI and ChatGPT may hinder successful implementation. Address this by investing in training programs, partnering with AI experts, or hiring professionals with relevant experience. Create an internal AI community for knowledge sharing and peer support.</p>
+<p><em>Insufficient Collaboration</em></p>
+<p>Inadequate communication and collaboration between departments can impede progress. Foster cross-functional teamwork through regular meetings, workshops, and collaborative platforms. Encourage leaders to champion the initiative and create a culture of cooperation.</p>
+<p><em>Resource Constraints</em></p>
+<p>Limited budget, time, or personnel can pose challenges. To overcome this, prioritize use cases based on potential impact and feasibility, and secure buy-in from top management for necessary resources. Consider leveraging external partnerships or outsourcing certain tasks to reduce internal workload.</p>
+<p><em>Data Privacy and Security Concerns</em></p>
+<p>Handling sensitive proprietary data may raise concerns. Collaborate closely with IT and Legal departments to establish robust data security protocols and comply with regulations. Communicate these measures transparently to build trust among employees and stakeholders.</p>
+<p><em>Ethical Concerns</em></p>
+<p>The potential for biased or unethical AI outcomes may create apprehension. Develop guidelines for responsible AI usage, create an ethics review board, and offer training on potential risks and challenges. Emphasize the importance of ethical AI practices throughout the organization.</p>
+<p>As you reflect on the potential barriers and obstacles to ChatGPT implementation, remember that overcoming these challenges is an integral part of the journey towards AI-driven success. By anticipating and addressing these issues proactively, you can foster a resilient and adaptable organization that is well-prepared to navigate the ever-evolving landscape of artificial intelligence.</p>
 </section>
-<section id="principle-2-ai-tools-should-produce-clinically-meaningful-outcomes" class="level2" data-number="2.2">
-<h2 data-number="2.2" class="anchored" data-anchor-id="principle-2-ai-tools-should-produce-clinically-meaningful-outcomes"><span class="header-section-number">2.2</span> Principle 2: AI tools should produce clinically meaningful outcomes</h2>
-<p>AI tools should be evaluated based on their ability to improve clinically meaningful outcomes. The clinical benefit of AI tools should be defined in the context of the existing standard of care, and the AI tool should be evaluated against this standard. If AI practitioners do not define clinical metrics for clinical benefit <em>a priori</em>, they risk producing tools that clinicians cannot evaluate or use. Clinician partners of AI researchers should evaluate accuracy, fairness, and risks of overdiagnosis and overtreatment (<a href="#principle-3-ai-tools-should-reduce-overdiagnosis-and-overtreatment">Principle 3</a>). They should also evaluate the healthcare value (<a href="#principle-4-ai-tools-should-have-high-healthcare-value-and-avoid-diverting-resources-from-higher-priority-areas">Principle 4</a>) along with the explainability and auditability of AI tools and models (note principles outlined in <a href="#tbl-healthcare-guiding-principles">Table&nbsp;<span class="quarto-unresolved-ref">tbl-healthcare-guiding-principles</span></a>.</p>
+<section id="overcoming-barriers-and-obstacles" class="level2" data-number="4.2">
+<h2 data-number="4.2" class="anchored" data-anchor-id="overcoming-barriers-and-obstacles"><span class="header-section-number">4.2</span> Overcoming Barriers and Obstacles</h2>
+<p>As you can see above, there are many barriers and obstacles to ChatGPT implementation and overcoming these is crucial for realizing its full potential within your organization.&nbsp;</p>
+<p>In this section, we will provide a combination of conventional and less traditional strategies to address the challenges you might face during the adoption process. By embracing these adaptive approaches, you can foster a culture of adaptability and resilience, enabling your organization to successfully harness the power of AI-driven solutions like ChatGPT.</p>
+<section id="conventional-strategies-for-overcoming-barriers-and-obstacles" class="level3" data-number="4.2.1">
+<h3 data-number="4.2.1" class="anchored" data-anchor-id="conventional-strategies-for-overcoming-barriers-and-obstacles"><span class="header-section-number">4.2.1</span> Conventional Strategies for Overcoming Barriers and Obstacles</h3>
+<ol type="1">
+<li>Resistance to Change: To overcome resistance to change, emphasize the benefits of ChatGPT, provide ample training and support, encourage open discussions, and showcase successful examples of AI adoption.</li>
+<li>Lack of Technical Expertise: Address this by investing in training programs, partnering with AI experts, hiring professionals with relevant experience, and creating an internal AI community for knowledge sharing and peer support.</li>
+<li>Insufficient Collaboration: Foster cross-functional teamwork through regular meetings, workshops, and collaborative platforms, and encourage leaders to champion the initiative and create a culture of cooperation.</li>
+<li>Resource Constraints: Prioritize use cases based on potential impact and feasibility, secure buy-in from top management for necessary resources, and consider leveraging external partnerships or outsourcing certain tasks to reduce internal workload.</li>
+<li>Data Privacy and Security Concerns: Collaborate closely with IT and Legal departments to establish robust data security protocols and comply with regulations, and communicate these measures transparently to build trust among employees and stakeholders.</li>
+<li>Ethical Concerns: Develop guidelines for responsible AI usage, create an ethics review board, and offer training on potential risks and challenges, emphasizing the importance of ethical AI practices throughout the organization.</li>
+</ol>
 </section>
-<section id="principle-3-ai-tools-should-reduce-overdiagnosis-and-overtreatment" class="level2" data-number="2.3">
-<h2 data-number="2.3" class="anchored" data-anchor-id="principle-3-ai-tools-should-reduce-overdiagnosis-and-overtreatment"><span class="header-section-number">2.3</span> Principle 3: AI tools should reduce overdiagnosis and overtreatment</h2>
-<p>Particularly in the United States, overdiagnosis and overtreatment are major drivers of healthcare costs and patient harm. Overdiagnosis occurs when a disease is diagnosed that would not have caused symptoms or death in a patient’s lifetime. Overtreatment occurs when a patient is treated for a disease that would not have caused symptoms or death in a patient’s lifetime. AI tools should be carefully constructed with the spectrum of disease and interventions to result in decreased overdiagnosis and overtreatment.</p>
-</section>
-<section id="principle-4-ai-tools-should-have-high-healthcare-value-and-avoid-diverting" class="level2" data-number="2.4">
-<h2 data-number="2.4" class="anchored" data-anchor-id="principle-4-ai-tools-should-have-high-healthcare-value-and-avoid-diverting"><span class="header-section-number">2.4</span> Principle 4: AI tools should have high healthcare value and avoid diverting</h2>
-<p>resources from higher-priority areas</p>
-<p>AI tools applied in healthcare should result in the same outcomes for reduced cost or better outcomes for costs comparable to current costs. Costs to gather inputs, build, maintain, update, interpret, and deploy in clinical practice must be estimated and included in weighing the decisions around AI tool application. Note that what might be cost-effective, leading to high healthcare value, in one setting might be extremely cost-ineffective in settings where resources are scarce.</p>
-</section>
-<section id="principle-5-ai-tools-should-incorporate-social-structural-environmental" class="level2" data-number="2.5">
-<h2 data-number="2.5" class="anchored" data-anchor-id="principle-5-ai-tools-should-incorporate-social-structural-environmental"><span class="header-section-number">2.5</span> Principle 5: AI tools should incorporate social, structural, environmental,</h2>
-<p>emotional, and psychological drivers of health</p>
-</section>
-<section id="principle-6-ai-tools-should-be-easily-tailored-to-the-local-population" class="level2" data-number="2.6">
-<h2 data-number="2.6" class="anchored" data-anchor-id="principle-6-ai-tools-should-be-easily-tailored-to-the-local-population"><span class="header-section-number">2.6</span> Principle 6: AI tools should be easily tailored to the local population</h2>
-</section>
-<section id="principle-7-ai-tools-should-promote-a-learning-healthcare-system" class="level2" data-number="2.7">
-<h2 data-number="2.7" class="anchored" data-anchor-id="principle-7-ai-tools-should-promote-a-learning-healthcare-system"><span class="header-section-number">2.7</span> Principle 7: AI tools should promote a learning healthcare system</h2>
-</section>
-<section id="principle-8-ai-tools-should-facilitate-shared-decision-making" class="level2" data-number="2.8">
-<h2 data-number="2.8" class="anchored" data-anchor-id="principle-8-ai-tools-should-facilitate-shared-decision-making"><span class="header-section-number">2.8</span> Principle 8: AI tools should facilitate shared decision-making</h2>
+<section id="unconventional-strategies-for-overcoming-barriers-and-obstacles" class="level3" data-number="4.2.2">
+<h3 data-number="4.2.2" class="anchored" data-anchor-id="unconventional-strategies-for-overcoming-barriers-and-obstacles"><span class="header-section-number">4.2.2</span> Unconventional Strategies for Overcoming Barriers and Obstacles</h3>
+<p>I often find that we need to find “back-doors” and just different approaches in the context of change and transformation projects. Thus, here are some less conventional approaches to the barriers.&nbsp;</p>
+<ol type="1">
+<li>Gamification: Introduce gamification elements to the training and adoption process, incentivizing employees to engage with ChatGPT and learn its capabilities. Offer rewards or recognition for participation and achievements.</li>
+<li>Reverse Mentoring: Encourage younger or more tech-savvy employees to mentor older or less experienced colleagues, facilitating knowledge sharing and promoting a more inclusive approach to technology adoption.</li>
+<li>Innovation Contests: Organize internal contests or hackathons for employees to develop creative ChatGPT use cases or solutions, fostering a sense of ownership and excitement around the technology.</li>
+<li>External Showcasing: Publicly share successful ChatGPT implementation stories or use cases to build a positive reputation, attract talent, and create a culture of innovation within the organization.</li>
+<li>AI Sabbaticals: Offer employees the opportunity to take short-term sabbaticals to focus on AI-related projects or training, providing dedicated time for learning and exploration. This can help develop in-house expertise and promote a culture of continuous learning.</li>
+</ol>
 
 
 <div id="refs" class="references csl-bib-body hanging-indent" role="list">
-<div id="ref-Badal2023-bt" class="csl-entry" role="listitem">
-Badal, Kimberly, Carmen M Lee, and Laura J Esserman. 2023. <span>“Guiding Principles for the Responsible Development of Artificial Intelligence Tools for Healthcare.”</span> <em>Communication &amp; Medicine</em> 3 (1): 47. <a href="https://doi.org/10.1038/s43856-023-00279-9">https://doi.org/10.1038/s43856-023-00279-9</a>.
+<div id="ref-lindegaard-vb" class="csl-entry" role="listitem">
+Lindegaard, Stefan. 2023. <span>“<span>LinkedIn</span>.”</span> <a href="https://www.linkedin.com/pulse/chatgpt-implementation-scaling-organization-your-guide-lindegaard/" class="uri">https://www.linkedin.com/pulse/chatgpt-implementation-scaling-organization-your-guide-lindegaard/</a>. <a href="https://www.linkedin.com/pulse/chatgpt-implementation-scaling-organization-your-guide-lindegaard/">https://www.linkedin.com/pulse/chatgpt-implementation-scaling-organization-your-guide-lindegaard/</a>.
 </div>
 </div>
+</section>
 </section>
 
 </main> <!-- /main -->
@@ -661,13 +682,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./intro.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></span>
+      <a href="./policy.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">DRAFT policy</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./policy.html" class="pagination-link">
-        <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">DRAFT policy</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./references.html" class="pagination-link">
+        <span class="nav-page-text">References</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
