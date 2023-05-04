@@ -6,10 +6,8 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="new person">
-<meta name="dcterms.date" content="2021-10-20">
 
-<title>Large Language Model Policy and Practice - 5&nbsp; Implementation</title>
+<title>Large Language Model Policy and Practice - 3&nbsp; Whitehouse AI Bill(s) of rights</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -22,26 +20,7 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for citations */
-div.csl-bib-body { }
-div.csl-entry {
-  clear: both;
-}
-.hanging-indent div.csl-entry {
-  margin-left:2em;
-  text-indent:-2em;
-}
-div.csl-left-margin {
-  min-width:2em;
-  float:left;
-}
-div.csl-right-inline {
-  margin-left:2em;
-  padding-left:1em;
-}
-div.csl-indent {
-  margin-left: 2em;
-}</style>
+</style>
 
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
@@ -51,8 +30,8 @@ div.csl-indent {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./references.html" rel="next">
-<link href="./policy.html" rel="prev">
+<link href="./policy.html" rel="next">
+<link href="./guiding_principles.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -96,7 +75,7 @@ div.csl-indent {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./implementation.html"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Implementation</span></a></li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./bill_of_rights.html"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Whitehouse AI Bill(s) of rights</span></a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -161,7 +140,7 @@ div.csl-indent {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./bill_of_rights.html" class="sidebar-item-text sidebar-link">
+  <a href="./bill_of_rights.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Whitehouse AI Bill(s) of rights</span></span></a>
   </div>
 </li>
@@ -173,7 +152,7 @@ div.csl-indent {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./implementation.html" class="sidebar-item-text sidebar-link active">
+  <a href="./implementation.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Implementation</span></span></a>
   </div>
 </li>
@@ -199,12 +178,7 @@ div.csl-indent {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#barriers-and-obstacles-and-how-to-overcome-them" id="toc-barriers-and-obstacles-and-how-to-overcome-them" class="nav-link active" data-scroll-target="#barriers-and-obstacles-and-how-to-overcome-them"><span class="header-section-number">5.1</span> Barriers and Obstacles and How to Overcome Them</a></li>
-  <li><a href="#overcoming-barriers-and-obstacles" id="toc-overcoming-barriers-and-obstacles" class="nav-link" data-scroll-target="#overcoming-barriers-and-obstacles"><span class="header-section-number">5.2</span> Overcoming Barriers and Obstacles</a>
-  <ul class="collapse">
-  <li><a href="#conventional-strategies-for-overcoming-barriers-and-obstacles" id="toc-conventional-strategies-for-overcoming-barriers-and-obstacles" class="nav-link" data-scroll-target="#conventional-strategies-for-overcoming-barriers-and-obstacles"><span class="header-section-number">5.2.1</span> Conventional Strategies for Overcoming Barriers and Obstacles</a></li>
-  <li><a href="#unconventional-strategies-for-overcoming-barriers-and-obstacles" id="toc-unconventional-strategies-for-overcoming-barriers-and-obstacles" class="nav-link" data-scroll-target="#unconventional-strategies-for-overcoming-barriers-and-obstacles"><span class="header-section-number">5.2.2</span> Unconventional Strategies for Overcoming Barriers and Obstacles</a></li>
-  </ul></li>
+  <li><a href="#commentary-and-references" id="toc-commentary-and-references" class="nav-link active" data-scroll-target="#commentary-and-references"><span class="header-section-number">3.1</span> Commentary and references</a></li>
   </ul>
 </nav>
     </div>
@@ -213,26 +187,14 @@ div.csl-indent {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Implementation</span></h1>
+<h1 class="title"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Whitehouse AI Bill(s) of rights</span></h1>
 </div>
 
 
 
 <div class="quarto-title-meta">
 
-    <div>
-    <div class="quarto-title-meta-heading">Author</div>
-    <div class="quarto-title-meta-contents">
-             <p>new person </p>
-          </div>
-  </div>
     
-    <div>
-    <div class="quarto-title-meta-heading">Published</div>
-    <div class="quarto-title-meta-contents">
-      <p class="date">October 20, 2021</p>
-    </div>
-  </div>
   
     
   </div>
@@ -240,115 +202,56 @@ div.csl-indent {
 
 </header>
 
-<p>This section will provide you with a step-by-step guide to implementing ChatGPT within your organization <span class="citation" data-cites="lindegaard-vb">Lindegaard (<a href="references.html#ref-lindegaard-vb" role="doc-biblioref">2023</a>)</span>. It will cover the following topics:</p>
-<ol type="1">
+<p>The Whitehouse OSTP has developed an extensively documented <a href="https://www.whitehouse.gov/ostp/ai-bill-of-rights/">Blueprint for an AI Bill of Rights</a>. The document is a comprehensive overview of the current state of AI and the challenges it poses to society. The Blueprint for an AI Bill of Rights is a set of five principles and associated practices to help guide the design, use, and deployment of automated systems to protect the rights of the American public in the age of artificial intelligence. Developed through extensive consultation with the American public, these principles are a blueprint for building and deploying automated systems that are aligned with democratic values and protect civil rights, civil liberties, and privacy.</p>
+<p>It is a good starting point for understanding the issues and the current state of the art.</p>
+<ul>
 <li><dl>
-<dt>Ownership &amp; Leadership</dt>
+<dt><a href="https://www.whitehouse.gov/ostp/ai-bill-of-rights/safe-and-effective-systems-3/">Safe and Effective Systems</a></dt>
 <dd>
-Assign the strategic HR or P&amp;O function as the driving force behind ChatGPT implementation. This department needs to become proficient in the technology and subsequently guide the organization through the process of integration. This includes setting the vision, aligning key stakeholders, and ensuring that the implementation aligns with the organization’s strategic goals.
+You should be protected from unsafe or ineffective systems
 </dd>
 </dl></li>
 <li><dl>
-<dt>Cross-functional Collaboration</dt>
+<dt><a href="https://www.whitehouse.gov/ostp/ai-bill-of-rights/algorithmic-discrimination-protections-2/">Algorithmic Discrimination Protections</a></dt>
 <dd>
-Form a cross-functional team with representatives from HR, IT, Legal, and other relevant departments to ensure that various perspectives are considered, and organizational needs are met during ChatGPT implementation. This collaboration will help address potential challenges, optimize resources, and facilitate effective knowledge transfer across the organization.
+You should not face discrimination by algorithms and systems should be used and designed in an equitable way.
 </dd>
 </dl></li>
 <li><dl>
-<dt>Educating Leadership Teams</dt>
+<dt><a href="https://www.whitehouse.gov/ostp/ai-bill-of-rights/data-privacy-2/">Data Privacy</a></dt>
 <dd>
-Keep leadership teams informed about ChatGPT to enable swift, informed decision-making. Offer workshops and seminars to provide an in-depth understanding of the technology, its potential benefits, and its limitations. This empowers them to make quick, informed decisions that will shape the organization’s adoption and use of the technology.
+You should be protected from abusive data practices via built-in protections and you should have agency over how data about you is used.
 </dd>
 </dl></li>
 <li><dl>
-<dt>Identifying Potential Use Cases</dt>
+<dt><a href="https://www.whitehouse.gov/ostp/ai-bill-of-rights/notice-and-explanation/">Notice and Explanation</a></dt>
 <dd>
-Map potential applications across all functions and establish a cohesive implementation plan. Conduct thorough analyses of business processes and functions to identify areas where ChatGPT can bring significant value, prioritize these use cases, and create a detailed roadmap for implementation, including timelines and milestones.
+You should know that an automated system is being used and understand how and why it contributes to outcomes that impact you.
 </dd>
 </dl></li>
 <li><dl>
-<dt>Crafting a Communication Strategy</dt>
+<dt><a href="https://www.whitehouse.gov/ostp/ai-bill-of-rights/human-alternatives-consideration-and-fallback/">Human Alternatives, Consideration, and Fallback</a></dt>
 <dd>
-Develop a comprehensive communication strategy that addresses employee concerns and questions about the implementation of ChatGPT. This approach should be transparent, informative, and reassuring to ensure a smooth transition. It should also highlight the benefits of the technology and address potential misconceptions.
+You should be able to opt out, where appropriate, and have access to a person who can quickly consider and remedy problems you encounter.
 </dd>
 </dl></li>
+</ul>
+<section id="commentary-and-references" class="level2" data-number="3.1">
+<h2 data-number="3.1" class="anchored" data-anchor-id="commentary-and-references"><span class="header-section-number">3.1</span> Commentary and references</h2>
+<ul>
+<li><a href="https://www.brookings.edu/blog/techtank/2022/12/19/opportunities-and-blind-spots-in-the-white-houses-blueprint-for-an-ai-bill-of-rights/">Opportunities and blind spots in the White House’s blueprint for an AI Bill of Rights</a></li>
+<li><a href="https://spectrum.ieee.org/white-house-ai">6 Reactions to the White House’s AI Bill of Rights The nonbinding principles are being both celebrated and vilified</a></li>
+<li><a href="https://www.whitehouse.gov/ostp/ai-bill-of-rights/applying-the-blueprint-for-an-ai-bill-of-rights/">Applying the Blueprint for an AI Bill of Rights</a></li>
 <li><dl>
-<dt>Integration with Proprietary Datasets</dt>
+<dt><a href="https://healthitanalytics.com/features/how-does-the-white-house-ai-bill-of-rights-apply-to-healthcare">How Does the White House AI Bill of Rights Apply to Healthcare?</a></dt>
 <dd>
-Build APIs and interfaces to combine ChatGPT with organization-specific data for improved innovation and efficiency. Invest in the development of custom solutions that seamlessly integrate ChatGPT with existing systems, databases, and workflows to fully harness the potential of the technology.
+Experts from Mayo Clinic Platform and DLA Piper weigh in on how the White House’s Blueprint for an AI Bill of Rights may impact healthcare and health AI regulation.
 </dd>
 </dl></li>
-<li><dl>
-<dt>Employee Training and Support</dt>
-<dd>
-Provide comprehensive training programs for employees to effectively use ChatGPT in their daily work. Offer hands-on workshops, e-learning modules, and on-the-job training to equip employees with the skills and knowledge necessary to use ChatGPT effectively. Provide ongoing support and resources to help employees adapt to the new technology and address any challenges they may face.
-</dd>
-</dl></li>
-<li><dl>
-<dt>Monitoring Performance and Impact</dt>
-<dd>
-Regularly assess the performance of ChatGPT within the organization and evaluate its impact on specific use cases. Develop key performance indicators (KPIs) and metrics to track the technology’s effectiveness, and use this data to inform future improvements and adaptations.
-</dd>
-</dl></li>
-<li><dl>
-<dt>Continuous Improvement and Adaptation</dt>
-<dd>
-Stay current with AI advancements and adapt ChatGPT implementation to maximize benefits. The AI landscape is constantly evolving, and it’s crucial to stay up-to-date with advancements in the field. Continuously evaluate the performance of ChatGPT and be prepared to adapt its implementation to maximize its benefits and stay ahead of the competition.
-</dd>
-</dl></li>
-<li>Ethical Considerations : Develop guidelines for responsible use and educate employees on potential risks and challenges of AI technologies like ChatGPT. Be mindful of the ethical implications of using AI-powered technologies. Develop guidelines and best practices for responsible use, and ensure that employees understand the potential risks and challenges associated with AI, such as algorithmic bias or unintended consequences.</li>
-</ol>
-<section id="barriers-and-obstacles-and-how-to-overcome-them" class="level2" data-number="5.1">
-<h2 data-number="5.1" class="anchored" data-anchor-id="barriers-and-obstacles-and-how-to-overcome-them"><span class="header-section-number">5.1</span> Barriers and Obstacles and How to Overcome Them</h2>
-<p>Inevitably, you will encounter barriers and obstacles during your ChatGPT implementation journey. Recognizing these challenges and understanding how to overcome them is essential to ensure a successful adoption.&nbsp;</p>
-<p>In this section, we will discuss the most common hurdles and provide strategies for navigating them, empowering you to lead your organization through the complexities of AI integration.</p>
-<p><em>Resistance to Change</em></p>
-<p>Employees and leaders may be resistant to adopting new technologies due to fear of job loss or discomfort with the unknown. To overcome this, emphasize the benefits of ChatGPT, such as increased efficiency and improved decision-making, and provide ample training and support. Encourage open discussions and showcase successful examples of AI adoption.</p>
-<p><em>Lack of Technical Expertise</em></p>
-<p>Limited knowledge of AI and ChatGPT may hinder successful implementation. Address this by investing in training programs, partnering with AI experts, or hiring professionals with relevant experience. Create an internal AI community for knowledge sharing and peer support.</p>
-<p><em>Insufficient Collaboration</em></p>
-<p>Inadequate communication and collaboration between departments can impede progress. Foster cross-functional teamwork through regular meetings, workshops, and collaborative platforms. Encourage leaders to champion the initiative and create a culture of cooperation.</p>
-<p><em>Resource Constraints</em></p>
-<p>Limited budget, time, or personnel can pose challenges. To overcome this, prioritize use cases based on potential impact and feasibility, and secure buy-in from top management for necessary resources. Consider leveraging external partnerships or outsourcing certain tasks to reduce internal workload.</p>
-<p><em>Data Privacy and Security Concerns</em></p>
-<p>Handling sensitive proprietary data may raise concerns. Collaborate closely with IT and Legal departments to establish robust data security protocols and comply with regulations. Communicate these measures transparently to build trust among employees and stakeholders.</p>
-<p><em>Ethical Concerns</em></p>
-<p>The potential for biased or unethical AI outcomes may create apprehension. Develop guidelines for responsible AI usage, create an ethics review board, and offer training on potential risks and challenges. Emphasize the importance of ethical AI practices throughout the organization.</p>
-<p>As you reflect on the potential barriers and obstacles to ChatGPT implementation, remember that overcoming these challenges is an integral part of the journey towards AI-driven success. By anticipating and addressing these issues proactively, you can foster a resilient and adaptable organization that is well-prepared to navigate the ever-evolving landscape of artificial intelligence.</p>
-</section>
-<section id="overcoming-barriers-and-obstacles" class="level2" data-number="5.2">
-<h2 data-number="5.2" class="anchored" data-anchor-id="overcoming-barriers-and-obstacles"><span class="header-section-number">5.2</span> Overcoming Barriers and Obstacles</h2>
-<p>As you can see above, there are many barriers and obstacles to ChatGPT implementation and overcoming these is crucial for realizing its full potential within your organization.&nbsp;</p>
-<p>In this section, we will provide a combination of conventional and less traditional strategies to address the challenges you might face during the adoption process. By embracing these adaptive approaches, you can foster a culture of adaptability and resilience, enabling your organization to successfully harness the power of AI-driven solutions like ChatGPT.</p>
-<section id="conventional-strategies-for-overcoming-barriers-and-obstacles" class="level3" data-number="5.2.1">
-<h3 data-number="5.2.1" class="anchored" data-anchor-id="conventional-strategies-for-overcoming-barriers-and-obstacles"><span class="header-section-number">5.2.1</span> Conventional Strategies for Overcoming Barriers and Obstacles</h3>
-<ol type="1">
-<li>Resistance to Change: To overcome resistance to change, emphasize the benefits of ChatGPT, provide ample training and support, encourage open discussions, and showcase successful examples of AI adoption.</li>
-<li>Lack of Technical Expertise: Address this by investing in training programs, partnering with AI experts, hiring professionals with relevant experience, and creating an internal AI community for knowledge sharing and peer support.</li>
-<li>Insufficient Collaboration: Foster cross-functional teamwork through regular meetings, workshops, and collaborative platforms, and encourage leaders to champion the initiative and create a culture of cooperation.</li>
-<li>Resource Constraints: Prioritize use cases based on potential impact and feasibility, secure buy-in from top management for necessary resources, and consider leveraging external partnerships or outsourcing certain tasks to reduce internal workload.</li>
-<li>Data Privacy and Security Concerns: Collaborate closely with IT and Legal departments to establish robust data security protocols and comply with regulations, and communicate these measures transparently to build trust among employees and stakeholders.</li>
-<li>Ethical Concerns: Develop guidelines for responsible AI usage, create an ethics review board, and offer training on potential risks and challenges, emphasizing the importance of ethical AI practices throughout the organization.</li>
-</ol>
-</section>
-<section id="unconventional-strategies-for-overcoming-barriers-and-obstacles" class="level3" data-number="5.2.2">
-<h3 data-number="5.2.2" class="anchored" data-anchor-id="unconventional-strategies-for-overcoming-barriers-and-obstacles"><span class="header-section-number">5.2.2</span> Unconventional Strategies for Overcoming Barriers and Obstacles</h3>
-<p>I often find that we need to find “back-doors” and just different approaches in the context of change and transformation projects. Thus, here are some less conventional approaches to the barriers.&nbsp;</p>
-<ol type="1">
-<li>Gamification: Introduce gamification elements to the training and adoption process, incentivizing employees to engage with ChatGPT and learn its capabilities. Offer rewards or recognition for participation and achievements.</li>
-<li>Reverse Mentoring: Encourage younger or more tech-savvy employees to mentor older or less experienced colleagues, facilitating knowledge sharing and promoting a more inclusive approach to technology adoption.</li>
-<li>Innovation Contests: Organize internal contests or hackathons for employees to develop creative ChatGPT use cases or solutions, fostering a sense of ownership and excitement around the technology.</li>
-<li>External Showcasing: Publicly share successful ChatGPT implementation stories or use cases to build a positive reputation, attract talent, and create a culture of innovation within the organization.</li>
-<li>AI Sabbaticals: Offer employees the opportunity to take short-term sabbaticals to focus on AI-related projects or training, providing dedicated time for learning and exploration. This can help develop in-house expertise and promote a culture of continuous learning.</li>
-</ol>
+<li><a href="https://www.forbes.com/sites/forbestechcouncil/2023/02/02/the-us-ai-bill-of-rights-should-kickstart-the-debate-on-bias-in-artificial-intelligence/">The US AI Bill Of Rights Should Kickstart The Debate On Bias In Artificial Intelligence</a></li>
+</ul>
 
 
-<div id="refs" class="references csl-bib-body hanging-indent" role="list" style="display: none">
-<div id="ref-lindegaard-vb" class="csl-entry" role="listitem">
-Lindegaard, Stefan. 2023. <span>“<span>LinkedIn</span>.”</span> <a href="https://www.linkedin.com/pulse/chatgpt-implementation-scaling-organization-your-guide-lindegaard/" class="uri">https://www.linkedin.com/pulse/chatgpt-implementation-scaling-organization-your-guide-lindegaard/</a>. <a href="https://www.linkedin.com/pulse/chatgpt-implementation-scaling-organization-your-guide-lindegaard/">https://www.linkedin.com/pulse/chatgpt-implementation-scaling-organization-your-guide-lindegaard/</a>.
-</div>
-</div>
-</section>
 </section>
 
 </main> <!-- /main -->
@@ -702,13 +605,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./policy.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">DRAFT policy</span></span>
+      <a href="./guiding_principles.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Guiding principles for AI in healthcare</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./references.html" class="pagination-link">
-        <span class="nav-page-text">References</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./policy.html" class="pagination-link">
+        <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">DRAFT policy</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
