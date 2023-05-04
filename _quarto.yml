@@ -5,12 +5,13 @@ book:
   title: "Large Language Model Policy and Practice"
   subtitle: "A framework for large language models in an Academic Medical Center"
   author: "Sean Davis"
-  date: "Sys.Date()"
+  date: "`r Sys.Date()`"
   downloads: [pdf, epub]
   chapters:
     - index.qmd
     - intro.qmd
     - guiding_principles.qmd
+    - bill_of_rights.qmd
     - policy.qmd
     - implementation.qmd
     - references.qmd
@@ -34,4 +35,4 @@ format:
       text: |
         \printindex
   epub:
-    cover-image: cover.png
+    rights: "all rights reserved"

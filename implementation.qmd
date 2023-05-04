@@ -1,3 +1,8 @@
+---
+author: "new person"
+date: "2021-10-20"
+---
+
 # Implementation
 
 This section will provide you with a step-by-step guide to implementing ChatGPT within your organization @lindegaard-vb. It will cover the following topics:

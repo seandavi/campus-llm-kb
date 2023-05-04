@@ -1,0 +1,31 @@
+---
+title: "Whitehouse AI Bill(s) of rights"
+---
+
+The Whitehouse OSTP has developed an extensively documented [Blueprint for an AI Bill of Rights](https://www.whitehouse.gov/ostp/ai-bill-of-rights/). The document is a comprehensive overview of the current state of AI and the challenges it poses to society. The Blueprint for an AI Bill of Rights is a set of five principles and associated practices to help guide the design, use, and deployment of automated systems to protect the rights of the American public in the age of artificial intelligence. Developed through extensive consultation with the American public, these principles are a blueprint for building and deploying automated systems that are aligned with democratic values and protect civil rights, civil liberties, and privacy. 
+
+ It is a good starting point for understanding the issues and the current state of the art.
+
+* [Safe and Effective Systems](https://www.whitehouse.gov/ostp/ai-bill-of-rights/safe-and-effective-systems-3/)
+  : You should be protected from unsafe or ineffective systems
+
+* [Algorithmic Discrimination Protections](https://www.whitehouse.gov/ostp/ai-bill-of-rights/algorithmic-discrimination-protections-2/)
+  : You should not face discrimination by algorithms and systems should be used and designed in an equitable way. 
+
+* [Data Privacy](https://www.whitehouse.gov/ostp/ai-bill-of-rights/data-privacy-2/)
+  : You should be protected from abusive data practices via built-in protections and you should have agency over how data about you is used.
+
+* [Notice and Explanation](https://www.whitehouse.gov/ostp/ai-bill-of-rights/notice-and-explanation/)
+  : You should know that an automated system is being used and understand how and why it contributes to outcomes that impact you.
+
+* [Human Alternatives, Consideration, and Fallback](https://www.whitehouse.gov/ostp/ai-bill-of-rights/human-alternatives-consideration-and-fallback/)
+  : You should be able to opt out, where appropriate, and have access to a person who can quickly consider and remedy problems you encounter.
+
+## Commentary and references
+
+* [Opportunities and blind spots in the White House’s blueprint for an AI Bill of Rights](https://www.brookings.edu/blog/techtank/2022/12/19/opportunities-and-blind-spots-in-the-white-houses-blueprint-for-an-ai-bill-of-rights/)
+* [6 Reactions to the White House’s AI Bill of Rights The nonbinding principles are being both celebrated and vilified](https://spectrum.ieee.org/white-house-ai)
+* [Applying the Blueprint for an AI Bill of Rights](https://www.whitehouse.gov/ostp/ai-bill-of-rights/applying-the-blueprint-for-an-ai-bill-of-rights/)
+* [How Does the White House AI Bill of Rights Apply to Healthcare?](https://healthitanalytics.com/features/how-does-the-white-house-ai-bill-of-rights-apply-to-healthcare)
+  : Experts from Mayo Clinic Platform and DLA Piper weigh in on how the White House’s Blueprint for an AI Bill of Rights may impact healthcare and health AI regulation.
+* [The US AI Bill Of Rights Should Kickstart The Debate On Bias In Artificial Intelligence](https://www.forbes.com/sites/forbestechcouncil/2023/02/02/the-us-ai-bill-of-rights-should-kickstart-the-debate-on-bias-in-artificial-intelligence/)
