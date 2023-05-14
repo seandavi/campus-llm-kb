@@ -6,10 +6,11 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Sean">
+<meta name="author" content="Sean Davis">
+<meta name="author" content="Stefan Lindegaard">
 <meta name="dcterms.date" content="2023-05-11">
 
-<title>Large Language Model Policy and Practice - 13&nbsp; A Framework for Implementing AI and Large Language Models</title>
+<title>Large Language Model Policy and Practice - 4&nbsp; Domain Implementation Guide</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -51,8 +52,8 @@ div.csl-indent {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./references.html" rel="next">
-<link href="./pm_and_support.html" rel="prev">
+<link href="./barriers.html" rel="next">
+<link href="./framework.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -96,7 +97,7 @@ div.csl-indent {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./infrastructure.html">Workstream Resources</a></li><li class="breadcrumb-item"><a href="./implementation.html"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">A Framework for Implementing AI and Large Language Models</span></a></li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./framework.html">Implementation</a></li><li class="breadcrumb-item"><a href="./implementation.html"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Domain Implementation Guide</span></a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -167,6 +168,12 @@ div.csl-indent {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="./preface.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Preface</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="./index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Overview</span></span></a>
   </div>
@@ -192,6 +199,18 @@ div.csl-indent {
  <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">The Framework</span></span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./implementation.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Domain Implementation Guide</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./barriers.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Barriers and Obstacles and How to Overcome Them</span></span></a>
+  </div>
+</li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
@@ -206,25 +225,25 @@ div.csl-indent {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./resources_clinical.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Clinical Domain</span></span></a>
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Clinical Domain</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./resources_research.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Research</span></span></a>
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Research</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./resources_education.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Education</span></span></a>
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Education</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./resources_business.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Business Operations</span></span></a>
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Business Operations</span></span></a>
   </div>
 </li>
       </ul>
@@ -241,37 +260,31 @@ div.csl-indent {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./infrastructure.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Training and Workforce Development Resources</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./workforce.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Training and Workforce Development Resources</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./ethics.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Training and Workforce Development Resources</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./data.html" class="sidebar-item-text sidebar-link">
+  <a href="./workforce.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Training and Workforce Development Resources</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./pm_and_support.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Project Management and Support Resources</span></span></a>
+  <a href="./ethics.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Training and Workforce Development Resources</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./implementation.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">A Framework for Implementing AI and Large Language Models</span></span></a>
+  <a href="./data.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Training and Workforce Development Resources</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./pm_and_support.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Project Management and Support Resources</span></span></a>
   </div>
 </li>
       </ul>
@@ -315,16 +328,18 @@ div.csl-indent {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#domains" id="toc-domains" class="nav-link active" data-scroll-target="#domains"><span class="header-section-number">13.1</span> Domains</a></li>
-  <li><a href="#workstreams" id="toc-workstreams" class="nav-link" data-scroll-target="#workstreams"><span class="header-section-number">13.2</span> Workstreams</a></li>
-  <li><a href="#implementation" id="toc-implementation" class="nav-link" data-scroll-target="#implementation"><span class="header-section-number">14</span> Implementation</a>
+  <li><a href="#suggested-tasks" id="toc-suggested-tasks" class="nav-link active" data-scroll-target="#suggested-tasks"><span class="header-section-number">4.1</span> Suggested Tasks</a>
   <ul class="collapse">
-  <li><a href="#barriers-and-obstacles-and-how-to-overcome-them" id="toc-barriers-and-obstacles-and-how-to-overcome-them" class="nav-link" data-scroll-target="#barriers-and-obstacles-and-how-to-overcome-them"><span class="header-section-number">14.1</span> Barriers and Obstacles and How to Overcome Them</a></li>
-  <li><a href="#overcoming-barriers-and-obstacles" id="toc-overcoming-barriers-and-obstacles" class="nav-link" data-scroll-target="#overcoming-barriers-and-obstacles"><span class="header-section-number">14.2</span> Overcoming Barriers and Obstacles</a>
-  <ul class="collapse">
-  <li><a href="#conventional-strategies-for-overcoming-barriers-and-obstacles" id="toc-conventional-strategies-for-overcoming-barriers-and-obstacles" class="nav-link" data-scroll-target="#conventional-strategies-for-overcoming-barriers-and-obstacles"><span class="header-section-number">14.2.1</span> Conventional Strategies for Overcoming Barriers and Obstacles</a></li>
-  <li><a href="#unconventional-strategies-for-overcoming-barriers-and-obstacles" id="toc-unconventional-strategies-for-overcoming-barriers-and-obstacles" class="nav-link" data-scroll-target="#unconventional-strategies-for-overcoming-barriers-and-obstacles"><span class="header-section-number">14.2.2</span> Unconventional Strategies for Overcoming Barriers and Obstacles</a></li>
-  </ul></li>
+  <li><a href="#establish-ownership-leadership" id="toc-establish-ownership-leadership" class="nav-link" data-scroll-target="#establish-ownership-leadership"><span class="header-section-number">4.1.1</span> Establish Ownership Leadership</a></li>
+  <li><a href="#lean-into-cross-functional-collaboration" id="toc-lean-into-cross-functional-collaboration" class="nav-link" data-scroll-target="#lean-into-cross-functional-collaboration"><span class="header-section-number">4.1.2</span> Lean Into Cross-functional Collaboration</a></li>
+  <li><a href="#educate-leadership-teams" id="toc-educate-leadership-teams" class="nav-link" data-scroll-target="#educate-leadership-teams"><span class="header-section-number">4.1.3</span> Educate Leadership Teams</a></li>
+  <li><a href="#identify-potential-use-cases" id="toc-identify-potential-use-cases" class="nav-link" data-scroll-target="#identify-potential-use-cases"><span class="header-section-number">4.1.4</span> Identify Potential Use Cases</a></li>
+  <li><a href="#craft-a-communication-strategy" id="toc-craft-a-communication-strategy" class="nav-link" data-scroll-target="#craft-a-communication-strategy"><span class="header-section-number">4.1.5</span> Craft a Communication Strategy</a></li>
+  <li><a href="#prepare-and-integrate-high-value-proprietary-datasets" id="toc-prepare-and-integrate-high-value-proprietary-datasets" class="nav-link" data-scroll-target="#prepare-and-integrate-high-value-proprietary-datasets"><span class="header-section-number">4.1.6</span> Prepare and Integrate High-Value Proprietary Datasets</a></li>
+  <li><a href="#create-employee-training-and-support" id="toc-create-employee-training-and-support" class="nav-link" data-scroll-target="#create-employee-training-and-support"><span class="header-section-number">4.1.7</span> Create Employee Training and Support</a></li>
+  <li><a href="#monitor-progress-and-impact" id="toc-monitor-progress-and-impact" class="nav-link" data-scroll-target="#monitor-progress-and-impact"><span class="header-section-number">4.1.8</span> Monitor Progress and Impact</a></li>
+  <li><a href="#develop-continuous-improvement-and-adaptation" id="toc-develop-continuous-improvement-and-adaptation" class="nav-link" data-scroll-target="#develop-continuous-improvement-and-adaptation"><span class="header-section-number">4.1.9</span> Develop Continuous Improvement and Adaptation</a></li>
+  <li><a href="#recognize-document-and-build-processes-to-address-ethical-considerations" id="toc-recognize-document-and-build-processes-to-address-ethical-considerations" class="nav-link" data-scroll-target="#recognize-document-and-build-processes-to-address-ethical-considerations"><span class="header-section-number">4.1.10</span> Recognize, Document, and Build Processes to Address Ethical Considerations</a></li>
   </ul></li>
   </ul>
 <div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/seandavi/campus-llm-kb/edit/main/implementation.qmd" class="toc-action">Edit this page</a></p></div></div></nav>
@@ -334,7 +349,7 @@ div.csl-indent {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">A Framework for Implementing AI and Large Language Models</span></h1>
+<h1 class="title"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Domain Implementation Guide</span></h1>
 </div>
 
 
@@ -342,9 +357,10 @@ div.csl-indent {
 <div class="quarto-title-meta">
 
     <div>
-    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-heading">Authors</div>
     <div class="quarto-title-meta-contents">
-             <p>Sean </p>
+             <p>Sean Davis </p>
+             <p>Stefan Lindegaard </p>
           </div>
   </div>
     
@@ -361,479 +377,48 @@ div.csl-indent {
 
 </header>
 
-<p>In order to successfully integrate AI and Large Language Models into an academic medical system, it is essential to adopt a flexible and agile approach that accounts for the varying pacing, priorities, and levels of risk associated with different aspects of the institution. By organizing the implementation plan into distinct domains and workstreams (see <a href="#fig-framework">Figure&nbsp;<span>13.1</span></a>), we can address the unique requirements of each area, ensuring that resources are allocated effectively and progress is made at an appropriate pace. This structure also enables rapid adaptation to changing circumstances, allowing for seamless collaboration between various teams and promoting a proactive response to any challenges that may arise. Ultimately, the use of domains and workstreams fosters a comprehensive and resilient approach to AI integration, maximizing the potential benefits while minimizing potential risks across the entire academic medical system.</p>
-<div class="cell">
-<div class="cell-output-display">
-<div id="fig-framework" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<div>
-<svg width="672" height="480" viewbox="0.00 0.00 1074.20 679.20" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" style="; max-width: none; max-height: none">
-<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(216 643.2)"> <polygon fill="white" stroke="transparent" points="-216,36 -216,-643.2 858.2,-643.2 858.2,36 -216,36"></polygon> <!-- ED --> <g id="node1" class="node">
-<title>
-ED
-</title>
-<path fill="lightblue" stroke="black" d="M291.19,-596.2C291.19,-596.2 214.23,-596.2 214.23,-596.2 208.23,-596.2 202.23,-590.2 202.23,-584.2 202.23,-584.2 202.23,-559 202.23,-559 202.23,-553 208.23,-547 214.23,-547 214.23,-547 291.19,-547 291.19,-547 297.19,-547 303.19,-553 303.19,-559 303.19,-559 303.19,-584.2 303.19,-584.2 303.19,-590.2 297.19,-596.2 291.19,-596.2"></path> <text text-anchor="middle" x="252.71" y="-566.2" font-family="Helvetica,Arial,sans-serif" font-size="18.00">Education</text> </g> <!-- RE --> <g id="node2" class="node">
-<title>
-RE
-</title>
-<path fill="lightblue" stroke="black" d="M402.67,-596.2C402.67,-596.2 332.75,-596.2 332.75,-596.2 326.75,-596.2 320.75,-590.2 320.75,-584.2 320.75,-584.2 320.75,-559 320.75,-559 320.75,-553 326.75,-547 332.75,-547 332.75,-547 402.67,-547 402.67,-547 408.67,-547 414.67,-553 414.67,-559 414.67,-559 414.67,-584.2 414.67,-584.2 414.67,-590.2 408.67,-596.2 402.67,-596.2"></path> <text text-anchor="middle" x="367.71" y="-566.2" font-family="Helvetica,Arial,sans-serif" font-size="18.00">Research</text> </g> <!-- ED&#45;&#45;RE --> <g id="edge21" class="edge">
-<title>
-ED–RE
-</title>
-<path fill="none" stroke="dimgrey" stroke-dasharray="5,2" d="M303.47,-571.6C309.16,-571.6 314.85,-571.6 320.53,-571.6"></path> </g> <!-- A1 --> <g id="node10" class="node">
-<title>
-A1
-</title>
-<ellipse fill="lightgreen" stroke="black" cx="252.71" cy="-464.4" rx="27" ry="20.16"></ellipse> <text text-anchor="middle" x="252.71" y="-460.8" font-family="Helvetica,Arial,sans-serif" font-size="12.00">A1</text> </g> <!-- ED&#45;&#45;A1 --> <g id="edge1" class="edge">
-<title>
-ED–A1
-</title>
-<path fill="none" stroke="dimgrey" stroke-dasharray="5,2" d="M252.71,-546.99C252.71,-528.21 252.71,-502.26 252.71,-484.71"></path> </g> <!-- CL --> <g id="node3" class="node">
-<title>
-CL
-</title>
-<path fill="lightblue" stroke="black" d="M505.2,-596.2C505.2,-596.2 444.22,-596.2 444.22,-596.2 438.22,-596.2 432.22,-590.2 432.22,-584.2 432.22,-584.2 432.22,-559 432.22,-559 432.22,-553 438.22,-547 444.22,-547 444.22,-547 505.2,-547 505.2,-547 511.2,-547 517.2,-553 517.2,-559 517.2,-559 517.2,-584.2 517.2,-584.2 517.2,-590.2 511.2,-596.2 505.2,-596.2"></path> <text text-anchor="middle" x="474.71" y="-566.2" font-family="Helvetica,Arial,sans-serif" font-size="18.00">Clinical</text> </g> <!-- RE&#45;&#45;CL --> <g id="edge22" class="edge">
-<title>
-RE–CL
-</title>
-<path fill="none" stroke="dimgrey" stroke-dasharray="5,2" d="M414.94,-571.6C420.7,-571.6 426.46,-571.6 432.22,-571.6"></path> </g> <!-- B1 --> <g id="node15" class="node">
-<title>
-B1
-</title>
-<ellipse fill="lightgreen" stroke="black" cx="367.71" cy="-464.4" rx="27" ry="20.16"></ellipse> <text text-anchor="middle" x="367.71" y="-460.8" font-family="Helvetica,Arial,sans-serif" font-size="12.00">B1</text> </g> <!-- RE&#45;&#45;B1 --> <g id="edge6" class="edge">
-<title>
-RE–B1
-</title>
-<path fill="none" stroke="dimgrey" stroke-dasharray="5,2" d="M367.71,-546.99C367.71,-528.21 367.71,-502.26 367.71,-484.71"></path> </g> <!-- BU --> <g id="node4" class="node">
-<title>
-BU
-</title>
-<path fill="lightblue" stroke="black" d="M630.19,-607.3C630.19,-607.3 547.23,-607.3 547.23,-607.3 541.23,-607.3 535.23,-601.3 535.23,-595.3 535.23,-595.3 535.23,-547.9 535.23,-547.9 535.23,-541.9 541.23,-535.9 547.23,-535.9 547.23,-535.9 630.19,-535.9 630.19,-535.9 636.19,-535.9 642.19,-541.9 642.19,-547.9 642.19,-547.9 642.19,-595.3 642.19,-595.3 642.19,-601.3 636.19,-607.3 630.19,-607.3"></path> <text text-anchor="middle" x="588.71" y="-577" font-family="Helvetica,Arial,sans-serif" font-size="18.00">Business</text> <text text-anchor="middle" x="588.71" y="-555.4" font-family="Helvetica,Arial,sans-serif" font-size="18.00">Operations</text> </g> <!-- CL&#45;&#45;BU --> <g id="edge23" class="edge">
-<title>
-CL–BU
-</title>
-<path fill="none" stroke="dimgrey" stroke-dasharray="5,2" d="M517.46,-571.6C523.3,-571.6 529.15,-571.6 534.99,-571.6"></path> </g> <!-- C1 --> <g id="node20" class="node">
-<title>
-C1
-</title>
-<ellipse fill="lightgreen" stroke="black" cx="474.71" cy="-464.4" rx="27" ry="20.16"></ellipse> <text text-anchor="middle" x="474.71" y="-460.8" font-family="Helvetica,Arial,sans-serif" font-size="12.00">C1</text> </g> <!-- CL&#45;&#45;C1 --> <g id="edge11" class="edge">
-<title>
-CL–C1
-</title>
-<path fill="none" stroke="dimgrey" stroke-dasharray="5,2" d="M474.71,-546.99C474.71,-528.21 474.71,-502.26 474.71,-484.71"></path> </g> <!-- D1 --> <g id="node25" class="node">
-<title>
-D1
-</title>
-<ellipse fill="lightgreen" stroke="black" cx="588.71" cy="-464.4" rx="27" ry="20.16"></ellipse> <text text-anchor="middle" x="588.71" y="-460.8" font-family="Helvetica,Arial,sans-serif" font-size="12.00">D1</text> </g> <!-- BU&#45;&#45;D1 --> <g id="edge16" class="edge">
-<title>
-BU–D1
-</title>
-<path fill="none" stroke="dimgrey" stroke-dasharray="5,2" d="M588.71,-535.86C588.71,-518.87 588.71,-499.04 588.71,-484.76"></path> </g> <!-- DA --> <g id="node5" class="node">
-<title>
-DA
-</title>
-<path fill="orange" stroke="black" d="M195.67,-500.1C195.67,-500.1 101.75,-500.1 101.75,-500.1 95.75,-500.1 89.75,-494.1 89.75,-488.1 89.75,-488.1 89.75,-440.7 89.75,-440.7 89.75,-434.7 95.75,-428.7 101.75,-428.7 101.75,-428.7 195.67,-428.7 195.67,-428.7 201.67,-428.7 207.67,-434.7 207.67,-440.7 207.67,-440.7 207.67,-488.1 207.67,-488.1 207.67,-494.1 201.67,-500.1 195.67,-500.1"></path> <text text-anchor="middle" x="148.71" y="-469.8" font-family="Helvetica,Arial,sans-serif" font-size="18.00">Data Access</text> <text text-anchor="middle" x="148.71" y="-448.2" font-family="Helvetica,Arial,sans-serif" font-size="18.00">&amp; Use</text> </g> <!-- DA&#45;&#45;A1 --> <g id="edge24" class="edge">
-<title>
-DA–A1
-</title>
-<path fill="none" stroke="dimgrey" stroke-dasharray="5,2" d="M207.62,-464.4C213.61,-464.4 219.59,-464.4 225.58,-464.4"></path> </g> <!-- IT --> <g id="node6" class="node">
-<title>
-IT
-</title>
-<path fill="orange" stroke="black" d="M196.16,-392.9C196.16,-392.9 75.26,-392.9 75.26,-392.9 69.26,-392.9 63.26,-386.9 63.26,-380.9 63.26,-380.9 63.26,-333.5 63.26,-333.5 63.26,-327.5 69.26,-321.5 75.26,-321.5 75.26,-321.5 196.16,-321.5 196.16,-321.5 202.16,-321.5 208.16,-327.5 208.16,-333.5 208.16,-333.5 208.16,-380.9 208.16,-380.9 208.16,-386.9 202.16,-392.9 196.16,-392.9"></path> <text text-anchor="middle" x="135.71" y="-362.6" font-family="Helvetica,Arial,sans-serif" font-size="18.00">IT, Security</text> <text text-anchor="middle" x="135.71" y="-341" font-family="Helvetica,Arial,sans-serif" font-size="18.00">&amp; Infrastructure</text> </g> <!-- A2 --> <g id="node11" class="node">
-<title>
-A2
-</title>
-<ellipse fill="lightgreen" stroke="black" cx="252.71" cy="-357.2" rx="27" ry="20.16"></ellipse> <text text-anchor="middle" x="252.71" y="-353.6" font-family="Helvetica,Arial,sans-serif" font-size="12.00">A2</text> </g> <!-- IT&#45;&#45;A2 --> <g id="edge28" class="edge">
-<title>
-IT–A2
-</title>
-<path fill="none" stroke="dimgrey" stroke-dasharray="5,2" d="M208.38,-357.2C214.15,-357.2 219.92,-357.2 225.7,-357.2"></path> </g> <!-- ELSI --> <g id="node7" class="node">
-<title>
-ELSI
-</title>
-<path fill="orange" stroke="black" d="M195.66,-285.7C195.66,-285.7 85.76,-285.7 85.76,-285.7 79.76,-285.7 73.76,-279.7 73.76,-273.7 73.76,-273.7 73.76,-226.3 73.76,-226.3 73.76,-220.3 79.76,-214.3 85.76,-214.3 85.76,-214.3 195.66,-214.3 195.66,-214.3 201.66,-214.3 207.66,-220.3 207.66,-226.3 207.66,-226.3 207.66,-273.7 207.66,-273.7 207.66,-279.7 201.66,-285.7 195.66,-285.7"></path> <text text-anchor="middle" x="140.71" y="-255.4" font-family="Helvetica,Arial,sans-serif" font-size="18.00">Ethical, Legal,</text> <text text-anchor="middle" x="140.71" y="-233.8" font-family="Helvetica,Arial,sans-serif" font-size="18.00">&amp; Social</text> </g> <!-- A3 --> <g id="node12" class="node">
-<title>
-A3
-</title>
-<ellipse fill="lightgreen" stroke="black" cx="252.71" cy="-250" rx="27" ry="20.16"></ellipse> <text text-anchor="middle" x="252.71" y="-246.4" font-family="Helvetica,Arial,sans-serif" font-size="12.00">A3</text> </g> <!-- ELSI&#45;&#45;A3 --> <g id="edge32" class="edge">
-<title>
-ELSI–A3
-</title>
-<path fill="none" stroke="dimgrey" stroke-dasharray="5,2" d="M207.65,-250C213.63,-250 219.62,-250 225.6,-250"></path> </g> <!-- WD --> <g id="node8" class="node">
-<title>
-WD
-</title>
-<path fill="orange" stroke="black" d="M195.63,-178.5C195.63,-178.5 11.79,-178.5 11.79,-178.5 5.79,-178.5 -0.21,-172.5 -0.21,-166.5 -0.21,-166.5 -0.21,-119.1 -0.21,-119.1 -0.21,-113.1 5.79,-107.1 11.79,-107.1 11.79,-107.1 195.63,-107.1 195.63,-107.1 201.63,-107.1 207.63,-113.1 207.63,-119.1 207.63,-119.1 207.63,-166.5 207.63,-166.5 207.63,-172.5 201.63,-178.5 195.63,-178.5"></path> <text text-anchor="middle" x="103.71" y="-148.2" font-family="Helvetica,Arial,sans-serif" font-size="18.00">Training &amp;</text> <text text-anchor="middle" x="103.71" y="-126.6" font-family="Helvetica,Arial,sans-serif" font-size="18.00">Workforce Development</text> </g> <!-- A4 --> <g id="node13" class="node">
-<title>
-A4
-</title>
-<ellipse fill="lightgreen" stroke="black" cx="252.71" cy="-142.8" rx="27" ry="20.16"></ellipse> <text text-anchor="middle" x="252.71" y="-139.2" font-family="Helvetica,Arial,sans-serif" font-size="12.00">A4</text> </g> <!-- WD&#45;&#45;A4 --> <g id="edge36" class="edge">
-<title>
-WD–A4
-</title>
-<path fill="none" stroke="dimgrey" stroke-dasharray="5,2" d="M207.6,-142.8C213.59,-142.8 219.58,-142.8 225.58,-142.8"></path> </g> <!-- OWN --> <g id="node9" class="node">
-<title>
-OWN
-</title>
-<path fill="orange" stroke="black" d="M196.21,-71.3C196.21,-71.3 41.21,-71.3 41.21,-71.3 35.21,-71.3 29.21,-65.3 29.21,-59.3 29.21,-59.3 29.21,-11.9 29.21,-11.9 29.21,-5.9 35.21,0.1 41.21,0.1 41.21,0.1 196.21,0.1 196.21,0.1 202.21,0.1 208.21,-5.9 208.21,-11.9 208.21,-11.9 208.21,-59.3 208.21,-59.3 208.21,-65.3 202.21,-71.3 196.21,-71.3"></path> <text text-anchor="middle" x="118.71" y="-41" font-family="Helvetica,Arial,sans-serif" font-size="18.00">Project Management</text> <text text-anchor="middle" x="118.71" y="-19.4" font-family="Helvetica,Arial,sans-serif" font-size="18.00">&amp; Support Personnel</text> </g> <!-- A5 --> <g id="node14" class="node">
-<title>
-A5
-</title>
-<ellipse fill="lightgreen" stroke="black" cx="252.71" cy="-35.6" rx="27" ry="20.16"></ellipse> <text text-anchor="middle" x="252.71" y="-32" font-family="Helvetica,Arial,sans-serif" font-size="12.00">A5</text> </g> <!-- OWN&#45;&#45;A5 --> <g id="edge40" class="edge">
-<title>
-OWN–A5
-</title>
-<path fill="none" stroke="dimgrey" stroke-dasharray="5,2" d="M208.22,-35.6C214.01,-35.6 219.8,-35.6 225.6,-35.6"></path> </g> <!-- A1&#45;&#45;A2 --> <g id="edge2" class="edge">
-<title>
-A1–A2
-</title>
-<path fill="none" stroke="dimgrey" stroke-dasharray="5,2" d="M252.71,-444.1C252.71,-425.12 252.71,-396.31 252.71,-377.37"></path> </g> <!-- A1&#45;&#45;B1 --> <g id="edge25" class="edge">
-<title>
-A1–B1
-</title>
-<path fill="none" stroke="dimgrey" stroke-dasharray="5,2" d="M280.11,-464.4C300.3,-464.4 320.49,-464.4 340.68,-464.4"></path> </g> <!-- A2&#45;&#45;A3 --> <g id="edge3" class="edge">
-<title>
-A2–A3
-</title>
-<path fill="none" stroke="dimgrey" stroke-dasharray="5,2" d="M252.71,-336.9C252.71,-317.92 252.71,-289.11 252.71,-270.17"></path> </g> <!-- B2 --> <g id="node16" class="node">
-<title>
-B2
-</title>
-<ellipse fill="lightgreen" stroke="black" cx="367.71" cy="-357.2" rx="27" ry="20.16"></ellipse> <text text-anchor="middle" x="367.71" y="-353.6" font-family="Helvetica,Arial,sans-serif" font-size="12.00">B2</text> </g> <!-- A2&#45;&#45;B2 --> <g id="edge29" class="edge">
-<title>
-A2–B2
-</title>
-<path fill="none" stroke="dimgrey" stroke-dasharray="5,2" d="M280.11,-357.2C300.3,-357.2 320.49,-357.2 340.68,-357.2"></path> </g> <!-- A3&#45;&#45;A4 --> <g id="edge4" class="edge">
-<title>
-A3–A4
-</title>
-<path fill="none" stroke="dimgrey" stroke-dasharray="5,2" d="M252.71,-229.7C252.71,-210.72 252.71,-181.91 252.71,-162.97"></path> </g> <!-- B3 --> <g id="node17" class="node">
-<title>
-B3
-</title>
-<ellipse fill="lightgreen" stroke="black" cx="367.71" cy="-250" rx="27" ry="20.16"></ellipse> <text text-anchor="middle" x="367.71" y="-246.4" font-family="Helvetica,Arial,sans-serif" font-size="12.00">B3</text> </g> <!-- A3&#45;&#45;B3 --> <g id="edge33" class="edge">
-<title>
-A3–B3
-</title>
-<path fill="none" stroke="dimgrey" stroke-dasharray="5,2" d="M280.11,-250C300.3,-250 320.49,-250 340.68,-250"></path> </g> <!-- A4&#45;&#45;A5 --> <g id="edge5" class="edge">
-<title>
-A4–A5
-</title>
-<path fill="none" stroke="dimgrey" stroke-dasharray="5,2" d="M252.71,-122.5C252.71,-103.52 252.71,-74.71 252.71,-55.77"></path> </g> <!-- B4 --> <g id="node18" class="node">
-<title>
-B4
-</title>
-<ellipse fill="lightgreen" stroke="black" cx="367.71" cy="-142.8" rx="27" ry="20.16"></ellipse> <text text-anchor="middle" x="367.71" y="-139.2" font-family="Helvetica,Arial,sans-serif" font-size="12.00">B4</text> </g> <!-- A4&#45;&#45;B4 --> <g id="edge37" class="edge">
-<title>
-A4–B4
-</title>
-<path fill="none" stroke="dimgrey" stroke-dasharray="5,2" d="M280.11,-142.8C300.3,-142.8 320.49,-142.8 340.68,-142.8"></path> </g> <!-- B5 --> <g id="node19" class="node">
-<title>
-B5
-</title>
-<ellipse fill="lightgreen" stroke="black" cx="367.71" cy="-35.6" rx="27" ry="20.16"></ellipse> <text text-anchor="middle" x="367.71" y="-32" font-family="Helvetica,Arial,sans-serif" font-size="12.00">B5</text> </g> <!-- A5&#45;&#45;B5 --> <g id="edge41" class="edge">
-<title>
-A5–B5
-</title>
-<path fill="none" stroke="dimgrey" stroke-dasharray="5,2" d="M280.11,-35.6C300.3,-35.6 320.49,-35.6 340.68,-35.6"></path> </g> <!-- B1&#45;&#45;B2 --> <g id="edge7" class="edge">
-<title>
-B1–B2
-</title>
-<path fill="none" stroke="dimgrey" stroke-dasharray="5,2" d="M367.71,-444.1C367.71,-425.12 367.71,-396.31 367.71,-377.37"></path> </g> <!-- B1&#45;&#45;C1 --> <g id="edge26" class="edge">
-<title>
-B1–C1
-</title>
-<path fill="none" stroke="dimgrey" stroke-dasharray="5,2" d="M394.88,-464.4C412.45,-464.4 430.01,-464.4 447.58,-464.4"></path> </g> <!-- B2&#45;&#45;B3 --> <g id="edge8" class="edge">
-<title>
-B2–B3
-</title>
-<path fill="none" stroke="dimgrey" stroke-dasharray="5,2" d="M367.71,-336.9C367.71,-317.92 367.71,-289.11 367.71,-270.17"></path> </g> <!-- C2 --> <g id="node21" class="node">
-<title>
-C2
-</title>
-<ellipse fill="lightgreen" stroke="black" cx="474.71" cy="-357.2" rx="27" ry="20.16"></ellipse> <text text-anchor="middle" x="474.71" y="-353.6" font-family="Helvetica,Arial,sans-serif" font-size="12.00">C2</text> </g> <!-- B2&#45;&#45;C2 --> <g id="edge30" class="edge">
-<title>
-B2–C2
-</title>
-<path fill="none" stroke="dimgrey" stroke-dasharray="5,2" d="M394.88,-357.2C412.45,-357.2 430.01,-357.2 447.58,-357.2"></path> </g> <!-- B3&#45;&#45;B4 --> <g id="edge9" class="edge">
-<title>
-B3–B4
-</title>
-<path fill="none" stroke="dimgrey" stroke-dasharray="5,2" d="M367.71,-229.7C367.71,-210.72 367.71,-181.91 367.71,-162.97"></path> </g> <!-- C3 --> <g id="node22" class="node">
-<title>
-C3
-</title>
-<ellipse fill="lightgreen" stroke="black" cx="474.71" cy="-250" rx="27" ry="20.16"></ellipse> <text text-anchor="middle" x="474.71" y="-246.4" font-family="Helvetica,Arial,sans-serif" font-size="12.00">C3</text> </g> <!-- B3&#45;&#45;C3 --> <g id="edge34" class="edge">
-<title>
-B3–C3
-</title>
-<path fill="none" stroke="dimgrey" stroke-dasharray="5,2" d="M394.88,-250C412.45,-250 430.01,-250 447.58,-250"></path> </g> <!-- B4&#45;&#45;B5 --> <g id="edge10" class="edge">
-<title>
-B4–B5
-</title>
-<path fill="none" stroke="dimgrey" stroke-dasharray="5,2" d="M367.71,-122.5C367.71,-103.52 367.71,-74.71 367.71,-55.77"></path> </g> <!-- C4 --> <g id="node23" class="node">
-<title>
-C4
-</title>
-<ellipse fill="lightgreen" stroke="black" cx="474.71" cy="-142.8" rx="27" ry="20.16"></ellipse> <text text-anchor="middle" x="474.71" y="-139.2" font-family="Helvetica,Arial,sans-serif" font-size="12.00">C4</text> </g> <!-- B4&#45;&#45;C4 --> <g id="edge38" class="edge">
-<title>
-B4–C4
-</title>
-<path fill="none" stroke="dimgrey" stroke-dasharray="5,2" d="M394.88,-142.8C412.45,-142.8 430.01,-142.8 447.58,-142.8"></path> </g> <!-- C5 --> <g id="node24" class="node">
-<title>
-C5
-</title>
-<ellipse fill="lightgreen" stroke="black" cx="474.71" cy="-35.6" rx="27" ry="20.16"></ellipse> <text text-anchor="middle" x="474.71" y="-32" font-family="Helvetica,Arial,sans-serif" font-size="12.00">C5</text> </g> <!-- B5&#45;&#45;C5 --> <g id="edge42" class="edge">
-<title>
-B5–C5
-</title>
-<path fill="none" stroke="dimgrey" stroke-dasharray="5,2" d="M394.88,-35.6C412.45,-35.6 430.01,-35.6 447.58,-35.6"></path> </g> <!-- C1&#45;&#45;C2 --> <g id="edge12" class="edge">
-<title>
-C1–C2
-</title>
-<path fill="none" stroke="dimgrey" stroke-dasharray="5,2" d="M474.71,-444.1C474.71,-425.12 474.71,-396.31 474.71,-377.37"></path> </g> <!-- C1&#45;&#45;D1 --> <g id="edge27" class="edge">
-<title>
-C1–D1
-</title>
-<path fill="none" stroke="dimgrey" stroke-dasharray="5,2" d="M501.87,-464.4C521.77,-464.4 541.67,-464.4 561.57,-464.4"></path> </g> <!-- C2&#45;&#45;C3 --> <g id="edge13" class="edge">
-<title>
-C2–C3
-</title>
-<path fill="none" stroke="dimgrey" stroke-dasharray="5,2" d="M474.71,-336.9C474.71,-317.92 474.71,-289.11 474.71,-270.17"></path> </g> <!-- D2 --> <g id="node26" class="node">
-<title>
-D2
-</title>
-<ellipse fill="lightgreen" stroke="black" cx="588.71" cy="-357.2" rx="27" ry="20.16"></ellipse> <text text-anchor="middle" x="588.71" y="-353.6" font-family="Helvetica,Arial,sans-serif" font-size="12.00">D2</text> </g> <!-- C2&#45;&#45;D2 --> <g id="edge31" class="edge">
-<title>
-C2–D2
-</title>
-<path fill="none" stroke="dimgrey" stroke-dasharray="5,2" d="M501.87,-357.2C521.77,-357.2 541.67,-357.2 561.57,-357.2"></path> </g> <!-- C3&#45;&#45;C4 --> <g id="edge14" class="edge">
-<title>
-C3–C4
-</title>
-<path fill="none" stroke="dimgrey" stroke-dasharray="5,2" d="M474.71,-229.7C474.71,-210.72 474.71,-181.91 474.71,-162.97"></path> </g> <!-- D3 --> <g id="node27" class="node">
-<title>
-D3
-</title>
-<ellipse fill="lightgreen" stroke="black" cx="588.71" cy="-250" rx="27" ry="20.16"></ellipse> <text text-anchor="middle" x="588.71" y="-246.4" font-family="Helvetica,Arial,sans-serif" font-size="12.00">D3</text> </g> <!-- C3&#45;&#45;D3 --> <g id="edge35" class="edge">
-<title>
-C3–D3
-</title>
-<path fill="none" stroke="dimgrey" stroke-dasharray="5,2" d="M501.87,-250C521.77,-250 541.67,-250 561.57,-250"></path> </g> <!-- C4&#45;&#45;C5 --> <g id="edge15" class="edge">
-<title>
-C4–C5
-</title>
-<path fill="none" stroke="dimgrey" stroke-dasharray="5,2" d="M474.71,-122.5C474.71,-103.52 474.71,-74.71 474.71,-55.77"></path> </g> <!-- D4 --> <g id="node28" class="node">
-<title>
-D4
-</title>
-<ellipse fill="lightgreen" stroke="black" cx="588.71" cy="-142.8" rx="27" ry="20.16"></ellipse> <text text-anchor="middle" x="588.71" y="-139.2" font-family="Helvetica,Arial,sans-serif" font-size="12.00">D4</text> </g> <!-- C4&#45;&#45;D4 --> <g id="edge39" class="edge">
-<title>
-C4–D4
-</title>
-<path fill="none" stroke="dimgrey" stroke-dasharray="5,2" d="M501.87,-142.8C521.77,-142.8 541.67,-142.8 561.57,-142.8"></path> </g> <!-- D5 --> <g id="node29" class="node">
-<title>
-D5
-</title>
-<ellipse fill="lightgreen" stroke="black" cx="588.71" cy="-35.6" rx="27" ry="20.16"></ellipse> <text text-anchor="middle" x="588.71" y="-32" font-family="Helvetica,Arial,sans-serif" font-size="12.00">D5</text> </g> <!-- C5&#45;&#45;D5 --> <g id="edge43" class="edge">
-<title>
-C5–D5
-</title>
-<path fill="none" stroke="dimgrey" stroke-dasharray="5,2" d="M501.87,-35.6C521.77,-35.6 541.67,-35.6 561.57,-35.6"></path> </g> <!-- D1&#45;&#45;D2 --> <g id="edge17" class="edge">
-<title>
-D1–D2
-</title>
-<path fill="none" stroke="dimgrey" stroke-dasharray="5,2" d="M588.71,-444.1C588.71,-425.12 588.71,-396.31 588.71,-377.37"></path> </g> <!-- D2&#45;&#45;D3 --> <g id="edge18" class="edge">
-<title>
-D2–D3
-</title>
-<path fill="none" stroke="dimgrey" stroke-dasharray="5,2" d="M588.71,-336.9C588.71,-317.92 588.71,-289.11 588.71,-270.17"></path> </g> <!-- D3&#45;&#45;D4 --> <g id="edge19" class="edge">
-<title>
-D3–D4
-</title>
-<path fill="none" stroke="dimgrey" stroke-dasharray="5,2" d="M588.71,-229.7C588.71,-210.72 588.71,-181.91 588.71,-162.97"></path> </g> <!-- D4&#45;&#45;D5 --> <g id="edge20" class="edge">
-<title>
-D4–D5
-</title>
-<path fill="none" stroke="dimgrey" stroke-dasharray="5,2" d="M588.71,-122.5C588.71,-103.52 588.71,-74.71 588.71,-55.77"></path> </g> </g>
-</svg>
-</div>
-<figcaption class="figure-caption">Figure&nbsp;13.1: A schematic framework for organizing workstreams (orange boxes), domains (blue boxes), and work products and tasks (green ovals). Domains (vertical dimension) capture semi-independent organizations, each with largely independent use cases, budgets and business plans, priorities, and leadership. The workstreams (horizontal dimension) will often require similar or overlapping expertise, and can serve as knowledge resources to provide synergy and uniformity in implementation across domains.</figcaption>
-</figure>
-</div>
-</div>
-</div>
-<section id="domains" class="level2" data-number="13.1">
-<h2 data-number="13.1" class="anchored" data-anchor-id="domains"><span class="header-section-number">13.1</span> Domains</h2>
-<p>The implementation plan for integrating AI and Large Language Models into an academic medical system consists of four main domains:</p>
-<ul>
-<li><dl>
-<dt>Education</dt>
-<dd>
-This domain includes all activities related to teaching, learning, and evaluation within the institution. It also encompasses the development of new educational programs and the management of existing ones.
-</dd>
-</dl></li>
-<li><dl>
-<dt>Research</dt>
-<dd>
-This domain focuses on the practice of the basic, clinical, and translational research programs within the institution. In addition, it includes the management of research grants, the development of new research programs, and the dissemination of research findings.
-</dd>
-</dl></li>
-<li><dl>
-<dt>Clinical</dt>
-<dd>
-This domain encompasses all activities related to patient care, including the management and implementation of clinical services, decision support and clinical decision-making, automation, and point-of-care or electronic patient support.
-</dd>
-</dl></li>
-<li><dl>
-<dt>Business Operations</dt>
-<dd>
-This domain focuses on the management of the institution’s business operations, including finance, human resources, information technology, and facilities management. It also includes the development of new business processes and the management of existing ones.
-</dd>
-</dl></li>
-</ul>
+<p>Each Domain will work to meet the needs of the campus that align with its community membership and mission. This section provides a rough guide (adapted from <span class="citation" data-cites="lindegaard-vb">Lindegaard (<a href="references.html#ref-lindegaard-vb" role="doc-biblioref">2023</a>)</span>) to implementing a LLM plan within the Domains. Each Domain can work through this guide to develop policies, plans, resources, and deliverables. The combination of cross-domain Workstreams and reporting to the AISC will help to align resource requests and facilitate knowledge sharing, management, and transfer.</p>
+<section id="suggested-tasks" class="level2" data-number="4.1">
+<h2 data-number="4.1" class="anchored" data-anchor-id="suggested-tasks"><span class="header-section-number">4.1</span> Suggested Tasks</h2>
+<section id="establish-ownership-leadership" class="level3" data-number="4.1.1">
+<h3 data-number="4.1.1" class="anchored" data-anchor-id="establish-ownership-leadership"><span class="header-section-number">4.1.1</span> Establish Ownership Leadership</h3>
+<p>Assign the strategic HR or P&amp;O function as the driving force behind ChatGPT implementation. This department needs to become proficient in the technology and subsequently guide the organization through the process of integration. This includes setting the vision, aligning key stakeholders, and ensuring that the implementation aligns with the organization’s strategic goals.</p>
 </section>
-<section id="workstreams" class="level2" data-number="13.2">
-<h2 data-number="13.2" class="anchored" data-anchor-id="workstreams"><span class="header-section-number">13.2</span> Workstreams</h2>
-<p>Within each domain, we have identified five workstreams that are critical for the successful implementation of AI and Large Language Models. These workstreams are:</p>
-<ul>
-<li><dl>
-<dt>Data Access &amp; Use</dt>
-<dd>
-This workstream focuses on managing and optimizing data access, use, and sharing within the academic medical system. It ensures that data is available, reliable, and secure for AI integration and that the necessary infrastructure is in place to support data-driven activities.
-</dd>
-</dl></li>
-<li><dl>
-<dt>IT, Security &amp; Infrastructure</dt>
-<dd>
-This workstream addresses the technical aspects of AI integration, including the development and maintenance of IT systems, ensuring data security, and providing the necessary hardware and software infrastructure to support AI and Large Language Models.
-</dd>
-</dl></li>
-<li><dl>
-<dt>Ethical, Legal, &amp; Social</dt>
-<dd>
-This workstream focuses on the ethical, legal, and social implications of AI integration in the academic medical system with domain-specific focus as appropriate. It aims to ensure that AI is used responsibly and ethically and that any legal and social concerns are addressed proactively.
-</dd>
-</dl></li>
-<li><dl>
-<dt>Training &amp; Workforce Development</dt>
-<dd>
-This workstream is dedicated to developing the skills and knowledge of domain community members (including staff <em>and</em> leadership) within the domain to understand and, where appropriate, to effectively use and manage AI and Large Language Models. It includes training programs, workshops, and other educational opportunities to build competency in AI-related technologies.
-</dd>
-</dl></li>
-<li><dl>
-<dt>Project Management &amp; Support Personnel</dt>
-<dd>
-This workstream is responsible for overseeing the implementation of AI and Large Language Models across the four domains. It includes project management and support staff who work collaboratively to ensure that AI integration occurs smoothly and efficiently.
-</dd>
-</dl></li>
-</ul>
-<p>The implementation plan is structured in a way that allows for cross-functional collaboration between the domains and workstreams. This ensures that AI and Large Language Models are integrated cohesively across the entire academic medical system, maximizing the benefits and minimizing potential risks.</p>
+<section id="lean-into-cross-functional-collaboration" class="level3" data-number="4.1.2">
+<h3 data-number="4.1.2" class="anchored" data-anchor-id="lean-into-cross-functional-collaboration"><span class="header-section-number">4.1.2</span> Lean Into Cross-functional Collaboration</h3>
+<p>Form a cross-functional team with representatives from HR, IT, Legal, and other relevant departments to ensure that various perspectives are considered, and organizational needs are met during ChatGPT implementation. This collaboration will help address potential challenges, optimize resources, and facilitate effective knowledge transfer across the organization.</p>
 </section>
-<section id="implementation" class="level1" data-number="14">
-<h1 data-number="14"><span class="header-section-number">14</span> Implementation</h1>
-<p>This section will provide you with a step-by-step guide to implementing ChatGPT within your organization <span class="citation" data-cites="lindegaard-vb">Lindegaard (<a href="references.html#ref-lindegaard-vb" role="doc-biblioref">2023</a>)</span>. It will cover the following topics:</p>
-<ol type="1">
-<li><dl>
-<dt>Ownership &amp; Leadership</dt>
-<dd>
-Assign the strategic HR or P&amp;O function as the driving force behind ChatGPT implementation. This department needs to become proficient in the technology and subsequently guide the organization through the process of integration. This includes setting the vision, aligning key stakeholders, and ensuring that the implementation aligns with the organization’s strategic goals.
-</dd>
-</dl></li>
-<li><dl>
-<dt>Cross-functional Collaboration</dt>
-<dd>
-Form a cross-functional team with representatives from HR, IT, Legal, and other relevant departments to ensure that various perspectives are considered, and organizational needs are met during ChatGPT implementation. This collaboration will help address potential challenges, optimize resources, and facilitate effective knowledge transfer across the organization.
-</dd>
-</dl></li>
-<li><dl>
-<dt>Educating Leadership Teams</dt>
-<dd>
-Keep leadership teams informed about ChatGPT to enable swift, informed decision-making. Offer workshops and seminars to provide an in-depth understanding of the technology, its potential benefits, and its limitations. This empowers them to make quick, informed decisions that will shape the organization’s adoption and use of the technology.
-</dd>
-</dl></li>
-<li><dl>
-<dt>Identifying Potential Use Cases</dt>
-<dd>
-Map potential applications across all functions and establish a cohesive implementation plan. Conduct thorough analyses of business processes and functions to identify areas where ChatGPT can bring significant value, prioritize these use cases, and create a detailed roadmap for implementation, including timelines and milestones.
-</dd>
-</dl></li>
-<li><dl>
-<dt>Crafting a Communication Strategy</dt>
-<dd>
-Develop a comprehensive communication strategy that addresses employee concerns and questions about the implementation of ChatGPT. This approach should be transparent, informative, and reassuring to ensure a smooth transition. It should also highlight the benefits of the technology and address potential misconceptions.
-</dd>
-</dl></li>
-<li><dl>
-<dt>Integration with Proprietary Datasets</dt>
-<dd>
-Build APIs and interfaces to combine ChatGPT with organization-specific data for improved innovation and efficiency. Invest in the development of custom solutions that seamlessly integrate ChatGPT with existing systems, databases, and workflows to fully harness the potential of the technology.
-</dd>
-</dl></li>
-<li><dl>
-<dt>Employee Training and Support</dt>
-<dd>
-Provide comprehensive training programs for employees to effectively use ChatGPT in their daily work. Offer hands-on workshops, e-learning modules, and on-the-job training to equip employees with the skills and knowledge necessary to use ChatGPT effectively. Provide ongoing support and resources to help employees adapt to the new technology and address any challenges they may face.
-</dd>
-</dl></li>
-<li><dl>
-<dt>Monitoring Performance and Impact</dt>
-<dd>
-Regularly assess the performance of ChatGPT within the organization and evaluate its impact on specific use cases. Develop key performance indicators (KPIs) and metrics to track the technology’s effectiveness, and use this data to inform future improvements and adaptations.
-</dd>
-</dl></li>
-<li><dl>
-<dt>Continuous Improvement and Adaptation</dt>
-<dd>
-Stay current with AI advancements and adapt ChatGPT implementation to maximize benefits. The AI landscape is constantly evolving, and it’s crucial to stay up-to-date with advancements in the field. Continuously evaluate the performance of ChatGPT and be prepared to adapt its implementation to maximize its benefits and stay ahead of the competition.
-</dd>
-</dl></li>
-<li>Ethical Considerations : Develop guidelines for responsible use and educate employees on potential risks and challenges of AI technologies like ChatGPT. Be mindful of the ethical implications of using AI-powered technologies. Develop guidelines and best practices for responsible use, and ensure that employees understand the potential risks and challenges associated with AI, such as algorithmic bias or unintended consequences.</li>
-</ol>
-<section id="barriers-and-obstacles-and-how-to-overcome-them" class="level2" data-number="14.1">
-<h2 data-number="14.1" class="anchored" data-anchor-id="barriers-and-obstacles-and-how-to-overcome-them"><span class="header-section-number">14.1</span> Barriers and Obstacles and How to Overcome Them</h2>
-<p>Inevitably, you will encounter barriers and obstacles during your ChatGPT implementation journey. Recognizing these challenges and understanding how to overcome them is essential to ensure a successful adoption.&nbsp;</p>
-<p>In this section, we will discuss the most common hurdles and provide strategies for navigating them, empowering you to lead your organization through the complexities of AI integration.</p>
-<p><em>Resistance to Change</em></p>
-<p>Employees and leaders may be resistant to adopting new technologies due to fear of job loss or discomfort with the unknown. To overcome this, emphasize the benefits of ChatGPT, such as increased efficiency and improved decision-making, and provide ample training and support. Encourage open discussions and showcase successful examples of AI adoption.</p>
-<p><em>Lack of Technical Expertise</em></p>
-<p>Limited knowledge of AI and ChatGPT may hinder successful implementation. Address this by investing in training programs, partnering with AI experts, or hiring professionals with relevant experience. Create an internal AI community for knowledge sharing and peer support.</p>
-<p><em>Insufficient Collaboration</em></p>
-<p>Inadequate communication and collaboration between departments can impede progress. Foster cross-functional teamwork through regular meetings, workshops, and collaborative platforms. Encourage leaders to champion the initiative and create a culture of cooperation.</p>
-<p><em>Resource Constraints</em></p>
-<p>Limited budget, time, or personnel can pose challenges. To overcome this, prioritize use cases based on potential impact and feasibility, and secure buy-in from top management for necessary resources. Consider leveraging external partnerships or outsourcing certain tasks to reduce internal workload.</p>
-<p><em>Data Privacy and Security Concerns</em></p>
-<p>Handling sensitive proprietary data may raise concerns. Collaborate closely with IT and Legal departments to establish robust data security protocols and comply with regulations. Communicate these measures transparently to build trust among employees and stakeholders.</p>
-<p><em>Ethical Concerns</em></p>
-<p>The potential for biased or unethical AI outcomes may create apprehension. Develop guidelines for responsible AI usage, create an ethics review board, and offer training on potential risks and challenges. Emphasize the importance of ethical AI practices throughout the organization.</p>
-<p>As you reflect on the potential barriers and obstacles to ChatGPT implementation, remember that overcoming these challenges is an integral part of the journey towards AI-driven success. By anticipating and addressing these issues proactively, you can foster a resilient and adaptable organization that is well-prepared to navigate the ever-evolving landscape of artificial intelligence.</p>
+<section id="educate-leadership-teams" class="level3" data-number="4.1.3">
+<h3 data-number="4.1.3" class="anchored" data-anchor-id="educate-leadership-teams"><span class="header-section-number">4.1.3</span> Educate Leadership Teams</h3>
+<p>Keep leadership teams informed about ChatGPT to enable swift, informed decision-making. Offer workshops and seminars to provide an in-depth understanding of the technology, its potential benefits, and its limitations. This empowers them to make quick, informed decisions that will shape the organization’s adoption and use of the technology.</p>
 </section>
-<section id="overcoming-barriers-and-obstacles" class="level2" data-number="14.2">
-<h2 data-number="14.2" class="anchored" data-anchor-id="overcoming-barriers-and-obstacles"><span class="header-section-number">14.2</span> Overcoming Barriers and Obstacles</h2>
-<p>As you can see above, there are many barriers and obstacles to ChatGPT implementation and overcoming these is crucial for realizing its full potential within your organization.&nbsp;</p>
-<p>In this section, we will provide a combination of conventional and less traditional strategies to address the challenges you might face during the adoption process. By embracing these adaptive approaches, you can foster a culture of adaptability and resilience, enabling your organization to successfully harness the power of AI-driven solutions like ChatGPT.</p>
-<section id="conventional-strategies-for-overcoming-barriers-and-obstacles" class="level3" data-number="14.2.1">
-<h3 data-number="14.2.1" class="anchored" data-anchor-id="conventional-strategies-for-overcoming-barriers-and-obstacles"><span class="header-section-number">14.2.1</span> Conventional Strategies for Overcoming Barriers and Obstacles</h3>
-<ol type="1">
-<li>Resistance to Change: To overcome resistance to change, emphasize the benefits of ChatGPT, provide ample training and support, encourage open discussions, and showcase successful examples of AI adoption.</li>
-<li>Lack of Technical Expertise: Address this by investing in training programs, partnering with AI experts, hiring professionals with relevant experience, and creating an internal AI community for knowledge sharing and peer support.</li>
-<li>Insufficient Collaboration: Foster cross-functional teamwork through regular meetings, workshops, and collaborative platforms, and encourage leaders to champion the initiative and create a culture of cooperation.</li>
-<li>Resource Constraints: Prioritize use cases based on potential impact and feasibility, secure buy-in from top management for necessary resources, and consider leveraging external partnerships or outsourcing certain tasks to reduce internal workload.</li>
-<li>Data Privacy and Security Concerns: Collaborate closely with IT and Legal departments to establish robust data security protocols and comply with regulations, and communicate these measures transparently to build trust among employees and stakeholders.</li>
-<li>Ethical Concerns: Develop guidelines for responsible AI usage, create an ethics review board, and offer training on potential risks and challenges, emphasizing the importance of ethical AI practices throughout the organization.</li>
-</ol>
+<section id="identify-potential-use-cases" class="level3" data-number="4.1.4">
+<h3 data-number="4.1.4" class="anchored" data-anchor-id="identify-potential-use-cases"><span class="header-section-number">4.1.4</span> Identify Potential Use Cases</h3>
+<p>Map potential applications across all functions and establish a cohesive implementation plan. Conduct thorough analyses of business processes and functions to identify areas where ChatGPT can bring significant value, prioritize these use cases, and create a detailed roadmap for implementation, including timelines and milestones.</p>
 </section>
-<section id="unconventional-strategies-for-overcoming-barriers-and-obstacles" class="level3" data-number="14.2.2">
-<h3 data-number="14.2.2" class="anchored" data-anchor-id="unconventional-strategies-for-overcoming-barriers-and-obstacles"><span class="header-section-number">14.2.2</span> Unconventional Strategies for Overcoming Barriers and Obstacles</h3>
-<p>I often find that we need to find “back-doors” and just different approaches in the context of change and transformation projects. Thus, here are some less conventional approaches to the barriers.&nbsp;</p>
-<ol type="1">
-<li>Gamification: Introduce gamification elements to the training and adoption process, incentivizing employees to engage with ChatGPT and learn its capabilities. Offer rewards or recognition for participation and achievements.</li>
-<li>Reverse Mentoring: Encourage younger or more tech-savvy employees to mentor older or less experienced colleagues, facilitating knowledge sharing and promoting a more inclusive approach to technology adoption.</li>
-<li>Innovation Contests: Organize internal contests or hackathons for employees to develop creative ChatGPT use cases or solutions, fostering a sense of ownership and excitement around the technology.</li>
-<li>External Showcasing: Publicly share successful ChatGPT implementation stories or use cases to build a positive reputation, attract talent, and create a culture of innovation within the organization.</li>
-<li>AI Sabbaticals: Offer employees the opportunity to take short-term sabbaticals to focus on AI-related projects or training, providing dedicated time for learning and exploration. This can help develop in-house expertise and promote a culture of continuous learning.</li>
-</ol>
+<section id="craft-a-communication-strategy" class="level3" data-number="4.1.5">
+<h3 data-number="4.1.5" class="anchored" data-anchor-id="craft-a-communication-strategy"><span class="header-section-number">4.1.5</span> Craft a Communication Strategy</h3>
+<p>Develop a comprehensive communication strategy that addresses employee concerns and questions about the implementation of ChatGPT. This approach should be transparent, informative, and reassuring to ensure a smooth transition. It should also highlight the benefits of the technology and address potential misconceptions.</p>
+</section>
+<section id="prepare-and-integrate-high-value-proprietary-datasets" class="level3" data-number="4.1.6">
+<h3 data-number="4.1.6" class="anchored" data-anchor-id="prepare-and-integrate-high-value-proprietary-datasets"><span class="header-section-number">4.1.6</span> Prepare and Integrate High-Value Proprietary Datasets</h3>
+<p>Build APIs and interfaces to combine ChatGPT with organization-specific data for improved innovation and efficiency. Invest in the development of custom solutions that seamlessly integrate ChatGPT with existing systems, databases, and workflows to fully harness the potential of the technology.</p>
+</section>
+<section id="create-employee-training-and-support" class="level3" data-number="4.1.7">
+<h3 data-number="4.1.7" class="anchored" data-anchor-id="create-employee-training-and-support"><span class="header-section-number">4.1.7</span> Create Employee Training and Support</h3>
+<p>Provide comprehensive training programs that laverage publicly available content where possible for employees to effectively use ChatGPT in their daily work. Offer hands-on workshops, e-learning modules, and on-the-job training to equip employees with the skills and knowledge necessary to use ChatGPT effectively. Provide ongoing support and resources to help employees adapt to the new technology and address any challenges they may face.</p>
+</section>
+<section id="monitor-progress-and-impact" class="level3" data-number="4.1.8">
+<h3 data-number="4.1.8" class="anchored" data-anchor-id="monitor-progress-and-impact"><span class="header-section-number">4.1.8</span> Monitor Progress and Impact</h3>
+<p>Regularly assess the performance of ChatGPT within the organization and evaluate its impact on specific use cases. Develop key performance indicators (KPIs) and metrics to track the technology’s effectiveness, and use this data to inform future improvements and adaptations.</p>
+</section>
+<section id="develop-continuous-improvement-and-adaptation" class="level3" data-number="4.1.9">
+<h3 data-number="4.1.9" class="anchored" data-anchor-id="develop-continuous-improvement-and-adaptation"><span class="header-section-number">4.1.9</span> Develop Continuous Improvement and Adaptation</h3>
+<p>Stay current with AI advancements and adapt ChatGPT implementation to maximize benefits. The AI landscape is constantly evolving, and it’s crucial to stay up-to-date with advancements in the field. Continuously evaluate the performance of ChatGPT and be prepared to adapt its implementation to maximize its benefits and stay ahead of the competition.</p>
+</section>
+<section id="recognize-document-and-build-processes-to-address-ethical-considerations" class="level3" data-number="4.1.10">
+<h3 data-number="4.1.10" class="anchored" data-anchor-id="recognize-document-and-build-processes-to-address-ethical-considerations"><span class="header-section-number">4.1.10</span> Recognize, Document, and Build Processes to Address Ethical Considerations</h3>
+<p>Develop guidelines for responsible use and educate employees on potential risks and challenges of AI technologies like ChatGPT. Be mindful of the ethical implications of using AI-powered technologies. Develop guidelines and best practices for responsible use, and ensure that employees understand the potential risks and challenges associated with AI, such as algorithmic bias or unintended consequences.</p>
 
 
 <div id="refs" class="references csl-bib-body hanging-indent" role="list" style="display: none">
@@ -841,7 +426,6 @@ Stay current with AI advancements and adapt ChatGPT implementation to maximize b
 Lindegaard, Stefan. 2023. <span>“<span>LinkedIn</span>.”</span> <a href="https://www.linkedin.com/pulse/chatgpt-implementation-scaling-organization-your-guide-lindegaard/" class="uri">https://www.linkedin.com/pulse/chatgpt-implementation-scaling-organization-your-guide-lindegaard/</a>. <a href="https://www.linkedin.com/pulse/chatgpt-implementation-scaling-organization-your-guide-lindegaard/">https://www.linkedin.com/pulse/chatgpt-implementation-scaling-organization-your-guide-lindegaard/</a>.
 </div>
 </div>
-</section>
 </section>
 </section>
 
@@ -1196,13 +780,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./pm_and_support.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Project Management and Support Resources</span></span>
+      <a href="./framework.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">The Framework</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./references.html" class="pagination-link">
-        <span class="nav-page-text">References</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./barriers.html" class="pagination-link">
+        <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Barriers and Obstacles and How to Overcome Them</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
