@@ -7,11 +7,21 @@ book:
   author: "Sean Davis"
   date: "`r Sys.Date()`"
   downloads: [pdf, epub]
+
   chapters:
     - index.qmd
+    - part: "Implementation"
+      chapters:
+        - framework.qmd
+    - part: domain_resources.qmd
+      chapters:
+        - guiding_principles.qmd
+
+    - part: "Workstream Resources"
+      chapters:
+        - bill_of_rights.qmd
+
     - intro.qmd
-    - guiding_principles.qmd
-    - bill_of_rights.qmd
     - policy.qmd
     - implementation.qmd
     - references.qmd
