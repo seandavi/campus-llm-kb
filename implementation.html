@@ -2,14 +2,14 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.336">
+<meta name="generator" content="quarto-1.3.353">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Sean">
 <meta name="dcterms.date" content="2023-05-11">
 
-<title>Large Language Model Policy and Practice - 7&nbsp; A Framework for Implementing AI and Large Language Models</title>
+<title>Large Language Model Policy and Practice - 13&nbsp; A Framework for Implementing AI and Large Language Models</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -52,7 +52,7 @@ div.csl-indent {
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
 <link href="./references.html" rel="next">
-<link href="./policy.html" rel="prev">
+<link href="./pm_and_support.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -110,7 +110,8 @@ div.csl-indent {
  <span class="menu-text"></span></a>
   </li>  
 </ul>
-            <div class="quarto-navbar-tools">
+            <div class="quarto-navbar-tools tools-wide">
+    <a href="https://github.com/seandavi/campus-llm-kb/" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
     <div class="dropdown">
       <a href="" title="Download" id="quarto-navigation-tool-dropdown-0" class="quarto-navigation-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download"><i class="bi bi-download"></i></a>
       <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="quarto-navigation-tool-dropdown-0">
@@ -128,6 +129,29 @@ div.csl-indent {
           </li>
       </ul>
     </div>
+    <div class="dropdown">
+      <a href="" title="Share" id="quarto-navigation-tool-dropdown-1" class="quarto-navigation-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Share"><i class="bi bi-share"></i></a>
+      <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="quarto-navigation-tool-dropdown-1">
+          <li>
+            <a class="dropdown-item quarto-navbar-tools-item" href="https://twitter.com/intent/tweet?url=|url|">
+              <i class="bi bi-bi-twitter pe-1"></i>
+            Twitter
+            </a>
+          </li>
+          <li>
+            <a class="dropdown-item quarto-navbar-tools-item" href="https://www.facebook.com/sharer/sharer.php?u=|url|">
+              <i class="bi bi-bi-facebook pe-1"></i>
+            Facebook
+            </a>
+          </li>
+          <li>
+            <a class="dropdown-item quarto-navbar-tools-item" href="https://www.linkedin.com/sharing/share-offsite/?url=|url|">
+              <i class="bi bi-bi-linkedin pe-1"></i>
+            LinkedIn
+            </a>
+          </li>
+      </ul>
+    </div>
   <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
 </div>
           </div> <!-- /navcollapse -->
@@ -138,7 +162,7 @@ div.csl-indent {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./implementation.html"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">A Framework for Implementing AI and Large Language Models</span></a></li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./infrastructure.html">Workstream Resources</a></li><li class="breadcrumb-item"><a href="./implementation.html"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">A Framework for Implementing AI and Large Language Models</span></a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -164,6 +188,12 @@ div.csl-indent {
  <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Overview</span></span></a>
   </div>
 </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./values.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Values and Principles</span></span></a>
+  </div>
+</li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
@@ -176,15 +206,15 @@ div.csl-indent {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./framework.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">The Framework</span></span></a>
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">The Framework</span></span></a>
   </div>
 </li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">
- <span class="menu-text">domain_resources.qmd</span></a>
+            <a href="./domainresource.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Domain Resources</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -192,8 +222,26 @@ div.csl-indent {
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./guiding_principles.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Guiding principles for AI in healthcare</span></span></a>
+  <a href="./resources_clinical.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Clinical Domain</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./resources_research.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Training and Workforce Development Resources</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./resources_education.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Training and Workforce Development Resources</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./resources_business.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Training and Workforce Development Resources</span></span></a>
   </div>
 </li>
       </ul>
@@ -209,42 +257,71 @@ div.csl-indent {
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./bill_of_rights.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Whitehouse AI Bill(s) of rights</span></span></a>
+  <a href="./infrastructure.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Training and Workforce Development Resources</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./workforce.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Training and Workforce Development Resources</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ethics.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Training and Workforce Development Resources</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./data.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Training and Workforce Development Resources</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./pm_and_support.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Training and Workforce Development Resources</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./implementation.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">A Framework for Implementing AI and Large Language Models</span></span></a>
   </div>
 </li>
       </ul>
   </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./intro.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Introduction</span></span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./policy.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">DRAFT policy</span></span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./implementation.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">A Framework for Implementing AI and Large Language Models</span></span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
   <a href="./references.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">References</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true">
+ <span class="menu-text">Appendices</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./appendices.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Appendices</span></a>
+ <span class="menu-text"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">AI principles proposed by select organizations</span></span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./bill_of_rights.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">B</span>&nbsp; <span class="chapter-title">Whitehouse AI Bill(s) of rights</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
     </ul>
     </div>
 </nav>
@@ -255,26 +332,26 @@ div.csl-indent {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#domains" id="toc-domains" class="nav-link active" data-scroll-target="#domains"><span class="header-section-number">7.1</span> Domains</a></li>
-  <li><a href="#workstreams" id="toc-workstreams" class="nav-link" data-scroll-target="#workstreams"><span class="header-section-number">7.2</span> Workstreams</a></li>
-  <li><a href="#implementation" id="toc-implementation" class="nav-link" data-scroll-target="#implementation"><span class="header-section-number">8</span> Implementation</a>
+  <li><a href="#domains" id="toc-domains" class="nav-link active" data-scroll-target="#domains"><span class="header-section-number">13.1</span> Domains</a></li>
+  <li><a href="#workstreams" id="toc-workstreams" class="nav-link" data-scroll-target="#workstreams"><span class="header-section-number">13.2</span> Workstreams</a></li>
+  <li><a href="#implementation" id="toc-implementation" class="nav-link" data-scroll-target="#implementation"><span class="header-section-number">14</span> Implementation</a>
   <ul class="collapse">
-  <li><a href="#barriers-and-obstacles-and-how-to-overcome-them" id="toc-barriers-and-obstacles-and-how-to-overcome-them" class="nav-link" data-scroll-target="#barriers-and-obstacles-and-how-to-overcome-them"><span class="header-section-number">8.1</span> Barriers and Obstacles and How to Overcome Them</a></li>
-  <li><a href="#overcoming-barriers-and-obstacles" id="toc-overcoming-barriers-and-obstacles" class="nav-link" data-scroll-target="#overcoming-barriers-and-obstacles"><span class="header-section-number">8.2</span> Overcoming Barriers and Obstacles</a>
+  <li><a href="#barriers-and-obstacles-and-how-to-overcome-them" id="toc-barriers-and-obstacles-and-how-to-overcome-them" class="nav-link" data-scroll-target="#barriers-and-obstacles-and-how-to-overcome-them"><span class="header-section-number">14.1</span> Barriers and Obstacles and How to Overcome Them</a></li>
+  <li><a href="#overcoming-barriers-and-obstacles" id="toc-overcoming-barriers-and-obstacles" class="nav-link" data-scroll-target="#overcoming-barriers-and-obstacles"><span class="header-section-number">14.2</span> Overcoming Barriers and Obstacles</a>
   <ul class="collapse">
-  <li><a href="#conventional-strategies-for-overcoming-barriers-and-obstacles" id="toc-conventional-strategies-for-overcoming-barriers-and-obstacles" class="nav-link" data-scroll-target="#conventional-strategies-for-overcoming-barriers-and-obstacles"><span class="header-section-number">8.2.1</span> Conventional Strategies for Overcoming Barriers and Obstacles</a></li>
-  <li><a href="#unconventional-strategies-for-overcoming-barriers-and-obstacles" id="toc-unconventional-strategies-for-overcoming-barriers-and-obstacles" class="nav-link" data-scroll-target="#unconventional-strategies-for-overcoming-barriers-and-obstacles"><span class="header-section-number">8.2.2</span> Unconventional Strategies for Overcoming Barriers and Obstacles</a></li>
+  <li><a href="#conventional-strategies-for-overcoming-barriers-and-obstacles" id="toc-conventional-strategies-for-overcoming-barriers-and-obstacles" class="nav-link" data-scroll-target="#conventional-strategies-for-overcoming-barriers-and-obstacles"><span class="header-section-number">14.2.1</span> Conventional Strategies for Overcoming Barriers and Obstacles</a></li>
+  <li><a href="#unconventional-strategies-for-overcoming-barriers-and-obstacles" id="toc-unconventional-strategies-for-overcoming-barriers-and-obstacles" class="nav-link" data-scroll-target="#unconventional-strategies-for-overcoming-barriers-and-obstacles"><span class="header-section-number">14.2.2</span> Unconventional Strategies for Overcoming Barriers and Obstacles</a></li>
   </ul></li>
   </ul></li>
   </ul>
-</nav>
+<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/seandavi/campus-llm-kb/edit/main/implementation.qmd" class="toc-action">Edit this page</a></p></div></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">A Framework for Implementing AI and Large Language Models</span></h1>
+<h1 class="title"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">A Framework for Implementing AI and Large Language Models</span></h1>
 </div>
 
 
@@ -301,7 +378,7 @@ div.csl-indent {
 
 </header>
 
-<p>In order to successfully integrate AI and Large Language Models into an academic medical system, it is essential to adopt a flexible and agile approach that accounts for the varying pacing, priorities, and levels of risk associated with different aspects of the institution. By organizing the implementation plan into distinct domains and workstreams (see <a href="#fig-framework">Figure&nbsp;<span>7.1</span></a>), we can address the unique requirements of each area, ensuring that resources are allocated effectively and progress is made at an appropriate pace. This structure also enables rapid adaptation to changing circumstances, allowing for seamless collaboration between various teams and promoting a proactive response to any challenges that may arise. Ultimately, the use of domains and workstreams fosters a comprehensive and resilient approach to AI integration, maximizing the potential benefits while minimizing potential risks across the entire academic medical system.</p>
+<p>In order to successfully integrate AI and Large Language Models into an academic medical system, it is essential to adopt a flexible and agile approach that accounts for the varying pacing, priorities, and levels of risk associated with different aspects of the institution. By organizing the implementation plan into distinct domains and workstreams (see <a href="#fig-framework">Figure&nbsp;<span>13.1</span></a>), we can address the unique requirements of each area, ensuring that resources are allocated effectively and progress is made at an appropriate pace. This structure also enables rapid adaptation to changing circumstances, allowing for seamless collaboration between various teams and promoting a proactive response to any challenges that may arise. Ultimately, the use of domains and workstreams fosters a comprehensive and resilient approach to AI integration, maximizing the potential benefits while minimizing potential risks across the entire academic medical system.</p>
 <div class="cell">
 <div class="cell-output-display">
 <div id="fig-framework" class="quarto-figure quarto-figure-center anchored">
@@ -599,13 +676,13 @@ D4–D5
 <path fill="none" stroke="dimgrey" stroke-dasharray="5,2" d="M588.71,-122.5C588.71,-103.52 588.71,-74.71 588.71,-55.77"></path> </g> </g>
 </svg>
 </div>
-<figcaption class="figure-caption">Figure&nbsp;7.1: A schematic framework for organizing workstreams (orange boxes), domains (blue boxes), and work products and tasks (green ovals). Domains (vertical dimension) capture semi-independent organizations, each with largely independent use cases, budgets and business plans, priorities, and leadership. The workstreams (horizontal dimension) will often require similar or overlapping expertise, and can serve as knowledge resources to provide synergy and uniformity in implementation across domains.</figcaption>
+<figcaption class="figure-caption">Figure&nbsp;13.1: A schematic framework for organizing workstreams (orange boxes), domains (blue boxes), and work products and tasks (green ovals). Domains (vertical dimension) capture semi-independent organizations, each with largely independent use cases, budgets and business plans, priorities, and leadership. The workstreams (horizontal dimension) will often require similar or overlapping expertise, and can serve as knowledge resources to provide synergy and uniformity in implementation across domains.</figcaption>
 </figure>
 </div>
 </div>
 </div>
-<section id="domains" class="level2" data-number="7.1">
-<h2 data-number="7.1" class="anchored" data-anchor-id="domains"><span class="header-section-number">7.1</span> Domains</h2>
+<section id="domains" class="level2" data-number="13.1">
+<h2 data-number="13.1" class="anchored" data-anchor-id="domains"><span class="header-section-number">13.1</span> Domains</h2>
 <p>The implementation plan for integrating AI and Large Language Models into an academic medical system consists of four main domains:</p>
 <ul>
 <li><dl>
@@ -634,8 +711,8 @@ This domain focuses on the management of the institution’s business operations
 </dl></li>
 </ul>
 </section>
-<section id="workstreams" class="level2" data-number="7.2">
-<h2 data-number="7.2" class="anchored" data-anchor-id="workstreams"><span class="header-section-number">7.2</span> Workstreams</h2>
+<section id="workstreams" class="level2" data-number="13.2">
+<h2 data-number="13.2" class="anchored" data-anchor-id="workstreams"><span class="header-section-number">13.2</span> Workstreams</h2>
 <p>Within each domain, we have identified five workstreams that are critical for the successful implementation of AI and Large Language Models. These workstreams are:</p>
 <ul>
 <li><dl>
@@ -671,8 +748,8 @@ This workstream is responsible for overseeing the implementation of AI and Large
 </ul>
 <p>The implementation plan is structured in a way that allows for cross-functional collaboration between the domains and workstreams. This ensures that AI and Large Language Models are integrated cohesively across the entire academic medical system, maximizing the benefits and minimizing potential risks.</p>
 </section>
-<section id="implementation" class="level1" data-number="8">
-<h1 data-number="8"><span class="header-section-number">8</span> Implementation</h1>
+<section id="implementation" class="level1" data-number="14">
+<h1 data-number="14"><span class="header-section-number">14</span> Implementation</h1>
 <p>This section will provide you with a step-by-step guide to implementing ChatGPT within your organization <span class="citation" data-cites="lindegaard-vb">Lindegaard (<a href="references.html#ref-lindegaard-vb" role="doc-biblioref">2023</a>)</span>. It will cover the following topics:</p>
 <ol type="1">
 <li><dl>
@@ -731,8 +808,8 @@ Stay current with AI advancements and adapt ChatGPT implementation to maximize b
 </dl></li>
 <li>Ethical Considerations : Develop guidelines for responsible use and educate employees on potential risks and challenges of AI technologies like ChatGPT. Be mindful of the ethical implications of using AI-powered technologies. Develop guidelines and best practices for responsible use, and ensure that employees understand the potential risks and challenges associated with AI, such as algorithmic bias or unintended consequences.</li>
 </ol>
-<section id="barriers-and-obstacles-and-how-to-overcome-them" class="level2" data-number="8.1">
-<h2 data-number="8.1" class="anchored" data-anchor-id="barriers-and-obstacles-and-how-to-overcome-them"><span class="header-section-number">8.1</span> Barriers and Obstacles and How to Overcome Them</h2>
+<section id="barriers-and-obstacles-and-how-to-overcome-them" class="level2" data-number="14.1">
+<h2 data-number="14.1" class="anchored" data-anchor-id="barriers-and-obstacles-and-how-to-overcome-them"><span class="header-section-number">14.1</span> Barriers and Obstacles and How to Overcome Them</h2>
 <p>Inevitably, you will encounter barriers and obstacles during your ChatGPT implementation journey. Recognizing these challenges and understanding how to overcome them is essential to ensure a successful adoption.&nbsp;</p>
 <p>In this section, we will discuss the most common hurdles and provide strategies for navigating them, empowering you to lead your organization through the complexities of AI integration.</p>
 <p><em>Resistance to Change</em></p>
@@ -749,12 +826,12 @@ Stay current with AI advancements and adapt ChatGPT implementation to maximize b
 <p>The potential for biased or unethical AI outcomes may create apprehension. Develop guidelines for responsible AI usage, create an ethics review board, and offer training on potential risks and challenges. Emphasize the importance of ethical AI practices throughout the organization.</p>
 <p>As you reflect on the potential barriers and obstacles to ChatGPT implementation, remember that overcoming these challenges is an integral part of the journey towards AI-driven success. By anticipating and addressing these issues proactively, you can foster a resilient and adaptable organization that is well-prepared to navigate the ever-evolving landscape of artificial intelligence.</p>
 </section>
-<section id="overcoming-barriers-and-obstacles" class="level2" data-number="8.2">
-<h2 data-number="8.2" class="anchored" data-anchor-id="overcoming-barriers-and-obstacles"><span class="header-section-number">8.2</span> Overcoming Barriers and Obstacles</h2>
+<section id="overcoming-barriers-and-obstacles" class="level2" data-number="14.2">
+<h2 data-number="14.2" class="anchored" data-anchor-id="overcoming-barriers-and-obstacles"><span class="header-section-number">14.2</span> Overcoming Barriers and Obstacles</h2>
 <p>As you can see above, there are many barriers and obstacles to ChatGPT implementation and overcoming these is crucial for realizing its full potential within your organization.&nbsp;</p>
 <p>In this section, we will provide a combination of conventional and less traditional strategies to address the challenges you might face during the adoption process. By embracing these adaptive approaches, you can foster a culture of adaptability and resilience, enabling your organization to successfully harness the power of AI-driven solutions like ChatGPT.</p>
-<section id="conventional-strategies-for-overcoming-barriers-and-obstacles" class="level3" data-number="8.2.1">
-<h3 data-number="8.2.1" class="anchored" data-anchor-id="conventional-strategies-for-overcoming-barriers-and-obstacles"><span class="header-section-number">8.2.1</span> Conventional Strategies for Overcoming Barriers and Obstacles</h3>
+<section id="conventional-strategies-for-overcoming-barriers-and-obstacles" class="level3" data-number="14.2.1">
+<h3 data-number="14.2.1" class="anchored" data-anchor-id="conventional-strategies-for-overcoming-barriers-and-obstacles"><span class="header-section-number">14.2.1</span> Conventional Strategies for Overcoming Barriers and Obstacles</h3>
 <ol type="1">
 <li>Resistance to Change: To overcome resistance to change, emphasize the benefits of ChatGPT, provide ample training and support, encourage open discussions, and showcase successful examples of AI adoption.</li>
 <li>Lack of Technical Expertise: Address this by investing in training programs, partnering with AI experts, hiring professionals with relevant experience, and creating an internal AI community for knowledge sharing and peer support.</li>
@@ -764,8 +841,8 @@ Stay current with AI advancements and adapt ChatGPT implementation to maximize b
 <li>Ethical Concerns: Develop guidelines for responsible AI usage, create an ethics review board, and offer training on potential risks and challenges, emphasizing the importance of ethical AI practices throughout the organization.</li>
 </ol>
 </section>
-<section id="unconventional-strategies-for-overcoming-barriers-and-obstacles" class="level3" data-number="8.2.2">
-<h3 data-number="8.2.2" class="anchored" data-anchor-id="unconventional-strategies-for-overcoming-barriers-and-obstacles"><span class="header-section-number">8.2.2</span> Unconventional Strategies for Overcoming Barriers and Obstacles</h3>
+<section id="unconventional-strategies-for-overcoming-barriers-and-obstacles" class="level3" data-number="14.2.2">
+<h3 data-number="14.2.2" class="anchored" data-anchor-id="unconventional-strategies-for-overcoming-barriers-and-obstacles"><span class="header-section-number">14.2.2</span> Unconventional Strategies for Overcoming Barriers and Obstacles</h3>
 <p>I often find that we need to find “back-doors” and just different approaches in the context of change and transformation projects. Thus, here are some less conventional approaches to the barriers.&nbsp;</p>
 <ol type="1">
 <li>Gamification: Introduce gamification elements to the training and adoption process, incentivizing employees to engage with ChatGPT and learn its capabilities. Offer rewards or recognition for participation and achievements.</li>
@@ -1136,8 +1213,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./policy.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">DRAFT policy</span></span>
+      <a href="./pm_and_support.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Training and Workforce Development Resources</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
