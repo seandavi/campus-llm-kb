@@ -1,0 +1,83 @@
+# Values and Principles
+
+While there are many potential applications for LLMs in healthcare, the
+following guiding principles should be considered when developing and deploying
+LLMs in the academic hospital system. Note that these principles largely apply
+to any Artificial Intelligence or Machine Learning applications in use on the
+campus.
+
+## Vision Statement
+
+* LLMs must be used in a manner consistent with the mission, vision, and values
+  of the academic hospital system. 
+
+* The use of LLMs must align with relevant legal and regulatory requirements,
+  including but not limited to data privacy, security, and intellectual
+  property laws. 
+
+* The deployment of LLMs should prioritize patient safety, privacy, and
+  wellbeing. 
+
+* LLMs must be used in a transparent manner, with users understanding the
+  capabilities and limitations of the technology. 
+
+* Continuous improvement and evaluation of LLM usage should be prioritized to
+  ensure ongoing alignment with organizational goals. 
+
+## Stakeholder Considerations 
+
+### Patients 
+
+* LLMs should be used to augment patient care and improve outcomes, without
+  replacing the human touch and empathy of healthcare providers. 
+
+* Patients must be informed about the use of LLMs in their care, and they
+  should have the option to opt out if desired. 
+
+* Patient data used in LLM applications must be anonymized, encrypted, and
+  securely stored to protect patient privacy. 
+
+### Healthcare Providers 
+
+* LLMs should be deployed to enhance clinical decision-making and efficiency
+  without undermining the autonomy and expertise of healthcare providers. 
+
+* Adequate training and support should be provided to healthcare providers to
+  ensure proper use and understanding of LLMs. 
+
+* Feedback from healthcare providers must be regularly solicited to improve LLM
+  performance and usability. 
+
+### Researchers 
+
+* The use of LLMs in research must adhere to ethical standards, including
+  obtaining informed consent and minimizing potential harm. 
+
+* Collaboration between researchers and LLM developers should be encouraged to
+  drive innovation and address specific research needs. 
+
+* Research involving LLMs should be transparent and reproducible, with results
+  and methodologies made available to the wider scientific community. 
+
+### Administrators and Support Staff 
+
+* LLMs should be deployed in administrative and support functions to improve
+  efficiency, reduce costs, and enhance the overall quality of service. 
+
+* Staff should receive appropriate training and support to understand and
+  utilize LLMs effectively. 
+
+* Employee feedback should be actively sought to identify areas of improvement
+  and potential new applications for LLMs. 
+
+## Monitoring and Compliance 
+
+* A designated LLM Steering Committee, comprising representatives from various
+  stakeholder groups, will be responsible for monitoring and enforcing
+  compliance with this policy. 
+
+* Periodic audits and assessments will be conducted to ensure adherence to this
+  policy and identify areas for improvement. 
+
+* Policy violations may result in disciplinary action, up to and including
+  termination of employment or access to LLMs 

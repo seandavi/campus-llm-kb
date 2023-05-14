@@ -1,6 +1,4 @@
----
-title: "Whitehouse AI Bill(s) of rights"
----
+# Whitehouse AI Bill(s) of rights {.appendix}
 
 The Whitehouse OSTP has developed an extensively documented [Blueprint for an AI Bill of Rights](https://www.whitehouse.gov/ostp/ai-bill-of-rights/). The document is a comprehensive overview of the current state of AI and the challenges it poses to society. The Blueprint for an AI Bill of Rights is a set of five principles and associated practices to help guide the design, use, and deployment of automated systems to protect the rights of the American public in the age of artificial intelligence. Developed through extensive consultation with the American public, these principles are a blueprint for building and deploying automated systems that are aligned with democratic values and protect civil rights, civil liberties, and privacy. 
 

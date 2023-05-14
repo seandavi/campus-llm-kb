@@ -1,0 +1,10 @@
+# Domain Resources
+
+This section contains resources that the domain teams may find useful for their specific domains.
+
+* Education
+* Clinical
+* Research
+* Business Operations
+
+

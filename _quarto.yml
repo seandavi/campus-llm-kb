@@ -5,27 +5,40 @@ book:
   title: "Large Language Model Policy and Practice"
   subtitle: "A framework for large language models in an Academic Medical Center"
   author: "Sean Davis"
-  date: "`r Sys.Date()`"
+  date: "2023-05-13"
+  site-url: https://seandavi.github.io/campus-llm-kb/
+  repo-url: https://github.com/seandavi/campus-llm-kb/
+  repo-branch: main
+  repo-actions: [edit]
+  sharing: [twitter, facebook, linkedin]
   downloads: [pdf, epub]
 
   chapters:
     - index.qmd
+    - values.qmd
     - part: "Implementation"
       chapters:
         - framework.qmd
-    - part: domain_resources.qmd
+    - part: domainresource.qmd
       chapters:
-        - guiding_principles.qmd
+        - resources_clinical.qmd
+        - resources_research.qmd
+        - resources_education.qmd
+        - resources_business.qmd
 
     - part: "Workstream Resources"
       chapters:
-        - bill_of_rights.qmd
-
-    - intro.qmd
-    - policy.qmd
-    - implementation.qmd
+        - infrastructure.qmd
+        - workforce.qmd
+        - ethics.qmd
+        - data.qmd
+        - pm_and_support.qmd
+        - implementation.qmd
     - references.qmd
+  appendices:
     - appendices.qmd
+    - bill_of_rights.qmd
+
 
 
 bibliography: references.bib
@@ -35,6 +48,7 @@ format:
     theme:
       dark: darkly
       light: flatly
+    code-link: true
   pdf:
     documentclass: scrreprt
     include-in-header: 

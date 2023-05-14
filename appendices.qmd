@@ -1,6 +1,4 @@
-# Appendices {.unnumbered}
-
-## AI principles proposed by select organizations {.appendix}
+# AI principles proposed by select organizations {.appendix}
 
 This list is adapted from @Badal2023-bt, Table 1.
 
