@@ -17,7 +17,12 @@ between various teams and promoting a proactive response to any challenges that
 may arise. Ultimately, the use of domains and workstreams fosters a
 comprehensive and resilient approach to AI integration, maximizing the
 potential benefits while minimizing potential risks across the entire academic
-medical system.
+medical system. Note that the framework is not intended to be prescriptive or
+exhaustive; rather, it is meant to serve as a starting point for discussion, planning,
+and implementation. A top-level coordination unit (e.g., a steering committee) will
+work with the domain areas as a resource and to ensure that the overall
+implementation plan is aligned with the institution's strategic goals and
+priorities.
 
 ```{dot}
 //| label: fig-framework
@@ -32,17 +37,23 @@ graph
 	layout=dot
 	labelloc = "t"
     node [shape=box, style="rounded,filled", fillcolor="lightblue", margin=0.2, fontsize=18]
+    AI[label="AI Integration\n Steering Committee"]
     ED[label="Education", group=1]
     RE[label="Research"]
     CL[label="Clinical"]
     BU[label="Business\nOperations"]
 
+    AI -- ED
+    AI -- RE
+    AI -- CL
+    AI -- BU
+
     node [fillcolor="orange"]
-    DA[label="Data Access\n& Use"]
+    DA[label="Data Use\n& Access"]
     IT[label="IT, Security\n& Infrastructure"]
     ELSI[label="Ethical, Legal,\n& Social"]
     WD[label="Training &\nWorkforce Development"]
-    OWN[label="Project Management\n& Support Personnel"]
+    OWN[label="Project Development,\nManagement & Support"]
 
     node [shape=oval, margin=0.1, style=filled, fillcolor="lightgreen", fontsize=12]
     ED, A1, A2, A3, A4, A5 [ group=1]
@@ -119,35 +130,37 @@ workstreams are:
 * Project Management & Support Personnel
 
 ### Data Access & Use 
-This workstream focuses on managing and optimizing data
-  access, use, and sharing within the academic medical system. It ensures that
-  data is available, reliable, and secure for AI integration and that the
-  necessary infrastructure is in place to support data-driven activities.
+This workstream focuses on managing and optimizing data access, use, and
+sharing within the academic medical system. It ensures that data is available,
+reliable, and secure for AI integration and that the necessary infrastructure
+is in place to support data-driven activities.
 
 ### IT, Security, & Infrastructure
-This workstream addresses the technical aspects of AI integration,
-  including the development and maintenance of IT systems, ensuring data
-  security, and providing the necessary hardware and software infrastructure to
-  support AI and Large Language Models.
+This workstream addresses the technical aspects of AI integration, including
+the development and maintenance of IT systems, ensuring data security, and
+providing the necessary hardware and software infrastructure to support AI and
+Large Language Models.
 
 ### Ethical, Legal, & Social
-This workstream focuses on the ethical, legal, and social implications of
-  AI integration in the academic medical system with domain-specific focus as
-  appropriate. It aims to ensure that AI is used responsibly and ethically and
-  that any legal and social concerns are addressed proactively.
+This workstream focuses on the ethical, legal, and social implications of AI
+integration in the academic medical system with domain-specific focus as
+appropriate. It aims to ensure that AI is used responsibly and ethically and
+that any legal and social concerns are addressed proactively.
 
 ### Training & Workforce Development
-This workstream is dedicated to developing the skills and knowledge of
-  domain community members (including staff _and_ leadership) within the domain
-  to understand and, where appropriate, to effectively use and manage AI and
-  Large Language Models. It includes training programs, workshops, and other
-  educational opportunities to build competency in AI-related technologies. 
+This workstream is dedicated to developing the skills and knowledge of domain
+community members (including staff _and_ leadership) within the domain to
+understand and, where appropriate, to effectively use and manage AI and Large
+Language Models. It includes training programs, workshops, and other
+educational opportunities to build competency in AI-related technologies. 
 
 ### Project Management & Support Personnel
-This workstream is responsible for overseeing the implementation of AI and
-  Large Language Models across the four domains. It includes project management
-  and support staff who work collaboratively to ensure that AI integration
-  occurs smoothly and efficiently.
+This workstream is responsible for ensuring that the project management of AI
+and Large Language Models across the four domains. Among its roles are to
+provide project management, helping to align resource requests, support
+services around the usage of LLMs. This group will also cooordinate support
+staff who work collaboratively within and across domains to  to ensure that AI
+integration occurs smoothly and efficiently.
 
 The implementation plan is structured in a way that allows for cross-functional
 collaboration between the domains and workstreams. This ensures that AI and

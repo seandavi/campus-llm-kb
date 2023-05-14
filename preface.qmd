@@ -1,0 +1,45 @@
+# Preface {.unnumbered}
+
+This book is a work in progress. It develops a framework for adopting ChatGPT
+and related tools for the Campus. It is not a complete strategic plan and is not
+meant to be proscriptive. It is meant to help organize and communicate efforts. 
+
+The key component of the framework, in my opinion, is the recognition that, while the 
+campus is a single entity, it is composed of four relatively distinct "Domains" that
+each have their own needs, requirements, resources, and priorities. The four domains 
+that I have identified are:
+
+* Education
+* Research
+* Business operations
+* Clinical
+
+The framework is based on the idea that each of these domains has a different
+set of needs and requirements, and that the campus should develop plans and implementations 
+that are tailored to each domain. The framework includes a set of "principles" that
+should be applied to each domain, and a set of "strategies" that should be applied
+to each domain. The principles and strategies are not meant to be proscriptive, but
+rather to provide guidance and a framework for thinking about how to approach each
+domain.
+
+The framework is also based on the idea that the campus should adopt a "platform"
+approach to the development of tools and services. I have included the "platform"
+concept as a set of identifiable cross-domain workstreams. 
+
+I also note that this framework is not meant to be a "top-down" approach. Rather,
+it is meant to be a "bottom-up" approach that is driven by the needs of the
+individual domains. The framework is meant to provide a common language and
+common set of tools that can be used to develop solutions that meet the needs
+of the individual domains and the campus as a whole.
+
+The framework is also meant to be a living document. It is meant to be updated
+and revised as new information becomes available and as new needs and requirements
+are identified. Progress on the framework should be tracked and reported on a
+regular basis.
+
+Finally, this framework can form the basis for adoption of any AI (or even other
+technology) on campus. It is not specific to ChatGPT, though I have found that 
+approaching frameworks with concrete examples is key to success. In that regard,
+time invested in creating robust processes for ChatGPT will pay dividends in
+the future as other AI technologies are adopted.
+

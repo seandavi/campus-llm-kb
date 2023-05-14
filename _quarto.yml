@@ -14,11 +14,14 @@ book:
   downloads: [pdf, epub]
 
   chapters:
+    - preface.qmd
     - index.qmd
     - values.qmd
     - part: "Implementation"
       chapters:
         - framework.qmd
+        - implementation.qmd
+        - barriers.qmd
     - part: domainresource.qmd
       chapters:
         - resources_clinical.qmd
@@ -33,7 +36,6 @@ book:
         - ethics.qmd
         - data.qmd
         - pm_and_support.qmd
-        - implementation.qmd
     - references.qmd
   appendices:
     - appendices.qmd
@@ -45,9 +47,7 @@ bibliography: references.bib
 
 format:
   html:
-    theme:
-      dark: darkly
-      light: flatly
+    theme: cosmo
     code-link: true
   pdf:
     documentclass: scrreprt

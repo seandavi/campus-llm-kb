@@ -1,226 +1,111 @@
 ---
-author: "Sean"
+author: 
+   - "Sean Davis"
+   - "Stefan Lindegaard"
 date: "2023-05-11"
 ---
 
-# A Framework for Implementing AI and Large Language Models
+# Domain Implementation Guide
 
-In order to successfully integrate AI and Large Language Models into an
-academic medical system, it is essential to adopt a flexible and agile approach
-that accounts for the varying pacing, priorities, and levels of risk associated
-with different aspects of the institution. By organizing the implementation
-plan into distinct domains and workstreams (see @fig-framework), we can address the unique
-requirements of each area, ensuring that resources are allocated effectively
-and progress is made at an appropriate pace. This structure also enables rapid
-adaptation to changing circumstances, allowing for seamless collaboration
-between various teams and promoting a proactive response to any challenges that
-may arise. Ultimately, the use of domains and workstreams fosters a
-comprehensive and resilient approach to AI integration, maximizing the
-potential benefits while minimizing potential risks across the entire academic
-medical system.
+Each Domain will work to meet the needs of the campus that align with its
+community membership and mission. This section provides a rough guide (adapted
+from @lindegaard-vb)  to implementing a LLM plan within the Domains. Each
+Domain can work through this guide to develop policies, plans, resources, and
+deliverables. The combination of cross-domain Workstreams and reporting to the
+AISC will help to align resource requests and facilitate knowledge sharing,
+management, and transfer.
 
-```{dot}
-//| label: fig-framework
-//| fig-cap: "A schematic framework for organizing workstreams (orange boxes), domains (blue boxes), and work products and tasks (green ovals). Domains (vertical dimension) capture semi-independent organizations, each with largely independent use cases, budgets and business plans, priorities, and leadership. The workstreams (horizontal dimension) will often require similar or overlapping expertise, and can serve as knowledge resources to provide synergy and uniformity in implementation across domains."
+## Suggested Tasks
 
-graph
-{
-   pad="3.0,0.5"
-	fontname="Helvetica,Arial,sans-serif"
-	node [fontname="Helvetica,Arial,sans-serif"]
-	edge [fontname="Helvetica,Arial,sans-serif"]
-	layout=dot
-	labelloc = "t"
-    node [shape=box, style="rounded,filled", fillcolor="lightblue", margin=0.2, fontsize=18]
-    ED[label="Education", group=1]
-    RE[label="Research"]
-    CL[label="Clinical"]
-    BU[label="Business\nOperations"]
+### Establish Ownership Leadership
 
-    node [fillcolor="orange"]
-    DA[label="Data Access\n& Use"]
-    IT[label="IT, Security\n& Infrastructure"]
-    ELSI[label="Ethical, Legal,\n& Social"]
-    WD[label="Training &\nWorkforce Development"]
-    OWN[label="Project Management\n& Support Personnel"]
+Assign a Domain leader and convene a Domain Working Group (represented in blue
+boxes in @fig-framework) as the driving force behind ChatGPT implementation.
+This leader and Working Group members need to become proficient in the
+technology and subsequently guide the organization through the process of
+integration. This includes setting the vision, aligning key stakeholders, and
+ensuring that the implementation aligns with the organization's strategic
+goals.
 
-    node [shape=oval, margin=0.1, style=filled, fillcolor="lightgreen", fontsize=12]
-    ED, A1, A2, A3, A4, A5 [ group=1]
-    RE, B1, B2, B3, B4, B5 [ group=2]
-    CL, C1, C2, C3, C4, C5 [ group=3]
-    BU, D1, D2, D3, D4, D5 [ group=4]
-    
-    
-
-	edge [weight=1000 style=dashed color=dimgrey]
-
-	// uncomment to hide the grid
-	//edge [style=invis]
-    node [shape=oval]
-        ED -- A1 -- A2 -- A3 -- A4 -- A5
-	    RE -- B1 -- B2 -- B3 -- B4 -- B5
-	CL -- C1 -- C2 -- C3 -- C4 -- C5
-	BU -- D1 -- D2 -- D3 -- D4 -- D5
-
-	rank=same {ED -- RE -- CL -- BU}
-	rank=same {DA -- A1 -- B1 -- C1 -- D1 }
-	rank=same {IT -- A2 -- B2 -- C2 -- D2 }
-	rank=same {ELSI -- A3 -- B3 -- C3 -- D3 }
-	rank=same {WD -- A4 -- B4 -- C4 -- D4 }
-	rank=same {OWN -- A5 -- B5 -- C5 -- D5 }
-	
-}
-```
+In practice, this Domain leader will be the primary point of contact for the
+AISC and will be responsible for reporting on the Domain's progress and
+deliverables. The Domain leader will also be responsible for convening the
+Domain Working Group and ensuring that the Domain's Workstreams are
+progressing.
 
 
-## Domains
+### Lean Into Cross-functional Collaboration
 
-The implementation plan for integrating AI and Large Language Models into an
-academic medical system consists of four main domains: 
+Form a cross-functional team with representatives from HR, IT, Legal, and other
+relevant departments to ensure that various perspectives are considered, and
+organizational needs are met during ChatGPT implementation. This collaboration
+will help address potential challenges, optimize resources, and facilitate
+effective knowledge transfer across the organization.
 
-* Education 
-  : This domain includes all activities related to teaching,
-  learning, and evaluation within the institution. It also encompasses the
-  development of new educational programs and the management of existing ones.
-* Research
-  : This domain focuses on the practice of the basic, clinical, and
-  translational research programs within the institution. In addition, it
-  includes the management of research grants, the development of new research
-  programs, and the dissemination of research findings.
-* Clinical
-  : This domain encompasses all activities related to patient care, including
-  the management and implementation of clinical services, decision support and
-  clinical decision-making, automation, and point-of-care or electronic patient
-  support. 
-* Business Operations
-  : This domain focuses on the management of the institution's business
-  operations, including finance, human resources, information technology, and
-  facilities management. It also includes the development of new business
-  processes and the management of existing ones.
+### Educate Leadership Teams
 
+Keep leadership teams informed about ChatGPT to
+   enable swift, informed decision-making. Offer workshops and seminars to
+   provide an in-depth understanding of the technology, its potential benefits,
+   and its limitations. This empowers them to make quick, informed decisions
+   that will shape the organization's adoption and use of the technology.
 
-## Workstreams
+### Identify Potential Use Cases
 
-Within each domain, we have identified five workstreams that are critical for
-the successful implementation of AI and Large Language Models. These
-workstreams are:
+Map potential applications across all
+   functions and establish a cohesive implementation plan. Conduct thorough
+   analyses of business processes and functions to identify areas where ChatGPT
+   can bring significant value, prioritize these use cases, and create a
+   detailed roadmap for implementation, including timelines and milestones.
 
-* Data Access & Use 
-  : This workstream focuses on managing and optimizing data
-  access, use, and sharing within the academic medical system. It ensures that
-  data is available, reliable, and secure for AI integration and that the
-  necessary infrastructure is in place to support data-driven activities.
-* IT, Security & Infrastructure
-  : This workstream addresses the technical aspects of AI integration,
-  including the development and maintenance of IT systems, ensuring data
-  security, and providing the necessary hardware and software infrastructure to
-  support AI and Large Language Models.
-* Ethical, Legal, & Social
-  : This workstream focuses on the ethical, legal, and social implications of
-  AI integration in the academic medical system with domain-specific focus as
-  appropriate. It aims to ensure that AI is used responsibly and ethically and
-  that any legal and social concerns are addressed proactively.
-* Training & Workforce Development
-  : This workstream is dedicated to developing the skills and knowledge of
-  domain community members (including staff _and_ leadership) within the domain
-  to understand and, where appropriate, to effectively use and manage AI and
-  Large Language Models. It includes training programs, workshops, and other
-  educational opportunities to build competency in AI-related technologies. 
-* Project Management & Support Personnel
-  : This workstream is responsible for overseeing the implementation of AI and
-  Large Language Models across the four domains. It includes project management
-  and support staff who work collaboratively to ensure that AI integration
-  occurs smoothly and efficiently.
+### Craft a Communication Strategy
 
-The implementation plan is structured in a way that allows for cross-functional
-collaboration between the domains and workstreams. This ensures that AI and
-Large Language Models are integrated cohesively across the entire academic
-medical system, maximizing the benefits and minimizing potential risks.
+Develop a comprehensive communication
+   strategy that addresses employee concerns and questions about the
+   implementation of ChatGPT. This approach should be transparent, informative,
+   and reassuring to ensure a smooth transition. It should also highlight the
+   benefits of the technology and address potential misconceptions.
 
+### Prepare and Integrate High-Value Proprietary Datasets
 
+Build APIs and interfaces to combine
+   ChatGPT with organization-specific data for improved innovation and
+   efficiency. Invest in the development of custom solutions that seamlessly
+   integrate ChatGPT with existing systems, databases, and workflows to fully
+   harness the potential of the technology.
 
-# Implementation
+### Create Employee Training and Support
 
-This section will provide you with a step-by-step guide to implementing ChatGPT within your organization @lindegaard-vb. It will cover the following topics:
+Provide comprehensive training programs that laverage publicly available
+content where possible for employees to effectively use ChatGPT in their daily
+work. Offer hands-on workshops, e-learning modules, and on-the-job training to
+equip employees with the skills and knowledge necessary to use ChatGPT
+effectively. Provide ongoing support and resources to help employees adapt to
+the new technology and address any challenges they may face.
 
-1. Ownership & Leadership
-   : Assign the strategic HR or P&O function as the driving force behind ChatGPT implementation. This department needs to become proficient in the technology and subsequently guide the organization through the process of integration. This includes setting the vision, aligning key stakeholders, and ensuring that the implementation aligns with the organization's strategic goals.
-2. Cross-functional Collaboration
-   : Form a cross-functional team with representatives from HR, IT, Legal, and other relevant departments to ensure that various perspectives are considered, and organizational needs are met during ChatGPT implementation. This collaboration will help address potential challenges, optimize resources, and facilitate effective knowledge transfer across the organization.
-3. Educating Leadership Teams
-   : Keep leadership teams informed about ChatGPT to enable swift, informed decision-making. Offer workshops and seminars to provide an in-depth understanding of the technology, its potential benefits, and its limitations. This empowers them to make quick, informed decisions that will shape the organization's adoption and use of the technology.
-4. Identifying Potential Use Cases
-   : Map potential applications across all functions and establish a cohesive implementation plan. Conduct thorough analyses of business processes and functions to identify areas where ChatGPT can bring significant value, prioritize these use cases, and create a detailed roadmap for implementation, including timelines and milestones.
-5. Crafting a Communication Strategy
-   : Develop a comprehensive communication strategy that addresses employee concerns and questions about the implementation of ChatGPT. This approach should be transparent, informative, and reassuring to ensure a smooth transition. It should also highlight the benefits of the technology and address potential misconceptions.
-6. Integration with Proprietary Datasets
-   : Build APIs and interfaces to combine ChatGPT with organization-specific data for improved innovation and efficiency. Invest in the development of custom solutions that seamlessly integrate ChatGPT with existing systems, databases, and workflows to fully harness the potential of the technology.
-7. Employee Training and Support
-   : Provide comprehensive training programs for employees to effectively use ChatGPT in their daily work. Offer hands-on workshops, e-learning modules, and on-the-job training to equip employees with the skills and knowledge necessary to use ChatGPT effectively. Provide ongoing support and resources to help employees adapt to the new technology and address any challenges they may face.
-8. Monitoring Performance and Impact
-   : Regularly assess the performance of ChatGPT within the organization and evaluate its impact on specific use cases. Develop key performance indicators (KPIs) and metrics to track the technology's effectiveness, and use this data to inform future improvements and adaptations.
-9. Continuous Improvement and Adaptation
-   : Stay current with AI advancements and adapt ChatGPT implementation to maximize benefits. The AI landscape is constantly evolving, and it's crucial to stay up-to-date with advancements in the field. Continuously evaluate the performance of ChatGPT and be prepared to adapt its implementation to maximize its benefits and stay ahead of the competition.
-10. Ethical Considerations
-   : Develop guidelines for responsible use and educate employees on potential risks and challenges of AI technologies like ChatGPT. Be mindful of the ethical implications of using AI-powered technologies. Develop guidelines and best practices for responsible use, and ensure that employees understand the potential risks and challenges associated with AI, such as algorithmic bias or unintended consequences.
+### Monitor Progress and Impact
 
-## Barriers and Obstacles and How to Overcome Them 
+Regularly assess the performance of
+   ChatGPT within the organization and evaluate its impact on specific use
+   cases. Develop key performance indicators (KPIs) and metrics to track the
+   technology's effectiveness, and use this data to inform future improvements
+   and adaptations.
 
-Inevitably, you will encounter barriers and obstacles during your ChatGPT implementation journey. Recognizing these challenges and understanding how to overcome them is essential to ensure a successful adoption. 
+### Develop Continuous Improvement and Adaptation
 
-In this section, we will discuss the most common hurdles and provide strategies for navigating them, empowering you to lead your organization through the complexities of AI integration.
+Stay current with AI advancements
+   and adapt ChatGPT implementation to maximize benefits. The AI landscape is
+   constantly evolving, and it's crucial to stay up-to-date with advancements
+   in the field. Continuously evaluate the performance of ChatGPT and be
+   prepared to adapt its implementation to maximize its benefits and stay ahead
+   of the competition.
 
-_Resistance to Change_
+### Recognize, Document, and Build Processes to Address Ethical Considerations
 
-Employees and leaders may be resistant to adopting new technologies due to fear of job loss or discomfort with the unknown. To overcome this, emphasize the benefits of ChatGPT, such as increased efficiency and improved decision-making, and provide ample training and support. Encourage open discussions and showcase successful examples of AI adoption.
+Develop guidelines for responsible use and educate
+    employees on potential risks and challenges of AI technologies like
+    ChatGPT. Be mindful of the ethical implications of using AI-powered
+    technologies. Develop guidelines and best practices for responsible use,
+    and ensure that employees understand the potential risks and challenges
+    associated with AI, such as algorithmic bias or unintended consequences.
 
-_Lack of Technical Expertise_
-
-Limited knowledge of AI and ChatGPT may hinder successful implementation. Address this by investing in training programs, partnering with AI experts, or hiring professionals with relevant experience. Create an internal AI community for knowledge sharing and peer support.
-
-_Insufficient Collaboration_
-
-Inadequate communication and collaboration between departments can impede progress. Foster cross-functional teamwork through regular meetings, workshops, and collaborative platforms. Encourage leaders to champion the initiative and create a culture of cooperation.
-
-_Resource Constraints_
-
-Limited budget, time, or personnel can pose challenges. To overcome this, prioritize use cases based on potential impact and feasibility, and secure buy-in from top management for necessary resources. Consider leveraging external partnerships or outsourcing certain tasks to reduce internal workload.
-
-_Data Privacy and Security Concerns_
-
-Handling sensitive proprietary data may raise concerns. Collaborate closely with IT and Legal departments to establish robust data security protocols and comply with regulations. Communicate these measures transparently to build trust among employees and stakeholders.
-
-_Ethical Concerns_
-
-The potential for biased or unethical AI outcomes may create apprehension. Develop guidelines for responsible AI usage, create an ethics review board, and offer training on potential risks and challenges. Emphasize the importance of ethical AI practices throughout the organization.
-
-As you reflect on the potential barriers and obstacles to ChatGPT implementation, remember that overcoming these challenges is an integral part of the journey towards AI-driven success. By anticipating and addressing these issues proactively, you can foster a resilient and adaptable organization that is well-prepared to navigate the ever-evolving landscape of artificial intelligence.
-
-## Overcoming Barriers and Obstacles
-
-As you can see above, there are many barriers and obstacles to ChatGPT implementation and overcoming these is crucial for realizing its full potential within your organization. 
-
-In this section, we will provide a combination of conventional and less traditional strategies to address the challenges you might face during the adoption process. By embracing these adaptive approaches, you can foster a culture of adaptability and resilience, enabling your organization to successfully harness the power of AI-driven solutions like ChatGPT.
-
-### Conventional Strategies for Overcoming Barriers and Obstacles
-
-  
-
-1.  Resistance to Change: To overcome resistance to change, emphasize the benefits of ChatGPT, provide ample training and support, encourage open discussions, and showcase successful examples of AI adoption.
-2.  Lack of Technical Expertise: Address this by investing in training programs, partnering with AI experts, hiring professionals with relevant experience, and creating an internal AI community for knowledge sharing and peer support.
-3.  Insufficient Collaboration: Foster cross-functional teamwork through regular meetings, workshops, and collaborative platforms, and encourage leaders to champion the initiative and create a culture of cooperation.
-4.  Resource Constraints: Prioritize use cases based on potential impact and feasibility, secure buy-in from top management for necessary resources, and consider leveraging external partnerships or outsourcing certain tasks to reduce internal workload.
-5.  Data Privacy and Security Concerns: Collaborate closely with IT and Legal departments to establish robust data security protocols and comply with regulations, and communicate these measures transparently to build trust among employees and stakeholders.
-6.  Ethical Concerns: Develop guidelines for responsible AI usage, create an ethics review board, and offer training on potential risks and challenges, emphasizing the importance of ethical AI practices throughout the organization.
-
-### Unconventional Strategies for Overcoming Barriers and Obstacles
-
-I often find that we need to find “back-doors” and just different approaches in the context of change and transformation projects. Thus, here are some less conventional approaches to the barriers. 
-
-  
-
-1.  Gamification: Introduce gamification elements to the training and adoption process, incentivizing employees to engage with ChatGPT and learn its capabilities. Offer rewards or recognition for participation and achievements.
-2.  Reverse Mentoring: Encourage younger or more tech-savvy employees to mentor older or less experienced colleagues, facilitating knowledge sharing and promoting a more inclusive approach to technology adoption.
-3.  Innovation Contests: Organize internal contests or hackathons for employees to develop creative ChatGPT use cases or solutions, fostering a sense of ownership and excitement around the technology.
-4.  External Showcasing: Publicly share successful ChatGPT implementation stories or use cases to build a positive reputation, attract talent, and create a culture of innovation within the organization.
-5.  AI Sabbaticals: Offer employees the opportunity to take short-term sabbaticals to focus on AI-related projects or training, providing dedicated time for learning and exploration. This can help develop in-house expertise and promote a culture of continuous learning.
