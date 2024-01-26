@@ -168,11 +168,25 @@
     "text": "6.8 Principle 8: AI tools should facilitate shared decision-making\n\n\n\n\nBadal, Kimberly, Carmen M Lee, and Laura J Esserman. 2023. “Guiding Principles for the Responsible Development of Artificial Intelligence Tools for Healthcare.” Communication & Medicine 3 (1): 47. https://doi.org/10.1038/s43856-023-00279-9."
   },
   {
+    "objectID": "resources_education.html#resources",
+    "href": "resources_education.html#resources",
+    "title": "8  Education",
+    "section": "8.1 Resources",
+    "text": "8.1 Resources\n\nCarnegie Mellon University’s FAQ on AI in education\n\nCarnegie Mellon University Examples of AI use policies for educators\n\nExamples of possible academic integrity policies that address student use of generative AI tools in courses. Each is short-and-sweet.\n\n\n\nCornell University\n\nA collection of resources for instructors and students on the use of generative AI in education.\n\n\n\nGenerative Artificial Intelligence in Education and Pedagogy\n\nTo address the risks of GAI while maximizing its benefit, we propose a flexible framework in which instructors can choose to prohibit, to allow with attribution, or to encourage GAI use. We discuss this framework, taking into consideration academic integrity, accessibility, and privacy concerns; provide examples of how this framework might be broadly relevant to different learning domains; and make recommendations for both faculty and administration."
+  },
+  {
+    "objectID": "resources_education.html#policies",
+    "href": "resources_education.html#policies",
+    "title": "8  Education",
+    "section": "8.2 Policies",
+    "text": "8.2 Policies\n\nStanford\nDuke and here\nUniversity of Wisconsin-Madison\nNotre Dame\nBoise Statue University\nUNESCO"
+  },
+  {
     "objectID": "resources_education.html#literature",
     "href": "resources_education.html#literature",
     "title": "8  Education",
-    "section": "8.1 Literature",
-    "text": "8.1 Literature\n\n\nA comprehensive AI policy education framework for university teaching and learning\n\nThis study aims to develop an AI education policy for higher education by examining the perceptions and implications of text generative AI technologies. Data was collected from 457 students and 180 teachers and staff across various disciplines in Hong Kong universities, using both quantitative and qualitative research methods. Based on the findings, the study proposes an AI Ecological Education Policy Framework to address the multifaceted implications of AI integration in university teaching and learning. This framework is organized into three dimensions: Pedagogical, Governance, and Operational. The Pedagogical dimension concentrates on using AI to improve teaching and learning outcomes, while the Governance dimension tackles issues related to privacy, security, and accountability. The Operational dimension addresses matters concerning infrastructure and training. The framework fosters a nuanced understanding of the implications of AI integration in academic settings, ensuring that stakeholders are aware of their responsibilities and can take appropriate actions accordingly."
+    "section": "8.3 Literature",
+    "text": "8.3 Literature\n\nChan, C.K.Y. (2023) ‘A comprehensive AI policy education framework for university teaching and learning’, International Journal of Educational Technology in Higher Education, 20(1), pp. 1–25. Available at: https://doi.org/10.1186/s41239-023-00408-3.\nKasneci, E. et al. (2023) ‘ChatGPT for good? On opportunities and challenges of large language models for education’, Learning and individual differences, 103, p. 102274. Available at: https://doi.org/10.1016/j.lindif.2023.102274.\nGill, S.S. et al. (2024) ‘Transformative effects of ChatGPT on modern education: Emerging Era of AI Chatbots’, Internet of Things and Cyber-Physical Systems, 4, pp. 19–23. Available at: https://doi.org/10.1016/j.iotcps.2023.06.002"
   },
   {
     "objectID": "code-examples/code-answering.html",
