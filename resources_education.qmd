@@ -1,6 +1,87 @@
 # Education
 
-## Literature
 
-- [A comprehensive AI policy education framework for university teaching and learning](https://educationaltechnologyjournal.springeropen.com/articles/10.1186/s41239-023-00408-3)
-  : This study aims to develop an AI education policy for higher education by examining the perceptions and implications of text generative AI technologies. Data was collected from 457 students and 180 teachers and staff across various disciplines in Hong Kong universities, using both quantitative and qualitative research methods. Based on the findings, the study proposes an AI Ecological Education Policy Framework to address the multifaceted implications of AI integration in university teaching and learning. This framework is organized into three dimensions: Pedagogical, Governance, and Operational. The Pedagogical dimension concentrates on using AI to improve teaching and learning outcomes, while the Governance dimension tackles issues related to privacy, security, and accountability. The Operational dimension addresses matters concerning infrastructure and training. The framework fosters a nuanced understanding of the implications of AI integration in academic settings, ensuring that stakeholders are aware of their responsibilities and can take appropriate actions accordingly.
+
+## Background and basics of Generative AI and LLMs
+
+- [Cornell University](https://teaching.cornell.edu/generative-artificial-intelligence)
+- [Vanderbilt University Guide to Teaching in the Age of AI](https://cft.vanderbilt.edu/guides-sub-pages/teaching-in-the-age-of-ai/)
+- [University of South Carolina ChatGPT for Teaching and Learning](https://sc.edu/about/offices_and_divisions/cte/teaching_resources/chatgpt/index.php)
+- [Generative Artificial Intelligence in Education and Pedagogy](https://teaching.cornell.edu/sites/default/files/2024-01/Cornell-GenerativeAIForEducation-Report_2.pdf)
+- [OpenAI's Guidelines for Educators](https://help.openai.com/en/collections/5929286-educator-faq)
+- [AI Guidance from the Poorvu Center at Yale](https://poorvucenter.yale.edu/AIguidance)
+- [New Jersey Institute of Technology AI and Instruction Guide](https://researchguides.njit.edu/c.php?g=671651&p=9662555)
+- [Chatting about ChatGPT: How May AI and ChatGPT Impact Academia and Libraries?](https://www.emerald.com/insight/content/doi/10.1108/LHTN-01-2023-0009/full/html)
+- [Talking about Large Language Models](https://arxiv.org/pdf/2212.03551.pdf)
+- [SFCC Comprehensive ChatGPT Resource Guide](https://libraryhelp.sfcc.edu/Chat-GPT/articles-etc)
+- [Big Data Big Design](https://helenarmstrong.info/portfolio/big-data-big-design/)
+- [4 Steps to Help You Plan for ChatGPT in Your Classroom](https://www.chronicle.com/article/4-steps-to-help-you-plan-for-chatgpt-in-your-classroom?bc_nonce=xi6lz5ybgnjgwgd950m67e&cid=reg_wall_signup)
+- [Carnegie Mellon University's FAQ on AI in education](https://www.cmu.edu/teaching/technology/aitools/index.html)
+- [AI in Higher Education Resource Hub](https://teachonline.ca/ai-resources)
+
+## AI in the Classroom
+
+This section includes resources that provide insight into the use of AI in the classroom. These resources are intended to provide instructors with a starting point for considering how to use AI in their courses.
+
+- [Davis Institute for Artificial Intelligence](https://davisinstituteai.colby.edu/annual-theme/)
+- [Thinking about updating your syllabus for Chat GPT?](https://academic.wlu.edu/2023/08/17/thinking-about-updating-your-syllabus-for-chatgpt/)
+- [Turn It In: Academic Resources in the Age of AI](https://www.turnitin.com/resources/academic-integrity-in-the-age-of-AI)
+- [Intentional Teaching: Rethinking Teaching in an Age of AI](https://intentionalteaching.buzzsprout.com/2069949/12902485-rethinking-teaching-in-an-age-of-ai-with-james-m-lang-and-michelle-d-miller)
+- [Introduction to AI for Teachers and Students](https://www.youtube.com/playlist?list=PL4_ShpfD3Nu4KF-1NngyyC3ZNW2FdBVg_)
+- [Using AI to Implement Effective Teaching Strategies in Classrooms](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4391243)
+- [New Modes of Learning Enabled by AI Chatbots](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4300783)
+- [Tim Laquintano's forthcoming work](https://wac.colostate.edu/repository/collections/textgened/front-matter/cfp-textgened/)
+- [Practical Responses to ChatGPT and Other Generative AI](https://www.montclair.edu/faculty-excellence/teaching-resources/clear-course-design/practical-responses-to-chat-gpt/)
+- [World Economic Forum on ChatGPT and Cheating](https://www.weforum.org/agenda/2023/03/chatgpt-and-cheating-5-ways-to-change-how-students-are-graded/)
+- [How to Cheat on Your Final Paper: Assigning AI for Student Writing](https://link.springer.com/epdf/10.1007/s00146-022-01397-z?sharing_token=YwKL6HmHeNSxEj6Go63ks_e4RwlQNchNByi7wbcMAY5jYiMNym3xBTAzN52Pp_FuF7Qv_P-Qnug5Ax7FJNWShl1DpAHIbV1fvh8gzqODl_v-dUgF0TEFyk8rlBIfksPNkX2csUNmE3KmnQCA9GDBy9sa4Q9nkg7MfuW4bbwdNNo=)
+- [AI-Based Text Generation and the Social Construction of "Fraudulent Authorship"](https://compositionstudiesjournal.files.wordpress.com/2022/07/anson.pdf)
+- [AI Text Generators and Teaching Writing: Starting Points for Inquiry](https://wac.colostate.edu/repository/collections/ai-text-generators-and-teaching-writing-starting-points-for-inquiry/)
+- [Collaborating with ChatGPT: Considering the Implications of Generative Artificial Intelligence for Journalism and Media Education](https://wlu.primo.exlibrisgroup.com/discovery/fulldisplay?docid=cdi_proquest_journals_2776964903&context=PC&vid=01WLU_INST:01WLU&lang=en&search_scope=MyInst_and_CI&adaptor=Primo%20Central&tab=Everything&query=any,contains,Collaborating%20With%20ChatGPT:%20Considering%20the%20Implications%20of%20Generative%20Artificial%20Intelligence%20for%20Journalism%20and%20Media%20Education&mode=Basic)
+- [Will ChatGPT Change How Professors Access Learning?](https://www.chronicle.com/article/will-chatgpt-change-how-professors-assess-learning?utm_source=Iterable&utm_medium=email&utm_campaign=campaign_7089085_nl_Teaching_date_20230622&cid=te&source=&sourceid=)
+- [Charles Knight on AI in Higher Ed](https://www.youtube.com/playlist?list=PLT7ttc4UUl3SE8AuHnNN-j7qYM4QN-EG3)
+- [Civics of Technology](https://www.civicsoftechnology.org/aboutus)
+
+## Educational policy statements and guidelines
+
+This section includes examples of policy statements and guidelines from institutions of higher education. These examples are intended to provide a starting point for instructors and administrators who are considering how to address the use of generative AI tools in their courses.
+
+- [Carnegie Mellon University Examples of AI use policies for educators](https://www.cmu.edu/teaching/technology/aitools/academicintegrity/index.html)
+- [University of Iowa, Office of Teaching, Learning, and Technology](https://teach.its.uiowa.edu/artificial-intelligence-tools-and-teaching#collapse-nid7546)
+- [SFCC Library Faculty Help](https://libraryhelp.sfcc.edu/Chat-GPT/syllabus-statements-course-policies)
+- [Cleveland State University Center for Faculty Excellence](https://pressbooks.ulib.csuohio.edu/teachingandlearning/chapter/statements/)
+- [Classroom Policies Related to ChatGPT and Other AI Tools](https://docs.google.com/document/d/1RMVwzjc1o0Mi8Blw_-JUTcXv02b2WRH86vw7mi16W3U/edit#heading=h.1cykjn2vg2wx)
+- [Montclair State University AI Course Policies and Assignment Guidelines](https://www.montclair.edu/faculty-excellence/teaching-resources/clear-course-design/practical-responses-to-chat-gpt/9569-2/)
+- [Inside HigherEd Opinion Piece on Generative AI Policy Making](https://www.insidehighered.com/views/2023/03/22/ai-policy-advice-administrators-and-faculty-opinion)
+- [Stanford](https://tlhub.stanford.edu/docs/course-policies-on-generative-ai-use/)
+- [Duke](https://learninginnovation.duke.edu/ai-and-teaching-at-duke-2/artificial-intelligence-policies-in-syllabi-guidelines-and-considerations/) and [here](https://students.duke.edu/get-assistance/community-standard/)
+- [University of Wisconsin-Madison](https://it.wisc.edu/generative-ai-uw-madison-use-policies/)
+- [Notre Dame](https://honorcode.nd.edu/generative-ai-policy-for-students-august-2023/)
+- [Boise Statue University](https://www.boisestate.edu/policy/generative-artificial-intelligence-ai-use-and-policies/) 
+
+- [UNESCO](https://www.unesco.org/en/articles/guidance-generative-ai-education-and-research)
+
+
+## Bias and Ethics in AI
+
+- [How ChatGPT Could Help or Hurt Students with Disabilities](https://www.chronicle.com/article/how-chatgpt-could-help-or-hurt-students-with-disabilities?utm_source=Iterable&utm_medium=email&utm_campaign=campaign_7089085_nl_Teaching_date_20230622&cid=te&source=&sourceid=)
+- [Association for Progressive Communications](https://www.apc.org/en/publications?field_publication_type_tid=All&field_issue_tid=6206&filter-field_region_tid=All&field_project_target_id=All&field_theme_tid=All&body_value=)
+- [Algorithms of Oppression: How Search Engines Reinforce Racism — Safiya Umoja Noble](https://wlu.primo.exlibrisgroup.com/discovery/fulldisplay?docid=alma991010595928004161&context=L&vid=01WLU_INST:01WLU&lang=en&search_scope=MyInst_and_CI&adaptor=Local%20Search%20Engine&tab=Everything&query=any,contains,Algorithms%20of%20Oppression&mode=Basic)
+- [Race After Technology: Abolitionist Tools for the New Jim Code](https://wlu.primo.exlibrisgroup.com/discovery/fulldisplay?docid=alma991010591929704161&context=L&vid=01WLU_INST:01WLU&lang=en&search_scope=MyInst_and_CI&adaptor=Local%20Search%20Engine&tab=Everything&query=any,contains,Race%20After%20Technology&offset=0)
+- [NIST on Bias in AI](https://www.nist.gov/news-events/news/2022/03/theres-more-ai-bias-biased-data-nist-report-highlights)
+- [Decolonial AI: Decolonial Theory as Sociotechical Foresight in Artificial Intelligence](https://wlu.primo.exlibrisgroup.com/discovery/fulldisplay?docid=cdi_crossref_primary_10_1007_s13347_020_00405_8&context=PC&vid=01WLU_INST:01WLU&lang=en&search_scope=MyInst_and_CI&adaptor=Primo%20Central&tab=Everything&query=any,contains,Decolonial%20AI&offset=0)
+
+## Podcasts and Newsletters for Further Insight
+
+In this section are links to podcasts and newsletters around generative AI and education. 
+
+- [THE Podcast: How to Use Generative AI in Your Teaching and Research](https://www.timeshighereducation.com/campus/podcast-how-use-generative-ai-your-teaching-and-research)
+- [Forward Thinking on the Brave New World of Generative AI with Ethan Mollick](https://www.mckinsey.com/mgi/forward-thinking/forward-thinking-on-the-brave-new-world-of-generative-ai-with-ethan-mollick)
+- [We Can't Predict How AI Will Change the World](https://spencerauthor.com/ai-predict/)
+- [ChatGPT and Good Intentions in Higher Ed](https://teachinginhighered.com/podcast/chatgpt-and-good-intentions-in-higher-ed/)
+- [Tea for Teaching: ChatGPT](https://teaforteaching.com/274-chatgpt/)
+- [WNYC Studios on the Media: It's a Machine's World](https://www.wnycstudios.org/podcasts/otm/episodes/on-the-media-its-a-machines-world)
+- [College of Charleston Podcast: ChatGPT and Conversational AI Explained](https://today.cofc.edu/2023/04/19/cofc-podcast-chatgpt-and-conversational-a-i-explained/)
+- [University of Florida's AI Radio Minutes](https://ai.ufl.edu/radio/)
+- [Ethan Mollick's Newsletter: One Useful Thing](https://www.oneusefulthing.org/)
+- [Bryan Alexander's Newsletter: AI and Academia](https://aiandacademia.substack.com/)
+
