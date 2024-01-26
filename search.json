@@ -194,5 +194,12 @@
     "title": "Appendix B — Whitehouse AI Bill(s) of rights",
     "section": "B.1 Commentary and references",
     "text": "B.1 Commentary and references\n\nOpportunities and blind spots in the White House’s blueprint for an AI Bill of Rights\n6 Reactions to the White House’s AI Bill of Rights The nonbinding principles are being both celebrated and vilified\nApplying the Blueprint for an AI Bill of Rights\n\nHow Does the White House AI Bill of Rights Apply to Healthcare?\n\nExperts from Mayo Clinic Platform and DLA Piper weigh in on how the White House’s Blueprint for an AI Bill of Rights may impact healthcare and health AI regulation.\n\n\nThe US AI Bill Of Rights Should Kickstart The Debate On Bias In Artificial Intelligence"
+  },
+  {
+    "objectID": "HHS.html",
+    "href": "HHS.html",
+    "title": "Appendix C — HHS EHR reporting program rule",
+    "section": "",
+    "text": "https://www.federalregister.gov/documents/2024/01/09/2023-28857/health-data-technology-and-interoperability-certification-program-updates-algorithm-transparency-and\n\nThis final rule implements the Electronic Health Record (EHR) Reporting Program provision of the 21st Century Cures Act by establishing new Conditions and Maintenance of Certification requirements for health information technology (health IT) developers under the ONC Health IT Certification Program (Program). This final rule also makes several updates to certification criteria and standards recognized by the Program. The Program updates include revised certification criteria for “decision support interventions,” “patient demographics and observations,” and “electronic case reporting,” as well as a new baseline version of the United States Core Data for Interoperability (USCDI) standard to Version 3. Additionally, this final rule provides enhancements to support information sharing under the information blocking regulations. The implementation of these provisions advances interoperability, improves algorithm transparency, and supports the access, exchange, and use of electronic health information (EHI). This final rule also updates numerous technical standards in the Program in additional ways to advance interoperability, enhance health IT certification, and reduce burden and costs for health IT developers and users of health IT."
   }
 ]
