@@ -1,0 +1,1765 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.3.353">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Large Language Model Policy and Practice – code-answering</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<link href="../references.html" rel="next">
+<link href="../pm_and_support.html" rel="prev">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+
+
+</head>
+
+<body class="nav-sidebar floating fullcontent">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../code-examples/code-answering.html">Code examples</a></li><li class="breadcrumb-item"><a href="../code-examples/code-answering.html"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">code-answering.html</span></a></li></ol></nav>
+      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+      </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="../">Large Language Model Policy and Practice</a> 
+        <div class="sidebar-tools-main tools-wide">
+    <a href="https://github.com/seandavi/campus-llm-kb/" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
+    <div class="dropdown">
+      <a href="" title="Download" id="quarto-navigation-tool-dropdown-0" class="quarto-navigation-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download"><i class="bi bi-download"></i></a>
+      <ul class="dropdown-menu" aria-labelledby="quarto-navigation-tool-dropdown-0">
+          <li>
+            <a class="dropdown-item sidebar-tools-main-item" href="../Large-Language-Model-Policy-and-Practice.pdf">
+              <i class="bi bi-bi-file-pdf pe-1"></i>
+            Download PDF
+            </a>
+          </li>
+          <li>
+            <a class="dropdown-item sidebar-tools-main-item" href="../Large-Language-Model-Policy-and-Practice.epub">
+              <i class="bi bi-bi-journal pe-1"></i>
+            Download ePub
+            </a>
+          </li>
+      </ul>
+    </div>
+    <div class="dropdown">
+      <a href="" title="Share" id="quarto-navigation-tool-dropdown-1" class="quarto-navigation-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Share"><i class="bi bi-share"></i></a>
+      <ul class="dropdown-menu" aria-labelledby="quarto-navigation-tool-dropdown-1">
+          <li>
+            <a class="dropdown-item sidebar-tools-main-item" href="https://twitter.com/intent/tweet?url=|url|">
+              <i class="bi bi-bi-twitter pe-1"></i>
+            Twitter
+            </a>
+          </li>
+          <li>
+            <a class="dropdown-item sidebar-tools-main-item" href="https://www.facebook.com/sharer/sharer.php?u=|url|">
+              <i class="bi bi-bi-facebook pe-1"></i>
+            Facebook
+            </a>
+          </li>
+          <li>
+            <a class="dropdown-item sidebar-tools-main-item" href="https://www.linkedin.com/sharing/share-offsite/?url=|url|">
+              <i class="bi bi-bi-linkedin pe-1"></i>
+            LinkedIn
+            </a>
+          </li>
+      </ul>
+    </div>
+</div>
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../preface.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Preface</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Overview</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../values.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Values and Principles</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
+ <span class="menu-text">Implementation</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../framework.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">The Framework</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../implementation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Domain Implementation Guide</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../barriers.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Barriers and Obstacles and How to Overcome Them</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../domainresource.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Domain Resources</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../resources_clinical.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Clinical Domain</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../resources_research.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Research</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../resources_education.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Education</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../resources_business.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Business Operations</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true">
+ <span class="menu-text">Workstream Resources</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../infrastructure.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Training and Workforce Development Resources</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../workforce.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Training and Workforce Development Resources</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../ethics.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Training and Workforce Development Resources</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../data.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Training and Workforce Development Resources</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../pm_and_support.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Project Management and Support Resources</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true">
+ <span class="menu-text">Code examples</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../code-examples/code-answering.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">code-answering.html</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../references.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">References</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="true">
+ <span class="menu-text">Appendices</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../appendices.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">AI principles proposed by select organizations</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../bill_of_rights.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">B</span>&nbsp; <span class="chapter-title">Whitehouse AI Bill(s) of rights</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
+<!-- margin-sidebar -->
+    
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+
+
+<p>Source code analysis is one of the most popular LLM applications (e.g., <a href="https://github.com/features/copilot">GitHub Co-Pilot</a>, <a href="https://chat.openai.com/auth/login?next=%2F%3Fmodel%3Dgpt-4-code-interpreter">Code Interpreter</a>, <a href="https://www.codium.ai/">Codium</a>, and <a href="https://codeium.com/about">Codeium</a>) for use-cases such as:</p>
+<ul>
+<li>Q&amp;A over the code base to understand how it works</li>
+<li>Using LLMs for suggesting refactors or improvements</li>
+<li>Using LLMs for documenting the code</li>
+</ul>
+<p>The pipeline for QA over code follows <a href="https://python.langchain.com/docs/extras/use_cases/question_answering">the steps we do for document question answering</a>, with some differences:</p>
+<p>In particular, we can employ a <a href="https://python.langchain.com/docs/integrations/document_loaders/source_code">splitting strategy</a> that does a few things:</p>
+<ul>
+<li>Keeps each top-level function and class in the code is loaded into separate documents.</li>
+<li>Puts remaining into a separate document.</li>
+<li>Retains metadata about where each split comes from</li>
+</ul>
+<div class="cell" data-execution_count="50">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="op">%%</span>capture</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="op">%</span>pip install qdrant<span class="op">-</span>client sentence<span class="op">-</span>transformers tiktoken langchain GitPython <span class="st">'google-cloud-aiplatform[preview]'</span> Ipython</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
+To disable this warning, you can either:
+    - Avoid using `tokenizers` before the fork if possible
+    - Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)</code></pre>
+</div>
+</div>
+<div class="cell" data-execution_count="24">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> git</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> langchain.text_splitter <span class="im">import</span> Language</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> langchain.document_loaders.generic <span class="im">import</span> GenericLoader</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> langchain.document_loaders.parsers <span class="im">import</span> LanguageParser</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-execution_count="62">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pathlib</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>basepath <span class="op">=</span> pathlib.Path(<span class="st">'/tmp/bioc_repos'</span>)</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>basepath.mkdir(exist_ok<span class="op">=</span><span class="va">True</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-execution_count="65">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>gq_path <span class="op">=</span> basepath <span class="op">/</span> <span class="st">"dagster"</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> shutil</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span>(gq_path.exists()):</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>    shutil.rmtree(gq_path)</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>repo <span class="op">=</span> git.Repo.clone_from(<span class="st">'https://github.com/dagster-io/dagster'</span>, to_path <span class="op">=</span> gq_path)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
+To disable this warning, you can either:
+    - Avoid using `tokenizers` before the fork if possible
+    - Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)</code></pre>
+</div>
+</div>
+<div class="cell" data-execution_count="66">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>loader <span class="op">=</span> GenericLoader.from_filesystem(</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>    gq_path,</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>    glob<span class="op">=</span><span class="st">"**/*"</span>,</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>    suffixes<span class="op">=</span>[<span class="st">".py"</span>],</span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>    parser<span class="op">=</span>LanguageParser(language<span class="op">=</span>Language.PYTHON, parser_threshold<span class="op">=</span><span class="dv">500</span>)</span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>documents <span class="op">=</span> loader.load()</span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a><span class="bu">len</span>(documents)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="66">
+<pre><code>9371</code></pre>
+</div>
+</div>
+<div class="cell" data-execution_count="67">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> langchain.text_splitter <span class="im">import</span> RecursiveCharacterTextSplitter</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>python_splitter <span class="op">=</span> RecursiveCharacterTextSplitter.from_language(language<span class="op">=</span>Language.PYTHON, </span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>                                                               chunk_size<span class="op">=</span><span class="dv">2000</span>, </span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>                                                               chunk_overlap<span class="op">=</span><span class="dv">200</span>)</span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>texts <span class="op">=</span> python_splitter.split_documents(documents)</span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a><span class="bu">len</span>(texts)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="67">
+<pre><code>16659</code></pre>
+</div>
+</div>
+<div class="cell" data-execution_count="68">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> langchain.embeddings <span class="im">import</span> HuggingFaceEmbeddings</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> qdrant_client <span class="im">import</span> QdrantClient</span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> qdrant_client.models <span class="im">import</span> VectorParams, Distance</span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>model_id <span class="op">=</span> <span class="st">"flax-sentence-embeddings/st-codesearch-distilroberta-base"</span></span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>embed_model <span class="op">=</span> HuggingFaceEmbeddings(model_name<span class="op">=</span>model_id)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-execution_count="69">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>COLLECTION_NAME <span class="op">=</span> <span class="st">"omicidx"</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>client <span class="op">=</span> QdrantClient(host<span class="op">=</span><span class="st">"localhost"</span>, port<span class="op">=</span><span class="dv">6333</span>)</span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>client.recreate_collection(</span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>    collection_name<span class="op">=</span> COLLECTION_NAME,</span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a>    vectors_config<span class="op">=</span>VectorParams(size <span class="op">=</span> <span class="dv">768</span> ,distance<span class="op">=</span>Distance.COSINE),</span>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> langchain.vectorstores <span class="im">import</span> qdrant</span>
+<span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-11"><a href="#cb12-11" aria-hidden="true" tabindex="-1"></a>vector_store <span class="op">=</span> qdrant.Qdrant(</span>
+<span id="cb12-12"><a href="#cb12-12" aria-hidden="true" tabindex="-1"></a>    client,</span>
+<span id="cb12-13"><a href="#cb12-13" aria-hidden="true" tabindex="-1"></a>    COLLECTION_NAME,</span>
+<span id="cb12-14"><a href="#cb12-14" aria-hidden="true" tabindex="-1"></a>    embed_model</span>
+<span id="cb12-15"><a href="#cb12-15" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-execution_count="70">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="op">%%</span>capture</span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>vector_store.add_documents(texts)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="70">
+<pre><code>['d93d2e7afe424efe88376a3d59f5ea4a',
+ '8c110ee0c21947c8a0252c838d51e351',
+ '05ca0765ad7d4b1c80b025e234a120ba',
+ '3204fd893ef740d9857f8c51dac404cf',
+ '3855c31be5494e05bfad8335227ab24c',
+ '596c2696ec184f459b273fc258cb0f25',
+ 'b5a9a9a5124c439eb88c8ccbdcd41b6f',
+ 'c7bc289d3e0448758e114d0f68d8e00f',
+ 'ccb1e804c7ff4291ae22981200134663',
+ '8a8695fabbba4716a8402ea8d11fbbb3',
+ '26ee0199cddd470d83812a7b62775cd0',
+ '4a9117fab3e24b0684fa78247b5e081f',
+ '2d4574a207e24c5c8ddc9f3629e1e7e5',
+ 'e2b6accd865a4847a7c7ec71c1ca271e',
+ '80edd91a537a43b8a631aec3ca122a6f',
+ '823a0cc797f84181a3bc50e7ee217452',
+ 'df05b58247374c179d82840144fed407',
+ '7710603eb37a4f43bb4febd71336b037',
+ '4ee9527fe22e4274851a4b708fe0b6ce',
+ 'd2db50e0f87b43c29422b63b3be38454',
+ '0feabeeb31344a9c8625de44c5b8203d',
+ 'a82909433287468f8195e26a2a72a2fb',
+ '3e6e50a649b94b9980d4b1ccbf4f6074',
+ '070aa8b172ca4f50ba0769368e5d4e75',
+ '4d6a2ed6b3604306925c7cf9f6c7780f',
+ '0c62f7cd71e942e99c9db8438ebd131b',
+ '5eb5081ec57a4e74b06fc38018bd62be',
+ '6ecb10bbfdb945acaf04668572c19442',
+ '3a89387410f1480bab1fc6883376917e',
+ '9e64f3c8c94d48488ad751d600ae579f',
+ '3c385814089f4085aca710d9e77a1874',
+ '1fcbc06bb5cd403caf334faa1bc6e7ae',
+ '68607d64327748938ce43b7d19955633',
+ '99a978d24f534e7c8b00358ce7692d0c',
+ 'fb1abbe9549a4840835bd19c01f4f067',
+ 'cdc8d7a1ab2d458aa4663518e54e50b7',
+ 'fc766e6bcfd24272bb1a60d70b199666',
+ '7ebb6f93e9bf4b849c7505655a944f4d',
+ 'a65842751c0f4c5abf0c480099afd10d',
+ '65a2cf2f14d149bc953529a58b36d83e',
+ '77944d6b685447f59a6048f5137f7698',
+ '256e513bcffc4741a0e3552996f803bb',
+ '2c40e2c193b047da8e7a6c85d8a37792',
+ '092d6e52f2b84919bc82aec5a2424475',
+ 'b4e66099a2e34ec39e667444bbf805f0',
+ 'bdda7e91cb444c038f0d5b0dfb5f3dd6',
+ '35601e7847c14031bd111a56e38dadd1',
+ 'ea90c4553f2e4fe990bfc2b444d2c5c8',
+ '4a020195da0e44349f19616d718d8b50',
+ 'fed868ab42344d1380f82a00c5db759c',
+ '53c7327f8f4642198be803696064375d',
+ 'e86e2ccbc65b479282eb2a9ffc599626',
+ '99a3b69e5e944b06aac9da1b306d8721',
+ 'c54f132027f3465cb49571fe9fb9e4ea',
+ '65066aca81c946a4a0962e19ef683d7f',
+ '5f77574feac441b294509336a8c2b8e7',
+ '1b6032813d4241dea3f9d7f398bf442b',
+ 'c400eef518904360ac0c2691c748c8fd',
+ '671d570107964fadbfc0ed677f9fb4c2',
+ 'd1d102596af04d3ba48510632d31f135',
+ '02b5bea00a1545539dd53df3947e0808',
+ '4269e80202ea4230b79ebdb58e2411e2',
+ 'ffdedf95512b4775b3c553bddb454e0c',
+ 'ad25186bd6204c8db07abd47438c7a6e',
+ '1cd1d6b8b24a4ca99e0aa3cc7eb04824',
+ '8768c484664d472e8c9f57cd875a80c4',
+ 'd82a65e0d41048e498c69390ea0839e2',
+ '549d6bf5df0a478ba4b5df5be467efc1',
+ '3549cf4e6e3b452880525a9c8bb42baf',
+ 'ef75545a84c34114b1ab39d8e29dea78',
+ '305acfe2ae234b7abd80c343faaf2eff',
+ '5570debdf93d416980256835698d3e80',
+ '5b81c1d5cf644cb8b34c8601703e261a',
+ '4a41679902ff450ab0cd62174f417a44',
+ '056469848b864c4f88693ec6cb96e82e',
+ '552bb6e08b844e038910cc6f5e9c13b6',
+ 'd92c4382bcea4626b4bc27f921deeb62',
+ '527d300f99084528857957f955e7f91f',
+ '9a8c2a1d95f64b66875b4f736e85cbd9',
+ '845186c885e54d688f5fe64083bd8f1f',
+ 'ffd4db4711bf4af2b3741007993d82ff',
+ '9c513b431e61483c8864d176a3c2839f',
+ 'ea205a22c05c4b3d8247961bc445a0ee',
+ '84028f446ae64b79aa8230af0506587e',
+ 'd64d3d901ae84080943bf84cf98b54c1',
+ 'd93e10825405482da9a66b4f341383cb',
+ '9fa67c85c50440e6857679a5dc07e5d4',
+ '07fccefbc738402a876b5115c5b1bfd7',
+ '5ed8d1d16d54446c89f7ad760bedc17c',
+ '8832f71dc7be4920b25fae2f5c78857f',
+ '976cfd4fa731425dad8bf7e134234ea3',
+ '2e628b6ff18c49a49fed342b1eba95d2',
+ '861adfaa33be409a9107ffe82b4f4ee4',
+ '040749f8978e43c2a87a9df5206f297d',
+ 'fbd880bc3850425895587496ed03d10c',
+ '16a815e78c144221b8ef155b7e9a8ffd',
+ '67df421a952f4513ac259fc398858f6c',
+ 'ed0d502849ea43179b35fdedfaf1ba2e',
+ '45fdb0b567c0498c890c0b6052309e24',
+ '7a170fcda6f04eb7b5f36c47e7723212',
+ 'b2b810e31a3347ab8ba0437cfd9047c4',
+ 'f73a9fac37934ea981a191a5a2f677ad',
+ '343049b9e4a142b5a5cea97a7942dc63',
+ 'eb6db60fb5d24afa81e5313b94910916',
+ 'a8954c4039d346ceb424ad7aef7928dd',
+ '0e0072c860fd459d8b0326ead50b2d17',
+ 'a8bfa46f887042be9e408085c079e966',
+ '26b4792411024a3f9bbc680e32985950',
+ 'c557fb8932fb434fa24c44da7da83799',
+ '414cfe43b99d4a7a9d1aa8268a7bb0fc',
+ 'caa98a4d22c74499a384ca2e2d87dde3',
+ '699fb37dbdf54aaeafe6da040a57d8fd',
+ 'de9ee66d07db4123a75b19c3ad8a0366',
+ '8c460e36fb28434e83691d7b7cc42307',
+ '554eeefdc2f3446eb0ffba43f780f09f',
+ '384d688183194915a554c1534c4bbe79',
+ '969e8fac9e6444578662b538b28b34d4',
+ '2a24404e35624ec6acb87ea501803147',
+ '2f4833daa831489eb192e0b7efbea004',
+ '49d40bff6bf948e49f14ad31f9a7a1e6',
+ '49a642a40cf14aafaf88499b6fe44138',
+ '002147bd2cd1496187bf3c4a427538d9',
+ 'f809b29a9cdf461d935877849e05d139',
+ '5db3329362714b658faf6cb34ce0eff7',
+ '526fb52154904ddfa2ac8ec398f71253',
+ 'c946bc3a65b94e57917e3deed6719088',
+ '6f9fd06acc0342018f2fcbbec6f5176f',
+ '2f1c5a18020148cfaf978d745899ef05',
+ '24c0c044eb0b421ea85954182446c35d',
+ 'ac799c344f824547bd7b0e446f81e12e',
+ '5db9f9546f034ba784e20819f0456bde',
+ 'aa9c6f9073d64c469021264c8cc34955',
+ 'c4e28d72d34a42d19f0721b7467e10ee',
+ 'b3e5a87143924015bc296598ea48b262',
+ '3d85a961d0874b659047297c7cb91214',
+ '109bee4997914cc68cf06562a1eeb2ac',
+ 'ac45991305f84e22b32df9f1a21b4c8b',
+ 'b951ea38f9eb41e0be9aadd13b4bc637',
+ 'c37766f2b92a402d8d96acb38c3c7d62',
+ '3710c5035b5c4ec3ab704f68fe7a8c4c',
+ 'e1c6a7251d144a4e8e4200a05992e78b',
+ '1a3e575f41da4cfdb8aecf19f9da3490',
+ 'f3ef2b38a6c94eef8533ec0cf82fb581',
+ 'c2b885eaac8043318935283ba6c654c1',
+ 'e4381f73d0a14be88528d07dc9b348f2',
+ '711d7ba633ea426ab0067f2f26812e8e',
+ 'd48ba8d5c8bd4d0ab887b1dab6d95e6b',
+ '22fd37490e1c4dd1bc7bdcae9056437b',
+ '672c42c08f984d4695fc9bfd0c2e433a',
+ '6304b318b7c24dcd9eda728b5fa5b8c6',
+ '4f65796e364f4cb38656981fb3fbe6e6',
+ '4a9a98b954de4de782de813e1433a2cf',
+ '0a573a53fa454d479fe2b9eda496a145',
+ '0e4b6d656f0945a68ab0eb3e320bd8e8',
+ 'dc3844c4e92c49cfbbc340891ab9dac7',
+ 'f033cf11009d447b9866173ccbd503f0',
+ '2ec2c4ed038e40c88500f07ae2142023',
+ '479e122f9c7b4bfa982d9a578dc8e46d',
+ '5ba889a730194a3782c3524ca06fcece',
+ 'f759c95f4b2e4367b968e773ae4bebc5',
+ '77253aeba0ea45cd89406779338ba63a',
+ '3ef59fa595264dccb2bc5db47c77cdcb',
+ '091a75e470c042db96de6680735cb2d6',
+ '5069ff54dc634609a63fc72947321ced',
+ 'e386fae478244361aaa0b354ff83082d',
+ 'a276f68e85234b028300c2984eea68b7',
+ 'adb21db123f541eeac59636a116e11d1',
+ '7df3e610fd5841bfa8626bc1291bfc45',
+ '48e7362aaec34f56858b4468c018bdf3',
+ '048ebd7a150442ddadc3e3a8726535e1',
+ 'ac5f6fd3e6234ba79896c2194efe4ed7',
+ '127cbad6d5be40df8eab6899b3bfdacf',
+ 'fa2dbbd5e3fa47aab2598b5a933692e8',
+ '4902cffae19a4c4cbdcd32c4febba880',
+ '6a38ac6eee8c4f3ca2caf9eb20dd3696',
+ '5278b9a3f74c406483b9a6f671031e1a',
+ '4a1e1b02a062459c9b294b2207c73c17',
+ 'cf8c1b1e5c04421da23c42df56271631',
+ '2395b080568d4a859586a2e78b88d15b',
+ '0118754750fb44ada09d71993801d333',
+ '244f4c6027b64878864935d70e7695c7',
+ 'a4618593840445c38e2a362764f4929a',
+ '8f0a222c17f24741aff2a88d7d91b115',
+ '49ebd6f3bf3042e4867be260a35d4c3b',
+ '2ac2a9d680c64cbf9791a64d6449b91e',
+ '3fd8a5cd0cfd46ebb9e1050e062bafe7',
+ 'ee1c296d155a4a41a6b572b2bc59c701',
+ 'a08ab1c2428147cd83a478eb19e565a0',
+ '99f70ceda389401a97a41c339f3d4155',
+ '440a7f63c7874389913300182971ace1',
+ 'c35305eb4a1642c8bd763df45cdfd4d0',
+ 'f1eac0e47bdd4774b0a42da22f8f4554',
+ 'f1438052dec042f19f1997bd3cbcc7b0',
+ 'd20c1af4ee1d4165a5650e7d707c37d1',
+ '1bf23b2db8354999800c981a2569727e',
+ '448957caa3a143739048d2824eae49f8',
+ 'bbbed1f6468844879f8a0acec98800ee',
+ '02b7f404eccd4fc9a7450614afc7fa20',
+ '07df12e43ef248678f9e81faa2035f28',
+ 'a9cc8968190c409288c658134017c415',
+ 'ed4ca520bfc14778ae1692863cdccb31',
+ '7770c8f73ac640dbbddcdd28d96862a7',
+ '122e7cd83bab47b786921b0eef76ea2b',
+ 'bdcb14f172884f618080e750688f6efc',
+ 'd6c32290f0ff44ee80061aa93b362c52',
+ 'c121f9d23ad349debcaca69e3c2c51d5',
+ 'b7aa9b1197c645d8bed4288794cbeaea',
+ '7fd462b6baa64b42b10042c82d806254',
+ '805627744664480693c427f01c6898b6',
+ 'fea5aa2ee22a40fb8ca9ce48dd25e7f7',
+ '635e734be9a846b7a6a80c8a24d3bf23',
+ '2e927f34a61f4410a52fb138e191e15b',
+ '5a9912f383b14037ba216a739f15c4c2',
+ 'afa1d424591a454890ba1a757b1e41aa',
+ '7ea242b300a34ad68c53fbcdf956ae99',
+ 'c6d592c98ad54c2f976067d580bb66c4',
+ '906d04e344f245f4b213d14374f53155',
+ '26d6777f3bb5487fb66e2fb5c197e234',
+ '687b87e0dabc4f289882ad58219fd86e',
+ 'd0f5310364354ea2a50ac969fc3a4008',
+ '85657a8663054cf4998184e58bee2d9c',
+ '79e7af0e0ed847a697c853cf71e19d71',
+ '9ff6bdc77bc34317b7ff7215f4608db6',
+ 'f4279fb56ac143aaa77367d3fe996ff3',
+ 'ca32ef1953d744c3a5914ed5c9d4c818',
+ '975790dd511a4e2c933de4c528aff391',
+ '094bec43d020414ba0f13c2dac3564d9',
+ 'c5d8e3a686db47fc9f4c6eb7ed9c4ddc',
+ '51f0a74df77144818ba91c05286e8714',
+ '24b842a03b53418fba2c5d4439994b93',
+ '5244438975784b8d9a9df58d6251a66f',
+ '20bff942d1b84adc91e058098ab4a6cf',
+ '010c7fc27fbc4271b1d56f57d92ecdbe',
+ '330604b53b6d47d484a4fcb6fad41cba',
+ '0c4139be83fd41628410014153bfae95',
+ '7958116dcaab43e19c9c8dae82da7071',
+ 'ffce5c59604e47b3ada3c17b348c0ea2',
+ '3806fb0bc04c4828827f779b62cbd732',
+ '211cab15bc984325ad2babdbaa03f8fa',
+ '418eedd58fca4744af2ec2e698c1a192',
+ '951f443060694a13b09a4d4ea090772b',
+ '3235a118a8084e4fb226329b8e741243',
+ '3b1088c0d5554cf3ad1c41b34b50c5e6',
+ '681de912b305438ca0190a6b96e91337',
+ 'ace262e5b79544c496a44a45a423cc00',
+ 'ace9b7b87622447aacbffea3b0d24e26',
+ '5009b24a793c45f9a5a572f2a5fdaab5',
+ '1c92578acc10476aaec9f786978b502e',
+ '5eda9f4dec5c4440aaba63cbf3dbe25d',
+ 'a7f0444c79e34950bcd01d83d7cf3e93',
+ '0377834f90444f4baba5dcde02d69a86',
+ '84d6f099a4dd4485b821af84d72479a7',
+ '8a1873fd282544f78c60cd8b50086052',
+ '53334de53db9445a989b733fc6caf4d4',
+ '82ebee0377f84dd4b0d25ba1148b5c25',
+ '44661bba40e3471a8e71d2843640022d',
+ '074e5942d37c45d6804433d9b1455284',
+ '6ebd3d96c5d5444cbf09ec2d23a2e277',
+ '146ef70100ed4af1a162c7354244e46c',
+ '917d27fbd06b479eb5e8b8ff1fea7f45',
+ '73bd71782a1b4072aa6379be34701d3c',
+ '43b259c2379e4be5b2d70544180e4f26',
+ '2d8505f68b1e4424a3c2530d9dd9bca5',
+ 'f68d5af6b6e141c2b6028a71763578f5',
+ 'c5d03cf5137f4006809cdd45a898385a',
+ '245b2824250c4ebdbef7068f7df155a6',
+ '5f26ed7bd47744f9a867b31f477b0f24',
+ '49eef673375c4b00806d135ffb3b2edc',
+ '9e41680a201548919c6cab809337dcac',
+ 'ca1b460244f94c6c976f592754cc234a',
+ '292db1f1a49d4bfc9723b020b693e9d8',
+ '549df3d590b54a7397407d495996cbab',
+ '03ab01bf1e554345958747387a6ad53c',
+ 'e1dc65b685be4137bb434eb8e7613c8c',
+ '21e0351377a34d64a7901ce94cc1cf8c',
+ '32a97ed6442c44d0a952c66d7286b7e6',
+ '583884eceea743f78cef483382d03a92',
+ '572a126c0a4b41fba395337206b06957',
+ '0ab0c6598734419fb77c6b37a42c39ab',
+ '8452c123e9ee4ffd8360b1ffbba52cc3',
+ '3b67f8eb64834d69b2e3a4c1862fa90b',
+ '00a79c0eb63d4395b17f1808742a1463',
+ '15c0a13620434bd69021a2910a7791c6',
+ '81568072b49f45e991723b30a4893dfb',
+ 'a64cf15b424a4a37a800f67471642d45',
+ '0f3c7207154c457186f871e37bad25a2',
+ '4aaca81fbc124e92b7d019dffc55a2cd',
+ '37ae94ce80c34a71be6584a366926d2b',
+ 'c24fbea23cdb47e5a9352966730930bc',
+ '9848690f04004d539676f7ce883c008b',
+ 'b8c86481f6bd4ae7a9082f9fb77a9da0',
+ 'c10788cd7927473096f37fdbf6f793fc',
+ '01532e5841d44112904ced139406a2fe',
+ '2ce80ac45eea4c9984a934226c79724c',
+ 'd05ab9b31c0043cca0d3c3166545990b',
+ 'e34c3d425ccd48b985d5ac33fba663bd',
+ '35725b2e5c8249149c7e13b8c5bd98d6',
+ '70103f8352724b36bfe8cf2193d47c38',
+ '3d0968af867e404bbdfb7af1e33ea83d',
+ '4349598e618140b98b09461cfe0ebe65',
+ '14ff39983969446a89eb5ca81602df71',
+ '6cd47061286f49b1b701155629579dc4',
+ '267a12db25924e178e8040a4baf4158c',
+ 'f53e7308094a40c9a9f1ef19ca71d668',
+ '5d228e82d5ab42d9842152c3370b0226',
+ 'c0bd91990cee4fc2b24d391867481ab2',
+ '4be0cd69e5744d03b5408f114a24eff1',
+ '8877412b2f974d9eae8d95924c38f0a8',
+ '9eed48d0573049878516f18b93d6ac43',
+ '85499075d83e40d09f1eff5d6ffd9d67',
+ '5d6fb51438ca4053b4d405f7c8d440cf',
+ '7dccc0a097584f34ab214496b2bfaab6',
+ '9b292eee4a2840c2b8aa91987a3c5a1d',
+ 'd02b74acbedf48d8aa05dbfbbca0eca4',
+ '15abd786fc0c4959b551c3ccc1f910ad',
+ '400fe99c2b2445928e32b25874efbbb7',
+ 'cd2be356f0e5437b9c4560d17093500c',
+ '913cd7c347fd4b74af9acc31f51ed303',
+ 'd3250fce77fa4f1fb08320d59ff745a8',
+ 'a6e05c3f40ea438a991b7d1a475cea1e',
+ 'ecd226ddbcd943dd9a0e54d56b2b5ce6',
+ 'e2a024abb4554f7aa4e02a8fc1f0cd6a',
+ '104d943bfa7a4433948a506f0489a261',
+ 'c998c9d7b7754fd7ab15c00cc9bb5233',
+ 'f2656bdf370e41f08ef37fb15fa27b38',
+ '482017f4aef3470ea9928da2c2053938',
+ '822cf7ba4f964806a19639445b469680',
+ '2e723b8e82a44235839da831e6b750fa',
+ 'd1a89025c34b4c9f8954abcfcba15085',
+ '88a40c83f4464c6c9ba119e28c2e9ad1',
+ '028c4e455a534be99361d85da436bb18',
+ 'd1e92be6a269455b90816c40fcdb4652',
+ '32deb6edacd14c838c38e3059df1e0bf',
+ '47351106eda44bf1baaeb2f1f3b3a2d2',
+ '13b1f8b32aa540b89168507fe9d4a2e7',
+ '52bc21c03bf045c098c58f46f6df28f1',
+ 'da17848fdf3b48faa975b60f0349a068',
+ '513c17c3f7bf41198d227b39a7f1d03d',
+ '2d44d7931c7a4c40973a252d2824f07d',
+ '06808353276a495ea363b5a8e77427b9',
+ '22fd37ee912b479687dbf1755dacf513',
+ '71409156bb1c400aabeeb9656f22d3c6',
+ 'bfecf66d462048ce9ce5ebd3f5b96d22',
+ 'c4455295f91444069a4df2c83b5534ca',
+ '33020905b69a47c881f327bc4f711015',
+ '1e0a935217f647f89bb7da1834f377d1',
+ 'ef3c8d05a4034194a0599669c56ab7b3',
+ '1561101fc412443d90a57a79a25557ae',
+ '15093234c8d8456ba5f2567003ae8681',
+ 'a27000c6969047d6998ff522882ed3e2',
+ 'd7e6db8c6b834e14807da98332b0fe6c',
+ 'bf097a798e78432599a030a433546f5f',
+ '45594b55b8954385924a3f1348312d23',
+ 'c2e334c88db04e0fbcb933ebb0df269b',
+ '8feca3e145cf4a0a980148e754ade139',
+ 'c0d5cfcf1c7a4548a38a73223dd4ed5a',
+ '30f176703531478fa316f0cbf538f2ac',
+ 'd2acb13c9b7c45d99960a75a9febdb6d',
+ '66b6cb9e09124ea196207a5d612f3171',
+ 'b96ae00ff3f74cabadf977a7b862d27d',
+ 'a9fa4d89e79d49d3baa6a1e75836be64',
+ 'ebec87def7394d2386fe59c6398b854e',
+ '5b66351b4cac483c94eddc6262077593',
+ 'ee2ce32c8de14454802aa40b8b0c8d30',
+ 'd60b30c7e7a1406fb478c35d2c4b7d68',
+ '4171d547e0d34f6eaf78dbd887e641e5',
+ '72145824839349c9845b031342e6855b',
+ 'c730d7c052e140cf9944516c75d6155b',
+ '7fc629db89bd47b2b5d2ccf6f9e28a7e',
+ '0d31fd52553a4bd8a206b4ca74934c64',
+ '1e9bb5a771ba4dba8bd24b26d5f2b874',
+ '5a70f7eb64f146609dee2c5d9da394b5',
+ '29fe05c9cbd94ec39747d19a655f4527',
+ 'a89eb1c3af8a4c38b86a6a09704d8033',
+ '2bc5de576f874d4db334fcf254fddf92',
+ '153acea5e040417f87af8e97d5b4665a',
+ '4ed1b636ba0e4754a08f7d2dac18d89b',
+ '224b5f1af5024a4fb53bcd6a6f5d7256',
+ '5ece347e93ae4d3db621b58f32e27a55',
+ 'ea92dfd988064d60a16d1f504307d659',
+ 'b466f59aea8c4aa592ac0dc36267d261',
+ '13f0fa0be0fd4bf8be6e2a09402d5f1c',
+ 'e454d97e8cdc4f5c9db3be97abf840a9',
+ '540f0fe9044048a2a1c0d7a9f8e92b8c',
+ 'abf70558d7c24dc28f13903466eac096',
+ '9345152880e5486a82cbf146caed6ec9',
+ '42f1e5ab16e34f5dada0db141d4705f4',
+ '08f9d300d628471780b8875cbbcfbbb6',
+ 'b60161c7e4de42999ffa36dbe30b118d',
+ 'ce20e9e6be334929a2b4cd235e4db615',
+ '40dcb65662f24db6b1673dfc72edc88d',
+ 'bd5f0f33013346f79fe2ef1873f5e120',
+ 'c3fdb9e0a0ef4ee38530565b3fa5e61a',
+ '87a8364f23ce4654890d6c2dad2250b8',
+ 'ea99ac0bae654dbcbc9cd4088a06ea55',
+ 'aa62cfd13d004f3e844931ad3a7a0def',
+ '0d83191e326449ada8a792957b68cf07',
+ '25b5b702f6f24649b92937cd84b7c25b',
+ '5f937371e01e46f080a2571f60681adb',
+ '16e431c58c8e4500896bdf271aebd770',
+ '4e3a89a056234cfda221243421516736',
+ '1665e6c2eaa54dc3938eae71222e9bba',
+ '179e71b901d84a9d868fd7298c6b5b7e',
+ '82547a2e868c4ac7a71913b73864fbfc',
+ 'afd1e34c5b464ebca86b6c20dfc14f1e',
+ '9d7df49e93d441659540292922a6587c',
+ 'c3b82184b5e748c4a65e55e839e8e8a9',
+ 'dfba5c4d49b34a8d9eb51a195b4e5a53',
+ 'e4f5d26bfaaa4c75a4d3dc80bd30731e',
+ '6ea2fff969824f6fb25753600051b164',
+ 'dfb2f37ad3fa43bbb1e0a4dbf231d6ea',
+ '580e8f4339654668b91db2a49bc8ada1',
+ '294145c79ae346b3b69b537566347882',
+ 'c88855814f054126a9f9e01973295238',
+ '3306538b57aa488c8f56ab68ae3aa466',
+ '6a50c4660430470d92092f0c0e4e96ce',
+ '5baaba6c3cd44856ade5ab1a02280a20',
+ '2cdb25a4561249acbe57c0714a0a1f40',
+ '8fbd23eddb37483d98909a1dbed5cc97',
+ 'e0f286e3863743629b859b130fc36d24',
+ '712963b57b044131a4c3dc68dbc1bb15',
+ '6d3f6bd3d77549249df6a4e8d9ed907e',
+ 'b0dd6702884647b39cc3d3e5a14d8ae0',
+ '414fc6465bec4650ad337b57c62130e9',
+ 'ca87fe92ac6f4a8c90f5751aced28aac',
+ '38b99100e0004130be08c7591cf20735',
+ '9316c76b817347998fdaff11bbaba31b',
+ 'a5dd5238a4d14a32b539db5b63ffb94f',
+ 'f8d942792c87453f9026bb355e8c2b47',
+ '800ba1aa7e504d69bfcd005d3b6cbdba',
+ '41f750237c0b4f9884aa9b7cb8fa39e4',
+ '99e95c7bafa74ccc9002f2c764ffdb8b',
+ '96d3047dad36407bba2c8ef543340274',
+ '9965a453dbe843389c764be9db8c17d6',
+ 'f8cce9fd647343b58090c738b5d35660',
+ '0c00bd9808e1411bbadfc3c6b6650cb4',
+ '72b87c6ae3ed4d498c1cc3e9144e5739',
+ '227fe24a05a246d2abe3ecaa870a8d9a',
+ '48c066de25a4455489394d11f93d3dbb',
+ '467a17edb4804e24a87cac95acce1ce3',
+ '2c3fd357d6334d7ca73c891d3de5ba8e',
+ '516e58afadb74a8fa4ef1c1ed26b254f',
+ '05d2aa8464d14fb6a93e16388dc28fa7',
+ 'a69b52a881254ca59cb70c3816e67f87',
+ '2a7ce4aa9a62418192589de735133c34',
+ '074c648d41a0440ba175c54e3c05a089',
+ '1e9164f0acbe4b5995484716c10b9cd7',
+ '9b9a5f1ed8724477ad0704cffb602db1',
+ 'f10b340884af4c8e94516b6694dc9a05',
+ '41edafb38c7240698c09afb6212ac48b',
+ '1d44b0d4f4da40e39904ac5446b6e652',
+ '95b8d4e0e93f4f06980aa4c06e237a48',
+ '208f7808b6dd4a7190bed3471d641f64',
+ '1f27395c36094a0688a043888c3c7974',
+ 'af5686ecbdf6411ab443ef961a448575',
+ 'b967687974a149149d074b2db1ee0f1f',
+ '9eb2c85e7a404deb87e9d82b8f5e954c',
+ '42223b5190dc408ea3c5bcb7bb9cf3b7',
+ '0604d5a2e0144ce9972639f01fadb4ce',
+ 'cb87b62476cd46bc9d9ae6379c51bb3e',
+ '097e6dd2e6fa4a2bb3bf8e1eeb94ff97',
+ 'a29f52468180443fb17b8f220185a262',
+ '4920de261bce4f89a307fda1c6d44652',
+ 'cee91205df6f4d9ba9e6b1a4e1642557',
+ 'bb4feafb59a541d88acf5ce902942974',
+ '212de31a8ddc471d97af70745bffa672',
+ '59f91ac7904d4d8e891631d9680690f0',
+ '4c6b957f7a0341daa02d75ec864283c0',
+ '6fefed897f0b4645ad592f6c9242c543',
+ 'dcbf67d012d0426ca761472c7b71c3a2',
+ '355604911ccc48659d60603db2835ab0',
+ '927772afedeb49a38e983b96b13dceff',
+ '3444af7faf2e4931a420f7f236a4bbd0',
+ '73e5a5445a404f0d87c82585cb1e74c8',
+ 'a06e130b3ead4d78b329f8580f947f06',
+ 'b602d5b181654b109c775af582287f6a',
+ '46a8b85b52624db4ab4af2ee64324c2b',
+ '98051ceb18824fc3aca168cbeac4693b',
+ 'cd39c1e701b4462a807ff762d6b5085e',
+ 'efdea32b28d345ae9c38439d21038350',
+ 'bb9bfb9a4c204e3b88b2326795712d24',
+ 'b34072a9e73841c184e9ca741a4b6c79',
+ '03ce8d02969d4baa8a30159332e56396',
+ '5e9aa81e3db5430baf1bc7b26f8aceff',
+ 'b4b5540a3e4e4210a01fa914e9fc2c6e',
+ '07876021f327414aa314dfaff6f1ba0d',
+ '50b1e29d2f1f4c62885596a53cde8e68',
+ '689ed31e695a4dd399b9ea1ebc0cbd7a',
+ 'c7bf895683d44a3eafe27791f03f2d58',
+ 'e061ae32f88543bca701381b70a5f335',
+ '558f8c82acc148769b45d0af0c8b74c6',
+ '599879ada53546878edb16a0e823643e',
+ '21dbb5cfb78b49a196c7d5b1de65d97e',
+ '55bbb75f36334519abbc5eb761ad67a4',
+ '88abefd522614d549f5859fe64758772',
+ '80476cddf24345c891b47e7a68969990',
+ 'e487edd66724463ba5e9efdffba538ca',
+ '64dd5d131f2d4189a0e4a75ed9d12d52',
+ '94f49730d5b642a2bd38bb9dd9801f69',
+ 'c0dd38d53f7a4b65b3b623647c002ee7',
+ 'af39f4e486164ab1bf072225335161ab',
+ '15b42fdb321940399868eedd987d2988',
+ 'f0e0a491b8da4b018497110acc16cbf8',
+ '745bbad3c4db430b8a8b0853ea25e2ac',
+ '6b2b24eaa87348d383239a3715c259fe',
+ '8523ea1bd85a4ae7a5d7021654a99d20',
+ 'f91c162c20da4d54a612eb4b47b6e4dc',
+ '791a1cf2ef3b45dcaeb0aa7ff0109b31',
+ 'b2701c72eb8a4714840522605cf16101',
+ '49b0cd0efae14a68a79ec7f68c461f01',
+ 'fa638050334d47f58b94b81aaddd1dee',
+ '8ec5cf405cd94624addf0b85890cf387',
+ '2af7c2f786024e09bbe3fddbe53850b8',
+ 'fcb2894b6d534f37b707234fad55cf42',
+ '0d55a186b14d4b95b45a641d48172ccc',
+ '96c88f82e12043028b0a52d1b94d4746',
+ 'b108479a65fa43d38ecb7db3bab4f42a',
+ '2e51ff2e9e9544c3836622532d484c8f',
+ '7c2b25cf2b484d4e8d3a3790cf29d1c6',
+ 'cdcd916687104d6d806415713ecf96e9',
+ '4b128b8633534b71871b634a72454da5',
+ '2f9635306f5b41e29b20778192d9574c',
+ 'eb60d9986ab84458860b92b597123792',
+ '8a052970420b450bb62d8885c1970151',
+ '8297402e55414fb9af5b91f85d7b40e4',
+ '6b750e19414d49d8846fd1162892f28f',
+ '8927ddee376d4cc3ad38fc34d4be8303',
+ 'a96da78cb5824493ad782cf3ed2e9697',
+ 'ddfcbb7df9294eebae6fd7faefae3c01',
+ 'd79eef3299b3436081af6423e638d0b9',
+ '220384aa6d194af181fd6a11dbf42353',
+ '751b6687b7f04f7b9f6c7b9267a40835',
+ '378c77f8834146218e55eab37fcfb0de',
+ 'a0222fa29bc949bf9ff4c717cfdee860',
+ '77039bbe021c469d97015d7309a6f3bd',
+ '7b611eeb811e4d6ab4155d4a519d4970',
+ 'c248bbccc82048689daaa3ae99e2b335',
+ 'c560f520c2724de2883475b39fbf2081',
+ '18836b27616049419f2eea2441c650a1',
+ 'a481ee93af344bd38b1046634a861bc9',
+ 'd7e65f9fc3c34da09bccde5af7057bac',
+ '7f0d825387164103a03f5faec04a40ec',
+ '3bb0a5d36a28478ba15610e5647bc3b8',
+ '3679875b82724c919a71ac9fef5ece34',
+ '3ec40f5cfaf641299cc9c1df4c46d3b3',
+ '433030c4c70745efb2e50caaff1b8731',
+ '2fcb5a83d89941be902e2c5f8ae63f9c',
+ '632f05777faa42629ffee331930a83da',
+ '20b986027f8541ff8fc50b4e0cbaf016',
+ '76a07dc0db334b3081eec8c497ceb63e',
+ '07950ce3ae224ef785d3de8e78a64da5',
+ 'b71401de33664bab93924f1600a9b397',
+ '2f733d3446484b76957c72d16e86a7d8',
+ 'a64b84e79e7d4e1f98d0fde5a41cf4b7',
+ 'a7d96c98d3144403a1cc84e34b083bfe',
+ 'b588f22420054bc985274ada650eb44f',
+ '1a14e631b1564cdbb753a6c7efde8c27',
+ '9dac7e6e75ce4401bdc99b57e848b470',
+ 'aea37559bebc42679896f0e3ad66a6e6',
+ '14d95d89087444ea8e6e1597e68f29f8',
+ '0416ac2ec98141a3a11a15a3a7506d95',
+ '8db56b24356b4ce1a542fdbb3f07cbe0',
+ '7ecb55081dcb4946b536ebe12c2c9ea1',
+ '06a1a06108e9426ab31abe8606871593',
+ '41b7d19c2c69402084cd8ce00e8b6018',
+ '5e8aa847b3c74b2494bc04bd6f84ea53',
+ '10c941789be34081ab4a7108c68ddf8e',
+ '87a682cc2f8d493c9052ace144439df3',
+ 'dbb65e02a9114fdca9f1d0e278a37894',
+ 'a3ea7fb584af4310af614bff1bc5215f',
+ 'ef7a3e73c064423080ee23ddacd8d5ad',
+ '0b75c3ae39f942c89f1ccd3c89e1c34e',
+ '51abc10a568949b3807c9c534bcc9dd2',
+ '3b763aceaeb74eb58a79df003642d2cc',
+ 'ac1239079b25433a957522531707658a',
+ 'a7b81121af17437f91cdc267da585797',
+ '569df285feb34d939b96a131fb5d381a',
+ '10e4559495b54b5ba937941547736582',
+ '9fdb10715ec44b9fa35c235c430c973c',
+ '096580b07ff74a60b57fe509363b5480',
+ 'f2c2f5e864714af08d10339b4bbace2d',
+ '03f505df46ef4afa8c760d23b1e0b627',
+ '5fb7da4bc4a34e1780b0cba3e2ae9507',
+ '87e7e536a22341a9acbba07479710bad',
+ 'd679918af091432b9796a8761ac526c3',
+ '2e06414943e64ab59f0a516bc62f90dd',
+ '24f808c955b94d80ae1954a8b59cb8a4',
+ '705e2fde21b349d89246cbe7e217a421',
+ '2322c4b8b6084622bf2723f6da578dcb',
+ 'e1efd2c9f62341098296c1b9f6133287',
+ '751fd45c14254146a8b61ae71752d4c7',
+ 'b2dc24a387204bb3b1c948664d339a6d',
+ 'c86b47d5222e46078dbd219e2f14bbef',
+ 'a4ddfb542c52459c84ae7431426dfcbd',
+ '1686e0fba0644a7ca2e0920b8771d6bf',
+ '2b89b91e15c64598818643019431ee10',
+ '6956164a541d4938b95647242157cfb6',
+ 'eeafe293aa1a4ea787a60ef6c0efb2ca',
+ '88c2ba0732554085801bb372859523aa',
+ '5d0a402d88bc4176a46ae42f970a1e2e',
+ '92c096810a8941d1b26469f92de2a068',
+ 'c109947a1d55430486305f65c48b6906',
+ 'd14782c618ec4dd984588a67925caa85',
+ '78ae2b5e2e7f45d19ad2fb88f0aee26b',
+ 'd5c7b04719044b91a9a65ca18560f603',
+ '5bd1970461104226ae263e61d6d600ac',
+ '358405a2fdcf46ffbf3faf7570f4003a',
+ '7827039f4e7a4919b06ce7d343e43bef',
+ '79ec9962a1de4645b811307660e04e0e',
+ '5d3180b7692840b8bfe0ae32f56e3518',
+ 'c0ee8589d5044b708da75f81064ea638',
+ '08958149af01455f8fdf6522aafe391b',
+ '504917e908b54f098b1439bd4d243116',
+ 'f620865fd7db4c9a995644886d39dc09',
+ 'eec9763f98f043eead273e86ab625860',
+ 'abdbe0cd458046f2befd74773bcd0fb2',
+ '8a04a10beb82431182a0d6aeedfaf12b',
+ '6c8dba2309b9449b89e95f93ff20cdb7',
+ '5e6a38fb14584aba9746821590448522',
+ 'ccf257682bc343ba932bb33113ed43c2',
+ '4e07f874d6204ab6ab8d4eb8defdc996',
+ '9412f91b886d4952ae4508cf1ff93cf7',
+ '8d8ab94646e8494ba2f566547d6ece9e',
+ '564958ace7824c71ade569baea75aa01',
+ '0e48d34b9bfc472b8ef6fed5cc7b6440',
+ '6d147cee0eab4ddfa5d1173d93b95074',
+ 'ed78749a7cb74363afb9d405477f907d',
+ 'b9cbfeb294cf4e60931aec65ce20e38f',
+ '250c4133106541409ad2f39af71ceec1',
+ '8d95caa4d34745378044b7e209bead63',
+ 'bf5c39a1e52b45aca9e467ed64b27beb',
+ '5e76a1387e7e4a6a99abae877ac60048',
+ '9f0ebbe0dee141b6995bb2a93115f3d6',
+ '062f0440dfff4bf0aea6535f7b47a24b',
+ '6b9c85e9e3a14a1eaff406b931e06622',
+ 'c9378e8338b9457ebace52f1001ec52b',
+ 'b9eb8bfa5bb444568b1c40024385fa10',
+ 'e67ce3fe1c5e4d1a8d2498f7e4de1cc5',
+ 'f69f10c5825d4905b278edb1b550db09',
+ '92fa214316c44b809370fc8e69d1448b',
+ '04f7ec9070034987b6a11fe6246913ac',
+ '38f58983c7d54d2dbcb9a90c464f51bc',
+ '9e7740831ad24dd7a3e03c4f609bbc7e',
+ 'f5e5a087417a43b3b691f2f83657f1fb',
+ '271a76f891924b009677c4c2fc8a0f61',
+ '33215a8efec34693ac609680247b447c',
+ '5a8ffdd0c6c04112ad212408a54b859d',
+ 'b31a54bd347149aabc32c7c6c0ff0195',
+ 'fcbd820dbfab4692bf01f45c1f104f5e',
+ '5ff61094906344a8a35d3f78f5a98fe3',
+ '14be34ed5bcb438ab1219fadcbd4e9bd',
+ '9e88f8e0cf9e4329a914e2e5dd1cde8c',
+ '3c1d97f9bc624261829986844ee2b21b',
+ '310ca9048a7241379eda099ba7c59dc7',
+ 'e4f0b8ac990a4e2dabfdd260dd902e8a',
+ '80dd7e5a4f6445ca92df1144d22f2ac0',
+ '01f62f6842784df892248dc93bc4f11d',
+ '226e507c65434741afa06b4f1c2bd84f',
+ '9247c7468f0545eb9a4cbf3cc610e9fc',
+ '52867ba9764b4a36ab85ce4c315e9cf3',
+ '7f2ab026c782426b9d33e51e41767b47',
+ '3b2c6a1b070c438e83e3ba12aefdacf8',
+ '92a35c4bd1c14cf295f4c0801a1923cc',
+ '561fcb04a28b4c43b67e4e9d8b3300a7',
+ '0e4f10aa0ad14a559f6e8ac471978fe3',
+ 'eaabc5da68824de7a87c10af9a2fe4ce',
+ 'a971d02ad2cf4bf7af910e1febf3436c',
+ 'b4bd8ce8cd7947f6a46b2063caece864',
+ 'b86c7724ef7b44099ff7530f421c1d03',
+ '993b7082882a4581a7c80b7ab082c6a3',
+ '42dfa2ebcc23406fb937466177f0cf61',
+ 'f8539c4affd4472cb9fed19cd8c48a30',
+ '38dc02651d0e446aae76755b051be4aa',
+ '1ed43ffe23ae4ba09b4b06fa8f30525e',
+ 'a4ab1cf047ba4a2ea04c938414dccfab',
+ '270545c51b054c0090f911e864f0292d',
+ '1a93c415c97c4aba91a2db10af8fef3e',
+ '4dba9c5e0fab4968af656fa94584da13',
+ 'a932ebeaa302416a9232d05b1f191515',
+ '746bba2421f24d5ca03e9f5b3d38c98e',
+ '3c94cb849aae4234bcd28a0f499e8875',
+ '92da56032c0c41d29c17e9f0210af8c4',
+ 'f84c0f41996b4475b33e2eb27fd7af5d',
+ '90bbb090d9724a4bb810aeff5106a9f2',
+ '39e7ee310ee94f1991485750988571fd',
+ 'cfc1265f69f64f6abb6ade9f50945bb0',
+ 'ef098e434e834feca40bcf4caae8826f',
+ 'fb39f1ecb0f04ce79a4b3cebd7a537f0',
+ '97bb337c4d5a45fcb6712b153ae9fc3f',
+ '7e52fc55bb3441d1a638fdba0643a0dd',
+ 'd21e6bc7cb6141d5aae3a58109c9d865',
+ '788d249da84c47939bc188a51be4cffa',
+ '6e9b305d320b4b818c1ec7030d35c209',
+ 'a09532eb891b4b269305b6e96dcf33b0',
+ 'fd5fc7f07fcb457b94ecb654af8e2211',
+ '1b5f6f565a78413fb9c829557e8ad767',
+ '2ba922a49c9f44c7afc193756b708f39',
+ '40513bffd8344bd39030d151b44460bd',
+ '523b80d237f74618b1a3af6bf09a2940',
+ '05253cf7d851432c881c08ae3cd8a271',
+ '2cdf1034227945959b3c3a750061a509',
+ '6bca435aeaba488baf36f2bf27947ad7',
+ '490a1c300da34030a9787c4b4393f13d',
+ '33716ea25f7146c3896a390ebbf6a4f6',
+ '76d31774cd63401d9b0b8112aa55f9a6',
+ '00b6b91cb7374dee81ca7dff071952ee',
+ '6eb38be73b7f4020b24e3552b7479472',
+ 'fa958f6cca904c3791ffacbf222431ba',
+ '96d36c631bbf4c4a8c90ece2d28042df',
+ 'ce1d77b8212d46e5a3d4ebf153fab656',
+ '50ffd08acf7940148c37a399bad7a89a',
+ 'c43d35858b7e451fab9f1b38299b787e',
+ 'ce5bd7d0f385400badeb654104dbe1a3',
+ '84f9beaa323a485d941f555e1d22b5b0',
+ 'c48edf277e4f4e2799e6306827afe19f',
+ '0cf04ef666ff4ad48c569fa2041dfd02',
+ '6c1e7364512b41c98ceac72886c7156a',
+ 'ee1466b3c0f245f1a27585327b18d576',
+ '25b5bfac3b2a48de8f96e920de495f1c',
+ 'fae45941711247e1a5ba9cd80df4d224',
+ '6c26ba0e8cc046e899044334ae2d4bbd',
+ '6938852cc6bf418ba668a8329b4b5a43',
+ '661a42e24cd94212ad065267df3df787',
+ 'b93f1d244d354b38a7f55f5e4ad7e0c5',
+ '1ddf886c919341f28767371797f4f66c',
+ '8046b7e25824441b823bb946f83fc59e',
+ '5cc71340688c4a1080e6428c937dba75',
+ '29b4aaeac615433284408283ed047ca1',
+ 'e5d743b2286a40f48b94c769f5046a8d',
+ '97f6acaf4d374a128b383ca8b8ced803',
+ '56f437c3b20f45ebb750f461f08d0312',
+ 'ed6aef3138db4cbcab8bf0415366a5f5',
+ '5c38420465c54f8080678588f95d932e',
+ 'c27e0672b1ba42f1a34a4e88eefdc1be',
+ '1078fd5816154353aa5382b5805d77bd',
+ '6abec34d86ed490d82dc511532c2e50f',
+ '45546be01a0e4560a2659d13cf3c112e',
+ '8580f11186eb4bf3b6c8612abced022a',
+ 'd592a66508ad4fb7940ca77598ed46f9',
+ '79834a60237144b4b03d3898c308fb68',
+ '0abcd766842445d9b684d0515a084a71',
+ '55f97a59383a4079a5ac84ccc15b9cad',
+ '47f263c0d65f4160811512f25e9bc22a',
+ '409c35a232a14feda0ddd41114e3dfc0',
+ '21e885eff66b4b3686317e024a314273',
+ 'f2d64d0a5b16471c86a513b14d5bc3a2',
+ '490142cab0d447679d13b9ccf476e924',
+ 'a051d2e41dc647368a3b9354920a1237',
+ '6cec83356bc643f182d9806888c548c2',
+ 'c02768bfa2524a619fad394bff9d9826',
+ '4f8305bb092d4c6a85b64b739c58fac0',
+ '728debf7b99d4e52bc4688df73c905f3',
+ '8131a55bd3214c77b538011999d7edc2',
+ '9399f84887eb4d69b78c2f5077ac9e06',
+ 'c8679a3fe9e84622a8e267974ea18ef0',
+ '6e8916c31df045f1af01273511067ef0',
+ '37424f8b79ae4109b59c931cb20ddf8c',
+ 'ce9c4bcd85de44bd9b5f4e7d28f502d3',
+ '855e5bd67a3f412b9f8a1933c6f6aec0',
+ 'b7022247b27f4cdfbaac33fbd3abfd2d',
+ '267e2d472fe84ae7b3a98d106cb312c7',
+ '90ec4675bad54f19b891dc6b2bf28a71',
+ 'f8b88c3b11b94ffd8b8e51895d8621cb',
+ 'd4c5a367017b44e1821bd54f5e0df17a',
+ '5964cd54d59b41e4921e90967e5c0896',
+ '1cb232b51eda4cbd9fbb1eba75ea1b87',
+ 'f59caf6ae59f4626a7b5b9d852db95fc',
+ 'c8d808baf5054c04b94aadde596c2c16',
+ '816e8bf563774a249b2ea8788b56f19c',
+ '6a07eff4821e4766bd45f5b04c44ccac',
+ '3b0429ef12e1483fbf1bde1c44a537a8',
+ 'e4a0e3a6cc4c460492f5ff4a70b0c46e',
+ '4f901cfc76504695b0c108fc11a8cde8',
+ '670e849709e04c82847aa500b9ae34b4',
+ '263f42cf6b634c17945805a0c70d3a8a',
+ '377035ebdf074bf29883317368e032d4',
+ 'f0e55f1e0ff448559b7757fd7c411e25',
+ '05caecf5bcf8459cbcf21307617627ca',
+ 'da657e7a59e14e52b5179b6276b98eb4',
+ 'bb94962bc6de428a9c90ff68ce48d6b7',
+ '4a0b4d274ab9484292b2cfd0a7b43672',
+ '0dae6aa5d11e4b7e8e9df7f51ad61d6e',
+ '26f7d7ec704e4c929fb0ffc359e1fae5',
+ 'e04e1c9c510a4519baaf00a05094f6f6',
+ '546718f0c8c7468e9166e2fa81202dfc',
+ '26e8a8ff998e48509505d02d6f0fbf24',
+ 'b722458e6d33421b875b4bd4113f22ee',
+ '3538e0d2f67b4446bc3172259600c89a',
+ '1cf81c9d663444289fad5491a36f27e4',
+ '5b8a0315478f4b49858acd305a570467',
+ 'a5a5c5b7bf1b431a89a6e313597bb11c',
+ '72cfa40b85934a8bb9d2643c64e2eb94',
+ '4a5e81c8dccc40d992051cd515b26a3e',
+ '6f5f5ef4162e478b8c2347a43a8d6599',
+ '31fb4f031db043b0b879dc2ad07ad255',
+ '8b1aaff0ed8b42faa49fd6668fab1964',
+ '2768e0aeee5f4a678ce2637981b3acb7',
+ 'eb84caa77cca41bfbc8083f660f38898',
+ '5a370e70aca642ddbeb4db3a2371ea7b',
+ '7c372ea393f143739d8b1ef67f7d1783',
+ '7af67d82fbf84f44aca6cce0a0b3ecec',
+ 'ead0a6f8368d4774830830ac37fa7c47',
+ '633fb3bfe8114dacbf5705a7a648e2f7',
+ '73bc161af44e47f0bebbac1283df17fd',
+ '17b6c231fa574f679e17dfdf8123f7e0',
+ '2009f808f9ea4feea9fb1f55cb605e7f',
+ '3d9e882d1292421097f6e61cc3769a8b',
+ '16fd7208e36849f899342b425d9017cf',
+ 'a6baf55b3aa043f2b4bec90075be7221',
+ '959dd5c064904c1cba5d817eb8301eb2',
+ '6881673c284f4862b8685899ab8531e6',
+ '87a19b48b99b4d499601a083b9efdbba',
+ '8273d3a9c4834650ad9514973e94dd11',
+ 'a52a502f5f5247ffb4ad7780546fc665',
+ '0b98d3f40bc0414998efdafd3cdc341a',
+ 'f4f1e079b72943eb811166ab42e4382e',
+ '84e409889103448eab4ebe39c147edd3',
+ '884b3d852d4b4aedb20d7f9fcce49eb6',
+ '14a9b70d95b54cdf97d9fc3405e5ccc0',
+ '63d14031e6aa47fa81041592717918b9',
+ '451f101ed5fa4b55b0270bcfd792d6db',
+ '570a085b0c344bbb9cb7803021c8339a',
+ 'dd0b85d532634000916f17e23847beb1',
+ '9d09dc98106240b696923c407497eff5',
+ '844ff331737a4ffeac7f64a90fddc1cf',
+ 'adab5cfb70a94851ada566c0ae401fd2',
+ '69b5ead270cc4309a6893f99e2d08995',
+ '6f99f923e9e14e2d9a17ac1a474372b2',
+ '25c7454e956849edbf2c7175027e1f18',
+ '51e0a8f0c15a4ddf9cf7b95a2730fd8d',
+ '108220d2776744a99d3b08c65d14fa9b',
+ '2762a7cf9a8246449663fc5716351911',
+ 'ecfa84aae8f24944acd728d15e28104f',
+ '4a0358ba25344a10a0d8b511362edf94',
+ 'd1c1a233fe4f4e61bad93a5e0bcdef02',
+ '63b634089e27410eada20b0b20c68398',
+ 'fa8b252d57e64a0cace012810cdf1db9',
+ '0a809afb082941768895e0a381958f6e',
+ 'eeb85adbd1b947b19beb58fc5978814d',
+ '2ea98d04b80847ebb47cbd09648d1e41',
+ '742330521da6459787c186a4fc4e40e4',
+ 'b73d94e06e0740fbaf44d29aa07757c3',
+ 'f5774af327664427987661cc9e3c6f7a',
+ '3d000dca7ff6464abd8669ec114750ce',
+ 'f06e44a12adf47459d63ed2c4b3e72ad',
+ '63cd581ea2934cf6a6947d54699993a2',
+ '99c8de31b801429ebb07f505ef15e03a',
+ '338abeee8d09466aad2e5d5f1a43c494',
+ 'd5870fbf7bdf4de18cb4a7c831affecc',
+ '8fbc7d9e8e1d440989a7e3714c41e700',
+ 'ef63f332a6ce4936b3563bd6d9cd4d3d',
+ '02d5d495017d464398466fedf259dcab',
+ '1eac46f5f90b4bafad53b803bde981f7',
+ '74d9cf7057db4158a8d25e6be4c2baa8',
+ 'f73cedc03d254d40a1f8511b00bf14ac',
+ '6e9783b8b1bd43f2b7e6eafead84defd',
+ '0238606767ae4632ad6c1e9fc4835523',
+ 'e2b79c32f79e40e697040fbdcc572b39',
+ '6f1a208c032e48d38495dab1cab8b47f',
+ '2cd2294cc0d14cfe944a2fd703735375',
+ '79951515fbf0475381aa2195374500e8',
+ '909f3bac6ce6445d80bba8d554dc17fd',
+ 'ed8ee83c7be747e2b2c95f90984e77a9',
+ '93692c90093140b4ba8e94857a5d8e29',
+ '5f6e14b483d14b0c940db22005b20fa6',
+ '43fb6bd78ed444c5acde3a0ba98e6ab3',
+ '92f8b7ceac6242ca89475eda3ef7e49f',
+ '003baa7d04f14c6787d1a330bfa07b33',
+ '00b13be24d8a4f16afb2e6b601f5c2db',
+ '990ea3ba51ef4afb90ca4ee73ef08941',
+ 'b17c3b05e2194b48988c42c3e8033270',
+ '0322cbcea6e84a988ed347fa03300ef8',
+ 'da6a42650dc445c983b7d7dcf6aa84bd',
+ '4a6e4fb215a2489b8ad921ca71dc1ce9',
+ 'e7e38f917b0f4082a5fbc161e6091d5a',
+ 'ff7367b484184ace8a152adf764cfa7e',
+ '47382d05f7234900af632d58c22183be',
+ '91c0f99e22de403fbdaf7461dc43a92e',
+ 'c85c6ddf5bc7459b9dda192f7801cc20',
+ '6b64ea8e79ca4b4d837300417932b661',
+ 'bae3657d95df405db9ba529d284be146',
+ '913da85635db4eb2adb762b2c3dbc66a',
+ 'a4ee080a9ccb44759609f2b5097e31d0',
+ '177da4dfac29472ea47cf7dfb9297e69',
+ '88d65c39bda3432885363c21553db554',
+ 'c103df9fdca6421db77d85b3b9f74cc2',
+ '6fdd919f4ac445a69bea1b46e83736a4',
+ '6cc3dffcf7d0454585e0f82f2fcf67e0',
+ 'ac81a28b2e214c9cad0c1bbd82f5c825',
+ '22cb17b723244ad690bfed0dcd221d5b',
+ '8a3d0dbbd87149da9e4518311c2ae436',
+ '79105a91e385401eb006975c859f0bcd',
+ 'fcd9e334e9fd4ac28728f20781587091',
+ '9e43c9b1412645fd8011df47a418871a',
+ 'd5d7b3c13f2e4f40952886eda27e2233',
+ '4d13e1b9c69b454395412de7088bacee',
+ 'b72e28797c1b49fe89241b1086b3401a',
+ 'cd3d0e8d295d49ceaa8abb5ef4e3994e',
+ '6590e1c221d64c968e461addb5cd7a42',
+ '772ded82d19d48af87396f387c720d60',
+ '54f8da13609a4518a56db59b85f996f0',
+ 'eb0673669f7a48d1a6fcdfa3b1d651b3',
+ '0bf57fda5e174909b0966c5dbd8993fb',
+ '4ba0dda0687f48678cab6fa360513a12',
+ '06792812873b4415a5a182271d5b99c8',
+ 'f7357148aaeb49988ca628d1b31cf6f1',
+ '3da4ce8eae774c149e26d34879f367fc',
+ 'b605dad5ce7843c1aa03460ea7086f1c',
+ '3e2dfcd94819439f88d326fb166412e6',
+ 'dc0276b2eaf841b5b488d652578ca0b5',
+ 'af25d7764a094ce7845f85e95958a5d6',
+ '5ce8a750b0484aa9abc5680654e6a89a',
+ '978217abaf274f7199821937cca74b4b',
+ 'e29ec72afa3d4d4aa92029900da95657',
+ '506cbf280d6145c287bcc1cedfb709e5',
+ '5f193e3eec874c9a8b27e355dcc44705',
+ 'ac93f329187a45a5ac29a65440ef655e',
+ '4c55b33ab5154a6880228bdd559d8cf5',
+ '761a7eac56c849f18c2541d54b920ec7',
+ '83e4be872a524c6a8641e172d0b9deb9',
+ '1958be76b7fc49ee90788ec6190c312b',
+ '400d187100834dd1ab61debec394dc7a',
+ '1fc48ac61ebf418e8c7f3cb6692776db',
+ 'c3e0db743d534bcf9efae26922aeecac',
+ '84d5011a32d84f78baabd4d0d412030f',
+ '195357e205db490e9d5bc95f5f78b099',
+ '5fad66546b9b4a07b0cdff69ba53de99',
+ '91eb4901bcd14608a53f9ee539c92c82',
+ '78a54b95a6db46c6862deae652461f1b',
+ '0b52a3700780415fbd7ca588432516fe',
+ '7450193d0e684a28a3a7ec59a99228b8',
+ '751d0f126705472ab1eff080e6436760',
+ 'ad67a9c8371949959ebf508b43b68a0c',
+ 'e3787d92533b4ce8a0cd138ee1f87d6d',
+ '71b346f0b6b84082a93b959c9181153e',
+ '66e4688d52c4467a858c53db3ffec352',
+ 'e64a144bbca945a6a70e38e4bac111c4',
+ 'cedeb117fbed463abb5ac980aabcd3ca',
+ '3074a46e570a4065a90366418e3a85f9',
+ '436d113b9c3b4e3caa35263036692459',
+ '58308e0119394a89932a127720785851',
+ 'f20f96f2222245c8941654181b6fc432',
+ '4debbd53273d42268c635b7ea3a548bb',
+ '728d5f813fea4bb3904c5a04f2992a33',
+ '75413110dd6f4a109ae4d0559f9f852c',
+ '18a8c8faba494c12b602787051b01092',
+ 'ed13fc0c5c6a4fb18b1c2984be90edd0',
+ 'ca066c3b21d64477872840d7346c01d5',
+ 'e522ca13e2694d46b6e8aa2abd88cbac',
+ 'e1abc2a795fc4120868c8e456dba2f69',
+ 'f804b4557cd54f7a9bc0a08ca57cbf1a',
+ 'f7cfd6abe07843a2941c1eea4cdfd336',
+ 'e7cc0ece85804358bab056be662de88e',
+ 'f8e28e7974814c46866d417c7f06fb77',
+ 'c2eed9734fed4b44848aee782ffefbe0',
+ '6298304006204c728e4b6d398ec5c083',
+ '04eb712486304e2482d403f3cb2ee839',
+ '20512bde6d184f4e87d7178e6e866c44',
+ 'bab8ff2e2e23416a94da1e49d358912e',
+ '19a94669030c4ee58d39c5a7773cdd40',
+ '92ca5d5a2a8c40dfb93346b83fe1596b',
+ 'f0b51e3f09d94960afb94c642bfd85b6',
+ 'd2932ebcb57e4d2e9f045cbe3b95072e',
+ 'b5cee13121314bdd8041bd7c4500e897',
+ '382a3ce4f1fc43a8a28192d99c8d5f26',
+ '1f0bddd886444c129b8237e71d5284b0',
+ '3499de709e0a47b4a89c130dc1cf372b',
+ '85d35f322fc44dd0b8e21df0081436b6',
+ '7a6f5a36d1c04df1b7f806ffa5bc1e13',
+ 'afac1f52915147fea33b5741d45b12fa',
+ '7a20e881ac67468c9bddbda441d6324c',
+ 'cbb7167177164cc48300da150a6391c7',
+ '747b3cc266f04dedb39bbc27fdf6773c',
+ '84d7fbd052a34f8e9f23236e604a983b',
+ '5684e25ac7bd43b3bd1194a943f4ec81',
+ 'd1875d69c675462d80c131e40fb88ecc',
+ '609b06cf05044e2e9acdf36ebf0558bf',
+ '44d5d613ae1c4e7a9e9a0008162fa242',
+ '6c6badb4fbad4c188f3e5a6d34532890',
+ '8c41fc08c93a48c1be5b86166f53bc0e',
+ '4058b057e376422e9a96f56796d45cd6',
+ 'ef86a4baba6340708bebcf894f4b708c',
+ 'b7f11f02744e4b4195376d6735e5f7c5',
+ '799dcffee00342aaa06984e256fd3084',
+ '857068c69fa546e1abec23e8581702f0',
+ '7a15fe6c7ad64ec9bbc9e9c434c53039',
+ 'd0472c205bf049129b9f272731f3621b',
+ '8cfb5075894c41f881e87812369baef7',
+ '6111c7bb4ac84a23ae33d37239ca3908',
+ 'ca944123fe364119b3554ee7de1d650a',
+ '95b9674a21c441ed96ccb5bccb3b53f6',
+ '5de96b86ad904a9290c420666f012078',
+ '646d67c6c19e4434bf62e9a000a3c5e3',
+ '3278312741d749229692edf063f8ce52',
+ '48f8612b87fd4b62b02f6d1d9d0e2f87',
+ '8394a59a03e246a996054f9f997dfcaa',
+ '3a50a01660fc4c83bae0eb89181b016d',
+ 'e6a711f11cab4a4cac9d6048ce94ddbb',
+ 'ee9ac8d22b3b48bba060e14b14fc0f07',
+ 'cce189c2cc03438d8b5f9e99dc4a75a4',
+ ...]</code></pre>
+</div>
+</div>
+<div class="cell" data-execution_count="71">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>retriever <span class="op">=</span> vector_store.as_retriever(</span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>    search_type<span class="op">=</span><span class="st">"mmr"</span>, <span class="co"># Also test "similarity"</span></span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>    search_kwargs<span class="op">=</span>{<span class="st">"k"</span>: <span class="dv">8</span>},</span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-execution_count="72">
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> langchain.chat_models <span class="im">import</span> ChatVertexAI</span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> langchain.memory <span class="im">import</span> ConversationSummaryMemory</span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> langchain.chains <span class="im">import</span> ConversationalRetrievalChain</span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a>llm <span class="op">=</span> ChatVertexAI(model_name<span class="op">=</span><span class="st">'chat-bison'</span>, temperature<span class="op">=</span><span class="fl">0.2</span>, max_output_tokens<span class="op">=</span><span class="dv">512</span>)</span>
+<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a>memory <span class="op">=</span> ConversationSummaryMemory(llm<span class="op">=</span>llm,memory_key<span class="op">=</span><span class="st">"chat_history"</span>,return_messages<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a>qa <span class="op">=</span> ConversationalRetrievalChain.from_llm(llm, retriever<span class="op">=</span>retriever, memory<span class="op">=</span>memory)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-execution_count="73">
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> IPython.display <span class="im">import</span> display, Markdown</span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pprint</span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a>resp <span class="op">=</span> qa(<span class="st">"""</span></span>
+<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a><span class="st">          Write and document an IOManager class that:</span></span>
+<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a><span class="st">          1. Accepts a UPath.Path universal path</span></span>
+<span id="cb17-7"><a href="#cb17-7" aria-hidden="true" tabindex="-1"></a><span class="st">          2. uses pandas to read the upath in chunks</span></span>
+<span id="cb17-8"><a href="#cb17-8" aria-hidden="true" tabindex="-1"></a><span class="st">          3. writes the results to another UPath.Path, but with the .parquet suffix</span></span>
+<span id="cb17-9"><a href="#cb17-9" aria-hidden="true" tabindex="-1"></a><span class="st">          """</span></span>
+<span id="cb17-10"><a href="#cb17-10" aria-hidden="true" tabindex="-1"></a>          )</span>
+<span id="cb17-11"><a href="#cb17-11" aria-hidden="true" tabindex="-1"></a>display(Markdown(resp[<span class="st">'answer'</span>]))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div class="sourceCode" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> upath <span class="im">import</span> UPath</span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> dagster <span class="im">import</span> (</span>
+<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a>   InputContext,</span>
+<span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a>   OutputContext,</span>
+<span id="cb18-7"><a href="#cb18-7" aria-hidden="true" tabindex="-1"></a>   UPathIOManager,</span>
+<span id="cb18-8"><a href="#cb18-8" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb18-9"><a href="#cb18-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-10"><a href="#cb18-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-11"><a href="#cb18-11" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> PandasParquetIOManager(UPathIOManager):</span>
+<span id="cb18-12"><a href="#cb18-12" aria-hidden="true" tabindex="-1"></a>   extension: <span class="bu">str</span> <span class="op">=</span> <span class="st">".parquet"</span></span>
+<span id="cb18-13"><a href="#cb18-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-14"><a href="#cb18-14" aria-hidden="true" tabindex="-1"></a>   <span class="kw">def</span> dump_to_path(<span class="va">self</span>, context: OutputContext, obj: pd.DataFrame, path: UPath):</span>
+<span id="cb18-15"><a href="#cb18-15" aria-hidden="true" tabindex="-1"></a>       <span class="cf">with</span> path.<span class="bu">open</span>(<span class="st">"wb"</span>) <span class="im">as</span> <span class="bu">file</span>:</span>
+<span id="cb18-16"><a href="#cb18-16" aria-hidden="true" tabindex="-1"></a>           obj.to_parquet(<span class="bu">file</span>)</span>
+<span id="cb18-17"><a href="#cb18-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-18"><a href="#cb18-18" aria-hidden="true" tabindex="-1"></a>   <span class="kw">def</span> load_from_path(<span class="va">self</span>, context: InputContext, path: UPath) <span class="op">-&gt;</span> pd.DataFrame:</span>
+<span id="cb18-19"><a href="#cb18-19" aria-hidden="true" tabindex="-1"></a>       <span class="cf">with</span> path.<span class="bu">open</span>(<span class="st">"rb"</span>) <span class="im">as</span> <span class="bu">file</span>:</span>
+<span id="cb18-20"><a href="#cb18-20" aria-hidden="true" tabindex="-1"></a>           <span class="cf">return</span> pd.read_parquet(<span class="bu">file</span>, engine<span class="op">=</span><span class="st">"pyarrow"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+<div class="cell" data-execution_count="61">
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>memory.clear()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+
+
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="../pm_and_support.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Project Management and Support Resources</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="../references.html" class="pagination-link">
+        <span class="nav-page-text">References</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.dev/seandavi/campus-llm-kb/blob/main/code-examples/code-answering.ipynb" class="toc-action">Edit this page</a></p></div></div></div></div></footer></body></html>
