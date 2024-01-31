@@ -14,7 +14,7 @@
 : Questions that can be used when considering each principle in the AI development process [@Badal2023-bt] {#tbl-healthcare-guiding-principles}
 
 
-## Principle 1: AI tools should aim to alleviate existing health disparities
+### Principle 1: AI tools should aim to alleviate existing health disparities
 
 Reaching health equity requires eliminating the disparitities in health
 outcomes that are closely linked with social, economic, and environmental
@@ -34,7 +34,7 @@ disadvantaged groups must not unnecessarily divert resources from higher
 priority areas and more effective interventions ([Principle
 4](#principle-4-ai-tools-should-have-high-healthcare-value-and-avoid-diverting-resources-from-higher-priority-areas)).
 
-## Principle 2: AI tools should produce clinically meaningful outcomes
+### Principle 2: AI tools should produce clinically meaningful outcomes
 
 AI tools should be evaluated based on their ability to improve clinically
 meaningful outcomes. The clinical benefit of AI tools should be defined in the
@@ -49,7 +49,7 @@ should also evaluate the healthcare value ([Principle
 along with the explainability and auditability of AI tools and models (note
 principles outlined in @tbl-healthcare-guiding-principles.
 
-## Principle 3: AI tools should reduce overdiagnosis and overtreatment
+### Principle 3: AI tools should reduce overdiagnosis and overtreatment
 
 Particularly in the United States, overdiagnosis and overtreatment are major
 drivers of healthcare costs and patient harm. Overdiagnosis occurs when a
@@ -59,7 +59,7 @@ disease that would not have caused symptoms or death in a patient’s lifetime.
 AI tools should be carefully constructed with the spectrum of disease and
 interventions to result in decreased overdiagnosis and overtreatment. 
 
-## Principle 4: AI tools should have high healthcare value and avoid diverting 
+### Principle 4: AI tools should have high healthcare value and avoid diverting 
 resources from higher-priority areas
 
 AI tools applied in healthcare should result in the same outcomes for reduced
@@ -70,13 +70,13 @@ application. Note that what might be cost-effective, leading to high healthcare
 value, in one setting might be extremely cost-ineffective in settings where
 resources are scarce. 
 
-## Principle 5: AI tools should incorporate social, structural, environmental,
+### Principle 5: AI tools should incorporate social, structural, environmental,
 emotional, and psychological drivers of health
 
-## Principle 6: AI tools should be easily tailored to the local population
+### Principle 6: AI tools should be easily tailored to the local population
 
-## Principle 7: AI tools should promote a learning healthcare system
+### Principle 7: AI tools should promote a learning healthcare system
 
-## Principle 8: AI tools should facilitate shared decision-making
+### Principle 8: AI tools should facilitate shared decision-making
 
 
