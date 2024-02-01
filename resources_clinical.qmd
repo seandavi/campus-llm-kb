@@ -1,5 +1,13 @@
 # Clinical Domain
 
+## Literature
+
+- Mandl, K.D., Gottlieb, D. and Mandel, J.C. (2024) ‘Integration of AI in healthcare requires an interoperable digital data ecosystem’, Nature Medicine. Available at: https://doi.org/10.1038/s41591-023-02783-w.
+- Tierney Aaron A. et al. (no date) ‘Ambient Artificial Intelligence Scribes to Alleviate the Burden of Clinical Documentation’, Catalyst non-issue content, 5(1), p. CAT.23.0404. Available at: https://doi.org/10.1056/CAT.23.0404.
+
+
+## Guiding principles table
+
 | Principle                                     | Questions                                                                                                                                                                                                                                                                                                                                                                                |
 |-----------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | 1. Alleviate healthcare disparities           | • What health disparities are reported for the present AI application?<br>• How can the AI tool be designed to be accessible to and improve outcomes for the disadvantaged population?<br>• What clinical interventions are needed to realize the benefit, and are these accessible?<br>• How can data collection be supported in underserved communities for tool retraining over time? |
