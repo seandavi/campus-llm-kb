@@ -1,0 +1,11 @@
+---
+filters:
+  - doi2cite.lua
+bibliography:
+  - "__from_DOI.bib"
+---
+
+Testing:
+
+[@https://doi.org/10.1002/andp.19053220607; @doi.org/10.1002/andp.1905
+3220806; @doi:10.1002/andp.19053221004]

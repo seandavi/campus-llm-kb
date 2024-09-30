@@ -1,10 +1,10 @@
 # Education
 
+This page is a collection of resources for educators and administrators who are considering how to use generative AI tools in their courses or programs. 
 
+## Basics and Background
 
-## Background and basics of Generative AI and LLMs
-
-- [Cornell University](https://teaching.cornell.edu/generative-artificial-intelligence)
+- [Cornell University resources for educators](https://teaching.cornell.edu/generative-artificial-intelligence)
 - [Vanderbilt University Guide to Teaching in the Age of AI](https://cft.vanderbilt.edu/guides-sub-pages/teaching-in-the-age-of-ai/)
 - [University of South Carolina ChatGPT for Teaching and Learning](https://sc.edu/about/offices_and_divisions/cte/teaching_resources/chatgpt/index.php)
 - [Generative Artificial Intelligence in Education and Pedagogy](https://teaching.cornell.edu/sites/default/files/2024-01/Cornell-GenerativeAIForEducation-Report_2.pdf)
@@ -56,8 +56,12 @@ This section includes examples of policy statements and guidelines from institut
 - [Duke](https://learninginnovation.duke.edu/ai-and-teaching-at-duke-2/artificial-intelligence-policies-in-syllabi-guidelines-and-considerations/) and [here](https://students.duke.edu/get-assistance/community-standard/)
 - [University of Wisconsin-Madison](https://it.wisc.edu/generative-ai-uw-madison-use-policies/)
 - [Notre Dame](https://honorcode.nd.edu/generative-ai-policy-for-students-august-2023/)
-- [Boise Statue University](https://www.boisestate.edu/policy/generative-artificial-intelligence-ai-use-and-policies/) 
-
+- [Boise Statue University](https://www.boisestate.edu/policy/generative-artificial-intelligence-ai-use-and-policies/)
+- [OSU's AI: Considerations for Teaching and Learning](https://teaching.resources.osu.edu/teaching-topics/ai-considerations-teaching-learning)
+- [U of Maine's Learn with AI](https://umaine.edu/learnwithai/)
+- [sentientsyllabus.org](http://sentientsyllabus.org))
+- [Update Your Syllabus for ChatGPT](https://medium.com/@rwatkins_7167/updating-your-course-syllabus-for-chatgpt-965f4b57b003)
+- [Rules for Tools](https://csp.uber.space/phhd/rulesfortools.pdf) (from Padagogische Hochschule Heidelberg)
 - [UNESCO](https://www.unesco.org/en/articles/guidance-generative-ai-education-and-research)
 
 
