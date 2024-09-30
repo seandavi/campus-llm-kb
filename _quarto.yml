@@ -1,17 +1,25 @@
 project:
   type: book
 
+website:
+  google-analytics: "GTM-PZMG5CH7"
+
 book:
   title: "Large Language Model Policy and Practice"
-  subtitle: "A framework for large language models in an Academic Medical Center"
-  author: "Sean Davis"
-  date: "2023-05-13"
+  subtitle: "Thoughts and a light framework around Generative AI in an Academic Medical Center"
+  #author: "Sean Davis"
+  #date: "2023-05-13"
   site-url: https://seandavi.github.io/campus-llm-kb/
   repo-url: https://github.com/seandavi/campus-llm-kb/
   repo-branch: main
   repo-actions: [edit]
   sharing: [twitter, facebook, linkedin]
   downloads: [pdf, epub]
+  navbar:
+    search: true
+
+
+
 
   chapters:
     - preface.qmd
@@ -29,17 +37,17 @@ book:
         - resources_education.qmd
         - resources_business.qmd
 
-    - part: "Workstream Resources"
-      chapters:
-        - infrastructure.qmd
-        - workforce.qmd
-        - ethics.qmd
-        - data.qmd
-        - pm_and_support.qmd
-    - references.qmd
+    # - part: "Workstream Resources"
+    #   chapters:
+    #     - infrastructure.qmd
+    #     - workforce.qmd
+    #     - ethics.qmd
+    #     - data.qmd
+    #     - pm_and_support.qmd
   appendices:
     - appendices.qmd
     - bill_of_rights.qmd
+    - HHS.qmd
 
 
 
@@ -49,6 +57,7 @@ format:
   html:
     theme: cosmo
     code-link: true
+    include-in-header: ga4_code.html
   pdf:
     documentclass: scrreprt
     include-in-header: 
