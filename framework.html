@@ -2,13 +2,13 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.353">
+<meta name="generator" content="quarto-1.5.57">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="dcterms.date" content="2023-05-14">
 
-<title>Large Language Model Policy and Practice - 3&nbsp; The Framework</title>
+<title>3&nbsp; The Framework – Large Language Model Policy and Practice</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -48,7 +48,13 @@ ul.task-list li input[type="checkbox"] {
   "collapse-after": 3,
   "panel-placement": "end",
   "type": "overlay",
-  "limit": 20,
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
   "language": {
     "search-no-results-text": "No results",
     "search-matching-documents-text": "matching documents",
@@ -57,8 +63,10 @@ ul.task-list li input[type="checkbox"] {
     "search-more-match-text": "more match in this document",
     "search-more-matches-text": "more matches in this document",
     "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
     "search-detached-cancel-button-title": "Cancel",
-    "search-submit-button-title": "Submit"
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
   }
 }</script>
 <!-- Google tag (gtag.js) -->
@@ -78,50 +86,50 @@ ul.task-list li input[type="checkbox"] {
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
-    <nav class="navbar navbar-expand-lg navbar-dark ">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
-      <div class="navbar-brand-container">
+      <div class="navbar-brand-container mx-auto">
     <a class="navbar-brand" href="./index.html">
     <span class="navbar-title">Large Language Model Policy and Practice</span>
     </a>
   </div>
-        <div class="quarto-navbar-tools ms-auto tools-wide">
+        <div class="quarto-navbar-tools tools-wide tools-end">
     <a href="https://github.com/seandavi/campus-llm-kb/" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
     <div class="dropdown">
-      <a href="" title="Download" id="quarto-navigation-tool-dropdown-0" class="quarto-navigation-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download"><i class="bi bi-download"></i></a>
+      <a href="" title="Download" id="quarto-navigation-tool-dropdown-0" class="quarto-navigation-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false" role="link" aria-label="Download"><i class="bi bi-download"></i></a>
       <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="quarto-navigation-tool-dropdown-0">
           <li>
-            <a class="dropdown-item quarto-navbar-tools ms-auto-item" href="./Large-Language-Model-Policy-and-Practice.pdf">
-              <i class="bi bi-bi-file-pdf pe-1"></i>
+            <a class="dropdown-item quarto-navbar-tools-item" href="./Large-Language-Model-Policy-and-Practice.pdf">
+              <i class="bi bi-file-pdf pe-1"></i>
             Download PDF
             </a>
           </li>
           <li>
-            <a class="dropdown-item quarto-navbar-tools ms-auto-item" href="./Large-Language-Model-Policy-and-Practice.epub">
-              <i class="bi bi-bi-journal pe-1"></i>
+            <a class="dropdown-item quarto-navbar-tools-item" href="./Large-Language-Model-Policy-and-Practice.epub">
+              <i class="bi bi-journal pe-1"></i>
             Download ePub
             </a>
           </li>
       </ul>
     </div>
     <div class="dropdown">
-      <a href="" title="Share" id="quarto-navigation-tool-dropdown-1" class="quarto-navigation-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Share"><i class="bi bi-share"></i></a>
+      <a href="" title="Share" id="quarto-navigation-tool-dropdown-1" class="quarto-navigation-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false" role="link" aria-label="Share"><i class="bi bi-share"></i></a>
       <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="quarto-navigation-tool-dropdown-1">
           <li>
-            <a class="dropdown-item quarto-navbar-tools ms-auto-item" href="https://twitter.com/intent/tweet?url=|url|">
-              <i class="bi bi-bi-twitter pe-1"></i>
+            <a class="dropdown-item quarto-navbar-tools-item" href="https://twitter.com/intent/tweet?url=|url|">
+              <i class="bi bi-twitter pe-1"></i>
             Twitter
             </a>
           </li>
           <li>
-            <a class="dropdown-item quarto-navbar-tools ms-auto-item" href="https://www.facebook.com/sharer/sharer.php?u=|url|">
-              <i class="bi bi-bi-facebook pe-1"></i>
+            <a class="dropdown-item quarto-navbar-tools-item" href="https://www.facebook.com/sharer/sharer.php?u=|url|">
+              <i class="bi bi-facebook pe-1"></i>
             Facebook
             </a>
           </li>
           <li>
-            <a class="dropdown-item quarto-navbar-tools ms-auto-item" href="https://www.linkedin.com/sharing/share-offsite/?url=|url|">
-              <i class="bi bi-bi-linkedin pe-1"></i>
+            <a class="dropdown-item quarto-navbar-tools-item" href="https://www.linkedin.com/sharing/share-offsite/?url=|url|">
+              <i class="bi bi-linkedin pe-1"></i>
             LinkedIn
             </a>
           </li>
@@ -133,27 +141,19 @@ ul.task-list li input[type="checkbox"] {
     </nav>
   <nav class="quarto-secondary-nav">
     <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./framework.html">Implementation</a></li><li class="breadcrumb-item"><a href="./framework.html"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">The Framework</span></a></li></ol></nav>
-      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
-      </a>
-      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
-        <i class="bi bi-search"></i>
-      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./framework.html">Implementation</a></li><li class="breadcrumb-item"><a href="./framework.html"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">The Framework</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
     </div>
   </nav>
 </header>
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
-        <div class="mt-2 flex-shrink-0 align-items-center">
-        <div class="sidebar-search">
-        <div id="quarto-search" class="" title="Search"></div>
-        </div>
-        </div>
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
     <div class="sidebar-menu-container"> 
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
@@ -176,9 +176,9 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
  <span class="menu-text">Implementation</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -207,7 +207,7 @@ ul.task-list li input[type="checkbox"] {
       <div class="sidebar-item-container"> 
             <a href="./domainresource.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Domain Resources</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -240,9 +240,9 @@ ul.task-list li input[type="checkbox"] {
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
  <span class="menu-text">Appendices</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -270,7 +270,7 @@ ul.task-list li input[type="checkbox"] {
     </ul>
     </div>
 </nav>
-<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
@@ -293,12 +293,12 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#project-management-support-personnel" id="toc-project-management-support-personnel" class="nav-link" data-scroll-target="#project-management-support-personnel"><span class="header-section-number">3.2.5</span> Project Management &amp; Support Personnel</a></li>
   </ul></li>
   </ul>
-<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/seandavi/campus-llm-kb/edit/main/framework.qmd" class="toc-action">Edit this page</a></p></div></div></nav>
+<div class="toc-actions"><ul><li><a href="https://github.com/seandavi/campus-llm-kb/edit/main/framework.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default">
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./framework.html">Implementation</a></li><li class="breadcrumb-item"><a href="./framework.html"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">The Framework</span></a></li></ol></nav>
 <div class="quarto-title">
 <h1 class="title"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">The Framework</span></h1>
 <p class="subtitle lead">A Framework for Implementing AI and Large Language Models across an Academic Medical System</p>
@@ -320,327 +320,449 @@ ul.task-list li input[type="checkbox"] {
   </div>
   
 
+
 </header>
 
-<p>In order to successfully integrate AI and Large Language Models into an academic medical system, it is essential to adopt a flexible and agile approach that accounts for the varying pacing, priorities, and levels of risk associated with different aspects of the institution. By organizing the implementation plan into distinct domains and workstreams (see <a href="#fig-framework">Figure&nbsp;<span>3.1</span></a>), we can address the unique requirements of each area, ensuring that resources are allocated effectively and progress is made at an appropriate pace. This structure also enables rapid adaptation to changing circumstances, allowing for seamless collaboration between various teams and promoting a proactive response to any challenges that may arise. Ultimately, the use of domains and workstreams fosters a comprehensive and resilient approach to AI integration, maximizing the potential benefits while minimizing potential risks across the entire academic medical system. Note that the framework is not intended to be prescriptive or exhaustive; rather, it is meant to serve as a starting point for discussion, planning, and implementation. A top-level coordination unit (e.g., a steering committee) will work with the domain areas as a resource and to ensure that the overall implementation plan is aligned with the institution’s strategic goals and priorities.</p>
-<div class="cell">
+
+<p>In order to successfully integrate AI and Large Language Models into an academic medical system, it is essential to adopt a flexible and agile approach that accounts for the varying pacing, priorities, and levels of risk associated with different aspects of the institution. By organizing the implementation plan into distinct domains and workstreams (see <a href="#fig-framework" class="quarto-xref">Figure&nbsp;<span>3.1</span></a>), we can address the unique requirements of each area, ensuring that resources are allocated effectively and progress is made at an appropriate pace. This structure also enables rapid adaptation to changing circumstances, allowing for seamless collaboration between various teams and promoting a proactive response to any challenges that may arise. Ultimately, the use of domains and workstreams fosters a comprehensive and resilient approach to AI integration, maximizing the potential benefits while minimizing potential risks across the entire academic medical system. Note that the framework is not intended to be prescriptive or exhaustive; rather, it is meant to serve as a starting point for discussion, planning, and implementation. A top-level coordination unit (e.g., a steering committee) will work with the domain areas as a resource and to ensure that the overall implementation plan is aligned with the institution’s strategic goals and priorities.</p>
+<div class="cell" data-layout-align="default">
 <div class="cell-output-display">
-<div id="fig-framework" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
+<div id="fig-framework" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-framework-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div>
 <svg width="672" height="480" viewbox="0.00 0.00 1074.20 786.40" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" style="; max-width: none; max-height: none">
-<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(216 750.4)"> <polygon fill="white" stroke="transparent" points="-216,36 -216,-750.4 858.2,-750.4 858.2,36 -216,36"></polygon> <!-- AI --> <g id="node1" class="node">
-<title>
-AI
-</title>
-<path fill="lightblue" stroke="black" d="M497.18,-714.5C497.18,-714.5 344.24,-714.5 344.24,-714.5 338.24,-714.5 332.24,-708.5 332.24,-702.5 332.24,-702.5 332.24,-655.1 332.24,-655.1 332.24,-649.1 338.24,-643.1 344.24,-643.1 344.24,-643.1 497.18,-643.1 497.18,-643.1 503.18,-643.1 509.18,-649.1 509.18,-655.1 509.18,-655.1 509.18,-702.5 509.18,-702.5 509.18,-708.5 503.18,-714.5 497.18,-714.5"></path> <text text-anchor="middle" x="420.71" y="-684.2" font-family="Helvetica,Arial,sans-serif" font-size="18.00">AI Integration</text> <text text-anchor="middle" x="420.71" y="-662.6" font-family="Helvetica,Arial,sans-serif" font-size="18.00"> Steering Committee</text> </g> <!-- ED --> <g id="node2" class="node">
-<title>
-ED
-</title>
-<path fill="lightblue" stroke="black" d="M291.19,-596.2C291.19,-596.2 214.23,-596.2 214.23,-596.2 208.23,-596.2 202.23,-590.2 202.23,-584.2 202.23,-584.2 202.23,-559 202.23,-559 202.23,-553 208.23,-547 214.23,-547 214.23,-547 291.19,-547 291.19,-547 297.19,-547 303.19,-553 303.19,-559 303.19,-559 303.19,-584.2 303.19,-584.2 303.19,-590.2 297.19,-596.2 291.19,-596.2"></path> <text text-anchor="middle" x="252.71" y="-566.2" font-family="Helvetica,Arial,sans-serif" font-size="18.00">Education</text> </g> <!-- AI&#45;&#45;ED --> <g id="edge1" class="edge">
-<title>
-AI–ED
-</title>
-<path fill="none" stroke="black" d="M365.23,-643.06C340.77,-627.74 312.64,-610.13 290.62,-596.34"></path> </g> <!-- RE --> <g id="node3" class="node">
-<title>
-RE
-</title>
-<path fill="lightblue" stroke="black" d="M402.67,-596.2C402.67,-596.2 332.75,-596.2 332.75,-596.2 326.75,-596.2 320.75,-590.2 320.75,-584.2 320.75,-584.2 320.75,-559 320.75,-559 320.75,-553 326.75,-547 332.75,-547 332.75,-547 402.67,-547 402.67,-547 408.67,-547 414.67,-553 414.67,-559 414.67,-559 414.67,-584.2 414.67,-584.2 414.67,-590.2 408.67,-596.2 402.67,-596.2"></path> <text text-anchor="middle" x="367.71" y="-566.2" font-family="Helvetica,Arial,sans-serif" font-size="18.00">Research</text> </g> <!-- AI&#45;&#45;RE --> <g id="edge2" class="edge">
-<title>
-AI–RE
-</title>
-<path fill="none" stroke="black" d="M403.21,-643.06C395.49,-627.74 386.62,-610.13 379.67,-596.34"></path> </g> <!-- CL --> <g id="node4" class="node">
-<title>
-CL
-</title>
-<path fill="lightblue" stroke="black" d="M505.2,-596.2C505.2,-596.2 444.22,-596.2 444.22,-596.2 438.22,-596.2 432.22,-590.2 432.22,-584.2 432.22,-584.2 432.22,-559 432.22,-559 432.22,-553 438.22,-547 444.22,-547 444.22,-547 505.2,-547 505.2,-547 511.2,-547 517.2,-553 517.2,-559 517.2,-559 517.2,-584.2 517.2,-584.2 517.2,-590.2 511.2,-596.2 505.2,-596.2"></path> <text text-anchor="middle" x="474.71" y="-566.2" font-family="Helvetica,Arial,sans-serif" font-size="18.00">Clinical</text> </g> <!-- AI&#45;&#45;CL --> <g id="edge3" class="edge">
-<title>
-AI–CL
-</title>
-<path fill="none" stroke="black" d="M438.54,-643.06C446.41,-627.74 455.45,-610.13 462.52,-596.34"></path> </g> <!-- BU --> <g id="node5" class="node">
-<title>
-BU
-</title>
-<path fill="lightblue" stroke="black" d="M630.19,-607.3C630.19,-607.3 547.23,-607.3 547.23,-607.3 541.23,-607.3 535.23,-601.3 535.23,-595.3 535.23,-595.3 535.23,-547.9 535.23,-547.9 535.23,-541.9 541.23,-535.9 547.23,-535.9 547.23,-535.9 630.19,-535.9 630.19,-535.9 636.19,-535.9 642.19,-541.9 642.19,-547.9 642.19,-547.9 642.19,-595.3 642.19,-595.3 642.19,-601.3 636.19,-607.3 630.19,-607.3"></path> <text text-anchor="middle" x="588.71" y="-577" font-family="Helvetica,Arial,sans-serif" font-size="18.00">Business</text> <text text-anchor="middle" x="588.71" y="-555.4" font-family="Helvetica,Arial,sans-serif" font-size="18.00">Operations</text> </g> <!-- AI&#45;&#45;BU --> <g id="edge4" class="edge">
-<title>
-AI–BU
-</title>
-<path fill="none" stroke="black" d="M476.19,-643.06C495.11,-631.21 516.22,-617.99 535.01,-606.23"></path> </g> <!-- ED&#45;&#45;RE --> <g id="edge25" class="edge">
-<title>
-ED–RE
-</title>
-<path fill="none" stroke="dimgrey" stroke-dasharray="5,2" d="M303.47,-571.6C309.16,-571.6 314.85,-571.6 320.53,-571.6"></path> </g> <!-- A1 --> <g id="node11" class="node">
-<title>
-A1
-</title>
-<ellipse fill="lightgreen" stroke="black" cx="252.71" cy="-464.4" rx="27" ry="20.16"></ellipse> <text text-anchor="middle" x="252.71" y="-460.8" font-family="Helvetica,Arial,sans-serif" font-size="12.00">A1</text> </g> <!-- ED&#45;&#45;A1 --> <g id="edge5" class="edge">
-<title>
-ED–A1
-</title>
-<path fill="none" stroke="dimgrey" stroke-dasharray="5,2" d="M252.71,-546.99C252.71,-528.21 252.71,-502.26 252.71,-484.71"></path> </g> <!-- RE&#45;&#45;CL --> <g id="edge26" class="edge">
-<title>
-RE–CL
-</title>
-<path fill="none" stroke="dimgrey" stroke-dasharray="5,2" d="M414.94,-571.6C420.7,-571.6 426.46,-571.6 432.22,-571.6"></path> </g> <!-- B1 --> <g id="node16" class="node">
-<title>
-B1
-</title>
-<ellipse fill="lightgreen" stroke="black" cx="367.71" cy="-464.4" rx="27" ry="20.16"></ellipse> <text text-anchor="middle" x="367.71" y="-460.8" font-family="Helvetica,Arial,sans-serif" font-size="12.00">B1</text> </g> <!-- RE&#45;&#45;B1 --> <g id="edge10" class="edge">
-<title>
-RE–B1
-</title>
-<path fill="none" stroke="dimgrey" stroke-dasharray="5,2" d="M367.71,-546.99C367.71,-528.21 367.71,-502.26 367.71,-484.71"></path> </g> <!-- CL&#45;&#45;BU --> <g id="edge27" class="edge">
-<title>
-CL–BU
-</title>
-<path fill="none" stroke="dimgrey" stroke-dasharray="5,2" d="M517.46,-571.6C523.3,-571.6 529.15,-571.6 534.99,-571.6"></path> </g> <!-- C1 --> <g id="node21" class="node">
-<title>
-C1
-</title>
-<ellipse fill="lightgreen" stroke="black" cx="474.71" cy="-464.4" rx="27" ry="20.16"></ellipse> <text text-anchor="middle" x="474.71" y="-460.8" font-family="Helvetica,Arial,sans-serif" font-size="12.00">C1</text> </g> <!-- CL&#45;&#45;C1 --> <g id="edge15" class="edge">
-<title>
-CL–C1
-</title>
-<path fill="none" stroke="dimgrey" stroke-dasharray="5,2" d="M474.71,-546.99C474.71,-528.21 474.71,-502.26 474.71,-484.71"></path> </g> <!-- D1 --> <g id="node26" class="node">
-<title>
-D1
-</title>
-<ellipse fill="lightgreen" stroke="black" cx="588.71" cy="-464.4" rx="27" ry="20.16"></ellipse> <text text-anchor="middle" x="588.71" y="-460.8" font-family="Helvetica,Arial,sans-serif" font-size="12.00">D1</text> </g> <!-- BU&#45;&#45;D1 --> <g id="edge20" class="edge">
-<title>
-BU–D1
-</title>
-<path fill="none" stroke="dimgrey" stroke-dasharray="5,2" d="M588.71,-535.86C588.71,-518.87 588.71,-499.04 588.71,-484.76"></path> </g> <!-- DA --> <g id="node6" class="node">
-<title>
-DA
-</title>
-<path fill="orange" stroke="black" d="M195.69,-500.1C195.69,-500.1 121.73,-500.1 121.73,-500.1 115.73,-500.1 109.73,-494.1 109.73,-488.1 109.73,-488.1 109.73,-440.7 109.73,-440.7 109.73,-434.7 115.73,-428.7 121.73,-428.7 121.73,-428.7 195.69,-428.7 195.69,-428.7 201.69,-428.7 207.69,-434.7 207.69,-440.7 207.69,-440.7 207.69,-488.1 207.69,-488.1 207.69,-494.1 201.69,-500.1 195.69,-500.1"></path> <text text-anchor="middle" x="158.71" y="-469.8" font-family="Helvetica,Arial,sans-serif" font-size="18.00">Data Use</text> <text text-anchor="middle" x="158.71" y="-448.2" font-family="Helvetica,Arial,sans-serif" font-size="18.00">&amp; Access</text> </g> <!-- DA&#45;&#45;A1 --> <g id="edge28" class="edge">
-<title>
-DA–A1
-</title>
-<path fill="none" stroke="dimgrey" stroke-dasharray="5,2" d="M207.55,-464.4C213.54,-464.4 219.54,-464.4 225.54,-464.4"></path> </g> <!-- IT --> <g id="node7" class="node">
-<title>
-IT
-</title>
-<path fill="orange" stroke="black" d="M196.16,-392.9C196.16,-392.9 75.26,-392.9 75.26,-392.9 69.26,-392.9 63.26,-386.9 63.26,-380.9 63.26,-380.9 63.26,-333.5 63.26,-333.5 63.26,-327.5 69.26,-321.5 75.26,-321.5 75.26,-321.5 196.16,-321.5 196.16,-321.5 202.16,-321.5 208.16,-327.5 208.16,-333.5 208.16,-333.5 208.16,-380.9 208.16,-380.9 208.16,-386.9 202.16,-392.9 196.16,-392.9"></path> <text text-anchor="middle" x="135.71" y="-362.6" font-family="Helvetica,Arial,sans-serif" font-size="18.00">IT, Security</text> <text text-anchor="middle" x="135.71" y="-341" font-family="Helvetica,Arial,sans-serif" font-size="18.00">&amp; Infrastructure</text> </g> <!-- A2 --> <g id="node12" class="node">
-<title>
-A2
-</title>
-<ellipse fill="lightgreen" stroke="black" cx="252.71" cy="-357.2" rx="27" ry="20.16"></ellipse> <text text-anchor="middle" x="252.71" y="-353.6" font-family="Helvetica,Arial,sans-serif" font-size="12.00">A2</text> </g> <!-- IT&#45;&#45;A2 --> <g id="edge32" class="edge">
-<title>
-IT–A2
-</title>
-<path fill="none" stroke="dimgrey" stroke-dasharray="5,2" d="M208.38,-357.2C214.15,-357.2 219.92,-357.2 225.7,-357.2"></path> </g> <!-- ELSI --> <g id="node8" class="node">
-<title>
-ELSI
-</title>
-<path fill="orange" stroke="black" d="M195.66,-285.7C195.66,-285.7 85.76,-285.7 85.76,-285.7 79.76,-285.7 73.76,-279.7 73.76,-273.7 73.76,-273.7 73.76,-226.3 73.76,-226.3 73.76,-220.3 79.76,-214.3 85.76,-214.3 85.76,-214.3 195.66,-214.3 195.66,-214.3 201.66,-214.3 207.66,-220.3 207.66,-226.3 207.66,-226.3 207.66,-273.7 207.66,-273.7 207.66,-279.7 201.66,-285.7 195.66,-285.7"></path> <text text-anchor="middle" x="140.71" y="-255.4" font-family="Helvetica,Arial,sans-serif" font-size="18.00">Ethical, Legal,</text> <text text-anchor="middle" x="140.71" y="-233.8" font-family="Helvetica,Arial,sans-serif" font-size="18.00">&amp; Social</text> </g> <!-- A3 --> <g id="node13" class="node">
-<title>
-A3
-</title>
-<ellipse fill="lightgreen" stroke="black" cx="252.71" cy="-250" rx="27" ry="20.16"></ellipse> <text text-anchor="middle" x="252.71" y="-246.4" font-family="Helvetica,Arial,sans-serif" font-size="12.00">A3</text> </g> <!-- ELSI&#45;&#45;A3 --> <g id="edge36" class="edge">
-<title>
-ELSI–A3
-</title>
-<path fill="none" stroke="dimgrey" stroke-dasharray="5,2" d="M207.65,-250C213.63,-250 219.62,-250 225.6,-250"></path> </g> <!-- WD --> <g id="node9" class="node">
-<title>
-WD
-</title>
-<path fill="orange" stroke="black" d="M195.63,-178.5C195.63,-178.5 11.79,-178.5 11.79,-178.5 5.79,-178.5 -0.21,-172.5 -0.21,-166.5 -0.21,-166.5 -0.21,-119.1 -0.21,-119.1 -0.21,-113.1 5.79,-107.1 11.79,-107.1 11.79,-107.1 195.63,-107.1 195.63,-107.1 201.63,-107.1 207.63,-113.1 207.63,-119.1 207.63,-119.1 207.63,-166.5 207.63,-166.5 207.63,-172.5 201.63,-178.5 195.63,-178.5"></path> <text text-anchor="middle" x="103.71" y="-148.2" font-family="Helvetica,Arial,sans-serif" font-size="18.00">Training &amp;</text> <text text-anchor="middle" x="103.71" y="-126.6" font-family="Helvetica,Arial,sans-serif" font-size="18.00">Workforce Development</text> </g> <!-- A4 --> <g id="node14" class="node">
-<title>
-A4
-</title>
-<ellipse fill="lightgreen" stroke="black" cx="252.71" cy="-142.8" rx="27" ry="20.16"></ellipse> <text text-anchor="middle" x="252.71" y="-139.2" font-family="Helvetica,Arial,sans-serif" font-size="12.00">A4</text> </g> <!-- WD&#45;&#45;A4 --> <g id="edge40" class="edge">
-<title>
-WD–A4
-</title>
-<path fill="none" stroke="dimgrey" stroke-dasharray="5,2" d="M207.6,-142.8C213.59,-142.8 219.58,-142.8 225.58,-142.8"></path> </g> <!-- OWN --> <g id="node10" class="node">
-<title>
-OWN
-</title>
-<path fill="orange" stroke="black" d="M195.68,-71.3C195.68,-71.3 17.74,-71.3 17.74,-71.3 11.74,-71.3 5.74,-65.3 5.74,-59.3 5.74,-59.3 5.74,-11.9 5.74,-11.9 5.74,-5.9 11.74,0.1 17.74,0.1 17.74,0.1 195.68,0.1 195.68,0.1 201.68,0.1 207.68,-5.9 207.68,-11.9 207.68,-11.9 207.68,-59.3 207.68,-59.3 207.68,-65.3 201.68,-71.3 195.68,-71.3"></path> <text text-anchor="middle" x="106.71" y="-41" font-family="Helvetica,Arial,sans-serif" font-size="18.00">Project Development,</text> <text text-anchor="middle" x="106.71" y="-19.4" font-family="Helvetica,Arial,sans-serif" font-size="18.00">Management &amp; Support</text> </g> <!-- A5 --> <g id="node15" class="node">
-<title>
-A5
-</title>
-<ellipse fill="lightgreen" stroke="black" cx="252.71" cy="-35.6" rx="27" ry="20.16"></ellipse> <text text-anchor="middle" x="252.71" y="-32" font-family="Helvetica,Arial,sans-serif" font-size="12.00">A5</text> </g> <!-- OWN&#45;&#45;A5 --> <g id="edge44" class="edge">
-<title>
-OWN–A5
-</title>
-<path fill="none" stroke="dimgrey" stroke-dasharray="5,2" d="M207.94,-35.6C213.77,-35.6 219.6,-35.6 225.43,-35.6"></path> </g> <!-- A1&#45;&#45;A2 --> <g id="edge6" class="edge">
-<title>
-A1–A2
-</title>
-<path fill="none" stroke="dimgrey" stroke-dasharray="5,2" d="M252.71,-444.1C252.71,-425.12 252.71,-396.31 252.71,-377.37"></path> </g> <!-- A1&#45;&#45;B1 --> <g id="edge29" class="edge">
-<title>
-A1–B1
-</title>
-<path fill="none" stroke="dimgrey" stroke-dasharray="5,2" d="M280.11,-464.4C300.3,-464.4 320.49,-464.4 340.68,-464.4"></path> </g> <!-- A2&#45;&#45;A3 --> <g id="edge7" class="edge">
-<title>
-A2–A3
-</title>
-<path fill="none" stroke="dimgrey" stroke-dasharray="5,2" d="M252.71,-336.9C252.71,-317.92 252.71,-289.11 252.71,-270.17"></path> </g> <!-- B2 --> <g id="node17" class="node">
-<title>
-B2
-</title>
-<ellipse fill="lightgreen" stroke="black" cx="367.71" cy="-357.2" rx="27" ry="20.16"></ellipse> <text text-anchor="middle" x="367.71" y="-353.6" font-family="Helvetica,Arial,sans-serif" font-size="12.00">B2</text> </g> <!-- A2&#45;&#45;B2 --> <g id="edge33" class="edge">
-<title>
-A2–B2
-</title>
-<path fill="none" stroke="dimgrey" stroke-dasharray="5,2" d="M280.11,-357.2C300.3,-357.2 320.49,-357.2 340.68,-357.2"></path> </g> <!-- A3&#45;&#45;A4 --> <g id="edge8" class="edge">
-<title>
-A3–A4
-</title>
-<path fill="none" stroke="dimgrey" stroke-dasharray="5,2" d="M252.71,-229.7C252.71,-210.72 252.71,-181.91 252.71,-162.97"></path> </g> <!-- B3 --> <g id="node18" class="node">
-<title>
-B3
-</title>
-<ellipse fill="lightgreen" stroke="black" cx="367.71" cy="-250" rx="27" ry="20.16"></ellipse> <text text-anchor="middle" x="367.71" y="-246.4" font-family="Helvetica,Arial,sans-serif" font-size="12.00">B3</text> </g> <!-- A3&#45;&#45;B3 --> <g id="edge37" class="edge">
-<title>
-A3–B3
-</title>
-<path fill="none" stroke="dimgrey" stroke-dasharray="5,2" d="M280.11,-250C300.3,-250 320.49,-250 340.68,-250"></path> </g> <!-- A4&#45;&#45;A5 --> <g id="edge9" class="edge">
-<title>
-A4–A5
-</title>
-<path fill="none" stroke="dimgrey" stroke-dasharray="5,2" d="M252.71,-122.5C252.71,-103.52 252.71,-74.71 252.71,-55.77"></path> </g> <!-- B4 --> <g id="node19" class="node">
-<title>
-B4
-</title>
-<ellipse fill="lightgreen" stroke="black" cx="367.71" cy="-142.8" rx="27" ry="20.16"></ellipse> <text text-anchor="middle" x="367.71" y="-139.2" font-family="Helvetica,Arial,sans-serif" font-size="12.00">B4</text> </g> <!-- A4&#45;&#45;B4 --> <g id="edge41" class="edge">
-<title>
-A4–B4
-</title>
-<path fill="none" stroke="dimgrey" stroke-dasharray="5,2" d="M280.11,-142.8C300.3,-142.8 320.49,-142.8 340.68,-142.8"></path> </g> <!-- B5 --> <g id="node20" class="node">
-<title>
-B5
-</title>
-<ellipse fill="lightgreen" stroke="black" cx="367.71" cy="-35.6" rx="27" ry="20.16"></ellipse> <text text-anchor="middle" x="367.71" y="-32" font-family="Helvetica,Arial,sans-serif" font-size="12.00">B5</text> </g> <!-- A5&#45;&#45;B5 --> <g id="edge45" class="edge">
-<title>
-A5–B5
-</title>
-<path fill="none" stroke="dimgrey" stroke-dasharray="5,2" d="M280.11,-35.6C300.3,-35.6 320.49,-35.6 340.68,-35.6"></path> </g> <!-- B1&#45;&#45;B2 --> <g id="edge11" class="edge">
-<title>
-B1–B2
-</title>
-<path fill="none" stroke="dimgrey" stroke-dasharray="5,2" d="M367.71,-444.1C367.71,-425.12 367.71,-396.31 367.71,-377.37"></path> </g> <!-- B1&#45;&#45;C1 --> <g id="edge30" class="edge">
-<title>
-B1–C1
-</title>
-<path fill="none" stroke="dimgrey" stroke-dasharray="5,2" d="M394.88,-464.4C412.45,-464.4 430.01,-464.4 447.58,-464.4"></path> </g> <!-- B2&#45;&#45;B3 --> <g id="edge12" class="edge">
-<title>
-B2–B3
-</title>
-<path fill="none" stroke="dimgrey" stroke-dasharray="5,2" d="M367.71,-336.9C367.71,-317.92 367.71,-289.11 367.71,-270.17"></path> </g> <!-- C2 --> <g id="node22" class="node">
-<title>
-C2
-</title>
-<ellipse fill="lightgreen" stroke="black" cx="474.71" cy="-357.2" rx="27" ry="20.16"></ellipse> <text text-anchor="middle" x="474.71" y="-353.6" font-family="Helvetica,Arial,sans-serif" font-size="12.00">C2</text> </g> <!-- B2&#45;&#45;C2 --> <g id="edge34" class="edge">
-<title>
-B2–C2
-</title>
-<path fill="none" stroke="dimgrey" stroke-dasharray="5,2" d="M394.88,-357.2C412.45,-357.2 430.01,-357.2 447.58,-357.2"></path> </g> <!-- B3&#45;&#45;B4 --> <g id="edge13" class="edge">
-<title>
-B3–B4
-</title>
-<path fill="none" stroke="dimgrey" stroke-dasharray="5,2" d="M367.71,-229.7C367.71,-210.72 367.71,-181.91 367.71,-162.97"></path> </g> <!-- C3 --> <g id="node23" class="node">
-<title>
-C3
-</title>
-<ellipse fill="lightgreen" stroke="black" cx="474.71" cy="-250" rx="27" ry="20.16"></ellipse> <text text-anchor="middle" x="474.71" y="-246.4" font-family="Helvetica,Arial,sans-serif" font-size="12.00">C3</text> </g> <!-- B3&#45;&#45;C3 --> <g id="edge38" class="edge">
-<title>
-B3–C3
-</title>
-<path fill="none" stroke="dimgrey" stroke-dasharray="5,2" d="M394.88,-250C412.45,-250 430.01,-250 447.58,-250"></path> </g> <!-- B4&#45;&#45;B5 --> <g id="edge14" class="edge">
-<title>
-B4–B5
-</title>
-<path fill="none" stroke="dimgrey" stroke-dasharray="5,2" d="M367.71,-122.5C367.71,-103.52 367.71,-74.71 367.71,-55.77"></path> </g> <!-- C4 --> <g id="node24" class="node">
-<title>
-C4
-</title>
-<ellipse fill="lightgreen" stroke="black" cx="474.71" cy="-142.8" rx="27" ry="20.16"></ellipse> <text text-anchor="middle" x="474.71" y="-139.2" font-family="Helvetica,Arial,sans-serif" font-size="12.00">C4</text> </g> <!-- B4&#45;&#45;C4 --> <g id="edge42" class="edge">
-<title>
-B4–C4
-</title>
-<path fill="none" stroke="dimgrey" stroke-dasharray="5,2" d="M394.88,-142.8C412.45,-142.8 430.01,-142.8 447.58,-142.8"></path> </g> <!-- C5 --> <g id="node25" class="node">
-<title>
-C5
-</title>
-<ellipse fill="lightgreen" stroke="black" cx="474.71" cy="-35.6" rx="27" ry="20.16"></ellipse> <text text-anchor="middle" x="474.71" y="-32" font-family="Helvetica,Arial,sans-serif" font-size="12.00">C5</text> </g> <!-- B5&#45;&#45;C5 --> <g id="edge46" class="edge">
-<title>
-B5–C5
-</title>
-<path fill="none" stroke="dimgrey" stroke-dasharray="5,2" d="M394.88,-35.6C412.45,-35.6 430.01,-35.6 447.58,-35.6"></path> </g> <!-- C1&#45;&#45;C2 --> <g id="edge16" class="edge">
-<title>
-C1–C2
-</title>
-<path fill="none" stroke="dimgrey" stroke-dasharray="5,2" d="M474.71,-444.1C474.71,-425.12 474.71,-396.31 474.71,-377.37"></path> </g> <!-- C1&#45;&#45;D1 --> <g id="edge31" class="edge">
-<title>
-C1–D1
-</title>
-<path fill="none" stroke="dimgrey" stroke-dasharray="5,2" d="M501.87,-464.4C521.77,-464.4 541.67,-464.4 561.57,-464.4"></path> </g> <!-- C2&#45;&#45;C3 --> <g id="edge17" class="edge">
-<title>
-C2–C3
-</title>
-<path fill="none" stroke="dimgrey" stroke-dasharray="5,2" d="M474.71,-336.9C474.71,-317.92 474.71,-289.11 474.71,-270.17"></path> </g> <!-- D2 --> <g id="node27" class="node">
-<title>
-D2
-</title>
-<ellipse fill="lightgreen" stroke="black" cx="588.71" cy="-357.2" rx="27" ry="20.16"></ellipse> <text text-anchor="middle" x="588.71" y="-353.6" font-family="Helvetica,Arial,sans-serif" font-size="12.00">D2</text> </g> <!-- C2&#45;&#45;D2 --> <g id="edge35" class="edge">
-<title>
-C2–D2
-</title>
-<path fill="none" stroke="dimgrey" stroke-dasharray="5,2" d="M501.87,-357.2C521.77,-357.2 541.67,-357.2 561.57,-357.2"></path> </g> <!-- C3&#45;&#45;C4 --> <g id="edge18" class="edge">
-<title>
-C3–C4
-</title>
-<path fill="none" stroke="dimgrey" stroke-dasharray="5,2" d="M474.71,-229.7C474.71,-210.72 474.71,-181.91 474.71,-162.97"></path> </g> <!-- D3 --> <g id="node28" class="node">
-<title>
-D3
-</title>
-<ellipse fill="lightgreen" stroke="black" cx="588.71" cy="-250" rx="27" ry="20.16"></ellipse> <text text-anchor="middle" x="588.71" y="-246.4" font-family="Helvetica,Arial,sans-serif" font-size="12.00">D3</text> </g> <!-- C3&#45;&#45;D3 --> <g id="edge39" class="edge">
-<title>
-C3–D3
-</title>
-<path fill="none" stroke="dimgrey" stroke-dasharray="5,2" d="M501.87,-250C521.77,-250 541.67,-250 561.57,-250"></path> </g> <!-- C4&#45;&#45;C5 --> <g id="edge19" class="edge">
-<title>
-C4–C5
-</title>
-<path fill="none" stroke="dimgrey" stroke-dasharray="5,2" d="M474.71,-122.5C474.71,-103.52 474.71,-74.71 474.71,-55.77"></path> </g> <!-- D4 --> <g id="node29" class="node">
-<title>
-D4
-</title>
-<ellipse fill="lightgreen" stroke="black" cx="588.71" cy="-142.8" rx="27" ry="20.16"></ellipse> <text text-anchor="middle" x="588.71" y="-139.2" font-family="Helvetica,Arial,sans-serif" font-size="12.00">D4</text> </g> <!-- C4&#45;&#45;D4 --> <g id="edge43" class="edge">
-<title>
-C4–D4
-</title>
-<path fill="none" stroke="dimgrey" stroke-dasharray="5,2" d="M501.87,-142.8C521.77,-142.8 541.67,-142.8 561.57,-142.8"></path> </g> <!-- D5 --> <g id="node30" class="node">
-<title>
-D5
-</title>
-<ellipse fill="lightgreen" stroke="black" cx="588.71" cy="-35.6" rx="27" ry="20.16"></ellipse> <text text-anchor="middle" x="588.71" y="-32" font-family="Helvetica,Arial,sans-serif" font-size="12.00">D5</text> </g> <!-- C5&#45;&#45;D5 --> <g id="edge47" class="edge">
-<title>
-C5–D5
-</title>
-<path fill="none" stroke="dimgrey" stroke-dasharray="5,2" d="M501.87,-35.6C521.77,-35.6 541.67,-35.6 561.57,-35.6"></path> </g> <!-- D1&#45;&#45;D2 --> <g id="edge21" class="edge">
-<title>
-D1–D2
-</title>
-<path fill="none" stroke="dimgrey" stroke-dasharray="5,2" d="M588.71,-444.1C588.71,-425.12 588.71,-396.31 588.71,-377.37"></path> </g> <!-- D2&#45;&#45;D3 --> <g id="edge22" class="edge">
-<title>
-D2–D3
-</title>
-<path fill="none" stroke="dimgrey" stroke-dasharray="5,2" d="M588.71,-336.9C588.71,-317.92 588.71,-289.11 588.71,-270.17"></path> </g> <!-- D3&#45;&#45;D4 --> <g id="edge23" class="edge">
-<title>
-D3–D4
-</title>
-<path fill="none" stroke="dimgrey" stroke-dasharray="5,2" d="M588.71,-229.7C588.71,-210.72 588.71,-181.91 588.71,-162.97"></path> </g> <!-- D4&#45;&#45;D5 --> <g id="edge24" class="edge">
-<title>
-D4–D5
-</title>
-<path fill="none" stroke="dimgrey" stroke-dasharray="5,2" d="M588.71,-122.5C588.71,-103.52 588.71,-74.71 588.71,-55.77"></path> </g> </g>
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(216 750.4)">
+<polygon fill="white" stroke="transparent" points="-216,36 -216,-750.4 858.2,-750.4 858.2,36 -216,36"></polygon>
+<!-- AI -->
+<g id="node1" class="node">
+<title>AI</title>
+<path fill="lightblue" stroke="black" d="M497.18,-714.5C497.18,-714.5 344.24,-714.5 344.24,-714.5 338.24,-714.5 332.24,-708.5 332.24,-702.5 332.24,-702.5 332.24,-655.1 332.24,-655.1 332.24,-649.1 338.24,-643.1 344.24,-643.1 344.24,-643.1 497.18,-643.1 497.18,-643.1 503.18,-643.1 509.18,-649.1 509.18,-655.1 509.18,-655.1 509.18,-702.5 509.18,-702.5 509.18,-708.5 503.18,-714.5 497.18,-714.5"></path>
+<text text-anchor="middle" x="420.71" y="-684.2" font-family="Helvetica,Arial,sans-serif" font-size="18.00">AI Integration</text>
+<text text-anchor="middle" x="420.71" y="-662.6" font-family="Helvetica,Arial,sans-serif" font-size="18.00"> Steering Committee</text>
+</g>
+<!-- ED -->
+<g id="node2" class="node">
+<title>ED</title>
+<path fill="lightblue" stroke="black" d="M291.19,-596.2C291.19,-596.2 214.23,-596.2 214.23,-596.2 208.23,-596.2 202.23,-590.2 202.23,-584.2 202.23,-584.2 202.23,-559 202.23,-559 202.23,-553 208.23,-547 214.23,-547 214.23,-547 291.19,-547 291.19,-547 297.19,-547 303.19,-553 303.19,-559 303.19,-559 303.19,-584.2 303.19,-584.2 303.19,-590.2 297.19,-596.2 291.19,-596.2"></path>
+<text text-anchor="middle" x="252.71" y="-566.2" font-family="Helvetica,Arial,sans-serif" font-size="18.00">Education</text>
+</g>
+<!-- AI&#45;&#45;ED -->
+<g id="edge1" class="edge">
+<title>AI--ED</title>
+<path fill="none" stroke="black" d="M365.23,-643.06C340.77,-627.74 312.64,-610.13 290.62,-596.34"></path>
+</g>
+<!-- RE -->
+<g id="node3" class="node">
+<title>RE</title>
+<path fill="lightblue" stroke="black" d="M402.67,-596.2C402.67,-596.2 332.75,-596.2 332.75,-596.2 326.75,-596.2 320.75,-590.2 320.75,-584.2 320.75,-584.2 320.75,-559 320.75,-559 320.75,-553 326.75,-547 332.75,-547 332.75,-547 402.67,-547 402.67,-547 408.67,-547 414.67,-553 414.67,-559 414.67,-559 414.67,-584.2 414.67,-584.2 414.67,-590.2 408.67,-596.2 402.67,-596.2"></path>
+<text text-anchor="middle" x="367.71" y="-566.2" font-family="Helvetica,Arial,sans-serif" font-size="18.00">Research</text>
+</g>
+<!-- AI&#45;&#45;RE -->
+<g id="edge2" class="edge">
+<title>AI--RE</title>
+<path fill="none" stroke="black" d="M403.21,-643.06C395.49,-627.74 386.62,-610.13 379.67,-596.34"></path>
+</g>
+<!-- CL -->
+<g id="node4" class="node">
+<title>CL</title>
+<path fill="lightblue" stroke="black" d="M505.2,-596.2C505.2,-596.2 444.22,-596.2 444.22,-596.2 438.22,-596.2 432.22,-590.2 432.22,-584.2 432.22,-584.2 432.22,-559 432.22,-559 432.22,-553 438.22,-547 444.22,-547 444.22,-547 505.2,-547 505.2,-547 511.2,-547 517.2,-553 517.2,-559 517.2,-559 517.2,-584.2 517.2,-584.2 517.2,-590.2 511.2,-596.2 505.2,-596.2"></path>
+<text text-anchor="middle" x="474.71" y="-566.2" font-family="Helvetica,Arial,sans-serif" font-size="18.00">Clinical</text>
+</g>
+<!-- AI&#45;&#45;CL -->
+<g id="edge3" class="edge">
+<title>AI--CL</title>
+<path fill="none" stroke="black" d="M438.54,-643.06C446.41,-627.74 455.45,-610.13 462.52,-596.34"></path>
+</g>
+<!-- BU -->
+<g id="node5" class="node">
+<title>BU</title>
+<path fill="lightblue" stroke="black" d="M630.19,-607.3C630.19,-607.3 547.23,-607.3 547.23,-607.3 541.23,-607.3 535.23,-601.3 535.23,-595.3 535.23,-595.3 535.23,-547.9 535.23,-547.9 535.23,-541.9 541.23,-535.9 547.23,-535.9 547.23,-535.9 630.19,-535.9 630.19,-535.9 636.19,-535.9 642.19,-541.9 642.19,-547.9 642.19,-547.9 642.19,-595.3 642.19,-595.3 642.19,-601.3 636.19,-607.3 630.19,-607.3"></path>
+<text text-anchor="middle" x="588.71" y="-577" font-family="Helvetica,Arial,sans-serif" font-size="18.00">Business</text>
+<text text-anchor="middle" x="588.71" y="-555.4" font-family="Helvetica,Arial,sans-serif" font-size="18.00">Operations</text>
+</g>
+<!-- AI&#45;&#45;BU -->
+<g id="edge4" class="edge">
+<title>AI--BU</title>
+<path fill="none" stroke="black" d="M476.19,-643.06C495.11,-631.21 516.22,-617.99 535.01,-606.23"></path>
+</g>
+<!-- ED&#45;&#45;RE -->
+<g id="edge25" class="edge">
+<title>ED--RE</title>
+<path fill="none" stroke="dimgrey" stroke-dasharray="5,2" d="M303.47,-571.6C309.16,-571.6 314.85,-571.6 320.53,-571.6"></path>
+</g>
+<!-- A1 -->
+<g id="node11" class="node">
+<title>A1</title>
+<ellipse fill="lightgreen" stroke="black" cx="252.71" cy="-464.4" rx="27" ry="20.16"></ellipse>
+<text text-anchor="middle" x="252.71" y="-460.8" font-family="Helvetica,Arial,sans-serif" font-size="12.00">A1</text>
+</g>
+<!-- ED&#45;&#45;A1 -->
+<g id="edge5" class="edge">
+<title>ED--A1</title>
+<path fill="none" stroke="dimgrey" stroke-dasharray="5,2" d="M252.71,-546.99C252.71,-528.21 252.71,-502.26 252.71,-484.71"></path>
+</g>
+<!-- RE&#45;&#45;CL -->
+<g id="edge26" class="edge">
+<title>RE--CL</title>
+<path fill="none" stroke="dimgrey" stroke-dasharray="5,2" d="M414.94,-571.6C420.7,-571.6 426.46,-571.6 432.22,-571.6"></path>
+</g>
+<!-- B1 -->
+<g id="node16" class="node">
+<title>B1</title>
+<ellipse fill="lightgreen" stroke="black" cx="367.71" cy="-464.4" rx="27" ry="20.16"></ellipse>
+<text text-anchor="middle" x="367.71" y="-460.8" font-family="Helvetica,Arial,sans-serif" font-size="12.00">B1</text>
+</g>
+<!-- RE&#45;&#45;B1 -->
+<g id="edge10" class="edge">
+<title>RE--B1</title>
+<path fill="none" stroke="dimgrey" stroke-dasharray="5,2" d="M367.71,-546.99C367.71,-528.21 367.71,-502.26 367.71,-484.71"></path>
+</g>
+<!-- CL&#45;&#45;BU -->
+<g id="edge27" class="edge">
+<title>CL--BU</title>
+<path fill="none" stroke="dimgrey" stroke-dasharray="5,2" d="M517.46,-571.6C523.3,-571.6 529.15,-571.6 534.99,-571.6"></path>
+</g>
+<!-- C1 -->
+<g id="node21" class="node">
+<title>C1</title>
+<ellipse fill="lightgreen" stroke="black" cx="474.71" cy="-464.4" rx="27" ry="20.16"></ellipse>
+<text text-anchor="middle" x="474.71" y="-460.8" font-family="Helvetica,Arial,sans-serif" font-size="12.00">C1</text>
+</g>
+<!-- CL&#45;&#45;C1 -->
+<g id="edge15" class="edge">
+<title>CL--C1</title>
+<path fill="none" stroke="dimgrey" stroke-dasharray="5,2" d="M474.71,-546.99C474.71,-528.21 474.71,-502.26 474.71,-484.71"></path>
+</g>
+<!-- D1 -->
+<g id="node26" class="node">
+<title>D1</title>
+<ellipse fill="lightgreen" stroke="black" cx="588.71" cy="-464.4" rx="27" ry="20.16"></ellipse>
+<text text-anchor="middle" x="588.71" y="-460.8" font-family="Helvetica,Arial,sans-serif" font-size="12.00">D1</text>
+</g>
+<!-- BU&#45;&#45;D1 -->
+<g id="edge20" class="edge">
+<title>BU--D1</title>
+<path fill="none" stroke="dimgrey" stroke-dasharray="5,2" d="M588.71,-535.86C588.71,-518.87 588.71,-499.04 588.71,-484.76"></path>
+</g>
+<!-- DA -->
+<g id="node6" class="node">
+<title>DA</title>
+<path fill="orange" stroke="black" d="M195.69,-500.1C195.69,-500.1 121.73,-500.1 121.73,-500.1 115.73,-500.1 109.73,-494.1 109.73,-488.1 109.73,-488.1 109.73,-440.7 109.73,-440.7 109.73,-434.7 115.73,-428.7 121.73,-428.7 121.73,-428.7 195.69,-428.7 195.69,-428.7 201.69,-428.7 207.69,-434.7 207.69,-440.7 207.69,-440.7 207.69,-488.1 207.69,-488.1 207.69,-494.1 201.69,-500.1 195.69,-500.1"></path>
+<text text-anchor="middle" x="158.71" y="-469.8" font-family="Helvetica,Arial,sans-serif" font-size="18.00">Data Use</text>
+<text text-anchor="middle" x="158.71" y="-448.2" font-family="Helvetica,Arial,sans-serif" font-size="18.00">&amp; Access</text>
+</g>
+<!-- DA&#45;&#45;A1 -->
+<g id="edge28" class="edge">
+<title>DA--A1</title>
+<path fill="none" stroke="dimgrey" stroke-dasharray="5,2" d="M207.55,-464.4C213.54,-464.4 219.54,-464.4 225.54,-464.4"></path>
+</g>
+<!-- IT -->
+<g id="node7" class="node">
+<title>IT</title>
+<path fill="orange" stroke="black" d="M196.16,-392.9C196.16,-392.9 75.26,-392.9 75.26,-392.9 69.26,-392.9 63.26,-386.9 63.26,-380.9 63.26,-380.9 63.26,-333.5 63.26,-333.5 63.26,-327.5 69.26,-321.5 75.26,-321.5 75.26,-321.5 196.16,-321.5 196.16,-321.5 202.16,-321.5 208.16,-327.5 208.16,-333.5 208.16,-333.5 208.16,-380.9 208.16,-380.9 208.16,-386.9 202.16,-392.9 196.16,-392.9"></path>
+<text text-anchor="middle" x="135.71" y="-362.6" font-family="Helvetica,Arial,sans-serif" font-size="18.00">IT, Security</text>
+<text text-anchor="middle" x="135.71" y="-341" font-family="Helvetica,Arial,sans-serif" font-size="18.00">&amp; Infrastructure</text>
+</g>
+<!-- A2 -->
+<g id="node12" class="node">
+<title>A2</title>
+<ellipse fill="lightgreen" stroke="black" cx="252.71" cy="-357.2" rx="27" ry="20.16"></ellipse>
+<text text-anchor="middle" x="252.71" y="-353.6" font-family="Helvetica,Arial,sans-serif" font-size="12.00">A2</text>
+</g>
+<!-- IT&#45;&#45;A2 -->
+<g id="edge32" class="edge">
+<title>IT--A2</title>
+<path fill="none" stroke="dimgrey" stroke-dasharray="5,2" d="M208.38,-357.2C214.15,-357.2 219.92,-357.2 225.7,-357.2"></path>
+</g>
+<!-- ELSI -->
+<g id="node8" class="node">
+<title>ELSI</title>
+<path fill="orange" stroke="black" d="M195.66,-285.7C195.66,-285.7 85.76,-285.7 85.76,-285.7 79.76,-285.7 73.76,-279.7 73.76,-273.7 73.76,-273.7 73.76,-226.3 73.76,-226.3 73.76,-220.3 79.76,-214.3 85.76,-214.3 85.76,-214.3 195.66,-214.3 195.66,-214.3 201.66,-214.3 207.66,-220.3 207.66,-226.3 207.66,-226.3 207.66,-273.7 207.66,-273.7 207.66,-279.7 201.66,-285.7 195.66,-285.7"></path>
+<text text-anchor="middle" x="140.71" y="-255.4" font-family="Helvetica,Arial,sans-serif" font-size="18.00">Ethical, Legal,</text>
+<text text-anchor="middle" x="140.71" y="-233.8" font-family="Helvetica,Arial,sans-serif" font-size="18.00">&amp; Social</text>
+</g>
+<!-- A3 -->
+<g id="node13" class="node">
+<title>A3</title>
+<ellipse fill="lightgreen" stroke="black" cx="252.71" cy="-250" rx="27" ry="20.16"></ellipse>
+<text text-anchor="middle" x="252.71" y="-246.4" font-family="Helvetica,Arial,sans-serif" font-size="12.00">A3</text>
+</g>
+<!-- ELSI&#45;&#45;A3 -->
+<g id="edge36" class="edge">
+<title>ELSI--A3</title>
+<path fill="none" stroke="dimgrey" stroke-dasharray="5,2" d="M207.65,-250C213.63,-250 219.62,-250 225.6,-250"></path>
+</g>
+<!-- WD -->
+<g id="node9" class="node">
+<title>WD</title>
+<path fill="orange" stroke="black" d="M195.63,-178.5C195.63,-178.5 11.79,-178.5 11.79,-178.5 5.79,-178.5 -0.21,-172.5 -0.21,-166.5 -0.21,-166.5 -0.21,-119.1 -0.21,-119.1 -0.21,-113.1 5.79,-107.1 11.79,-107.1 11.79,-107.1 195.63,-107.1 195.63,-107.1 201.63,-107.1 207.63,-113.1 207.63,-119.1 207.63,-119.1 207.63,-166.5 207.63,-166.5 207.63,-172.5 201.63,-178.5 195.63,-178.5"></path>
+<text text-anchor="middle" x="103.71" y="-148.2" font-family="Helvetica,Arial,sans-serif" font-size="18.00">Training &amp;</text>
+<text text-anchor="middle" x="103.71" y="-126.6" font-family="Helvetica,Arial,sans-serif" font-size="18.00">Workforce Development</text>
+</g>
+<!-- A4 -->
+<g id="node14" class="node">
+<title>A4</title>
+<ellipse fill="lightgreen" stroke="black" cx="252.71" cy="-142.8" rx="27" ry="20.16"></ellipse>
+<text text-anchor="middle" x="252.71" y="-139.2" font-family="Helvetica,Arial,sans-serif" font-size="12.00">A4</text>
+</g>
+<!-- WD&#45;&#45;A4 -->
+<g id="edge40" class="edge">
+<title>WD--A4</title>
+<path fill="none" stroke="dimgrey" stroke-dasharray="5,2" d="M207.6,-142.8C213.59,-142.8 219.58,-142.8 225.58,-142.8"></path>
+</g>
+<!-- OWN -->
+<g id="node10" class="node">
+<title>OWN</title>
+<path fill="orange" stroke="black" d="M195.68,-71.3C195.68,-71.3 17.74,-71.3 17.74,-71.3 11.74,-71.3 5.74,-65.3 5.74,-59.3 5.74,-59.3 5.74,-11.9 5.74,-11.9 5.74,-5.9 11.74,0.1 17.74,0.1 17.74,0.1 195.68,0.1 195.68,0.1 201.68,0.1 207.68,-5.9 207.68,-11.9 207.68,-11.9 207.68,-59.3 207.68,-59.3 207.68,-65.3 201.68,-71.3 195.68,-71.3"></path>
+<text text-anchor="middle" x="106.71" y="-41" font-family="Helvetica,Arial,sans-serif" font-size="18.00">Project Development,</text>
+<text text-anchor="middle" x="106.71" y="-19.4" font-family="Helvetica,Arial,sans-serif" font-size="18.00">Management &amp; Support</text>
+</g>
+<!-- A5 -->
+<g id="node15" class="node">
+<title>A5</title>
+<ellipse fill="lightgreen" stroke="black" cx="252.71" cy="-35.6" rx="27" ry="20.16"></ellipse>
+<text text-anchor="middle" x="252.71" y="-32" font-family="Helvetica,Arial,sans-serif" font-size="12.00">A5</text>
+</g>
+<!-- OWN&#45;&#45;A5 -->
+<g id="edge44" class="edge">
+<title>OWN--A5</title>
+<path fill="none" stroke="dimgrey" stroke-dasharray="5,2" d="M207.94,-35.6C213.77,-35.6 219.6,-35.6 225.43,-35.6"></path>
+</g>
+<!-- A1&#45;&#45;A2 -->
+<g id="edge6" class="edge">
+<title>A1--A2</title>
+<path fill="none" stroke="dimgrey" stroke-dasharray="5,2" d="M252.71,-444.1C252.71,-425.12 252.71,-396.31 252.71,-377.37"></path>
+</g>
+<!-- A1&#45;&#45;B1 -->
+<g id="edge29" class="edge">
+<title>A1--B1</title>
+<path fill="none" stroke="dimgrey" stroke-dasharray="5,2" d="M280.11,-464.4C300.3,-464.4 320.49,-464.4 340.68,-464.4"></path>
+</g>
+<!-- A2&#45;&#45;A3 -->
+<g id="edge7" class="edge">
+<title>A2--A3</title>
+<path fill="none" stroke="dimgrey" stroke-dasharray="5,2" d="M252.71,-336.9C252.71,-317.92 252.71,-289.11 252.71,-270.17"></path>
+</g>
+<!-- B2 -->
+<g id="node17" class="node">
+<title>B2</title>
+<ellipse fill="lightgreen" stroke="black" cx="367.71" cy="-357.2" rx="27" ry="20.16"></ellipse>
+<text text-anchor="middle" x="367.71" y="-353.6" font-family="Helvetica,Arial,sans-serif" font-size="12.00">B2</text>
+</g>
+<!-- A2&#45;&#45;B2 -->
+<g id="edge33" class="edge">
+<title>A2--B2</title>
+<path fill="none" stroke="dimgrey" stroke-dasharray="5,2" d="M280.11,-357.2C300.3,-357.2 320.49,-357.2 340.68,-357.2"></path>
+</g>
+<!-- A3&#45;&#45;A4 -->
+<g id="edge8" class="edge">
+<title>A3--A4</title>
+<path fill="none" stroke="dimgrey" stroke-dasharray="5,2" d="M252.71,-229.7C252.71,-210.72 252.71,-181.91 252.71,-162.97"></path>
+</g>
+<!-- B3 -->
+<g id="node18" class="node">
+<title>B3</title>
+<ellipse fill="lightgreen" stroke="black" cx="367.71" cy="-250" rx="27" ry="20.16"></ellipse>
+<text text-anchor="middle" x="367.71" y="-246.4" font-family="Helvetica,Arial,sans-serif" font-size="12.00">B3</text>
+</g>
+<!-- A3&#45;&#45;B3 -->
+<g id="edge37" class="edge">
+<title>A3--B3</title>
+<path fill="none" stroke="dimgrey" stroke-dasharray="5,2" d="M280.11,-250C300.3,-250 320.49,-250 340.68,-250"></path>
+</g>
+<!-- A4&#45;&#45;A5 -->
+<g id="edge9" class="edge">
+<title>A4--A5</title>
+<path fill="none" stroke="dimgrey" stroke-dasharray="5,2" d="M252.71,-122.5C252.71,-103.52 252.71,-74.71 252.71,-55.77"></path>
+</g>
+<!-- B4 -->
+<g id="node19" class="node">
+<title>B4</title>
+<ellipse fill="lightgreen" stroke="black" cx="367.71" cy="-142.8" rx="27" ry="20.16"></ellipse>
+<text text-anchor="middle" x="367.71" y="-139.2" font-family="Helvetica,Arial,sans-serif" font-size="12.00">B4</text>
+</g>
+<!-- A4&#45;&#45;B4 -->
+<g id="edge41" class="edge">
+<title>A4--B4</title>
+<path fill="none" stroke="dimgrey" stroke-dasharray="5,2" d="M280.11,-142.8C300.3,-142.8 320.49,-142.8 340.68,-142.8"></path>
+</g>
+<!-- B5 -->
+<g id="node20" class="node">
+<title>B5</title>
+<ellipse fill="lightgreen" stroke="black" cx="367.71" cy="-35.6" rx="27" ry="20.16"></ellipse>
+<text text-anchor="middle" x="367.71" y="-32" font-family="Helvetica,Arial,sans-serif" font-size="12.00">B5</text>
+</g>
+<!-- A5&#45;&#45;B5 -->
+<g id="edge45" class="edge">
+<title>A5--B5</title>
+<path fill="none" stroke="dimgrey" stroke-dasharray="5,2" d="M280.11,-35.6C300.3,-35.6 320.49,-35.6 340.68,-35.6"></path>
+</g>
+<!-- B1&#45;&#45;B2 -->
+<g id="edge11" class="edge">
+<title>B1--B2</title>
+<path fill="none" stroke="dimgrey" stroke-dasharray="5,2" d="M367.71,-444.1C367.71,-425.12 367.71,-396.31 367.71,-377.37"></path>
+</g>
+<!-- B1&#45;&#45;C1 -->
+<g id="edge30" class="edge">
+<title>B1--C1</title>
+<path fill="none" stroke="dimgrey" stroke-dasharray="5,2" d="M394.88,-464.4C412.45,-464.4 430.01,-464.4 447.58,-464.4"></path>
+</g>
+<!-- B2&#45;&#45;B3 -->
+<g id="edge12" class="edge">
+<title>B2--B3</title>
+<path fill="none" stroke="dimgrey" stroke-dasharray="5,2" d="M367.71,-336.9C367.71,-317.92 367.71,-289.11 367.71,-270.17"></path>
+</g>
+<!-- C2 -->
+<g id="node22" class="node">
+<title>C2</title>
+<ellipse fill="lightgreen" stroke="black" cx="474.71" cy="-357.2" rx="27" ry="20.16"></ellipse>
+<text text-anchor="middle" x="474.71" y="-353.6" font-family="Helvetica,Arial,sans-serif" font-size="12.00">C2</text>
+</g>
+<!-- B2&#45;&#45;C2 -->
+<g id="edge34" class="edge">
+<title>B2--C2</title>
+<path fill="none" stroke="dimgrey" stroke-dasharray="5,2" d="M394.88,-357.2C412.45,-357.2 430.01,-357.2 447.58,-357.2"></path>
+</g>
+<!-- B3&#45;&#45;B4 -->
+<g id="edge13" class="edge">
+<title>B3--B4</title>
+<path fill="none" stroke="dimgrey" stroke-dasharray="5,2" d="M367.71,-229.7C367.71,-210.72 367.71,-181.91 367.71,-162.97"></path>
+</g>
+<!-- C3 -->
+<g id="node23" class="node">
+<title>C3</title>
+<ellipse fill="lightgreen" stroke="black" cx="474.71" cy="-250" rx="27" ry="20.16"></ellipse>
+<text text-anchor="middle" x="474.71" y="-246.4" font-family="Helvetica,Arial,sans-serif" font-size="12.00">C3</text>
+</g>
+<!-- B3&#45;&#45;C3 -->
+<g id="edge38" class="edge">
+<title>B3--C3</title>
+<path fill="none" stroke="dimgrey" stroke-dasharray="5,2" d="M394.88,-250C412.45,-250 430.01,-250 447.58,-250"></path>
+</g>
+<!-- B4&#45;&#45;B5 -->
+<g id="edge14" class="edge">
+<title>B4--B5</title>
+<path fill="none" stroke="dimgrey" stroke-dasharray="5,2" d="M367.71,-122.5C367.71,-103.52 367.71,-74.71 367.71,-55.77"></path>
+</g>
+<!-- C4 -->
+<g id="node24" class="node">
+<title>C4</title>
+<ellipse fill="lightgreen" stroke="black" cx="474.71" cy="-142.8" rx="27" ry="20.16"></ellipse>
+<text text-anchor="middle" x="474.71" y="-139.2" font-family="Helvetica,Arial,sans-serif" font-size="12.00">C4</text>
+</g>
+<!-- B4&#45;&#45;C4 -->
+<g id="edge42" class="edge">
+<title>B4--C4</title>
+<path fill="none" stroke="dimgrey" stroke-dasharray="5,2" d="M394.88,-142.8C412.45,-142.8 430.01,-142.8 447.58,-142.8"></path>
+</g>
+<!-- C5 -->
+<g id="node25" class="node">
+<title>C5</title>
+<ellipse fill="lightgreen" stroke="black" cx="474.71" cy="-35.6" rx="27" ry="20.16"></ellipse>
+<text text-anchor="middle" x="474.71" y="-32" font-family="Helvetica,Arial,sans-serif" font-size="12.00">C5</text>
+</g>
+<!-- B5&#45;&#45;C5 -->
+<g id="edge46" class="edge">
+<title>B5--C5</title>
+<path fill="none" stroke="dimgrey" stroke-dasharray="5,2" d="M394.88,-35.6C412.45,-35.6 430.01,-35.6 447.58,-35.6"></path>
+</g>
+<!-- C1&#45;&#45;C2 -->
+<g id="edge16" class="edge">
+<title>C1--C2</title>
+<path fill="none" stroke="dimgrey" stroke-dasharray="5,2" d="M474.71,-444.1C474.71,-425.12 474.71,-396.31 474.71,-377.37"></path>
+</g>
+<!-- C1&#45;&#45;D1 -->
+<g id="edge31" class="edge">
+<title>C1--D1</title>
+<path fill="none" stroke="dimgrey" stroke-dasharray="5,2" d="M501.87,-464.4C521.77,-464.4 541.67,-464.4 561.57,-464.4"></path>
+</g>
+<!-- C2&#45;&#45;C3 -->
+<g id="edge17" class="edge">
+<title>C2--C3</title>
+<path fill="none" stroke="dimgrey" stroke-dasharray="5,2" d="M474.71,-336.9C474.71,-317.92 474.71,-289.11 474.71,-270.17"></path>
+</g>
+<!-- D2 -->
+<g id="node27" class="node">
+<title>D2</title>
+<ellipse fill="lightgreen" stroke="black" cx="588.71" cy="-357.2" rx="27" ry="20.16"></ellipse>
+<text text-anchor="middle" x="588.71" y="-353.6" font-family="Helvetica,Arial,sans-serif" font-size="12.00">D2</text>
+</g>
+<!-- C2&#45;&#45;D2 -->
+<g id="edge35" class="edge">
+<title>C2--D2</title>
+<path fill="none" stroke="dimgrey" stroke-dasharray="5,2" d="M501.87,-357.2C521.77,-357.2 541.67,-357.2 561.57,-357.2"></path>
+</g>
+<!-- C3&#45;&#45;C4 -->
+<g id="edge18" class="edge">
+<title>C3--C4</title>
+<path fill="none" stroke="dimgrey" stroke-dasharray="5,2" d="M474.71,-229.7C474.71,-210.72 474.71,-181.91 474.71,-162.97"></path>
+</g>
+<!-- D3 -->
+<g id="node28" class="node">
+<title>D3</title>
+<ellipse fill="lightgreen" stroke="black" cx="588.71" cy="-250" rx="27" ry="20.16"></ellipse>
+<text text-anchor="middle" x="588.71" y="-246.4" font-family="Helvetica,Arial,sans-serif" font-size="12.00">D3</text>
+</g>
+<!-- C3&#45;&#45;D3 -->
+<g id="edge39" class="edge">
+<title>C3--D3</title>
+<path fill="none" stroke="dimgrey" stroke-dasharray="5,2" d="M501.87,-250C521.77,-250 541.67,-250 561.57,-250"></path>
+</g>
+<!-- C4&#45;&#45;C5 -->
+<g id="edge19" class="edge">
+<title>C4--C5</title>
+<path fill="none" stroke="dimgrey" stroke-dasharray="5,2" d="M474.71,-122.5C474.71,-103.52 474.71,-74.71 474.71,-55.77"></path>
+</g>
+<!-- D4 -->
+<g id="node29" class="node">
+<title>D4</title>
+<ellipse fill="lightgreen" stroke="black" cx="588.71" cy="-142.8" rx="27" ry="20.16"></ellipse>
+<text text-anchor="middle" x="588.71" y="-139.2" font-family="Helvetica,Arial,sans-serif" font-size="12.00">D4</text>
+</g>
+<!-- C4&#45;&#45;D4 -->
+<g id="edge43" class="edge">
+<title>C4--D4</title>
+<path fill="none" stroke="dimgrey" stroke-dasharray="5,2" d="M501.87,-142.8C521.77,-142.8 541.67,-142.8 561.57,-142.8"></path>
+</g>
+<!-- D5 -->
+<g id="node30" class="node">
+<title>D5</title>
+<ellipse fill="lightgreen" stroke="black" cx="588.71" cy="-35.6" rx="27" ry="20.16"></ellipse>
+<text text-anchor="middle" x="588.71" y="-32" font-family="Helvetica,Arial,sans-serif" font-size="12.00">D5</text>
+</g>
+<!-- C5&#45;&#45;D5 -->
+<g id="edge47" class="edge">
+<title>C5--D5</title>
+<path fill="none" stroke="dimgrey" stroke-dasharray="5,2" d="M501.87,-35.6C521.77,-35.6 541.67,-35.6 561.57,-35.6"></path>
+</g>
+<!-- D1&#45;&#45;D2 -->
+<g id="edge21" class="edge">
+<title>D1--D2</title>
+<path fill="none" stroke="dimgrey" stroke-dasharray="5,2" d="M588.71,-444.1C588.71,-425.12 588.71,-396.31 588.71,-377.37"></path>
+</g>
+<!-- D2&#45;&#45;D3 -->
+<g id="edge22" class="edge">
+<title>D2--D3</title>
+<path fill="none" stroke="dimgrey" stroke-dasharray="5,2" d="M588.71,-336.9C588.71,-317.92 588.71,-289.11 588.71,-270.17"></path>
+</g>
+<!-- D3&#45;&#45;D4 -->
+<g id="edge23" class="edge">
+<title>D3--D4</title>
+<path fill="none" stroke="dimgrey" stroke-dasharray="5,2" d="M588.71,-229.7C588.71,-210.72 588.71,-181.91 588.71,-162.97"></path>
+</g>
+<!-- D4&#45;&#45;D5 -->
+<g id="edge24" class="edge">
+<title>D4--D5</title>
+<path fill="none" stroke="dimgrey" stroke-dasharray="5,2" d="M588.71,-122.5C588.71,-103.52 588.71,-74.71 588.71,-55.77"></path>
+</g>
+</g>
 </svg>
 </div>
-<figcaption class="figure-caption">Figure&nbsp;3.1: A schematic framework for organizing workstreams (orange boxes), domains (blue boxes), and work products and tasks (green ovals). Domains (vertical dimension) capture semi-independent organizations, each with largely independent use cases, budgets and business plans, priorities, and leadership. The workstreams (horizontal dimension) will often require similar or overlapping expertise, and can serve as knowledge resources to provide synergy and uniformity in implementation across domains.</figcaption>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-framework-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;3.1: A schematic framework for organizing workstreams (orange boxes), domains (blue boxes), and work products and tasks (green ovals). Domains (vertical dimension) capture semi-independent organizations, each with largely independent use cases, budgets and business plans, priorities, and leadership. The workstreams (horizontal dimension) will often require similar or overlapping expertise, and can serve as knowledge resources to provide synergy and uniformity in implementation across domains.
+</figcaption>
 </figure>
 </div>
 </div>
@@ -742,18 +864,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
     return false;
   }
-  const clipboard = new window.ClipboardJS('.code-copy-button', {
-    text: function(trigger) {
-      const codeEl = trigger.previousElementSibling.cloneNode(true);
-      for (const childEl of codeEl.children) {
-        if (isCodeAnnotation(childEl)) {
-          childEl.remove();
-        }
-      }
-      return codeEl.innerText;
-    }
-  });
-  clipboard.on('success', function(e) {
+  const onCopySuccess = function(e) {
     // button target
     const button = e.trigger;
     // don't keep focus
@@ -785,11 +896,50 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }, 1000);
     // clear code selection
     e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
   });
-  function tippyHover(el, contentFn) {
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    // For code content inside modals, clipBoardJS needs to be initialized with a container option
+    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp("https:\/\/seandavi\.github\.io\/campus-llm-kb\/");
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
-      content: contentFn,
       maxWidth: 500,
       delay: 100,
       arrow: false,
@@ -799,8 +949,17 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       interactive: true,
       interactiveBorder: 10,
       theme: 'quarto',
-      placement: 'bottom-start'
+      placement: 'bottom-start',
     };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
     window.tippy(el, config); 
   }
   const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
@@ -812,7 +971,130 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       try { href = new URL(href).hash; } catch {}
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
-      return note.innerHTML;
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
     });
   }
       let selectedAnnoteEl;
@@ -856,6 +1138,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             }
             div.style.top = top - 2 + "px";
             div.style.height = height + 4 + "px";
+            div.style.left = 0;
             let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
             if (gutterDiv === null) {
               gutterDiv = window.document.createElement("div");
@@ -881,6 +1164,32 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         });
         selectedAnnoteEl = undefined;
       };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
       // Attach click handler to the DT
       const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
       for (const annoteDlNode of annoteDls) {
@@ -942,12 +1251,12 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./values.html" class="pagination-link">
+      <a href="./values.html" class="pagination-link" aria-label="Values and Principles">
         <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Values and Principles</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./implementation.html" class="pagination-link">
+      <a href="./implementation.html" class="pagination-link" aria-label="Domain Implementation Guide">
         <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Domain Implementation Guide</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
@@ -956,4 +1265,5 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 
 
 
-</body></html>
+
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/seandavi/campus-llm-kb/edit/main/framework.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li></ul></div></div></div></footer></body></html>
