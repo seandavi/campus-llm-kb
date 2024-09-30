@@ -2,6 +2,10 @@
 
 This page is a collection of resources for educators and administrators who are considering how to use generative AI tools in their courses or programs. 
 
+## Journals
+
+- [Computers and Education: Artificial Intelligence](https://www.sciencedirect.com/journal/computers-and-education-artificial-intelligence)
+
 ## Basics and Background
 
 - [Cornell University resources for educators](https://teaching.cornell.edu/generative-artificial-intelligence)
