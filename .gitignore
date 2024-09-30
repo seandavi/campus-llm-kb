@@ -1,2 +1,8 @@
 /.quarto/
 _book
+
+/.luarc.json
+*epub
+*html
+*pdf
+test_files
