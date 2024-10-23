@@ -92,4 +92,5 @@ In this section are links to podcasts and newsletters around generative AI and e
 - [University of Florida's AI Radio Minutes](https://ai.ufl.edu/radio/)
 - [Ethan Mollick's Newsletter: One Useful Thing](https://www.oneusefulthing.org/)
 - [Bryan Alexander's Newsletter: AI and Academia](https://aiandacademia.substack.com/)
+- [ChatGPT in medical education: Generative AI and the future of artificial intelligence in health care](https://www.ama-assn.org/practice-management/digital/chatgpt-medical-education-generative-ai-and-future-artificial)
 
