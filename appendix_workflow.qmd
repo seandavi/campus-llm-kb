@@ -1,0 +1,85 @@
+# How This Book Was Written: A Multi-Model AI Authorship Workflow {.appendix}
+
+This appendix documents the workflow used to research and write the chapters of this book. We include it not as a novelty item but because it is itself an instance of the kind of human-AI collaboration the book describes — and because the specific tool choices, failure modes, and tradeoffs we encountered are illustrative of the decisions any organization faces when it tries to use AI for substantive knowledge work.
+
+The workflow involved four distinct agents with different roles: a human author who owned the intellectual direction, Claude Opus 4.7 as the planning and architectural intelligence, Claude Sonnet 4.6 as the orchestrating author, and Gemini as the research engine. Each played to its comparative advantage, and the division of labor was not arbitrary — it emerged from thinking carefully about what each tool does well and where each fails.
+
+## The Workflow in Brief
+
+The workflow proceeded in five phases. @tbl-workflow-phases summarizes them.
+
+| Phase | Who | What | Output |
+|-------|-----|------|--------|
+| 1. Scaffold | Human author | Built the Quarto book structure, wrote initial chapter drafts, established the domain/workstream framework | Existing `.qmd` files, `_quarto.yml`, `references.bib` |
+| 2. Analysis and planning | Claude Opus 4.7 | Reviewed the repo, identified gaps, wrote a detailed research plan specifying structure, voice, citation standards, and figure requirements | `GEMINI_RESEARCH_PLAN.md` (3,968 words) |
+| 3. Brief writing | Claude Sonnet 4.6 | Wrote per-chapter research briefs specifying the argument arc, source targets, figure sketches, and open questions for each of 11 chapters | 11 briefs in `_research/briefs/` (8,222 words total) |
+| 4. Deep research | Gemini (via CLI) | Executed web-search-backed research for each chapter brief, producing annotated source lists, argument spines, section outlines, and figure sketches | 11 dossiers in `_research/dossiers/` (~18,600 words total) |
+| 5. Authorship | Claude Sonnet 4.6 | Wrote chapter prose from dossiers, verified citations, created Quarto-formatted diagrams and tables, added BibTeX entries | Chapter `.qmd` files, updated `references.bib` |
+
+: The five-phase multi-model authorship workflow. Each phase has a distinct responsible agent and produces a defined artifact. {#tbl-workflow-phases}
+
+## Why These Tools in These Roles
+
+The tool assignments were deliberate.
+
+**Claude Opus 4.7 for planning.** The planning phase required understanding an existing codebase, identifying structural gaps, and writing a specification detailed enough that a separate agent could execute against it without constant supervision. This is closer to architectural reasoning than text generation, and it benefited from Opus's stronger judgment on ambiguity and its ability to produce a coherent multi-thousand-word specification in a single pass. We used Opus only for the planning phase and switched to Sonnet for execution — the planning phase is the most cognitively expensive, but it is also the one that generates the fewest tokens, so the cost differential is acceptable.
+
+**Gemini for research.** The research phase requires a different capability profile than authorship: breadth over depth, web search over reasoning, high recall over precise citation. Gemini's deep research mode — which runs multiple web searches, synthesizes across sources, and produces structured outputs — is well suited to this. It is also meaningfully faster and cheaper than having a frontier model perform iterative web searches itself. The limitation we encountered was that Gemini, when given complex multi-part research prompts, tends to produce planning text ("I will now search for...") without always completing the structured output the prompt requested. We addressed this by re-running failed chapters sequentially rather than in parallel to avoid rate-limiting, and by specifying the output structure in the master prompt precisely.
+
+Gemini in autonomous (YOLO) mode also took actions we did not explicitly request — creating chapter stub files and editing `_quarto.yml` to add them to the book structure. This is a useful illustration of the principal-agent problem in AI deployment: an agent given broad autonomy in a codebase will take actions consistent with its understanding of the task, which may or may not match the operator's intent. In this case, the actions were sensible and we kept them. In a production deployment, review before accepting is the right default.
+
+**Claude Sonnet for orchestration and authorship.** Sonnet handles the execution loop: read the dossier, verify suspicious citations before citing them, write prose, create diagrams, edit `references.bib`, check that the Quarto build passes. This is a high-volume task that benefits from fast output and low cost per token more than it benefits from the deeper reasoning Opus provides. The important thing is that the human reviewed each chapter after completion, not that the model was the most capable available.
+
+## The Citation Problem
+
+The most consistent failure mode in the research phase was citation hallucination. Gemini's dossiers reliably produced regulatory primary sources (NIST, NIH, FDA, EEOC) with correct URLs, and reliably produced real peer-reviewed papers from high-profile journals with correct DOIs. Where it failed was with newer or more obscure literature: it generated plausible-sounding papers with plausible-sounding DOIs that do not exist. The pattern is recognizable in retrospect — sequential-looking identifiers (`10.1109/COMPUTER.2025.1234567`, `10.5281/zenodo.1234567`), papers from journals that would be unlikely venues for the specific claim, and 2025 publication dates for papers that were too specific to be plausible given the knowledge cutoff.
+
+The authorship phase addresses this by treating every peer-reviewed citation from Gemini dossiers as unverified until confirmed, preferring the regulatory primary sources (which are almost always real), and writing prose around the claim when no verified citation is available rather than citing a hallucinated paper. The BibTeX entries in `references.bib` contain only sources that were either in the original project bibliography, confirmed real by direct URL retrieval, or drawn from prior knowledge with high confidence.
+
+@tbl-citation-quality summarizes the citation quality we observed across the completed dossiers.
+
+| Source type | Accuracy rate (observed) | Notes |
+|-------------|--------------------------|-------|
+| Federal regulatory documents | ~95% | Correct URLs, correct document numbers |
+| Major journal policies (Nature, NEJM, JAMA) | ~90% | Correct, with occasional date errors |
+| High-profile peer-reviewed papers | ~80% | Well-known papers reliably correct |
+| Newer or niche peer-reviewed papers | ~40% | Frequent fabrication of DOIs and author lists |
+| Vendor documentation | ~70% | URLs often stale or approximate |
+| News/trade press | ~60% | Article may exist but headline or date wrong |
+
+: Observed citation accuracy rates by source type across Gemini research dossiers. Rates are estimates based on spot-checking; not every citation was independently verified. {#tbl-citation-quality}
+
+The practical implication is that Gemini research output should never be committed to a bibliography without verification. The workflow's structure — Gemini produces a dossier, a human or second model verifies citations before incorporating them — is the right one for any research-intensive writing task.
+
+## Costs and Volume
+
+@tbl-workflow-artifacts summarizes the artifacts produced and their approximate scale. Token counts for the AI interactions were not systematically recorded; the estimates below are based on output sizes and typical input-to-output ratios.
+
+| Artifact | Files | Words | Notes |
+|----------|-------|-------|-------|
+| Research plan (`GEMINI_RESEARCH_PLAN.md`) | 1 | 3,968 | Written by Claude Opus 4.7 |
+| Chapter briefs (`_research/briefs/`) | 11 | 8,222 | Written by Claude Sonnet 4.6 |
+| Research master prompt (`_research/MASTER_PROMPT.md`) | 1 | ~500 | Written by Claude Sonnet 4.6 |
+| Automation script (`scripts/gemini-research.sh`) | 1 | 76 lines | Written by Claude Sonnet 4.6 |
+| Gemini research dossiers (`_research/dossiers/`) | 10 complete, 1 partial | ~18,600 | Produced by Gemini CLI |
+| Chapter drafts (first chapter complete) | 1 complete | 4,333 | Written by Claude Sonnet 4.6 |
+| New BibTeX entries (`references.bib`) | 14 new entries | — | Added during authorship phase |
+| Quarto stub files (Gemini-initiated) | 1 | ~200 | Autonomous action by Gemini |
+
+: Artifacts produced by the multi-model workflow as of the end of the first authorship session. {#tbl-workflow-artifacts}
+
+The total research and planning effort — phases 2 through 4 — produced approximately 30,000 words of structured inputs for the authorship phase, which in turn produced the first finished chapter (~4,300 words, approximately 8 rendered pages) as its initial output. The ratio of research material to finished prose reflects the verification and synthesis work the authorship phase requires; not all research material makes it into the chapter, and the prose is more compressed than the dossiers.
+
+## What This Means for AI-Assisted Knowledge Work
+
+This workflow illustrates several things about AI-assisted knowledge work that are not obvious from reading about AI in the abstract.
+
+**AI at its most valuable is a research collaborator, not a ghostwriter.** The chapters in this book are not AI-generated prose edited by a human. They are human-structured arguments, grounded in AI-gathered sources, written by a model that was given specific direction about what to argue and how to argue it, and reviewed by a human who can tell when the argument is wrong. The value of the AI is in the research throughput — 18,600 words of sourced, structured research material produced in hours rather than days — not in generating text that the human then accepts.
+
+**The division of labor matters.** Running all 11 Gemini research sessions in parallel caused rate-limiting failures; running them sequentially succeeded. Using Opus for planning and Sonnet for execution reduced cost without sacrificing quality, because the task profiles genuinely differ. These are engineering decisions, not philosophical ones.
+
+**Autonomy requires clear boundaries.** Gemini in YOLO mode created files and edited configuration — actions that were correct in this case but that could easily have been wrong in a different context. Any workflow that gives an AI agent write access to a production system needs explicit boundaries around what the agent is and is not authorized to change.
+
+**The bottleneck is authorship, not research.** The research phase produced 18,600 words of structured material in approximately four hours of elapsed time (including re-runs for failed dossiers). The authorship phase produces approximately 4,300 words per chapter at higher quality but significantly more elapsed time. At scale, the constraint is the human review step and the authorship pass, not the research. Tools that improve the authorship pass — better citation verification, tighter prose controls — will have a larger impact on throughput than further improvements to the research phase.
+
+**The workflow is reproducible.** The `scripts/gemini-research.sh` wrapper, the `_research/briefs/` input structure, the `_research/MASTER_PROMPT.md` template, and the authorship conventions in `GEMINI_RESEARCH_PLAN.md` are all checked into the repository. Any contributor can run the same workflow for a new chapter or an update pass on an existing chapter. The intellectual bottleneck is writing a good brief; once the brief is right, the research and authorship passes follow a repeatable pattern.

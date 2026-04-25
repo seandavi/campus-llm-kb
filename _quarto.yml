@@ -36,6 +36,7 @@ book:
         - resources_research.qmd
         - resources_education.qmd
         - resources_business.qmd
+        - regulatory_landscape.qmd
 
     # - part: "Workstream Resources"
     #   chapters:
@@ -48,6 +49,7 @@ book:
     - appendices.qmd
     - bill_of_rights.qmd
     - HHS.qmd
+    - appendix_workflow.qmd
 
 
 

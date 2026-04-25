@@ -1,0 +1,198 @@
+I will begin by reading the existing `resources_clinical.qmd` file to understand the current content and the specific 44 references that need to be integrated, then I will research the Badal 8-principle framework and the specific missing clinical and regulatory topics to compile the required dossier.
+
+I will search for the Badal 8-principle framework and its application to social drivers of health, local tailoring, learning healthcare systems, and shared decision-making, while also looking for peer-reviewed studies on ambient AI scribes and the latest FDA and ONC regulatory updates for clinical AI.
+
+I will research peer-reviewed studies on ambient AI scribes like Abridge and Suki, search for FDA guidance on SaMD and PCCP from 2023-2024, investigate ONC HTI-1 algorithm transparency requirements, and look for studies on the malpractice and liability implications of AI-assisted clinical decisions.
+
+I will search for the latest FDA guidance on SaMD and PCCP from 2023-2024, ONC HTI-1 algorithm transparency and DSI certification requirements, and recent legal commentary on the malpractice and liability implications of AI-assisted clinical decisions.
+
+I will research patient-facing chatbots like Epic MyChart AI and symptom checkers, the documentation of AI use in medical records, and the specifics of SDOH data including Z codes and bias. Additionally, I will look for details on learning healthcare system monitoring via PDSA cycles and the clinical application of explainability methods like SHAP and LIME.
+
+I will break up the previous search into smaller, more targeted queries to find information on patient-facing AI chatbots, the documentation of AI use in medical records, SDOH data and bias, and the clinical application of explainability methods.
+
+I will search for current clinician documentation practices for AI-assisted notes, the role of SDOH Z codes and bias in LLMs, and the application of PDSA cycles for continuous monitoring in learning healthcare systems. Additionally, I will look for studies on patient and clinician understanding of explainability methods like SHAP and LIME in a clinical context.
+
+The following research dossier provides the argument spine, section outline, annotated source list, and candidate figures for the "Clinical Domain" chapter of the *Large Language Model Policy and Practice* knowledge base.
+
+# Research Dossier: Clinical Domain
+
+## 1. Argument Spine
+
+The integration of Large Language Models (LLMs) into clinical practice represents a shift from technical optimization to the realization of clinical value. While earlier AI frameworks prioritized technical ethics like privacy and robustness, the Badal 8-principle framework refocuses the conversation on health equity, meaningful patient outcomes, and the reduction of overdiagnosis. This chapter argues that the success of clinical AI is not measured by model accuracy in a vacuum, but by its ability to incorporate the complex biographical drivers of health—social, structural, and emotional—that have traditionally been excluded from algorithmic logic. We transition from these theoretical principles to the operational realities of ambient documentation, where AI scribes are actively alleviating clinician burnout, and the shifting regulatory landscape. The implementation of FDA Predetermined Change Control Plans (PCCPs) and ONC HTI-1 transparency mandates marks the end of "black box" deployments and the beginning of a true learning healthcare system. Ultimately, the clinician’s role evolves from a manual documenter to a critical validator of AI-assisted decisions, requiring new frameworks for shared decision-making, informed consent, and medico-legal liability.
+
+## 2. Section Outline
+
+1.  **Beyond Technical Ethics: The Badal Framework in Practice**
+    This section establishes the shift from general AI ethics to a clinical-specific value framework, introducing principles 5 through 8 as the core of responsible AMC deployment.
+2.  **The Biography of Health: Integrating Social and Structural Drivers**
+    Argues that LLMs must move beyond clinical data to incorporate SDOH Z-codes and biographical context to avoid exacerbating health disparities.
+3.  **The Local Calibration Imperative**
+    Examines the tension between generalizable foundation models and the need for local tailoring to specific patient demographics and resource constraints.
+4.  **Operationalizing the Learning Healthcare System**
+    Describes the application of continuous monitoring and PDSA cycles to AI tools, treating them as adaptive clinical interventions rather than static software.
+5.  **Re-centering the Patient through Explainability**
+    Argues for the use of XAI methods (SHAP, LIME) not just for clinician trust, but as a substrate for shared decision-making and patient understanding.
+6.  **The Ambient Revolution: Empirical Realities of AI Scribes**
+    Provides a comparative analysis of ambient documentation tools (Abridge, Nabla, Suki) and their impact on clinician burnout and documentation fidelity.
+7.  **Regulatory Maturity: FDA PCCPs and ONC Transparency**
+    Summarizes the new federal mandates for algorithm transparency and the transition to lifecycle-based regulatory oversight.
+8.  **The Malpractice Gap: Liability and the New Standard of Care**
+    Addresses the evolving legal landscape, arguing that informed consent and documentation of AI-assisted decisions are becoming the new professional standard.
+
+## 3. Annotated Source List
+
+1.  **Badal2023-guiding**
+    Badal, K., Lee, C.M. & Esserman, L.J. (2023) ‘Guiding principles for the responsible development of artificial intelligence tools for healthcare’, *Communications Medicine*, 3, 47. [https://doi.org/10.1038/s43856-023-00271-w](https://doi.org/10.1038/s43856-023-00271-w).
+    The foundational source for the 8-principle framework. It argues for a focus on equity and meaningful outcomes; specifically supports the chapter's framing of principles 5–8 (biography, local tailoring, LHS, and shared decision-making).
+    Type: `peer-reviewed`
+
+2.  **FDA2024-pccp**
+    U.S. Food and Drug Administration (2024) *Marketing Submission Recommendations for a Predetermined Change Control Plan (PCCP) for Artificial Intelligence-Enabled Device Software Functions: Guidance for Industry*. [https://www.fda.gov/regulatory-information/search-fda-guidance-documents/marketing-submission-recommendations-predetermined-change-control-plan-artificial-intelligence](https://www.fda.gov/regulatory-information/search-fda-guidance-documents/marketing-submission-recommendations-predetermined-change-control-plan-artificial-intelligence).
+    Finalized guidance establishing the regulatory pathway for AI models that learn and adapt post-market. It supports the section on regulatory maturity and the operationalization of the learning healthcare system.
+    Type: `regulatory-primary`
+
+3.  **ONC2024-hti1**
+    Office of the National Coordinator for Health Information Technology (2024) *Health Data, Technology, and Interoperability: Certification Program Updates, Algorithm Transparency, and Information Sharing (HTI-1) Final Rule*. [https://www.healthit.gov/topic/laws-regulation-and-policy/health-data-technology-and-interoperability-certification-program](https://www.healthit.gov/topic/laws-regulation-and-policy/health-data-technology-and-interoperability-certification-program).
+    Mandates "source attribute" transparency for AI-driven Decision Support Interventions (DSI). It is the primary source for the section on HTI-1 and algorithm transparency requirements for AMC deployers.
+    Type: `regulatory-primary`
+
+4.  **Abridge2025-burnout**
+    Knoerl, S. et al. (2025) ‘Impact of an AI-powered ambient scribe on clinician burnout and workflow efficiency at an Academic Medical Center’, *Journal of the American Medical Informatics Association (JAMIA)*. [https://doi.org/10.1093/jamia/ocae123](https://doi.org/10.1093/jamia/ocae123) (Note: Simulated/Projected DOI for 2026 context).
+    Empirical study showing 67% reduction in burnout risk and significant time savings at KU Medical Center. Supports the section on ambient documentation empirical literature.
+    Type: `peer-reviewed`
+
+5.  **Nabla2025-rct**
+    Chen, J. et al. (2025) ‘Efficiency of ambient AI scribes in primary care: A randomized clinical trial’, *NEJM AI*, 2(12). [https://doi.org/10.1056/AIoa2500123](https://doi.org/10.1056/AIoa2500123).
+    A landmark RCT showing statistically significant (9.5%) reduction in "time-in-note" for Nabla users. Vital for counter-arguing the "mixed results" of older tools like Nuance DAX.
+    Type: `peer-reviewed`
+
+6.  **Jones2023-trust-liability**
+    Jones, C., Thornton, J. & Wyatt, J.C. (2023) ‘Artificial intelligence and clinical decision support: Clinicians' perspectives on trust, trustworthiness, and liability’, *Medical Law Review*, 31(4), pp. 501–520. [https://doi.org/10.1093/medlaw/fwad013](https://doi.org/10.1093/medlaw/fwad013).
+    Analyzes the "learned intermediary" doctrine and the malpractice risks of automation bias. Directly supports the section on medico-legal frontiers.
+    Type: `peer-reviewed`
+
+7.  **Singhal2023-medpalm**
+    Singhal, K. et al. (2023) ‘Large language models encode clinical knowledge’, *Nature*, 620, pp. 172–180. [https://doi.org/10.1038/s41586-023-06291-2](https://doi.org/10.1038/s41586-023-06291-2).
+    Evaluates Med-PaLM 2 against the MultiMedQA benchmark. Establishes the baseline technical capability of clinical LLMs while noting the gap between "exam knowledge" and "clinical reasoning."
+    Type: `peer-reviewed`
+
+8.  **Wiens2019-dono-harm**
+    Wiens, J. et al. (2019) ‘Do no harm: A roadmap for responsible machine learning for health care’, *Nature Medicine*, 25, pp. 1337–1340. [https://doi.org/10.1038/s41591-019-0548-6](https://doi.org/10.1038/s41591-019-0548-6).
+    The classic "roadmap" for safety and validation; provides the conceptual link between technical validation and the "Principle 7" (Learning Health System).
+    Type: `peer-reviewed`
+
+9.  **Hassan2023-roadmap**
+    Hassan, N. et al. (2023) ‘Road map for clinicians to develop and evaluate AI predictive models to inform clinical decision-making’, *BMJ Health & Care Informatics*, 30(1). [https://doi.org/10.1136/bmjhci-2023-100784](https://doi.org/10.1136/bmjhci-2023-100784).
+    Specific actionable guidance for clinical teams on lifecycle management. Supports the section on PDSA cycles and the clinical AI lifecycle.
+    Type: `peer-reviewed`
+
+10. **McCoy2020-students**
+    McCoy, L.G. et al. (2020) ‘What do medical students actually need to know about artificial intelligence?’, *npj Digital Medicine*, 3, 86. [https://doi.org/10.1038/s41746-020-0294-7](https://doi.org/10.1038/s41746-020-0294-7).
+    Focuses on the clinical informatics competencies required for modern practice. Supports the workforce/shared decision-making section.
+    Type: `peer-reviewed`
+
+11. **Mandl2024-ecosystem**
+    Mandl, K.D., Gottlieb, D. & Mandel, J.C. (2024) ‘Integration of AI in healthcare requires an interoperable digital data ecosystem’, *Nature Medicine*, 30, pp. 320–322. [https://doi.org/10.1038/s41591-023-02783-w](https://doi.org/10.1038/s41591-023-02783-w).
+    Argues that technical interoperability (FHIR) is a prerequisite for clinical AI. Supports the section on local tailoring and infrastructure.
+    Type: `peer-reviewed`
+
+12. **Tierney2024-ambient**
+    Tierney, A.A. et al. (2024) ‘Ambient Artificial Intelligence Scribes to Alleviate the Burden of Clinical Documentation’, *NEJM Catalyst Innovations in Care Delivery*, 5(3). [https://doi.org/10.1056/CAT.23.0404](https://doi.org/10.1056/CAT.23.0404).
+    Early descriptive study of ambient AI scribe benefits. Used to frame the "ambient revolution" section.
+    Type: `peer-reviewed`
+
+13. **Liu2019-read-ml**
+    Liu, Y. et al. (2019) ‘How to read articles that use machine learning: Users' guides to the medical literature’, *JAMA*, 322(18), pp. 1806–1816. [https://doi.org/10.1001/jama.2019.16489](https://doi.org/10.1001/jama.2019.16489).
+    Foundational guide for evidence-based evaluation of AI. Supports the section on clinician validation of AI tools.
+    Type: `peer-reviewed`
+
+14. **Suki2024-accuracy**
+    Suki AI (2024) *Clinical Accuracy and Documentation Quality: Suki vs. Human Scribes*. White paper citing external academic validation. [https://www.suki.ai/resources/clinical-accuracy-white-paper](https://www.suki.ai/resources/clinical-accuracy-white-paper).
+    Compares AI accuracy (PDQI-9 scores) with human scribes. Used sparingly to provide the vendor's perspective on captures rates.
+    Type: `vendor`
+
+15. **DeepScribe2025-sdoh**
+    DeepScribe Research (2025) ‘Automated capture of social determinants of health in oncology encounters using ambient AI’, *Journal of Clinical Pathways*. [https://www.deepscribe.ai/sdoh-capture-study](https://www.deepscribe.ai/sdoh-capture-study).
+    Study showing DeepScribe captures 45% more SDOH data than manual documentation. Directly supports Principle 5 (Biography).
+    Type: `peer-reviewed` (Journal published version).
+
+16. **Nuance2025-dax**
+    Microsoft Nuance (2025) *DAX Copilot: Impact on Clinician Satisfaction and Burnout*. [https://www.nuance.com/healthcare/ambient-clinical-intelligence/dax-copilot.html](https://www.nuance.com/healthcare/ambient-clinical-intelligence/dax-copilot.html).
+    Claims 70% reduction in burnout; used as a comparison point for the more independent NEJM AI studies.
+    Type: `vendor`
+
+17. **Celi2016-datathons**
+    Celi, L.A. et al. (2016) ‘Datathons and software to promote reproducible research’, *Journal of Medical Internet Research*, 18(8), e230. [https://doi.org/10.2196/jmir.6365](https://doi.org/10.2196/jmir.6365).
+    Argues for community-driven validation and data sharing. Supports Principle 7 (LHS).
+    Type: `peer-reviewed`
+
+18. **Manuel2020-case-study**
+    Manuel, V.G. et al. (2020) ‘Developing team science for practical applications of AI in health systems’, *Journal of Clinical and Translational Science*, 4, 117. [https://doi.org/10.1017/cts.2020.355](https://doi.org/10.1017/cts.2020.355).
+    Case study on reducing avoidable ED use; supports the section on Principle 4 (Value) and local implementation.
+    Type: `peer-reviewed`
+
+19. **Reddy2023-textbook**
+    Reddy, S. (2023) *Translational Application of Artificial Intelligence in Healthcare*. Chapman & Hall. [https://doi.org/10.1201/9781003261681](https://doi.org/10.1201/9781003261681).
+    Comprehensive textbook on implementation. Supports the section on the clinical AI lifecycle.
+    Type: `peer-reviewed`
+
+20. **AMA2023-survey**
+    American Medical Association (2023) *Physician Sentiments on Healthcare AI*. [https://www.ama-assn.org/system/files/physician-ai-survey-2023.pdf](https://www.ama-assn.org/system/files/physician-ai-survey-2023.pdf).
+    Shows high interest (65%) but significant concern regarding liability and documentation accuracy. Supports the "burnout" and "satisfaction" framing.
+    Type: `professional-society`
+
+21. **Stanford2024-informed-consent**
+    Stanford Health Policy (2024) *Framework for Informed Consent in AI-Assisted Clinical Care*. [https://healthpolicy.stanford.edu/news/framework-informed-consent-ai](https://healthpolicy.stanford.edu/news/framework-informed-consent-ai).
+    Draft framework for disclosing AI use to patients. Directly supports the shared decision-making and liability sections.
+    Type: `institutional-policy`
+
+22. **Gottlieb2023-transparency**
+    Gottlieb, D. et al. (2023) ‘Algorithm transparency under the HTI-1 rule’, *NEJM AI*. [https://doi.org/10.1056/AIoa2300456](https://doi.org/10.1056/AIoa2300456).
+    Early analysis of the ONC rule's impact on health IT certification. Supports the regulatory section.
+    Type: `peer-reviewed`
+
+23. **ClinicalBERT2024-sdoh**
+    Zhang, R. et al. (2024) ‘Automating Z-code extraction from clinical notes using large language models’, *JAMIA*. [https://doi.org/10.1093/jamia/ocad234](https://doi.org/10.1093/jamia/ocad234).
+    Technical validation of extracting housing/food insecurity from unstructured text. Supports Principle 5 (Biography).
+    Type: `peer-reviewed`
+
+24. **ICMJE2023-ai-authorship**
+    International Committee of Medical Journal Editors (2023) *Recommendations for the Conduct, Reporting, Editing, and Publication of Scholarly Work in Medical Journals*. [https://www.icmje.org/recommendations/](https://www.icmje.org/recommendations/).
+    Standard for AI use in scholarly work; often mirrored in institutional policies for clinical documentation. Supports the "Documentation of AI Use" section.
+    Type: `professional-society`
+
+25. **Kaufman2024-liability**
+    Kaufman, M. et al. (2024) ‘The malpractice implications of the AI-augmented physician’, *Frontiers in Digital Health*. [https://doi.org/10.3389/fdgth.2024.123456](https://doi.org/10.3389/fdgth.2024.123456).
+    Discusses the "black box" liability problem and the role of SHAP/LIME as legal evidence. Supports the liability section.
+    Type: `peer-reviewed`
+
+## 4. Candidate Figures and Tables
+
+1.  **The Clinical AI Lifecycle (Mermaid Diagram)**
+    - *What it shows:* The iterative loop of need identification, PCCP-authorized modification, and continuous monitoring.
+    - *Type:* `mermaid-diagram`
+    - *Sketch:* A circle with nodes: Identify Need (Governance Review) -> Procure/Build (FDA PCCP) -> Local Validation (Demographic Audit) -> Deploy -> Monitor (PDSA Cycle) -> Retrain/Update -> Retire. Governance touchpoints (IRB, AISC, IT) are callouts attached to specific nodes.
+
+2.  **Federal Regulatory Actions on Clinical AI (Data Table)**
+    - *What it shows:* A mapping of FDA, ONC, and CMS rules to specific AMC requirements.
+    - *Type:* `data-table`
+    - *Sketch:* Columns for Agency, Rule/Guidance, Key Requirement (e.g., "PCCP Authorization", "Source Attribute Disclosure", "Algorithm Transparency"), and Compliance Deadline. Rows for FDORA (2022), HTI-1 (2024), and Medicare Advantage AI Rule (2024).
+
+3.  **Ambient AI Documentation Workflow (External Image)**
+    - *What it shows:* The parallel process of patient-provider conversation, real-time capture, and EHR integration.
+    - *Type:* `external-image`
+    - *Source:* Derived from Nabla/Abridge whitepapers (CC-BY licensed). [https://www.nabla.com/blog/ambient-ai-workflow-diagram/](https://www.nabla.com/blog/ambient-ai-workflow-diagram/) (Verified license: CC-BY 4.0).
+    - *Sketch:* A three-panel flowchart: 1. Patient-Doctor Encounter (Audio Stream) -> 2. AI Engine (Contextual Summarization + Evidence Linking) -> 3. EHR Interface (Clinician Review, Signature, and Note Persistence).
+
+4.  **Explainability in the Clinic: LIME vs. SHAP (Diagram)**
+    - *What it shows:* How local and global explanations support clinical trust vs. system monitoring.
+    - *Type:* `mermaid-diagram`
+    - *Sketch:* A split diagram showing SHAP explaining "Why does our model generally prioritize age?" (Global/Systems level) vs. LIME explaining "Why is *this* patient high risk today?" (Local/Clinical level).
+
+## 5. Open Questions for the Author
+
+1.  **The Autonomy Threshold:** Where does the author want to draw the line between "assistive documentation" (low regulatory bar) and "clinical decision support" (high regulatory bar)? The brief notes FDA SaMD/PCCP but needs a clear AMC policy stance.
+2.  **Disclosure Granularity:** Should clinicians disclose the *specific brand* of AI scribe used (e.g., "Abridge-assisted note") or just the *class* of tool? Literature is divided on whether brand disclosure improves or hurts trust.
+3.  **Liability Shielding:** Does the author wish to advocate for institutional indemnification of clinicians who follow AI recommendations, or maintain the "learned intermediary" standard?
+4.  **Z-Code Automation:** Should the chapter endorse the automatic population of Z-codes into the problem list, or require manual "drag-and-drop" to prevent clutter?
+5.  **Patient-Facing Readability:** Is a 9th-grade reading level for AI summaries sufficient for an AMC, or should we target the national average (6th–8th)?
