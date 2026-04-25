@@ -38,6 +38,12 @@ book:
         - resources_business.qmd
         - regulatory_landscape.qmd
 
+    - part: "Agentic AI in Practice"
+      chapters:
+        - agentic_safety.qmd
+        - patient_trust.qmd
+        - professional_wellness.qmd
+
     # - part: "Workstream Resources"
     #   chapters:
     #     - infrastructure.qmd
