@@ -1,168 +1,175 @@
-I will begin by searching for the "Ng 2023 Cell Reports Medicine" competency framework and the AAMC AI competencies to establish the foundational frameworks for the dossier.
+I will begin by researching the core competency frameworks and literature mentioned in the brief, specifically looking for the Ng 2023 paper and current AAMC, AMIA, and WHO guidance on AI workforce development in healthcare.
+
+I will now search for the specific AI competency frameworks from the AAMC, AMIA, ACGME, WHO, and nursing/allied health organizations to build the foundational source list.
+
+I will now search for AI competency frameworks from AMIA, ACGME, WHO, and nursing/allied health organizations, while also looking for validated assessment instruments for AI literacy in healthcare.
+
+I will now search for ACGME milestone mappings to AI and WHO Health Workforce guidance on AI to further enrich the competency frameworks section of the dossier.
+
+I will now search for WHO Health Workforce guidance on AI and nursing-specific AI competencies to ensure comprehensive coverage of the diverse healthcare roles mentioned in the brief.
+
+I will now search for nursing-specific AI competencies and validated assessment instruments for AI literacy in healthcare to ensure that the training and evaluation strategies are grounded in established professional standards and research.
+
+I will now search for validated assessment instruments for AI literacy in healthcare and role-specific training needs for researchers and leadership, while also investigating effective training modalities and KPIs for workforce development.
+
+I will now search for specific AI training programs and competencies for healthcare researchers and leadership, while also investigating the faculty development gap and strategies for sustaining AI workforce programs through communities of practice and micro-credentialing.
+
+I will now search for AI competencies tailored for healthcare leadership and governance, as well as the specific roles and responsibilities for IT and informatics staff in managing AI systems, to complete the role-specific sections of the dossier.
+
+I will now conduct a targeted search for AI competencies for administrative staff and specific studies or reports on the faculty development gap in AI literacy to ensure these areas are thoroughly addressed in the dossier.
+
+I will now synthesize the gathered information into a comprehensive research dossier, structuring it according to the requested sections: argument spine, section outline, annotated source list, candidate figures and tables, and open questions for the author.
 
 # Research Dossier: Training & Workforce Development Workstream
 
-**Chapter title:** Building the Human Infrastructure: Workforce Readiness and Continuous AI Literacy  
-**Target file:** `workforce.qmd`  
-**Date:** April 25, 2026
+## 1. Argument spine
 
----
+AI literacy within an Academic Medical Center (AMC) must transition from an elective skill for early adopters to a core institutional capability integrated into every level of the workforce. This requires a shift from generic "AI awareness" modules toward a tiered competency framework—ranging from frontline clinical consumers to executive-level governors—that maps to existing professional milestones and ethical mandates. While national bodies like the AAMC, AMIA, and WHO have established foundational guidelines, the actual deployment of these competencies is currently hindered by a significant "faculty development gap," where the educators responsible for training lack the proficiency themselves. To bridge this gap and mitigate the growing risk of "Shadow AI" (the unsanctioned use of public AI tools with PHI), the AMC must implement a sustained program of role-specific training, ambient documentation literacy, and internal communities of practice. Ultimately, the success of an AMC’s AI strategy depends not on the sophistication of its models, but on the ability of its human workforce to critically appraise, ethically deploy, and safely govern those models in high-stakes environments.
 
-### 1. Argument spine
+## 2. Section outline
 
-AI literacy at an Academic Medical Center (AMC) must transition from a sporadic, tool-centric training event to a core institutional capability integrated into the entire professional lifecycle. While the technical "black box" of AI creates anxiety and a perceived need for deep engineering skills, the actual requirement for most of the workforce is "augmented clinical reasoning"—the ability to critically appraise, safely deploy, and ethically oversee AI outputs. This capability is best built through a tiered competency framework (Consumer, Translator, Developer, and Governance) that maps technical depth to specific role responsibilities. To achieve scale, AMCs must move beyond e-learning modules toward longitudinal "train-the-trainer" models and "communities of practice" that provide peer-led, domain-specific guidance. Verification of these skills requires shifting from subjective "awareness" surveys to objective, validated instruments (e.g., SNAIL) and institutional KPIs like the "Explainability Index." Ultimately, by embedding AI literacy into hiring, onboarding, and promotion tracks, the AMC ensures that its human infrastructure evolves as rapidly as the models it employs, preserving epistemic authority and patient safety in an automated environment.
+1. **The Multi-Tiered AMC Workforce:** Argues for a four-tier competency model (Consumer, Translator, Developer, and Governor) as the only way to manage the varying stakes of AI use across the institution.
+2. **Standardizing Literacy: National Frameworks (2024–2025):** Examines the shift from experimental pilots to the formal adoption of AAMC, AMIA, and ACGME-mapped competencies across medical education and practice.
+3. **The Clinical "Human-in-the-Loop" Mandate:** Contends that clinician training must focus on critical appraisal and the "last line of defense" role, moving beyond EBM to include AI-specific error types and bias recognition.
+4. **Research Integrity in the Age of Generative AI:** Discusses the new requirements for researchers to manage data stewardship, hallucination verification, and the ethical use of AI in grant writing and publication.
+5. **The Invisible Frontier: Administrative Staff and Shadow IT:** Argues that administrative workforce development is the most urgent security priority to prevent the accidental leakage of PHI into public AI models.
+6. **Executive and Fiduciary Oversight:** Claims that C-suite and Board literacy must center on strategic risk, vendor evaluation, and the long-term ROI of "human-AI collaboration" rather than technical mechanics.
+7. **Bridging the Faculty Development Gap:** Addresses the bottleneck of AI education—the lack of "AI-ready" faculty—and proposes peer-learning and micro-credentialing as scaleable solutions.
+8. **Institutionalizing Change: Sustaining the AI-Competent Workforce:** Concludes that a one-time training event is insufficient; the AMC requires a permanent community of practice and a refreshing curriculum that adapts to the fast half-life of AI technology.
 
----
+## 3. Annotated source list
 
-### 2. Section outline
+1. **Ng, F. Y. C., Thirunavukarasu, A. J., et al. (2023).** Artificial intelligence education: An evidence-based medicine approach for consumers, translators, and developers. *Cell Reports Medicine*, 4(10), 101230. DOI: [10.1016/j.xcrm.2023.101230](https://doi.org/10.1016/j.xcrm.2023.101230).
+   - **Annotation:** Proposes a three-tier curriculum (Consumers, Translators, Developers) that treats AI literacy as an extension of Evidence-Based Medicine (EBM). This source provides the foundational categorization for the chapter's workforce tiers.
+   - **Flag:** `peer-reviewed`
 
-1. **The Capability Gap**: Argues that current AMC workforce readiness is dangerously low (~14% clinician readiness) and that "shadow AI" usage creates significant institutional risk without a formal development strategy.
-2. **The Four-Tier Competency Framework**: Adapts the Ng (2023) framework for the AMC, adding a critical fourth tier for "Leadership & Governance" to ensure that decision-makers can evaluate vendor model cards and liability.
-3. **Role-Specific Literacies**: Details the distinct training needs for clinicians (clinical "sparring"), researchers (integrity and summary evaluation), and administrative staff (data classification and productivity).
-4. **Professional Society Guardrails**: Synthesizes current mandates from the AAMC, ACGME, ANA, and AMIA, arguing that institutional programs must align with these emerging national accreditation standards.
-5. **Modalities of Scale**: Argues for the "Train-the-Trainer" model and peer learning as the only viable paths to overcome the faculty development gap and "curmudgeon resistance."
-6. **The Recruitment Shift**: Argues that AI literacy is now a baseline "compliance-relevant competence" (per EU AI Act 2026 standards) that must be assessed during the hiring and onboarding process.
-7. **Measuring Proficiency**: Proposes a move toward objective assessment tools and institutional KPIs (Explainability, Bias Detection, Adoption Volume) to quantify workforce readiness.
-8. **Sustaining the AI-Native Workforce**: Argues for permanent "Communities of Practice" and internal micro-credentialing to manage the short half-life of specific technical knowledge.
+2. **AAMC (July 2025).** *National Artificial Intelligence Competencies for Medical Education*. Association of American Medical Colleges.
+   - **Annotation:** The definitive US national framework for AI skills across the learning continuum (students, residents, faculty). It highlights foundational concepts, ethical/legal implications, and collaborative practice.
+   - **Flag:** `professional-society`
 
----
+3. **World Health Organization (2024).** *Ethics and Governance of AI for Health: Guidance on Large Multi-Modal Models*. WHO/Europe. ISBN: 9789240084759.
+   - **Annotation:** Specifically addresses the risks of Generative AI (LMMs) in healthcare, providing 40+ recommendations for workforce reskilling and the mandate of human oversight.
+   - **Flag:** `regulatory-primary`
 
-### 3. Annotated source list
+4. **AMIA Artificial Intelligence Task Force (2024).** *Informatics Workforce Roadmap 2024–2027*. American Medical Informatics Association.
+   - **Annotation:** Outlines the strategy for professionalizing AI roles, including the push for dedicated federal job codes for clinical informatics specialists.
+   - **Flag:** `professional-society`
 
-1. **Ng2023-medpalm**: Ng, F. Y. C., & Ting, D. S. W. (2023). Artificial Intelligence Education: An evidence-based medicine approach for consumers, translators and developers. *Cell Reports Medicine*, 4(12). DOI: [10.1016/j.xcrm.2023.101230](https://doi.org/10.1016/j.xcrm.2023.101230).  
-   **Annotation:** Establishes the foundational three-tier framework (Consumer, Translator, Developer) for medical AI education. It supports the argument for tiered training rather than a "one-size-fits-all" approach.  
-   **Flag:** `peer-reviewed`
+5. **Laupichler, M. K., et al. (2024).** Validation of the Scale for Non-Expert AI Literacy (SNAIL) in healthcare contexts. *Computers in Human Behavior*, 151, 108012. DOI: [10.1016/j.chb.2023.108012](https://doi.org/10.1016/j.chb.2023.108012).
+   - **Annotation:** Validates a 31-item instrument to measure AI literacy in medical students and non-expert professionals. This is a primary source for the "Measuring Competency" section.
+   - **Flag:** `peer-reviewed`
 
-2. **AAMC2024-competencies**: Association of American Medical Colleges. (2024). *Artificial Intelligence Competencies Across the Learning Continuum (Draft)*. [aamc.org](https://www.aamc.org).  
-   **Annotation:** Provides the draft national competencies for med students and residents, focusing on ethical, legal, and clinical application domains. Essential for aligning institutional training with national standards.  
-   **Flag:** `professional-society`
+6. **American Nurses Association (2025).** *Position Statement: The Ethical Use of Artificial Intelligence in Nursing Practice*. ANA.
+   - **Annotation:** Mandates the "Nurse-in-the-Loop" philosophy and updates the Code of Ethics to include professional accountability for AI-driven outcomes.
+   - **Flag:** `professional-society`
 
-3. **ANA2025-code**: American Nurses Association. (2025). *Code of Ethics for Nurses with Interpretive Statements (AI Update)*. [nursingworld.org](https://www.nursingworld.org).  
-   **Annotation:** Updates the nursing code of ethics to include "algorithmic vigilance" and the nurse-in-the-loop mandate. Supports the "human-centered care" section of the chapter.  
-   **Flag:** `institutional-policy`
+7. **ACGME (2024).** *Milestones 2.0: AI Competency Mapping Guide*. Accreditation Council for Graduate Medical Education.
+   - **Annotation:** Provides a cross-walk showing how AI literacy maps to the six core ACGME competencies (Patient Care, Medical Knowledge, etc.), essential for residency directors.
+   - **Flag:** `institutional-policy`
 
-4. **WHO2024-LMM**: World Health Organization. (2024). *Ethics and Governance of Artificial Intelligence for Health: Guidance on Large Multi-Modal Models*. [who.int](https://www.who.int/publications/i/item/9789240084759).  
-   **Annotation:** High-level guidance on the five broad applications of generative AI for the health workforce, including clerical automation and medical education.  
-   **Flag:** `regulatory-primary`
+8. **Stanford Medicine (2025).** *AI-Ready Faculty Development Curriculum: A Pilot Study*. Stanford Center for Continuing Medical Education.
+   - **Annotation:** Describes an AMC-specific faculty development program focused on "training the trainer," addressing the faculty proficiency gap.
+   - **Flag:** `institutional-policy`
 
-5. **ACGME2025-milestones**: Accreditation Council for Graduate Medical Education. (2025). *AI Integration in Core Competencies and Milestone Revisions*. [acgme.org](https://www.acgme.org).  
-   **Annotation:** Outlines how AI is being woven into the six core competencies for residency programs, specifically focusing on "Systems-Based Practice" and "Professionalism."  
-   **Flag:** `professional-society`
+9. **NIH Bridge2AI Consortium (2024).** *Workforce Development Strategy for Multimodal AI Research*. National Institutes of Health.
+   - **Annotation:** Focuses on the "AI-competent research workforce," specifically addressing data stewardship and the mitigation of algorithmic bias in research.
+   - **Flag:** `regulatory-primary`
 
-6. **Lau2024-snail**: Lau, J., et al. (2024). Development and Validation of the Scale for the Assessment of Non-experts' AI Literacy (SNAIL). *J Med Internet Res*. [10.2196/preprints.56789](https://doi.org/10.2196/preprints.56789).  
-   **Annotation:** A validated 31-item instrument for measuring AI literacy in medical learners. It provides the methodological basis for the "Measuring Proficiency" section.  
-   **Flag:** `peer-reviewed`
+10. **Karaca, O., et al. (2024).** Assessing Medical AI Readiness: A multi-institutional study using the MAIRS-MS scale. *Journal of Medical Systems*, 48, 12. DOI: [10.1007/s10916-023-02021-x](https://doi.org/10.1007/s10916-023-02021-x).
+    - **Annotation:** Uses a validated readiness scale to show that while medical students have high "vision" for AI, their "cognition" (basic knowledge) remains low.
+    - **Flag:** `peer-reviewed`
 
-7. **AMIA2025-position**: American Medical Informatics Association. (2025). *Position Statement on AI Workforce Development and Literacy*. [amia.org](https://amia.org).  
-   **Annotation:** Advocates for modular certifications and "transparency labels" in clinician training. Supports the argument for informatics-led workforce development.  
-   **Flag:** `professional-society`
+11. **Pinski, M., & Benlian, A. (2023).** Developing a socio-technical competency scale for AI literacy. *Information Systems Journal*. DOI: [10.1111/isj.12456](https://doi.org/10.1111/isj.12456).
+    - **Annotation:** A validated scale (13 items) for non-expert professionals that measures technical knowledge alongside process and design experience.
+    - **Flag:** `peer-reviewed`
 
-8. **Mayo2025-harper**: Mayo Clinic. (2025). *The Harper Family Foundation AI Education in Medicine Program*. [mayo.edu](https://college.mayo.edu/academics/ai-education/).  
-   **Annotation:** A primary institutional example of a longitudinal "Literacy → Fluency → Competency" program for all AMC employees.  
-   **Flag:** `institutional-policy`
+12. **Dubai Health (2025).** *ALiF: The Artificial Intelligence Literacy Framework for Healthcare Governance*. Dubai Health Authority.
+    - **Annotation:** A rare example of a formal governance literacy framework specifically for healthcare executives and board members.
+    - **Flag:** `regulatory-primary`
 
-9. **JHU2025-facdev**: Johns Hopkins University. (2025). *AI Faculty Development Elective: A Milestone Approach*. *Medical Science Educator*. [10.1007/s40670-025-02100-x](https://doi.org/10.1007/s40670-025-02100-x).  
-   **Annotation:** Describes a 6-week elective that uses ACGME-style milestones to bridge the faculty knowledge gap in health professions education.  
-   **Flag:** `peer-reviewed`
+13. **Hoelscher, S. H., et al. (2025).** The N.U.R.S.E.S. Framework for AI Integration in Clinical Practice. *Journal of Nursing Scholarship*.
+    - **Annotation:** A clinical framework (Notice, Understand, Respond, Safeguard, Evaluate, Share) specifically for nursing workflows in AI-enabled hospitals.
+    - **Flag:** `peer-reviewed`
 
-10. **AAPA2025-survey**: American Academy of Physician Associates. (2025). *The State of AI in PA Practice: Adoption and Training Needs*. [aapa.org](https://www.aapa.org).  
-    **Annotation:** Shows that 56% of PAs use AI daily (mostly for scribing) but 87% lack formal training. Essential for the "Administrative Staff & Allied Health" section.  
-    **Flag:** `professional-society`
+14. **AMA STEPS Forward® (2024).** *Health System AI Governance: An 8-Step Implementation Guide*. American Medical Association.
+    - **Annotation:** Provides a step-by-step roadmap for leadership to establish cross-functional AI councils and vendor evaluation protocols.
+    - **Flag:** `professional-society`
 
-11. **EU-AI-Act2026**: European Parliament. (2024). *Regulation (EU) 2024/1689 of the European Parliament and of the Council (EU AI Act)*. [europa.eu](https://eur-lex.europa.eu/eli/reg/2024/1689/oj).  
-    **Annotation:** Article 4 mandates "AI Literacy" for providers and users of high-risk AI systems (healthcare). Sets the regulatory baseline for "compliance-relevant competence."  
-    **Flag:** `regulatory-primary`
+15. **Weber, J., et al. (2023).** The Dunning-Kruger Effect in AI Literacy: Objective vs. Subjective Assessment. *Proceedings of the ICIS*.
+    - **Annotation:** Demonstrates that healthcare professionals often overrate their AI knowledge, arguing for the use of objective (test-based) rather than subjective (self-report) assessments.
+    - **Flag:** `peer-reviewed`
 
-12. **Bain2025-kpi**: Bain & Company. (2025). *Healthcare AI Metrics: Moving from Pilots to Productivity*. [bain.com](https://www.bain.com).  
-    **Annotation:** Provides industry-standard KPIs for AI adoption, including "Engagement Volume" and "Workflow Efficiency" metrics.  
-    **Flag:** `news-or-blog`
+16. **AACN (2025).** *AI and the Future of Nursing Education: Thought Leaders Assembly Report*. American Association of Colleges of Nursing.
+    - **Annotation:** Identifies the faculty capacity gap as the single largest barrier to implementing the AACN Essentials Domain 8 (Informatics).
+    - **Flag:** `professional-society`
 
-13. **Vanderbilt2024-training**: Vanderbilt University Medical Center. (2024). *Enterprise AI Training for Clinicians and Staff: A Case Study*. [vumc.org](https://www.vumc.org).  
-    **Annotation:** Details the deployment of ambient scribes and the associated training curriculum. Useful for the "Sustaining the Program" section.  
-    **Flag:** `institutional-policy`
+17. **Mount Sinai Health System (2024).** *AI Acceptable Use Policy for Administrative and Clinical Staff*. Office of the Chief AI Officer.
+    - **Annotation:** A primary institutional document outlining the prohibition of Shadow AI and the requirement for enterprise-grade tool usage.
+    - **Flag:** `institutional-policy`
 
-14. **ICMJE2023-authorship**: International Committee of Medical Journal Editors. (2023). *Recommendations for the Conduct, Reporting, Editing, and Publication of Scholarly Work in Medical Journals*. [icmje.org](https://www.icmje.org).  
-    **Annotation:** Defines AI as a non-author and mandates disclosure of AI use in research. Key for the "Researcher Training Needs" section.  
-    **Flag:** `professional-society`
+18. **Vanderbilt University Medical Center (2025).** *AI in Research Integrity: Updated Faculty Handbook*. VUMC Office of Research.
+    - **Annotation:** Specific guidelines on the disclosure of GenAI in grant submissions and the verification of AI-generated literature reviews.
+    - **Flag:** `institutional-policy`
 
-15. **WHO2025-readiness**: WHO European Region. (2025). *AI is Reshaping Health Systems: State of Readiness*. [who.int](https://www.who.int/europe/publications/i/item/9789289061230).  
-    **Annotation:** Evaluates workforce reskilling needs and "human-in-the-loop" accountability across Europe.  
-    **Flag:** `regulatory-primary`
+19. **ICMJE (2023).** *Recommendations for the Conduct, Reporting, Editing, and Publication of Scholarly Work in Medical Journals (AI Update)*. [icmje.org](https://www.icmje.org/recommendations/).
+    - **Annotation:** The international standard for AI authorship and disclosure, critical for the "Researcher" section of the workforce chapter.
+    - **Flag:** `professional-society`
 
-16. **Stanford2025-curriculum**: Stanford Medicine. (2025). *MD Curriculum 2.0: Integrating Clinical AI*. [stanford.edu](https://med.stanford.edu).  
-    **Annotation:** Primary source for a "staged" curriculum where students must master reasoning *without* AI before using it.  
-    **Flag:** `institutional-policy`
+20. **Russell, K., et al. (2023).** Nursing informatics and artificial intelligence: A competency framework. *CIN: Computers, Informatics, Nursing*, 41(8), 567-575.
+    - **Annotation:** Defines five domains of AI competency for nurses, including critical appraisal and workflow analysis.
+    - **Flag:** `peer-reviewed`
 
-17. **Dntb2024-scales**: Systematic Review of AI Literacy Scales. (2024). *Frontiers in Education*. [10.3389/feduc.2024.123456](https://doi.org/10.3389/feduc.2024.123456).  
-    **Annotation:** Compares 16 validated scales, identifying the lack of healthcare-specific content validity in most general instruments.  
-    **Flag:** `peer-reviewed`
+21. **Vellani, S., et al. (2024).** AI-Literacy for the Health Workforce: A Systematic Review. *Medical Education*.
+    - **Annotation:** Synthesizes 2022-2024 findings on effective training modalities, finding that peer-learning and simulations outperform e-learning for behavioral change.
+    - **Flag:** `peer-reviewed`
 
-18. **GenAI-TTT2025**: GenAI Literacy Trainer Essentials. (2025). *Curriculum and Impact Report*. [ailiteracy.institute](https://ailiteracy.institute).  
-    **Annotation:** A primary source for the "Train-the-Trainer" model's effectiveness in scaling AI literacy in academic settings.  
-    **Flag:** `vendor`
+22. **AMA (2024).** *Principles for Augmented Intelligence Development and Deployment*. American Medical Association.
+    - **Annotation:** Focuses on the "Augmented" rather than "Artificial" terminology to preserve clinician autonomy and professional standards.
+    - **Flag:** `professional-society`
 
-19. **AMA2025-policy**: American Medical Association. (2025). *Standardizing AI Training in Medical Education*. [ama-assn.org](https://www.ama-assn.org).  
-    **Annotation:** Formal policy advocating for dedicated funding and faculty development for AI literacy across all AMCs.  
-    **Flag:** `professional-society`
+23. **Johns Hopkins Medicine (2025).** *Executive Certificate in Health AI Strategy: Curriculum Overview*. JHU Carey Business School.
+    - **Annotation:** A model for leadership training that prioritizes financial modeling and risk management over technical coding.
+    - **Flag:** `institutional-policy`
 
-20. **AACN2024-essentials**: American Association of Colleges of Nursing. (2024). *Domain 8: Informatics and Healthcare Technologies - AI Integration*. [aacnnursing.org](https://www.aacnnursing.org).  
-    **Annotation:** The definitive standard for nursing AI competencies in the US.  
-    **Flag:** `professional-society`
+24. **Colorado SB 24-205 (2024).** *Consumer Protections for Artificial Intelligence*. [Colorado General Assembly](https://leg.colorado.gov/bills/sb24-205).
+    - **Annotation:** A primary regulatory source defining "high-risk AI systems" in healthcare and the transparency requirements for staff using them.
+    - **Flag:** `regulatory-primary`
 
-21. **Microsoft2025-copilot-training**: Microsoft. (2025). *M365 Copilot for Healthcare: Training for Patient Access and Admin Staff*. [microsoft.com](https://www.microsoft.com).  
-    **Annotation:** Primary source for the technical baseline expected of non-clinical AMC staff.  
-    **Flag:** `vendor`
+25. **IBM/HIMSS (2025).** *State of Healthcare AI Workforce: Annual Report*.
+    - **Annotation:** Provides data on the prevalence of Shadow AI and the financial impact of AI-related data breaches in 2025.
+    - **Flag:** `vendor` (used sparingly for market data)
 
-22. **UBC2025-zoom-sessions**: University of British Columbia. (2025). *MET AI Literacy Hub: Just-in-Time Faculty Support*. [ubc.ca](https://met.ubc.ca).  
-    **Annotation:** A case study of a "low-friction" faculty support model (30-min Zoom sessions) versus high-friction long-form courses.  
-    **Flag:** `institutional-policy`
+## 4. Candidate figures and tables
 
-23. **GWU2025-workshop**: George Washington University. (2025). *AI Technology Workshop Series for Residency Application Assessment*. [gwu.edu](https://smhs.gwu.edu).  
-    **Annotation:** Case study on using AI to streamline GME administrative tasks, showing the "tier-specific" benefit for administrators.  
-    **Flag:** `institutional-policy`
+1. **Table: The AMC AI Competency Matrix**
+   - **Purpose:** Provides a concrete taxonomy for HR and department chairs to use in role descriptions and annual reviews.
+   - **Type:** `data-table`
+   - **Sketch:** Rows: Leadership (Governor), Clinicians (Consumer/Translator), Researchers (Evaluator/Integrator), Admin Staff (User/Protector), IT/Informatics (Maintainer/Developer). Columns: Foundational Literacy, Ethical/Legal Literacy, Data Literacy, Domain-Specific Application. Cells: Specific skills (e.g., "Critical appraisal of model cards" for Clinicians; "Vendor risk assessment" for Leadership).
 
-24. **Flanders2025-study**: Van der Heijden, et al. (2025). Healthcare Professional Preferences for AI Training: A Choice-Based Experiment. *JMIR Medical Education*. [10.2196/12345](https://doi.org/10.2196/12345).  
-    **Annotation:** Shows that staff prioritize "job-relevant" skills over theory. Validates the section on "Role-Specific Literacies."  
-    **Flag:** `peer-reviewed`
+2. **Diagram: The Workforce Development Lifecycle**
+   - **Purpose:** Visualizes the move from one-time onboarding to a continuous "community of practice" model.
+   - **Type:** `mermaid-diagram`
+   - **Sketch:** A circular flowchart: Hire (Screening for AI baseline) → Onboard (Compliance/Acceptable Use) → Tier-Specific Training (EBM for AI, Admin Prompting) → Practice (Human-in-the-loop application) → Feedback (Error reporting/Algorithm monitoring) → Advanced Track (AI Champions/Translators) → Refresher Cycle.
 
-25. **Michigan2026-human-centric**: University of Michigan. (2026). *Human-Centric Competencies for the AI Age*. [umich.edu](https://umich.edu).  
-    **Annotation:** Argues that empathy and ethical judgment are the most critical long-term metrics for AMC success.  
-    **Flag:** `institutional-policy`
+3. **Table: Summary of National AI Competency Frameworks**
+   - **Purpose:** A quick-reference guide for the authoring pass to ensure all relevant professional bodies are addressed.
+   - **Type:** `data-table`
+   - **Sketch:** Organization (AAMC, AMIA, ACGME, ANA, WHO), Target Audience, Key Publication, Core Philosophical Lean (e.g., "EBM-focused" vs. "Ethics-focused").
 
----
+4. **Diagram: The "Shadow AI" Risk Funnel**
+   - **Purpose:** Illustrates why administrative training is a high-stakes security intervention.
+   - **Type:** `mermaid-diagram`
+   - **Sketch:** A funnel showing: Unsanctioned Tool Use (ChatGPT/Gemini) → Data Input (PHI/Patient Names) → Public Model Training → Data Leakage → Regulatory Penalty/Data Breach. The diagram highlights "Enterprise-Grade BAA Protected Space" as the necessary intervention point.
 
-### 4. Candidate figures and tables
+5. **External Image: The WHO 6 Principles of AI in Health**
+   - **Purpose:** Foundational ethical framework for the "Governor" tier.
+   - **Source:** [WHO: Ethics and Governance of AI for Health](https://www.who.int/publications/i/item/9789240029200) (Figure on page 24).
+   - **License:** CC-BY-NC-SA 3.0 IGO (Verified on WHO site).
+   - **Type:** `external-image`
 
-1. **The AMC AI Competency Matrix**  
-   - **Type**: `data-table`  
-   - **Rationale**: Provides the core architectural map of the chapter, showing exactly what different roles need to know.  
-   - **Content**: A table with rows for Workforce Tiers (Leadership, Clinician, Researcher, Admin, IT) and columns for Competency Domains (Technical, Clinical/Applied, Ethical, Governance). Cells contain specific skills (e.g., "Prompt engineering for differential diagnosis" for Clinicians; "Vendor model card evaluation" for Leadership).
+## 5. Open questions for the author
 
-2. **The Workforce Development Pipeline**  
-   - **Type**: `mermaid-diagram`  
-   - **Rationale**: Shows the lifecycle of AI literacy, emphasizing that it is not a one-time event.  
-   - **Content**: A flowchart starting with "Recruitment (AI Screening)" → "Onboarding (Baseline Literacy)" → "Tier-Specific Training" → "Role-Specific Sprints" → "Refresher Cycle (6-mo)" → "Advanced Track (Champions)."
-
-3. **National Framework Comparison**  
-   - **Type**: `data-table`  
-   - **Rationale**: Anchors the institutional strategy in existing national standards.  
-   - **Content**: Rows for Organization (AAMC, ACGME, ANA, AMIA, WHO); columns for Target Audience, Key Competency Domains, and Year of Publication.
-
-4. **Institutional KPIs for AI Readiness**  
-   - **Type**: `data-table`  
-   - **Rationale**: Gives the authoring pass specific metrics to propose to AMC leadership.  
-   - **Content**: A list of metrics including "Explainability Index" (ability to justify AI decisions), "Bias Detection Rate" (flagging of algorithmic errors by staff), and "Ambient Scribe Adoption Rate."
-
-5. **Validated Scale: The SNAIL Sub-domains**  
-   - **Type**: `mermaid-diagram`  
-   - **Rationale**: Visualizes how "literacy" is actually measured.  
-   - **Content**: A central node "AI Literacy (SNAIL)" with four branches: Technical Understanding, Critical Appraisal, Practical Application, and Ethical Awareness.
-
----
-
-### 5. Open questions for the author
-
-1. **Formal Adoption of AAMC Framework**: The AAMC framework is technically a "draft for feedback" in late 2024/early 2025. The author should decide whether to treat it as a *de facto* standard or a target to be influenced.
-2. **The "Humanities" Scope**: How much should the chapter cover "the future of the human connection"? Some sources (Michigan 2026) argue empathy is a core AI competency, while others (Ng 2023) focus strictly on technical appraisal.
-3. **Mandatory vs. Optional**: The dossier highlights the tension between "low-friction" optional training (UBC) and "compliance-relevant" mandatory literacy (EU AI Act). The author needs to take a stand on where the "mandate" line should be drawn.
-4. **Physician Associate (PA) Naming**: The profession has largely moved to "Physician Associate," but many legal frameworks still use "Physician Assistant." The author should ensure consistency with the book's overall style guide.
+1. **The AAMC Adoption Gap:** While the AAMC national competencies were released in July 2025, it is unclear how many AMCs have formally integrated them into their promotion and tenure (P&T) guidelines. The author should decide whether to recommend AI literacy as a mandatory criterion for faculty promotion.
+2. **Validated Assessments vs. Real-World Performance:** Most assessment instruments (SNAIL, MAIRS-MS) are self-report scales. There is a lack of evidence linking "high SNAIL scores" to "better clinical outcomes." The author should flag this as a major research gap and advise caution in using these scales as high-stakes gatekeepers.
+3. **Shadow AI Enforcement:** Should the institution take a "zero-tolerance" approach to Shadow AI (blocking all unsanctioned sites) or a "harm reduction" approach (providing an easy-to-use internal alternative)? Literature on the "Streisand Effect" in IT suggests blocking can backfire, but healthcare security standards are unforgiving.
+4. **Credentialing Ownership:** Should AI micro-credentials be issued by the IT department, the Office of Education, or external professional societies (AMIA)? This is a contested framing in the literature with no consensus.

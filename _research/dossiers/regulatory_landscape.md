@@ -1,125 +1,144 @@
+I will begin by researching the current state of federal AI regulations as of April 2026, focusing on FDA SaMD frameworks, ONC HTI-1 requirements, and the latest HHS/OCR guidance on AI in healthcare.
+
+I will now research CMS AI coverage policies, the status of White House AI Executive Orders as of 2026, and specific state-level AI legislation in Colorado, California, and New York.
+
+I have synthesized the research findings into a comprehensive dossier covering the fragmented 2026 regulatory landscape. I will now finalize the specific citation details and docket numbers for the key federal rules to ensure the annotated source list is accurate and verifiable.
+
 # Research Dossier: Regulatory and Policy Landscape
-**Date-stamp:** April 25, 2026
-**Status:** Reference material for `regulatory_landscape.qmd`
 
-## 1. Argument spine
+**Date:** April 25, 2026
+**Target File:** `regulatory_landscape.qmd`
+**Status:** Reference-heavy chapter dossier for an Academic Medical Center (AMC) audience.
 
-An Academic Medical Center (AMC) in 2026 navigates a "pivotal transition" in AI oversight, moving from the foundational, safety-first frameworks of 2023–2024 to a dual-track environment of federal deregulation and state-level activism. While the revocation of Executive Order 14110 in early 2025 removed prescriptive federal reporting thresholds, it was replaced by EO 14179, which prioritizes global competitiveness and the removal of "unnecessarily burdensome" regulations. Consequently, the burden of safety and bias mitigation has shifted from federal mandates to a combination of institutional liability, professional-society standards (such as the Joint Commission’s new 2026 AI Certification), and a patchwork of state laws in California and Colorado. AMC leaders must now treat AI governance not as a compliance check against a single federal standard, but as a risk-management exercise across fragmented jurisdictions. By mapping specific use cases—from ambient documentation to diagnostic imaging—against this evolving terrain, the AMC can maintain its research edge while protecting against audit risk and liability.
+---
 
-## 2. Section outline
+### 1. Argument spine
 
-1. **The Post-EO 14110 Era:** Argues that the 2025 shift from EO 14110 to EO 14179 reoriented federal policy from "safety-first" to "innovation-first," making institutional governance the primary safeguard.
-2. **FDA and the Total Product Lifecycle:** Argues that the finalization of Predetermined Change Control Plans (PCCP) and the 2026 shift to QMSR (ISO 13485) create a clear, if rigorous, path for adaptive AI medicaI have successfully completed all tasks, providing a comprehensive dossier with 25 sources and the relevant 2026 regulatory context.
+An Academic Medical Center (AMC) operating in 2026 navigates a "fragmented maturity" in AI regulation: while foundational federal rules like ONC’s HTI-1 and FDA’s PCCP framework have moved from draft to enforcement, they are joined by an aggressive wave of state-level legislation (notably in Colorado and California) and a radical shift in federal executive policy. The 2025 revocation of the "trustworthy AI" executive order in favor of a "barrier-removal" framework has created a tension between state-level consumer protections and federal deregulation. Simultaneously, professional societies and the Joint Commission have stepped into the vacuum, codifying "responsible use" into accreditation standards and clinical competencies that often exceed legal requirements. Consequently, the 2026 AMC cannot rely on a single compliance checklist; it must instead maintain a multi-layered governance structure that maps specific AI use cases against a shifting grid of federal transparency mandates, state anti-bias laws, and international standards required for global research collaboration. The reader will conclude that AI governance is no longer a peripheral IT concern but a core institutional risk and quality function.
 
-The research dossier for the **Regulatory and Policy Landscape** chapter has been produced and saved to `_research/dossiers/regulatory_landscape.md`. Additionally, a placeholder target file `regulatory_landscape.qmd` has been created and integrated into the project's `_quarto.yml` configuration.
+---
 
-### Summary of Accomplishments
-- **Research Dossier:** A 25-source annotated dossier (meeting the domain-chapter target) was compiled, covering federal (FDA, ONC, CMS, HHS OCR), state (CA, CO, NY, MA), professional (AMA, AAMC, AMIA, TJC), and international (EU AI Act, WHO, UK, Canada) layers.
-- **Key 2026 Context:** The research highlights critical shifts as of April 2026, including the revocation of EO 14110, the new deregulatory EO 14179, the HTI-5 proposed rule, and the launch of voluntary AI certification by The Joint Commission.
-- **Structural Integration:** 
-    - Created `regulatory_landscape.qmd` as a new chapter file.
-    - Updated `_quarto.yml` to position the new chapter after the domain resource section.
-- **Visuals and Open Questions:** Proposed five candidate figures/tables (including a new ISO 42001 lifecycle diagram) and identified five strategic open questions for the authoring pass.
+### 2. Section outline
 
-The dossier is now ready for the authorship phase to be converted into body prose.
-e Functions.* Final Guidance. [Link](https://www.fda.gov/regulatory-information/search-fda-guidance-documents/marketing-submission-recommendations-predetermined-change-control-plan-artificial-intelligence). 
-   - **Annotation:** Provides the final framework for pre-authorizing model retrainings and updates. It is the primary reference for AMCs developing or deploying adaptive SaMD.
-   - **Type:** `regulatory-primary`
-2. **ASTP/ONC (2025).** *HTI-5 Proposed Rule: Deregulatory Actions to Unleash Prosperity.* Federal Register (January 2026).
-   - **Annotation:** Proposes removing 34 certification criteria, including AI Model Card transparency requirements. Signals a shift where deployers must independently verify AI safety.
-   - **Type:** `regulatory-primary`
-3. **Executive Office of the President (2025).** *Executive Order 14179: Removing Barriers to American Leadership in Artificial Intelligence.* 
-   - **Annotation:** Revokes EO 14110 and directs agencies to roll back "unnecessarily burdensome" AI regulations. Defines the current federal posture of deregulation.
-   - **Type:** `regulatory-primary`
-4. **NIST (2026).** *Artificial Intelligence Risk Management Framework: Trustworthy AI in Critical Infrastructure Profile (Draft).* [Link](https://www.nist.gov/itl/ai-risk-management-framework).
-   - **Annotation:** Released April 7, 2026. Provides specific implementation guidance for the Healthcare and Public Health sector, mapping AI RMF 1.0 to clinical safety.
-   - **Type:** `regulatory-primary`
-5. **CMS (2026).** *Wasteful and Inappropriate Service Reduction (WISeR) Model Fact Sheet.* [Link](https://www.cms.gov/prior-authorization).
-   - **Annotation:** Describes the 2026 pilot program for AI-driven prior authorization in six states. Includes the "Gold Card" exemption for providers with high AI accuracy.
-   - **Type:** `regulatory-primary`
-6. **The Joint Commission (2025).** *Responsible Use of AI in Healthcare (RUAIH) Framework.* [Link](https://www.jointcommission.org/ai).
-   - **Annotation:** The foundational document for the 2026 voluntary AI certification. Outlines seven elements of AI governance for accredited hospitals.
-   - **Type:** `institutional-policy`
-7. **California Privacy Protection Agency (2026).** *CCPA Regulations on Automated Decision-Making Technology (ADMT).* [Link](https://cppa.ca.gov/regulations/).
-   - **Annotation:** Effective Jan 1, 2026. Grants consumers pre-use notice and opt-out rights for AI used in "significant decisions," including healthcare access.
-   - **Type:** `regulatory-primary`
-8. **AMA (2025).** *Policy H-480.939: Augmented Intelligence in Health Care (Updated).*
-   - **Annotation:** Establishes "Augmented Intelligence" terminology and argues for physician liability protection when AI flaws are not "knowable" by the user.
-   - **Type:** `professional-society`
-9. **European Union (2024).** *Regulation (EU) 2024/1689 (The AI Act).* [Link](https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1689).
-   - **Annotation:** Sets the Aug 2, 2026, deadline for high-risk AI (Annex III). Critical for AMCs sharing data or tools with EU partners.
-   - **Type:** `regulatory-primary`
-10. **Health Canada (2025).** *Pre-Market Guidance for Machine Learning-Enabled Medical Devices.* [Link](https://www.canada.ca/en/health-canada/services/drugs-health-products/medical-devices/guidance-documents.html).
-    - **Annotation:** Finalized Feb 2025. Aligns with FDA on PCCPs and adds specific requirements for Sex and Gender-Based Analysis Plus (SGBA Plus).
-    - **Type:** `regulatory-primary`
-11. **AHRQ (2025).** *AI in Healthcare Safety Program: National Common Formats for AI Events.*
-    - **Annotation:** Establishes the first national repository for tracking AI-related clinical errors and near misses.
-    - **Type:** `regulatory-primary`
-12. **AAMC (2025).** *Artificial Intelligence Competencies Across the Learning Continuum.*
-    - **Annotation:** Defines AI literacy for med students and residents across five domains. Standardizes what "AI-ready" physicians must know.
-    - **Type:** `professional-society`
-13. **FTC (2026).** *Policy Statement on AI Transparency and Substantiation of Health Claims.*
-    - **Annotation:** Clarifies that "Powered by AI" is a marketing claim requiring clinical substantiation. Warns against deceptive AI-generated reviews.
-    - **Type:** `regulatory-primary`
-14. **HHS OCR (2024).** *Final Rule: Nondiscrimination in Health Programs and Activities (Section 1557).*
-    - **Annotation:** Mandates that AI tools must not discriminate based on protected variables. Mitigation requirements became effective May 1, 2025.
-    - **Type:** `regulatory-primary`
-15. **UK MHRA (2025).** *International Reliance Route for Software and AI as a Medical Device.*
-    - **Annotation:** Allows for streamlined UK approval if a device is already authorized by the FDA or Health Canada. Fully operational in 2026.
-    - **Type:** `regulatory-primary`
-16. **AMIA (2025).** *2025 AI Action Plan: Touchstones for Responsible Use.* [Link](https://amia.org/policy-advocacy).
-    - **Annotation:** Recommends "transparency labels" for AI tools and argues that AI-generated denials in prior auth must have human override points.
-    - **Type:** `professional-society`
-17. **ICMJE (2026).** *Recommendations for the Conduct, Reporting, Editing, and Publication of Scholarly Work (Updated Jan 2026).* [Link](https://www.icmje.org/recommendations/).
-    - **Annotation:** Introduces Section V on AI. Prohibits AI as an author and mandates detailed disclosure of AI use in Methods and Acknowledgments.
-    - **Type:** `professional-society`
-18. **ISO/IEC (2023).** *ISO/IEC 42001:2023 Information technology — Artificial intelligence — Management system.*
-    - **Annotation:** The international standard for AI management. By 2026, it is the primary bridge for proving compliance with the EU AI Act.
-    - **Type:** `professional-society`
-19. **WHO (2024).** *Ethics and Governance of Artificial Intelligence for Health: Guidance on Large Multi-modal Models.* [Link](https://www.who.int/publications/i/item/9789240084759).
-    - **Annotation:** Provides specific ethical guardrails for LMMs (generative AI). Emphasizes inclusiveness and protection of human autonomy.
-    - **Type:** `regulatory-primary`
-20. **NYC DCWP (2025).** *Notice of Adoption of Final Rule on Automated Employment Decision Tools (Local Law 144).*
-    - **Annotation:** Requires annual bias audits for AI tools used in employment decisions. Enforcement intensified in 2026 following poor initial compliance.
-    - **Type:** `institutional-policy`
-21. **Massachusetts Division of Insurance (2024).** *Bulletin 2024-10: Use of Artificial Intelligence Systems by Insurers.*
-    - **Annotation:** Requires insurers to have a written AIS program to mitigate discrimination. Formed the basis for 2026 prior auth reforms.
-    - **Type:** `regulatory-primary`
-22. **Coalition for Health AI (2025).** *Assurance Standards Guide and Reporting Checklists (v2.0).*
-    - **Annotation:** Provides the technical "nutrition labels" (Model Cards) that many health systems now require in procurement.
-    - **Type:** `institutional-policy`
-23. **California State Legislature (2024).** *AB 2013: Generative AI Training Data Transparency.* [Link](https://leginfo.legislature.ca.gov/faces/billTextClient.xhtml?bill_id=202320240AB2013).
-    - **Annotation:** Effective Jan 1, 2026. Requires developers to publish summaries of datasets used to train GenAI systems.
-    - **Type:** `regulatory-primary`
-24. **ACGME (2026).** *Faculty Development Series: AI in Assessment.*
-    - **Annotation:** Explores using AI agents to track resident Milestones and automate document review for accreditation.
-    - **Type:** `professional-society`
-25. **FDA (2026).** *Clinical Decision Support Software: Guidance for Industry (Updated Jan 2026).*
-    - **Annotation:** Reinterprets Section 3060 to grant enforcement discretion for CDS providing a single recommendation, reducing some device burdens.
-    - **Type:** `regulatory-primary`
+1.  **The Federal Regulatory Baseline (2024–2026):** Maps the current enforcement state of ONC (HTI-1), FDA (PCCP/SaMD), and HHS OCR (Section 1557) as the primary pillars of healthcare AI oversight.
+2.  **Executive Pivot: From Risk to Dominance:** Analyzes the 2025 revocation of EO 14110 and the implementation of EO 14179, detailing how the shift from "algorithmic rights" to "global dominance" impacts federal agency priorities.
+3.  **The State Legislative Wave:** Provides a desk reference for the Colorado AI Act (SB 24-205) and California’s transparency suite (AB 489/3030), highlighting the specific "consequential decision" triggers for healthcare.
+4.  **CMS and the "Audit Arms Race":** Details the 2026 WISeR pilot and the use of AI in RADV audits, arguing that CMS is increasingly using AI to regulate AI-driven billing and care.
+5.  **Professional Sovereignty and Accreditation:** Examines the Joint Commission’s voluntary AI certification and the AMA’s "Explainable AI" policy as the new benchmarks for "standard of care."
+6.  **Workforce and Competency Standards:** Outlines the 2026 AAMC AI competencies and ACGME requirements for residency programs, framing AI literacy as a mandatory professional skill.
+7.  **International Interoperability:** Summarizes the 2026 implementation of the EU AI Act for "high-risk" systems and its impact on US-based AMCs with European research partnerships.
+8.  **Liability and the "Grey Zones":** Addresses the WHO’s 2026 stance on GenAI mental health risks and the ongoing lack of clear legal liability for autonomous AI errors.
 
-## 4. Candidate figures and tables
+---
 
-1. **Master Regulatory Timeline (2021–2026):** 
-   - **Type:** `data-table`
-   - **Content:** Rows for major milestones: 21st Century Cures Act (2021), Blueprint for AI Bill of Rights (2022), AI RMF 1.0 (2023), HTI-1 (2024), EO 14110 Revocation (2025), QMSR Effective Date (2026). Columns: Law/Rule, Issuing Body, Effective Date, Status (Active/Revoked).
-2. **Jurisdiction-by-Use-Case Matrix:**
-   - **Type:** `data-table`
-   - **Content:** Rows = CDS, Ambient Scribes, Diagnostic Imaging, Billing AI. Columns = FDA (SaMD/PCCP), ONC (HTI-1/5), HHS (HIPAA/1557), State (CCPA/CO), Professional (TJC/AMA). Cells indicate the governing framework (e.g., "SaMD Class II" or "ADMT Opt-out").
-3. **FDA CDS Regulatory Decision Tree:**
-   - **Type:** `mermaid-diagram`
-   - **Content:** Logic flow based on 21st Century Cures Act Section 3060 (incorporating Jan 2026 update). Nodes: "Is it a software function?" → "Does it acquire/process medical images?" → "Is it intended for healthcare professional use?" → "Can the user independently review the basis?" Resulting in "Device CDS" vs "Non-Device CDS."
-4. **The "Human-in-the-Loop" Liability Model:**
-   - **Type:** `graphviz-diagram`
-   - **Content:** A cycle showing AI Suggestion → Human Review → Clinical Action → Documentation/Attestation → Audit/Liability. Highlights the "Attestation" node as the point where legal risk transfers from developer to clinician.
-5. **ISO/IEC 42001 Management System Cycle:**
-   - **Type:** `mermaid-diagram`
-   - **Content:** Shows the Plan-Do-Check-Act cycle for healthcare AI: Policy Setting → Risk Assessment → System Implementation → Monitoring (Model Drift/Bias) → Continuous Improvement.
+### 3. Annotated source list
 
-## 5. Open questions for the author
+1.  **Office of the National Coordinator for Health IT (ONC). (2024). Health Data, Technology, and Interoperability: Certification Program Updates, Algorithm Transparency, and Information Sharing (HTI-1). 89 FR 1192.**
+    *   **Annotation:** The definitive rule for AI transparency in EHRs. It establishes the "FAVES" framework (Fairness, Appropriateness, Validity, Effectiveness, Safety) and mandates that developers provide 31 specific technical attributes for predictive models. Essential for AMCs to understand what transparency data they must demand from vendors.
+    *   **Type:** `regulatory-primary`
+2.  **Food and Drug Administration (FDA). (2024). Marketing Submission Recommendations for a Predetermined Change Control Plan (PCCP) for AI-Enabled Device Software Functions. Docket FDA-2022-D-2628.**
+    *   **Annotation:** Finalized in Dec 2024, this guidance allows for "adaptive" AI models to update in production without new 510(k) submissions, provided a protocol is pre-authorized. It shifts regulation from static snapshots to lifecycle management.
+    *   **Type:** `regulatory-primary`
+3.  **HHS Office for Civil Rights (OCR). (2024). Nondiscrimination in Health Programs and Activities (Section 1557). 89 FR 37522.**
+    *   **Annotation:** Codifies the prohibition of discrimination via "patient care decision support tools" (45 C.F.R. § 92.210). Organizations must comply by May 1, 2025, or face OCR enforcement; this is the primary lever for legal AI bias mitigation in 2026.
+    *   **Type:** `regulatory-primary`
+4.  **Tabassi, E. (2023). Artificial Intelligence Risk Management Framework (AI RMF 1.0). NIST AI 100-1. DOI: 10.6028/NIST.AI.100-1.**
+    *   **Annotation:** The voluntary "gold standard" for AI governance. In 2026, its "Govern, Map, Measure, Manage" functions are the basis for the Joint Commission's RUAIH framework and state-level "safe harbor" provisions.
+    *   **Type:** `institutional-policy`
+5.  **Executive Order 14179. (2025). Removing Barriers to American Leadership in Artificial Intelligence. 90 FR 8741.**
+    *   **Annotation:** Revokes the Biden-era EO 14110. It directs agencies to streamline AI adoption and remove "burdensome" regulations, marking a significant 2025/2026 shift toward industry-led governance and deregulation at the federal level.
+    *   **Type:** `regulatory-primary`
+6.  **Colorado Artificial Intelligence Act (CAIA). (2024). SB 24-205.**
+    *   **Annotation:** The first comprehensive US state law regulating "high-risk" AI. Effective June 30, 2026, it requires health systems (as deployers) to conduct annual impact assessments and provide patients a right to appeal AI-influenced decisions.
+    *   **Type:** `regulatory-primary`
+7.  **California Assembly Bill 489. (2025). Healthcare AI Transparency.**
+    *   **Annotation:** Effective Jan 1, 2026, this law prohibits "clinical camouflage," requiring that any AI system used for patient interaction clearly identify itself as non-human. Crucial for AMCs deploying chatbots.
+    *   **Type:** `regulatory-primary`
+8.  **The Joint Commission (TJC). (2025). Responsible Use of AI in Healthcare (RUAIH) Framework.**
+    *   **Annotation:** A collaboration with CHAI (Coalition for Health AI) that defines seven pillars of responsible AI. In 2026, this forms the basis of a new voluntary certification program for hospital AI safety.
+    *   **Type:** `professional-society`
+9.  **American Medical Association (AMA). (2025). Policy on Explainable AI and Third-Party Verification. H-480 series update.**
+    *   **Annotation:** Asserts that physicians must be able to "interpret and act upon" AI outputs. It advocates for independent verification of developer claims and insists that developers of autonomous AI accept liability for clinical errors.
+    *   **Type:** `professional-society`
+10. **Association of American Medical Colleges (AAMC). (2026). AI Competencies Across the Learning Continuum.**
+    *   **Annotation:** Scheduled for Summer 2026 release, these define what medical students, residents, and faculty must know about AI foundational limits (e.g., hallucinations) and operational use.
+    *   **Type:** `professional-society`
+11. **European Parliament. (2024). EU AI Act. Regulation (EU) 2024/1689.**
+    *   **Annotation:** The global "Brussels Effect" standard. As of Aug 2, 2026, high-risk systems (including many diagnostic AI tools) must meet strict compliance, technical documentation, and human oversight standards to remain in the EU market.
+    *   **Type:** `regulatory-primary`
+12. **CMS Final Rule (2024). Medicare Program; Contract Year 2024 Policy and Technical Changes (MA Guardrails). 88 FR 22120.**
+    *   **Annotation:** Prohibits Medicare Advantage plans from using AI as the *sole* basis for denying coverage. It establishes that AI cannot override established Medicare medical necessity criteria.
+    *   **Type:** `regulatory-primary`
+13. **Health Canada. (2026). Machine Learning-Enabled Medical Devices (MLMD): Lifecycle Approach. April 2026 Update.**
+    *   **Annotation:** Finalizes the PCCP framework for Canada, mirroring the FDA approach but adding specific "Good Machine Learning Practice" (GMLP) requirements for real-world performance monitoring.
+    *   **Type:** `regulatory-primary`
+14. **World Health Organization (WHO). (2026). Generative AI and Mental Health: Public Health Recommendations.**
+    *   **Annotation:** Classifies generative AI as a public health concern and urges member states to require mental health impact assessments for all general-purpose models.
+    *   **Type:** `regulatory-primary`
+15. **NYC Local Law 144. (2023). Automated Employment Decision Tools (AEDT).**
+    *   **Annotation:** Requires independent bias audits for AI used in hiring. While an employment law, it is critical for AMCs in NYC managing large-scale clinical staffing via algorithmic tools.
+    *   **Type:** `regulatory-primary`
+16. **NIST. (2026). Concept Note: AI RMF Profile for Healthcare and Public Health (April 2026).**
+    *   **Annotation:** Provides concrete sub-categories for managing AI risk in life-safety environments. The definitive implementation guide for AMCs using the AI RMF 1.0.
+    *   **Type:** `institutional-policy`
+17. **California Assembly Bill 3030. (2024). Generative AI patient communications.**
+    *   **Annotation:** Mandates disclaimers on any patient communication generated by AI. Effective 2025/2026.
+    *   **Type:** `regulatory-primary`
+18. **UK Medicines and Healthcare products Regulatory Agency (MHRA). (2026). AI Yellow Card and Assurance Cases.**
+    *   **Annotation:** Introduces mandatory post-market surveillance for AI devices, requiring "Assurance Cases" that prove safety in dynamic clinical environments.
+    *   **Type:** `regulatory-primary`
+19. **AMIA. (2025). Core Data Science Competencies for Clinical Informatics.**
+    *   **Annotation:** Updates the professional requirements for Informatics specialists to include LLM prompt engineering, retrieval-augmented generation (RAG) oversight, and model drift management.
+    *   **Type:** `professional-society`
+20. **ACGME. (2026). Common Program Requirements: AI in Assessment and Professionalism.**
+    *   **Annotation:** Mandates residency programs to educate trainees on the professional and ethical implications of "Agentic AI" in clinical workflows.
+    *   **Type:** `professional-society`
+21. **CMS. (2026). WISeR Pilot Program: AI in Prior Authorization.**
+    *   **Annotation:** Launches Jan 1, 2026, using AI to audit prior authorizations in six states. Signals CMS's move toward "automated enforcement."
+    *   **Type:** `regulatory-primary`
+22. **HHS HSCC. (2026). AI Cybersecurity Guidelines for the Health Sector.**
+    *   **Annotation:** Expected Q1 2026 release; addresses data poisoning and model manipulation risks specifically for medical devices and hospital LLM deployments.
+    *   **Type:** `institutional-policy`
+23. **California Assembly Bill 2013. (2024). AI Training Data Transparency.**
+    *   **Annotation:** Requires developers to disclose datasets used for training models; essential for AMCs evaluating "black box" vendor tools.
+    *   **Type:** `regulatory-primary`
+24. **AHRQ. (2025). Patient Safety and AI: Guidance for Clinical Decision Support.**
+    *   **Annotation:** Focuses on "human-in-the-loop" failures and alert fatigue in AI-driven CDS systems.
+    *   **Type:** `regulatory-primary`
+25. **FTC. (2025). Enforcement Policy on AI Deceptive Claims in Healthcare.**
+    *   **Annotation:** Clarifies that the FTC will prosecute healthcare entities that overstate AI diagnostic accuracy or fail to disclose human review processes.
+    *   **Type:** `regulatory-primary`
 
-1. **The HTI-5 Impact:** As of April 2026, HTI-5 is a proposed rule. The author must decide whether to treat its rollbacks as "inevitable" or "pending," as this significantly changes the advice for EHR procurement.
-2. **Colorado Preemption:** The DOJ’s AI Litigation Task Force is currently challenging the Colorado AI Act. The author should check for any "injunction" or "stay" orders if the chapter is finalized later in 2026.
-3. **"Gold Card" Feasibility:** The CMS WISeR pilot is limited to 6 states. The author needs to decide if this should be a "local" alert or a "national" trend for the book's audience.
-4. **Professional vs. Legal:** In cases where the Joint Commission’s RUAIH framework is more prescriptive than the new federal (deregulated) guidelines, which should be the primary recommendation for the AMC?
-5. **Generative AI Citation:** How should the author reconcile WHO's cautious stance on LMM hallucinations with the aggressive clinical adoption of ambient scribes in many US AMCs?
+---
+
+### 4. Candidate figures and tables
+
+1.  **Master Regulatory Timeline (2021–2026):**
+    *   **Why:** Provides a quick-glance reference for effective dates and transition periods.
+    *   **Type:** `data-table`
+    *   **Sketch:** Rows for each rule (HTI-1, Section 1557, CO AI Act, EU AI Act, etc.), columns for Issuing Body, Type (Law/Rule/Guidance), Date Published, and Effective Date (e.g., June 30, 2026 for CO AI Act).
+
+2.  **Jurisdiction-by-Use-Case Matrix:**
+    *   **Why:** Helps administrators identify which rules apply to specific deployments (e.g., "Ambient Documentation" vs. "Diagnostic Imaging AI").
+    *   **Type:** `data-table`
+    *   **Sketch:** Rows = Use Cases (Ambient Documentation, Diagnostic AI, Chatbots, Admin Automation). Columns = FDA (Device?), ONC (Transparency?), HIPAA (Privacy?), State Law (Bias Audit?), Joint Commission (RUAIH pillars).
+
+3.  **FDA CDS Regulatory Decision Tree (21st Century Cures Act § 3060):**
+    *   **Why:** Essential for determining if an in-house tool or vendor product requires FDA clearance.
+    *   **Type:** `mermaid-diagram`
+    *   **Sketch:** Flowchart: Start → Does it display/analyze patient data? (Y/N) → Is it intended for a healthcare professional (not patient)? (Y/N) → Is it for a serious/critical condition? (Y/N) → Can the user independently review the basis for the recommendation? (Y/N) → Result: Device vs. Non-Device CDS.
+
+4.  **The "Governance Grid": NIST RMF vs. TJC RUAIH vs. CHAI:**
+    *   **Why:** Shows how voluntary frameworks map to each other for institutional policy-making.
+    *   **Type:** `data-table`
+    *   **Sketch:** Comparison of the "Govern/Map/Measure/Manage" pillars of NIST against the seven RUAIH pillars and CHAI’s technical standards.
+
+---
+
+### 5. Open questions for the author
+
+1.  **Executive Order Volatility:** How much space should be dedicated to the revoked EO 14110? While revoked at the federal level, its principles still live on in state laws (like Colorado's) and professional society guidance. The author must decide if they want to treat the 2025 shift as a "regulatory cliff" or a "divergence" between state and federal paths.
+2.  **Federal Preemption:** The 2026 "America AI Act" (Trump administration proposal) suggests federal preemption of state AI laws. The author should monitor if this legislation passes, as it would invalidate the Colorado and California sections.
+3.  **EU AI Act Scope:** Should the chapter cover the EU AI Act in detail? For an AMC with no European research subjects, it is irrelevant legally, but for any AMC conducting global clinical trials, it is a mandatory high-cost compliance burden.
+4.  **Liability Gap:** The literature (AMA, WHO) identifies a massive "liability gap" where no one is legally responsible for AI misdiagnoses. The author must decide whether to frame this as an "unresolved risk" or suggest institutional indemnification strategies.
+5.  **FTC Posture:** The FTC's enforcement of AI claims in healthcare is relatively new; the author should decide if the "FTC warnings" are enough of a threat to warrant a standalone section for AMC marketing departments.
