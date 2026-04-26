@@ -1,2 +1,213 @@
-# Training and Workforce Development Resources
+---
+date: last-modified
+---
 
+# Ethics, Equity, and Institutional Accountability {#sec-ethics}
+
+The ethical challenges of AI in the AMC are not primarily about individual decisions by
+individual clinicians. They are structural. A predictive model that systematically
+underestimates the health needs of Black patients does not fail because the clinician
+using it is biased; it fails because it was trained on data that encodes decades of
+inequitable access to care, and deployed without monitoring that would detect the
+systematic underperformance [@Obermeyer2019-bias]. An ambient documentation system that
+malfunctions differently for patients with non-standard accents does not fail because the
+clinician was careless; it fails because the model was trained on data that overrepresented
+certain speech patterns and deployed without demographic performance stratification. The
+pattern is consistent: the ethical failures that have actually occurred in deployed
+healthcare AI are structural failures, predictable in advance, and correctable through
+governance — if the governance exists.
+
+This chapter argues that AMC AI ethics requires a structural turn. The question is not
+"does this AI tool respect individual patient autonomy?" but "does the process by which
+this institution deploys, monitors, and governs AI tools systematically protect patient
+equity and institutional accountability?" Individual ethical review is necessary but not
+sufficient. Structural governance is the mechanism through which individual ethical
+commitments become institutional practice.
+
+## Algorithmic Bias as a Structural Problem
+
+The most cited demonstration of algorithmic bias in healthcare involves a commercial risk
+stratification algorithm used by major health systems to identify high-risk patients who
+would benefit from care management programs [@Obermeyer2019-bias]. The algorithm used
+healthcare costs as a proxy for health need — a reasonable proxy if access to care were
+uniformly distributed, which it is not. Black patients with the same actual health burden
+as white patients had systematically lower costs, because they had systematically less
+access to care. The algorithm therefore scored them as lower risk, directing care
+management resources away from patients who needed them more.
+
+The finding was not that the algorithm was malicious. It was that the algorithm was
+trained on data that encoded an existing inequity, using a proxy variable that faithfully
+reproduced that inequity at scale. The authors estimated the bias caused the algorithm to
+miss 43% of high-risk Black patients compared to a race-neutral approach. Subsequent work
+has documented similar patterns in algorithms for kidney disease (using race as a correction
+factor), cardiac risk assessment, and dermatology imaging models [@Zack2024-gpt4bias].
+
+The structural governance response requires three elements that individual ethical review
+cannot provide alone. First, demographic stratification of performance metrics as a
+standard part of AI validation — not an optional audit, but a required table in every
+model evaluation. Second, monitoring that continues after deployment, because bias can
+emerge over time as the population served changes or as the model is applied to use cases
+outside the validation set. Third, a reporting structure that routes performance
+stratification findings to clinical leadership and the governance committee, not just to
+the informatics team.
+
+## Health Equity as a Performance Metric
+
+The framework proposed by Badal and colleagues, introduced in @sec-clinical, includes the
+alleviation of health disparities as the first principle of responsible clinical AI. In
+practice, this requires operationalizing "equity" as a quantitative performance dimension
+alongside accuracy. A model that achieves 85% accuracy overall but 70% accuracy for the
+subpopulation with the highest disease burden is not a high-performing model — it is a
+model that performs best for the patients who need it least.
+
+The practical implementation of equity monitoring requires demographic data in the
+validation and monitoring datasets. This is straightforward in principle and difficult in
+practice, because demographic data in EHRs is often missing, inconsistent, or coded in
+ways that do not capture the granularity needed for subgroup analysis. AMCs that serve
+diverse populations should treat demographic data quality as an AI readiness issue: the
+return on investment for improving race, ethnicity, and language data completeness comes
+precisely when the institution needs to assess whether its AI tools are performing equitably.
+
+The FUTURE-AI principles for trustworthy AI in medical imaging establish fairness as one
+of six foundational requirements, alongside universality, traceability, usability,
+robustness, and explainability [@FUTURE-AI2022]. These principles map to operational
+AMC practices: fairness requires subgroup performance evaluation; traceability requires
+audit logging of model outputs; explainability requires that clinicians can access the
+reasoning behind a model recommendation. The NIST AI RMF [@NIST2023-airm] maps these
+same principles to the Govern/Map/Measure/Manage operational structure that AMC governance
+programs can implement directly.
+
+## Informed Consent in the Continuous AI Era
+
+The consent framework governing clinical AI does not fit the technology. The traditional
+consent model is episodic and discrete: a patient is informed about a specific intervention
+at a specific moment and chooses whether to accept it. Clinical AI tools are continuous
+and ambient: a predictive model runs on every patient in the database, continuously,
+updating as new data arrives. The patient is not present when the model generates a risk
+score; there is no discrete moment at which they can meaningfully consent or decline.
+
+Ambient documentation creates a more visible consent challenge — the patient is in the
+room when the AI is active — but the design solution is tractable. The verbal consent
+model described in @sec-wellness and @sec-patient-trust provides explicit, encounter-
+specific authorization. The harder case is the background AI: the readmission risk model,
+the sepsis predictor, the no-show prediction algorithm. These tools affect every patient
+encounter without any patient-facing disclosure.
+
+The emerging consensus from bioethics and patient advocacy is that "invisible" background
+AI requires institutional-level disclosure rather than individual patient consent: the
+institution publishes a clear statement of which AI tools are used in patient care, how
+they affect clinical decisions, and what patients can do to learn more. This does not
+resolve the ethical tension between efficient deployment and individual autonomy, but it
+addresses the transparency gap. The WHO ethics guidance on AI for health specifically
+recommends meaningful transparency about automated decision-making as a prerequisite for
+the ethical deployment of clinical AI [@WHO2024-ai-ethics].
+
+## Intellectual Property and the AI Authorship Gap
+
+The U.S. Copyright Office and the U.S. Patent and Trademark Office have both taken
+consistent positions that AI cannot be an author or an inventor; copyright and patent
+protection requires human creative contribution. For AMCs, this creates several practical
+IP implications.
+
+Research outputs that are substantially AI-generated — whether grant applications, academic
+papers, or clinical protocol drafts — may not be protectable under copyright if the human
+contribution is insufficient. The ICMJE standards for medical journal authorship state
+clearly that AI systems cannot be listed as authors and that authors are responsible for
+the integrity of AI-assisted content [@ICMJE2023-recommendations]. This places the
+accountability for AI-generated research content squarely on the human authors, including
+accountability for errors, hallucinations, and fabricated citations introduced by AI
+tools.
+
+For clinical documentation, the liability implication is parallel: the clinician who
+attests to an AI-generated note takes professional responsibility for its accuracy.
+The attestation is not a rubber stamp; it is a claim that the clinician has reviewed
+and accepts the content as their professional documentation of the encounter. Governance
+policies and training programs should be explicit about this responsibility, because
+the ease and speed of AI-assisted documentation can inadvertently erode the clinician's
+sense of authorship and accountability.
+
+```{mermaid}
+%%| label: fig-ethics-pipeline
+%%| fig-cap: "AMC AI ethics review pipeline. Equity impact assessment and community engagement occur before deployment, not after. The monitoring loop connects to governance reporting."
+flowchart TB
+    A([AI Deployment\nProposal]) --> B[Privacy and\nSecurity Screening]
+    B --> C[Equity Impact\nAssessment\nSubgroup analysis design]
+    C --> D[AISC Ethical Review\nConsent architecture · IP · Liability]
+    D --> E{Approved?}
+    E -->|No| F[Revise or Decline]
+    E -->|Yes| G[Community\nEngagement Plan]
+    G --> H[Pilot Deployment\nReal-time equity monitoring]
+    H --> I[Governance Report\nSubgroup performance · Incidents]
+    I --> J{Performance\nEquitable?}
+    J -->|Yes| K([Continue with\nperiodic review])
+    J -->|No| L[Suspend · Investigate · Redesign]
+    L --> C
+```
+
+## Liability, the Standard of Care, and the Duty to Use
+
+The liability landscape for clinical AI is developing, not settled, but the direction is
+clear in both directions. Clinicians and institutions face potential liability both for
+harms caused by following AI recommendations without adequate oversight, and — as AI tools
+become validated for specific clinical tasks — for failing to use tools that have become
+part of the standard of care.
+
+The second direction is counterintuitive but increasingly argued in the literature. As
+AI tools for specific diagnostic tasks — retinal disease screening, dermatology imaging,
+sepsis prediction — accumulate evidence of performance at or above specialist-level
+accuracy, the ethical argument for using them begins to shade into a professional
+obligation [@Zemmar2023-duty]. A radiologist who does not use an FDA-cleared AI tool
+to detect pneumothorax, when the tool has demonstrated sensitivity superior to
+unassisted reading, may eventually face liability for the missed diagnosis.
+
+The prudent governance posture is to document, for each deployed clinical AI tool, the
+institutional reasoning about when and how it should be used — not just the existence of
+the tool, but the clinical judgment about its appropriate role. When a clinician overrides
+an AI recommendation, that decision should be documentable. When a clinician relies on
+an AI recommendation, that reliance should be documentable. The medical record is the
+primary liability defense; it should reflect the clinician's engagement with AI tools,
+not hide it.
+
+## Where to Start {#sec-ethics-start}
+
+### Starter Project 1: Equity Audit of Deployed Clinical AI
+
+**What it is:** A structured retrospective audit of performance stratification for the
+two or three highest-impact clinical AI tools currently deployed, assessing whether
+performance metrics vary significantly by race, ethnicity, age, insurance status, and
+language.
+
+**Why now:** HHS Section 1557 requires that covered entities not deploy discriminatory
+patient care decision-support tools. The section 1557 final rule is in effect. An
+institution that has not assessed its clinical AI tools for demographic performance
+variation cannot certify compliance, and more importantly, cannot know whether its tools
+are harming the patients most at risk.
+
+**How to execute:** Work with the clinical informatics team to extract retrospective
+performance data for each tool, stratified by available demographic dimensions. Identify
+subgroups with statistically significant performance differences. Assess whether the
+difference is clinically meaningful and whether it reflects a correctable bias in the
+model or an irreducible clinical population difference. Report findings to clinical
+leadership and the governance committee. For tools with significant performance disparities,
+develop a remediation plan.
+
+**Buy vs. build:** Analytical work using existing institutional data. Commercial bias
+audit tools (Credo AI, IBM OpenScale) can accelerate the analysis but are not prerequisites.
+
+### Starter Project 2: Clinical AI Ethics and Accountability Policy
+
+**What it is:** A published institutional policy on the ethical deployment of clinical AI
+that addresses the four structural elements described in this chapter: equity monitoring
+requirements, consent architecture for background AI, IP and authorship accountability,
+and documentation requirements for AI-assisted clinical decisions.
+
+**Why now:** Without a published policy, there is no institutional standard to hold
+deployments to, no governance anchor for the ethics review pipeline in @fig-ethics-pipeline,
+and no document to point to when a patient asks why an AI tool was used in their care.
+
+**How to execute:** Draft using the NIST AI RMF as the governance scaffold and the
+FUTURE-AI principles as the technical requirements framework. Review with legal (liability
+and IP), compliance (Section 1557 and Colorado SB 24-205), clinical leadership (standard
+of care implications), and patient representatives (consent and disclosure language).
+Publish as institutional policy with a defined review cycle aligned with the annual
+AI governance report.
