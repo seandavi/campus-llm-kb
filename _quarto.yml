@@ -67,7 +67,6 @@ format:
   html:
     theme: cosmo
     code-link: true
-    include-in-header: ga4_code.html
   pdf:
     documentclass: scrreprt
     include-in-header:
