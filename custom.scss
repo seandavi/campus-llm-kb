@@ -1,0 +1,190 @@
+/*-- scss:defaults --*/
+
+// Bootstrap variable overrides — processed before Boostrap CSS
+
+$font-family-sans-serif: "Inter", system-ui, -apple-system, BlinkMacSystemFont,
+  "Segoe UI", sans-serif !default;
+$line-height-base:     1.72  !default;
+$headings-line-height: 1.25  !default;
+$headings-font-weight: 600   !default;
+
+// Link colours: accessible blue that reads well on white
+$link-color:       #2563eb !default;
+$link-hover-color: #1d4ed8 !default;
+
+// Soften the pure-black body text
+$body-color: #1f2937 !default;
+
+/*-- scss:rules --*/
+
+// ── Fonts ──────────────────────────────────────────────────────────────────
+// Lora: warm serif, designed for extended screen reading.
+// Inter: highly legible geometric sans for UI and headings.
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,400;0,14..32,500;0,14..32,600;0,14..32,700;1,14..32,400&family=Lora:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap');
+
+// ── Body prose ─────────────────────────────────────────────────────────────
+// Swap Bootstrap's sans default to a readable serif for chapter text.
+body {
+  font-family: "Lora", Georgia, "Times New Roman", serif;
+  font-size:   1.0625rem;   // 17px — comfortable for long-form
+  color:       #1f2937;
+}
+
+// ── Headings ───────────────────────────────────────────────────────────────
+h1, h2, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4, .h5, .h6 {
+  font-family:    "Inter", system-ui, sans-serif;
+  font-weight:    600;
+  letter-spacing: -0.015em;
+  color:          #111827;
+}
+
+h1 { letter-spacing: -0.025em; }
+h2 { letter-spacing: -0.02em;  }
+
+.header-section-number {
+  color:       #9ca3af;
+  margin-right: 0.35em;
+}
+
+// ── Navigation & sidebar: keep sans-serif ──────────────────────────────────
+.navbar,
+#quarto-sidebar,
+.quarto-sidebar,
+.sidebar-navigation,
+nav[role="doc-toc"],
+.toc-actions,
+.quarto-appendix,
+.quarto-secondary-nav {
+  font-family: "Inter", system-ui, sans-serif;
+}
+
+// ── Tables ─────────────────────────────────────────────────────────────────
+table {
+  font-family: "Inter", system-ui, sans-serif;
+  font-size:   0.875rem;
+  line-height: 1.5;
+}
+
+th {
+  font-weight: 600;
+  color:       #111827;
+}
+
+// Subtle stripe on even rows
+tbody tr:nth-child(even) {
+  background-color: #f9fafb;
+}
+
+// Table captions
+caption,
+.table-caption p {
+  font-family: "Inter", system-ui, sans-serif;
+  font-size:   0.8125rem;
+  color:       #6b7280;
+  line-height: 1.5;
+  text-align:  left;
+  margin-top:  0.5rem;
+}
+
+// ── Figures & captions ─────────────────────────────────────────────────────
+figcaption,
+.quarto-float-caption,
+.figure-caption {
+  font-family: "Inter", system-ui, sans-serif;
+  font-size:   0.8125rem;
+  color:       #6b7280;
+  line-height: 1.5;
+  margin-top:  0.5rem;
+}
+
+// ── Mermaid diagrams ───────────────────────────────────────────────────────
+// Wrap diagrams in a light container so they read as distinct figures.
+.cell-output-display:has(.mermaid),
+div.quarto-figure:has(svg) {
+  background:    #f9fafb;
+  border:        1px solid #e5e7eb;
+  border-radius: 6px;
+  padding:       1rem 1.5rem 0.75rem;
+  margin:        1.25rem 0;
+}
+
+// ── Blockquotes ────────────────────────────────────────────────────────────
+blockquote {
+  border-left: 3px solid #d1d5db;
+  padding:     0.4rem 1.25rem;
+  margin:      1.5rem 0 1.5rem 0;
+  color:       #4b5563;
+  font-style:  italic;
+}
+
+blockquote > p:last-child { margin-bottom: 0; }
+
+// ── Code ───────────────────────────────────────────────────────────────────
+// Inline code: match surrounding prose better
+code:not(pre > code) {
+  font-size:        0.875em;
+  color:            #374151;
+  background-color: #f3f4f6;
+  padding:          0.1em 0.35em;
+  border-radius:    3px;
+}
+
+pre {
+  border-radius: 6px;
+}
+
+pre > code {
+  font-size: 0.85rem;
+}
+
+// ── Callouts ───────────────────────────────────────────────────────────────
+.callout {
+  border-radius: 6px;
+}
+
+.callout-caption-container,
+.callout-header {
+  font-family: "Inter", system-ui, sans-serif;
+  font-weight: 600;
+}
+
+.callout-body p {
+  font-size: 0.9375rem;
+}
+
+// ── Footnotes ──────────────────────────────────────────────────────────────
+.footnotes {
+  font-family: "Inter", system-ui, sans-serif;
+  font-size:   0.8125rem;
+  color:       #4b5563;
+  line-height: 1.6;
+}
+
+// ── Citation / reference list ─────────────────────────────────────────────
+#refs {
+  font-family: "Inter", system-ui, sans-serif;
+  font-size:   0.875rem;
+  line-height: 1.6;
+}
+
+// ── Part / chapter dividers ────────────────────────────────────────────────
+.quarto-part-entry {
+  font-family: "Inter", system-ui, sans-serif;
+  font-weight: 600;
+}
+
+// ── Cover / title page ─────────────────────────────────────────────────────
+.quarto-title-banner .title,
+#title-block-header .title {
+  font-family:    "Inter", system-ui, sans-serif;
+  font-weight:    700;
+  letter-spacing: -0.03em;
+}
+
+.quarto-title-banner .subtitle,
+#title-block-header .subtitle {
+  font-family: "Inter", system-ui, sans-serif;
+  font-weight: 400;
+  color:       #4b5563;
+}
