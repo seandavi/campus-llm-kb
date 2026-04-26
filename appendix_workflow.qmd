@@ -15,8 +15,9 @@ The workflow proceeded in five phases. @tbl-workflow-phases summarizes them.
 | 3. Brief writing | Claude Sonnet 4.6 | Wrote per-chapter research briefs specifying the argument arc, source targets, figure sketches, and open questions for each of 17 chapters | 17 briefs in `_research/briefs/` (~16,500 words total) |
 | 4. Deep research | Gemini (via CLI) | Executed web-search-backed research for each chapter brief, producing annotated source lists, argument spines, section outlines, and figure sketches | 17 dossiers in `_research/dossiers/` (~30,900 words total) |
 | 5. Authorship | Claude Sonnet 4.6 | Wrote chapter prose from dossiers, verified citations, created Quarto-formatted diagrams and tables, added BibTeX entries | Chapter `.qmd` files, updated `references.bib` |
+| 6. Review pass | Gemini + Claude Sonnet 4.6 | Audited completed chapters for unsupported factual claims and unlinked entities; resolved high-confidence gaps with citations and inline links | Updated `.qmd` files, new BibTeX entries, `_research/REVIEW_PROMPT.md`, `_research/review_groups/` |
 
-: The five-phase multi-model authorship workflow. Each phase has a distinct responsible agent and produces a defined artifact. {#tbl-workflow-phases}
+: The six-phase multi-model authorship workflow. Each phase has a distinct responsible agent and produces a defined artifact. {#tbl-workflow-phases}
 
 ## Why These Tools in These Roles
 
@@ -71,16 +72,33 @@ The practical implication is that Gemini research output should never be committ
 
 The total research and planning effort — phases 2 through 4 — produced approximately 47,400 words of structured inputs for the authorship phase. The authorship phase produces finished chapters of approximately 2,500–4,500 words each, depending on the domain. The ratio of research material to finished prose reflects the verification and synthesis work the authorship phase requires: not all research material makes it into the chapter, the prose is more compressed than the dossiers, and citation verification eliminates a meaningful fraction of the sourced claims.
 
+## The Review Pass
+
+After the authorship phase produced a complete draft, a structured review pass identified two categories of gap that the writing phase does not reliably close on its own: unsupported factual claims that carry meaningful epistemic weight, and significant entities — organizations, tools, frameworks, standards bodies — mentioned in the text without a hyperlink.
+
+The review was structured by having Gemini perform a first-pass audit of completed chapters, using instructions codified in `_research/REVIEW_PROMPT.md`. Six review group files in `_research/review_groups/` specified which chapters each Gemini run should examine; runs were executed sequentially rather than in parallel to avoid rate-limiting. The prompt asked Gemini to identify, per chapter:
+
+- **Unsupported claims**: Factual assertions that carry substantive weight and lack a citation or reference, prioritized by how much the claim's validity bears on the chapter's argument.
+- **Unlinked entities**: Organizations, tools, frameworks, and regulatory bodies mentioned by name without a hyperlink that would allow a reader to verify or explore further.
+
+The prompt imposed strict rules: Gemini was not to suggest fabricated URLs or invent citation keys. For unsupported claims, it could flag the claim and name the type of source that would address it, but not supply a DOI it had not verified during that session. For unlinked entities, it could suggest a URL only if it had retrieved that URL during the current run.
+
+Claude Sonnet reviewed Gemini's outputs and resolved items selectively. A meaningful fraction of flagged claims turned out to already be supported by citations elsewhere in the same paragraph — the audit prompt lacked full bibliography context and could not detect these. Those were closed as non-issues without adding redundant citations. Only high-confidence gaps were resolved: claims traceable to a verifiable primary source, and organizations with stable institutional URLs.
+
+The net output: several new BibTeX entries for sources that had been mentioned without citation, and approximately forty inline links added to first occurrences of significant organizations and tools across the chapter set. The process also confirmed that many flagged claims were already adequately supported — which is useful negative space: it documents that the review was done rather than skipped.
+
+The review pass is intentionally conservative. It closes verifiable gaps rather than filling word count. A chapter that makes a specific numerical claim without a citation, where the claim is traceable to a primary source, is a closure candidate. A chapter that makes a framing claim without a citation — one that represents synthesis rather than a specific verifiable fact — is not. The response to "this could use a citation" is different from "this is documented at a specific primary source we failed to cite." Conflating them inflates the bibliography without improving the book.
+
 ## What This Means for AI-Assisted Knowledge Work
 
 This workflow illustrates several things about AI-assisted knowledge work that are not obvious from reading about AI in the abstract.
 
-**AI at its most valuable is a research collaborator, not a ghostwriter.** The chapters in this book are not AI-generated prose edited by a human. They are human-structured arguments, grounded in AI-gathered sources, written by a model that was given specific direction about what to argue and how to argue it, and reviewed by a human who can tell when the argument is wrong. The value of the AI is in the research throughput — 18,600 words of sourced, structured research material produced in hours rather than days — not in generating text that the human then accepts.
+**AI at its most valuable is a research collaborator, not a ghostwriter.** The chapters in this book are not AI-generated prose edited by a human. They are human-structured arguments, grounded in AI-gathered sources, written by a model that was given specific direction about what to argue and how to argue it, and reviewed by a human who can tell when the argument is wrong. The value of the AI is in the research throughput — ~30,900 words of sourced, structured research material produced in hours rather than days — not in generating text that the human then accepts.
 
 **The division of labor matters.** Running Gemini research sessions in parallel consistently caused rate-limiting failures that produced empty or truncated outputs; running them sequentially, one at a time, succeeded. Using Opus for planning and Sonnet for execution reduced cost without sacrificing quality, because the task profiles genuinely differ. These are engineering decisions, not philosophical ones.
 
 **Autonomy requires clear boundaries.** Gemini in YOLO mode created files and edited configuration — actions that were correct in this case but that could easily have been wrong in a different context. Any workflow that gives an AI agent write access to a production system needs explicit boundaries around what the agent is and is not authorized to change.
 
-**The bottleneck is authorship, not research.** The research phase produced 18,600 words of structured material in approximately four hours of elapsed time (including re-runs for failed dossiers). The authorship phase produces approximately 4,300 words per chapter at higher quality but significantly more elapsed time. At scale, the constraint is the human review step and the authorship pass, not the research. Tools that improve the authorship pass — better citation verification, tighter prose controls — will have a larger impact on throughput than further improvements to the research phase.
+**The bottleneck is authorship, not research.** The research phase produced ~30,900 words of structured material in approximately four hours of elapsed time (including re-runs for failed dossiers). The authorship phase produces approximately 4,300 words per chapter at higher quality but significantly more elapsed time. At scale, the constraint is the human review step and the authorship pass, not the research. Tools that improve the authorship pass — better citation verification, tighter prose controls — will have a larger impact on throughput than further improvements to the research phase.
 
 **The workflow is reproducible.** The `scripts/gemini-research.sh` wrapper, the `_research/briefs/` input structure, and the `_research/MASTER_PROMPT.md` template are all checked into the repository. Any contributor can run the same workflow for a new chapter or an update pass on an existing chapter. The intellectual bottleneck is writing a good brief; once the brief is right, the research and authorship passes follow a repeatable pattern.

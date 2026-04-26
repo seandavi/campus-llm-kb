@@ -18,7 +18,7 @@ most directly affect clinical and research operations.
 
 ## The Federal Regulatory Baseline
 
-The foundational federal regulatory layer consists of rules from four agencies: ONC, FDA,
+The foundational federal regulatory layer consists of rules from four agencies: [ONC](https://www.healthit.gov), FDA,
 CMS, and HHS OCR. Each has moved from guidance to enforcement-capable rule since 2024.
 
 The ONC HTI-1 rule, published January 2024 with key provisions effective January 2025,
@@ -141,7 +141,7 @@ mechanisms — credentialing, accreditation, and membership. For AMCs, these sta
 often have more immediate operational effect than distant federal rules, because their
 consequences for day-to-day operations are more direct.
 
-The NIST AI Risk Management Framework [@NIST2023-airm] has become the de facto organizational
+The [NIST AI Risk Management Framework](https://www.nist.gov/itl/ai-risk-management-framework) [@NIST2023-airm] has become the de facto organizational
 scaffold for institutional AI governance in U.S. healthcare. Its Govern/Map/Measure/Manage
 functions provide the structure for AI program design, and multiple state laws and
 professional society standards have incorporated its terminology. The companion Generative
@@ -167,7 +167,7 @@ programs are well positioned to seek ISO 42001 certification with targeted addit
 ## International Requirements for Global Research Partners
 
 For AMCs with international research partnerships, clinical trial enrollment in Europe,
-or data sharing with EU-based institutions, the EU AI Act represents a material compliance
+or data sharing with EU-based institutions, the [EU AI Act](https://artificialintelligenceact.eu/) represents a material compliance
 obligation. The Act's high-risk provisions — applicable from August 2026 — cover AI
 systems used in clinical decision support, medical devices, and management of critical
 infrastructure [@EUAI2024]. High-risk systems must undergo a conformity assessment before

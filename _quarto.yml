@@ -69,6 +69,7 @@ format:
     code-link: true
   pdf:
     documentclass: scrreprt
+    links-as-notes: true
     include-in-header:
       text: |
         \usepackage{makeidx}

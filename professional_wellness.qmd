@@ -11,7 +11,7 @@ But there is a second case for clinical AI that rarely receives the same sustain
 attention, and that is the case for what it can do for the people providing care.
 
 Clinician burnout in the United States has reached a level that the U.S. Department of
-Health and Human Services has characterized as a public health threat. More
+Health and Human Services has characterized as a public health threat [@SurgeonGeneral2022-burnout]. More
 than half of physicians in some specialties report symptoms of burnout, and the rates among
 nurses and advanced practice providers are comparable. This is not a resilience deficit,
 and it is not a recent development. It is the predictable consequence of a documentation
@@ -53,7 +53,7 @@ The burnout crisis has a financial dimension that is often underappreciated by A
 who focus on the subscription cost of AI tools. The AMA estimates that replacing a single
 physician — recruiting, credentialing, onboarding, and covering lost productivity during
 the transition — costs between five hundred thousand and one million dollars, depending
-on the specialty. Nurse turnover costs are lower per position but occur at higher frequency.
+on the specialty [@AMA2023-survey]. Nurse turnover costs are lower per position but occur at higher frequency.
 For an institution with a hundred-physician practice that experiences a five percent annual
 attrition rate, the turnover cost in a single year is between two and five million dollars.
 An ambient documentation subscription that prevents even a fraction of that attrition
@@ -283,7 +283,7 @@ burnout outpatient specialty — primary care, mental health, or internal medici
 highest-yield targets — with validated pre/post measurement of after-hours EHR time,
 physician well-being, and note quality.
 
-**Why now:** The commercial systems (Abridge, DAX, Nabla) have BAA-ready EHR integrations
+**Why now:** The commercial systems ([Abridge](https://www.abridge.com), [DAX](https://www.nuance.com/healthcare/ambient-clinical-intelligence.html), [Nabla](https://www.nabla.com)) have BAA-ready EHR integrations
 and vendor-side regulatory responsibility for the AI component. The institutional work is
 structuring the measurement framework, not building the technology. An institution that
 waits for more evidence before piloting is deferring a decision that the evidence already

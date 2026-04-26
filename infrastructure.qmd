@@ -50,7 +50,7 @@ research tool, and administrative system to connect directly to AI model APIs wi
 its own credentials and its own security posture, the gateway enforces institutional
 policy uniformly across all connections.
 
-A purpose-built AI gateway (LiteLLM, Kong AI Gateway, or equivalent) provides several
+A purpose-built AI gateway ([LiteLLM](https://www.litellm.ai/), [Kong AI Gateway](https://konghq.com/products/kong-ai-gateway), or equivalent) provides several
 capabilities that direct API connections lack. It enforces authentication and authorization
 — only institutional users with appropriate roles can access specific model endpoints,
 and the gateway can enforce role-based access control tied to the existing institutional
@@ -159,7 +159,7 @@ incident response plan.
 
 The gateway architecture assumes a clean separation between the AI system and the EHR.
 By 2025 that assumption no longer holds for clinical documentation. Ambient AI tools —
-Nuance DAX Copilot, Abridge, Suki, Nabla — are now embedded directly inside EHR
+[Nuance DAX Copilot](https://www.nuance.com/healthcare/ambient-clinical-intelligence.html), [Abridge](https://www.abridge.com), [Suki](https://www.suki.ai), [Nabla](https://www.nabla.com) — are now embedded directly inside EHR
 workflows rather than accessed through a separate browser tab or institutional portal.
 DAX Copilot operates within Epic's clinical narrative module via Epic's native integration.
 Abridge's note generation writes directly into Epic's documentation framework. The ambient
@@ -195,7 +195,7 @@ The AI recommends; the clinician decides. That model is giving way to agentic AI
 that can take autonomous multi-step actions — querying the EHR for lab results, drafting
 a referral order, routing a message to a specialist, scheduling a follow-up appointment.
 
-Epic's Digital Workforce, Oracle Health's Clinical AI Agent, and the first generation of
+Epic's Digital Workforce, [Oracle Health](https://www.oracle.com/health/)'s Clinical AI Agent, and the first generation of
 clinical AI copilots built on general-purpose agent frameworks are already operating in
 production at some institutions. The infrastructure requirements for these systems are
 fundamentally different from advisory AI. Four controls matter most.
@@ -252,7 +252,7 @@ on-premises model serving.
 On-premises LLM serving has become more tractable than it was three years ago. A
 70-billion-parameter model running on A100 or H100 GPU hardware produces inference
 throughput sufficient for most research and limited clinical use cases. Open-weight models
-under licenses that permit institutional deployment — Llama 3.1, Mistral, Phi-4 — allow
+under licenses that permit institutional deployment — Llama 3.1, [Mistral](https://mistral.ai/), Phi-4 — allow
 fine-tuning on local clinical data without the data leaving the institutional network
 boundary. The operational overhead is real: the institution bears the maintenance burden
 for serving infrastructure, model updates, and performance monitoring that commercial

@@ -92,7 +92,7 @@ The third component is a vendor Model Card requirement for any Tier 2 or Tier 3 
 product. Mitchell and colleagues' model card framework — now widely adopted by major AI
 vendors — specifies a standardized format for reporting training data sources, performance
 across demographic subgroups, intended and out-of-scope uses, and known limitations
-[@Mitchell2019-modelcards]. The Coalition for Health AI (CHAI) has adapted this format for
+[@Mitchell2019-modelcards]. The [Coalition for Health AI](https://www.coalitionforhealthai.org) (CHAI) has adapted this format for
 clinical AI, adding performance reporting requirements specific to healthcare regulatory
 standards. Requiring a model card at intake catches a substantial fraction of vendor
 governance gaps before the institution has committed to a procurement process.
@@ -122,7 +122,7 @@ held-out test set has cleared the equivalent of a preclinical screen. Deploying 
 to clinical use without a supervised piloting phase is the equivalent of moving from animal
 testing to widespread patient administration.
 
-The DECIDE-AI reporting guidelines for early-stage clinical evaluation of AI decision support
+The [DECIDE-AI](https://www.decide-ai.org/) reporting guidelines for early-stage clinical evaluation of AI decision support
 systems — developed by a multinational consensus group and published in Nature Medicine —
 define the specific requirements for pilot evaluation that parallel Phase I and Phase II
 trial standards: prospective design, pre-registered primary endpoints, independent oversight,
@@ -301,7 +301,7 @@ prediction model that identifies cases fourteen hours earlier than clinical susp
 not save costs that appear in a line item; it prevents mortality and complications whose
 downstream costs are measured in readmissions, litigation exposure, and regulatory scrutiny.
 
-The Return on Health framework, developed through collaborative work between the AMA and
+The Return on Health framework, developed through collaborative work between the [AMA](https://www.ama-assn.org) and
 digital health stakeholders, defines six value streams that together constitute a more
 complete accounting of clinical AI investment value. The clinical value stream captures
 direct improvement in patient outcomes — prevented adverse events, reduced diagnostic error
@@ -345,7 +345,7 @@ better position for the first annual reporting cycle than those that start from 
 the deadline arrives.
 
 **How to execute:** Draft the intake form using the fields in @tbl-intake-checklist.
-Implement it as a REDCap survey or equivalent institutional form routed to the AISC
+Implement it as a [REDCap](https://projectredcap.org/) survey or equivalent institutional form routed to the AISC
 administrative coordinator. Define the three risk tiers and the gate criteria in a governance
 document approved by the AISC. Communicate the new process to department chairs and
 informatics leadership with explicit framing that the process is designed to accelerate

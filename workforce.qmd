@@ -62,14 +62,14 @@ is occurring before it becomes a patient safety event.
 
 ## National Competency Frameworks
 
-The AAMC published national AI competency standards for medical education in 2024, defining
+The [AAMC](https://www.aamc.org) published national AI competency standards for medical education in 2024, defining
 what medical students and residents need to know about AI foundational concepts, ethical
 and legal implications, data literacy, and collaborative practice [@AAMC2024-ai-principles].
 These competencies are organized across the learning continuum — from pre-clinical students
 through practicing faculty — and are the closest thing to a national standard that medical
 education currently has.
 
-The AMIA Informatics Workforce Roadmap defines competencies for clinical informatics
+The [AMIA](https://www.amia.org) Informatics Workforce Roadmap defines competencies for clinical informatics
 specialists, extending the consumer and translator tiers into the technical domains
 required for production AI deployment: prompt engineering, retrieval-augmented generation
 architecture, model drift management, and regulatory compliance for AI-enabled devices
@@ -77,7 +77,7 @@ architecture, model drift management, and regulatory compliance for AI-enabled d
 
 The WHO ethics and governance guidance specifically addresses workforce reskilling as a
 prerequisite for responsible AI in healthcare, framing AI literacy as a component of
-the human oversight obligation [@WHO2024-ai-ethics]. The ANA has published a position
+the human oversight obligation [@WHO2024-ai-ethics]. The [ANA](https://www.nursingworld.org) has published a position
 statement on ethical AI in nursing practice that updates the nursing Code of Ethics to
 include professional accountability for AI-influenced care decisions.
 
@@ -176,7 +176,7 @@ the tool's actual failure modes require. The training program that addresses thi
 be reassurance that AI is generally reliable. It has to name the specific failure modes
 and require demonstrated ability to recognize them.
 
-Survey data from 2025 has added a shadow AI dimension to this picture. A Wolters Kluwer
+Survey data from 2025 has added a shadow AI dimension to this picture. A [Wolters Kluwer](https://www.wolterskluwer.com)
 survey found that 57 percent of healthcare professionals had encountered or used
 unauthorized AI tools in their work [@WoltersKluwer2025-survey]. A separate market
 research report found that 17 percent of front-line staff admitted to entering
@@ -195,14 +195,14 @@ they were busy. That has changed. The 2025 to 2026 accreditation cycle has moved
 literacy from an optional enrichment to a formal program requirement in ways that are
 specific enough to enforce.
 
-The ACGME's July 2025 Common Program Requirements include new language on human-AI
+The [ACGME](https://www.acgme.org)'s July 2025 Common Program Requirements include new language on human-AI
 teamwork and require programs to have institutional policies on the use of generative AI
 for academic work [@ACGME2025-CPR]. The specificity is meaningful: it is not "programs
 should be aware of AI" but "programs must have policies." Programs without documented AI
 use governance are out of compliance with the new requirements starting with the 2025 to
 2026 accreditation year.
 
-The LCME's current standards for medical school accreditation interpret Standards 7.6
+The [LCME](https://lcme.org)'s current standards for medical school accreditation interpret Standards 7.6
 and 8.2 — covering bias and self-directed learning — to require critical appraisal of AI
 outputs as a competency that medical students must demonstrate. The AAMC's 2025 AI
 Competencies Across the Learning Continuum, developed through a formal Delphi process,
@@ -215,7 +215,7 @@ practice, and Provision 4.2 clarifies that nurses retain final accountability ov
 AI-influenced care decisions. The update is significant because it moves AI governance
 from an informatics specialty issue to a professional obligation for every practicing nurse.
 
-The ACCME has issued guidance on the responsible use of AI in accredited continuing
+The [ACCME](https://www.accme.org) has issued guidance on the responsible use of AI in accredited continuing
 education, establishing disclosure requirements and data handling standards for
 CME programs that use AI-generated content or AI-assisted learning tools [@ACCME2025-ai].
 For AMC CME offices that have adopted AI for content development, this is an immediate

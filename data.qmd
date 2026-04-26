@@ -123,8 +123,8 @@ flowchart TD
 
 ## FHIR and OMOP as AI Substrate
 
-The interoperability standards that AMCs have adopted for data exchange — HL7 FHIR and
-the OMOP Common Data Model — are not just data formats. They are the substrate on which
+The interoperability standards that AMCs have adopted for data exchange — [HL7 FHIR](https://hl7.org/fhir/) and
+the [OMOP Common Data Model](https://www.ohdsi.org/data-standardization/the-omop-common-data-model/) — are not just data formats. They are the substrate on which
 clinical AI is increasingly built and validated.
 
 FHIR R5 provides standardized resource definitions for clinical data that allow AI models
@@ -175,9 +175,9 @@ in a clinical workflow integration is a safety event.
 
 ## TEFCA and the Nationwide Exchange Layer
 
-The Trusted Exchange Framework and Common Agreement — TEFCA — established a network of
-Qualified Health Information Networks (QHINs) for nationwide clinical data exchange when
-it went live in 2023 [@TEFCA2023-common]. Epic's Nexus Health Network, Health Gorilla,
+The [Trusted Exchange Framework and Common Agreement](https://www.healthit.gov/topic/interoperability/trusted-exchange-framework-and-common-agreement-tefca) — TEFCA — established a network of
+[Qualified Health Information Networks](https://rce.sequoiaproject.org/qhin/) (QHINs) for nationwide clinical data exchange when
+it went live in 2023 [@TEFCA2023-common]. Epic's Nexus Health Network, [Health Gorilla](https://www.healthgorilla.com),
 Oracle Health, and a handful of other organizations have received QHIN designation,
 creating for the first time a governed national pipe through which clinical data can flow
 across institutional boundaries.
@@ -287,12 +287,12 @@ from a local training round. A central aggregator combines the updates from mult
 institutions into an improved global model, which is then distributed back to the nodes
 for the next training round. The data never leaves the hospital's firewall.
 
-Production federated learning infrastructure exists in healthcare. The NIH Bridge2AI
+Production federated learning infrastructure exists in healthcare. The NIH [Bridge2AI](https://bridge2ai.org)
 program is developing standardized data and AI-ready infrastructure across four large
 data generation projects, with federated coordination as a design principle
-[@Bridge2AI2023]. The Medical Imaging and Data Resource Center (MIDRC) has used
+[@Bridge2AI2023]. The [Medical Imaging and Data Resource Center](https://www.midrc.org) (MIDRC) has used
 federated learning to validate imaging AI models across multiple institutions without
-centralizing imaging data [@MIDRC2024-federated]. NVIDIA FLARE is the dominant production
+centralizing imaging data [@MIDRC2024-federated]. [NVIDIA FLARE](https://nvflare.ai) is the dominant production
 framework for healthcare federated learning, with documented deployments at major academic
 medical centers.
 

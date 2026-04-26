@@ -193,7 +193,7 @@ need write access to the medication list. An agent that needs to route inbox mes
 not need access to the full longitudinal record.
 
 The technical mechanism for enforcing least-privilege access in the EHR context is the
-SMART on FHIR authorization framework, which supports granular, parameterized access scopes.
+[SMART on FHIR](https://smarthealthit.org) authorization framework, which supports granular, parameterized access scopes.
 Rather than granting an agent broad access to a patient record, the institution can specify
 that the agent may read specific resource types (e.g., Observation, Condition) for specific
 patients, during specific session windows. The agent cannot read or write outside that

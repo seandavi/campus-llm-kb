@@ -208,8 +208,8 @@ govern it, and where do institutions most commonly stumble?
 
 The most widely deployed category of clinical AI at AMCs is now ambient documentation —
 AI systems that listen to the clinical encounter, generate a draft clinical note, and return
-it to the clinician for review and attestation. Abridge, Microsoft DAX (Dragon Ambient
-eXperience), Nabla Copilot, and Suki are the leading commercial systems; Epic has introduced
+it to the clinician for review and attestation. [Abridge](https://www.abridge.com), [Microsoft DAX](https://www.nuance.com/healthcare/ambient-clinical-intelligence.html) (Dragon Ambient
+eXperience), [Nabla](https://www.nabla.com), and [Suki](https://www.suki.ai) are the leading commercial systems; [Epic](https://www.epic.com) has introduced
 native ambient documentation for institutions already on its platform.
 
 The evidence that ambient systems reduce documentation time is now substantial. Tierney and

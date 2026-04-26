@@ -92,7 +92,7 @@ outputs that are logged and reviewed but never shown to clinicians. This period 
 the model against the clinical environment's actual patient population and workflow before
 any outputs influence clinical decisions.
 
-The DECIDE-AI reporting guidelines for early-stage AI pilots give this process a formal
+The [DECIDE-AI](https://www.decide-ai.org/) reporting guidelines for early-stage AI pilots give this process a formal
 structure: pre-registered primary endpoints, prospective design, and monitoring for
 unexpected harms [@Vasey2022-decideai]. The framework shifts the evaluation focus away
 from aggregate accuracy metrics — "area under the curve" — toward how the model actually
@@ -142,7 +142,7 @@ limitations — are increasingly required as part of IRB submissions for AI-assi
 research, and requiring them is one concrete way the institution operationalizes the
 transparency principle from @sec-values [@Mitchell2019-modelcards].
 
-The research domain also requires attention to the human authorship question. The ICMJE
+The research domain also requires attention to the human authorship question. The [ICMJE](https://www.icmje.org)
 standards state clearly that AI systems cannot be listed as authors, and that authors
 are responsible for the integrity of AI-assisted content, including any errors or
 fabrications introduced by AI tools. The implementation guidance here is straightforward
@@ -185,7 +185,7 @@ as clinical deployment: a named owner, documented validation, and monitoring for
 that extend beyond throughput metrics. An automated prior authorization tool that
 systematically denies certain patient populations at higher rates is not an efficiency
 tool. It is a Section 1557 compliance problem. An AI-assisted hiring screening tool is
-subject to NYC Local Law 144's independent bias audit requirement if it is used for
+subject to [NYC Local Law 144](https://www.nyc.gov/site/dca/about/automated-employment-decision-tools.page)'s independent bias audit requirement if it is used for
 employment decisions in New York. Accountability structures in business operations AI
 are less visible than in clinical AI, but they are no less real.
 

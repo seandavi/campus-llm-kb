@@ -33,9 +33,9 @@ The consistent finding across surveys of patient attitudes toward AI in healthca
 trust is lower than many technology optimists assume, and more variable across demographic
 groups than most institutional communications acknowledge.
 
-Pew Research surveys on AI in healthcare have found that most U.S. adults are
+[Pew Research](https://www.pewresearch.org) surveys on AI in healthcare have found that most U.S. adults are
 uncomfortable with their provider relying on AI for their medical care, and that the large
-majority would prefer a human provider when it comes to accuracy-sensitive decisions. The
+majority would prefer a human provider when it comes to accuracy-sensitive decisions [@Pew2023-aihealth]. The
 discomfort is not evenly distributed: younger adults, higher-income adults, and those with
 more experience using digital health tools consistently report more comfort with AI-assisted
 care than older adults, lower-income adults, and those with less digital access.
@@ -178,7 +178,7 @@ bodies distinct from standard patient advisory boards, with a specific mandate t
 on AI tool selection, deployment, and oversight. The Vanderbilt University Medical Center's
 ADVANCE Center created an AI Patient and Family Advisory Group that participates in
 "red-teaming" AI tools during the ideation phase — reviewing tools for potential biases and
-unintended consequences before they reach the pilot stage. The Digital Medicine Society
+unintended consequences before they reach the pilot stage. The [Digital Medicine Society](https://www.dimesociety.org)
 sets engagement with patients as active partners on AI governance bodies as the gold standard
 for AI program maturity.
 

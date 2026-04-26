@@ -38,7 +38,7 @@ management resources away from patients who needed them more.
 The finding was not that the algorithm was malicious. It was that the algorithm was
 trained on data that encoded an existing inequity, using a proxy variable that faithfully
 reproduced that inequity at scale. The authors estimated the bias caused the algorithm to
-miss 43% of high-risk Black patients compared to a race-neutral approach. Subsequent work
+miss 43% of high-risk Black patients compared to a race-neutral approach [@Obermeyer2019-bias]. Subsequent work
 has documented similar patterns in algorithms for kidney disease (using race as a correction
 factor), cardiac risk assessment, and dermatology imaging models [@Zack2024-gpt4bias].
 
@@ -68,7 +68,7 @@ diverse populations should treat demographic data quality as an AI readiness iss
 return on investment for improving race, ethnicity, and language data completeness comes
 precisely when the institution needs to assess whether its AI tools are performing equitably.
 
-The FUTURE-AI principles for trustworthy AI in medical imaging establish fairness as one
+The [FUTURE-AI](https://future-ai.eu/) principles for trustworthy AI in medical imaging establish fairness as one
 of six foundational requirements, alongside universality, traceability, usability,
 robustness, and explainability [@FUTURE-AI2022]. These principles map to operational
 AMC practices: fairness requires subgroup performance evaluation; traceability requires
@@ -191,8 +191,8 @@ human review in post-acute care — with the automation of denial decisions stru
 make human review functionally impossible at the volumes the AI generated
 [@SenateHSGAC2024-MAdenials].
 
-The ProPublica investigation into Cigna's PxDx system described physicians reviewing AI-
-generated denial recommendations at a rate of 1.2 seconds per claim. That is not human-
+The [ProPublica](https://www.propublica.org) investigation into Cigna's PxDx system described physicians reviewing AI-
+generated denial recommendations at a rate of 1.2 seconds per claim [@ProPublica2023-cigna]. That is not human-
 in-the-loop review. It is human-in-the-loop theater. For an AMC that uses AI-assisted
 prior authorization or utilization management tools, the governance question is not whether
 those tools carry demographic bias — they almost certainly do, to some degree — but whether
@@ -282,7 +282,7 @@ how they affect care decisions, community engagement in AI governance processes,
 audit process that reports findings publicly, and a willingness to suspend tools that
 produce harm even when the RO business case for them is positive.
 
-The Coalition for Health AI's 2024 patient trust survey found that 51 percent of patients
+The [Coalition for Health AI](https://www.coalitionforhealthai.org)'s 2024 patient trust survey found that 51 percent of patients
 reported trusting healthcare less due to AI, but 80 percent said their trust would increase
 if they knew who was accountable for the AI's decisions and that training on those
 decisions was documented [@CHAI2024-trust]. The accountability and training documentation

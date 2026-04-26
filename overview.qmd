@@ -8,10 +8,10 @@ At most academic medical centers right now, AI is being deployed faster than the
 governance structures meant to oversee it. The 2025 CHIME/Censinet survey found that
 84 percent of U.S. health systems have some form of AI steering committee — but only
 10 percent maintain an automated inventory of which AI tools are actually running in
-clinical environments. The committee exists. The operational visibility does not.
+clinical environments [@CHIME2025-censinet]. The committee exists. The operational visibility does not.
 
 That gap is not a small administrative oversight. Ambient documentation tools are now
-used by more than 600,000 clinicians across U.S. health systems. Epic has embedded
+used by more than 600,000 clinicians across U.S. health systems. [Epic](https://www.epic.com) has embedded
 AI across the clinical workflow at thousands of hospitals without requiring most of those
 hospitals to make a deliberate procurement decision. Research teams are running
 LLM-assisted literature synthesis, grant applications, and protocol drafts whether
@@ -33,8 +33,8 @@ prediction, sepsis alert systems, radiology AI — but deployment at scale was s
 and required deep integration with clinical informatics teams. The tooling was hard. The
 data pipelines were fragile. Most models never left the institution that built them.
 
-What changed was the API. Starting in 2023, Microsoft Azure OpenAI, AWS Bedrock, and
-Google Vertex AI began offering foundation model access through enterprise APIs with signed
+What changed was the API. Starting in 2023, [Microsoft Azure OpenAI](https://azure.microsoft.com/en-us/products/ai-services/openai-service), [AWS Bedrock](https://aws.amazon.com/bedrock/), and
+[Google Vertex AI](https://cloud.google.com/vertex-ai) began offering foundation model access through enterprise APIs with signed
 Business Associate Agreements, U.S.-only data residency options, and zero-data-retention
 configurations for prompt content. The computational barrier to deploying a capable
 language model collapsed. An AMC with no machine learning infrastructure could connect
@@ -135,7 +135,7 @@ before it consumes governance committee bandwidth.
 These are working models. They are not yet the norm. The same CHIME/Censinet survey that
 found 84 percent of health systems with AI governance committees found that only 59 percent
 have a formal intake process for evaluating new AI tools, and only 10 percent have
-automated inventory of what is actually deployed. The governance aspiration is widespread.
+automated inventory of what is actually deployed [@CHIME2025-censinet]. The governance aspiration is widespread.
 The operational machinery is not.
 
 At the same time, the regulatory environment has moved from guidance to enforcement.

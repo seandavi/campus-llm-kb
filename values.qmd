@@ -81,13 +81,13 @@ available at the point of clinical use.
 
 For AMCs, this regulatory baseline is a floor, not a ceiling. Mitchell and colleagues'
 model card framework — now widely adopted by major AI vendors and required by the
-Coalition for Health AI — defines a similar set of disclosure requirements that apply
+[Coalition for Health AI](https://www.coalitionforhealthai.org) — defines a similar set of disclosure requirements that apply
 to any model, regardless of whether it falls under ONC certification [@Mitchell2019-modelcards].
 An AMC that requires model cards from every vendor providing an AI tool, and publishes
 equivalent documentation for internally developed tools, has operationalized transparency
 in a way that the values statement alone never could.
 
-The transparency principle extends to patients. The WHO ethics guidance on AI for health
+The transparency principle extends to patients. The [WHO](https://www.who.int) ethics guidance on AI for health
 recommends meaningful disclosure to patients about which AI tools are used in their care
 and how those tools affect clinical decisions [@WHO2024-ai-ethics]. California AB 3030
 now requires disclosure on AI-generated patient communications. The operational mechanism
