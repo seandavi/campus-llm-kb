@@ -36,4 +36,4 @@ This list is adapted from @Badal2023-bt, Table 1.
   * Fairness
   * Dependability
   * Auditability
-  * Knowledge managemen
+  * Knowledge management
