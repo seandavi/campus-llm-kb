@@ -99,10 +99,10 @@ Claude for Enterprise (Anthropic) offers similar data handling commitments and o
 |----------|-----------|----------------|------------------------------|---------------------|----------|
 | Microsoft 365 Copilot | Yes | US available | Yes | Entra ID (SAML/OIDC) | M365-native AMCs |
 | Google Workspace AI | Yes | US available | Yes (Workspace customers) | Google Workspace SSO | Google Workspace AMCs |
-| ChatGPT Enterprise | No | US | Yes | SAML SSO | Non-PHI tasks |
-| Claude Enterprise | Negotiable | US | Yes | SAML/OIDC | Long-context tasks |
+| ChatGPT Enterprise (OpenAI) | Available (2024+) | US | Yes | SAML SSO | PHI-containing workflows with signed BAA |
+| Claude for Enterprise (Anthropic) | Available | US | Yes | SAML/OIDC | Long-context tasks; contract review; policy Q&A |
 
-: Enterprise AI platform comparison on dimensions relevant to AMC deployment. BAA status and data handling commitments should be verified with vendors at time of procurement, as they change frequently. {#tbl-enterprise-platforms}
+: Enterprise AI platform comparison on dimensions relevant to AMC deployment. BAA availability has expanded since 2023; verify current BAA scope, data residency options, and sub-processor disclosures directly with each vendor before deployment involving PHI. {#tbl-enterprise-platforms}
 
 The buy-versus-build question in business operations has a clearer answer than in clinical or research domains. Building a custom large language model for revenue cycle or HR tasks is not a reasonable investment for any AMC. Even fine-tuning an open-weight model on institutional data requires infrastructure, ML engineering capacity, and an ongoing maintenance commitment that very few AMC IT organizations have. The right question is not build-versus-buy, but which enterprise platform to configure and how deeply to integrate it into existing workflows. The exception is retrieval-augmented generation (RAG) over internal document repositories — this is closer to configuration than model development, it runs on commodity infrastructure, and it produces meaningful value for internal policy Q&A, contract search, and HR knowledge bases.
 

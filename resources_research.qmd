@@ -105,6 +105,8 @@ Fourth, **genomic and genetic data** is subject to additional constraints — th
 
 The infrastructure conclusion from this framework is that the research enterprise needs institutional API access to a language model that operates within an enterprise tenant with BAA, not just general permission to use consumer tools. This is a capital and contract decision that should go through the AI Steering Committee, not an investigator-by-investigator determination.
 
+A distinct data governance issue that has emerged from NIH's 2023 Data Management and Sharing Policy is how model weights and training datasets from AI research projects are treated as "scientific data" subject to sharing requirements. The 2025 NIH guidance on AI-derived genomic data specifically designates trained models as data derivatives subject to the same controlled-access restrictions as the underlying genomic data. The practical implications — what must be shared, what may be shared, and what cannot be shared under DMS obligations — are addressed in @sec-data.
+
 @fig-research-lifecycle illustrates the full research lifecycle with AI tool availability and constraints annotated at each stage.
 
 ```{mermaid}

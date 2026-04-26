@@ -66,9 +66,9 @@ The implication for medical education is not that the boards are irrelevant but 
 
 ## AI Literacy as Curriculum {#sec-education-literacy}
 
-The question of what medical students should know about AI was the subject of a foundational 2020 paper by McCoy et al. in *npj Digital Medicine* [@McCoy2020-ai-literacy]. Their argument — that medical students need literacy in AI as users and evaluators rather than as developers — remains the right framework. The specific competencies have been elaborated since then.
+The question of what medical students should know about AI was the subject of a foundational 2020 paper by McCoy et al. in *npj Digital Medicine* [@McCoy2020-ai-literacy]. Their argument — that medical students need literacy in AI as users and evaluators rather than as developers — remains the right framework. The specific competencies have been elaborated since then, and as of 2025 the question has moved from "should we teach this?" to "what exactly are we required to teach and how do we demonstrate compliance?"
 
-The AAMC published principles for responsible AI use in medical education in 2024, emphasizing equity, human-centered values, and faculty development as institutional responsibilities. The American Medical Informatics Association has proposed a competency framework for health professionals that distinguishes among AI consumers (who use AI tools in clinical work), AI translators (who evaluate AI tools and advocate for appropriate use), and AI developers (who build and validate AI systems) [@AMIA2024-competencies].
+The AAMC's 2025 AI Competencies Across the Learning Continuum, developed through a formal Delphi process involving medical educators across the country, provides a national standard for AI competency across undergraduate, graduate, and continuing medical education [@AAMC2025-competencies]. The ACGME's July 2025 Common Program Requirements include explicit provisions on human-AI teamwork and require residency programs to have institutional policies on AI use — the first time ACGME has required programs to govern AI specifically [@ACGME2025-CPR]. Programs without documented AI governance are out of compliance starting with the 2025 to 2026 accreditation year. The American Medical Informatics Association has proposed a competency framework for health professionals that distinguishes among AI consumers (who use AI tools in clinical work), AI translators (who evaluate AI tools and advocate for appropriate use), and AI developers (who build and validate AI systems) [@AMIA2024-competencies].
 
 The consumer/translator/developer distinction is useful for curriculum design because it implies that different learners need different things. Every medical student needs consumer-level AI literacy: how to evaluate AI-generated clinical information, how to recognize hallucinations and errors, how to document AI use in clinical settings, and how to have an informed conversation with a patient about AI's role in their care. Only some students will become translators or developers, and the curriculum should not require developer-level technical knowledge of everyone.
 
@@ -80,10 +80,12 @@ What this means concretely: a required AI literacy module in medical school shou
 |-----------|-------------|------|-----------------|---------------|
 | AI Literacy for Medical Students | McCoy et al., *npj Digital Med* | 2020 | Medical students | Evaluation, bias, communication |
 | Principles for Responsible AI Use | AAMC | 2024 | Medical educators | Faculty development, equity |
+| AI Competencies Across the Learning Continuum | AAMC | 2025 | UME/GME/CME programs | National standard; Delphi-developed competency set |
 | AI Competencies for Health Professionals | AMIA | 2024 | Health professionals | Consumer/translator/developer tiers |
+| Common Program Requirements (AI provisions) | ACGME | 2025 | Residency programs | Human-AI teamwork; institutional AI policies required |
 | Preparing Clinicians for AI | James, Wachter, & Woolliscroft, *JAMA* | 2022 | All clinicians | Reasoning under AI uncertainty |
 
-: Major AI literacy competency frameworks for health professions education, with target audience and emphasis. Educators should check each organization's current guidance, as frameworks are actively being revised. {#tbl-ed-literacy-frameworks}
+: Major AI literacy competency frameworks for health professions education, with target audience and emphasis. The 2025 AAMC and ACGME entries reflect requirements that became effective for the 2025–2026 academic year; programs should verify current language directly with each organization. {#tbl-ed-literacy-frameworks}
 
 ## Institutional Policies: What Has Actually Been Published {#sec-education-policies}
 
