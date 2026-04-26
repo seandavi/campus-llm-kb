@@ -1,83 +1,172 @@
-# Values and Principles
+---
+date: last-modified
+---
 
-While there are many potential applications for LLMs in healthcare, the
-following guiding principles should be considered when developing and deploying
-LLMs in the academic hospital system. Note that these principles largely apply
-to any Artificial Intelligence or Machine Learning applications in use on the
-campus.
+# Values and Principles {#sec-values}
 
-## Vision Statement
+Every AMC that has published an AI governance framework lists roughly the same values:
+patient safety, equity, transparency, accountability, privacy, and human oversight. The
+lists are not wrong. They are also not differentiating. The meaningful question is not
+which values an institution holds — that convergence is real and appropriate — but whether
+those values are encoded in governance structures that make them operational, or whether
+they remain aspirational statements that authorize AI deployments without constraining
+them.
 
-* LLMs must be used in a manner consistent with the mission, vision, and values
-  of the academic hospital system. 
+This distinction matters because value statements are not self-enforcing. An institution
+can publish a principle of "transparency" and simultaneously deploy clinical AI tools with
+no documentation of training data provenance, no disclosure to clinicians of the model's
+known limitations, and no audit trail connecting AI outputs to clinical decisions. The
+principle is present. The operational mechanism that would give it meaning is not. The
+chapters that follow this one are primarily about the mechanisms. This chapter is about
+why the principles matter and how peer institutions have translated them into governance
+practice.
 
-* The use of LLMs must align with relevant legal and regulatory requirements,
-  including but not limited to data privacy, security, and intellectual
-  property laws. 
+## Patient Safety and the Primacy of Clinical Judgment
 
-* The deployment of LLMs should prioritize patient safety, privacy, and
-  wellbeing. 
+Patient safety is the foundational principle in clinical AI governance, and it is the one
+most at risk of being treated as self-evident when it requires active structural support.
+The automation complacency literature documents consistently that clinicians who work with
+accurate AI tools gradually reduce their independent scrutiny of AI outputs — not through
+carelessness but through rational adaptation to an environment where the tool is usually
+right [@Parasuraman2010-automation]. The risk is not that clinicians distrust AI. It is
+that they come to trust it in ways that bypass the critical evaluation the technology
+requires.
 
-* LLMs must be used in a transparent manner, with users understanding the
-  capabilities and limitations of the technology. 
+Patient safety as an operational governance principle means two specific things. First,
+every deployed clinical AI tool requires an explicit human oversight architecture: who
+reviews AI outputs, under what conditions, with what documentation requirements, and what
+happens when the tool is wrong. This is not a policy preference. It is the design
+constraint that determines whether a deployment is safe. Second, training programs for
+clinicians using AI tools should include explicit instruction on the specific failure modes
+of each tool they use, not just its aggregate accuracy. A physician who knows that ambient
+documentation tools are more likely to omit negative findings than to hallucinate positive
+ones is a better human-in-the-loop than one who knows only that the tool achieves
+high average accuracy.
 
-* Continuous improvement and evaluation of LLM usage should be prioritized to
-  ensure ongoing alignment with organizational goals. 
+## Equity as Performance Requirement
 
-## Stakeholder Considerations 
+Equity is the principle that most AMC AI governance programs acknowledge and fewest
+operationalize. The acknowledgment is easy: any institutional AI values statement will
+include language about not exacerbating health disparities. The operationalization requires
+something specific: demographic stratification of performance metrics as a standard
+component of AI validation, not an optional audit.
 
-### Patients 
+The Obermeyer 2019 demonstration that a widely deployed risk stratification algorithm
+systematically underestimated the health needs of Black patients was not a finding about
+a biased algorithm [@Obermeyer2019-bias]. It was a finding about a technically correct
+algorithm that encoded an existing inequity by using healthcare utilization as a proxy
+for health need. The algorithm did exactly what it was designed to do. The design was
+the problem. Catching this kind of structural inequity before deployment requires
+stratified performance analysis across race, ethnicity, age, insurance status, and
+language as a baseline requirement — not a step that happens if someone raises a concern.
 
-* LLMs should be used to augment patient care and improve outcomes, without
-  replacing the human touch and empathy of healthcare providers. 
+Badal and colleagues proposed a framework that frames alleviation of health disparities
+as the first principle of responsible clinical AI, not a supplementary consideration
+[@Badal2023-bt]. In practice, this means that a model achieving 85 percent accuracy
+overall but 70 percent accuracy for the subpopulation with the highest disease burden
+is not a high-performing model. It performs best for the patients who need it least. The
+equity audit process described in @sec-ethics-start is the operational mechanism for
+this principle. Without that audit, equity is a value statement, not a program element.
 
-* Patients must be informed about the use of LLMs in their care, and they
-  should have the option to opt out if desired. 
+## Transparency: From Principle to Attribute List
 
-* Patient data used in LLM applications must be anonymized, encrypted, and
-  securely stored to protect patient privacy. 
+Transparency is now a regulatory requirement, not just an ethical aspiration. The ONC
+Health Data, Technology, and Interoperability rule requires EHR vendors to surface
+31 structured source attributes for every certified AI-enabled clinical decision support
+intervention [@ONC2024-hti1]. Those attributes include training data sources and date
+ranges, performance characteristics on the populations validated, known limitations and
+failure modes, instructions for appropriate use, and update history. This is what
+operationalized transparency looks like: a specific list of information that must be
+available at the point of clinical use.
 
-### Healthcare Providers 
+For AMCs, this regulatory baseline is a floor, not a ceiling. Mitchell and colleagues'
+model card framework — now widely adopted by major AI vendors and required by the
+Coalition for Health AI — defines a similar set of disclosure requirements that apply
+to any model, regardless of whether it falls under ONC certification [@Mitchell2019-modelcards].
+An AMC that requires model cards from every vendor providing an AI tool, and publishes
+equivalent documentation for internally developed tools, has operationalized transparency
+in a way that the values statement alone never could.
 
-* LLMs should be deployed to enhance clinical decision-making and efficiency
-  without undermining the autonomy and expertise of healthcare providers. 
+The transparency principle extends to patients. The WHO ethics guidance on AI for health
+recommends meaningful disclosure to patients about which AI tools are used in their care
+and how those tools affect clinical decisions [@WHO2024-ai-ethics]. California AB 3030
+now requires disclosure on AI-generated patient communications. The operational mechanism
+here is the consent architecture described in @sec-ethics: an institutional policy on
+when and how patients are informed about clinical AI use, not a case-by-case determination
+left to individual clinicians.
 
-* Adequate training and support should be provided to healthcare providers to
-  ensure proper use and understanding of LLMs. 
+## Human Oversight and the Agentic Threshold
 
-* Feedback from healthcare providers must be regularly solicited to improve LLM
-  performance and usability. 
+Human oversight has become more complicated as AI has become more agentic. When the
+tool is advisory — an AI recommends, a clinician decides — the oversight model is
+relatively straightforward. As AI tools gain the ability to take autonomous actions —
+ordering tests, routing referrals, updating records, communicating with patients — the
+oversight architecture requires more specific design. Who reviews autonomous AI actions?
+How quickly must review occur to be meaningful? What actions require pre-authorization
+rather than post-hoc review? These questions are addressed specifically in @sec-agentic-safety;
+the relevant principle here is that human oversight is not a passive condition but an
+active design requirement that must be specified for each tool's risk profile and autonomy level.
 
-### Researchers 
+## Accountability: The Structural Turn
 
-* The use of LLMs in research must adhere to ethical standards, including
-  obtaining informed consent and minimizing potential harm. 
+Accountability in AI governance is structural, not individual. An ambient documentation
+system that produces inaccurate notes fails not because the clinician was careless in
+attestation — though the attestation does carry professional accountability — but because
+the deployment decision did not include adequate validation of the tool in the clinical
+context, the training program did not adequately prepare clinicians to recognize the
+tool's specific failure modes, and the monitoring system did not detect the pattern of
+errors before it became a patient safety event. Individual accountability is real. It is
+also insufficient as an accountability framework for tools that operate at scale across
+thousands of encounters.
 
-* Collaboration between researchers and LLM developers should be encouraged to
-  drive innovation and address specific research needs. 
+The structural accountability mechanisms in this book are: the stage-gate governance
+process in @sec-pm-support that requires documented validation before tools influence
+clinical decisions; the equity audit requirement in @sec-ethics that creates an
+institutional record of what was known about demographic performance before deployment;
+the total product lifecycle monitoring in @sec-pm-support that creates ongoing visibility
+into whether deployed tools are performing as validated; and the board-level reporting
+requirement in @sec-regulatory-start that makes AI governance visible at the level of
+institutional accountability where it ultimately resides.
 
-* Research involving LLMs should be transparent and reproducible, with results
-  and methodologies made available to the wider scientific community. 
+## How Peer Institutions Have Operationalized These Principles
 
-### Administrators and Support Staff 
+The convergence of leading AMC AI governance programs on similar structures is itself
+informative. Duke Health's Algorithm-Based Clinical Decision Support framework treats
+every deployed algorithm as a clinical asset with a named clinical owner, a named
+technical owner, a mandatory silent evaluation phase before any tool influences clinical
+decisions, and a registry that maintains continuous visibility into the deployed portfolio
+[@Bedoya2022-abcds]. The registry — a simple idea that turns out to be operationally
+significant — is what makes the 10 percent automated inventory figure so striking. Most
+institutions that have AI governance committees do not have the basic visibility into
+their own environment that accountability requires.
 
-* LLMs should be deployed in administrative and support functions to improve
-  efficiency, reduce costs, and enhance the overall quality of service. 
+UCSF's Trustworthy AI playbook grounds its six principles in mandatory checkpoints at
+three points in the deployment lifecycle: before a tool accesses data, before a tool
+enters a pilot, and before a tool reaches enterprise scale. The checkpoint structure
+converts principles into decision gates. A tool does not advance through the lifecycle
+by meeting soft criteria; it advances by clearing documented requirements that are
+enforced by the governance committee.
 
-* Staff should receive appropriate training and support to understand and
-  utilize LLMs effectively. 
+Vanderbilt's AVAIL program requires every AI tool to pass through a REDCap-based intake
+process before it reaches the governance committee's attention. The intake triage is itself
+a governance mechanism: it ensures that every tool is assessed against a consistent set
+of criteria before institutional resources are committed to evaluation, and it builds the
+documented record that the annual impact assessment requirements of Colorado SB 24-205
+and the equity audit requirements of HHS Section 1557 ultimately require.
 
-* Employee feedback should be actively sought to identify areas of improvement
-  and potential new applications for LLMs. 
+| Principle | Regulatory Mechanism | Operational Mechanism | Chapter |
+|---|---|---|---|
+| Safety | CMS MA rule: AI cannot substitute for human clinical review | Human oversight architecture, specific failure mode training | @sec-clinical, @sec-wellness |
+| Equity | HHS Section 1557: no discriminatory patient care tools | Stratified performance validation, demographic drift monitoring | @sec-ethics |
+| Transparency | ONC HTI-1: 31 source attributes for certified DSIs | Model card requirement at intake, institutional disclosure policy | @sec-data, @sec-pm-support |
+| Human oversight | FDA PCCP: human oversight for adaptive AI devices | HITL checkpoints, override documentation | @sec-agentic-safety |
+| Accountability | Colorado SB 24-205: annual impact assessments | Stage-gate governance, board reporting | @sec-pm-support, @sec-regulatory |
+| Privacy | HIPAA BAA + zero-data-retention provisions | Data classification framework, honest broker function | @sec-data |
 
-## Monitoring and Compliance 
+: Governance principles mapped to regulatory requirements and operational mechanisms. The mechanism column is the bridge between aspiration and program. {#tbl-principles-mechanisms}
 
-* A designated LLM Steering Committee, comprising representatives from various
-  stakeholder groups, will be responsible for monitoring and enforcing
-  compliance with this policy. 
-
-* Periodic audits and assessments will be conducted to ensure adherence to this
-  policy and identify areas for improvement. 
-
-* Policy violations may result in disciplinary action, up to and including
-  termination of employment or access to LLMs 
+These examples share a common architecture: principles that are specific enough to be
+falsifiable, checkpoints that create documented records of compliance, and ownership
+structures that ensure someone is accountable for the principle being honored. That
+architecture is what this book is about. The values are the starting point. The mechanisms
+are the work.

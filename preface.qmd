@@ -1,45 +1,48 @@
 # Preface {.unnumbered}
 
-This book is a work in progress. It develops a framework for adopting ChatGPT
-and related tools for the Campus. It is not a complete strategic plan and is not
-meant to be proscriptive. It is meant to help organize and communicate efforts. 
+I started writing this framework in 2023, when the dominant institutional question at most
+academic medical centers was still "should we let people use ChatGPT?" That question has
+been overtaken by events. The question now is how to govern AI programs that are already
+real, already large, and already affecting patients, trainees, researchers, and staff in
+ways that most institutions do not yet fully see.
 
-The key component of the framework, in my opinion, is the recognition that, while the 
-campus is a single entity, it is composed of four relatively distinct "Domains" that
-each have their own needs, requirements, resources, and priorities. The four domains 
-that I have identified are:
+This book grew out of a working document — an attempt to organize the range of AI-related
+decisions an AMC has to make into something coherent enough to act on. It is not a
+strategic plan, and it is not meant to be prescriptive. Every institution has different
+constraints, different governance history, and different places where the technology has
+already landed. What I hope to offer is a framework flexible enough to be useful across
+those differences.
 
-* Education
-* Research
-* Business operations
-* Clinical
+The central structural insight, and the one I keep returning to, is that an AMC is not
+a single AI deployment environment. It is four. Clinical care, research, education, and
+business operations each have different risk profiles, different regulatory obligations,
+different definitions of success, and different leadership structures. A governance program
+that treats them as a single domain will either be so restrictive that the research
+and education communities route around it, or so permissive that clinical AI gets
+deployed without the oversight patient safety requires. The domain structure in this
+framework is an attempt to hold that complexity without collapsing it.
 
-The framework is based on the idea that each of these domains has a different
-set of needs and requirements, and that the campus should develop plans and implementations 
-that are tailored to each domain. The framework includes a set of "principles" that
-should be applied to each domain, and a set of "strategies" that should be applied
-to each domain. The principles and strategies are not meant to be proscriptive, but
-rather to provide guidance and a framework for thinking about how to approach each
-domain.
+Across all four domains, the same five operational questions recur. Who can access what
+data and under what conditions? What technical infrastructure and security controls are
+required? What are the ethical and regulatory obligations? How does the institution build
+and sustain the workforce capacity to use AI responsibly? And who manages the program
+across its full lifecycle, from the first intake request to eventual decommissioning?
+These are the workstreams — the horizontal dimension of the framework — and they are
+where most of the practical governance work actually lives.
 
-The framework is also based on the idea that the campus should adopt a "platform"
-approach to the development of tools and services. I have included the "platform"
-concept as a set of identifiable cross-domain workstreams. 
+The chapters that have grown up around this framework are substantially more detailed than
+the working document I started with, and they reflect a lot of thinking from peer
+institutions, published governance frameworks, and the accumulating evidence on what
+makes clinical AI deployments succeed and fail. I have tried to be honest about what
+is well-established and what is still contested, and to flag where the regulatory
+landscape is still moving.
 
-I also note that this framework is not meant to be a "top-down" approach. Rather,
-it is meant to be a "bottom-up" approach that is driven by the needs of the
-individual domains. The framework is meant to provide a common language and
-common set of tools that can be used to develop solutions that meet the needs
-of the individual domains and the campus as a whole.
+This is a living document. The regulatory environment described in the governance chapter
+will continue to change. The AI tools described in the domain chapters will be superseded.
+The governance programs at peer institutions will evolve. The version you are reading is
+as current as it was when it was last revised — the date at the top of each chapter is
+your guide to how much that should concern you.
 
-The framework is also meant to be a living document. It is meant to be updated
-and revised as new information becomes available and as new needs and requirements
-are identified. Progress on the framework should be tracked and reported on a
-regular basis.
-
-Finally, this framework can form the basis for adoption of any AI (or even other
-technology) on campus. It is not specific to ChatGPT, though I have found that 
-approaching frameworks with concrete examples is key to success. In that regard,
-time invested in creating robust processes for ChatGPT will pay dividends in
-the future as other AI technologies are adopted.
-
+If something in here is wrong, or if your institution has found a better approach, I would
+genuinely like to know. The point is not to be right on paper. The point is to help
+institutions govern AI programs that are already real.

@@ -1,111 +1,256 @@
 ---
-author: 
-   - "Sean Davis"
-   - "Stefan Lindegaard"
-date: "2023-05-11"
+date: last-modified
 ---
 
-# Domain Implementation Guide
+# Domain Implementation Guide {#sec-implementation}
 
-Each Domain will work to meet the needs of the campus that align with its
-community membership and mission. This section provides a rough guide (adapted
-from @lindegaard-vb)  to implementing a LLM plan within the Domains. Each
-Domain can work through this guide to develop policies, plans, resources, and
-deliverables. The combination of cross-domain Workstreams and reporting to the
-AISC will help to align resource requests and facilitate knowledge sharing,
-management, and transfer.
+When we talk about implementing a new technology in an academic medical center, we default
+to the language of the IT rollout: go-live dates, user provisioning, help desk tickets.
+We treat the software as a finished object that needs to be deposited into the workflow,
+like furniture moved into an office. This mental model works reasonably well for a word
+processor, where the utility is clear and the risks of failure are largely individual.
+It fails completely for large language models. In two decades of building data
+infrastructure for these institutions, I have found that the technology is almost never
+the bottleneck. The bottleneck is the social and professional fabric of the hospital
+itself.
 
-## Suggested Tasks
+Implementing a language model is not a technological event; it is a sociotechnical
+negotiation. We are asking highly trained professionals to cede some portion of their
+cognitive labor to a system that is probabilistic, occasionally wrong, and often opaque
+about why it is wrong. If you come from a technical background, this looks like an
+optimization problem. If you come from the clinical side, it looks like a liability
+problem. Bridging that gap requires moving beyond generic change management checklists
+and toward a domain-specific understanding of how work actually happens in an AMC.
 
-### Establish Ownership Leadership
+## The Domain Divergence
 
-Assign a Domain leader and convene a Domain Working Group (represented in blue
-boxes in @fig-framework) as the driving force behind ChatGPT implementation.
-This leader and Working Group members need to become proficient in the
-technology and subsequently guide the organization through the process of
-integration. This includes setting the vision, aligning key stakeholders, and
-ensuring that the implementation aligns with the organization's strategic
-goals.
+There is no generic AI implementation in an academic medical center. The needs of a
+surgeon managing a complex case have almost nothing in common with the needs of a research
+coordinator managing a multi-center trial, or a dean of students worried about the
+integrity of a medical school exam. Each domain operates under different constraints,
+follows a different regulatory cadence, and answers to different stakeholders. When we
+force a one-size-fits-all implementation strategy on these groups, we end up with tools
+that are technically functional but socially rejected.
 
-In practice, this Domain leader will be the primary point of contact for the
-AISC and will be responsible for reporting on the Domain's progress and
-deliverables. The Domain leader will also be responsible for convening the
-Domain Working Group and ensuring that the Domain's Workstreams are
-progressing.
+In the clinical domain, the primary constraint is patient safety and clinician liability.
+Every implementation step is filtered through those questions. The research domain cares
+most about integrity and data provenance — a researcher may accept a slower tool if it
+guarantees auditability and reproducibility. In education, the implementation must focus
+on literacy and assessment validity; a tool that inadvertently replaces student reasoning
+with AI reasoning defeats the educational purpose. Business operations is driven by
+efficiency and the complex choreography of payer-provider relationships, with success
+measured in clicks saved and denial rates reduced.
 
+| Characteristic | Clinical | Research | Education | Business Ops |
+|---|---|---|---|---|
+| Primary value | Patient safety | Scientific integrity | Academic growth | Operational efficiency |
+| Primary risk | Diagnostic error / liability | Data provenance / IRB | Competency loss | Financial leakage |
+| Key stakeholder | CMO / CMIO | IRB / VP Research | Dean | CFO |
+| Regulatory lead | FDA, Joint Commission | OHRP, NIH | LCME, accreditors | CMS, payers |
+| Success metric | Outcomes, time savings | Publication quality | Student performance | Margin, throughput |
 
-### Lean Into Cross-functional Collaboration
+: Domain implementation characteristics across the AMC. Each column represents a distinct deployment context with different risk profiles and accountability structures. {#tbl-domain-implementation}
 
-Form a cross-functional team with representatives from HR, IT, Legal, and other
-relevant departments to ensure that various perspectives are considered, and
-organizational needs are met during ChatGPT implementation. This collaboration
-will help address potential challenges, optimize resources, and facilitate
-effective knowledge transfer across the organization.
+Acknowledging these differences is the prerequisite for a successful deployment. I have
+watched well-funded projects die because the technical team argued for efficiency to a
+department chair who was worried about liability. You have to speak the language of the
+domain you are entering. If you are in the clinic, quantify the integration tax and what
+the tool will actually save. If you are in the research office, explain the audit trail.
 
-### Educate Leadership Teams
+## Normalization, Not Installation
 
-Keep leadership teams informed about ChatGPT to
-   enable swift, informed decision-making. Offer workshops and seminars to
-   provide an in-depth understanding of the technology, its potential benefits,
-   and its limitations. This empowers them to make quick, informed decisions
-   that will shape the organization's adoption and use of the technology.
+To understand why some implementations stick and others disappear after the pilot phase,
+it helps to move beyond "adoption" and toward "embedding." Normalization Process Theory
+asks how a new practice becomes a normal part of daily work — not just something people
+are required to use, but something they use without thinking about it, the way they use
+their email.
 
-### Identify Potential Use Cases
+The theory describes four constructs that matter for this process. Coherence — does the
+clinician understand what the model is doing, or does it feel like a black box? If they
+cannot form a mental model of when the system is likely to fail, they will not trust it
+appropriately. Cognitive participation — who decides to engage with the change, and who
+has the social capital to bring their colleagues along? This is not accomplished by memo;
+it requires finding the influential people in a department and getting them genuinely
+invested. Collective action — the actual day-to-day work of using the tool, including
+the hidden labor (double-checking outputs, mapping data between systems) that project
+plans routinely underestimate. And reflexive monitoring — the ongoing organizational
+process of checking whether the tool is doing what it was supposed to do, whether its
+outputs still reflect current clinical practice, and whether its errors are accumulating
+in ways that require attention [@Finlayson2021-shift].
 
-Map potential applications across all
-   functions and establish a cohesive implementation plan. Conduct thorough
-   analyses of business processes and functions to identify areas where ChatGPT
-   can bring significant value, prioritize these use cases, and create a
-   detailed roadmap for implementation, including timelines and milestones.
+The value of this framework is that it focuses implementation planning on the social work
+rather than the technical work. The technical configuration of an API gateway takes weeks.
+Building genuine cognitive participation among skeptical clinicians takes months. Planning
+for the slower process is the difference between a successful deployment and a successful
+pilot that no one uses six months later.
 
-### Craft a Communication Strategy
+## The Clinical Domain: Safety as the Primary Constraint
 
-Develop a comprehensive communication
-   strategy that addresses employee concerns and questions about the
-   implementation of ChatGPT. This approach should be transparent, informative,
-   and reassuring to ensure a smooth transition. It should also highlight the
-   benefits of the technology and address potential misconceptions.
+In the clinical world, implementation must begin with a period of silent or shadow
+deployment. The tool runs in the background, consuming real patient data and generating
+outputs that are logged and reviewed but never shown to clinicians. This period validates
+the model against the clinical environment's actual patient population and workflow before
+any outputs influence clinical decisions.
 
-### Prepare and Integrate High-Value Proprietary Datasets
+The DECIDE-AI reporting guidelines for early-stage AI pilots give this process a formal
+structure: pre-registered primary endpoints, prospective design, and monitoring for
+unexpected harms [@Vasey2022-decideai]. The framework shifts the evaluation focus away
+from aggregate accuracy metrics — "area under the curve" — toward how the model actually
+changes clinician behavior when it is present. A model that is 95 percent accurate but
+whose alerts are ignored 90 percent of the time has not been implemented; it has been
+deployed and ignored [@Wong2021-esm].
 
-Build APIs and interfaces to combine
-   ChatGPT with organization-specific data for improved innovation and
-   efficiency. Invest in the development of custom solutions that seamlessly
-   integrate ChatGPT with existing systems, databases, and workflows to fully
-   harness the potential of the technology.
+The Duke Health Sepsis Watch deployment remains the most thoroughly documented example
+of this staged approach [@Sendak2020-sepsis]. The team did not simply deploy a model —
+they spent months in shadow mode, involved nurses in interface design, and built a
+dedicated rapid-response workflow around the model's outputs. The technical performance
+was validated, but the implementation was designed around the social and operational
+reality of the units where it was deployed. That is the difference between a peer-reviewed
+model and a working clinical tool.
 
-### Create Employee Training and Support
+```{mermaid}
+%%| label: fig-implementation-lifecycle
+%%| fig-cap: "Domain-specific staged deployment lifecycle. Most implementations fail at the transition from champion pilot to enterprise integration — the gate where integration tax and workflow friction become visible at scale."
+flowchart TD
+    A([Use Case\nIdentification]) --> B[Feasibility\nand Bias Audit]
+    B --> C{Governance\nGate}
+    C -->|Approved| D[Silent / Shadow\nDeployment]
+    C -->|Rejected| A
+    D --> E[Technical Validation\nand Calibration]
+    E --> F[Champion\nPilot]
+    F --> G{Scale\nDecision}
+    G -->|Pass| H[Enterprise\nIntegration]
+    G -->|Fail| D
+    H --> I[Reflexive\nMonitoring]
+    I --> J[Drift\nDetection]
+```
 
-Provide comprehensive training programs that laverage publicly available
-content where possible for employees to effectively use ChatGPT in their daily
-work. Offer hands-on workshops, e-learning modules, and on-the-job training to
-equip employees with the skills and knowledge necessary to use ChatGPT
-effectively. Provide ongoing support and resources to help employees adapt to
-the new technology and address any challenges they may face.
+## The Research Domain: Integrity Before Efficiency
 
-### Monitor Progress and Impact
+Implementation in the research domain is governed by the IRB and by the demands of data
+provenance. A researcher may be willing to accept a slower, more cumbersome tool if it
+guarantees that the data remains auditable and the results are reproducible. For someone
+coming from the clinical side, the data governance overhead of research AI can feel like
+unnecessary friction. In the research world, a single instance of unattributed
+AI-generated content can compromise a career and trigger institutional sanctions.
 
-Regularly assess the performance of
-   ChatGPT within the organization and evaluate its impact on specific use
-   cases. Develop key performance indicators (KPIs) and metrics to track the
-   technology's effectiveness, and use this data to inform future improvements
-   and adaptations.
+The implementation sequence here begins with data provenance mapping: where is the data
+coming from, where is it stored, who has access to the model outputs, and what is the
+audit trail connecting AI outputs to final research products. Model cards — the structured
+disclosure format defining training data, performance characteristics, and known
+limitations — are increasingly required as part of IRB submissions for AI-assisted
+research, and requiring them is one concrete way the institution operationalizes the
+transparency principle from @sec-values [@Mitchell2019-modelcards].
 
-### Develop Continuous Improvement and Adaptation
+The research domain also requires attention to the human authorship question. The ICMJE
+standards state clearly that AI systems cannot be listed as authors, and that authors
+are responsible for the integrity of AI-assisted content, including any errors or
+fabrications introduced by AI tools. The implementation guidance here is straightforward
+but requires explicit communication: researchers using AI for analysis, writing, or
+literature synthesis are responsible for verifying AI-generated content to the same
+standard as any other source.
 
-Stay current with AI advancements
-   and adapt ChatGPT implementation to maximize benefits. The AI landscape is
-   constantly evolving, and it's crucial to stay up-to-date with advancements
-   in the field. Continuously evaluate the performance of ChatGPT and be
-   prepared to adapt its implementation to maximize its benefits and stay ahead
-   of the competition.
+## The Education Domain: Literacy as a Prerequisite
 
-### Recognize, Document, and Build Processes to Address Ethical Considerations
+The education domain presents an implementation challenge that has no parallel in the
+others: if the faculty responsible for teaching and assessing students do not understand
+how AI tools work and where they fail, they cannot design valid assessments, evaluate
+AI-assisted student work, or teach the AI literacy that accreditation bodies are beginning
+to require.
 
-Develop guidelines for responsible use and educate
-    employees on potential risks and challenges of AI technologies like
-    ChatGPT. Be mindful of the ethical implications of using AI-powered
-    technologies. Develop guidelines and best practices for responsible use,
-    and ensure that employees understand the potential risks and challenges
-    associated with AI, such as algorithmic bias or unintended consequences.
+Implementation in this domain must therefore begin with faculty development, not student-
+facing tools. Faculty development for AI does not require every professor to become a
+machine learning specialist. It requires that they understand the specific capabilities
+and failure modes of the tools their students have access to, and that they can redesign
+assessments to test for reasoning processes that AI cannot easily replicate. An assessment
+that can be completed by copy-pasting a prompt into a language model is not testing what
+it claims to test, regardless of whether the student was authorized to use AI.
 
+The workforce chapter (@sec-workforce) addresses the faculty development gap in detail.
+For implementation planning, the relevant point is sequencing: student-facing AI tools
+are appropriate to deploy after, not before, faculty have the literacy to evaluate their
+outputs and design around their capabilities.
+
+## The Business Operations Domain: Efficiency With Accountability
+
+Business operations is often the most ready for AI deployment and the most susceptible
+to the assumption that efficiency benefits are self-justifying. Revenue cycle management,
+scheduling optimization, and administrative documentation are legitimate and high-value
+AI use cases. They are also use cases where error consequences — incorrect billing codes,
+compliance violations, employment decisions driven by flawed algorithmic screening — can
+be significant and are sometimes invisible until they accumulate.
+
+Implementation in the business operations domain requires the same governance structure
+as clinical deployment: a named owner, documented validation, and monitoring for outcomes
+that extend beyond throughput metrics. An automated prior authorization tool that
+systematically denies certain patient populations at higher rates is not an efficiency
+tool. It is a Section 1557 compliance problem. An AI-assisted hiring screening tool is
+subject to NYC Local Law 144's independent bias audit requirement if it is used for
+employment decisions in New York. Accountability structures in business operations AI
+are less visible than in clinical AI, but they are no less real.
+
+## The Champion Infrastructure
+
+Every implementation, regardless of domain, depends on champions — people with the social
+capital and genuine engagement to lead their peers through the discomfort of adopting a
+new practice. The most effective champions are often not the most technically enthusiastic
+people in a department. The most effective champions are people who were initially
+skeptical and changed their minds based on evidence. Their skepticism makes them credible.
+When a skeptic says the tool saved them time, their colleagues listen in a way they would
+not listen to an early enthusiast.
+
+Building a champion infrastructure means two things beyond identifying willing volunteers.
+First, protected time: champions who are expected to lead AI adoption in addition to a
+full clinical or research schedule will burn out or quietly deprioritize the role. One
+to two hours per week of protected time for the champion function is not generous; it is
+the minimum investment required for the role to be sustainable. Second, a community of
+practice that connects champions across domains and service lines, giving them a venue
+to share what is working, flag emerging problems, and develop the translator skills that
+allow them to bridge between clinical reality and informatics infrastructure.
+
+The champion program starter project in @sec-workforce-start describes the specific
+structure; the point here is that champion capacity is not a soft governance element. It
+is the primary mechanism through which governance reaches the point of care.
+
+## Where to Start {#sec-implementation-start}
+
+### Starter Project 1: Domain Implementation Roadmap
+
+Select one specific use case — a clinical documentation tool, a research literature
+synthesis tool, or a scheduling optimization tool — and walk it through the staged
+lifecycle in @fig-implementation-lifecycle. Do not try to solve the whole institution
+at once. Pick a single department with a motivated leader, run the shadow deployment
+phase, document the integration tax, and complete a champion pilot with pre-registered
+success metrics. The roadmap you produce from this exercise, including what broke and
+what was harder than expected, becomes the institution's deployment playbook for the
+next tool.
+
+**Why now:** The first implementation is always the most instructive. Every subsequent
+deployment benefits from having lived through the gap between a governance framework on
+paper and a governance framework tested against a real vendor, a real EHR integration,
+and real clinicians who have other things to do.
+
+**Buy vs. build:** Process design and documentation work. The shadow deployment requires
+access to production data under governance approval; the infrastructure for logging model
+outputs against clinical outcomes may require a modest analytics build, but the governance
+process itself is documentation and meeting time.
+
+### Starter Project 2: Clinician Champion Cohort
+
+Identify five to ten clinicians across departments who have expressed interest in AI and
+form a structured champion cohort. Provide focused AI literacy training, but spend the
+majority of cohort time on workflow analysis: where would AI realistically help, and where
+would it be a distraction or a safety risk? The cohort's assessments of specific tools
+under consideration — grounded in their own domain expertise — give governance decisions
+a clinical reality check that vendor performance data and literature reviews cannot provide.
+
+**Why now:** Champion capacity needs to be built before it is urgently needed. An AMC
+that trains its first cohort while a pilot is already in crisis is late. An AMC that
+builds champion capacity as standing infrastructure can evaluate new tools, support
+ongoing deployments, and surface governance concerns from the frontline on an ongoing
+basis.
+
+**Buy vs. build:** Curriculum and facilitation. The AAMC and AMA have both published
+AI literacy curricula that can be adapted without building from scratch. The cohort
+structure itself — protected time, community of practice, reporting relationship to the
+AISC — is a governance design and budget decision, not a technology purchase.
