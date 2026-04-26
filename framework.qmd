@@ -129,17 +129,17 @@ in practice.
 ```{mermaid}
 %%| label: fig-framework-architecture
 %%| fig-cap: "The AMC AI governance framework. Domains (columns) maintain semi-independent deployment authority. Workstreams (rows) are shared capabilities governed centrally. The AISC provides portfolio oversight and accountability above both dimensions."
-graph TD
-    AISC[AI Steering Committee] --> D1 & D2 & D3 & D4
+flowchart TD
+    AISC[AI Steering Committee]
 
-    subgraph Domains
+    subgraph Domains[Domains]
         D1[Clinical]
         D2[Research]
         D3[Education]
         D4[Business Ops]
     end
 
-    subgraph Workstreams
+    subgraph Workstreams[Workstreams]
         W1[Data & Governance]
         W2[IT & Infrastructure]
         W3[Ethics & ELSI]
@@ -147,10 +147,9 @@ graph TD
         W5[PM & Support]
     end
 
-    W1 & W2 & W3 & W4 & W5 --> D1
-    W1 & W2 & W3 & W4 & W5 --> D2
-    W1 & W2 & W3 & W4 & W5 --> D3
-    W1 & W2 & W3 & W4 & W5 --> D4
+    AISC --> Domains
+    AISC --> Workstreams
+    Workstreams -->|cross-cutting| Domains
 ```
 
 The AISC is what makes the matrix function as a governance program rather than a
