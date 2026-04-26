@@ -1,1 +1,394 @@
-# Project Management and Support Resources
+---
+date: last-modified
+---
+
+# Project Management and AI Portfolio Governance {#sec-pm-support}
+
+The most common failure mode in AMC AI programs is not technical. It is organizational.
+Across health systems that have published candid accounts of AI implementation, the
+recurring pattern is a graveyard of pilots: technically sound models that achieved strong
+performance on held-out test sets and then stalled or failed at the point of clinical
+deployment. The failures trace not to the models but to the institutional machinery around
+them — absent ownership, underfunded maintenance, clinicians who were not consulted during
+development, and a go-live event that mistook deployment for done.
+
+Avoiding this pattern requires treating the AI program as a portfolio management function,
+not a series of one-off projects. The difference is not semantic. A portfolio function has
+a governing body with the authority and budget to prioritize, fund, and terminate projects.
+It has a standardized intake process that evaluates every proposal against a consistent set
+of criteria before committing resources. It has stage gates that require rigorous validation
+before any tool influences a clinical decision. And it has a post-deployment infrastructure
+that treats every deployed tool as a living clinical asset requiring continuous monitoring,
+calibration, and eventual decommissioning. This chapter describes what that machinery looks
+like at an AMC that has built it.
+
+## The AISC as Portfolio Manager
+
+In most AMCs, the AI Steering Committee begins as a governance and review body: a committee
+that meets monthly to evaluate proposals, review vendor contracts, and oversee compliance
+with the policies described in @sec-regulatory and @sec-ethics. This is a necessary starting
+point. It is not a sufficient end state.
+
+The AISC that drives sustainable AI adoption has evolved beyond the ethics-review model into
+an active portfolio manager — an executive body with four specific powers that passive review
+committees lack. First, it holds and allocates a central AI portfolio budget, distinct from
+individual department IT budgets, that can fund feasibility work, shadow deployments, and
+pilot infrastructure without requiring each sponsoring department to independently fund the
+technical overhead. Second, it maintains an actively managed project registry that tracks
+every AI tool from initial proposal through deployment and eventual decommission, creating
+the institutional memory that prevents the same failed vendor from being re-proposed three
+years later by a department that was not involved in the original evaluation. Third, it has
+the authority to terminate: a project that fails its stage-gate review or underperforms in
+post-deployment monitoring can be decommissioned without requiring the originating
+department's agreement. Fourth, it produces a quarterly portfolio report to the executive
+team and an annual report to the board — described in @sec-regulatory-start — that makes
+the institution's AI risk posture visible at the level of governance where accountability
+actually resides.
+
+The AISC chair is typically the CMIO, supported by the CIO for infrastructure decisions,
+the CISO for security review, and General Counsel for regulatory and liability matters.
+Clinical representation — department chairs or their designees in the service lines with
+the highest AI deployment density — ensures that portfolio decisions are grounded in
+operational reality rather than purely in technical or financial criteria. The ethics,
+workforce, and patient engagement leads described throughout this book should have standing
+membership or reporting relationships to the AISC, because the decisions made at the
+portfolio level are the ones that determine whether the governance commitments in individual
+chapters are real or theoretical.
+
+## The Intake Engine: Triage Before Resource Commitment
+
+The intake process is the first gate in the AI portfolio — the point at which the institution
+decides whether a proposed tool or project is worth the structured evaluation that follows.
+Getting it right is operationally significant: at a mid-sized AMC, the volume of AI proposals
+— from departments evaluating vendor products, from researchers seeking approval for
+LLM-assisted analysis, from clinical informatics fellows with internal development ideas —
+can easily exceed the AISC's evaluation capacity if there is no pre-screening step.
+
+A mature intake process has three components. The first is a structured intake form that
+captures what the AISC needs to assess strategic fit and risk tier without yet committing
+to a full evaluation. Minimum required fields include: the clinical or operational problem
+being addressed, the proposed tool or approach (vendor product, internal build, or academic
+partnership), the data types that will be used, the patient population affected, the
+anticipated volume of AI-influenced decisions per month, the sponsoring department and named
+champion, and a preliminary assessment of whether the tool meets the ONC definition of a
+Decision Support Intervention under HTI-1 [@ONC2024-hti1]. The DSI classification field
+matters because it triggers vendor transparency obligations that the institution can enforce
+at procurement rather than discovering post-deployment.
+
+The second component is a rapid risk-tier assignment — a structured screen that places each
+proposal in one of three tiers based on patient safety exposure, regulatory classification,
+and data sensitivity. Tier 1 covers administrative and operational tools that do not directly
+influence clinical decisions: scheduling optimization, supply chain AI, administrative
+documentation drafting. Tier 1 proposals can proceed to vendor evaluation or internal
+development with AISC notification but without full committee review. Tier 2 covers clinical
+decision support tools that influence but do not automate clinical decisions, and research
+tools processing de-identified data. Tier 2 proposals require full AISC evaluation. Tier 3
+covers tools that directly influence high-stakes clinical decisions, tools processing
+restricted data, and any tool that qualifies as Software as a Medical Device under FDA
+regulations. Tier 3 proposals require a dedicated risk assessment with legal, CISO, and
+clinical leadership sign-off before advancing to stage-gate.
+
+The third component is a vendor Model Card requirement for any Tier 2 or Tier 3 commercial
+product. Mitchell and colleagues' model card framework — now widely adopted by major AI
+vendors — specifies a standardized format for reporting training data sources, performance
+across demographic subgroups, intended and out-of-scope uses, and known limitations
+[@Mitchell2019-modelcards]. The Coalition for Health AI (CHAI) has adapted this format for
+clinical AI, adding performance reporting requirements specific to healthcare regulatory
+standards. Requiring a model card at intake catches a substantial fraction of vendor
+governance gaps before the institution has committed to a procurement process.
+
+| Intake Field | Purpose | Required Tier |
+|---|---|---|
+| Problem statement and clinical need | Validates that AI is the right solution | All |
+| Proposed tool and development path | Buy/build/connect assessment | All |
+| Data types and regulatory classification | HIPAA, FERPA, Common Rule scoping | All |
+| Patient population and decision volume | Risk exposure quantification | All |
+| Named champion and department sponsor | Ownership accountability | All |
+| DSI classification assessment | ONC HTI-1 compliance trigger | 2–3 |
+| Model card or equivalent | Vendor transparency verification | 2–3 |
+| Equity impact pre-assessment | Section 1557 compliance baseline | 2–3 |
+| FDA SaMD classification | Regulatory pathway determination | 3 |
+| Preliminary IRB assessment | Research use determination | 3 |
+
+: AMC AI project intake checklist, tiered by risk. The named champion field is required at all tiers because absence of a named owner predicts deployment failure regardless of technical quality. {#tbl-intake-checklist}
+
+## Stage-Gate Discipline: From Ideation to Scale
+
+The clinical trial phase model is the correct analogy for AI deployment in a clinical
+institution. A compound that passes safety screens in preclinical work is not approved for
+patient use; it proceeds through Phase I, II, and III trials with pre-registered hypotheses,
+independent monitoring, and pre-defined stopping rules. An AI tool that performs well on a
+held-out test set has cleared the equivalent of a preclinical screen. Deploying it directly
+to clinical use without a supervised piloting phase is the equivalent of moving from animal
+testing to widespread patient administration.
+
+The DECIDE-AI reporting guidelines for early-stage clinical evaluation of AI decision support
+systems — developed by a multinational consensus group and published in Nature Medicine —
+define the specific requirements for pilot evaluation that parallel Phase I and Phase II
+trial standards: prospective design, pre-registered primary endpoints, independent oversight,
+and monitoring for unexpected harms [@Vasey2022-decideai]. The stage-gate model
+operationalizes these requirements within the AMC portfolio management process.
+
+```{mermaid}
+%%| label: fig-stage-gate
+%%| fig-cap: "AMC AI project stage-gate model. Each gate requires documented evidence before the project advances. A failed gate triggers remediation or termination, not automatic recycling. The monitoring loop reflects the continuous nature of post-deployment governance."
+flowchart LR
+    A([Intake\nProposal]) -->|Gate 1:\nStrategic fit\nRisk tier| B[Feasibility\nReview]
+    B -->|Gate 2:\nBusiness case\nModel card| C[Shadow\nDeployment]
+    C -->|Gate 3:\nSafety review\nEquity audit| D[Clinical\nPilot]
+    D -->|Gate 4:\nScale approval\nIntegration tax| E[Enterprise\nDeployment]
+    E --> F[Continuous\nMonitoring]
+    F -->|Drift detected| G{Remediate\nor Retire?}
+    G -->|Remediate| C
+    G -->|Retire| H([Decommission\nRegistry])
+```
+
+Shadow deployment — sometimes called dry-run or silent-mode — is the stage that most AMC
+AI programs skip and that most AMC AI failures trace to. In a shadow deployment, the tool
+runs in parallel with existing clinical workflows, generating outputs that are logged and
+reviewed but not presented to clinicians or integrated into clinical decisions. The shadow
+period generates evidence that no test set evaluation can provide: performance in the actual
+clinical environment (not the curated dataset), the distribution of cases on which the tool
+is invoked (which may differ significantly from the training distribution), and early signals
+of demographic performance disparities.
+
+The Duke Health Sepsis Watch program, one of the most extensively documented clinical AI
+implementations in the peer-reviewed literature, ran a multi-year shadow deployment before
+the tool influenced clinical decisions — and the shadow period identified operational
+patterns that required significant model recalibration before live use was safe
+[@Sendak2020-sepsis]. The lesson is not that every deployment requires two years of shadow
+testing; it is that the shadow duration should be calibrated to the tool's risk tier, the
+stability of the clinical environment, and what the shadow data reveal, rather than
+compressed by deployment pressure from executive sponsors.
+
+Gate 3 — the transition from shadow deployment to clinical pilot — is the highest-stakes
+gate in the model. It requires a documented safety review that includes the equity audit
+described in @sec-ethics-start, a simulation exercise in which clinicians walk through the
+tool's failure modes with the clinical informatics team, and a formal AISC vote. The
+pre-registered primary endpoints for the pilot — the metrics that will determine whether
+the tool advances to enterprise deployment or returns to remediation — must be locked before
+Gate 3. Post-hoc success criteria are a governance failure.
+
+## The Integration Tax and Pilot Design
+
+A clinical AI pilot whose primary outcome is model accuracy is measuring the wrong thing.
+By Gate 3, model accuracy should already be established — that is the purpose of the shadow
+deployment and feasibility review. The clinical pilot's primary purpose is to measure impact:
+on clinical workflow, on clinician cognitive load, on the specific patient outcomes the tool
+was designed to improve, and on the demographic equity of those outcomes across the patient
+population served.
+
+The integration tax concept captures a specific and pervasive failure mode: a tool that is
+technically accurate but operationally burdensome enough that clinicians develop workarounds,
+ignore alerts, or route around the tool entirely. The literature on alert fatigue in clinical
+decision support systems documents this pattern in detail — tools that generate high volumes
+of low-specificity alerts are overridden at rates exceeding ninety percent, creating an alert
+environment in which genuine high-priority warnings are indistinguishable from background
+noise [@Parasuraman2010-automation]. An AI tool that adds net cognitive load without
+proportional clinical value carries a negative integration tax even when its model metrics
+are strong.
+
+Pilot design for integration tax measurement requires instrumentation at the workflow level,
+not just the model output level. The relevant metrics are: time-to-decision for clinical tasks
+the tool is designed to support, alert override rates and override documentation quality,
+workflow steps added versus removed by the tool, and clinician-reported experience using
+validated instruments. The pilot should also measure non-use: what fraction of target patient
+encounters result in the tool being invoked, and what fraction of invocations are dismissed
+without substantive review. A tool with a forty-percent non-use rate at pilot is not ready
+for enterprise deployment regardless of its performance on the cases where it was used.
+
+The integration tax calculation does not end at go-live. Tools that appear workflow-neutral
+during a short pilot can accumulate friction over time as edge cases multiply, as the tool's
+outputs diverge from evolving clinical practice, and as initial novelty wears off and
+interaction behavior reverts to pre-tool patterns. The monitoring infrastructure described
+in the next section should include workflow metrics alongside performance metrics to detect
+the gradual accumulation of integration tax that often precedes tool abandonment.
+
+## The Total Product Lifecycle
+
+The go-live event is not the end of the AI project management process. It is the transition
+from pre-deployment governance to post-deployment governance — a shift that requires dedicated
+infrastructure and defined responsibilities that are distinct from the team that built or
+procured the tool.
+
+The Total Product Lifecycle concept holds that every deployed tool requires ongoing monitoring
+for three categories of change that can degrade its performance without any modification to
+the tool itself. The first is dataset shift: changes in the clinical environment that alter
+the statistical distribution of inputs the model receives. Finlayson and colleagues documented
+how protocol changes and coding practice shifts during the COVID-19 pandemic caused multiple
+deployed models to systematically underperform, with no change to the models themselves —
+the clinical context had shifted in ways the models' training data did not anticipate
+[@Finlayson2021-shift]. The second is population shift: demographic changes in the patient
+population served that move it away from the population on which the model was validated.
+The third is protocol shift: changes in clinical guidelines or institutional protocols that
+alter the clinical context within which the tool's outputs are interpreted.
+
+Post-deployment monitoring requires three institutional commitments. First, a monitoring
+cadence: scheduled performance reviews at defined intervals — monthly for Tier 3 tools,
+quarterly for Tier 2 — that compare current performance metrics against the validation
+benchmark established at Gate 3. Second, a drift detection mechanism: an automated alert
+when model performance drops below a pre-defined threshold, triggering escalation to the
+AISC rather than waiting for the next scheduled review. Third, a model update protocol: a
+defined process for requesting and evaluating vendor model updates, aligned with the PCCP
+provisions described in @sec-regulatory, that treats an unannounced model update as a
+safety event requiring the same Gate 3 review process as a new tool deployment.
+
+For internally developed tools, total product lifecycle management also requires a
+decommissioning protocol: a defined process for retiring a tool when monitoring finds that
+it no longer meets safety or effectiveness standards, or when a superior tool is available.
+Decommissioning is systematically neglected in AMC AI programs, resulting in registries that
+grow without pruning and an operational environment in which clinicians are exposed to tools
+of varying and undocumented performance quality [@Mitchell2019-modelcards]. The stage-gate
+model's decommission branch — Gate 4's failure path — is only actionable if someone is
+assigned to act on it.
+
+## New Human Infrastructure: Architects and Champions
+
+The institutional roles that make AI portfolio governance operational are not adequately
+described by existing job classifications in most AMCs. Two roles represent genuinely new
+professional functions rather than extensions of existing IT or clinical informatics positions.
+
+The AI Solution Architect is the technical-organizational bridge between the platform
+infrastructure described in @sec-infrastructure and the clinical departments deploying AI
+tools. The role requires fluency in both directions: deep enough technical knowledge to
+evaluate model performance, design RAG pipelines, configure API gateway access controls, and
+read FHIR resource specifications, and deep enough clinical knowledge to translate between
+algorithm behavior and clinical workflow implications. This combination is rare; most AMCs
+will need to develop it through structured training of existing clinical informatics staff
+rather than recruiting for it from the general technology market.
+
+The Solution Architect's responsibilities include: technical review of vendor model cards at
+intake, shadow deployment instrumentation and monitoring, performance dashboard maintenance
+for the deployed portfolio, and first-line response to drift alerts that do not require AISC
+escalation. One architect can realistically support ten to fifteen deployed tools; an AMC with
+a large deployment portfolio may need multiple architects organized by clinical domain. The
+role belongs formally within clinical informatics, not within the general IT department,
+because the primary work — assessing clinical plausibility, understanding workflow context,
+communicating with clinical leadership — requires clinical domain knowledge that a general
+infrastructure team does not provide.
+
+The Clinician AI Champion, introduced in @sec-workforce, has a specific portfolio management
+function that complements the Solution Architect's technical role. Champions are the primary
+mechanism through which the AISC receives frontline intelligence about tool performance,
+workflow integration problems, and safety concerns that would not be visible in dashboard
+metrics alone. A tool that is technically performing within normal parameters but is being
+systematically misused because clinicians misunderstand its output format is a safety risk
+that dashboard monitoring will not detect — but a well-connected champion in the department
+will. The champion's dual reporting relationship — to the department for operational matters
+and to the AISC for governance matters — creates the bidirectional communication channel
+that connects governance to point-of-care reality.
+
+| Decision | AISC Chair | CISO | Legal | Clinical Lead | Solution Architect |
+|---|---|---|---|---|---|
+| Approve vendor contract | A | C | R | C | C |
+| Advance project past Gate 3 | A | C | C | R | C |
+| Declare AI safety incident | A | R | C | C | I |
+| Authorize shadow deployment | R | C | I | C | A |
+| Retire deployed tool | A | I | C | C | R |
+| Approve model update | R | C | C | C | A |
+
+: RACI matrix for AMC AI portfolio governance decisions. R = Responsible (does the work), A = Accountable (owns the outcome), C = Consulted (provides input), I = Informed (receives notification). The AISC Chair holds Accountable status on the highest-stakes decisions; the Clinical Lead holds Responsible status for the clinical safety gate. {#tbl-raci-matrix}
+
+## Valuing AI: The Return on Health Framework
+
+Traditional IT ROI calculation — cost of implementation divided by projected efficiency
+gains — maps poorly onto clinical AI investments, because the most significant value created
+by clinical AI tools is frequently not captured in direct cost reduction. An ambient
+documentation system that saves a physician forty-five minutes per day does not generate
+direct revenue; it generates reclaimed time that may be applied to additional patient care,
+research, or recovery from the burnout that drives costly physician attrition. A sepsis
+prediction model that identifies cases fourteen hours earlier than clinical suspicion does
+not save costs that appear in a line item; it prevents mortality and complications whose
+downstream costs are measured in readmissions, litigation exposure, and regulatory scrutiny.
+
+The Return on Health framework, developed through collaborative work between the AMA and
+digital health stakeholders, defines six value streams that together constitute a more
+complete accounting of clinical AI investment value. The clinical value stream captures
+direct improvement in patient outcomes — prevented adverse events, reduced diagnostic error
+rates, earlier treatment initiation. The patient value stream captures patient experience,
+engagement, and access. The provider value stream captures clinician time, cognitive load,
+and burnout — a driver of physician workforce retention that AMC CFOs increasingly recognize
+as a balance-sheet issue with consequences that dwarf the implementation cost of most AI
+tools. The operational value stream captures workflow efficiency, throughput, and
+administrative cost reduction. The financial value stream captures revenue generation and
+cost avoidance that appear in standard accounting. The equity value stream captures reduction
+in care disparities — a dimension that the HHS Section 1557 regulatory landscape makes
+increasingly difficult to exclude from institutional accountability frameworks.
+
+The Return on Health framework does not resolve the measurement challenge; quantifying equity
+value and burnout prevention in common units with financial return requires methodological
+choices that reasonable analysts will make differently. What it does is force the institution
+to account for the dimensions of value it cares about before committing to the investment,
+rather than discovering post-deployment that the business case was built on metrics that do
+not capture the outcomes the institution actually needs to move. For AMCs with an academic
+mission, a seventh value stream — educational and research value — deserves explicit
+representation: the learning generated from rigorous shadow deployments, from DECIDE-AI-
+compliant pilots, and from post-deployment monitoring constitutes a scholarly asset that
+contributes to the institution's research portfolio and its capacity to train the next
+generation of clinical AI practitioners.
+
+## Where to Start {#sec-pm-start}
+
+### Starter Project 1: Intake Process and Stage-Gate Framework
+
+**What it is:** A formalized AI project intake process — a standardized submission form, a
+risk-tiering protocol, and documented stage-gate criteria — implemented as the mandatory path
+for all new AI tool evaluations, whether vendor procurements or internal builds.
+
+**Why now:** An AMC without a formal intake process is making AI investment decisions based
+on informal advocacy and executive attention rather than structured evidence. The intake
+process is the prerequisite for portfolio management, because you cannot manage a portfolio
+you cannot see. The regulatory pressure from Colorado SB 24-205's annual impact assessment
+requirement and HHS Section 1557's equity audit obligation creates a compliance incentive:
+institutions that begin documenting their evaluation process now will be in a substantially
+better position for the first annual reporting cycle than those that start from scratch when
+the deadline arrives.
+
+**How to execute:** Draft the intake form using the fields in @tbl-intake-checklist.
+Implement it as a REDCap survey or equivalent institutional form routed to the AISC
+administrative coordinator. Define the three risk tiers and the gate criteria in a governance
+document approved by the AISC. Communicate the new process to department chairs and
+informatics leadership with explicit framing that the process is designed to accelerate
+compliant projects, not to create bureaucratic delay. Track the fraction of new AI tool
+introductions that pass through the intake process as a governance metric in the annual
+report.
+
+**Buy vs. build:** Governance design and process work. A REDCap instance or equivalent
+institutional survey tool handles the form; no dedicated software purchase is required.
+Commercial AI governance platforms (Credo AI, OneTrust AI Governance) offer intake workflow
+features that can reduce configuration work for institutions with large portfolios, but the
+policy analysis underlying the tier criteria requires internal governance judgment that no
+platform automates.
+
+### Starter Project 2: Deployed AI Portfolio Dashboard
+
+**What it is:** A centralized monitoring dashboard that tracks performance metrics, usage
+patterns, and drift signals for all Tier 2 and Tier 3 tools currently deployed — the
+operational implementation of the total product lifecycle monitoring described above.
+
+**Why now:** An institution that cannot answer "which AI tools are currently deployed, and
+are they performing within acceptable parameters?" is not meeting its governance obligations
+under the NIST AI RMF's Manage function, the Colorado SB 24-205 impact assessment
+requirement, or the basic standard of care accountability the AMA has articulated for
+AI-assisted clinical practice [@NIST2023-airm; @AMA2024-ai-principles]. The dashboard is
+also the operational foundation for the annual board report described in @sec-regulatory-start:
+without systematically collected performance data, the report is a narrative rather than an
+evidence document.
+
+**How to execute:** Build on the AI tool inventory created in the clinical workstream
+(@sec-clinical-start). For each Tier 2 and Tier 3 tool, define two to four performance
+metrics that can be automatically extracted from existing institutional data — EHR data,
+audit logs, API gateway logs. Configure automated alerts at pre-defined drift thresholds.
+Build a quarterly summary view for AISC review that compares current metrics against the
+baseline established at Gate 3. The dashboard does not require a dedicated analytics
+platform; a structured connection between the API gateway audit logs, the EHR reporting
+infrastructure, and a business intelligence tool the institution already uses is a sufficient
+foundation for most deployed portfolios.
+
+**Buy vs. build:** The analytics infrastructure is primarily a configuration project layered
+on existing institutional systems. Commercial MLOps platforms (Azure AI, Arize AI) offer
+purpose-built model monitoring capabilities that can accelerate the build for institutions
+with active internal AI development programs. For vendor-managed tools, performance
+monitoring obligations should be included in vendor contracts at procurement — with data
+export rights specified — so that vendor-provided metrics can be integrated into the central
+dashboard rather than reviewed only in vendor portals.
