@@ -42,9 +42,29 @@ documents, and institutional primary sources. Cite blogs and vendor pages
 sparingly and only when they are the primary source for a deployment or
 policy.**
 
-**Verify every DOI and URL before listing it.** Do not list a citation you have
-not retrieved. Hallucinated citations are the single worst failure mode for
-this dossier; an empty slot is better than a fabricated one.
+**Citation discipline — two tiers:**
+
+*Tier 1 — sources you can retrieve and verify directly:* Web pages, regulatory
+documents (FDA guidance, ONC final rules, CMS memos), institutional policy
+documents, professional-society statements, and news articles. For these,
+provide a full citation with a live URL or DOI you have actually opened and
+confirmed resolves to the correct document.
+
+*Tier 2 — peer-reviewed biomedical or informatics papers:* Do NOT attempt to
+write a DOI or full bibliographic citation for journal articles. Instead, write
+a placeholder in this exact format:
+
+    [PUBMED-PENDING: Author YYYY — descriptive title — journal name]
+
+Examples:
+    [PUBMED-PENDING: Wong 2021 — Epic Sepsis Model external validation — JAMA Internal Medicine]
+    [PUBMED-PENDING: Sendak 2020 — Sepsis Watch implementation — JMIR Medical Informatics]
+
+The authoring pass will verify these against PubMed and resolve the correct
+DOIs before they enter the bibliography. A placeholder is always better than
+a fabricated DOI. **Never write a DOI for a peer-reviewed paper unless you
+have retrieved the publisher landing page during this session and confirmed
+the DOI resolves.**
 
 ### 4. Candidate figures and tables
 
