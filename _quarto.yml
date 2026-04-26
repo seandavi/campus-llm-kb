@@ -70,11 +70,20 @@ format:
     include-in-header: ga4_code.html
   pdf:
     documentclass: scrreprt
-    include-in-header: 
+    include-in-header:
       text: |
         \usepackage{makeidx}
         \makeindex
-    include-after-body: 
+    include-before-body:
+      text: |
+        \thispagestyle{empty}
+        \begin{center}
+        \vspace*{\fill}
+        \includegraphics[width=\textwidth]{cover.jpg}
+        \vspace*{\fill}
+        \end{center}
+        \clearpage
+    include-after-body:
       text: |
         \printindex
   epub:
