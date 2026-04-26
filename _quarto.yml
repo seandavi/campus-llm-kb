@@ -24,7 +24,7 @@ book:
 
   chapters:
     - preface.qmd
-    - index.qmd
+    - overview.qmd
     - values.qmd
     - part: "Implementation"
       chapters:
