@@ -11,9 +11,9 @@ The workflow proceeded in five phases. @tbl-workflow-phases summarizes them.
 | Phase | Who | What | Output |
 |-------|-----|------|--------|
 | 1. Scaffold | Human author | Built the Quarto book structure, wrote initial chapter drafts, established the domain/workstream framework | Existing `.qmd` files, `_quarto.yml`, `references.bib` |
-| 2. Analysis and planning | Claude Opus 4.7 | Reviewed the repo, identified gaps, wrote a detailed research plan specifying structure, voice, citation standards, and figure requirements | `GEMINI_RESEARCH_PLAN.md` (3,968 words) |
-| 3. Brief writing | Claude Sonnet 4.6 | Wrote per-chapter research briefs specifying the argument arc, source targets, figure sketches, and open questions for each of 11 chapters | 11 briefs in `_research/briefs/` (8,222 words total) |
-| 4. Deep research | Gemini (via CLI) | Executed web-search-backed research for each chapter brief, producing annotated source lists, argument spines, section outlines, and figure sketches | 11 dossiers in `_research/dossiers/` (~18,600 words total) |
+| 2. Analysis and planning | Claude Opus 4.7 | Reviewed the repo, identified gaps, wrote a detailed research plan specifying structure, voice, citation standards, and figure requirements | `_research/MASTER_PROMPT.md` (~500 words) |
+| 3. Brief writing | Claude Sonnet 4.6 | Wrote per-chapter research briefs specifying the argument arc, source targets, figure sketches, and open questions for each of 17 chapters | 17 briefs in `_research/briefs/` (~16,500 words total) |
+| 4. Deep research | Gemini (via CLI) | Executed web-search-backed research for each chapter brief, producing annotated source lists, argument spines, section outlines, and figure sketches | 17 dossiers in `_research/dossiers/` (~30,900 words total) |
 | 5. Authorship | Claude Sonnet 4.6 | Wrote chapter prose from dossiers, verified citations, created Quarto-formatted diagrams and tables, added BibTeX entries | Chapter `.qmd` files, updated `references.bib` |
 
 : The five-phase multi-model authorship workflow. Each phase has a distinct responsible agent and produces a defined artifact. {#tbl-workflow-phases}
@@ -34,7 +34,9 @@ Gemini in autonomous (YOLO) mode also took actions we did not explicitly request
 
 The most consistent failure mode in the research phase was citation hallucination. Gemini's dossiers reliably produced regulatory primary sources (NIST, NIH, FDA, EEOC) with correct URLs, and reliably produced real peer-reviewed papers from high-profile journals with correct DOIs. Where it failed was with newer or more obscure literature: it generated plausible-sounding papers with plausible-sounding DOIs that do not exist. The pattern is recognizable in retrospect — sequential-looking identifiers (`10.1109/COMPUTER.2025.1234567`, `10.5281/zenodo.1234567`), papers from journals that would be unlikely venues for the specific claim, and 2025 publication dates for papers that were too specific to be plausible given the knowledge cutoff.
 
-The authorship phase addresses this by treating every peer-reviewed citation from Gemini dossiers as unverified until confirmed, preferring the regulatory primary sources (which are almost always real), and writing prose around the claim when no verified citation is available rather than citing a hallucinated paper. The BibTeX entries in `references.bib` contain only sources that were either in the original project bibliography, confirmed real by direct URL retrieval, or drawn from prior knowledge with high confidence.
+The structural fix we implemented after discovering fabricated DOIs in early dossiers was a two-tier citation discipline codified in `_research/MASTER_PROMPT.md`. Tier 1 covers sources Gemini can retrieve and verify directly during a session — federal documents, regulatory filings, institutional publications, vendor documentation — and requires a live URL confirmed during the research run. Tier 2 covers peer-reviewed biomedical and informatics papers, and requires only a placeholder in the format `[PUBMED-PENDING: Author YYYY — descriptor — journal]`, with an explicit prohibition on writing any DOI unless the publisher landing page was retrieved during that session. The placeholder system shifted verification responsibility to the authorship phase, where PubMed MCP tools and direct DOI resolution can confirm or reject each citation before it enters `references.bib`. This is not a perfect solution — it requires more authorship-phase work — but it eliminated the most damaging failure mode: a confident, wrong DOI cited in finished prose.
+
+The authorship phase treats every Tier 2 placeholder as unverified until confirmed by direct lookup. The BibTeX entries in `references.bib` contain only sources that were either in the original project bibliography, confirmed real by direct URL or PMID retrieval, or drawn from prior knowledge with high confidence. When no verified citation is available, the prose makes the claim without a citation rather than citing a hallucinated paper.
 
 @tbl-citation-quality summarizes the citation quality we observed across the completed dossiers.
 
@@ -47,9 +49,9 @@ The authorship phase addresses this by treating every peer-reviewed citation fro
 | Vendor documentation | ~70% | URLs often stale or approximate |
 | News/trade press | ~60% | Article may exist but headline or date wrong |
 
-: Observed citation accuracy rates by source type across Gemini research dossiers. Rates are estimates based on spot-checking; not every citation was independently verified. {#tbl-citation-quality}
+: Observed citation accuracy rates by source type across Gemini research dossiers. Rates are estimates based on spot-checking; not every citation was independently verified. The two-tier PUBMED-PENDING discipline was implemented to prevent fabricated Tier 2 citations from reaching `references.bib`. {#tbl-citation-quality}
 
-The practical implication is that Gemini research output should never be committed to a bibliography without verification. The workflow's structure — Gemini produces a dossier, a human or second model verifies citations before incorporating them — is the right one for any research-intensive writing task.
+The practical implication is that Gemini research output should never be committed to a bibliography without verification. The workflow's structure — Gemini produces a dossier with verified Tier 1 sources and placeholders for Tier 2, a human or second model resolves the placeholders — is the right one for any research-intensive writing task.
 
 ## Costs and Volume
 
@@ -57,18 +59,17 @@ The practical implication is that Gemini research output should never be committ
 
 | Artifact | Files | Words | Notes |
 |----------|-------|-------|-------|
-| Research plan (`GEMINI_RESEARCH_PLAN.md`) | 1 | 3,968 | Written by Claude Opus 4.7 |
-| Chapter briefs (`_research/briefs/`) | 11 | 8,222 | Written by Claude Sonnet 4.6 |
-| Research master prompt (`_research/MASTER_PROMPT.md`) | 1 | ~500 | Written by Claude Sonnet 4.6 |
+| Research master prompt (`_research/MASTER_PROMPT.md`) | 1 | ~500 | Written by Claude Sonnet 4.6; two-tier citation discipline codified here |
+| Chapter briefs (`_research/briefs/`) | 17 | ~16,500 | Written by Claude Sonnet 4.6 |
 | Automation script (`scripts/gemini-research.sh`) | 1 | 76 lines | Written by Claude Sonnet 4.6 |
-| Gemini research dossiers (`_research/dossiers/`) | 10 complete, 1 partial | ~18,600 | Produced by Gemini CLI |
-| Chapter drafts (first chapter complete) | 1 complete | 4,333 | Written by Claude Sonnet 4.6 |
-| New BibTeX entries (`references.bib`) | 14 new entries | — | Added during authorship phase |
-| Quarto stub files (Gemini-initiated) | 1 | ~200 | Autonomous action by Gemini |
+| Gemini research dossiers (`_research/dossiers/`) | 17 complete | ~30,900 | Produced by Gemini CLI (sequential runs) |
+| Chapter prose (`.qmd` files) | 17+ | ~22,300 | Written by Claude Sonnet 4.6 |
+| New BibTeX entries (`references.bib`) | 30+ new entries | — | Added during authorship phase; Tier 1 verified, Tier 2 resolved via PubMed |
+| Quarto stub files (Gemini-initiated) | several | ~200 each | Autonomous action by Gemini; accepted and incorporated |
 
-: Artifacts produced by the multi-model workflow as of the end of the first authorship session. {#tbl-workflow-artifacts}
+: Artifacts produced by the multi-model workflow across all authorship sessions. Word counts are approximate; individual chapter and dossier files can be examined in the repository for exact lengths. {#tbl-workflow-artifacts}
 
-The total research and planning effort — phases 2 through 4 — produced approximately 30,000 words of structured inputs for the authorship phase, which in turn produced the first finished chapter (~4,300 words, approximately 8 rendered pages) as its initial output. The ratio of research material to finished prose reflects the verification and synthesis work the authorship phase requires; not all research material makes it into the chapter, and the prose is more compressed than the dossiers.
+The total research and planning effort — phases 2 through 4 — produced approximately 47,400 words of structured inputs for the authorship phase. The authorship phase produces finished chapters of approximately 2,500–4,500 words each, depending on the domain. The ratio of research material to finished prose reflects the verification and synthesis work the authorship phase requires: not all research material makes it into the chapter, the prose is more compressed than the dossiers, and citation verification eliminates a meaningful fraction of the sourced claims.
 
 ## What This Means for AI-Assisted Knowledge Work
 
@@ -76,10 +77,10 @@ This workflow illustrates several things about AI-assisted knowledge work that a
 
 **AI at its most valuable is a research collaborator, not a ghostwriter.** The chapters in this book are not AI-generated prose edited by a human. They are human-structured arguments, grounded in AI-gathered sources, written by a model that was given specific direction about what to argue and how to argue it, and reviewed by a human who can tell when the argument is wrong. The value of the AI is in the research throughput — 18,600 words of sourced, structured research material produced in hours rather than days — not in generating text that the human then accepts.
 
-**The division of labor matters.** Running all 11 Gemini research sessions in parallel caused rate-limiting failures; running them sequentially succeeded. Using Opus for planning and Sonnet for execution reduced cost without sacrificing quality, because the task profiles genuinely differ. These are engineering decisions, not philosophical ones.
+**The division of labor matters.** Running Gemini research sessions in parallel consistently caused rate-limiting failures that produced empty or truncated outputs; running them sequentially, one at a time, succeeded. Using Opus for planning and Sonnet for execution reduced cost without sacrificing quality, because the task profiles genuinely differ. These are engineering decisions, not philosophical ones.
 
 **Autonomy requires clear boundaries.** Gemini in YOLO mode created files and edited configuration — actions that were correct in this case but that could easily have been wrong in a different context. Any workflow that gives an AI agent write access to a production system needs explicit boundaries around what the agent is and is not authorized to change.
 
 **The bottleneck is authorship, not research.** The research phase produced 18,600 words of structured material in approximately four hours of elapsed time (including re-runs for failed dossiers). The authorship phase produces approximately 4,300 words per chapter at higher quality but significantly more elapsed time. At scale, the constraint is the human review step and the authorship pass, not the research. Tools that improve the authorship pass — better citation verification, tighter prose controls — will have a larger impact on throughput than further improvements to the research phase.
 
-**The workflow is reproducible.** The `scripts/gemini-research.sh` wrapper, the `_research/briefs/` input structure, the `_research/MASTER_PROMPT.md` template, and the authorship conventions in `GEMINI_RESEARCH_PLAN.md` are all checked into the repository. Any contributor can run the same workflow for a new chapter or an update pass on an existing chapter. The intellectual bottleneck is writing a good brief; once the brief is right, the research and authorship passes follow a repeatable pattern.
+**The workflow is reproducible.** The `scripts/gemini-research.sh` wrapper, the `_research/briefs/` input structure, and the `_research/MASTER_PROMPT.md` template are all checked into the repository. Any contributor can run the same workflow for a new chapter or an update pass on an existing chapter. The intellectual bottleneck is writing a good brief; once the brief is right, the research and authorship passes follow a repeatable pattern.

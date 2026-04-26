@@ -11,7 +11,7 @@ But there is a second case for clinical AI that rarely receives the same sustain
 attention, and that is the case for what it can do for the people providing care.
 
 Clinician burnout in the United States has reached a level that the U.S. Department of
-Health and Human Services has characterized as a public health threat [@HHS2024-1557]. More
+Health and Human Services has characterized as a public health threat. More
 than half of physicians in some specialties report symptoms of burnout, and the rates among
 nurses and advanced practice providers are comparable. This is not a resilience deficit,
 and it is not a recent development. It is the predictable consequence of a documentation

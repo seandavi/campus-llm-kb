@@ -5,6 +5,7 @@ website:
   google-analytics: "GTM-PZMG5CH7"
 
 book:
+  cover-image: cover.jpg
   title: "Large Language Model Policy and Practice"
   subtitle: "Thoughts and a light framework around Generative AI in an Academic Medical Center"
   #author: "Sean Davis"
