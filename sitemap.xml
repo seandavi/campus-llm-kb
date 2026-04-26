@@ -2,66 +2,110 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://seandavi.github.io/campus-llm-kb/index.html</loc>
-    <lastmod>2023-05-13T17:52:43.010Z</lastmod>
+    <lastmod>2026-04-26T20:01:46.952Z</lastmod>
   </url>
   <url>
-    <loc>https://seandavi.github.io/campus-llm-kb/preface.html</loc>
-    <lastmod>2023-05-14T17:20:36.197Z</lastmod>
+    <loc>https://seandavi.github.io/campus-llm-kb/overview.html</loc>
+    <lastmod>2026-04-26T20:01:46.952Z</lastmod>
   </url>
   <url>
     <loc>https://seandavi.github.io/campus-llm-kb/values.html</loc>
-    <lastmod>2023-05-14T00:48:46.072Z</lastmod>
+    <lastmod>2026-04-26T20:01:46.954Z</lastmod>
   </url>
   <url>
     <loc>https://seandavi.github.io/campus-llm-kb/framework.html</loc>
-    <lastmod>2023-05-14T17:01:45.158Z</lastmod>
+    <lastmod>2026-04-26T20:01:46.952Z</lastmod>
   </url>
   <url>
     <loc>https://seandavi.github.io/campus-llm-kb/implementation.html</loc>
-    <lastmod>2023-05-14T17:38:29.841Z</lastmod>
+    <lastmod>2026-04-26T20:01:46.952Z</lastmod>
   </url>
   <url>
     <loc>https://seandavi.github.io/campus-llm-kb/barriers.html</loc>
-    <lastmod>2023-05-14T17:00:53.562Z</lastmod>
-  </url>
-  <url>
-    <loc>https://seandavi.github.io/campus-llm-kb/resources_clinical.html</loc>
-    <lastmod>2024-02-01T12:32:05.812Z</lastmod>
-  </url>
-  <url>
-    <loc>https://seandavi.github.io/campus-llm-kb/resources_research.html</loc>
-    <lastmod>2023-05-14T02:59:39.232Z</lastmod>
-  </url>
-  <url>
-    <loc>https://seandavi.github.io/campus-llm-kb/resources_education.html</loc>
-    <lastmod>2024-09-30T04:20:48.989Z</lastmod>
-  </url>
-  <url>
-    <loc>https://seandavi.github.io/campus-llm-kb/resources_business.html</loc>
-    <lastmod>2023-05-14T02:57:50.861Z</lastmod>
-  </url>
-  <url>
-    <loc>https://seandavi.github.io/campus-llm-kb/appendices.html</loc>
-    <lastmod>2023-05-14T00:51:52.921Z</lastmod>
-  </url>
-  <url>
-    <loc>https://seandavi.github.io/campus-llm-kb/bill_of_rights.html</loc>
-    <lastmod>2023-05-14T00:54:22.246Z</lastmod>
-  </url>
-  <url>
-    <loc>https://seandavi.github.io/campus-llm-kb/HHS.html</loc>
-    <lastmod>2024-01-26T15:37:45.725Z</lastmod>
+    <lastmod>2026-04-26T20:01:46.946Z</lastmod>
   </url>
   <url>
     <loc>https://seandavi.github.io/campus-llm-kb/domainresource.html</loc>
-    <lastmod>2023-05-14T00:40:47.636Z</lastmod>
+    <lastmod>2026-04-26T20:01:46.952Z</lastmod>
   </url>
   <url>
-    <loc>https://seandavi.github.io/campus-llm-kb/Large-Language-Model-Policy-and-Practice.pdf</loc>
-    <lastmod>2024-09-30T04:28:53.010Z</lastmod>
+    <loc>https://seandavi.github.io/campus-llm-kb/resources_clinical.html</loc>
+    <lastmod>2026-04-26T20:01:46.954Z</lastmod>
   </url>
   <url>
-    <loc>https://seandavi.github.io/campus-llm-kb/Large-Language-Model-Policy-and-Practice.epub</loc>
-    <lastmod>2024-09-30T04:28:54.052Z</lastmod>
+    <loc>https://seandavi.github.io/campus-llm-kb/resources_research.html</loc>
+    <lastmod>2026-04-26T20:01:46.954Z</lastmod>
+  </url>
+  <url>
+    <loc>https://seandavi.github.io/campus-llm-kb/resources_education.html</loc>
+    <lastmod>2026-04-26T20:01:46.954Z</lastmod>
+  </url>
+  <url>
+    <loc>https://seandavi.github.io/campus-llm-kb/resources_business.html</loc>
+    <lastmod>2026-04-26T20:01:46.953Z</lastmod>
+  </url>
+  <url>
+    <loc>https://seandavi.github.io/campus-llm-kb/regulatory_landscape.html</loc>
+    <lastmod>2026-04-26T20:01:46.953Z</lastmod>
+  </url>
+  <url>
+    <loc>https://seandavi.github.io/campus-llm-kb/agentic_safety.html</loc>
+    <lastmod>2026-04-26T20:01:46.946Z</lastmod>
+  </url>
+  <url>
+    <loc>https://seandavi.github.io/campus-llm-kb/patient_trust.html</loc>
+    <lastmod>2026-04-26T20:01:46.953Z</lastmod>
+  </url>
+  <url>
+    <loc>https://seandavi.github.io/campus-llm-kb/professional_wellness.html</loc>
+    <lastmod>2026-04-26T20:01:46.953Z</lastmod>
+  </url>
+  <url>
+    <loc>https://seandavi.github.io/campus-llm-kb/infrastructure.html</loc>
+    <lastmod>2026-04-26T20:01:46.952Z</lastmod>
+  </url>
+  <url>
+    <loc>https://seandavi.github.io/campus-llm-kb/workforce.html</loc>
+    <lastmod>2026-04-26T20:01:46.954Z</lastmod>
+  </url>
+  <url>
+    <loc>https://seandavi.github.io/campus-llm-kb/ethics.html</loc>
+    <lastmod>2026-04-26T20:01:46.952Z</lastmod>
+  </url>
+  <url>
+    <loc>https://seandavi.github.io/campus-llm-kb/data.html</loc>
+    <lastmod>2026-04-26T20:01:46.952Z</lastmod>
+  </url>
+  <url>
+    <loc>https://seandavi.github.io/campus-llm-kb/pm_and_support.html</loc>
+    <lastmod>2026-04-26T20:01:46.953Z</lastmod>
+  </url>
+  <url>
+    <loc>https://seandavi.github.io/campus-llm-kb/appendices.html</loc>
+    <lastmod>2026-04-26T20:01:46.946Z</lastmod>
+  </url>
+  <url>
+    <loc>https://seandavi.github.io/campus-llm-kb/bill_of_rights.html</loc>
+    <lastmod>2026-04-26T20:01:46.946Z</lastmod>
+  </url>
+  <url>
+    <loc>https://seandavi.github.io/campus-llm-kb/HHS.html</loc>
+    <lastmod>2026-04-26T20:01:46.942Z</lastmod>
+  </url>
+  <url>
+    <loc>https://seandavi.github.io/campus-llm-kb/appendix_workflow.html</loc>
+    <lastmod>2026-04-26T20:01:46.946Z</lastmod>
+  </url>
+  <url>
+    <loc>https://seandavi.github.io/campus-llm-kb/references.html</loc>
+    <lastmod>2026-04-26T20:01:46.953Z</lastmod>
+  </url>
+  <url>
+    <loc>https://seandavi.github.io/campus-llm-kb/Implementing-AI-in-Academic-Medicine.pdf</loc>
+    <lastmod>2026-04-26T20:03:34.974Z</lastmod>
+  </url>
+  <url>
+    <loc>https://seandavi.github.io/campus-llm-kb/Implementing-AI-in-Academic-Medicine.epub</loc>
+    <lastmod>2026-04-26T20:03:43.600Z</lastmod>
   </url>
 </urlset>

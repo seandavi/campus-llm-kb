@@ -1,0 +1,1050 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.9.37">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Appendix D — How This Book Was Written: A Multi-Model AI Authorship Workflow – Implementing AI in Academic Medicine</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./references.html" rel="next">
+<link href="./HHS.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-7f8f88aac4f3542376d5c11b86a4c14d.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-36bf55b16c7cb4b1420f41495cb5446a.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+</head>
+
+<body class="nav-sidebar floating nav-fixed quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="./index.html">
+    <span class="navbar-title">Implementing AI in Academic Medicine</span>
+    </a>
+  </div>
+        <div class="quarto-navbar-tools tools-wide tools-end">
+    <a href="https://github.com/seandavi/campus-llm-kb/" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
+    <div class="dropdown">
+      <a href="" title="Download" id="quarto-navigation-tool-dropdown-0" class="quarto-navigation-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false" role="link" aria-label="Download"><i class="bi bi-download"></i></a>
+      <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="quarto-navigation-tool-dropdown-0">
+          <li>
+            <a class="dropdown-item quarto-navbar-tools-item" href="./Implementing-AI-in-Academic-Medicine.pdf">
+              <i class="bi bi-file-pdf pe-1"></i>
+            Download PDF
+            </a>
+          </li>
+          <li>
+            <a class="dropdown-item quarto-navbar-tools-item" href="./Implementing-AI-in-Academic-Medicine.epub">
+              <i class="bi bi-journal pe-1"></i>
+            Download ePub
+            </a>
+          </li>
+      </ul>
+    </div>
+    <div class="dropdown">
+      <a href="" title="Share" id="quarto-navigation-tool-dropdown-1" class="quarto-navigation-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false" role="link" aria-label="Share"><i class="bi bi-share"></i></a>
+      <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="quarto-navigation-tool-dropdown-1">
+          <li>
+            <a class="dropdown-item quarto-navbar-tools-item" href="https://twitter.com/intent/tweet?url=|url|">
+              <i class="bi bi-twitter pe-1"></i>
+            Twitter
+            </a>
+          </li>
+          <li>
+            <a class="dropdown-item quarto-navbar-tools-item" href="https://www.facebook.com/sharer/sharer.php?u=|url|">
+              <i class="bi bi-facebook pe-1"></i>
+            Facebook
+            </a>
+          </li>
+          <li>
+            <a class="dropdown-item quarto-navbar-tools-item" href="https://www.linkedin.com/sharing/share-offsite/?url=|url|">
+              <i class="bi bi-linkedin pe-1"></i>
+            LinkedIn
+            </a>
+          </li>
+      </ul>
+    </div>
+</div>
+          <div id="quarto-search" class="" title="Search"></div>
+      </div> <!-- /container-fluid -->
+    </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./appendices.html">Appendices</a></li><li class="breadcrumb-item"><a href="./appendix_workflow.html"><span class="chapter-number">D</span>&nbsp; <span class="chapter-title">How This Book Was Written: A Multi-Model AI Authorship Workflow</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Preface</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./overview.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Overview</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./values.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Values and Principles</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+ <span class="menu-text">Implementation</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./framework.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">The Framework</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./implementation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Domain Implementation Guide</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./barriers.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Barriers and How to Address Them</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="./domainresource.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Domain Resources</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./resources_clinical.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Clinical Domain</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./resources_research.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Research Domain</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./resources_education.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Education Domain</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./resources_business.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Business Operations</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./regulatory_landscape.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Regulatory and Policy Landscape</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
+ <span class="menu-text">Agentic AI in Practice</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./agentic_safety.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Agentic Safety and Guardrails</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./patient_trust.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Patient and Community Trust</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./professional_wellness.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Professional Wellness and Reducing Cognitive Burden</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true">
+ <span class="menu-text">Workstream Resources</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./infrastructure.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">IT Infrastructure and Security</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./workforce.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Training and Workforce Development</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ethics.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Ethics, Equity, and Institutional Accountability</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./data.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Data Access and Governance</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./pm_and_support.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Project Management and AI Portfolio Governance</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true">
+ <span class="menu-text">Appendices</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./appendices.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">AI principles proposed by select organizations</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./bill_of_rights.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">B</span>&nbsp; <span class="chapter-title">OSTP Blueprint for an AI Bill of Rights</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./HHS.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">C</span>&nbsp; <span class="chapter-title">ONC HTI-1: Algorithm Transparency and Interoperability</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./appendix_workflow.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">D</span>&nbsp; <span class="chapter-title">How This Book Was Written: A Multi-Model AI Authorship Workflow</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./references.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">References</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#the-workflow-in-brief" id="toc-the-workflow-in-brief" class="nav-link active" data-scroll-target="#the-workflow-in-brief"><span class="header-section-number">D.1</span> The Workflow in Brief</a></li>
+  <li><a href="#why-these-tools-in-these-roles" id="toc-why-these-tools-in-these-roles" class="nav-link" data-scroll-target="#why-these-tools-in-these-roles"><span class="header-section-number">D.2</span> Why These Tools in These Roles</a></li>
+  <li><a href="#the-citation-problem" id="toc-the-citation-problem" class="nav-link" data-scroll-target="#the-citation-problem"><span class="header-section-number">D.3</span> The Citation Problem</a></li>
+  <li><a href="#costs-and-volume" id="toc-costs-and-volume" class="nav-link" data-scroll-target="#costs-and-volume"><span class="header-section-number">D.4</span> Costs and Volume</a></li>
+  <li><a href="#the-review-pass" id="toc-the-review-pass" class="nav-link" data-scroll-target="#the-review-pass"><span class="header-section-number">D.5</span> The Review Pass</a></li>
+  <li><a href="#what-this-means-for-ai-assisted-knowledge-work" id="toc-what-this-means-for-ai-assisted-knowledge-work" class="nav-link" data-scroll-target="#what-this-means-for-ai-assisted-knowledge-work"><span class="header-section-number">D.6</span> What This Means for AI-Assisted Knowledge Work</a></li>
+  </ul>
+<div class="toc-actions"><ul><li><a href="https://github.com/seandavi/campus-llm-kb/edit/main/appendix_workflow.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li></ul></div></nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./appendices.html">Appendices</a></li><li class="breadcrumb-item"><a href="./appendix_workflow.html"><span class="chapter-number">D</span>&nbsp; <span class="chapter-title">How This Book Was Written: A Multi-Model AI Authorship Workflow</span></a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title">Appendix D — How This Book Was Written: A Multi-Model AI Authorship Workflow</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p>This appendix documents the workflow used to research and write the chapters of this book. We include it not as a novelty item but because it is itself an instance of the kind of human-AI collaboration the book describes — and because the specific tool choices, failure modes, and tradeoffs we encountered are illustrative of the decisions any organization faces when it tries to use AI for substantive knowledge work.</p>
+<p>The workflow involved four distinct agents with different roles: a human author who owned the intellectual direction, Claude Opus 4.7 as the planning and architectural intelligence, Claude Sonnet 4.6 as the orchestrating author, and Gemini as the research engine. Each played to its comparative advantage, and the division of labor was not arbitrary — it emerged from thinking carefully about what each tool does well and where each fails.</p>
+<section id="the-workflow-in-brief" class="level2" data-number="D.1">
+<h2 data-number="D.1" class="anchored" data-anchor-id="the-workflow-in-brief"><span class="header-section-number">D.1</span> The Workflow in Brief</h2>
+<p>The workflow proceeded in five phases. <a href="#tbl-workflow-phases" class="quarto-xref">Table&nbsp;<span>D.1</span></a> summarizes them.</p>
+<div id="tbl-workflow-phases" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-workflow-phases-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;D.1: The six-phase multi-model authorship workflow. Each phase has a distinct responsible agent and produces a defined artifact.
+</figcaption>
+<div aria-describedby="tbl-workflow-phases-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<table class="caption-top table">
+<colgroup>
+<col style="width: 26%">
+<col style="width: 19%">
+<col style="width: 23%">
+<col style="width: 30%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Phase</th>
+<th>Who</th>
+<th>What</th>
+<th>Output</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1. Scaffold</td>
+<td>Human author</td>
+<td>Built the Quarto book structure, wrote initial chapter drafts, established the domain/workstream framework</td>
+<td>Existing <code>.qmd</code> files, <code>_quarto.yml</code>, <code>references.bib</code></td>
+</tr>
+<tr class="even">
+<td>2. Analysis and planning</td>
+<td>Claude Opus 4.7</td>
+<td>Reviewed the repo, identified gaps, wrote a detailed research plan specifying structure, voice, citation standards, and figure requirements</td>
+<td><code>_research/MASTER_PROMPT.md</code> (~500 words)</td>
+</tr>
+<tr class="odd">
+<td>3. Brief writing</td>
+<td>Claude Sonnet 4.6</td>
+<td>Wrote per-chapter research briefs specifying the argument arc, source targets, figure sketches, and open questions for each of 17 chapters</td>
+<td>17 briefs in <code>_research/briefs/</code> (~16,500 words total)</td>
+</tr>
+<tr class="even">
+<td>4. Deep research</td>
+<td>Gemini (via CLI)</td>
+<td>Executed web-search-backed research for each chapter brief, producing annotated source lists, argument spines, section outlines, and figure sketches</td>
+<td>17 dossiers in <code>_research/dossiers/</code> (~30,900 words total)</td>
+</tr>
+<tr class="odd">
+<td>5. Authorship</td>
+<td>Claude Sonnet 4.6</td>
+<td>Wrote chapter prose from dossiers, verified citations, created Quarto-formatted diagrams and tables, added BibTeX entries</td>
+<td>Chapter <code>.qmd</code> files, updated <code>references.bib</code></td>
+</tr>
+<tr class="even">
+<td>6. Review pass</td>
+<td>Gemini + Claude Sonnet 4.6</td>
+<td>Audited completed chapters for unsupported factual claims and unlinked entities; resolved high-confidence gaps with citations and inline links</td>
+<td>Updated <code>.qmd</code> files, new BibTeX entries, <code>_research/REVIEW_PROMPT.md</code>, <code>_research/review_groups/</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+</figure>
+</div>
+</section>
+<section id="why-these-tools-in-these-roles" class="level2" data-number="D.2">
+<h2 data-number="D.2" class="anchored" data-anchor-id="why-these-tools-in-these-roles"><span class="header-section-number">D.2</span> Why These Tools in These Roles</h2>
+<p>The tool assignments were deliberate.</p>
+<p><strong>Claude Opus 4.7 for planning.</strong> The planning phase required understanding an existing codebase, identifying structural gaps, and writing a specification detailed enough that a separate agent could execute against it without constant supervision. This is closer to architectural reasoning than text generation, and it benefited from Opus’s stronger judgment on ambiguity and its ability to produce a coherent multi-thousand-word specification in a single pass. We used Opus only for the planning phase and switched to Sonnet for execution — the planning phase is the most cognitively expensive, but it is also the one that generates the fewest tokens, so the cost differential is acceptable.</p>
+<p><strong>Gemini for research.</strong> The research phase requires a different capability profile than authorship: breadth over depth, web search over reasoning, high recall over precise citation. Gemini’s deep research mode — which runs multiple web searches, synthesizes across sources, and produces structured outputs — is well suited to this. It is also meaningfully faster and cheaper than having a frontier model perform iterative web searches itself. The limitation we encountered was that Gemini, when given complex multi-part research prompts, tends to produce planning text (“I will now search for…”) without always completing the structured output the prompt requested. We addressed this by re-running failed chapters sequentially rather than in parallel to avoid rate-limiting, and by specifying the output structure in the master prompt precisely.</p>
+<p>Gemini in autonomous (YOLO) mode also took actions we did not explicitly request — creating chapter stub files and editing <code>_quarto.yml</code> to add them to the book structure. This is a useful illustration of the principal-agent problem in AI deployment: an agent given broad autonomy in a codebase will take actions consistent with its understanding of the task, which may or may not match the operator’s intent. In this case, the actions were sensible and we kept them. In a production deployment, review before accepting is the right default.</p>
+<p><strong>Claude Sonnet for orchestration and authorship.</strong> Sonnet handles the execution loop: read the dossier, verify suspicious citations before citing them, write prose, create diagrams, edit <code>references.bib</code>, check that the Quarto build passes. This is a high-volume task that benefits from fast output and low cost per token more than it benefits from the deeper reasoning Opus provides. The important thing is that the human reviewed each chapter after completion, not that the model was the most capable available.</p>
+</section>
+<section id="the-citation-problem" class="level2" data-number="D.3">
+<h2 data-number="D.3" class="anchored" data-anchor-id="the-citation-problem"><span class="header-section-number">D.3</span> The Citation Problem</h2>
+<p>The most consistent failure mode in the research phase was citation hallucination. Gemini’s dossiers reliably produced regulatory primary sources (NIST, NIH, FDA, EEOC) with correct URLs, and reliably produced real peer-reviewed papers from high-profile journals with correct DOIs. Where it failed was with newer or more obscure literature: it generated plausible-sounding papers with plausible-sounding DOIs that do not exist. The pattern is recognizable in retrospect — sequential-looking identifiers (<code>10.1109/COMPUTER.2025.1234567</code>, <code>10.5281/zenodo.1234567</code>), papers from journals that would be unlikely venues for the specific claim, and 2025 publication dates for papers that were too specific to be plausible given the knowledge cutoff.</p>
+<p>The structural fix we implemented after discovering fabricated DOIs in early dossiers was a two-tier citation discipline codified in <code>_research/MASTER_PROMPT.md</code>. Tier 1 covers sources Gemini can retrieve and verify directly during a session — federal documents, regulatory filings, institutional publications, vendor documentation — and requires a live URL confirmed during the research run. Tier 2 covers peer-reviewed biomedical and informatics papers, and requires only a placeholder in the format <code>[PUBMED-PENDING: Author YYYY — descriptor — journal]</code>, with an explicit prohibition on writing any DOI unless the publisher landing page was retrieved during that session. The placeholder system shifted verification responsibility to the authorship phase, where PubMed MCP tools and direct DOI resolution can confirm or reject each citation before it enters <code>references.bib</code>. This is not a perfect solution — it requires more authorship-phase work — but it eliminated the most damaging failure mode: a confident, wrong DOI cited in finished prose.</p>
+<p>The authorship phase treats every Tier 2 placeholder as unverified until confirmed by direct lookup. The BibTeX entries in <code>references.bib</code> contain only sources that were either in the original project bibliography, confirmed real by direct URL or PMID retrieval, or drawn from prior knowledge with high confidence. When no verified citation is available, the prose makes the claim without a citation rather than citing a hallucinated paper.</p>
+<p><a href="#tbl-citation-quality" class="quarto-xref">Table&nbsp;<span>D.2</span></a> summarizes the citation quality we observed across the completed dossiers.</p>
+<div id="tbl-citation-quality" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-citation-quality-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;D.2: Observed citation accuracy rates by source type across Gemini research dossiers. Rates are estimates based on spot-checking; not every citation was independently verified. The two-tier PUBMED-PENDING discipline was implemented to prevent fabricated Tier 2 citations from reaching <code>references.bib</code>.
+</figcaption>
+<div aria-describedby="tbl-citation-quality-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<table class="caption-top table">
+<colgroup>
+<col style="width: 28%">
+<col style="width: 56%">
+<col style="width: 15%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Source type</th>
+<th>Accuracy rate (observed)</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Federal regulatory documents</td>
+<td>~95%</td>
+<td>Correct URLs, correct document numbers</td>
+</tr>
+<tr class="even">
+<td>Major journal policies (Nature, NEJM, JAMA)</td>
+<td>~90%</td>
+<td>Correct, with occasional date errors</td>
+</tr>
+<tr class="odd">
+<td>High-profile peer-reviewed papers</td>
+<td>~80%</td>
+<td>Well-known papers reliably correct</td>
+</tr>
+<tr class="even">
+<td>Newer or niche peer-reviewed papers</td>
+<td>~40%</td>
+<td>Frequent fabrication of DOIs and author lists</td>
+</tr>
+<tr class="odd">
+<td>Vendor documentation</td>
+<td>~70%</td>
+<td>URLs often stale or approximate</td>
+</tr>
+<tr class="even">
+<td>News/trade press</td>
+<td>~60%</td>
+<td>Article may exist but headline or date wrong</td>
+</tr>
+</tbody>
+</table>
+</div>
+</figure>
+</div>
+<p>The practical implication is that Gemini research output should never be committed to a bibliography without verification. The workflow’s structure — Gemini produces a dossier with verified Tier 1 sources and placeholders for Tier 2, a human or second model resolves the placeholders — is the right one for any research-intensive writing task.</p>
+</section>
+<section id="costs-and-volume" class="level2" data-number="D.4">
+<h2 data-number="D.4" class="anchored" data-anchor-id="costs-and-volume"><span class="header-section-number">D.4</span> Costs and Volume</h2>
+<p><a href="#tbl-workflow-artifacts" class="quarto-xref">Table&nbsp;<span>D.3</span></a> summarizes the artifacts produced and their approximate scale. Token counts for the AI interactions were not systematically recorded; the estimates below are based on output sizes and typical input-to-output ratios.</p>
+<div id="tbl-workflow-artifacts" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-workflow-artifacts-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;D.3: Artifacts produced by the multi-model workflow across all authorship sessions. Word counts are approximate; individual chapter and dossier files can be examined in the repository for exact lengths.
+</figcaption>
+<div aria-describedby="tbl-workflow-artifacts-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<table class="caption-top table">
+<colgroup>
+<col style="width: 32%">
+<col style="width: 22%">
+<col style="width: 22%">
+<col style="width: 22%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Artifact</th>
+<th>Files</th>
+<th>Words</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Research master prompt (<code>_research/MASTER_PROMPT.md</code>)</td>
+<td>1</td>
+<td>~500</td>
+<td>Written by Claude Sonnet 4.6; two-tier citation discipline codified here</td>
+</tr>
+<tr class="even">
+<td>Chapter briefs (<code>_research/briefs/</code>)</td>
+<td>17</td>
+<td>~16,500</td>
+<td>Written by Claude Sonnet 4.6</td>
+</tr>
+<tr class="odd">
+<td>Automation script (<code>scripts/gemini-research.sh</code>)</td>
+<td>1</td>
+<td>76 lines</td>
+<td>Written by Claude Sonnet 4.6</td>
+</tr>
+<tr class="even">
+<td>Gemini research dossiers (<code>_research/dossiers/</code>)</td>
+<td>17 complete</td>
+<td>~30,900</td>
+<td>Produced by Gemini CLI (sequential runs)</td>
+</tr>
+<tr class="odd">
+<td>Chapter prose (<code>.qmd</code> files)</td>
+<td>17+</td>
+<td>~22,300</td>
+<td>Written by Claude Sonnet 4.6</td>
+</tr>
+<tr class="even">
+<td>New BibTeX entries (<code>references.bib</code>)</td>
+<td>30+ new entries</td>
+<td>—</td>
+<td>Added during authorship phase; Tier 1 verified, Tier 2 resolved via PubMed</td>
+</tr>
+<tr class="odd">
+<td>Quarto stub files (Gemini-initiated)</td>
+<td>several</td>
+<td>~200 each</td>
+<td>Autonomous action by Gemini; accepted and incorporated</td>
+</tr>
+</tbody>
+</table>
+</div>
+</figure>
+</div>
+<p>The total research and planning effort — phases 2 through 4 — produced approximately 47,400 words of structured inputs for the authorship phase. The authorship phase produces finished chapters of approximately 2,500–4,500 words each, depending on the domain. The ratio of research material to finished prose reflects the verification and synthesis work the authorship phase requires: not all research material makes it into the chapter, the prose is more compressed than the dossiers, and citation verification eliminates a meaningful fraction of the sourced claims.</p>
+</section>
+<section id="the-review-pass" class="level2" data-number="D.5">
+<h2 data-number="D.5" class="anchored" data-anchor-id="the-review-pass"><span class="header-section-number">D.5</span> The Review Pass</h2>
+<p>After the authorship phase produced a complete draft, a structured review pass identified two categories of gap that the writing phase does not reliably close on its own: unsupported factual claims that carry meaningful epistemic weight, and significant entities — organizations, tools, frameworks, standards bodies — mentioned in the text without a hyperlink.</p>
+<p>The review was structured by having Gemini perform a first-pass audit of completed chapters, using instructions codified in <code>_research/REVIEW_PROMPT.md</code>. Six review group files in <code>_research/review_groups/</code> specified which chapters each Gemini run should examine; runs were executed sequentially rather than in parallel to avoid rate-limiting. The prompt asked Gemini to identify, per chapter:</p>
+<ul>
+<li><strong>Unsupported claims</strong>: Factual assertions that carry substantive weight and lack a citation or reference, prioritized by how much the claim’s validity bears on the chapter’s argument.</li>
+<li><strong>Unlinked entities</strong>: Organizations, tools, frameworks, and regulatory bodies mentioned by name without a hyperlink that would allow a reader to verify or explore further.</li>
+</ul>
+<p>The prompt imposed strict rules: Gemini was not to suggest fabricated URLs or invent citation keys. For unsupported claims, it could flag the claim and name the type of source that would address it, but not supply a DOI it had not verified during that session. For unlinked entities, it could suggest a URL only if it had retrieved that URL during the current run.</p>
+<p>Claude Sonnet reviewed Gemini’s outputs and resolved items selectively. A meaningful fraction of flagged claims turned out to already be supported by citations elsewhere in the same paragraph — the audit prompt lacked full bibliography context and could not detect these. Those were closed as non-issues without adding redundant citations. Only high-confidence gaps were resolved: claims traceable to a verifiable primary source, and organizations with stable institutional URLs.</p>
+<p>The net output: several new BibTeX entries for sources that had been mentioned without citation, and approximately forty inline links added to first occurrences of significant organizations and tools across the chapter set. The process also confirmed that many flagged claims were already adequately supported — which is useful negative space: it documents that the review was done rather than skipped.</p>
+<p>The review pass is intentionally conservative. It closes verifiable gaps rather than filling word count. A chapter that makes a specific numerical claim without a citation, where the claim is traceable to a primary source, is a closure candidate. A chapter that makes a framing claim without a citation — one that represents synthesis rather than a specific verifiable fact — is not. The response to “this could use a citation” is different from “this is documented at a specific primary source we failed to cite.” Conflating them inflates the bibliography without improving the book.</p>
+</section>
+<section id="what-this-means-for-ai-assisted-knowledge-work" class="level2" data-number="D.6">
+<h2 data-number="D.6" class="anchored" data-anchor-id="what-this-means-for-ai-assisted-knowledge-work"><span class="header-section-number">D.6</span> What This Means for AI-Assisted Knowledge Work</h2>
+<p>This workflow illustrates several things about AI-assisted knowledge work that are not obvious from reading about AI in the abstract.</p>
+<p><strong>AI at its most valuable is a research collaborator, not a ghostwriter.</strong> The chapters in this book are not AI-generated prose edited by a human. They are human-structured arguments, grounded in AI-gathered sources, written by a model that was given specific direction about what to argue and how to argue it, and reviewed by a human who can tell when the argument is wrong. The value of the AI is in the research throughput — ~30,900 words of sourced, structured research material produced in hours rather than days — not in generating text that the human then accepts.</p>
+<p><strong>The division of labor matters.</strong> Running Gemini research sessions in parallel consistently caused rate-limiting failures that produced empty or truncated outputs; running them sequentially, one at a time, succeeded. Using Opus for planning and Sonnet for execution reduced cost without sacrificing quality, because the task profiles genuinely differ. These are engineering decisions, not philosophical ones.</p>
+<p><strong>Autonomy requires clear boundaries.</strong> Gemini in YOLO mode created files and edited configuration — actions that were correct in this case but that could easily have been wrong in a different context. Any workflow that gives an AI agent write access to a production system needs explicit boundaries around what the agent is and is not authorized to change.</p>
+<p><strong>The bottleneck is authorship, not research.</strong> The research phase produced ~30,900 words of structured material in approximately four hours of elapsed time (including re-runs for failed dossiers). The authorship phase produces approximately 4,300 words per chapter at higher quality but significantly more elapsed time. At scale, the constraint is the human review step and the authorship pass, not the research. Tools that improve the authorship pass — better citation verification, tighter prose controls — will have a larger impact on throughput than further improvements to the research phase.</p>
+<p><strong>The workflow is reproducible.</strong> The <code>scripts/gemini-research.sh</code> wrapper, the <code>_research/briefs/</code> input structure, and the <code>_research/MASTER_PROMPT.md</code> template are all checked into the repository. Any contributor can run the same workflow for a new chapter or an update pass on an existing chapter. The intellectual bottleneck is writing a good brief; once the brief is right, the research and authorship passes follow a repeatable pattern.</p>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/seandavi\.github\.io\/campus-llm-kb\/");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./HHS.html" class="pagination-link" aria-label="ONC HTI-1: Algorithm Transparency and Interoperability">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">C</span>&nbsp; <span class="chapter-title">ONC HTI-1: Algorithm Transparency and Interoperability</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./references.html" class="pagination-link" aria-label="References">
+        <span class="nav-page-text">References</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/seandavi/campus-llm-kb/edit/main/appendix_workflow.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li></ul></div></div></div></footer></body></html>

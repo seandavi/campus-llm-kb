@@ -2,13 +2,17 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.5.57">
+<meta name="generator" content="quarto-1.9.37">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="dcterms.date" content="2026-04-26">
 
-<title>5&nbsp; Barriers and Obstacles and How to Overcome Them – Large Language Model Policy and Practice</title>
+<title>5&nbsp; Barriers and How to Address Them – Implementing AI in Academic Medicine</title>
 <style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
 div.columns{display: flex; gap: min(4vw, 1.5em);}
@@ -20,7 +24,26 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
@@ -32,15 +55,16 @@ ul.task-list li input[type="checkbox"] {
 <meta name="quarto:offset" content="./">
 <link href="./domainresource.html" rel="next">
 <link href="./implementation.html" rel="prev">
-<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-7f8f88aac4f3542376d5c11b86a4c14d.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-36bf55b16c7cb4b1420f41495cb5446a.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -68,20 +92,14 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
-<!-- Google tag (gtag.js) -->
-<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-KLLV1GCF4E"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-KLLV1GCF4E');
-</script>
+<script src="site_libs/quarto-diagram/mermaid.min.js"></script>
+<script src="site_libs/quarto-diagram/mermaid-init.js"></script>
+<link href="site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
 
 
 </head>
 
-<body class="nav-sidebar floating nav-fixed">
+<body class="nav-sidebar floating nav-fixed quarto-light">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -89,7 +107,7 @@ ul.task-list li input[type="checkbox"] {
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
     <a class="navbar-brand" href="./index.html">
-    <span class="navbar-title">Large Language Model Policy and Practice</span>
+    <span class="navbar-title">Implementing AI in Academic Medicine</span>
     </a>
   </div>
         <div class="quarto-navbar-tools tools-wide tools-end">
@@ -98,13 +116,13 @@ ul.task-list li input[type="checkbox"] {
       <a href="" title="Download" id="quarto-navigation-tool-dropdown-0" class="quarto-navigation-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false" role="link" aria-label="Download"><i class="bi bi-download"></i></a>
       <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="quarto-navigation-tool-dropdown-0">
           <li>
-            <a class="dropdown-item quarto-navbar-tools-item" href="./Large-Language-Model-Policy-and-Practice.pdf">
+            <a class="dropdown-item quarto-navbar-tools-item" href="./Implementing-AI-in-Academic-Medicine.pdf">
               <i class="bi bi-file-pdf pe-1"></i>
             Download PDF
             </a>
           </li>
           <li>
-            <a class="dropdown-item quarto-navbar-tools-item" href="./Large-Language-Model-Policy-and-Practice.epub">
+            <a class="dropdown-item quarto-navbar-tools-item" href="./Implementing-AI-in-Academic-Medicine.epub">
               <i class="bi bi-journal pe-1"></i>
             Download ePub
             </a>
@@ -143,7 +161,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./framework.html">Implementation</a></li><li class="breadcrumb-item"><a href="./barriers.html"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Barriers and Obstacles and How to Overcome Them</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./framework.html">Implementation</a></li><li class="breadcrumb-item"><a href="./barriers.html"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Barriers and How to Address Them</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -157,13 +175,13 @@ ul.task-list li input[type="checkbox"] {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./preface.html" class="sidebar-item-text sidebar-link">
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Preface</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link">
+  <a href="./overview.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Overview</span></span></a>
   </div>
 </li>
@@ -197,7 +215,7 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./barriers.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Barriers and Obstacles and How to Overcome Them</span></span></a>
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Barriers and How to Address Them</span></span></a>
   </div>
 </li>
       </ul>
@@ -220,13 +238,13 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./resources_research.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Research</span></span></a>
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Research Domain</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./resources_education.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Education</span></span></a>
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Education Domain</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -235,17 +253,93 @@ ul.task-list li input[type="checkbox"] {
  <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Business Operations</span></span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./regulatory_landscape.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Regulatory and Policy Landscape</span></span></a>
+  </div>
+</li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
- <span class="menu-text">Appendices</span></a>
+ <span class="menu-text">Agentic AI in Practice</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./agentic_safety.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Agentic Safety and Guardrails</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./patient_trust.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Patient and Community Trust</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./professional_wellness.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Professional Wellness and Reducing Cognitive Burden</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true">
+ <span class="menu-text">Workstream Resources</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./infrastructure.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">IT Infrastructure and Security</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./workforce.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Training and Workforce Development</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ethics.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Ethics, Equity, and Institutional Accountability</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./data.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Data Access and Governance</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./pm_and_support.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Project Management and AI Portfolio Governance</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true">
+ <span class="menu-text">Appendices</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./appendices.html" class="sidebar-item-text sidebar-link">
@@ -255,13 +349,25 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./bill_of_rights.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">B</span>&nbsp; <span class="chapter-title">Whitehouse AI Bill(s) of rights</span></span></a>
+ <span class="menu-text"><span class="chapter-number">B</span>&nbsp; <span class="chapter-title">OSTP Blueprint for an AI Bill of Rights</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./HHS.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">C</span>&nbsp; <span class="chapter-title">HHS EHR reporting program rule</span></span></a>
+ <span class="menu-text"><span class="chapter-number">C</span>&nbsp; <span class="chapter-title">ONC HTI-1: Algorithm Transparency and Interoperability</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./appendix_workflow.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">D</span>&nbsp; <span class="chapter-title">How This Book Was Written: A Multi-Model AI Authorship Workflow</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./references.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">References</span></a>
   </div>
 </li>
       </ul>
@@ -276,19 +382,16 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#barriers-and-obstacles" id="toc-barriers-and-obstacles" class="nav-link active" data-scroll-target="#barriers-and-obstacles"><span class="header-section-number">5.1</span> Barriers and Obstacles</a>
+  <li><a href="#the-governance-vacuum" id="toc-the-governance-vacuum" class="nav-link active" data-scroll-target="#the-governance-vacuum"><span class="header-section-number">5.1</span> The Governance Vacuum</a></li>
+  <li><a href="#ehr-integration-friction" id="toc-ehr-integration-friction" class="nav-link" data-scroll-target="#ehr-integration-friction"><span class="header-section-number">5.2</span> EHR Integration Friction</a></li>
+  <li><a href="#the-alert-fatigue-trap" id="toc-the-alert-fatigue-trap" class="nav-link" data-scroll-target="#the-alert-fatigue-trap"><span class="header-section-number">5.3</span> The Alert Fatigue Trap</a></li>
+  <li><a href="#the-trust-calibration-problem" id="toc-the-trust-calibration-problem" class="nav-link" data-scroll-target="#the-trust-calibration-problem"><span class="header-section-number">5.4</span> The Trust Calibration Problem</a></li>
+  <li><a href="#budget-fragmentation" id="toc-budget-fragmentation" class="nav-link" data-scroll-target="#budget-fragmentation"><span class="header-section-number">5.5</span> Budget Fragmentation</a></li>
+  <li><a href="#the-barriers-you-cannot-fix" id="toc-the-barriers-you-cannot-fix" class="nav-link" data-scroll-target="#the-barriers-you-cannot-fix"><span class="header-section-number">5.6</span> The Barriers You Cannot Fix</a></li>
+  <li><a href="#sec-barriers-start" id="toc-sec-barriers-start" class="nav-link" data-scroll-target="#sec-barriers-start"><span class="header-section-number">5.7</span> Where to Start</a>
   <ul class="collapse">
-  <li><a href="#resistance-to-change" id="toc-resistance-to-change" class="nav-link" data-scroll-target="#resistance-to-change"><span class="header-section-number">5.1.1</span> Resistance to Change</a></li>
-  <li><a href="#lack-of-technical-expertise" id="toc-lack-of-technical-expertise" class="nav-link" data-scroll-target="#lack-of-technical-expertise"><span class="header-section-number">5.1.2</span> Lack of Technical Expertise</a></li>
-  <li><a href="#insufficient-collaboration" id="toc-insufficient-collaboration" class="nav-link" data-scroll-target="#insufficient-collaboration"><span class="header-section-number">5.1.3</span> Insufficient Collaboration</a></li>
-  <li><a href="#resource-constraints" id="toc-resource-constraints" class="nav-link" data-scroll-target="#resource-constraints"><span class="header-section-number">5.1.4</span> Resource Constraints</a></li>
-  <li><a href="#data-privacy-and-security-concerns" id="toc-data-privacy-and-security-concerns" class="nav-link" data-scroll-target="#data-privacy-and-security-concerns"><span class="header-section-number">5.1.5</span> Data Privacy and Security Concerns</a></li>
-  <li><a href="#ethical-concerns" id="toc-ethical-concerns" class="nav-link" data-scroll-target="#ethical-concerns"><span class="header-section-number">5.1.6</span> Ethical Concerns</a></li>
-  </ul></li>
-  <li><a href="#overcoming-barriers-and-obstacles" id="toc-overcoming-barriers-and-obstacles" class="nav-link" data-scroll-target="#overcoming-barriers-and-obstacles"><span class="header-section-number">5.2</span> Overcoming Barriers and Obstacles</a>
-  <ul class="collapse">
-  <li><a href="#conventional-strategies-for-overcoming-barriers-and-obstacles" id="toc-conventional-strategies-for-overcoming-barriers-and-obstacles" class="nav-link" data-scroll-target="#conventional-strategies-for-overcoming-barriers-and-obstacles"><span class="header-section-number">5.2.1</span> Conventional Strategies for Overcoming Barriers and Obstacles</a></li>
-  <li><a href="#unconventional-strategies-for-overcoming-barriers-and-obstacles" id="toc-unconventional-strategies-for-overcoming-barriers-and-obstacles" class="nav-link" data-scroll-target="#unconventional-strategies-for-overcoming-barriers-and-obstacles"><span class="header-section-number">5.2.2</span> Unconventional Strategies for Overcoming Barriers and Obstacles</a></li>
+  <li><a href="#starter-project-1-barrier-audit-and-governance-gap-analysis" id="toc-starter-project-1-barrier-audit-and-governance-gap-analysis" class="nav-link" data-scroll-target="#starter-project-1-barrier-audit-and-governance-gap-analysis"><span class="header-section-number">5.7.1</span> Starter Project 1: Barrier Audit and Governance Gap Analysis</a></li>
+  <li><a href="#starter-project-2-shadow-ai-discovery-and-triage" id="toc-starter-project-2-shadow-ai-discovery-and-triage" class="nav-link" data-scroll-target="#starter-project-2-shadow-ai-discovery-and-triage"><span class="header-section-number">5.7.2</span> Starter Project 2: Shadow AI Discovery and Triage</a></li>
   </ul></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/seandavi/campus-llm-kb/edit/main/barriers.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li></ul></div></nav>
@@ -296,9 +399,9 @@ ul.task-list li input[type="checkbox"] {
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./framework.html">Implementation</a></li><li class="breadcrumb-item"><a href="./barriers.html"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Barriers and Obstacles and How to Overcome Them</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./framework.html">Implementation</a></li><li class="breadcrumb-item"><a href="./barriers.html"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Barriers and How to Address Them</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Barriers and Obstacles and How to Overcome Them</span></h1>
+<h1 class="title"><span id="sec-barriers" class="quarto-section-identifier"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Barriers and How to Address Them</span></span></h1>
 </div>
 
 
@@ -306,6 +409,12 @@ ul.task-list li input[type="checkbox"] {
 <div class="quarto-title-meta">
 
     
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">April 26, 2026</p>
+    </div>
+  </div>
   
     
   </div>
@@ -315,302 +424,407 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>Inevitably, you will encounter barriers and obstacles during your ChatGPT implementation journey. Recognizing these challenges and understanding how to overcome them is essential to ensure a successful adoption.&nbsp;</p>
-<p>The Domains will need to identify their own barriers and adapt solutions to their specific circumstances. The goal is to empower each Domain to lead their organization through the complexities of AI integration.</p>
-<p>This is a living document and will be updated as we learn more. Please feel free to contribute to this document.</p>
-<section id="barriers-and-obstacles" class="level2" data-number="5.1">
-<h2 data-number="5.1" class="anchored" data-anchor-id="barriers-and-obstacles"><span class="header-section-number">5.1</span> Barriers and Obstacles</h2>
-<section id="resistance-to-change" class="level3" data-number="5.1.1">
-<h3 data-number="5.1.1" class="anchored" data-anchor-id="resistance-to-change"><span class="header-section-number">5.1.1</span> Resistance to Change</h3>
-<p>: Employees and leaders may be resistant to adopting new technologies due to fear of job loss or discomfort with the unknown. To overcome this, emphasize the benefits of ChatGPT, such as increased efficiency and improved decision-making, and provide ample training and support. Encourage open discussions and showcase successful examples of AI adoption.</p>
+<p>The standard narrative for why technology fails in academic medicine is as predictable as it is condescending. Clinicians are resistant to change. Faculty lack the expertise to adapt. The institution does not have the resources to see a project through. I have watched dozens of implementations over two decades, and I have rarely found these explanations to be true. The people on the front lines are often desperate for tools that actually work. They do not resist change because they are stubborn; they resist it because they have been burned by software that added three clicks to their workflow without removing a single one.</p>
+<p>When an AI implementation fails in an academic medical center, it is almost never because of a lack of will. It is because of structural friction — the grit in the machine that no one wants to name during the kickoff meeting. We fail because governance structures are too slow for the pace of the technology, because electronic health records are built like fortresses rather than platforms, and because we treat AI deployment as a technological event rather than a sociotechnical integration. If we want to move past the pilot phase, we have to stop blaming users and start naming the structural barriers that make adoption genuinely hard. Some of those barriers are fixable. Some are not. This chapter tries to distinguish between them.</p>
+<section id="the-governance-vacuum" class="level2" data-number="5.1">
+<h2 data-number="5.1" class="anchored" data-anchor-id="the-governance-vacuum"><span class="header-section-number">5.1</span> The Governance Vacuum</h2>
+<p>The most immediate barrier is the silence of the institution. At most AMCs, if a resident wants to use a spreadsheet to track their patients, they just do it. But if that same resident wants to use a language model to summarize a complex patient history, they find themselves in a gray zone — no policy that authorizes it, no policy that prohibits it, and no committee with the authority to make the call. This is the permission paradox, and it produces two outcomes, neither good.</p>
+<p>In some institutions, the vacuum creates paralysis. Innovation stalls in the inbox of a risk officer who lacks the technical background to evaluate a tool but has the authority to say no. In others, the vacuum is filled by shadow AI: clinicians and researchers using consumer tools because the institutional alternative does not exist or is harder to access than ChatGPT on a personal phone. They are not trying to be reckless. They are trying to get through their shift. But operating outside any formal framework means their experience cannot be validated, shared, or built on — and it means institutional data is moving through systems with no audit trail, no BAA, and no governance oversight.</p>
+<p>The absence of a formal AI Steering Committee is a structural failure of leadership, not a temporary gap to be filled by individual judgment. Without a central body to set the rules for data provenance, validation requirements, and deployment authorization, every department reinvents the wheel independently, and the institutional AI program fragments into a collection of unconnected pilots with incompatible governance. The AISC structure and intake process that addresses this vacuum are described in <a href="pm_and_support.html" class="quarto-xref"><span>Chapter 18</span></a>; the point here is that the vacuum itself is a choice the institution has made, whether or not anyone framed it that way.</p>
+<div class="cell" data-layout-align="default">
+<div class="cell-output-display">
+<div id="fig-governance-vacuum" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-governance-vacuum-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div>
+<pre class="mermaid mermaid-js" data-label="fig-governance-vacuum">flowchart TD
+    A([Governance Vacuum:\nNo Clear AI Policy]) --&gt; B[Permission Paradox]
+    B --&gt; C[Institutional Paralysis:\nPilots Stalled]
+    B --&gt; D[Shadow AI Adoption:\nConsumer Tools with PHI]
+    D --&gt; E[Security and\nCompliance Risk]
+    D --&gt; F[No Peer Validation\nor Knowledge Sharing]
+    C --&gt; G[Talent Attrition:\nInnovators Leave]
+    E --&gt; H[Emergency Prohibition]
+    H --&gt; A
+</pre>
+</div>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-governance-vacuum-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;5.1: The governance vacuum and its downstream effects. Shadow AI adoption is a predictable response to institutional silence, not a security failure to be solved by network blocking alone.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
 </section>
-<section id="lack-of-technical-expertise" class="level3" data-number="5.1.2">
-<h3 data-number="5.1.2" class="anchored" data-anchor-id="lack-of-technical-expertise"><span class="header-section-number">5.1.2</span> Lack of Technical Expertise</h3>
-<p>Limited knowledge of AI and ChatGPT may hinder successful implementation. Address this by investing in training programs, partnering with AI experts, or hiring professionals with relevant experience. Create an internal AI community for knowledge sharing and peer support.</p>
+<section id="ehr-integration-friction" class="level2" data-number="5.2">
+<h2 data-number="5.2" class="anchored" data-anchor-id="ehr-integration-friction"><span class="header-section-number">5.2</span> EHR Integration Friction</h2>
+<p>Even with governance clarity, implementation runs into the technical debt of the electronic health record. Many capable AI tools have failed not because they did not work but because they could not be embedded in the clinician’s natural workflow. The integration tax — the hidden labor required to make a modern tool communicate with a legacy system — is not just a matter of writing code. It means navigating proprietary APIs, paying app marketplace fees that can exceed the project budget, and resolving semantic mismatches where the AI’s output does not map to any existing field in the clinical record.</p>
+<p>Major EHR vendors have historically prioritized billing and documentation over interoperability. FHIR API support varies significantly across EHR versions and implementations, and the access required to embed AI into the clinical workflow is frequently incomplete. The result is brittle integrations: a team spends months getting a pilot working in a specific EHR configuration, and a scheduled vendor update breaks the connection. The clinical AI tool ends up as a sidecar application in a separate browser tab — and we know from years of informatics research that every additional context switch reduces adoption, often fatally.</p>
+<p>This barrier is the primary reason why the infrastructure chapter (<a href="infrastructure.html" class="quarto-xref"><span>Chapter 14</span></a>) emphasizes the institutional API gateway as the architectural foundation for everything else. A gateway that centralizes all AI traffic through a managed chokepoint insulates individual tools from EHR version changes and gives the institution governance leverage over the integration points it would otherwise negotiate tool by tool with each vendor.</p>
 </section>
-<section id="insufficient-collaboration" class="level3" data-number="5.1.3">
-<h3 data-number="5.1.3" class="anchored" data-anchor-id="insufficient-collaboration"><span class="header-section-number">5.1.3</span> Insufficient Collaboration</h3>
-<p>Inadequate communication and collaboration between departments can impede progress. Foster cross-functional teamwork through regular meetings, workshops, and collaborative platforms. Encourage leaders to champion the initiative and create a culture of cooperation.</p>
+<section id="the-alert-fatigue-trap" class="level2" data-number="5.3">
+<h2 data-number="5.3" class="anchored" data-anchor-id="the-alert-fatigue-trap"><span class="header-section-number">5.3</span> The Alert Fatigue Trap</h2>
+<p>Clinical decision support has a documented failure mode so well-established it has its own name, and large language model deployment is at risk of reproducing it at scale. Alert fatigue — the clinical survival mechanism that develops when a system generates more low-specificity alerts than the clinician can meaningfully evaluate — has been measured at override rates exceeding 90 percent in traditional CDS deployments. A clinician in an intensive care unit where monitors chirp continuously reaches past the screen and silences the alarm without looking at it. This is not negligence. It is rational adaptation to an environment where most alerts carry no useful information.</p>
+<p>The external validation of the Epic Sepsis Model illustrates the problem precisely. When Wong and colleagues validated the model against a real patient population, they found that the tool’s reported accuracy substantially overstated its performance in the specific context where it mattered most: early identification of patients not yet suspected of having sepsis <span class="citation" data-cites="Wong2021-esm">(<a href="references.html#ref-Wong2021-esm" role="doc-biblioref">Wong et al. 2021</a>)</span>. The model was generating alerts that mostly captured patients already on the clinical team’s radar, contributing to alert burden without proportional clinical value.</p>
+<p>The structural response is not to generate fewer alerts by being more conservative — that just means missing more cases. It is to rethink what AI outputs look like in clinical workflows. AI that surfaces one high-confidence recommendation in a relevant clinical context is more useful than AI that flags everything above a low threshold and lets the clinician decide. This is a design choice, not a model improvement. It requires the clinical informatics team and the clinical leadership to agree on what a “good” alert looks like before the tool is configured, not after the override rate accumulates. The clinical AI governance process in <a href="resources_clinical.html" class="quarto-xref"><span>Chapter 6</span></a> addresses how to make these design decisions before deployment.</p>
 </section>
-<section id="resource-constraints" class="level3" data-number="5.1.4">
-<h3 data-number="5.1.4" class="anchored" data-anchor-id="resource-constraints"><span class="header-section-number">5.1.4</span> Resource Constraints</h3>
-<p>Limited budget, time, or personnel can pose challenges. To overcome this, prioritize use cases based on potential impact and feasibility, and secure buy-in from top management for necessary resources. Consider leveraging external partnerships or outsourcing certain tasks to reduce internal workload.</p>
+<section id="the-trust-calibration-problem" class="level2" data-number="5.4">
+<h2 data-number="5.4" class="anchored" data-anchor-id="the-trust-calibration-problem"><span class="header-section-number">5.4</span> The Trust Calibration Problem</h2>
+<p>Trust is the most misunderstood variable in AI adoption. The goal is not to get clinicians to trust AI more. The goal is calibrated trust — where clinicians trust AI outputs in the contexts where the model is reliable and maintain appropriate skepticism in the contexts where it is not. The automation complacency literature documents clearly that consistent accuracy leads to reduced scrutiny, and that reduced scrutiny is precisely where errors compound <span class="citation" data-cites="Parasuraman2010-automation">(<a href="references.html#ref-Parasuraman2010-automation" role="doc-biblioref">Parasuraman and Manzey 2010</a>)</span>. A tool that is accurate 95 percent of the time creates a cognitive environment where the 5 percent of errors are less likely to be caught.</p>
+<p>Over-trust is one failure mode. Under-trust is the other. A single high-profile error — a hallucinated medication dose, an incorrect lab interpretation, an AI-generated note that a subsequent clinician relied on without independent verification — can cause an entire department to reject a tool that was, on net, performing well. Neither failure mode is solved by more training alone. Both require training programs that address specific failure modes, not just aggregate accuracy, and operational designs that make scrutiny structurally easy rather than cognitively expensive. The training requirements for clinical human-in-the- loop practice are detailed in <a href="workforce.html" class="quarto-xref"><span>Chapter 15</span></a>.</p>
+<p>The trust calibration problem is also a transparency problem. When a vendor cannot or will not disclose how a model was trained, what its performance looks like across demographic subgroups, or what types of inputs cause it to fail, clinicians are being asked to trust a black box. In an academic environment built on evidence and accountability, that ask has limited shelf life. The transparency requirements at intake — the model card, the source attributes required under ONC HTI-1, the demographic performance stratification required under HHS Section 1557 — exist precisely because trust without transparency is not a stable governance posture.</p>
 </section>
-<section id="data-privacy-and-security-concerns" class="level3" data-number="5.1.5">
-<h3 data-number="5.1.5" class="anchored" data-anchor-id="data-privacy-and-security-concerns"><span class="header-section-number">5.1.5</span> Data Privacy and Security Concerns</h3>
-<p>Handling sensitive proprietary data may raise concerns. Collaborate closely with IT and Legal departments to establish robust data security protocols and comply with regulations. Communicate these measures transparently to build trust among employees and stakeholders.</p>
+<section id="budget-fragmentation" class="level2" data-number="5.5">
+<h2 data-number="5.5" class="anchored" data-anchor-id="budget-fragmentation"><span class="header-section-number">5.5</span> Budget Fragmentation</h2>
+<p>In AMC governance, budget is the most accurate statement of institutional priorities, and AI implementation routinely falls into the gap between the IT infrastructure budget and clinical departments’ operational funds. I have watched projects die not because they were expensive but because no one could agree on who should pay for the API tokens.</p>
+<p>IT views AI as an enterprise capability that clinical departments should fund as operational expense. Clinical departments view it as infrastructure that IT should provide. Research operates on grants that expire in three years. Education has no dedicated technology budget at all. This fragmentation means the institution never builds the shared infrastructure — managed API gateway, data enclave, model monitoring platform — that makes individual projects sustainable. Every project starts by solving the same infrastructure problems the previous project solved, usually in a slightly incompatible way.</p>
+<p>Solving this requires a governance decision about AI infrastructure funding, not a clever business case. The right analogy is the institutional network: nobody argues about whether each department should fund its own network switches. The network is shared infrastructure, funded centrally, available to all. AI infrastructure has the same property. The project management chapter (<a href="pm_and_support.html" class="quarto-xref"><span>Chapter 18</span></a>) describes the central AI portfolio budget as a governance mechanism rather than an IT line item.</p>
+<div id="tbl-barrier-taxonomy" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-barrier-taxonomy-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;5.1: AMC AI implementation barrier taxonomy. Each barrier traces to a root cause and a countermeasure described in a specific chapter. The pattern: structural problems require structural solutions.
+</figcaption>
+<div aria-describedby="tbl-barrier-taxonomy-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<table class="caption-top table">
+<colgroup>
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Barrier</th>
+<th>Affected Domains</th>
+<th>Root Cause</th>
+<th>Countermeasure</th>
+<th>Addressed In</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Governance vacuum</td>
+<td>All</td>
+<td>No AISC or policy</td>
+<td>Establish AISC + intake process</td>
+<td><a href="pm_and_support.html" class="quarto-xref"><span>Chapter 18</span></a></td>
+</tr>
+<tr class="even">
+<td>EHR integration friction</td>
+<td>Clinical, Research</td>
+<td>Closed vendor APIs</td>
+<td>Institutional API gateway</td>
+<td><a href="infrastructure.html" class="quarto-xref"><span>Chapter 14</span></a></td>
+</tr>
+<tr class="odd">
+<td>Alert fatigue</td>
+<td>Clinical</td>
+<td>High-volume low-precision CDS</td>
+<td>Design-before-deploy, alert review</td>
+<td><a href="resources_clinical.html" class="quarto-xref"><span>Chapter 6</span></a></td>
+</tr>
+<tr class="even">
+<td>Trust miscalibration</td>
+<td>All</td>
+<td>Opacity, training deficit</td>
+<td>Specific failure mode training, transparency at intake</td>
+<td><a href="workforce.html" class="quarto-xref"><span>Chapter 15</span></a></td>
+</tr>
+<tr class="odd">
+<td>Budget fragmentation</td>
+<td>All</td>
+<td>Siloed funding</td>
+<td>Central AI portfolio budget</td>
+<td><a href="pm_and_support.html" class="quarto-xref"><span>Chapter 18</span></a></td>
+</tr>
+<tr class="even">
+<td>Shadow AI adoption</td>
+<td>All</td>
+<td>Governance vacuum + usability gap</td>
+<td>Make sanctioned path easier</td>
+<td><a href="infrastructure.html" class="quarto-xref"><span>Chapter 14</span></a></td>
+</tr>
+</tbody>
+</table>
+</div>
+</figure>
+</div>
 </section>
-<section id="ethical-concerns" class="level3" data-number="5.1.6">
-<h3 data-number="5.1.6" class="anchored" data-anchor-id="ethical-concerns"><span class="header-section-number">5.1.6</span> Ethical Concerns</h3>
-<p>The potential for biased or unethical AI outcomes may create apprehension. Develop guidelines for responsible AI usage, create an ethics review board, and offer training on potential risks and challenges. Emphasize the importance of ethical AI practices throughout the organization.</p>
-<p>As we reflect on the potential barriers and obstacles to ChatGPT implementation, remember that overcoming these challenges is an integral part of the journey towards AI-driven success. By anticipating and addressing these issues proactively, we can foster a resilient and adaptable organization that is well-prepared to navigate the ever-evolving landscape of artificial intelligence.</p>
+<section id="the-barriers-you-cannot-fix" class="level2" data-number="5.6">
+<h2 data-number="5.6" class="anchored" data-anchor-id="the-barriers-you-cannot-fix"><span class="header-section-number">5.6</span> The Barriers You Cannot Fix</h2>
+<p>I want to be honest about the constraints that are not within institutional control, because planning around them is different from solving them.</p>
+<p>Regulatory lag is real. The FDA, ONC, CMS, and state legislatures are regulating a technology that moves faster than their meeting cycles. The rules in <a href="regulatory_landscape.html" class="quarto-xref"><span>Chapter 10</span></a> represent the current state; they will change. The governance program that treats current compliance as sufficient will find itself out of compliance in eighteen months. The governance program built around documented evidence of responsible practice — validation records, monitoring logs, equity audits — is better positioned to adapt because it is building the institutional record that every new regulatory requirement will ask for.</p>
+<p>Vendor opacity is a structural feature of the current AI market, not a problem any one institution can solve. Foundation model providers control model weights that AMCs cannot inspect, update models on schedules the institution does not control, and write terms of service that protect their liability rather than the institution’s patients. The practical response is contractual: the no-training clause, zero-data-retention provisions, and algorithmic change notification requirements described in <a href="data.html" class="quarto-xref"><span>Chapter 17</span></a>. These do not make the opacity go away, but they create contractual leverage that the institution can exercise when a vendor’s model changes and clinical behavior changes with it.</p>
+<p>The pace of the technology is the constraint that most consistently defeats institution- specific deployment strategies. A deployment built around a specific model version is likely to be disrupted by that model’s successor within a year. The infrastructure investment that ages best is not model-specific — it is the governance layer: the API gateway, the audit logging, the validation framework, the monitoring dashboards. Those persist across model generations. The model configurations inside them change. Building for model interchangeability is not a technical aspiration; it is the only governance strategy with a shelf life longer than twelve months.</p>
 </section>
+<section id="sec-barriers-start" class="level2" data-number="5.7">
+<h2 data-number="5.7" class="anchored" data-anchor-id="sec-barriers-start"><span class="header-section-number">5.7</span> Where to Start</h2>
+<section id="starter-project-1-barrier-audit-and-governance-gap-analysis" class="level3" data-number="5.7.1">
+<h3 data-number="5.7.1" class="anchored" data-anchor-id="starter-project-1-barrier-audit-and-governance-gap-analysis"><span class="header-section-number">5.7.1</span> Starter Project 1: Barrier Audit and Governance Gap Analysis</h3>
+<p>Conduct a structured audit of any currently running AI pilots — not the model performance, but the governance experience. How long did it take to get authorization to start? Who paid for it? Who owns it now? Is there a monitoring plan? What happens when it breaks? The answers will map the institution’s specific governance gaps more accurately than any framework assessment. Presented to leadership as a roadmap rather than a complaint — these are the hidden costs the institution is already paying, in wasted time and unmanaged risk — the audit becomes the business case for the governance program the institution is not yet running.</p>
+<p><strong>Why now:</strong> The governance gap is already costing something. Every pilot that runs without authorization is liability exposure. Every shadow AI user is potential PHI exposure. Every tool without a monitoring plan is a future safety event that has not happened yet. The audit surfaces these costs before they become incidents.</p>
+<p><strong>Buy vs.&nbsp;build:</strong> Analytical work using interviews and document review. No technology required. Frame the output as an internal report to the AISC or equivalent, not as a compliance audit — the goal is to understand the current state, not to assign blame.</p>
 </section>
-<section id="overcoming-barriers-and-obstacles" class="level2" data-number="5.2">
-<h2 data-number="5.2" class="anchored" data-anchor-id="overcoming-barriers-and-obstacles"><span class="header-section-number">5.2</span> Overcoming Barriers and Obstacles</h2>
-<p>As noted above, there are many barriers and obstacles to ChatGPT implementation and overcoming these is crucial for realizing its full potential within the organization.&nbsp;</p>
-<p>In this section, we provide a combination of conventional and less traditional strategies to address the challenges you might face during the adoption process. By embracing these adaptive approaches, we can foster a culture of adaptability and resilience, enabling your organization to successfully harness the power of AI-driven solutions like ChatGPT.</p>
-<section id="conventional-strategies-for-overcoming-barriers-and-obstacles" class="level3" data-number="5.2.1">
-<h3 data-number="5.2.1" class="anchored" data-anchor-id="conventional-strategies-for-overcoming-barriers-and-obstacles"><span class="header-section-number">5.2.1</span> Conventional Strategies for Overcoming Barriers and Obstacles</h3>
-<ol type="1">
-<li>Resistance to Change : To overcome resistance to change, emphasize the benefits of ChatGPT, provide ample training and support, encourage open discussions, and showcase successful examples of AI adoption.</li>
-<li>Lack of Technical Expertise : Address this by investing in training programs, partnering with AI experts, hiring professionals with relevant experience, and creating an internal AI community for knowledge sharing and peer support.</li>
-<li>Insufficient Collaboration : Foster cross-functional teamwork through regular meetings, workshops, and collaborative platforms, and encourage leaders to champion the initiative and create a culture of cooperation.</li>
-<li>Resource Constraints : Prioritize use cases based on potential impact and feasibility, secure buy-in from top management for necessary resources, and consider leveraging external partnerships or outsourcing certain tasks to reduce internal workload.</li>
-<li>Data Privacy and Security Concerns : Collaborate closely with IT and Legal departments to establish robust data security protocols and comply with regulations, and communicate these measures transparently to build trust among employees and stakeholders.</li>
-<li>Ethical Concerns : Develop guidelines for responsible AI usage, create an ethics review board, and offer training on potential risks and challenges, emphasizing the importance of ethical AI practices throughout the organization.</li>
-</ol>
-</section>
-<section id="unconventional-strategies-for-overcoming-barriers-and-obstacles" class="level3" data-number="5.2.2">
-<h3 data-number="5.2.2" class="anchored" data-anchor-id="unconventional-strategies-for-overcoming-barriers-and-obstacles"><span class="header-section-number">5.2.2</span> Unconventional Strategies for Overcoming Barriers and Obstacles</h3>
-<p>I often find that we need to find “back-doors” and just different approaches in the context of change and transformation projects. Thus, here are some less conventional approaches to the barriers.&nbsp;</p>
-<ol type="1">
-<li>Gamification : Introduce gamification elements to the training and adoption process, incentivizing employees to engage with ChatGPT and learn its capabilities. Offer rewards or recognition for participation and achievements.</li>
-<li>Reverse Mentoring : Encourage younger or more tech-savvy employees to mentor older or less experienced colleagues, facilitating knowledge sharing and promoting a more inclusive approach to technology adoption.</li>
-<li>Innovation Contests : Organize internal contests or hackathons for employees to develop creative ChatGPT use cases or solutions, fostering a sense of ownership and excitement around the technology.</li>
-<li>External Showcasing : Publicly share successful ChatGPT implementation stories or use cases to build a positive reputation, attract talent, and create a culture of innovation within the organization.</li>
-<li>AI Sabbaticals : Offer employees the opportunity to take short-term sabbaticals to focus on AI-related projects or training, providing dedicated time for learning and exploration. This can help develop in-house expertise and promote a culture of continuous learning.</li>
-</ol>
+<section id="starter-project-2-shadow-ai-discovery-and-triage" class="level3" data-number="5.7.2">
+<h3 data-number="5.7.2" class="anchored" data-anchor-id="starter-project-2-shadow-ai-discovery-and-triage"><span class="header-section-number">5.7.2</span> Starter Project 2: Shadow AI Discovery and Triage</h3>
+<p>Rather than attempting to ban unsanctioned AI use — which will fail and will damage the institution’s relationship with the clinicians and researchers it needs as partners — try to understand why it is happening. Anonymous surveys or focus groups with residents, junior faculty, and administrative staff will identify the specific tasks that are driving consumer AI adoption: summarizing long patient histories the EHR makes unreadable, drafting patient education materials in multiple languages, abstracting data from unstructured notes. These are the institution’s most urgent AI use cases, identified by the people who know the work.</p>
+<p>The output of this project is a prioritized list of sanctioned alternatives to develop or procure, grounded in actual use rather than assumed need. The most effective governance response to shadow AI is not the network block; it is the institutional tool that does the job better than the consumer alternative, with appropriate governance built in. The infrastructure chapter (<a href="infrastructure.html" class="quarto-xref"><span>Chapter 14</span></a>) describes the internal AI assistant as the primary countermeasure to shadow AI. This discovery project is what tells you what that assistant needs to do.</p>
+<p><strong>Why now:</strong> Shadow AI is not a future risk. It is a present one. Most AMCs that survey honestly find that consumer AI is already in use with sensitive data across their institution. The discovery project defines the scope of the current exposure before an adverse event defines it for the institution.</p>
+<p><strong>Buy vs.&nbsp;build:</strong> Survey design and facilitation. Anonymous survey platforms are available institutionally. The analysis is qualitative coding of open-ended responses — two to three weeks of research team time, not a technology project.</p>
 
 
+<div id="refs" class="references csl-bib-body hanging-indent" role="list" style="display: none">
+<div id="ref-Parasuraman2010-automation" class="csl-entry" role="listitem">
+Parasuraman, Raja, and Dietrich H Manzey. 2010. <span>“Complacency and Bias in Human Use of Automation: An Updated Understanding.”</span> <em>Human Factors</em> 52 (3): 381–410. <a href="https://doi.org/10.1177/0018720810376055">https://doi.org/10.1177/0018720810376055</a>.
+</div>
+<div id="ref-Wong2021-esm" class="csl-entry" role="listitem">
+Wong, Andrew, Erkin Otles, John P Donnelly, et al. 2021. <span>“External Validation of a Widely Implemented Proprietary Sepsis Prediction Model in Hospitalized Patients.”</span> <em>JAMA Internal Medicine</em> 181 (8): 1065–70. <a href="https://doi.org/10.1001/jamainternmed.2021.2626">https://doi.org/10.1001/jamainternmed.2021.2626</a>.
+</div>
+</div>
 </section>
 </section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
-window.document.addEventListener("DOMContentLoaded", function (event) {
-  const toggleBodyColorMode = (bsSheetEl) => {
-    const mode = bsSheetEl.getAttribute("data-mode");
-    const bodyEl = window.document.querySelector("body");
-    if (mode === "dark") {
-      bodyEl.classList.add("quarto-dark");
-      bodyEl.classList.remove("quarto-light");
-    } else {
-      bodyEl.classList.add("quarto-light");
-      bodyEl.classList.remove("quarto-dark");
-    }
-  }
-  const toggleBodyColorPrimary = () => {
-    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
-    if (bsSheetEl) {
-      toggleBodyColorMode(bsSheetEl);
-    }
-  }
-  toggleBodyColorPrimary();  
-  const icon = "";
-  const anchorJS = new window.AnchorJS();
-  anchorJS.options = {
-    placement: 'right',
-    icon: icon
-  };
-  anchorJS.add('.anchored');
-  const isCodeAnnotation = (el) => {
-    for (const clz of el.classList) {
-      if (clz.startsWith('code-annotation-')) {                     
-        return true;
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
       }
+      return false;
     }
-    return false;
-  }
-  const onCopySuccess = function(e) {
-    // button target
-    const button = e.trigger;
-    // don't keep focus
-    button.blur();
-    // flash "checked"
-    button.classList.add('code-copy-button-checked');
-    var currentTitle = button.getAttribute("title");
-    button.setAttribute("title", "Copied!");
-    let tooltip;
-    if (window.bootstrap) {
-      button.setAttribute("data-bs-toggle", "tooltip");
-      button.setAttribute("data-bs-placement", "left");
-      button.setAttribute("data-bs-title", "Copied!");
-      tooltip = new bootstrap.Tooltip(button, 
-        { trigger: "manual", 
-          customClass: "code-copy-button-tooltip",
-          offset: [0, -8]});
-      tooltip.show();    
-    }
-    setTimeout(function() {
-      if (tooltip) {
-        tooltip.hide();
-        button.removeAttribute("data-bs-title");
-        button.removeAttribute("data-bs-toggle");
-        button.removeAttribute("data-bs-placement");
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
       }
-      button.setAttribute("title", currentTitle);
-      button.classList.remove('code-copy-button-checked');
-    }, 1000);
-    // clear code selection
-    e.clearSelection();
-  }
-  const getTextToCopy = function(trigger) {
-      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
       for (const childEl of codeEl.children) {
         if (isCodeAnnotation(childEl)) {
           childEl.remove();
         }
       }
       return codeEl.innerText;
-  }
-  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
-    text: getTextToCopy
-  });
-  clipboard.on('success', onCopySuccess);
-  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
-    // For code content inside modals, clipBoardJS needs to be initialized with a container option
-    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
-    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
-      text: getTextToCopy,
-      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
     });
-    clipboardModal.on('success', onCopySuccess);
-  }
-    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
-    var mailtoRegex = new RegExp(/^mailto:/);
-      var filterRegex = new RegExp("https:\/\/seandavi\.github\.io\/campus-llm-kb\/");
-    var isInternal = (href) => {
-        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
     }
-    // Inspect non-navigation links and adorn them if external
- 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
-    for (var i=0; i<links.length; i++) {
-      const link = links[i];
-      if (!isInternal(link.href)) {
-        // undo the damage that might have been done by quarto-nav.js in the case of
-        // links that we want to consider external
-        if (link.dataset.originalHref !== undefined) {
-          link.href = link.dataset.originalHref;
-        }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/seandavi\.github\.io\/campus-llm-kb\/");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }
-    }
-  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
-    const config = {
-      allowHTML: true,
-      maxWidth: 500,
-      delay: 100,
-      arrow: false,
-      appendTo: function(el) {
-          return el.parentElement;
-      },
-      interactive: true,
-      interactiveBorder: 10,
-      theme: 'quarto',
-      placement: 'bottom-start',
-    };
-    if (contentFn) {
-      config.content = contentFn;
-    }
-    if (onTriggerFn) {
-      config.onTrigger = onTriggerFn;
-    }
-    if (onUntriggerFn) {
-      config.onUntrigger = onUntriggerFn;
-    }
-    window.tippy(el, config); 
-  }
-  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
-  for (var i=0; i<noterefs.length; i++) {
-    const ref = noterefs[i];
-    tippyHover(ref, function() {
-      // use id or data attribute instead here
-      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
-      try { href = new URL(href).hash; } catch {}
-      const id = href.replace(/^#\/?/, "");
-      const note = window.document.getElementById(id);
-      if (note) {
-        return note.innerHTML;
-      } else {
-        return "";
-      }
-    });
-  }
-  const xrefs = window.document.querySelectorAll('a.quarto-xref');
-  const processXRef = (id, note) => {
-    // Strip column container classes
-    const stripColumnClz = (el) => {
-      el.classList.remove("page-full", "page-columns");
-      if (el.children) {
-        for (const child of el.children) {
-          stripColumnClz(child);
-        }
-      }
-    }
-    stripColumnClz(note)
-    if (id === null || id.startsWith('sec-')) {
-      // Special case sections, only their first couple elements
-      const container = document.createElement("div");
-      if (note.children && note.children.length > 2) {
-        container.appendChild(note.children[0].cloneNode(true));
-        for (let i = 1; i < note.children.length; i++) {
-          const child = note.children[i];
-          if (child.tagName === "P" && child.innerText === "") {
-            continue;
-          } else {
-            container.appendChild(child.cloneNode(true));
-            break;
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
           }
         }
-        if (window.Quarto?.typesetMath) {
-          window.Quarto.typesetMath(container);
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
         }
-        return container.innerHTML
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
       } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
         if (window.Quarto?.typesetMath) {
           window.Quarto.typesetMath(note);
         }
-        return note.innerHTML;
-      }
-    } else {
-      // Remove any anchor links if they are present
-      const anchorLink = note.querySelector('a.anchorjs-link');
-      if (anchorLink) {
-        anchorLink.remove();
-      }
-      if (window.Quarto?.typesetMath) {
-        window.Quarto.typesetMath(note);
-      }
-      // TODO in 1.5, we should make sure this works without a callout special case
-      if (note.classList.contains("callout")) {
-        return note.outerHTML;
-      } else {
-        return note.innerHTML;
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
       }
     }
-  }
-  for (var i=0; i<xrefs.length; i++) {
-    const xref = xrefs[i];
-    tippyHover(xref, undefined, function(instance) {
-      instance.disable();
-      let url = xref.getAttribute('href');
-      let hash = undefined; 
-      if (url.startsWith('#')) {
-        hash = url;
-      } else {
-        try { hash = new URL(url).hash; } catch {}
-      }
-      if (hash) {
-        const id = hash.replace(/^#\/?/, "");
-        const note = window.document.getElementById(id);
-        if (note !== null) {
-          try {
-            const html = processXRef(id, note.cloneNode(true));
-            instance.setContent(html);
-          } finally {
-            instance.enable();
-            instance.show();
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
           }
         } else {
-          // See if we can fetch this
-          fetch(url.split('#')[0])
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
           .then(res => res.text())
           .then(html => {
             const parser = new DOMParser();
             const htmlDoc = parser.parseFromString(html, "text/html");
-            const note = htmlDoc.getElementById(id);
+            const note = htmlDoc.querySelector('main.content');
             if (note !== null) {
-              const html = processXRef(id, note);
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
               instance.setContent(html);
             } 
           }).finally(() => {
@@ -618,185 +832,161 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             instance.show();
           });
         }
-      } else {
-        // See if we can fetch a full url (with no hash to target)
-        // This is a special case and we should probably do some content thinning / targeting
-        fetch(url)
-        .then(res => res.text())
-        .then(html => {
-          const parser = new DOMParser();
-          const htmlDoc = parser.parseFromString(html, "text/html");
-          const note = htmlDoc.querySelector('main.content');
-          if (note !== null) {
-            // This should only happen for chapter cross references
-            // (since there is no id in the URL)
-            // remove the first header
-            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
-              note.children[0].remove();
-            }
-            const html = processXRef(null, note);
-            instance.setContent(html);
-          } 
-        }).finally(() => {
-          instance.enable();
-          instance.show();
-        });
-      }
-    }, function(instance) {
-    });
-  }
-      let selectedAnnoteEl;
-      const selectorForAnnotation = ( cell, annotation) => {
-        let cellAttr = 'data-code-cell="' + cell + '"';
-        let lineAttr = 'data-code-annotation="' +  annotation + '"';
-        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
-        return selector;
-      }
-      const selectCodeLines = (annoteEl) => {
-        const doc = window.document;
-        const targetCell = annoteEl.getAttribute("data-target-cell");
-        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
-        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
-        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
-        const lineIds = lines.map((line) => {
-          return targetCell + "-" + line;
-        })
-        let top = null;
-        let height = null;
-        let parent = null;
-        if (lineIds.length > 0) {
-            //compute the position of the single el (top and bottom and make a div)
-            const el = window.document.getElementById(lineIds[0]);
-            top = el.offsetTop;
-            height = el.offsetHeight;
-            parent = el.parentElement.parentElement;
-          if (lineIds.length > 1) {
-            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
-            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
-            height = bottom - top;
-          }
-          if (top !== null && height !== null && parent !== null) {
-            // cook up a div (if necessary) and position it 
-            let div = window.document.getElementById("code-annotation-line-highlight");
-            if (div === null) {
-              div = window.document.createElement("div");
-              div.setAttribute("id", "code-annotation-line-highlight");
-              div.style.position = 'absolute';
-              parent.appendChild(div);
-            }
-            div.style.top = top - 2 + "px";
-            div.style.height = height + 4 + "px";
-            div.style.left = 0;
-            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
-            if (gutterDiv === null) {
-              gutterDiv = window.document.createElement("div");
-              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
-              gutterDiv.style.position = 'absolute';
-              const codeCell = window.document.getElementById(targetCell);
-              const gutter = codeCell.querySelector('.code-annotation-gutter');
-              gutter.appendChild(gutterDiv);
-            }
-            gutterDiv.style.top = top - 2 + "px";
-            gutterDiv.style.height = height + 4 + "px";
-          }
-          selectedAnnoteEl = annoteEl;
-        }
-      };
-      const unselectCodeLines = () => {
-        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
-        elementsIds.forEach((elId) => {
-          const div = window.document.getElementById(elId);
-          if (div) {
-            div.remove();
-          }
-        });
-        selectedAnnoteEl = undefined;
-      };
-        // Handle positioning of the toggle
-    window.addEventListener(
-      "resize",
-      throttle(() => {
-        elRect = undefined;
-        if (selectedAnnoteEl) {
-          selectCodeLines(selectedAnnoteEl);
-        }
-      }, 10)
-    );
-    function throttle(fn, ms) {
-    let throttle = false;
-    let timer;
-      return (...args) => {
-        if(!throttle) { // first call gets through
-            fn.apply(this, args);
-            throttle = true;
-        } else { // all the others get throttled
-            if(timer) clearTimeout(timer); // cancel #2
-            timer = setTimeout(() => {
-              fn.apply(this, args);
-              timer = throttle = false;
-            }, ms);
-        }
-      };
-    }
-      // Attach click handler to the DT
-      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
-      for (const annoteDlNode of annoteDls) {
-        annoteDlNode.addEventListener('click', (event) => {
-          const clickedEl = event.target;
-          if (clickedEl !== selectedAnnoteEl) {
-            unselectCodeLines();
-            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
-            if (activeEl) {
-              activeEl.classList.remove('code-annotation-active');
-            }
-            selectCodeLines(clickedEl);
-            clickedEl.classList.add('code-annotation-active');
-          } else {
-            // Unselect the line
-            unselectCodeLines();
-            clickedEl.classList.remove('code-annotation-active');
-          }
-        });
-      }
-  const findCites = (el) => {
-    const parentEl = el.parentElement;
-    if (parentEl) {
-      const cites = parentEl.dataset.cites;
-      if (cites) {
-        return {
-          el,
-          cites: cites.split(' ')
-        };
-      } else {
-        return findCites(el.parentElement)
-      }
-    } else {
-      return undefined;
-    }
-  };
-  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
-  for (var i=0; i<bibliorefs.length; i++) {
-    const ref = bibliorefs[i];
-    const citeInfo = findCites(ref);
-    if (citeInfo) {
-      tippyHover(citeInfo.el, function() {
-        var popup = window.document.createElement('div');
-        citeInfo.cites.forEach(function(cite) {
-          var citeDiv = window.document.createElement('div');
-          citeDiv.classList.add('hanging-indent');
-          citeDiv.classList.add('csl-entry');
-          var biblioDiv = window.document.getElementById('ref-' + cite);
-          if (biblioDiv) {
-            citeDiv.innerHTML = biblioDiv.innerHTML;
-          }
-          popup.appendChild(citeDiv);
-        });
-        return popup.innerHTML;
+      }, function(instance) {
       });
     }
-  }
-});
-</script>
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
       <a href="./implementation.html" class="pagination-link" aria-label="Domain Implementation Guide">

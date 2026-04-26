@@ -2,13 +2,17 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.5.57">
+<meta name="generator" content="quarto-1.9.37">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="dcterms.date" content="2026-04-26">
 
-<title>2&nbsp; Values and Principles – Large Language Model Policy and Practice</title>
+<title>2&nbsp; Values and Principles – Implementing AI in Academic Medicine</title>
 <style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
 div.columns{display: flex; gap: min(4vw, 1.5em);}
@@ -20,7 +24,26 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
@@ -31,16 +54,17 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
 <link href="./framework.html" rel="next">
-<link href="./index.html" rel="prev">
-<script src="site_libs/quarto-html/quarto.js"></script>
+<link href="./overview.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-7f8f88aac4f3542376d5c11b86a4c14d.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-36bf55b16c7cb4b1420f41495cb5446a.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -68,20 +92,11 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
-<!-- Google tag (gtag.js) -->
-<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-KLLV1GCF4E"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-KLLV1GCF4E');
-</script>
 
 
 </head>
 
-<body class="nav-sidebar floating nav-fixed">
+<body class="nav-sidebar floating nav-fixed quarto-light">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -89,7 +104,7 @@ ul.task-list li input[type="checkbox"] {
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
     <a class="navbar-brand" href="./index.html">
-    <span class="navbar-title">Large Language Model Policy and Practice</span>
+    <span class="navbar-title">Implementing AI in Academic Medicine</span>
     </a>
   </div>
         <div class="quarto-navbar-tools tools-wide tools-end">
@@ -98,13 +113,13 @@ ul.task-list li input[type="checkbox"] {
       <a href="" title="Download" id="quarto-navigation-tool-dropdown-0" class="quarto-navigation-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false" role="link" aria-label="Download"><i class="bi bi-download"></i></a>
       <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="quarto-navigation-tool-dropdown-0">
           <li>
-            <a class="dropdown-item quarto-navbar-tools-item" href="./Large-Language-Model-Policy-and-Practice.pdf">
+            <a class="dropdown-item quarto-navbar-tools-item" href="./Implementing-AI-in-Academic-Medicine.pdf">
               <i class="bi bi-file-pdf pe-1"></i>
             Download PDF
             </a>
           </li>
           <li>
-            <a class="dropdown-item quarto-navbar-tools-item" href="./Large-Language-Model-Policy-and-Practice.epub">
+            <a class="dropdown-item quarto-navbar-tools-item" href="./Implementing-AI-in-Academic-Medicine.epub">
               <i class="bi bi-journal pe-1"></i>
             Download ePub
             </a>
@@ -157,13 +172,13 @@ ul.task-list li input[type="checkbox"] {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./preface.html" class="sidebar-item-text sidebar-link">
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Preface</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link">
+  <a href="./overview.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Overview</span></span></a>
   </div>
 </li>
@@ -197,7 +212,7 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./barriers.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Barriers and Obstacles and How to Overcome Them</span></span></a>
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Barriers and How to Address Them</span></span></a>
   </div>
 </li>
       </ul>
@@ -220,13 +235,13 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./resources_research.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Research</span></span></a>
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Research Domain</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./resources_education.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Education</span></span></a>
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Education Domain</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -235,17 +250,93 @@ ul.task-list li input[type="checkbox"] {
  <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Business Operations</span></span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./regulatory_landscape.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Regulatory and Policy Landscape</span></span></a>
+  </div>
+</li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
- <span class="menu-text">Appendices</span></a>
+ <span class="menu-text">Agentic AI in Practice</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./agentic_safety.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Agentic Safety and Guardrails</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./patient_trust.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Patient and Community Trust</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./professional_wellness.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Professional Wellness and Reducing Cognitive Burden</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true">
+ <span class="menu-text">Workstream Resources</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./infrastructure.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">IT Infrastructure and Security</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./workforce.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Training and Workforce Development</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ethics.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Ethics, Equity, and Institutional Accountability</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./data.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Data Access and Governance</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./pm_and_support.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Project Management and AI Portfolio Governance</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true">
+ <span class="menu-text">Appendices</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./appendices.html" class="sidebar-item-text sidebar-link">
@@ -255,13 +346,25 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./bill_of_rights.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">B</span>&nbsp; <span class="chapter-title">Whitehouse AI Bill(s) of rights</span></span></a>
+ <span class="menu-text"><span class="chapter-number">B</span>&nbsp; <span class="chapter-title">OSTP Blueprint for an AI Bill of Rights</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./HHS.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">C</span>&nbsp; <span class="chapter-title">HHS EHR reporting program rule</span></span></a>
+ <span class="menu-text"><span class="chapter-number">C</span>&nbsp; <span class="chapter-title">ONC HTI-1: Algorithm Transparency and Interoperability</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./appendix_workflow.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">D</span>&nbsp; <span class="chapter-title">How This Book Was Written: A Multi-Model AI Authorship Workflow</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./references.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">References</span></a>
   </div>
 </li>
       </ul>
@@ -276,15 +379,12 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#vision-statement" id="toc-vision-statement" class="nav-link active" data-scroll-target="#vision-statement"><span class="header-section-number">2.1</span> Vision Statement</a></li>
-  <li><a href="#stakeholder-considerations" id="toc-stakeholder-considerations" class="nav-link" data-scroll-target="#stakeholder-considerations"><span class="header-section-number">2.2</span> Stakeholder Considerations</a>
-  <ul class="collapse">
-  <li><a href="#patients" id="toc-patients" class="nav-link" data-scroll-target="#patients"><span class="header-section-number">2.2.1</span> Patients</a></li>
-  <li><a href="#healthcare-providers" id="toc-healthcare-providers" class="nav-link" data-scroll-target="#healthcare-providers"><span class="header-section-number">2.2.2</span> Healthcare Providers</a></li>
-  <li><a href="#researchers" id="toc-researchers" class="nav-link" data-scroll-target="#researchers"><span class="header-section-number">2.2.3</span> Researchers</a></li>
-  <li><a href="#administrators-and-support-staff" id="toc-administrators-and-support-staff" class="nav-link" data-scroll-target="#administrators-and-support-staff"><span class="header-section-number">2.2.4</span> Administrators and Support Staff</a></li>
-  </ul></li>
-  <li><a href="#monitoring-and-compliance" id="toc-monitoring-and-compliance" class="nav-link" data-scroll-target="#monitoring-and-compliance"><span class="header-section-number">2.3</span> Monitoring and Compliance</a></li>
+  <li><a href="#patient-safety-and-the-primacy-of-clinical-judgment" id="toc-patient-safety-and-the-primacy-of-clinical-judgment" class="nav-link active" data-scroll-target="#patient-safety-and-the-primacy-of-clinical-judgment"><span class="header-section-number">2.1</span> Patient Safety and the Primacy of Clinical Judgment</a></li>
+  <li><a href="#equity-as-performance-requirement" id="toc-equity-as-performance-requirement" class="nav-link" data-scroll-target="#equity-as-performance-requirement"><span class="header-section-number">2.2</span> Equity as Performance Requirement</a></li>
+  <li><a href="#transparency-from-principle-to-attribute-list" id="toc-transparency-from-principle-to-attribute-list" class="nav-link" data-scroll-target="#transparency-from-principle-to-attribute-list"><span class="header-section-number">2.3</span> Transparency: From Principle to Attribute List</a></li>
+  <li><a href="#human-oversight-and-the-agentic-threshold" id="toc-human-oversight-and-the-agentic-threshold" class="nav-link" data-scroll-target="#human-oversight-and-the-agentic-threshold"><span class="header-section-number">2.4</span> Human Oversight and the Agentic Threshold</a></li>
+  <li><a href="#accountability-the-structural-turn" id="toc-accountability-the-structural-turn" class="nav-link" data-scroll-target="#accountability-the-structural-turn"><span class="header-section-number">2.5</span> Accountability: The Structural Turn</a></li>
+  <li><a href="#how-peer-institutions-have-operationalized-these-principles" id="toc-how-peer-institutions-have-operationalized-these-principles" class="nav-link" data-scroll-target="#how-peer-institutions-have-operationalized-these-principles"><span class="header-section-number">2.6</span> How Peer Institutions Have Operationalized These Principles</a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/seandavi/campus-llm-kb/edit/main/values.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li></ul></div></nav>
     </div>
@@ -293,7 +393,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Values and Principles</span></h1>
+<h1 class="title"><span id="sec-values" class="quarto-section-identifier"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Values and Principles</span></span></h1>
 </div>
 
 
@@ -301,6 +401,12 @@ ul.task-list li input[type="checkbox"] {
 <div class="quarto-title-meta">
 
     
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">April 26, 2026</p>
+    </div>
+  </div>
   
     
   </div>
@@ -310,298 +416,369 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>While there are many potential applications for LLMs in healthcare, the following guiding principles should be considered when developing and deploying LLMs in the academic hospital system. Note that these principles largely apply to any Artificial Intelligence or Machine Learning applications in use on the campus.</p>
-<section id="vision-statement" class="level2" data-number="2.1">
-<h2 data-number="2.1" class="anchored" data-anchor-id="vision-statement"><span class="header-section-number">2.1</span> Vision Statement</h2>
-<ul>
-<li><p>LLMs must be used in a manner consistent with the mission, vision, and values of the academic hospital system.</p></li>
-<li><p>The use of LLMs must align with relevant legal and regulatory requirements, including but not limited to data privacy, security, and intellectual property laws.</p></li>
-<li><p>The deployment of LLMs should prioritize patient safety, privacy, and wellbeing.</p></li>
-<li><p>LLMs must be used in a transparent manner, with users understanding the capabilities and limitations of the technology.</p></li>
-<li><p>Continuous improvement and evaluation of LLM usage should be prioritized to ensure ongoing alignment with organizational goals.</p></li>
-</ul>
+<p>Every AMC that has published an AI governance framework lists roughly the same values: patient safety, equity, transparency, accountability, privacy, and human oversight. The lists are not wrong. They are also not differentiating. The meaningful question is not which values an institution holds — that convergence is real and appropriate — but whether those values are encoded in governance structures that make them operational, or whether they remain aspirational statements that authorize AI deployments without constraining them.</p>
+<p>This distinction matters because value statements are not self-enforcing. An institution can publish a principle of “transparency” and simultaneously deploy clinical AI tools with no documentation of training data provenance, no disclosure to clinicians of the model’s known limitations, and no audit trail connecting AI outputs to clinical decisions. The principle is present. The operational mechanism that would give it meaning is not. The chapters that follow this one are primarily about the mechanisms. This chapter is about why the principles matter and how peer institutions have translated them into governance practice.</p>
+<section id="patient-safety-and-the-primacy-of-clinical-judgment" class="level2" data-number="2.1">
+<h2 data-number="2.1" class="anchored" data-anchor-id="patient-safety-and-the-primacy-of-clinical-judgment"><span class="header-section-number">2.1</span> Patient Safety and the Primacy of Clinical Judgment</h2>
+<p>Patient safety is the foundational principle in clinical AI governance, and it is the one most at risk of being treated as self-evident when it requires active structural support. The automation complacency literature documents consistently that clinicians who work with accurate AI tools gradually reduce their independent scrutiny of AI outputs — not through carelessness but through rational adaptation to an environment where the tool is usually right <span class="citation" data-cites="Parasuraman2010-automation">(<a href="references.html#ref-Parasuraman2010-automation" role="doc-biblioref">Parasuraman and Manzey 2010</a>)</span>. The risk is not that clinicians distrust AI. It is that they come to trust it in ways that bypass the critical evaluation the technology requires.</p>
+<p>Patient safety as an operational governance principle means two specific things. First, every deployed clinical AI tool requires an explicit human oversight architecture: who reviews AI outputs, under what conditions, with what documentation requirements, and what happens when the tool is wrong. This is not a policy preference. It is the design constraint that determines whether a deployment is safe. Second, training programs for clinicians using AI tools should include explicit instruction on the specific failure modes of each tool they use, not just its aggregate accuracy. A physician who knows that ambient documentation tools are more likely to omit negative findings than to hallucinate positive ones is a better human-in-the-loop than one who knows only that the tool achieves high average accuracy.</p>
 </section>
-<section id="stakeholder-considerations" class="level2" data-number="2.2">
-<h2 data-number="2.2" class="anchored" data-anchor-id="stakeholder-considerations"><span class="header-section-number">2.2</span> Stakeholder Considerations</h2>
-<section id="patients" class="level3" data-number="2.2.1">
-<h3 data-number="2.2.1" class="anchored" data-anchor-id="patients"><span class="header-section-number">2.2.1</span> Patients</h3>
-<ul>
-<li><p>LLMs should be used to augment patient care and improve outcomes, without replacing the human touch and empathy of healthcare providers.</p></li>
-<li><p>Patients must be informed about the use of LLMs in their care, and they should have the option to opt out if desired.</p></li>
-<li><p>Patient data used in LLM applications must be anonymized, encrypted, and securely stored to protect patient privacy.</p></li>
-</ul>
+<section id="equity-as-performance-requirement" class="level2" data-number="2.2">
+<h2 data-number="2.2" class="anchored" data-anchor-id="equity-as-performance-requirement"><span class="header-section-number">2.2</span> Equity as Performance Requirement</h2>
+<p>Equity is the principle that most AMC AI governance programs acknowledge and fewest operationalize. The acknowledgment is easy: any institutional AI values statement will include language about not exacerbating health disparities. The operationalization requires something specific: demographic stratification of performance metrics as a standard component of AI validation, not an optional audit.</p>
+<p>The Obermeyer 2019 demonstration that a widely deployed risk stratification algorithm systematically underestimated the health needs of Black patients was not a finding about a biased algorithm <span class="citation" data-cites="Obermeyer2019-bias">(<a href="references.html#ref-Obermeyer2019-bias" role="doc-biblioref">Obermeyer et al. 2019</a>)</span>. It was a finding about a technically correct algorithm that encoded an existing inequity by using healthcare utilization as a proxy for health need. The algorithm did exactly what it was designed to do. The design was the problem. Catching this kind of structural inequity before deployment requires stratified performance analysis across race, ethnicity, age, insurance status, and language as a baseline requirement — not a step that happens if someone raises a concern.</p>
+<p>Badal and colleagues proposed a framework that frames alleviation of health disparities as the first principle of responsible clinical AI, not a supplementary consideration <span class="citation" data-cites="Badal2023-bt">(<a href="references.html#ref-Badal2023-bt" role="doc-biblioref">Badal et al. 2023</a>)</span>. In practice, this means that a model achieving 85 percent accuracy overall but 70 percent accuracy for the subpopulation with the highest disease burden is not a high-performing model. It performs best for the patients who need it least. The equity audit process described in <a href="ethics.html#sec-ethics-start" class="quarto-xref"><span>Section 16.11</span></a> is the operational mechanism for this principle. Without that audit, equity is a value statement, not a program element.</p>
 </section>
-<section id="healthcare-providers" class="level3" data-number="2.2.2">
-<h3 data-number="2.2.2" class="anchored" data-anchor-id="healthcare-providers"><span class="header-section-number">2.2.2</span> Healthcare Providers</h3>
-<ul>
-<li><p>LLMs should be deployed to enhance clinical decision-making and efficiency without undermining the autonomy and expertise of healthcare providers.</p></li>
-<li><p>Adequate training and support should be provided to healthcare providers to ensure proper use and understanding of LLMs.</p></li>
-<li><p>Feedback from healthcare providers must be regularly solicited to improve LLM performance and usability.</p></li>
-</ul>
+<section id="transparency-from-principle-to-attribute-list" class="level2" data-number="2.3">
+<h2 data-number="2.3" class="anchored" data-anchor-id="transparency-from-principle-to-attribute-list"><span class="header-section-number">2.3</span> Transparency: From Principle to Attribute List</h2>
+<p>Transparency is now a regulatory requirement, not just an ethical aspiration. The ONC Health Data, Technology, and Interoperability rule requires EHR vendors to surface 31 structured source attributes for every certified AI-enabled clinical decision support intervention <span class="citation" data-cites="ONC2024-hti1">(<a href="references.html#ref-ONC2024-hti1" role="doc-biblioref">Office of the National Coordinator for Health Information Technology 2024</a>)</span>. Those attributes include training data sources and date ranges, performance characteristics on the populations validated, known limitations and failure modes, instructions for appropriate use, and update history. This is what operationalized transparency looks like: a specific list of information that must be available at the point of clinical use.</p>
+<p>For AMCs, this regulatory baseline is a floor, not a ceiling. Mitchell and colleagues’ model card framework — now widely adopted by major AI vendors and required by the <a href="https://www.coalitionforhealthai.org">Coalition for Health AI</a> — defines a similar set of disclosure requirements that apply to any model, regardless of whether it falls under ONC certification <span class="citation" data-cites="Mitchell2019-modelcards">(<a href="references.html#ref-Mitchell2019-modelcards" role="doc-biblioref">Mitchell et al. 2019</a>)</span>. An AMC that requires model cards from every vendor providing an AI tool, and publishes equivalent documentation for internally developed tools, has operationalized transparency in a way that the values statement alone never could.</p>
+<p>The transparency principle extends to patients. The <a href="https://www.who.int">WHO</a> ethics guidance on AI for health recommends meaningful disclosure to patients about which AI tools are used in their care and how those tools affect clinical decisions <span class="citation" data-cites="WHO2024-ai-ethics">(<a href="references.html#ref-WHO2024-ai-ethics" role="doc-biblioref">World Health Organization 2024</a>)</span>. California AB 3030 now requires disclosure on AI-generated patient communications. The operational mechanism here is the consent architecture described in <a href="ethics.html" class="quarto-xref"><span>Chapter 16</span></a>: an institutional policy on when and how patients are informed about clinical AI use, not a case-by-case determination left to individual clinicians.</p>
 </section>
-<section id="researchers" class="level3" data-number="2.2.3">
-<h3 data-number="2.2.3" class="anchored" data-anchor-id="researchers"><span class="header-section-number">2.2.3</span> Researchers</h3>
-<ul>
-<li><p>The use of LLMs in research must adhere to ethical standards, including obtaining informed consent and minimizing potential harm.</p></li>
-<li><p>Collaboration between researchers and LLM developers should be encouraged to drive innovation and address specific research needs.</p></li>
-<li><p>Research involving LLMs should be transparent and reproducible, with results and methodologies made available to the wider scientific community.</p></li>
-</ul>
+<section id="human-oversight-and-the-agentic-threshold" class="level2" data-number="2.4">
+<h2 data-number="2.4" class="anchored" data-anchor-id="human-oversight-and-the-agentic-threshold"><span class="header-section-number">2.4</span> Human Oversight and the Agentic Threshold</h2>
+<p>Human oversight has become more complicated as AI has become more agentic. When the tool is advisory — an AI recommends, a clinician decides — the oversight model is relatively straightforward. As AI tools gain the ability to take autonomous actions — ordering tests, routing referrals, updating records, communicating with patients — the oversight architecture requires more specific design. Who reviews autonomous AI actions? How quickly must review occur to be meaningful? What actions require pre-authorization rather than post-hoc review? These questions are addressed specifically in <a href="agentic_safety.html" class="quarto-xref"><span>Chapter 11</span></a>; the relevant principle here is that human oversight is not a passive condition but an active design requirement that must be specified for each tool’s risk profile and autonomy level.</p>
 </section>
-<section id="administrators-and-support-staff" class="level3" data-number="2.2.4">
-<h3 data-number="2.2.4" class="anchored" data-anchor-id="administrators-and-support-staff"><span class="header-section-number">2.2.4</span> Administrators and Support Staff</h3>
-<ul>
-<li><p>LLMs should be deployed in administrative and support functions to improve efficiency, reduce costs, and enhance the overall quality of service.</p></li>
-<li><p>Staff should receive appropriate training and support to understand and utilize LLMs effectively.</p></li>
-<li><p>Employee feedback should be actively sought to identify areas of improvement and potential new applications for LLMs.</p></li>
-</ul>
+<section id="accountability-the-structural-turn" class="level2" data-number="2.5">
+<h2 data-number="2.5" class="anchored" data-anchor-id="accountability-the-structural-turn"><span class="header-section-number">2.5</span> Accountability: The Structural Turn</h2>
+<p>Accountability in AI governance is structural, not individual. An ambient documentation system that produces inaccurate notes fails not because the clinician was careless in attestation — though the attestation does carry professional accountability — but because the deployment decision did not include adequate validation of the tool in the clinical context, the training program did not adequately prepare clinicians to recognize the tool’s specific failure modes, and the monitoring system did not detect the pattern of errors before it became a patient safety event. Individual accountability is real. It is also insufficient as an accountability framework for tools that operate at scale across thousands of encounters.</p>
+<p>The structural accountability mechanisms in this book are: the stage-gate governance process in <a href="pm_and_support.html" class="quarto-xref"><span>Chapter 18</span></a> that requires documented validation before tools influence clinical decisions; the equity audit requirement in <a href="ethics.html" class="quarto-xref"><span>Chapter 16</span></a> that creates an institutional record of what was known about demographic performance before deployment; the total product lifecycle monitoring in <a href="pm_and_support.html" class="quarto-xref"><span>Chapter 18</span></a> that creates ongoing visibility into whether deployed tools are performing as validated; and the board-level reporting requirement in <a href="regulatory_landscape.html#sec-regulatory-start" class="quarto-xref"><span>Section 10.6</span></a> that makes AI governance visible at the level of institutional accountability where it ultimately resides.</p>
 </section>
-</section>
-<section id="monitoring-and-compliance" class="level2" data-number="2.3">
-<h2 data-number="2.3" class="anchored" data-anchor-id="monitoring-and-compliance"><span class="header-section-number">2.3</span> Monitoring and Compliance</h2>
-<ul>
-<li><p>A designated LLM Steering Committee, comprising representatives from various stakeholder groups, will be responsible for monitoring and enforcing compliance with this policy.</p></li>
-<li><p>Periodic audits and assessments will be conducted to ensure adherence to this policy and identify areas for improvement.</p></li>
-<li><p>Policy violations may result in disciplinary action, up to and including termination of employment or access to LLMs</p></li>
-</ul>
+<section id="how-peer-institutions-have-operationalized-these-principles" class="level2" data-number="2.6">
+<h2 data-number="2.6" class="anchored" data-anchor-id="how-peer-institutions-have-operationalized-these-principles"><span class="header-section-number">2.6</span> How Peer Institutions Have Operationalized These Principles</h2>
+<p>The convergence of leading AMC AI governance programs on similar structures is itself informative. Duke Health’s Algorithm-Based Clinical Decision Support framework treats every deployed algorithm as a clinical asset with a named clinical owner, a named technical owner, a mandatory silent evaluation phase before any tool influences clinical decisions, and a registry that maintains continuous visibility into the deployed portfolio <span class="citation" data-cites="Bedoya2022-abcds">(<a href="references.html#ref-Bedoya2022-abcds" role="doc-biblioref">Bedoya et al. 2022</a>)</span>. The registry — a simple idea that turns out to be operationally significant — is what makes the 10 percent automated inventory figure so striking. Most institutions that have AI governance committees do not have the basic visibility into their own environment that accountability requires.</p>
+<p>UCSF’s Trustworthy AI playbook grounds its six principles in mandatory checkpoints at three points in the deployment lifecycle: before a tool accesses data, before a tool enters a pilot, and before a tool reaches enterprise scale. The checkpoint structure converts principles into decision gates. A tool does not advance through the lifecycle by meeting soft criteria; it advances by clearing documented requirements that are enforced by the governance committee.</p>
+<p>Vanderbilt’s AVAIL program requires every AI tool to pass through a REDCap-based intake process before it reaches the governance committee’s attention. The intake triage is itself a governance mechanism: it ensures that every tool is assessed against a consistent set of criteria before institutional resources are committed to evaluation, and it builds the documented record that the annual impact assessment requirements of Colorado SB 24-205 and the equity audit requirements of HHS Section 1557 ultimately require.</p>
+<div id="tbl-principles-mechanisms" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-principles-mechanisms-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;2.1: Governance principles mapped to regulatory requirements and operational mechanisms. The mechanism column is the bridge between aspiration and program.
+</figcaption>
+<div aria-describedby="tbl-principles-mechanisms-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<table class="caption-top table">
+<colgroup>
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Principle</th>
+<th>Regulatory Mechanism</th>
+<th>Operational Mechanism</th>
+<th>Chapter</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Safety</td>
+<td>CMS MA rule: AI cannot substitute for human clinical review</td>
+<td>Human oversight architecture, specific failure mode training</td>
+<td><a href="resources_clinical.html" class="quarto-xref"><span>Chapter 6</span></a>, <a href="professional_wellness.html" class="quarto-xref"><span>Chapter 13</span></a></td>
+</tr>
+<tr class="even">
+<td>Equity</td>
+<td>HHS Section 1557: no discriminatory patient care tools</td>
+<td>Stratified performance validation, demographic drift monitoring</td>
+<td><a href="ethics.html" class="quarto-xref"><span>Chapter 16</span></a></td>
+</tr>
+<tr class="odd">
+<td>Transparency</td>
+<td>ONC HTI-1: 31 source attributes for certified DSIs</td>
+<td>Model card requirement at intake, institutional disclosure policy</td>
+<td><a href="data.html" class="quarto-xref"><span>Chapter 17</span></a>, <a href="pm_and_support.html" class="quarto-xref"><span>Chapter 18</span></a></td>
+</tr>
+<tr class="even">
+<td>Human oversight</td>
+<td>FDA PCCP: human oversight for adaptive AI devices</td>
+<td>HITL checkpoints, override documentation</td>
+<td><a href="agentic_safety.html" class="quarto-xref"><span>Chapter 11</span></a></td>
+</tr>
+<tr class="odd">
+<td>Accountability</td>
+<td>Colorado SB 24-205: annual impact assessments</td>
+<td>Stage-gate governance, board reporting</td>
+<td><a href="pm_and_support.html" class="quarto-xref"><span>Chapter 18</span></a>, <a href="regulatory_landscape.html" class="quarto-xref"><span>Chapter 10</span></a></td>
+</tr>
+<tr class="even">
+<td>Privacy</td>
+<td>HIPAA BAA + zero-data-retention provisions</td>
+<td>Data classification framework, honest broker function</td>
+<td><a href="data.html" class="quarto-xref"><span>Chapter 17</span></a></td>
+</tr>
+</tbody>
+</table>
+</div>
+</figure>
+</div>
+<p>These examples share a common architecture: principles that are specific enough to be falsifiable, checkpoints that create documented records of compliance, and ownership structures that ensure someone is accountable for the principle being honored. That architecture is what this book is about. The values are the starting point. The mechanisms are the work.</p>
 
 
+<div id="refs" class="references csl-bib-body hanging-indent" role="list" style="display: none">
+<div id="ref-Badal2023-bt" class="csl-entry" role="listitem">
+Badal, Kimberly, Carmen M Lee, and Laura J Esserman. 2023. <span>“Guiding Principles for the Responsible Development of Artificial Intelligence Tools for Healthcare.”</span> <em>Communication &amp; Medicine</em> 3 (1): 47. <a href="https://doi.org/10.1038/s43856-023-00279-9">https://doi.org/10.1038/s43856-023-00279-9</a>.
+</div>
+<div id="ref-Bedoya2022-abcds" class="csl-entry" role="listitem">
+Bedoya, Armando D, Nicoleta J Economou-Zavlanos, Benjamin A Goldstein, et al. 2022. <span>“A Framework for the Oversight and Local Deployment of Safe and High-Quality Prediction Models.”</span> <em>Journal of the American Medical Informatics Association</em> 29 (9): 1631–36. <a href="https://doi.org/10.1093/jamia/ocac078">https://doi.org/10.1093/jamia/ocac078</a>.
+</div>
+<div id="ref-Mitchell2019-modelcards" class="csl-entry" role="listitem">
+Mitchell, Margaret, Simone Wu, Andrew Zaldivar, et al. 2019. <span>“Model Cards for Model Reporting.”</span> <em>Proceedings of the Conference on Fairness, Accountability, and Transparency</em>. <a href="https://doi.org/10.1145/3287560.3287596">https://doi.org/10.1145/3287560.3287596</a>.
+</div>
+<div id="ref-Obermeyer2019-bias" class="csl-entry" role="listitem">
+Obermeyer, Ziad, Brian Powers, Christine Vogeli, and Sendhil Mullainathan. 2019. <span>“Dissecting Racial Bias in an Algorithm Used to Manage the Health of Populations.”</span> <em>Science</em> 366 (6464): 447–53. <a href="https://doi.org/10.1126/science.aax2342">https://doi.org/10.1126/science.aax2342</a>.
+</div>
+<div id="ref-ONC2024-hti1" class="csl-entry" role="listitem">
+Office of the National Coordinator for Health Information Technology. 2024. <span>“Health Data, Technology, and Interoperability: Certification Program Updates, Algorithm Transparency, and Information Sharing (<span>HTI-1</span>).”</span> In <em>Federal Register</em>, No. 8, vol. 89. <a href="https://www.federalregister.gov/documents/2024/01/09/2023-28824/health-data-technology-and-interoperability-certification-program-updates-algorithm-transparency-and">https://www.federalregister.gov/documents/2024/01/09/2023-28824/health-data-technology-and-interoperability-certification-program-updates-algorithm-transparency-and</a>.
+</div>
+<div id="ref-Parasuraman2010-automation" class="csl-entry" role="listitem">
+Parasuraman, Raja, and Dietrich H Manzey. 2010. <span>“Complacency and Bias in Human Use of Automation: An Updated Understanding.”</span> <em>Human Factors</em> 52 (3): 381–410. <a href="https://doi.org/10.1177/0018720810376055">https://doi.org/10.1177/0018720810376055</a>.
+</div>
+<div id="ref-WHO2024-ai-ethics" class="csl-entry" role="listitem">
+World Health Organization. 2024. <em>Ethics and Governance of Artificial Intelligence for Health</em>. <a href="https://www.who.int/publications/i/item/9789240029200">https://www.who.int/publications/i/item/9789240029200</a>.
+</div>
+</div>
 </section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
-window.document.addEventListener("DOMContentLoaded", function (event) {
-  const toggleBodyColorMode = (bsSheetEl) => {
-    const mode = bsSheetEl.getAttribute("data-mode");
-    const bodyEl = window.document.querySelector("body");
-    if (mode === "dark") {
-      bodyEl.classList.add("quarto-dark");
-      bodyEl.classList.remove("quarto-light");
-    } else {
-      bodyEl.classList.add("quarto-light");
-      bodyEl.classList.remove("quarto-dark");
-    }
-  }
-  const toggleBodyColorPrimary = () => {
-    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
-    if (bsSheetEl) {
-      toggleBodyColorMode(bsSheetEl);
-    }
-  }
-  toggleBodyColorPrimary();  
-  const icon = "";
-  const anchorJS = new window.AnchorJS();
-  anchorJS.options = {
-    placement: 'right',
-    icon: icon
-  };
-  anchorJS.add('.anchored');
-  const isCodeAnnotation = (el) => {
-    for (const clz of el.classList) {
-      if (clz.startsWith('code-annotation-')) {                     
-        return true;
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
       }
+      return false;
     }
-    return false;
-  }
-  const onCopySuccess = function(e) {
-    // button target
-    const button = e.trigger;
-    // don't keep focus
-    button.blur();
-    // flash "checked"
-    button.classList.add('code-copy-button-checked');
-    var currentTitle = button.getAttribute("title");
-    button.setAttribute("title", "Copied!");
-    let tooltip;
-    if (window.bootstrap) {
-      button.setAttribute("data-bs-toggle", "tooltip");
-      button.setAttribute("data-bs-placement", "left");
-      button.setAttribute("data-bs-title", "Copied!");
-      tooltip = new bootstrap.Tooltip(button, 
-        { trigger: "manual", 
-          customClass: "code-copy-button-tooltip",
-          offset: [0, -8]});
-      tooltip.show();    
-    }
-    setTimeout(function() {
-      if (tooltip) {
-        tooltip.hide();
-        button.removeAttribute("data-bs-title");
-        button.removeAttribute("data-bs-toggle");
-        button.removeAttribute("data-bs-placement");
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
       }
-      button.setAttribute("title", currentTitle);
-      button.classList.remove('code-copy-button-checked');
-    }, 1000);
-    // clear code selection
-    e.clearSelection();
-  }
-  const getTextToCopy = function(trigger) {
-      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
       for (const childEl of codeEl.children) {
         if (isCodeAnnotation(childEl)) {
           childEl.remove();
         }
       }
       return codeEl.innerText;
-  }
-  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
-    text: getTextToCopy
-  });
-  clipboard.on('success', onCopySuccess);
-  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
-    // For code content inside modals, clipBoardJS needs to be initialized with a container option
-    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
-    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
-      text: getTextToCopy,
-      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
     });
-    clipboardModal.on('success', onCopySuccess);
-  }
-    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
-    var mailtoRegex = new RegExp(/^mailto:/);
-      var filterRegex = new RegExp("https:\/\/seandavi\.github\.io\/campus-llm-kb\/");
-    var isInternal = (href) => {
-        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
     }
-    // Inspect non-navigation links and adorn them if external
- 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
-    for (var i=0; i<links.length; i++) {
-      const link = links[i];
-      if (!isInternal(link.href)) {
-        // undo the damage that might have been done by quarto-nav.js in the case of
-        // links that we want to consider external
-        if (link.dataset.originalHref !== undefined) {
-          link.href = link.dataset.originalHref;
-        }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/seandavi\.github\.io\/campus-llm-kb\/");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }
-    }
-  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
-    const config = {
-      allowHTML: true,
-      maxWidth: 500,
-      delay: 100,
-      arrow: false,
-      appendTo: function(el) {
-          return el.parentElement;
-      },
-      interactive: true,
-      interactiveBorder: 10,
-      theme: 'quarto',
-      placement: 'bottom-start',
-    };
-    if (contentFn) {
-      config.content = contentFn;
-    }
-    if (onTriggerFn) {
-      config.onTrigger = onTriggerFn;
-    }
-    if (onUntriggerFn) {
-      config.onUntrigger = onUntriggerFn;
-    }
-    window.tippy(el, config); 
-  }
-  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
-  for (var i=0; i<noterefs.length; i++) {
-    const ref = noterefs[i];
-    tippyHover(ref, function() {
-      // use id or data attribute instead here
-      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
-      try { href = new URL(href).hash; } catch {}
-      const id = href.replace(/^#\/?/, "");
-      const note = window.document.getElementById(id);
-      if (note) {
-        return note.innerHTML;
-      } else {
-        return "";
-      }
-    });
-  }
-  const xrefs = window.document.querySelectorAll('a.quarto-xref');
-  const processXRef = (id, note) => {
-    // Strip column container classes
-    const stripColumnClz = (el) => {
-      el.classList.remove("page-full", "page-columns");
-      if (el.children) {
-        for (const child of el.children) {
-          stripColumnClz(child);
-        }
-      }
-    }
-    stripColumnClz(note)
-    if (id === null || id.startsWith('sec-')) {
-      // Special case sections, only their first couple elements
-      const container = document.createElement("div");
-      if (note.children && note.children.length > 2) {
-        container.appendChild(note.children[0].cloneNode(true));
-        for (let i = 1; i < note.children.length; i++) {
-          const child = note.children[i];
-          if (child.tagName === "P" && child.innerText === "") {
-            continue;
-          } else {
-            container.appendChild(child.cloneNode(true));
-            break;
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
           }
         }
-        if (window.Quarto?.typesetMath) {
-          window.Quarto.typesetMath(container);
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
         }
-        return container.innerHTML
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
       } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
         if (window.Quarto?.typesetMath) {
           window.Quarto.typesetMath(note);
         }
-        return note.innerHTML;
-      }
-    } else {
-      // Remove any anchor links if they are present
-      const anchorLink = note.querySelector('a.anchorjs-link');
-      if (anchorLink) {
-        anchorLink.remove();
-      }
-      if (window.Quarto?.typesetMath) {
-        window.Quarto.typesetMath(note);
-      }
-      // TODO in 1.5, we should make sure this works without a callout special case
-      if (note.classList.contains("callout")) {
-        return note.outerHTML;
-      } else {
-        return note.innerHTML;
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
       }
     }
-  }
-  for (var i=0; i<xrefs.length; i++) {
-    const xref = xrefs[i];
-    tippyHover(xref, undefined, function(instance) {
-      instance.disable();
-      let url = xref.getAttribute('href');
-      let hash = undefined; 
-      if (url.startsWith('#')) {
-        hash = url;
-      } else {
-        try { hash = new URL(url).hash; } catch {}
-      }
-      if (hash) {
-        const id = hash.replace(/^#\/?/, "");
-        const note = window.document.getElementById(id);
-        if (note !== null) {
-          try {
-            const html = processXRef(id, note.cloneNode(true));
-            instance.setContent(html);
-          } finally {
-            instance.enable();
-            instance.show();
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
           }
         } else {
-          // See if we can fetch this
-          fetch(url.split('#')[0])
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
           .then(res => res.text())
           .then(html => {
             const parser = new DOMParser();
             const htmlDoc = parser.parseFromString(html, "text/html");
-            const note = htmlDoc.getElementById(id);
+            const note = htmlDoc.querySelector('main.content');
             if (note !== null) {
-              const html = processXRef(id, note);
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
               instance.setContent(html);
             } 
           }).finally(() => {
@@ -609,188 +786,164 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             instance.show();
           });
         }
-      } else {
-        // See if we can fetch a full url (with no hash to target)
-        // This is a special case and we should probably do some content thinning / targeting
-        fetch(url)
-        .then(res => res.text())
-        .then(html => {
-          const parser = new DOMParser();
-          const htmlDoc = parser.parseFromString(html, "text/html");
-          const note = htmlDoc.querySelector('main.content');
-          if (note !== null) {
-            // This should only happen for chapter cross references
-            // (since there is no id in the URL)
-            // remove the first header
-            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
-              note.children[0].remove();
-            }
-            const html = processXRef(null, note);
-            instance.setContent(html);
-          } 
-        }).finally(() => {
-          instance.enable();
-          instance.show();
-        });
-      }
-    }, function(instance) {
-    });
-  }
-      let selectedAnnoteEl;
-      const selectorForAnnotation = ( cell, annotation) => {
-        let cellAttr = 'data-code-cell="' + cell + '"';
-        let lineAttr = 'data-code-annotation="' +  annotation + '"';
-        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
-        return selector;
-      }
-      const selectCodeLines = (annoteEl) => {
-        const doc = window.document;
-        const targetCell = annoteEl.getAttribute("data-target-cell");
-        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
-        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
-        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
-        const lineIds = lines.map((line) => {
-          return targetCell + "-" + line;
-        })
-        let top = null;
-        let height = null;
-        let parent = null;
-        if (lineIds.length > 0) {
-            //compute the position of the single el (top and bottom and make a div)
-            const el = window.document.getElementById(lineIds[0]);
-            top = el.offsetTop;
-            height = el.offsetHeight;
-            parent = el.parentElement.parentElement;
-          if (lineIds.length > 1) {
-            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
-            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
-            height = bottom - top;
-          }
-          if (top !== null && height !== null && parent !== null) {
-            // cook up a div (if necessary) and position it 
-            let div = window.document.getElementById("code-annotation-line-highlight");
-            if (div === null) {
-              div = window.document.createElement("div");
-              div.setAttribute("id", "code-annotation-line-highlight");
-              div.style.position = 'absolute';
-              parent.appendChild(div);
-            }
-            div.style.top = top - 2 + "px";
-            div.style.height = height + 4 + "px";
-            div.style.left = 0;
-            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
-            if (gutterDiv === null) {
-              gutterDiv = window.document.createElement("div");
-              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
-              gutterDiv.style.position = 'absolute';
-              const codeCell = window.document.getElementById(targetCell);
-              const gutter = codeCell.querySelector('.code-annotation-gutter');
-              gutter.appendChild(gutterDiv);
-            }
-            gutterDiv.style.top = top - 2 + "px";
-            gutterDiv.style.height = height + 4 + "px";
-          }
-          selectedAnnoteEl = annoteEl;
-        }
-      };
-      const unselectCodeLines = () => {
-        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
-        elementsIds.forEach((elId) => {
-          const div = window.document.getElementById(elId);
-          if (div) {
-            div.remove();
-          }
-        });
-        selectedAnnoteEl = undefined;
-      };
-        // Handle positioning of the toggle
-    window.addEventListener(
-      "resize",
-      throttle(() => {
-        elRect = undefined;
-        if (selectedAnnoteEl) {
-          selectCodeLines(selectedAnnoteEl);
-        }
-      }, 10)
-    );
-    function throttle(fn, ms) {
-    let throttle = false;
-    let timer;
-      return (...args) => {
-        if(!throttle) { // first call gets through
-            fn.apply(this, args);
-            throttle = true;
-        } else { // all the others get throttled
-            if(timer) clearTimeout(timer); // cancel #2
-            timer = setTimeout(() => {
-              fn.apply(this, args);
-              timer = throttle = false;
-            }, ms);
-        }
-      };
-    }
-      // Attach click handler to the DT
-      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
-      for (const annoteDlNode of annoteDls) {
-        annoteDlNode.addEventListener('click', (event) => {
-          const clickedEl = event.target;
-          if (clickedEl !== selectedAnnoteEl) {
-            unselectCodeLines();
-            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
-            if (activeEl) {
-              activeEl.classList.remove('code-annotation-active');
-            }
-            selectCodeLines(clickedEl);
-            clickedEl.classList.add('code-annotation-active');
-          } else {
-            // Unselect the line
-            unselectCodeLines();
-            clickedEl.classList.remove('code-annotation-active');
-          }
-        });
-      }
-  const findCites = (el) => {
-    const parentEl = el.parentElement;
-    if (parentEl) {
-      const cites = parentEl.dataset.cites;
-      if (cites) {
-        return {
-          el,
-          cites: cites.split(' ')
-        };
-      } else {
-        return findCites(el.parentElement)
-      }
-    } else {
-      return undefined;
-    }
-  };
-  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
-  for (var i=0; i<bibliorefs.length; i++) {
-    const ref = bibliorefs[i];
-    const citeInfo = findCites(ref);
-    if (citeInfo) {
-      tippyHover(citeInfo.el, function() {
-        var popup = window.document.createElement('div');
-        citeInfo.cites.forEach(function(cite) {
-          var citeDiv = window.document.createElement('div');
-          citeDiv.classList.add('hanging-indent');
-          citeDiv.classList.add('csl-entry');
-          var biblioDiv = window.document.getElementById('ref-' + cite);
-          if (biblioDiv) {
-            citeDiv.innerHTML = biblioDiv.innerHTML;
-          }
-          popup.appendChild(citeDiv);
-        });
-        return popup.innerHTML;
+      }, function(instance) {
       });
     }
-  }
-});
-</script>
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./index.html" class="pagination-link" aria-label="Overview">
+      <a href="./overview.html" class="pagination-link" aria-label="Overview">
         <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Overview</span></span>
       </a>          
   </div>

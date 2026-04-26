@@ -1,0 +1,1046 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.9.37">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="dcterms.date" content="2026-04-26">
+
+<title>17&nbsp; Data Access and Governance – Implementing AI in Academic Medicine</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./pm_and_support.html" rel="next">
+<link href="./ethics.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-7f8f88aac4f3542376d5c11b86a4c14d.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-36bf55b16c7cb4b1420f41495cb5446a.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<script src="site_libs/quarto-diagram/mermaid.min.js"></script>
+<script src="site_libs/quarto-diagram/mermaid-init.js"></script>
+<link href="site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
+
+
+</head>
+
+<body class="nav-sidebar floating nav-fixed quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="./index.html">
+    <span class="navbar-title">Implementing AI in Academic Medicine</span>
+    </a>
+  </div>
+        <div class="quarto-navbar-tools tools-wide tools-end">
+    <a href="https://github.com/seandavi/campus-llm-kb/" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
+    <div class="dropdown">
+      <a href="" title="Download" id="quarto-navigation-tool-dropdown-0" class="quarto-navigation-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false" role="link" aria-label="Download"><i class="bi bi-download"></i></a>
+      <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="quarto-navigation-tool-dropdown-0">
+          <li>
+            <a class="dropdown-item quarto-navbar-tools-item" href="./Implementing-AI-in-Academic-Medicine.pdf">
+              <i class="bi bi-file-pdf pe-1"></i>
+            Download PDF
+            </a>
+          </li>
+          <li>
+            <a class="dropdown-item quarto-navbar-tools-item" href="./Implementing-AI-in-Academic-Medicine.epub">
+              <i class="bi bi-journal pe-1"></i>
+            Download ePub
+            </a>
+          </li>
+      </ul>
+    </div>
+    <div class="dropdown">
+      <a href="" title="Share" id="quarto-navigation-tool-dropdown-1" class="quarto-navigation-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false" role="link" aria-label="Share"><i class="bi bi-share"></i></a>
+      <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="quarto-navigation-tool-dropdown-1">
+          <li>
+            <a class="dropdown-item quarto-navbar-tools-item" href="https://twitter.com/intent/tweet?url=|url|">
+              <i class="bi bi-twitter pe-1"></i>
+            Twitter
+            </a>
+          </li>
+          <li>
+            <a class="dropdown-item quarto-navbar-tools-item" href="https://www.facebook.com/sharer/sharer.php?u=|url|">
+              <i class="bi bi-facebook pe-1"></i>
+            Facebook
+            </a>
+          </li>
+          <li>
+            <a class="dropdown-item quarto-navbar-tools-item" href="https://www.linkedin.com/sharing/share-offsite/?url=|url|">
+              <i class="bi bi-linkedin pe-1"></i>
+            LinkedIn
+            </a>
+          </li>
+      </ul>
+    </div>
+</div>
+          <div id="quarto-search" class="" title="Search"></div>
+      </div> <!-- /container-fluid -->
+    </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./infrastructure.html">Workstream Resources</a></li><li class="breadcrumb-item"><a href="./data.html"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Data Access and Governance</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Preface</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./overview.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Overview</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./values.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Values and Principles</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+ <span class="menu-text">Implementation</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./framework.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">The Framework</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./implementation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Domain Implementation Guide</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./barriers.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Barriers and How to Address Them</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="./domainresource.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Domain Resources</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./resources_clinical.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Clinical Domain</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./resources_research.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Research Domain</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./resources_education.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Education Domain</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./resources_business.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Business Operations</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./regulatory_landscape.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Regulatory and Policy Landscape</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
+ <span class="menu-text">Agentic AI in Practice</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./agentic_safety.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Agentic Safety and Guardrails</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./patient_trust.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Patient and Community Trust</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./professional_wellness.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Professional Wellness and Reducing Cognitive Burden</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true">
+ <span class="menu-text">Workstream Resources</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./infrastructure.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">IT Infrastructure and Security</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./workforce.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Training and Workforce Development</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ethics.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Ethics, Equity, and Institutional Accountability</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./data.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Data Access and Governance</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./pm_and_support.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Project Management and AI Portfolio Governance</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true">
+ <span class="menu-text">Appendices</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./appendices.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">AI principles proposed by select organizations</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./bill_of_rights.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">B</span>&nbsp; <span class="chapter-title">OSTP Blueprint for an AI Bill of Rights</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./HHS.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">C</span>&nbsp; <span class="chapter-title">ONC HTI-1: Algorithm Transparency and Interoperability</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./appendix_workflow.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">D</span>&nbsp; <span class="chapter-title">How This Book Was Written: A Multi-Model AI Authorship Workflow</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./references.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">References</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#the-amc-data-mosaic" id="toc-the-amc-data-mosaic" class="nav-link active" data-scroll-target="#the-amc-data-mosaic"><span class="header-section-number">17.1</span> The AMC Data Mosaic</a></li>
+  <li><a href="#data-classification-for-ai" id="toc-data-classification-for-ai" class="nav-link" data-scroll-target="#data-classification-for-ai"><span class="header-section-number">17.2</span> Data Classification for AI</a></li>
+  <li><a href="#the-limits-of-de-identification" id="toc-the-limits-of-de-identification" class="nav-link" data-scroll-target="#the-limits-of-de-identification"><span class="header-section-number">17.3</span> The Limits of De-identification</a></li>
+  <li><a href="#the-ai-ready-honest-broker" id="toc-the-ai-ready-honest-broker" class="nav-link" data-scroll-target="#the-ai-ready-honest-broker"><span class="header-section-number">17.4</span> The AI-Ready Honest Broker</a></li>
+  <li><a href="#fhir-and-omop-as-ai-substrate" id="toc-fhir-and-omop-as-ai-substrate" class="nav-link" data-scroll-target="#fhir-and-omop-as-ai-substrate"><span class="header-section-number">17.5</span> FHIR and OMOP as AI Substrate</a></li>
+  <li><a href="#vendor-contracts-the-non-negotiables" id="toc-vendor-contracts-the-non-negotiables" class="nav-link" data-scroll-target="#vendor-contracts-the-non-negotiables"><span class="header-section-number">17.6</span> Vendor Contracts: The Non-Negotiables</a></li>
+  <li><a href="#tefca-and-the-nationwide-exchange-layer" id="toc-tefca-and-the-nationwide-exchange-layer" class="nav-link" data-scroll-target="#tefca-and-the-nationwide-exchange-layer"><span class="header-section-number">17.7</span> TEFCA and the Nationwide Exchange Layer</a></li>
+  <li><a href="#the-nih-data-management-and-sharing-policy-tension" id="toc-the-nih-data-management-and-sharing-policy-tension" class="nav-link" data-scroll-target="#the-nih-data-management-and-sharing-policy-tension"><span class="header-section-number">17.8</span> The NIH Data Management and Sharing Policy Tension</a></li>
+  <li><a href="#synthetic-data-as-a-governance-instrument" id="toc-synthetic-data-as-a-governance-instrument" class="nav-link" data-scroll-target="#synthetic-data-as-a-governance-instrument"><span class="header-section-number">17.9</span> Synthetic Data as a Governance Instrument</a></li>
+  <li><a href="#federated-learning-and-the-governance-of-distributed-data" id="toc-federated-learning-and-the-governance-of-distributed-data" class="nav-link" data-scroll-target="#federated-learning-and-the-governance-of-distributed-data"><span class="header-section-number">17.10</span> Federated Learning and the Governance of Distributed Data</a></li>
+  <li><a href="#sec-data-start" id="toc-sec-data-start" class="nav-link" data-scroll-target="#sec-data-start"><span class="header-section-number">17.11</span> Where to Start</a>
+  <ul class="collapse">
+  <li><a href="#starter-project-1-ai-data-governance-policy-and-baa-audit" id="toc-starter-project-1-ai-data-governance-policy-and-baa-audit" class="nav-link" data-scroll-target="#starter-project-1-ai-data-governance-policy-and-baa-audit"><span class="header-section-number">17.11.1</span> Starter Project 1: AI Data Governance Policy and BAA Audit</a></li>
+  <li><a href="#starter-project-2-institutional-ai-data-enclave" id="toc-starter-project-2-institutional-ai-data-enclave" class="nav-link" data-scroll-target="#starter-project-2-institutional-ai-data-enclave"><span class="header-section-number">17.11.2</span> Starter Project 2: Institutional AI Data Enclave</a></li>
+  </ul></li>
+  </ul>
+<div class="toc-actions"><ul><li><a href="https://github.com/seandavi/campus-llm-kb/edit/main/data.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li></ul></div></nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./infrastructure.html">Workstream Resources</a></li><li class="breadcrumb-item"><a href="./data.html"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Data Access and Governance</span></a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title"><span id="sec-data" class="quarto-section-identifier"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Data Access and Governance</span></span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">April 26, 2026</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p>The most common bottleneck in AMC AI deployment is not model selection, compute availability, or vendor relationships. It is data governance. Not in the abstract sense — every institution has HIPAA policies — but in the specific sense that most AMC data governance frameworks were designed for uses that look nothing like LLM training or inference. The HIPAA Safe Harbor de-identification standard was written to support data sharing for research and public health uses. It was not designed to account for a model that can infer a patient’s identity from the statistical patterns in clinical notes after every explicitly identifying field has been removed. Understanding why existing frameworks are insufficient, and what a governance structure adequate to the LLM era requires, is the starting point for sound data strategy.</p>
+<section id="the-amc-data-mosaic" class="level2" data-number="17.1">
+<h2 data-number="17.1" class="anchored" data-anchor-id="the-amc-data-mosaic"><span class="header-section-number">17.1</span> The AMC Data Mosaic</h2>
+<p>An academic medical center holds data that falls under at least four distinct regulatory regimes, and AI pipelines frequently cross the lines between them without anyone noticing. Clinical data generated by patient care is governed primarily by HIPAA. Student and trainee evaluations are governed by FERPA, which prohibits disclosure of educational records without consent. Research data involving human subjects is governed by the Common Rule (45 CFR 46) and, for federally funded genomic data, by additional NIH consent and data sharing requirements. Administrative and business data is governed by institutional policy and non-disclosure obligations.</p>
+<p>The governance failure happens when a researcher asks an LLM to analyze de-identified clinical notes alongside trainee evaluation records and administrative email threads, passes all of it into a proprietary API with a standard enterprise agreement, and calls the result compliant because no single data type was explicitly prohibited. The pipeline crosses four regulatory regimes, creates potential for cross-dataset re-identification, and sends everything to an external service with whatever data retention policies the standard enterprise agreement allows. This is not a hypothetical; it is a pattern that occurs regularly at institutions without explicit AI data governance policies.</p>
+</section>
+<section id="data-classification-for-ai" class="level2" data-number="17.2">
+<h2 data-number="17.2" class="anchored" data-anchor-id="data-classification-for-ai"><span class="header-section-number">17.2</span> Data Classification for AI</h2>
+<p>A data classification framework designed for the LLM era needs at least four tiers that account not just for the sensitivity of the data in isolation but for its sensitivity in combination with the capabilities of the model processing it.</p>
+<p><strong>Public data</strong> can be used freely, including with public AI services: institutional press releases, public-facing policy documents, de-identified aggregate statistics.</p>
+<p><strong>Internal data</strong> includes non-PHI business data — operational metrics, general financial information, non-patient-facing communications. This data should be processed only through services with a signed data processing agreement, but does not require a HIPAA BAA. Many institutions use consumer-grade AI tools for internal data tasks without adequate contractual protections; this is a gap the classification framework should close.</p>
+<p><strong>Regulated data</strong> is the primary risk tier: PHI under HIPAA, student records under FERPA, and individually identifiable research data under the Common Rule. This data requires a BAA or equivalent privacy agreement, zero-data-retention provisions in vendor contracts, and where possible, local processing rather than transmission to external services.</p>
+<p><strong>Restricted data</strong> is the highest tier: genomic sequences, psychiatric treatment records, HIV status, substance use treatment records, and data subject to specific research consent restrictions. NIH policy has begun restricting the export of AI models trained on certain genomic datasets, recognizing that the model weights themselves can encode identifying information. Restricted data should not leave the institutional network boundary without specific governance approval.</p>
+</section>
+<section id="the-limits-of-de-identification" class="level2" data-number="17.3">
+<h2 data-number="17.3" class="anchored" data-anchor-id="the-limits-of-de-identification"><span class="header-section-number">17.3</span> The Limits of De-identification</h2>
+<p>The HIPAA Privacy Rule defines two de-identification methods. Safe Harbor removes 18 specific categories of direct identifiers. Expert Determination uses a statistical assessment to verify that the residual re-identification risk is very small <span class="citation" data-cites="HHS-HIPAA-DeId">(<a href="references.html#ref-HHS-HIPAA-DeId" role="doc-biblioref">U.S. Department of Health and Human Services, Office for Civil Rights 2012</a>)</span>. In 2012, when these standards were codified, the primary risk cases were database linkage attacks using public records. The threat model has changed materially since then.</p>
+<p>Gymrek and colleagues demonstrated that genomic data de-identified under Safe Harbor could be re-identified using public genealogical databases and surname inference — using techniques available to any moderately sophisticated analyst <span class="citation" data-cites="Gymrek2013-reid">(<a href="references.html#ref-Gymrek2013-reid" role="doc-biblioref">Gymrek et al. 2013</a>)</span>. The threat model for clinical notes has evolved similarly. Models trained on large corpora of clinical text can memorize rare clinical strings — unusual diagnoses, distinctive procedure sequences, specific medication combinations — and reproduce them under adversarial prompting. A note that contains no direct identifiers may still contain a clinical signature unique enough to identify a specific patient to someone with access to supplementary information.</p>
+<p>The governance implication is direct: Safe Harbor is not an adequate privacy guarantee for LLM training datasets. Expert Determination — a statistical verification that the specific data in the specific modeling context poses negligible re-identification risk — should be the default for AI training on clinical data. For inference, the appropriate safeguard is a BAA with zero-data-retention provisions that prevent the model provider from retaining prompt content after the session concludes.</p>
+</section>
+<section id="the-ai-ready-honest-broker" class="level2" data-number="17.4">
+<h2 data-number="17.4" class="anchored" data-anchor-id="the-ai-ready-honest-broker"><span class="header-section-number">17.4</span> The AI-Ready Honest Broker</h2>
+<p>Most AMCs have an existing honest broker function: a person or team that processes data requests for research use, applies de-identification, and manages sharing agreements. This function was designed for structured data exports. It was not designed for the AI-era pattern: unstructured text, imaging data, multi-modal inputs, and requests for ongoing access to live data streams rather than static exports.</p>
+<p>The AI-ready data broker function needs to add several capabilities. It needs the ability to assess re-identification risk for unstructured text, not just structured fields. It needs to evaluate vendor BAAs specifically for AI provisions — standard BAAs written before 2022 frequently do not address model training, prompt retention, or output logging. It needs to maintain an approved tool registry mapping permitted data types to approved services, so that individual researchers do not make case-by-case risk assessments without institutional guidance.</p>
+<div class="cell" data-layout-align="default">
+<div class="cell-output-display">
+<div id="fig-data-governance-flow" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-data-governance-flow-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div>
+<pre class="mermaid mermaid-js" data-label="fig-data-governance-flow">flowchart TD
+    A([Data Request\nSubmitted]) --&gt; B{Classification\nTier?}
+    B --&gt;|Public or Internal| C[Approved Enterprise\nTool — no BAA required]
+    B --&gt;|Regulated PHI| D[Honest Broker Review\nRe-id risk assessment]
+    B --&gt;|Restricted| E[Governance Committee\nApproval Required]
+    D --&gt; F{Expert Determination\nPasses?}
+    F --&gt;|No| G[Redesign or Decline]
+    F --&gt;|Yes| H[BAA + ZDR Verified]
+    E --&gt; H
+    H --&gt; I{Processing\nLocation?}
+    I --&gt;|Enterprise cloud| J[Proceed with\naudit logging]
+    I --&gt;|External API| K[Zero-Retention\nclause confirmed]
+    K --&gt; J
+    J --&gt; L([Output + Audit Log\nRetained Institutionally])
+</pre>
+</div>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-data-governance-flow-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;17.1: AMC AI data governance flow. Each gate represents a decision point requiring documented authorization. PHI that passes the honest broker gate is subject to BAA and zero-data-retention requirements throughout.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="fhir-and-omop-as-ai-substrate" class="level2" data-number="17.5">
+<h2 data-number="17.5" class="anchored" data-anchor-id="fhir-and-omop-as-ai-substrate"><span class="header-section-number">17.5</span> FHIR and OMOP as AI Substrate</h2>
+<p>The interoperability standards that AMCs have adopted for data exchange — <a href="https://hl7.org/fhir/">HL7 FHIR</a> and the <a href="https://www.ohdsi.org/data-standardization/the-omop-common-data-model/">OMOP Common Data Model</a> — are not just data formats. They are the substrate on which clinical AI is increasingly built and validated.</p>
+<p>FHIR R5 provides standardized resource definitions for clinical data that allow AI models to query, retrieve, and write structured information across different EHR implementations. The SMART on FHIR authorization framework enables granular, patient-specific access scopes that are essential for the least-privilege agentic system design described in <a href="agentic_safety.html" class="quarto-xref"><span>Chapter 11</span></a>. For AMCs procuring AI tools that need EHR interaction, FHIR compatibility is increasingly the minimum requirement — both for richer data access and for the access logging that governance requires.</p>
+<p>The OMOP CDM is the dominant standard for large-scale observational research, and it has become the basis for multi-institutional AI validation <span class="citation" data-cites="Singhal2023-medpalm">(<a href="references.html#ref-Singhal2023-medpalm" role="doc-biblioref"><span class="nocase">Singhal et al.</span> 2023</a>)</span>. A model validated on OMOP-formatted data from one institution can be tested against OMOP-formatted data from another without custom integration work. For AMCs participating in research consortia — NIH N3C, PCORnet, NIH Bridge2AI — OMOP compatibility is typically required.</p>
+</section>
+<section id="vendor-contracts-the-non-negotiables" class="level2" data-number="17.6">
+<h2 data-number="17.6" class="anchored" data-anchor-id="vendor-contracts-the-non-negotiables"><span class="header-section-number">17.6</span> Vendor Contracts: The Non-Negotiables</h2>
+<p>The BAA for any AI vendor processing PHI must address provisions that standard HIPAA BAAs frequently omit. AMC legal teams should require:</p>
+<p><strong>No-training clause:</strong> The vendor may not use AMC data — prompts, completions, user interactions — to train or fine-tune models. This is standard in enterprise tiers from major providers but absent in default tiers; it must be explicitly verified.</p>
+<p><strong>Zero-data-retention for prompts:</strong> Prompt content containing PHI must not be retained after the session concludes. This means no logging for safety monitoring involving human review, and no storage in training pipelines.</p>
+<p><strong>Output ownership:</strong> Clinical notes and analyses generated from institutional data are institutional property. Vendor agreements should not claim ownership of AI-generated outputs based on institutional inputs.</p>
+<p><strong>Algorithmic change notification:</strong> The vendor must notify the institution before making significant model changes that could affect clinical outputs. An unannounced model update in a clinical workflow integration is a safety event.</p>
+<div id="tbl-baa-checklist" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-baa-checklist-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;17.1: Non-negotiable BAA provisions for AI vendors processing clinical data. Standard HIPAA BAAs pre-dating 2023 frequently omit the first three rows.
+</figcaption>
+<div aria-describedby="tbl-baa-checklist-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<table class="caption-top table">
+<colgroup>
+<col style="width: 38%">
+<col style="width: 32%">
+<col style="width: 30%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Contract Provision</th>
+<th>Risk Addressed</th>
+<th>Negotiability</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>No-training on customer data</td>
+<td>PHI memorization in model weights</td>
+<td>Mandatory</td>
+</tr>
+<tr class="even">
+<td>Zero-data-retention for prompts</td>
+<td>PHI leakage through session logging</td>
+<td>Mandatory</td>
+</tr>
+<tr class="odd">
+<td>Output ownership by institution</td>
+<td>IP rights to AI-generated clinical content</td>
+<td>Mandatory</td>
+</tr>
+<tr class="even">
+<td>Right to audit</td>
+<td>Verify data handling compliance</td>
+<td>Required for high-risk use</td>
+</tr>
+<tr class="odd">
+<td>Algorithmic change notification</td>
+<td>Unexpected behavior change in clinical AI</td>
+<td>Required for clinical integration</td>
+</tr>
+<tr class="even">
+<td>US-only data residency</td>
+<td>Jurisdictional compliance</td>
+<td>Required for restricted data</td>
+</tr>
+</tbody>
+</table>
+</div>
+</figure>
+</div>
+</section>
+<section id="tefca-and-the-nationwide-exchange-layer" class="level2" data-number="17.7">
+<h2 data-number="17.7" class="anchored" data-anchor-id="tefca-and-the-nationwide-exchange-layer"><span class="header-section-number">17.7</span> TEFCA and the Nationwide Exchange Layer</h2>
+<p>The <a href="https://www.healthit.gov/topic/interoperability/trusted-exchange-framework-and-common-agreement-tefca">Trusted Exchange Framework and Common Agreement</a> — TEFCA — established a network of <a href="https://rce.sequoiaproject.org/qhin/">Qualified Health Information Networks</a> (QHINs) for nationwide clinical data exchange when it went live in 2023 <span class="citation" data-cites="TEFCA2023-common">(<a href="references.html#ref-TEFCA2023-common" role="doc-biblioref">Office of the National Coordinator for Health Information Technology 2023</a>)</span>. Epic’s Nexus Health Network, <a href="https://www.healthgorilla.com">Health Gorilla</a>, Oracle Health, and a handful of other organizations have received QHIN designation, creating for the first time a governed national pipe through which clinical data can flow across institutional boundaries.</p>
+<p>The implications for AI data access are significant, and more complicated than they appear. TEFCA defines a set of permitted Exchange Purposes — Treatment, Payment, Health Care Operations, Public Health, Individual Access, and a handful of others — that determine under what conditions data can be queried across the network. Research is notably absent from the permitted purposes for nationwide exchange in the current framework. An AMC that wants to use TEFCA-accessed data to train or validate an AI model is operating in legally ambiguous territory unless it can characterize the use as Health Care Operations, a framing that has a defined statutory meaning and does not extend to all AI development activities.</p>
+<p>The practical implication is that TEFCA is most immediately useful for clinical AI applications that operate at the point of care — retrieving a patient’s medication history from an external health system to inform a clinical decision, for example — and least immediately useful for the large-scale data aggregation that model training requires. AMCs participating in AI research consortia will need to route their data sharing through existing research frameworks — IRB oversight, data use agreements, OMOP standardization — rather than through TEFCA’s exchange infrastructure, at least until research is added as a permitted exchange purpose.</p>
+<p>The QHIN connection that TEFCA requires does, however, create an infrastructure opportunity for AI governance that did not exist before: every query that passes through a QHIN- connected endpoint is logged. For the first time, the institution has a national-scale audit trail for the external data it accesses. That audit trail is an asset for the AI governance program, providing evidence of the provenance of external data inputs to clinical AI systems in a way that was previously unavailable.</p>
+</section>
+<section id="the-nih-data-management-and-sharing-policy-tension" class="level2" data-number="17.8">
+<h2 data-number="17.8" class="anchored" data-anchor-id="the-nih-data-management-and-sharing-policy-tension"><span class="header-section-number">17.8</span> The NIH Data Management and Sharing Policy Tension</h2>
+<p>NIH’s Data Management and Sharing Policy, which took effect in January 2023, requires that all research conducted with NIH funding produce a data management plan and share the resulting scientific data to the extent permitted by law and subject to privacy and ethical constraints <span class="citation" data-cites="NIH2021-DMS">(<a href="references.html#ref-NIH2021-DMS" role="doc-biblioref">National Institutes of Health 2020</a>)</span>. The policy was written to address the reproducibility crisis in biomedical science — if every investigator shared their data, more findings could be independently verified. In the AI context, it creates a specific governance problem: what counts as “scientific data” when the research involves training or fine-tuning a language model?</p>
+<p>NIH clarified in a 2025 notice that AI models trained on controlled-access genomic data are Data Derivatives subject to the same access restrictions as the underlying data <span class="citation" data-cites="NIH2025-genomicAI">(<a href="references.html#ref-NIH2025-genomicAI" role="doc-biblioref">National Institutes of Health 2025</a>)</span>. The model weights — the billions of numerical parameters that encode what the model learned — may contain information about the training data that must not be shared openly. This is the “model weights as PHI” problem: a model trained on genomic data from a controlled-access cohort may memorize rare clinical signatures in ways that allow adversarial reconstruction of individual patient data, and releasing that model is equivalent to releasing a derivative of the controlled-access dataset.</p>
+<p>The resulting tension is not abstract. An investigator conducting NIH-funded research on a clinical AI model is simultaneously obligated to share scientific data (by the DMS Policy) and obligated not to share data that could enable re-identification (by HIPAA, IRB consent terms, and the 2025 genomic AI notice). The resolution requires distinguishing among what must be shared, what may be shared, and what must not be shared. Model documentation — model cards, performance reports, training data descriptions — can satisfy much of the transparency obligation without releasing the weights themselves. Code and analysis scripts can be shared. The trained model weights require a case-by-case governance determination that should involve the institution’s research compliance office, not the individual investigator.</p>
+</section>
+<section id="synthetic-data-as-a-governance-instrument" class="level2" data-number="17.9">
+<h2 data-number="17.9" class="anchored" data-anchor-id="synthetic-data-as-a-governance-instrument"><span class="header-section-number">17.9</span> Synthetic Data as a Governance Instrument</h2>
+<p>One response to the tension between data access and privacy protection is to replace real clinical data with synthetic data — artificial patient records that preserve the statistical structure of the original data without containing information about any real individual. The technology for generating high-quality synthetic clinical data has matured substantially since 2020. Variational autoencoders, generative adversarial networks, and diffusion models have all been applied to EHR data generation, with recent methods producing synthetic records that are nearly indistinguishable from real records on most clinical research tasks.</p>
+<p>The governance value of synthetic data is that it allows the institution to provide data access — for model development, testing, algorithm validation, and education — at a risk level substantially lower than real PHI. A developer testing a new clinical NLP pipeline does not need real patient data to verify that the pipeline runs correctly; synthetic data with the same structural properties serves that purpose without the privacy exposure. A student learning to write SQL queries against clinical data does not need to practice on actual patients.</p>
+<p>But synthetic data has real limitations that institutional governance needs to acknowledge. First, synthetic data inherits the biases of the data it was generated from. A synthetic dataset generated from an EHR that underrepresents certain demographic groups will underrepresent those groups in the synthetic version. Bias auditing of synthetic data requires the same demographic stratification that bias auditing of real data requires. Second, for purposes that require population-level validity — epidemiological analysis, model external validation, clinical trial simulations — the fidelity of synthetic data is an empirical question that requires evaluation, not an assumption. The institution should not claim that a model trained on synthetic data performs equivalently to a model trained on real data without evidence.</p>
+<p>Third, the privacy protection that synthetic data provides is not absolute. Membership inference attacks — attempts to determine whether a specific individual’s data was in the training set — can be applied to synthetic data generators as well as to trained models. The privacy guarantee of synthetic data depends on the generation method and the characteristics of the source data. For high-dimensional or rare-condition data, where individuals may be uniquely identifiable by their clinical signature, synthetic generation requires formal privacy guarantees — differential privacy, for example — rather than relying on the assumption that no record in the synthetic set corresponds to any real person.</p>
+</section>
+<section id="federated-learning-and-the-governance-of-distributed-data" class="level2" data-number="17.10">
+<h2 data-number="17.10" class="anchored" data-anchor-id="federated-learning-and-the-governance-of-distributed-data"><span class="header-section-number">17.10</span> Federated Learning and the Governance of Distributed Data</h2>
+<p>Federated learning offers a different architecture for the same problem: rather than sharing data with a central model, participating institutions keep their data local and share only model updates — the numerical gradients that represent what the model learned from a local training round. A central aggregator combines the updates from multiple institutions into an improved global model, which is then distributed back to the nodes for the next training round. The data never leaves the hospital’s firewall.</p>
+<p>Production federated learning infrastructure exists in healthcare. The NIH <a href="https://bridge2ai.org">Bridge2AI</a> program is developing standardized data and AI-ready infrastructure across four large data generation projects, with federated coordination as a design principle <span class="citation" data-cites="Bridge2AI2023">(<a href="references.html#ref-Bridge2AI2023" role="doc-biblioref">National Institutes of Health 2023</a>)</span>. The <a href="https://www.midrc.org">Medical Imaging and Data Resource Center</a> (MIDRC) has used federated learning to validate imaging AI models across multiple institutions without centralizing imaging data <span class="citation" data-cites="MIDRC2024-federated">(<a href="references.html#ref-MIDRC2024-federated" role="doc-biblioref">MIDRC Consortium 2024</a>)</span>. <a href="https://nvflare.ai">NVIDIA FLARE</a> is the dominant production framework for healthcare federated learning, with documented deployments at major academic medical centers.</p>
+<p>Governance of federated learning participation is meaningfully different from governance of centralized data sharing, but it is not governance-free. Participating in a federated training consortium requires a data use agreement with the consortium that specifies what the model is being trained to do, who controls the aggregated model, and how the model can be used after training. An AMC that contributes gradients to a federated training round for a commercial AI product is contributing to the development of that product — a contribution that has intellectual property implications and that may or may not be reflected in the benefit the institution receives from the trained model.</p>
+<p>The most important governance question for federated learning is model poisoning risk: a malicious participant can contribute corrupted gradients that degrade the global model or embed adversarial behaviors. For clinical AI models where the output influences patient care, this is not a theoretical concern. Federated learning consortia need technical safeguards — gradient inspection, anomaly detection, trusted node certification — and governance frameworks that define what audit mechanisms participants can rely on to verify the integrity of their contribution and the safety of the models they receive.</p>
+</section>
+<section id="sec-data-start" class="level2" data-number="17.11">
+<h2 data-number="17.11" class="anchored" data-anchor-id="sec-data-start"><span class="header-section-number">17.11</span> Where to Start</h2>
+<section id="starter-project-1-ai-data-governance-policy-and-baa-audit" class="level3" data-number="17.11.1">
+<h3 data-number="17.11.1" class="anchored" data-anchor-id="starter-project-1-ai-data-governance-policy-and-baa-audit"><span class="header-section-number">17.11.1</span> Starter Project 1: AI Data Governance Policy and BAA Audit</h3>
+<p><strong>What it is:</strong> A review of all current vendor agreements for AI tools handling PHI, assessing whether each BAA includes the provisions in <a href="#tbl-baa-checklist" class="quarto-xref">Table&nbsp;<span>17.1</span></a>, combined with a draft institutional AI data governance policy operationalizing the classification framework and honest broker requirements above.</p>
+<p><strong>Why now:</strong> Many AMC AI deployments occurred under standard enterprise agreements not specifically negotiated for AI use. A BAA audit surfaces contractual gaps before an adverse event. A data governance policy closes the structural gap that allowed non-compliant tools to be deployed.</p>
+<p><strong>How to execute:</strong> Legal and compliance review each active vendor agreement. Gaps are prioritized by data sensitivity and tool risk tier. Renegotiation is requested for high-priority gaps; tools with unresolvable gaps are candidates for replacement. The governance policy is drafted by legal and informatics jointly, reviewed by the AI Steering Committee, and published with a defined annual review cycle.</p>
+<p><strong>Buy vs.&nbsp;build:</strong> Legal and governance work. Commercial data governance platforms can maintain the inventory, but the policy analysis requires legal judgment.</p>
+</section>
+<section id="starter-project-2-institutional-ai-data-enclave" class="level3" data-number="17.11.2">
+<h3 data-number="17.11.2" class="anchored" data-anchor-id="starter-project-2-institutional-ai-data-enclave"><span class="header-section-number">17.11.2</span> Starter Project 2: Institutional AI Data Enclave</h3>
+<p><strong>What it is:</strong> A technically isolated compute environment in which regulated AMC data can be used for AI development and experimentation without transmitting PHI to external services.</p>
+<p><strong>Why now:</strong> Demand for AI development access to clinical data is increasing, and case-by-case IRB and data governance review does not scale. A standing enclave with pre- approved data protocols, audit logging, and network isolation provides a faster path for approved researchers while preventing accidental data egress.</p>
+<p><strong>How to execute:</strong> Build on existing research computing infrastructure with added network controls and an approved tool list. Pre-approve OMOP-formatted clinical datasets at appropriate de-identification levels. Establish a lightweight application process for enclave access that replaces per-project data governance review for compliant use cases.</p>
+<p><strong>Buy vs.&nbsp;build:</strong> Build infrastructure on HIPAA-eligible cloud or on-premises HPC. The institutional work is in governance design, access controls, and audit processes layered on top of the compute environment.</p>
+
+
+<div id="refs" class="references csl-bib-body hanging-indent" role="list" style="display: none">
+<div id="ref-Gymrek2013-reid" class="csl-entry" role="listitem">
+Gymrek, Melissa, Amy L McGuire, David Golan, Eran Halperin, and Yaniv Erlich. 2013. <span>“Identifying Personal Genomes by Surname Inference.”</span> <em>Science</em> 339 (6117): 321–24. <a href="https://doi.org/10.1126/science.1229566">https://doi.org/10.1126/science.1229566</a>.
+</div>
+<div id="ref-MIDRC2024-federated" class="csl-entry" role="listitem">
+MIDRC Consortium. 2024. <em>Medical Imaging and Data Resource Center (<span>MIDRC</span>)</em>. <a href="https://www.midrc.org/" class="uri">Https://www.midrc.org/</a>. <a href="https://www.midrc.org/">https://www.midrc.org/</a>.
+</div>
+<div id="ref-NIH2021-DMS" class="csl-entry" role="listitem">
+National Institutes of Health. 2020. <em>Final <span>NIH</span> Policy for Data Management and Sharing (<span>NOT-OD-21-013</span>)</em>. <a href="https://grants.nih.gov/grants/guide/notice-files/NOT-OD-21-013.html" class="uri">Https://grants.nih.gov/grants/guide/notice-files/NOT-OD-21-013.html</a>. <a href="https://grants.nih.gov/grants/guide/notice-files/NOT-OD-21-013.html">https://grants.nih.gov/grants/guide/notice-files/NOT-OD-21-013.html</a>.
+</div>
+<div id="ref-Bridge2AI2023" class="csl-entry" role="listitem">
+National Institutes of Health. 2023. <em><span>Bridge2AI</span>: Generating <span>AI</span>-Ready Data for All</em>. <a href="https://commonfund.nih.gov/bridge2ai" class="uri">Https://commonfund.nih.gov/bridge2ai</a>. <a href="https://commonfund.nih.gov/bridge2ai">https://commonfund.nih.gov/bridge2ai</a>.
+</div>
+<div id="ref-NIH2025-genomicAI" class="csl-entry" role="listitem">
+National Institutes of Health. 2025. <em>Guidance on Generative <span>AI</span> and Controlled-Access Human Genomic Data (<span>NOT-OD-25-081</span>)</em>. <a href="https://grants.nih.gov/grants/guide/notice-files/NOT-OD-25-081.html" class="uri">Https://grants.nih.gov/grants/guide/notice-files/NOT-OD-25-081.html</a>. <a href="https://grants.nih.gov/grants/guide/notice-files/NOT-OD-25-081.html">https://grants.nih.gov/grants/guide/notice-files/NOT-OD-25-081.html</a>.
+</div>
+<div id="ref-TEFCA2023-common" class="csl-entry" role="listitem">
+Office of the National Coordinator for Health Information Technology. 2023. <em>Trusted Exchange Framework and Common Agreement (<span>TEFCA</span>), Common Agreement Version 1.1</em>. <a href="https://www.healthit.gov/tefca" class="uri">Https://www.healthit.gov/tefca</a>. <a href="https://www.healthit.gov/tefca">https://www.healthit.gov/tefca</a>.
+</div>
+<div id="ref-Singhal2023-medpalm" class="csl-entry" role="listitem">
+<span class="nocase">Singhal, Karan, Shekoofeh Azizi, Tao Tu, et al.</span> 2023. <span>“Large Language Models Encode Clinical Knowledge.”</span> <em>Nature</em> 620: 172–80. <a href="https://doi.org/10.1038/s41586-023-06291-2">https://doi.org/10.1038/s41586-023-06291-2</a>.
+</div>
+<div id="ref-HHS-HIPAA-DeId" class="csl-entry" role="listitem">
+U.S. Department of Health and Human Services, Office for Civil Rights. 2012. <em>Guidance Regarding Methods for de-Identification of Protected Health Information in Accordance with the <span>HIPAA</span> Privacy Rule</em>. <a href="https://www.hhs.gov/hipaa/for-professionals/privacy/special-topics/de-identification/index.html">https://www.hhs.gov/hipaa/for-professionals/privacy/special-topics/de-identification/index.html</a>.
+</div>
+</div>
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/seandavi\.github\.io\/campus-llm-kb\/");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./ethics.html" class="pagination-link" aria-label="Ethics, Equity, and Institutional Accountability">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Ethics, Equity, and Institutional Accountability</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./pm_and_support.html" class="pagination-link" aria-label="Project Management and AI Portfolio Governance">
+        <span class="nav-page-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Project Management and AI Portfolio Governance</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/seandavi/campus-llm-kb/edit/main/data.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li></ul></div></div></div></footer></body></html>

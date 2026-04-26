@@ -2,13 +2,16 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.5.57">
+<meta name="generator" content="quarto-1.9.37">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>6&nbsp; Clinical Domain – Large Language Model Policy and Practice</title>
+<title>6&nbsp; Clinical Domain – Implementing AI in Academic Medicine</title>
 <style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
 div.columns{display: flex; gap: min(4vw, 1.5em);}
@@ -24,7 +27,6 @@ ul.task-list li input[type="checkbox"] {
 div.csl-bib-body { }
 div.csl-entry {
   clear: both;
-  margin-bottom: 0em;
 }
 .hanging-indent div.csl-entry {
   margin-left:2em;
@@ -52,15 +54,16 @@ div.csl-indent {
 <meta name="quarto:offset" content="./">
 <link href="./resources_research.html" rel="next">
 <link href="./domainresource.html" rel="prev">
-<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-7f8f88aac4f3542376d5c11b86a4c14d.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-36bf55b16c7cb4b1420f41495cb5446a.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -88,20 +91,14 @@ div.csl-indent {
     "search-label": "Search"
   }
 }</script>
-<!-- Google tag (gtag.js) -->
-<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-KLLV1GCF4E"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-KLLV1GCF4E');
-</script>
+<script src="site_libs/quarto-diagram/mermaid.min.js"></script>
+<script src="site_libs/quarto-diagram/mermaid-init.js"></script>
+<link href="site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
 
 
 </head>
 
-<body class="nav-sidebar floating nav-fixed">
+<body class="nav-sidebar floating nav-fixed quarto-light">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -109,7 +106,7 @@ div.csl-indent {
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
     <a class="navbar-brand" href="./index.html">
-    <span class="navbar-title">Large Language Model Policy and Practice</span>
+    <span class="navbar-title">Implementing AI in Academic Medicine</span>
     </a>
   </div>
         <div class="quarto-navbar-tools tools-wide tools-end">
@@ -118,13 +115,13 @@ div.csl-indent {
       <a href="" title="Download" id="quarto-navigation-tool-dropdown-0" class="quarto-navigation-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false" role="link" aria-label="Download"><i class="bi bi-download"></i></a>
       <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="quarto-navigation-tool-dropdown-0">
           <li>
-            <a class="dropdown-item quarto-navbar-tools-item" href="./Large-Language-Model-Policy-and-Practice.pdf">
+            <a class="dropdown-item quarto-navbar-tools-item" href="./Implementing-AI-in-Academic-Medicine.pdf">
               <i class="bi bi-file-pdf pe-1"></i>
             Download PDF
             </a>
           </li>
           <li>
-            <a class="dropdown-item quarto-navbar-tools-item" href="./Large-Language-Model-Policy-and-Practice.epub">
+            <a class="dropdown-item quarto-navbar-tools-item" href="./Implementing-AI-in-Academic-Medicine.epub">
               <i class="bi bi-journal pe-1"></i>
             Download ePub
             </a>
@@ -177,13 +174,13 @@ div.csl-indent {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./preface.html" class="sidebar-item-text sidebar-link">
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Preface</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link">
+  <a href="./overview.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Overview</span></span></a>
   </div>
 </li>
@@ -217,7 +214,7 @@ div.csl-indent {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./barriers.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Barriers and Obstacles and How to Overcome Them</span></span></a>
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Barriers and How to Address Them</span></span></a>
   </div>
 </li>
       </ul>
@@ -240,13 +237,13 @@ div.csl-indent {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./resources_research.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Research</span></span></a>
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Research Domain</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./resources_education.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Education</span></span></a>
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Education Domain</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -255,17 +252,93 @@ div.csl-indent {
  <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Business Operations</span></span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./regulatory_landscape.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Regulatory and Policy Landscape</span></span></a>
+  </div>
+</li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
- <span class="menu-text">Appendices</span></a>
+ <span class="menu-text">Agentic AI in Practice</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./agentic_safety.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Agentic Safety and Guardrails</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./patient_trust.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Patient and Community Trust</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./professional_wellness.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Professional Wellness and Reducing Cognitive Burden</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true">
+ <span class="menu-text">Workstream Resources</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./infrastructure.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">IT Infrastructure and Security</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./workforce.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Training and Workforce Development</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ethics.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Ethics, Equity, and Institutional Accountability</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./data.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Data Access and Governance</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./pm_and_support.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Project Management and AI Portfolio Governance</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true">
+ <span class="menu-text">Appendices</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./appendices.html" class="sidebar-item-text sidebar-link">
@@ -275,13 +348,25 @@ div.csl-indent {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./bill_of_rights.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">B</span>&nbsp; <span class="chapter-title">Whitehouse AI Bill(s) of rights</span></span></a>
+ <span class="menu-text"><span class="chapter-number">B</span>&nbsp; <span class="chapter-title">OSTP Blueprint for an AI Bill of Rights</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./HHS.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">C</span>&nbsp; <span class="chapter-title">HHS EHR reporting program rule</span></span></a>
+ <span class="menu-text"><span class="chapter-number">C</span>&nbsp; <span class="chapter-title">ONC HTI-1: Algorithm Transparency and Interoperability</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./appendix_workflow.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">D</span>&nbsp; <span class="chapter-title">How This Book Was Written: A Multi-Model AI Authorship Workflow</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./references.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">References</span></a>
   </div>
 </li>
       </ul>
@@ -296,17 +381,32 @@ div.csl-indent {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#literature" id="toc-literature" class="nav-link active" data-scroll-target="#literature"><span class="header-section-number">6.1</span> Literature</a></li>
-  <li><a href="#guiding-principles-table" id="toc-guiding-principles-table" class="nav-link" data-scroll-target="#guiding-principles-table"><span class="header-section-number">6.2</span> Guiding principles table</a>
+  <li><a href="#the-guiding-principles-framework" id="toc-the-guiding-principles-framework" class="nav-link active" data-scroll-target="#the-guiding-principles-framework"><span class="header-section-number">6.1</span> The Guiding Principles Framework</a>
   <ul class="collapse">
-  <li><a href="#principle-1-ai-tools-should-aim-to-alleviate-existing-health-disparities" id="toc-principle-1-ai-tools-should-aim-to-alleviate-existing-health-disparities" class="nav-link" data-scroll-target="#principle-1-ai-tools-should-aim-to-alleviate-existing-health-disparities"><span class="header-section-number">6.2.1</span> Principle 1: AI tools should aim to alleviate existing health disparities</a></li>
-  <li><a href="#principle-2-ai-tools-should-produce-clinically-meaningful-outcomes" id="toc-principle-2-ai-tools-should-produce-clinically-meaningful-outcomes" class="nav-link" data-scroll-target="#principle-2-ai-tools-should-produce-clinically-meaningful-outcomes"><span class="header-section-number">6.2.2</span> Principle 2: AI tools should produce clinically meaningful outcomes</a></li>
-  <li><a href="#principle-3-ai-tools-should-reduce-overdiagnosis-and-overtreatment" id="toc-principle-3-ai-tools-should-reduce-overdiagnosis-and-overtreatment" class="nav-link" data-scroll-target="#principle-3-ai-tools-should-reduce-overdiagnosis-and-overtreatment"><span class="header-section-number">6.2.3</span> Principle 3: AI tools should reduce overdiagnosis and overtreatment</a></li>
-  <li><a href="#principle-4-ai-tools-should-have-high-healthcare-value-and-avoid-diverting" id="toc-principle-4-ai-tools-should-have-high-healthcare-value-and-avoid-diverting" class="nav-link" data-scroll-target="#principle-4-ai-tools-should-have-high-healthcare-value-and-avoid-diverting"><span class="header-section-number">6.2.4</span> Principle 4: AI tools should have high healthcare value and avoid diverting</a></li>
-  <li><a href="#principle-5-ai-tools-should-incorporate-social-structural-environmental" id="toc-principle-5-ai-tools-should-incorporate-social-structural-environmental" class="nav-link" data-scroll-target="#principle-5-ai-tools-should-incorporate-social-structural-environmental"><span class="header-section-number">6.2.5</span> Principle 5: AI tools should incorporate social, structural, environmental,</a></li>
-  <li><a href="#principle-6-ai-tools-should-be-easily-tailored-to-the-local-population" id="toc-principle-6-ai-tools-should-be-easily-tailored-to-the-local-population" class="nav-link" data-scroll-target="#principle-6-ai-tools-should-be-easily-tailored-to-the-local-population"><span class="header-section-number">6.2.6</span> Principle 6: AI tools should be easily tailored to the local population</a></li>
-  <li><a href="#principle-7-ai-tools-should-promote-a-learning-healthcare-system" id="toc-principle-7-ai-tools-should-promote-a-learning-healthcare-system" class="nav-link" data-scroll-target="#principle-7-ai-tools-should-promote-a-learning-healthcare-system"><span class="header-section-number">6.2.7</span> Principle 7: AI tools should promote a learning healthcare system</a></li>
-  <li><a href="#principle-8-ai-tools-should-facilitate-shared-decision-making" id="toc-principle-8-ai-tools-should-facilitate-shared-decision-making" class="nav-link" data-scroll-target="#principle-8-ai-tools-should-facilitate-shared-decision-making"><span class="header-section-number">6.2.8</span> Principle 8: AI tools should facilitate shared decision-making</a></li>
+  <li><a href="#principle-1-ai-tools-should-aim-to-alleviate-existing-health-disparities" id="toc-principle-1-ai-tools-should-aim-to-alleviate-existing-health-disparities" class="nav-link" data-scroll-target="#principle-1-ai-tools-should-aim-to-alleviate-existing-health-disparities"><span class="header-section-number">6.1.1</span> Principle 1: AI Tools Should Aim to Alleviate Existing Health Disparities</a></li>
+  <li><a href="#principle-2-ai-tools-should-produce-clinically-meaningful-outcomes" id="toc-principle-2-ai-tools-should-produce-clinically-meaningful-outcomes" class="nav-link" data-scroll-target="#principle-2-ai-tools-should-produce-clinically-meaningful-outcomes"><span class="header-section-number">6.1.2</span> Principle 2: AI Tools Should Produce Clinically Meaningful Outcomes</a></li>
+  <li><a href="#principle-3-ai-tools-should-reduce-overdiagnosis-and-overtreatment" id="toc-principle-3-ai-tools-should-reduce-overdiagnosis-and-overtreatment" class="nav-link" data-scroll-target="#principle-3-ai-tools-should-reduce-overdiagnosis-and-overtreatment"><span class="header-section-number">6.1.3</span> Principle 3: AI Tools Should Reduce Overdiagnosis and Overtreatment</a></li>
+  <li><a href="#principle-4-ai-tools-should-have-high-healthcare-value" id="toc-principle-4-ai-tools-should-have-high-healthcare-value" class="nav-link" data-scroll-target="#principle-4-ai-tools-should-have-high-healthcare-value"><span class="header-section-number">6.1.4</span> Principle 4: AI Tools Should Have High Healthcare Value</a></li>
+  </ul></li>
+  <li><a href="#sec-clinical-ops" id="toc-sec-clinical-ops" class="nav-link" data-scroll-target="#sec-clinical-ops"><span class="header-section-number">6.2</span> Principles 5–8: From Ethics to Operations</a>
+  <ul class="collapse">
+  <li><a href="#principle-5-incorporating-biographical-and-structural-drivers-of-health" id="toc-principle-5-incorporating-biographical-and-structural-drivers-of-health" class="nav-link" data-scroll-target="#principle-5-incorporating-biographical-and-structural-drivers-of-health"><span class="header-section-number">6.2.1</span> Principle 5: Incorporating Biographical and Structural Drivers of Health</a></li>
+  <li><a href="#principle-6-local-calibration-for-the-local-population" id="toc-principle-6-local-calibration-for-the-local-population" class="nav-link" data-scroll-target="#principle-6-local-calibration-for-the-local-population"><span class="header-section-number">6.2.2</span> Principle 6: Local Calibration for the Local Population</a></li>
+  <li><a href="#principle-7-promoting-a-learning-healthcare-system" id="toc-principle-7-promoting-a-learning-healthcare-system" class="nav-link" data-scroll-target="#principle-7-promoting-a-learning-healthcare-system"><span class="header-section-number">6.2.3</span> Principle 7: Promoting a Learning Healthcare System</a></li>
+  <li><a href="#principle-8-facilitating-shared-decision-making-through-explainability" id="toc-principle-8-facilitating-shared-decision-making-through-explainability" class="nav-link" data-scroll-target="#principle-8-facilitating-shared-decision-making-through-explainability"><span class="header-section-number">6.2.4</span> Principle 8: Facilitating Shared Decision-Making Through Explainability</a></li>
+  </ul></li>
+  <li><a href="#clinical-ai-in-practice" id="toc-clinical-ai-in-practice" class="nav-link" data-scroll-target="#clinical-ai-in-practice"><span class="header-section-number">6.3</span> Clinical AI in Practice</a>
+  <ul class="collapse">
+  <li><a href="#ambient-documentation-and-the-documentation-burden" id="toc-ambient-documentation-and-the-documentation-burden" class="nav-link" data-scroll-target="#ambient-documentation-and-the-documentation-burden"><span class="header-section-number">6.3.1</span> Ambient Documentation and the Documentation Burden</a></li>
+  <li><a href="#the-federal-regulatory-landscape" id="toc-the-federal-regulatory-landscape" class="nav-link" data-scroll-target="#the-federal-regulatory-landscape"><span class="header-section-number">6.3.2</span> The Federal Regulatory Landscape</a></li>
+  <li><a href="#governing-adaptive-ai-fda-samd-and-the-pccp-framework" id="toc-governing-adaptive-ai-fda-samd-and-the-pccp-framework" class="nav-link" data-scroll-target="#governing-adaptive-ai-fda-samd-and-the-pccp-framework"><span class="header-section-number">6.3.3</span> Governing Adaptive AI: FDA SaMD and the PCCP Framework</a></li>
+  <li><a href="#explainability-trust-and-the-liability-frontier" id="toc-explainability-trust-and-the-liability-frontier" class="nav-link" data-scroll-target="#explainability-trust-and-the-liability-frontier"><span class="header-section-number">6.3.4</span> Explainability, Trust, and the Liability Frontier</a></li>
+  <li><a href="#patient-facing-ai-and-the-consent-gap" id="toc-patient-facing-ai-and-the-consent-gap" class="nav-link" data-scroll-target="#patient-facing-ai-and-the-consent-gap"><span class="header-section-number">6.3.5</span> Patient-Facing AI and the Consent Gap</a></li>
+  </ul></li>
+  <li><a href="#sec-clinical-start" id="toc-sec-clinical-start" class="nav-link" data-scroll-target="#sec-clinical-start"><span class="header-section-number">6.4</span> Where to Start</a>
+  <ul class="collapse">
+  <li><a href="#starter-project-1-clinical-ai-inventory-and-regulatory-risk-assessment" id="toc-starter-project-1-clinical-ai-inventory-and-regulatory-risk-assessment" class="nav-link" data-scroll-target="#starter-project-1-clinical-ai-inventory-and-regulatory-risk-assessment"><span class="header-section-number">6.4.1</span> Starter Project 1: Clinical AI Inventory and Regulatory Risk Assessment</a></li>
+  <li><a href="#starter-project-2-ambient-documentation-pilot-with-prepost-measurement" id="toc-starter-project-2-ambient-documentation-pilot-with-prepost-measurement" class="nav-link" data-scroll-target="#starter-project-2-ambient-documentation-pilot-with-prepost-measurement"><span class="header-section-number">6.4.2</span> Starter Project 2: Ambient Documentation Pilot with Pre/Post Measurement</a></li>
   </ul></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/seandavi/campus-llm-kb/edit/main/resources_clinical.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li></ul></div></nav>
@@ -316,7 +416,7 @@ div.csl-indent {
 
 <header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./domainresource.html">Domain Resources</a></li><li class="breadcrumb-item"><a href="./resources_clinical.html"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Clinical Domain</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Clinical Domain</span></h1>
+<h1 class="title"><span id="sec-clinical" class="quarto-section-identifier"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Clinical Domain</span></span></h1>
 </div>
 
 
@@ -333,25 +433,21 @@ div.csl-indent {
 </header>
 
 
-<section id="literature" class="level2" data-number="6.1">
-<h2 data-number="6.1" class="anchored" data-anchor-id="literature"><span class="header-section-number">6.1</span> Literature</h2>
-<ul>
-<li>Mandl, K.D., Gottlieb, D. and Mandel, J.C. (2024) ‘Integration of AI in healthcare requires an interoperable digital data ecosystem’, Nature Medicine. Available at: https://doi.org/10.1038/s41591-023-02783-w.</li>
-<li>Tierney Aaron A. et al.&nbsp;(no date) ‘Ambient Artificial Intelligence Scribes to Alleviate the Burden of Clinical Documentation’, Catalyst non-issue content, 5(1), p.&nbsp;CAT.23.0404. Available at: https://doi.org/10.1056/CAT.23.0404.</li>
-</ul>
-</section>
-<section id="guiding-principles-table" class="level2" data-number="6.2">
-<h2 data-number="6.2" class="anchored" data-anchor-id="guiding-principles-table"><span class="header-section-number">6.2</span> Guiding principles table</h2>
+<p>The clinical deployment of AI has moved faster than most governance frameworks anticipated. Emergency departments use predictive sepsis models as standard workflow. Radiology reading rooms incorporate AI preliminary reads before the attending opens the queue. Primary care practices evaluate ambient scribes that transcribe and synthesize the clinical encounter without the physician touching a keyboard. In each setting, the governing question is no longer whether to deploy AI but how to deploy it in a way that extends rather than erodes the quality, equity, and safety of care.</p>
+<p>This chapter builds on the foundational principles proposed by Badal and colleagues <span class="citation" data-cites="Badal2023-bt">(<a href="references.html#ref-Badal2023-bt" role="doc-biblioref">2023</a>)</span> and extends them into the operational and regulatory terrain that now confronts AMC clinical and informatics leaders. The framework offers an eight-principle scaffold — from alleviating health disparities to facilitating shared decision-making — that remains the most clinically grounded normative structure available for this work. But principles require operational counterparts, and those counterparts now have regulatory teeth. The ONC’s Health Data, Technology, and Interoperability (HTI-1) rule mandating algorithm transparency inside EHR workflows, the FDA’s guidance on Predetermined Change Control Plans for adaptive AI-enabled devices, and the CMS Medicare Advantage rule prohibiting AI-only coverage denials took effect in 2024 and 2025. Institutions that have not yet mapped those rules onto their existing AI governance structures are already behind.</p>
+<section id="the-guiding-principles-framework" class="level2" data-number="6.1">
+<h2 data-number="6.1" class="anchored" data-anchor-id="the-guiding-principles-framework"><span class="header-section-number">6.1</span> The Guiding Principles Framework</h2>
+<p>The table below summarizes the eight principles Badal and colleagues propose for evaluating AI in clinical and healthcare contexts. Principles 1–4 establish the ethical foundation; Principles 5–8 define the operational requirements for AI tools to be genuinely useful in the specific deployment context.</p>
 <div id="tbl-healthcare-guiding-principles" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-tbl figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-healthcare-guiding-principles-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Table&nbsp;6.1: Questions that can be used when considering each principle in the AI development process <span class="citation" data-cites="Badal2023-bt">(<a href="#ref-Badal2023-bt" role="doc-biblioref">Badal, Lee, and Esserman 2023</a>)</span>
+Table&nbsp;6.1: Questions that can be used when considering each principle in the AI development process <span class="citation" data-cites="Badal2023-bt">(<a href="references.html#ref-Badal2023-bt" role="doc-biblioref">Badal et al. 2023</a>)</span>
 </figcaption>
 <div aria-describedby="tbl-healthcare-guiding-principles-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <table class="caption-top table">
 <colgroup>
-<col style="width: 11%">
-<col style="width: 88%">
+<col style="width: 50%">
+<col style="width: 50%">
 </colgroup>
 <thead>
 <tr class="header">
@@ -362,76 +458,281 @@ Table&nbsp;6.1: Questions that can be used when considering each principle in th
 <tbody>
 <tr class="odd">
 <td>1. Alleviate healthcare disparities</td>
-<td>• What health disparities are reported for the present AI application?<br>• How can the AI tool be designed to be accessible to and improve outcomes for the disadvantaged population?<br>• What clinical interventions are needed to realize the benefit, and are these accessible?<br>• How can data collection be supported in underserved communities for tool retraining over time?</td>
+<td>What health disparities are reported for the present AI application? How can the AI tool be designed to be accessible to and improve outcomes for the disadvantaged population? What clinical interventions are needed to realize the benefit, and are these accessible? How can data collection be supported in underserved communities for tool retraining over time?</td>
 </tr>
 <tr class="even">
 <td>2. Report clinically meaningful outcomes</td>
-<td>• How is clinical benefit defined in this domain?<br>• What is the present threshold for the clinical benefit of existing tools, and how can the AI tool improve upon this threshold?</td>
+<td>How is clinical benefit defined in this domain? What is the present threshold for the clinical benefit of existing tools, and how can the AI tool improve upon this threshold?</td>
 </tr>
 <tr class="odd">
 <td>3. Reduce overdiagnosis and overtreatment</td>
-<td>• What disease state is an overdiagnosis?<br>• For every case of overdiagnosis, what are the downstream costs to the patient and healthcare system?<br>• How can this AI application reduce the number of overdiagnoses compared to existing approaches?</td>
+<td>What disease state is an overdiagnosis? For every case of overdiagnosis, what are the downstream costs to the patient and healthcare system? How can this AI application reduce the number of overdiagnoses compared to existing approaches?</td>
 </tr>
 <tr class="even">
 <td>4. Have high healthcare value</td>
-<td>• Is this AI tool addressing a high-priority healthcare need?<br>• What would be the cost to the healthcare system in implementation, maintenance, and update?<br>• What would be the cost to the patient who does and does not benefit from this tool?<br>• Does this tool have high healthcare value, and if not, how can it be improved?</td>
+<td>Is this AI tool addressing a high-priority healthcare need? What would be the cost to the healthcare system in implementation, maintenance, and update? What would be the cost to the patient who does and does not benefit from this tool? Does this tool have high healthcare value, and if not, how can it be improved?</td>
 </tr>
 <tr class="odd">
 <td>5. Incorporate biography</td>
-<td>• What biographical data can be collected or carefully coded for the intended population?<br>• How do these factors vary in the intended population?<br>• How can these factors be included when developing AI tools?</td>
+<td>What biographical data can be collected or carefully coded for the intended population? How do these factors vary in the intended population? How can these factors be included when developing AI tools?</td>
 </tr>
 <tr class="even">
 <td>6. Be easily tailored to the local population</td>
-<td>• Can the training features be easily collected in different settings?<br>• Are these features reliable for training across different populations?<br>• Will the AI/ML workflow be made open-access?</td>
+<td>Can the training features be easily collected in different settings? Are these features reliable for training across different populations? Will the AI/ML workflow be made open-access?</td>
 </tr>
 <tr class="odd">
 <td>7. Promote a learning healthcare system</td>
-<td>• How will this AI application be evaluated over time, and at what intervals?<br>• What are acceptable thresholds for performance?<br>• How will the evaluation results contribute to continuous improvement?</td>
+<td>How will this AI application be evaluated over time, and at what intervals? What are acceptable thresholds for performance? How will the evaluation results contribute to continuous improvement?</td>
 </tr>
 <tr class="even">
 <td>8. Facilitate shared decision-making</td>
-<td>• Have AI explainability tools been explored and utilized?<br>• Do clinicians and patients find the explainability results helpful?<br>• Have simpler, explainable algorithms been tried and compared to ‘black-box’ algorithms to determine if a simpler model performs just as well?<br>• How can patient values be easily integrated into the use of the AI tool?</td>
+<td>Have AI explainability tools been explored and utilized? Do clinicians and patients find the explainability results helpful? Have simpler, explainable algorithms been tried and compared to ‘black-box’ algorithms to determine if a simpler model performs just as well? How can patient values be easily integrated into the use of the AI tool?</td>
 </tr>
 </tbody>
 </table>
 </div>
 </figure>
 </div>
-<section id="principle-1-ai-tools-should-aim-to-alleviate-existing-health-disparities" class="level3" data-number="6.2.1">
-<h3 data-number="6.2.1" class="anchored" data-anchor-id="principle-1-ai-tools-should-aim-to-alleviate-existing-health-disparities"><span class="header-section-number">6.2.1</span> Principle 1: AI tools should aim to alleviate existing health disparities</h3>
-<p>Reaching health equity requires eliminating the disparitities in health outcomes that are closely linked with social, economic, and environmental disadvantages. At their very core, AI tools require collection of specialized and high-quality data, advanced computing infrastructure for use, capacity to purchase or partner models from commercial entities, and unique technical expertise, all of which are less likely available to healthcare systems that serve the most disadvantaged populations.</p>
-<p>More careful training and model development that accounts for the unique needs of disadvantaged populations is needed to ensure that AI tools do not exacerbate existing health disparities. Creating equitable AI tools may require prioritizing simpler models for deployment, and the trade-off between balancing accuracy and equity can potentially be resolved by designing AI tools that can be easily tailored to the local population. AI tools designed to serve disadvantaged groups must not unnecessarily divert resources from higher priority areas and more effective interventions (<a href="#principle-4-ai-tools-should-have-high-healthcare-value-and-avoid-diverting-resources-from-higher-priority-areas">Principle 4</a>).</p>
+<section id="principle-1-ai-tools-should-aim-to-alleviate-existing-health-disparities" class="level3" data-number="6.1.1">
+<h3 data-number="6.1.1" class="anchored" data-anchor-id="principle-1-ai-tools-should-aim-to-alleviate-existing-health-disparities"><span class="header-section-number">6.1.1</span> Principle 1: AI Tools Should Aim to Alleviate Existing Health Disparities</h3>
+<p>Reaching health equity requires eliminating the disparities in health outcomes that are closely linked with social, economic, and environmental disadvantages. At their very core, AI tools require specialized and high-quality data, advanced computing infrastructure, capacity to purchase or partner models from commercial entities, and unique technical expertise — all of which are less available to healthcare systems that serve the most disadvantaged populations.</p>
+<p>More careful training and model development that accounts for the unique needs of disadvantaged populations is needed to ensure that AI tools do not exacerbate existing health disparities. Creating equitable AI tools may require prioritizing simpler models for deployment, and the trade-off between balancing accuracy and equity can potentially be resolved by designing tools that can be tailored to the local population. AI tools designed to serve disadvantaged groups must not unnecessarily divert resources from higher-priority areas and more effective interventions (see Principle 4 below).</p>
 </section>
-<section id="principle-2-ai-tools-should-produce-clinically-meaningful-outcomes" class="level3" data-number="6.2.2">
-<h3 data-number="6.2.2" class="anchored" data-anchor-id="principle-2-ai-tools-should-produce-clinically-meaningful-outcomes"><span class="header-section-number">6.2.2</span> Principle 2: AI tools should produce clinically meaningful outcomes</h3>
-<p>AI tools should be evaluated based on their ability to improve clinically meaningful outcomes. The clinical benefit of AI tools should be defined in the context of the existing standard of care, and the AI tool should be evaluated against this standard. If AI practitioners do not define clinical metrics for clinical benefit <em>a priori</em>, they risk producing tools that clinicians cannot evaluate or use. Clinician partners of AI researchers should evaluate accuracy, fairness, and risks of overdiagnosis and overtreatment (<a href="#principle-3-ai-tools-should-reduce-overdiagnosis-and-overtreatment">Principle 3</a>). They should also evaluate the healthcare value (<a href="#principle-4-ai-tools-should-have-high-healthcare-value-and-avoid-diverting-resources-from-higher-priority-areas">Principle 4</a>) along with the explainability and auditability of AI tools and models (note principles outlined in <a href="#tbl-healthcare-guiding-principles" class="quarto-xref">Table&nbsp;<span>6.1</span></a>.</p>
+<section id="principle-2-ai-tools-should-produce-clinically-meaningful-outcomes" class="level3" data-number="6.1.2">
+<h3 data-number="6.1.2" class="anchored" data-anchor-id="principle-2-ai-tools-should-produce-clinically-meaningful-outcomes"><span class="header-section-number">6.1.2</span> Principle 2: AI Tools Should Produce Clinically Meaningful Outcomes</h3>
+<p>AI tools should be evaluated based on their ability to improve clinically meaningful outcomes. The clinical benefit of AI tools should be defined in the context of the existing standard of care, and the AI tool should be evaluated against this standard. If AI practitioners do not define clinical metrics for clinical benefit <em>a priori</em>, they risk producing tools that clinicians cannot evaluate or use. Clinician partners of AI researchers should evaluate accuracy, fairness, and risks of overdiagnosis and overtreatment, as well as the healthcare value and explainability of AI tools and models (see <a href="#tbl-healthcare-guiding-principles" class="quarto-xref">Table&nbsp;<span>6.1</span></a>).</p>
 </section>
-<section id="principle-3-ai-tools-should-reduce-overdiagnosis-and-overtreatment" class="level3" data-number="6.2.3">
-<h3 data-number="6.2.3" class="anchored" data-anchor-id="principle-3-ai-tools-should-reduce-overdiagnosis-and-overtreatment"><span class="header-section-number">6.2.3</span> Principle 3: AI tools should reduce overdiagnosis and overtreatment</h3>
-<p>Particularly in the United States, overdiagnosis and overtreatment are major drivers of healthcare costs and patient harm. Overdiagnosis occurs when a disease is diagnosed that would not have caused symptoms or death in a patient’s lifetime. Overtreatment occurs when a patient is treated for a disease that would not have caused symptoms or death in a patient’s lifetime. AI tools should be carefully constructed with the spectrum of disease and interventions to result in decreased overdiagnosis and overtreatment.</p>
+<section id="principle-3-ai-tools-should-reduce-overdiagnosis-and-overtreatment" class="level3" data-number="6.1.3">
+<h3 data-number="6.1.3" class="anchored" data-anchor-id="principle-3-ai-tools-should-reduce-overdiagnosis-and-overtreatment"><span class="header-section-number">6.1.3</span> Principle 3: AI Tools Should Reduce Overdiagnosis and Overtreatment</h3>
+<p>Particularly in the United States, overdiagnosis and overtreatment are major drivers of healthcare costs and patient harm. Overdiagnosis occurs when a disease is diagnosed that would not have caused symptoms or death in a patient’s lifetime. Overtreatment occurs when a patient is treated for a disease that would not have caused symptoms or death in a patient’s lifetime. AI tools should be carefully constructed with attention to the full spectrum of disease and treatment burden, with the goal of reducing unnecessary interventions rather than simply maximizing detection rates.</p>
 </section>
-<section id="principle-4-ai-tools-should-have-high-healthcare-value-and-avoid-diverting" class="level3" data-number="6.2.4">
-<h3 data-number="6.2.4" class="anchored" data-anchor-id="principle-4-ai-tools-should-have-high-healthcare-value-and-avoid-diverting"><span class="header-section-number">6.2.4</span> Principle 4: AI tools should have high healthcare value and avoid diverting</h3>
-<p>resources from higher-priority areas</p>
-<p>AI tools applied in healthcare should result in the same outcomes for reduced cost or better outcomes for costs comparable to current costs. Costs to gather inputs, build, maintain, update, interpret, and deploy in clinical practice must be estimated and included in weighing the decisions around AI tool application. Note that what might be cost-effective, leading to high healthcare value, in one setting might be extremely cost-ineffective in settings where resources are scarce.</p>
+<section id="principle-4-ai-tools-should-have-high-healthcare-value" class="level3" data-number="6.1.4">
+<h3 data-number="6.1.4" class="anchored" data-anchor-id="principle-4-ai-tools-should-have-high-healthcare-value"><span class="header-section-number">6.1.4</span> Principle 4: AI Tools Should Have High Healthcare Value</h3>
+<p>AI tools applied in healthcare should result in the same outcomes for reduced cost, or better outcomes for comparable cost. Costs to gather inputs, build, maintain, update, interpret, and deploy in clinical practice must be estimated and included in weighing decisions around AI tool adoption. What is cost-effective in one setting may be extremely cost-ineffective in settings where resources are scarce — a point that becomes especially sharp when comparing deployment in well-resourced academic medical centers with the conditions facing safety-net or rural institutions.</p>
 </section>
-<section id="principle-5-ai-tools-should-incorporate-social-structural-environmental" class="level3" data-number="6.2.5">
-<h3 data-number="6.2.5" class="anchored" data-anchor-id="principle-5-ai-tools-should-incorporate-social-structural-environmental"><span class="header-section-number">6.2.5</span> Principle 5: AI tools should incorporate social, structural, environmental,</h3>
-<p>emotional, and psychological drivers of health</p>
 </section>
-<section id="principle-6-ai-tools-should-be-easily-tailored-to-the-local-population" class="level3" data-number="6.2.6">
-<h3 data-number="6.2.6" class="anchored" data-anchor-id="principle-6-ai-tools-should-be-easily-tailored-to-the-local-population"><span class="header-section-number">6.2.6</span> Principle 6: AI tools should be easily tailored to the local population</h3>
+<section id="sec-clinical-ops" class="level2" data-number="6.2">
+<h2 data-number="6.2" class="anchored" data-anchor-id="sec-clinical-ops"><span class="header-section-number">6.2</span> Principles 5–8: From Ethics to Operations</h2>
+<p>Principles 1–4 address whether a clinical AI tool should be built at all — whether the intervention is equitable, meaningful, safe, and cost-effective. Principles 5–8 address a harder question: whether the tool will work for the specific patients an AMC actually serves, under the specific clinical workflows and social conditions of that institution. These four principles mark the transition from governance-as-ethics to governance-as-operations.</p>
+<section id="principle-5-incorporating-biographical-and-structural-drivers-of-health" class="level3" data-number="6.2.1">
+<h3 data-number="6.2.1" class="anchored" data-anchor-id="principle-5-incorporating-biographical-and-structural-drivers-of-health"><span class="header-section-number">6.2.1</span> Principle 5: Incorporating Biographical and Structural Drivers of Health</h3>
+<p>The fifth principle calls for AI tools to account for the full range of social, structural, emotional, and psychological factors that shape health outcomes. In practice, this means models must incorporate social determinants of health (SDOH) as genuine features, not afterthoughts appended during a bias audit.</p>
+<p>The problem is that SDOH documentation in the structured EHR is systemically undercaptured. ICD-10 Z-codes — the designated mechanism for recording housing instability, food insecurity, and transportation barriers — appear in a small fraction of encounters for patients known to experience these conditions <span class="citation" data-cites="Wiens2019-harm">(<a href="references.html#ref-Wiens2019-harm" role="doc-biblioref">Wiens et al. 2019</a>)</span>. The information often exists, but in unstructured text: clinician notes, social work assessments, telephone triage summaries. LLMs are proving to be effective extraction tools for exactly this kind of problem. Models applied to clinical narrative notes can identify SDOH indicators with substantially higher recall than structured coding alone, though performance varies across demographic groups and institutions — a disparity that creates its own equity risk and demands ongoing monitoring.</p>
+<p>The operational implication for AMC leaders is direct: deploying an AI model without auditing SDOH feature coverage is equivalent to deploying a sepsis predictor on a population where the most at-risk patients have systematically missing data. That audit must happen before deployment, not after the first disparity finding surfaces in a quality review.</p>
 </section>
-<section id="principle-7-ai-tools-should-promote-a-learning-healthcare-system" class="level3" data-number="6.2.7">
-<h3 data-number="6.2.7" class="anchored" data-anchor-id="principle-7-ai-tools-should-promote-a-learning-healthcare-system"><span class="header-section-number">6.2.7</span> Principle 7: AI tools should promote a learning healthcare system</h3>
+<section id="principle-6-local-calibration-for-the-local-population" class="level3" data-number="6.2.2">
+<h3 data-number="6.2.2" class="anchored" data-anchor-id="principle-6-local-calibration-for-the-local-population"><span class="header-section-number">6.2.2</span> Principle 6: Local Calibration for the Local Population</h3>
+<p>A model trained and validated at a tertiary academic medical center does not automatically perform in a safety-net hospital, a rural affiliate, or a bilingual federally qualified health center. Population shift — the statistical mismatch between training distribution and deployment distribution — is one of the most documented causes of clinical AI failure after initial deployment <span class="citation" data-cites="Wiens2019-harm">(<a href="references.html#ref-Wiens2019-harm" role="doc-biblioref">Wiens et al. 2019</a>)</span>. The sepsis prediction model trained on a predominantly insured, English-speaking cohort may require substantially different decision thresholds when deployed in an emergency department serving a high proportion of recently incarcerated or housing-unstable patients.</p>
+<p>Local calibration is the process of adjusting a pre-trained model’s parameters or decision thresholds to match the local case mix, documentation practices, and outcome base rates. This is well-established methodology in the biostatistical literature under the name recalibration, and it applies with particular force to predictive models in clinical settings.</p>
+<p>AMCs that procure commercial AI tools should expect vendors to provide validation data from populations that approximate their own, and should treat validation studies conducted exclusively in academic medical centers as a cautionary flag when deploying in different institutional contexts. Contract language for AI procurement should include explicit provisions for post-deployment performance monitoring and for model recalibration if performance degrades beyond agreed thresholds.</p>
 </section>
-<section id="principle-8-ai-tools-should-facilitate-shared-decision-making" class="level3" data-number="6.2.8">
-<h3 data-number="6.2.8" class="anchored" data-anchor-id="principle-8-ai-tools-should-facilitate-shared-decision-making"><span class="header-section-number">6.2.8</span> Principle 8: AI tools should facilitate shared decision-making</h3>
+<section id="principle-7-promoting-a-learning-healthcare-system" class="level3" data-number="6.2.3">
+<h3 data-number="6.2.3" class="anchored" data-anchor-id="principle-7-promoting-a-learning-healthcare-system"><span class="header-section-number">6.2.3</span> Principle 7: Promoting a Learning Healthcare System</h3>
+<p>The seventh principle asks whether an AI tool contributes to continuous improvement over time, or whether it is deployed, validated once, and then left to degrade silently. The learning healthcare system (LHS) model holds that clinical care generates data, that data enables learning, and that learning improves care in an ongoing cycle.</p>
+<p>Clinical AI fits naturally into this loop — but only if the monitoring infrastructure is built into the deployment plan rather than retrofitted after the fact. For AMC leaders, this means specifying performance metrics and acceptable degradation thresholds before deployment; building a mechanism to detect when those thresholds are crossed; and defining the institutional response (recalibration, temporary suspension, vendor escalation, or retirement) in advance of any incident.</p>
+<p>The ONC HTI-1 rule, discussed in detail below, adds a regulatory dimension to this operational requirement. For AI tools qualifying as Decision Support Interventions under the rule, vendors are required to provide specific source attributes about the model — including performance characteristics and the populations on which the model was validated — that can be surfaced within the clinical workflow. Institutions should treat these attributes as inputs to ongoing LHS monitoring, not as one-time procurement documents.</p>
+</section>
+<section id="principle-8-facilitating-shared-decision-making-through-explainability" class="level3" data-number="6.2.4">
+<h3 data-number="6.2.4" class="anchored" data-anchor-id="principle-8-facilitating-shared-decision-making-through-explainability"><span class="header-section-number">6.2.4</span> Principle 8: Facilitating Shared Decision-Making Through Explainability</h3>
+<p>The final Badal principle asks whether clinicians and patients can understand why an AI tool produced a given output well enough to incorporate it meaningfully into a clinical decision. This is the explainability question, and it has both a technical and a human-factors dimension that are frequently conflated.</p>
+<p>The technical question is which explainability method to apply. The two most widely deployed methods in clinical settings are SHAP (SHapley Additive exPlanations, grounded in cooperative game theory) and LIME (Local Interpretable Model-Agnostic Explanations, which fits a simpler surrogate model locally around each prediction). SHAP values are globally consistent — the same feature receives the same attribution across comparable patients — while LIME explanations can vary for patients with similar risk profiles. For clinical AI tools where consistency across patients matters (discharge planning, readmission prediction), SHAP has become the preferred method. For rapid bedside use where approximate feature attribution is sufficient, the lower computational cost of LIME may be acceptable.</p>
+<p>The human-factors question is harder: does presenting explainability output to a clinician actually improve decision quality, or does it create a new form of over-reliance? The evidence is mixed. Clinicians who understand the top features driving a risk score may correctly identify when the model is pattern-matching to correlational rather than causal features <span class="citation" data-cites="Jones2023-trust">(<a href="references.html#ref-Jones2023-trust" role="doc-biblioref">Jones et al. 2023</a>)</span>. Clinicians under high cognitive load — which describes most of clinical practice — may instead anchor on the AI output, with the explainability display functioning as post-hoc rationalization rather than genuine scrutiny. Designing human review checkpoints that are genuinely scrutinized rather than rubber-stamped is an open problem addressed in <a href="agentic_safety.html" class="quarto-xref"><span>Chapter 11</span></a>.</p>
+<p>For shared decision-making with patients, the bar is different. Patients rarely need SHAP waterfall plots. They need to know that an AI tool was involved in their care, what it was used for, and that their clinician evaluated and took responsibility for the recommendation. Disclosure language that meets this bar is not technically complex; it requires institutional will to adopt and apply consistently.</p>
+</section>
+</section>
+<section id="clinical-ai-in-practice" class="level2" data-number="6.3">
+<h2 data-number="6.3" class="anchored" data-anchor-id="clinical-ai-in-practice"><span class="header-section-number">6.3</span> Clinical AI in Practice</h2>
+<p>The principles framework addresses the normative question: what should clinical AI accomplish and what risks should it avoid? The following sections address the operational question: what does clinical AI deployment actually look like in 2025–2026, what regulatory requirements govern it, and where do institutions most commonly stumble?</p>
+<section id="ambient-documentation-and-the-documentation-burden" class="level3" data-number="6.3.1">
+<h3 data-number="6.3.1" class="anchored" data-anchor-id="ambient-documentation-and-the-documentation-burden"><span class="header-section-number">6.3.1</span> Ambient Documentation and the Documentation Burden</h3>
+<p>The most widely deployed category of clinical AI at AMCs is now ambient documentation — AI systems that listen to the clinical encounter, generate a draft clinical note, and return it to the clinician for review and attestation. <a href="https://www.abridge.com">Abridge</a>, <a href="https://www.nuance.com/healthcare/ambient-clinical-intelligence.html">Microsoft DAX</a> (Dragon Ambient eXperience), <a href="https://www.nabla.com">Nabla</a>, and <a href="https://www.suki.ai">Suki</a> are the leading commercial systems; <a href="https://www.epic.com">Epic</a> has introduced native ambient documentation for institutions already on its platform.</p>
+<p>The evidence that ambient systems reduce documentation time is now substantial. Tierney and colleagues found that physicians using an ambient scribe system reported meaningful reductions in time spent on documentation, with the largest gains in primary care and outpatient specialties where note volume is highest <span class="citation" data-cites="Tierney2024-scribe">(<a href="references.html#ref-Tierney2024-scribe" role="doc-biblioref"><span class="nocase">Tierney et al.</span> 2024</a>)</span>. The same work reported improvements in clinician well-being and in patients’ perception that their physician was present and attentive during the encounter — because the physician was not looking at a screen. The professional wellness chapter of this book examines this evidence in greater depth (<a href="professional_wellness.html" class="quarto-xref"><span>Chapter 13</span></a>).</p>
+<p>The safety concern that receives less attention in the promotional literature is omission error. Ambient systems are optimized to produce fluent, complete-sounding notes, but they can silently omit clinically significant findings mentioned during the encounter — a patient’s reference to chest pain that the system categorizes as chronic rather than new, a medication allergy mentioned during the social history, a patient-reported symptom that the system filters out as conversational noise. These omissions are more dangerous than transcription errors precisely because they produce notes that look complete. A clinician reviewing a well-formatted, plausible note is less likely to detect a missing item than one reviewing a note with obvious structural gaps.</p>
+<p>The operational response is to treat ambient documentation as draft generation, not as finished note production — a tool that eliminates the blank-page problem and compresses documentation time, but not one that relieves the clinician of responsibility to verify every clinical fact before attestation. Institutions deploying ambient systems should document this expectation explicitly in clinical AI policy and should monitor attestation patterns: a clinician attesting in under sixty seconds is almost certainly not reviewing the draft.</p>
+<div class="cell" data-layout-align="default">
+<div class="cell-output-display">
+<div id="fig-ambient-workflow" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-ambient-workflow-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div>
+<pre class="mermaid mermaid-js" data-label="fig-ambient-workflow">flowchart LR
+    A([Patient Encounter\nBegins]) --&gt; B[Verbal Consent\nObtained]
+    B --&gt; C[AI Processes\nAudio Stream]
+    C --&gt; D[Draft Note Generated\nwith Linked Evidence]
+    D --&gt; E{Clinician Review\nCritical Safety Point}
+    E --&gt;|Gaps or errors\nfound| F[Clinician Edits]
+    F --&gt; E
+    E --&gt;|Draft verified| G[Attestation with\nAI Disclosure Statement]
+    G --&gt; H([Note Signed\nto EHR])
+</pre>
+</div>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-ambient-workflow-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;6.1: Ambient AI scribe workflow with consent and verification checkpoints. Clinician review before attestation is the critical safety step.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="the-federal-regulatory-landscape" class="level3" data-number="6.3.2">
+<h3 data-number="6.3.2" class="anchored" data-anchor-id="the-federal-regulatory-landscape"><span class="header-section-number">6.3.2</span> The Federal Regulatory Landscape</h3>
+<p>Three regulatory actions in 2024–2025 significantly changed the compliance obligations for AMCs deploying clinical AI. Understanding their scope — and their limits — is a prerequisite for sound clinical AI governance.</p>
+<div id="tbl-clinical-regulatory-landscape" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-clinical-regulatory-landscape-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;6.2: Federal regulatory actions affecting clinical AI deployment at AMCs, 2024–2025 <span class="citation" data-cites="ONC2024-hti1 FDA2024-pccp CMS2024-maai HHS2024-1557">(<a href="references.html#ref-ONC2024-hti1" role="doc-biblioref">Office of the National Coordinator for Health Information Technology 2024</a>; <a href="references.html#ref-FDA2024-pccp" role="doc-biblioref">U.S. Food and Drug Administration 2024</a>; <a href="references.html#ref-CMS2024-maai" role="doc-biblioref">Centers for Medicare and Medicaid Services 2024</a>; <a href="references.html#ref-HHS2024-1557" role="doc-biblioref">U.S. Department of Health and Human Services, Office for Civil Rights 2024</a>)</span>
+</figcaption>
+<div aria-describedby="tbl-clinical-regulatory-landscape-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<table class="caption-top table">
+<colgroup>
+<col style="width: 13%">
+<col style="width: 27%">
+<col style="width: 26%">
+<col style="width: 32%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Agency</th>
+<th>Rule / Guidance</th>
+<th>Effective Date</th>
+<th>Key AMC Obligation</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>ONC</td>
+<td>HTI-1: Algorithm Transparency</td>
+<td>January 2025</td>
+<td>EHR vendors must surface algorithm source attributes (training data, performance, limitations) for Decision Support Interventions within the clinical workflow</td>
+</tr>
+<tr class="even">
+<td>FDA</td>
+<td>Predetermined Change Control Plan Guidance</td>
+<td>December 2024</td>
+<td>AI-enabled medical devices may update within pre-specified bounds without new 510(k) or PMA submissions</td>
+</tr>
+<tr class="odd">
+<td>CMS</td>
+<td>Medicare Advantage 2025 Final Rule</td>
+<td>January 2025</td>
+<td>AI outputs may not serve as the sole basis for coverage denials; human review is required</td>
+</tr>
+<tr class="even">
+<td>HHS OCR</td>
+<td>Section 1557 Final Rule</td>
+<td>May 2025</td>
+<td>Covered entities may not apply discriminatory algorithms in patient care decisions</td>
+</tr>
+</tbody>
+</table>
+</div>
+</figure>
+</div>
+<p>The ONC HTI-1 rule is the most operationally significant for clinical informatics teams. It defines a new regulatory category — Decision Support Interventions — that includes EHR-based algorithms meeting specified criteria for automated decision-making. For each qualifying tool, EHR vendors are required to make accessible a structured set of source attributes: the model’s training data sources, performance characteristics, known limitations, and the populations on which it was validated. These attributes must be surfaced within the clinical workflow, not buried in procurement contracts. The practical implication is that AMC clinical informatics leaders should be engaging their EHR vendor about DSI compliance now, and should verify that the source attributes being provided are substantive rather than boilerplate <span class="citation" data-cites="ONC2024-hti1">(<a href="references.html#ref-ONC2024-hti1" role="doc-biblioref">Office of the National Coordinator for Health Information Technology 2024</a>)</span>.</p>
+<p>The FDA PCCP guidance addresses the governance of AI tools that learn and adapt after initial deployment. Traditional medical device regulation assumes a static device that functions the same way throughout its useful life. AI systems that update their parameters based on new data do not fit this model. The PCCP guidance establishes a pathway under which developers specify in advance the types of changes they intend to make, the bounds of those changes, and the performance criteria that must be met before changes are implemented. An AMC that has developed an internally deployed predictive model and intends to update it over time should assess whether the tool qualifies as an FDA-regulated Software as a Medical Device (SaMD) and, if so, whether a PCCP would be the appropriate regulatory pathway <span class="citation" data-cites="FDA2024-pccp">(<a href="references.html#ref-FDA2024-pccp" role="doc-biblioref">U.S. Food and Drug Administration 2024</a>)</span>.</p>
+<p>The CMS Medicare Advantage rule responds to documented cases of health insurers using AI-driven prior authorization systems to systematically deny claims with minimal human review. For AMC care management teams working with Medicare Advantage plans, this rule creates leverage: a plan that cites AI output as the basis for a clinical denial without demonstrable human review is operating out of compliance with CMS requirements <span class="citation" data-cites="CMS2024-maai">(<a href="references.html#ref-CMS2024-maai" role="doc-biblioref">Centers for Medicare and Medicaid Services 2024</a>)</span>.</p>
+</section>
+<section id="governing-adaptive-ai-fda-samd-and-the-pccp-framework" class="level3" data-number="6.3.3">
+<h3 data-number="6.3.3" class="anchored" data-anchor-id="governing-adaptive-ai-fda-samd-and-the-pccp-framework"><span class="header-section-number">6.3.3</span> Governing Adaptive AI: FDA SaMD and the PCCP Framework</h3>
+<p>The boundary between a clinical AI tool and an FDA-regulated medical device is not as clear as many AMC leaders assume. The FDA’s definition of Software as a Medical Device is broad: software that meets the device definition and is intended to diagnose, treat, cure, mitigate, or prevent disease or other conditions. Many clinical AI tools that AMCs use or develop — risk stratification models, diagnostic decision support, monitoring algorithms — may qualify.</p>
+<p>The critical governance question is whether a tool was purchased from a vendor who has obtained FDA clearance or approval, or whether it was developed internally. Vendor-developed tools with FDA clearance carry the regulatory burden on the vendor side; AMC responsibility is largely limited to ensuring the tool is used within its cleared indication. Internally developed tools present a more complex picture. An institution that develops and deploys a predictive model for clinical decision support may be operating an uncleared medical device if the tool meets the SaMD definition — even if the institution does not market or sell the tool externally.</p>
+<p>The practical governance recommendation is direct: any clinical AI tool that informs a treatment decision — as opposed to a purely administrative one — should be assessed against the FDA SaMD definition before deployment, and the assessment should be documented. Tools that qualify should be cleared through the appropriate regulatory pathway, structured to meet the clinical decision support exemption criteria, or restricted to research use until regulatory status is resolved <span class="citation" data-cites="FDA2024-pccp">(<a href="references.html#ref-FDA2024-pccp" role="doc-biblioref">U.S. Food and Drug Administration 2024</a>)</span>.</p>
+<div class="cell" data-layout-align="default">
+<div class="cell-output-display">
+<div id="fig-clinical-ai-lifecycle" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-clinical-ai-lifecycle-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div>
+<pre class="mermaid mermaid-js" data-label="fig-clinical-ai-lifecycle">flowchart TB
+    A([Clinical Need\nIdentified]) --&gt; B[Governance Review\nAISC + Clinical Leadership]
+    B --&gt; C{Procure or\nBuild?}
+    C --&gt;|Procure| D[Vendor Assessment\nFDA Status · BAA · DSI Attributes]
+    C --&gt;|Build| E[FDA SaMD Assessment\nPCCP if Adaptive]
+    D --&gt; F[Local Calibration\nPrinciples 5-6]
+    E --&gt; F
+    F --&gt; G[Pilot Deployment\nConsent + Disclosure]
+    G --&gt; H[Performance Monitoring\nHTI-1 Source Attributes]
+    H --&gt; I{Thresholds\nMet?}
+    I --&gt;|Yes| J([Continuous Operation\nLHS Learning Loop])
+    I --&gt;|No| K[Recalibrate ·\nEscalate · Retire]
+    K --&gt; B
+</pre>
+</div>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-clinical-ai-lifecycle-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;6.2: The clinical AI governance lifecycle, integrating procurement assessment, local calibration, and the continuous monitoring loop required by the learning healthcare system model.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="explainability-trust-and-the-liability-frontier" class="level3" data-number="6.3.4">
+<h3 data-number="6.3.4" class="anchored" data-anchor-id="explainability-trust-and-the-liability-frontier"><span class="header-section-number">6.3.4</span> Explainability, Trust, and the Liability Frontier</h3>
+<p>The liability question in clinical AI is still developing, but the direction is clear. Legal commentary and early judicial precedent are examining two categories of AI-related clinical liability: the failure to exercise adequate oversight of an AI tool that produced a harmful recommendation, and — less intuitive but increasingly discussed — the failure to use an AI tool that has become part of the standard of care <span class="citation" data-cites="Jones2023-trust">(<a href="references.html#ref-Jones2023-trust" role="doc-biblioref">Jones et al. 2023</a>)</span>. The second category is newer and more unsettling to many clinicians: the idea that using AI could become an obligation, not merely a permission.</p>
+<p>The AMA survey data indicates that approximately 65% of physicians see potential value in AI for non-diagnostic tasks — documentation, prior authorization, administrative work — while confidence in AI for diagnostic support is substantially lower <span class="citation" data-cites="AMA2023-survey">(<a href="references.html#ref-AMA2023-survey" role="doc-biblioref">American Medical Association 2023</a>)</span>. This gap is clinically rational. The cost of a documentation error is generally lower and more recoverable than the cost of a diagnostic error. But as validated diagnostic AI tools accumulate peer-reviewed evidence of performance at or above attending-level accuracy in specific domains, the hesitancy will come under increasing scrutiny from patients and from liability counsel.</p>
+<p>The prudent governance posture is to treat each deployed clinical AI tool as carrying its own liability profile: who is responsible for verifying the output, how that verification is documented in the medical record, and what the institutional protocol is when an AI recommendation is not followed. The clinician who overrides an AI recommendation and documents the clinical reasoning is in a defensible position. The clinician who follows an AI recommendation without review, or who overrides it without documentation, is not <span class="citation" data-cites="Jones2023-trust">(<a href="references.html#ref-Jones2023-trust" role="doc-biblioref">Jones et al. 2023</a>)</span>.</p>
+</section>
+<section id="patient-facing-ai-and-the-consent-gap" class="level3" data-number="6.3.5">
+<h3 data-number="6.3.5" class="anchored" data-anchor-id="patient-facing-ai-and-the-consent-gap"><span class="header-section-number">6.3.5</span> Patient-Facing AI and the Consent Gap</h3>
+<p>The clinical AI tools discussed above are largely invisible to patients: the ambient scribe listens during encounters, but the patient may not know a draft note is being generated; risk stratification models run in the background without patient-facing output. Patient-facing AI tools present a different problem: the patient is the primary user, and the risk of misunderstanding what the tool can and cannot do is concentrated in that interaction.</p>
+<p>Epic’s patient-facing messaging features, including AI-drafted responses to patient portal messages, are now deployed at dozens of major health systems. A pilot study at UC San Diego Health found that clinician-reviewed AI-drafted patient message responses maintained quality comparable to clinician-authored messages while substantially reducing the time required — though the study also raised open questions about whether patients were adequately informed that AI was involved in the drafting process <span class="citation" data-cites="UCSD2024-epic">(<a href="references.html#ref-UCSD2024-epic" role="doc-biblioref"><span class="nocase">Polubriaginof et al.</span> 2024</a>)</span>.</p>
+<p>California Assembly Bill 3030, effective January 2025, requires healthcare providers to include explicit disclosure when AI has generated patient communications <span class="citation" data-cites="CalAB3030-2024">(<a href="references.html#ref-CalAB3030-2024" role="doc-biblioref"><span>AB 3030</span> 2024</a>)</span>. The law covers written communications — letters, portal messages, discharge instructions — but does not extend to real-time verbal interactions. AB 3030 is the most specific AI disclosure mandate currently in effect at the state level, and several states are considering similar requirements. AMC compliance and legal teams should treat the California standard as a leading indicator of where disclosure requirements are heading nationally, and should evaluate adopting it as a default even for institutions serving patients primarily outside California.</p>
+<p>The disclosure language itself does not need to be alarming. A statement that some communications may be drafted with AI assistance and reviewed by the clinical team before sending accomplishes the core transparency goal. Institutions that have adopted such language consistently report minimal patient concern when it is introduced alongside explanation of how the tool is used; the concern is substantially higher when patients discover the practice without prior notice.</p>
+</section>
+</section>
+<section id="sec-clinical-start" class="level2" data-number="6.4">
+<h2 data-number="6.4" class="anchored" data-anchor-id="sec-clinical-start"><span class="header-section-number">6.4</span> Where to Start</h2>
+<p>Clinical AI governance can feel paralyzing when confronted simultaneously with FDA guidance documents, ONC rulemaking, the breadth of the Badal framework, and a vendor landscape that changes quarterly. The two projects below are scoped to produce tangible institutional value within six months, using infrastructure most AMCs already have.</p>
+<section id="starter-project-1-clinical-ai-inventory-and-regulatory-risk-assessment" class="level3" data-number="6.4.1">
+<h3 data-number="6.4.1" class="anchored" data-anchor-id="starter-project-1-clinical-ai-inventory-and-regulatory-risk-assessment"><span class="header-section-number">6.4.1</span> Starter Project 1: Clinical AI Inventory and Regulatory Risk Assessment</h3>
+<p><strong>What it is:</strong> A structured inventory of every AI tool currently deployed in clinical workflows — including EHR-embedded tools that clinical informatics teams may not have formally reviewed — with a brief assessment of FDA regulatory status, DSI qualification under HTI-1, and the existence or absence of active performance monitoring.</p>
+<p><strong>Why now:</strong> The ONC HTI-1 rule is in effect. The FDA PCCP guidance has been published. An institution that cannot identify which of its deployed clinical AI tools are regulated under which frameworks cannot meaningfully comply with either requirement, and cannot answer the liability question if an AI-related adverse event occurs.</p>
+<p><strong>How to execute:</strong> This is primarily a governance and documentation exercise, not a technical project. The clinical informatics team, the AI governance committee, and the EHR team collectively identify all deployed tools with a clinical workflow touchpoint. Each tool is assessed against a standardized template: FDA clearance status, DSI qualification, BAA coverage, active performance monitoring, and last validation date. The output is a register reviewed by the AI Steering Committee on a quarterly schedule.</p>
+<p><strong>Buy vs.&nbsp;build:</strong> This is governance work, not a technology purchase. The output is a document and a process. Software tools for AI governance inventory exist (Credo AI, IBM OpenScale) but are not prerequisites for starting; a shared spreadsheet with enforced schema is sufficient for a first-pass inventory at most institutions.</p>
+</section>
+<section id="starter-project-2-ambient-documentation-pilot-with-prepost-measurement" class="level3" data-number="6.4.2">
+<h3 data-number="6.4.2" class="anchored" data-anchor-id="starter-project-2-ambient-documentation-pilot-with-prepost-measurement"><span class="header-section-number">6.4.2</span> Starter Project 2: Ambient Documentation Pilot with Pre/Post Measurement</h3>
+<p><strong>What it is:</strong> A structured pilot of an ambient AI scribe system in a high-volume outpatient specialty, with pre-specified measurement of after-hours EHR time, note quality, and clinician well-being scores before and after the intervention.</p>
+<p><strong>Why now:</strong> The evidence base for ambient documentation is strong enough to act on <span class="citation" data-cites="Tierney2024-scribe">(<a href="references.html#ref-Tierney2024-scribe" role="doc-biblioref"><span class="nocase">Tierney et al.</span> 2024</a>)</span>. But the institution that deploys without measurement cannot know whether its specific deployment produced the expected benefit, or whether local workflow factors attenuated it — and cannot make the internal business case for broader rollout without outcome data.</p>
+<p><strong>How to execute:</strong> Select a single outpatient specialty with a measurable documentation burden and an identified clinical champion. Establish baseline metrics before deployment: after-hours EHR time (available from EHR audit logs at most institutions), note length, attestation turnaround, and a validated burnout or well-being survey. Deploy the ambient system with explicit workflow expectations — draft generation, not autonomous documentation — and with the consent and attestation disclosure language described above. Measure the same metrics at 60 and 120 days. Share results transparently with clinical leadership regardless of outcome; a null result has governance value.</p>
+<p><strong>Buy vs.&nbsp;build:</strong> Buy. The commercial ambient systems have existing EHR integrations, BAA coverage, and vendor-side regulatory responsibility for the AI component. Building an ambient documentation system from scratch is not a tractable project for most AMC informatics teams, and the commercial market has matured rapidly. The institutional work is in selecting the system, structuring the measurement framework, and managing the change management required for sustainable clinical adoption.</p>
 
 
-<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
+<div id="refs" class="references csl-bib-body hanging-indent" role="list" style="display: none">
+<div id="ref-CalAB3030-2024" class="csl-entry" role="listitem">
+<span>AB 3030</span>: Health Care: Artificial Intelligence (2024). <a href="https://leginfo.legislature.ca.gov/faces/billNavClient.xhtml?bill_id=202320240AB3030">https://leginfo.legislature.ca.gov/faces/billNavClient.xhtml?bill_id=202320240AB3030</a>.
+</div>
+<div id="ref-AMA2023-survey" class="csl-entry" role="listitem">
+American Medical Association. 2023. <em>Physicians Optimistic about <span>AI</span> in Health Care with Some Concerns</em>. <a href="https://www.ama-assn.org/practice-management/digital/physicians-optimistic-about-ai-health-care-some-concerns">https://www.ama-assn.org/practice-management/digital/physicians-optimistic-about-ai-health-care-some-concerns</a>.
+</div>
 <div id="ref-Badal2023-bt" class="csl-entry" role="listitem">
 Badal, Kimberly, Carmen M Lee, and Laura J Esserman. 2023. <span>“Guiding Principles for the Responsible Development of Artificial Intelligence Tools for Healthcare.”</span> <em>Communication &amp; Medicine</em> 3 (1): 47. <a href="https://doi.org/10.1038/s43856-023-00279-9">https://doi.org/10.1038/s43856-023-00279-9</a>.
+</div>
+<div id="ref-CMS2024-maai" class="csl-entry" role="listitem">
+Centers for Medicare and Medicaid Services. 2024. <span>“Medicare Program; Contract Year 2025 Policy and Technical Changes to the <span>Medicare Advantage</span> Program, Medicare Prescription Drug Benefit Program, <span>Medicare</span> Cost Plan Program, and Programs of All-Inclusive Care for the Elderly (Final Rule).”</span> In <em>Federal Register</em>, No. 79, vol. 89. <a href="https://www.federalregister.gov/documents/2024/04/23/2024-07105/medicare-program-contract-year-2025-policy-and-technical-changes">https://www.federalregister.gov/documents/2024/04/23/2024-07105/medicare-program-contract-year-2025-policy-and-technical-changes</a>.
+</div>
+<div id="ref-Jones2023-trust" class="csl-entry" role="listitem">
+Jones, Clare, Janet Thornton, and Jeremy C Wyatt. 2023. <span>“Artificial Intelligence and Clinical Decision Support: Clinicians’ Perspectives on Trust, Trustworthiness, and Liability.”</span> <em>Medical Law Review</em> 31 (3): 501–20. <a href="https://doi.org/10.1093/medlaw/fwad013">https://doi.org/10.1093/medlaw/fwad013</a>.
+</div>
+<div id="ref-ONC2024-hti1" class="csl-entry" role="listitem">
+Office of the National Coordinator for Health Information Technology. 2024. <span>“Health Data, Technology, and Interoperability: Certification Program Updates, Algorithm Transparency, and Information Sharing (<span>HTI-1</span>).”</span> In <em>Federal Register</em>, No. 8, vol. 89. <a href="https://www.federalregister.gov/documents/2024/01/09/2023-28824/health-data-technology-and-interoperability-certification-program-updates-algorithm-transparency-and">https://www.federalregister.gov/documents/2024/01/09/2023-28824/health-data-technology-and-interoperability-certification-program-updates-algorithm-transparency-and</a>.
+</div>
+<div id="ref-UCSD2024-epic" class="csl-entry" role="listitem">
+<span class="nocase">Polubriaginof, Fernanda C G et al.</span> 2024. <span>“Implementation of a Generative Artificial Intelligence Solution for Patient Message Drafting in an Academic Medical Center.”</span> <em>JAMIA Open</em>, ahead of print. <a href="https://doi.org/10.1093/jamiaopen/ooae024">https://doi.org/10.1093/jamiaopen/ooae024</a>.
+</div>
+<div id="ref-Tierney2024-scribe" class="csl-entry" role="listitem">
+<span class="nocase">Tierney, Aaron A, Shreya Bhatt, Aakash Houndie, et al.</span> 2024. <span>“Ambient Artificial Intelligence Scribes to Alleviate the Burden of Clinical Documentation.”</span> <em>NEJM Catalyst Innovations in Care Delivery</em> 5 (1): CAT.23.0404. <a href="https://doi.org/10.1056/CAT.23.0404">https://doi.org/10.1056/CAT.23.0404</a>.
+</div>
+<div id="ref-HHS2024-1557" class="csl-entry" role="listitem">
+U.S. Department of Health and Human Services, Office for Civil Rights. 2024. <em>Section 1557: Nondiscrimination in Health Programs and Activities (Final Rule)</em>. <a href="https://www.hhs.gov/civil-rights/for-individuals/section-1557/index.html">https://www.hhs.gov/civil-rights/for-individuals/section-1557/index.html</a>.
+</div>
+<div id="ref-FDA2024-pccp" class="csl-entry" role="listitem">
+U.S. Food and Drug Administration. 2024. <em>Marketing Submission Recommendations for a Predetermined Change Control Plan for <span>Artificial Intelligence/Machine Learning</span>-Enabled Device Software Functions</em>. <a href="https://www.fda.gov/regulatory-information/search-fda-guidance-documents/marketing-submission-recommendations-predetermined-change-control-plan-aiml-enabled-device-software">https://www.fda.gov/regulatory-information/search-fda-guidance-documents/marketing-submission-recommendations-predetermined-change-control-plan-aiml-enabled-device-software</a>.
+</div>
+<div id="ref-Wiens2019-harm" class="csl-entry" role="listitem">
+Wiens, Jenna, Suchi Saria, Mark Sendak, et al. 2019. <span>“Do No Harm: A Roadmap for Responsible Machine Learning for Health Care.”</span> <em>Nature Medicine</em> 25: 1337–40. <a href="https://doi.org/10.1038/s41591-019-0548-6">https://doi.org/10.1038/s41591-019-0548-6</a>.
 </div>
 </div>
 </section>
@@ -439,239 +740,243 @@ Badal, Kimberly, Carmen M Lee, and Laura J Esserman. 2023. <span>“Guiding Prin
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
-window.document.addEventListener("DOMContentLoaded", function (event) {
-  const toggleBodyColorMode = (bsSheetEl) => {
-    const mode = bsSheetEl.getAttribute("data-mode");
-    const bodyEl = window.document.querySelector("body");
-    if (mode === "dark") {
-      bodyEl.classList.add("quarto-dark");
-      bodyEl.classList.remove("quarto-light");
-    } else {
-      bodyEl.classList.add("quarto-light");
-      bodyEl.classList.remove("quarto-dark");
-    }
-  }
-  const toggleBodyColorPrimary = () => {
-    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
-    if (bsSheetEl) {
-      toggleBodyColorMode(bsSheetEl);
-    }
-  }
-  toggleBodyColorPrimary();  
-  const icon = "";
-  const anchorJS = new window.AnchorJS();
-  anchorJS.options = {
-    placement: 'right',
-    icon: icon
-  };
-  anchorJS.add('.anchored');
-  const isCodeAnnotation = (el) => {
-    for (const clz of el.classList) {
-      if (clz.startsWith('code-annotation-')) {                     
-        return true;
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
       }
+      return false;
     }
-    return false;
-  }
-  const onCopySuccess = function(e) {
-    // button target
-    const button = e.trigger;
-    // don't keep focus
-    button.blur();
-    // flash "checked"
-    button.classList.add('code-copy-button-checked');
-    var currentTitle = button.getAttribute("title");
-    button.setAttribute("title", "Copied!");
-    let tooltip;
-    if (window.bootstrap) {
-      button.setAttribute("data-bs-toggle", "tooltip");
-      button.setAttribute("data-bs-placement", "left");
-      button.setAttribute("data-bs-title", "Copied!");
-      tooltip = new bootstrap.Tooltip(button, 
-        { trigger: "manual", 
-          customClass: "code-copy-button-tooltip",
-          offset: [0, -8]});
-      tooltip.show();    
-    }
-    setTimeout(function() {
-      if (tooltip) {
-        tooltip.hide();
-        button.removeAttribute("data-bs-title");
-        button.removeAttribute("data-bs-toggle");
-        button.removeAttribute("data-bs-placement");
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
       }
-      button.setAttribute("title", currentTitle);
-      button.classList.remove('code-copy-button-checked');
-    }, 1000);
-    // clear code selection
-    e.clearSelection();
-  }
-  const getTextToCopy = function(trigger) {
-      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
       for (const childEl of codeEl.children) {
         if (isCodeAnnotation(childEl)) {
           childEl.remove();
         }
       }
       return codeEl.innerText;
-  }
-  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
-    text: getTextToCopy
-  });
-  clipboard.on('success', onCopySuccess);
-  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
-    // For code content inside modals, clipBoardJS needs to be initialized with a container option
-    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
-    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
-      text: getTextToCopy,
-      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
     });
-    clipboardModal.on('success', onCopySuccess);
-  }
-    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
-    var mailtoRegex = new RegExp(/^mailto:/);
-      var filterRegex = new RegExp("https:\/\/seandavi\.github\.io\/campus-llm-kb\/");
-    var isInternal = (href) => {
-        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
     }
-    // Inspect non-navigation links and adorn them if external
- 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
-    for (var i=0; i<links.length; i++) {
-      const link = links[i];
-      if (!isInternal(link.href)) {
-        // undo the damage that might have been done by quarto-nav.js in the case of
-        // links that we want to consider external
-        if (link.dataset.originalHref !== undefined) {
-          link.href = link.dataset.originalHref;
-        }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/seandavi\.github\.io\/campus-llm-kb\/");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }
-    }
-  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
-    const config = {
-      allowHTML: true,
-      maxWidth: 500,
-      delay: 100,
-      arrow: false,
-      appendTo: function(el) {
-          return el.parentElement;
-      },
-      interactive: true,
-      interactiveBorder: 10,
-      theme: 'quarto',
-      placement: 'bottom-start',
-    };
-    if (contentFn) {
-      config.content = contentFn;
-    }
-    if (onTriggerFn) {
-      config.onTrigger = onTriggerFn;
-    }
-    if (onUntriggerFn) {
-      config.onUntrigger = onUntriggerFn;
-    }
-    window.tippy(el, config); 
-  }
-  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
-  for (var i=0; i<noterefs.length; i++) {
-    const ref = noterefs[i];
-    tippyHover(ref, function() {
-      // use id or data attribute instead here
-      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
-      try { href = new URL(href).hash; } catch {}
-      const id = href.replace(/^#\/?/, "");
-      const note = window.document.getElementById(id);
-      if (note) {
-        return note.innerHTML;
-      } else {
-        return "";
-      }
-    });
-  }
-  const xrefs = window.document.querySelectorAll('a.quarto-xref');
-  const processXRef = (id, note) => {
-    // Strip column container classes
-    const stripColumnClz = (el) => {
-      el.classList.remove("page-full", "page-columns");
-      if (el.children) {
-        for (const child of el.children) {
-          stripColumnClz(child);
-        }
-      }
-    }
-    stripColumnClz(note)
-    if (id === null || id.startsWith('sec-')) {
-      // Special case sections, only their first couple elements
-      const container = document.createElement("div");
-      if (note.children && note.children.length > 2) {
-        container.appendChild(note.children[0].cloneNode(true));
-        for (let i = 1; i < note.children.length; i++) {
-          const child = note.children[i];
-          if (child.tagName === "P" && child.innerText === "") {
-            continue;
-          } else {
-            container.appendChild(child.cloneNode(true));
-            break;
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
           }
         }
-        if (window.Quarto?.typesetMath) {
-          window.Quarto.typesetMath(container);
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
         }
-        return container.innerHTML
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
       } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
         if (window.Quarto?.typesetMath) {
           window.Quarto.typesetMath(note);
         }
-        return note.innerHTML;
-      }
-    } else {
-      // Remove any anchor links if they are present
-      const anchorLink = note.querySelector('a.anchorjs-link');
-      if (anchorLink) {
-        anchorLink.remove();
-      }
-      if (window.Quarto?.typesetMath) {
-        window.Quarto.typesetMath(note);
-      }
-      // TODO in 1.5, we should make sure this works without a callout special case
-      if (note.classList.contains("callout")) {
-        return note.outerHTML;
-      } else {
-        return note.innerHTML;
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
       }
     }
-  }
-  for (var i=0; i<xrefs.length; i++) {
-    const xref = xrefs[i];
-    tippyHover(xref, undefined, function(instance) {
-      instance.disable();
-      let url = xref.getAttribute('href');
-      let hash = undefined; 
-      if (url.startsWith('#')) {
-        hash = url;
-      } else {
-        try { hash = new URL(url).hash; } catch {}
-      }
-      if (hash) {
-        const id = hash.replace(/^#\/?/, "");
-        const note = window.document.getElementById(id);
-        if (note !== null) {
-          try {
-            const html = processXRef(id, note.cloneNode(true));
-            instance.setContent(html);
-          } finally {
-            instance.enable();
-            instance.show();
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
           }
         } else {
-          // See if we can fetch this
-          fetch(url.split('#')[0])
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
           .then(res => res.text())
           .then(html => {
             const parser = new DOMParser();
             const htmlDoc = parser.parseFromString(html, "text/html");
-            const note = htmlDoc.getElementById(id);
+            const note = htmlDoc.querySelector('main.content');
             if (note !== null) {
-              const html = processXRef(id, note);
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
               instance.setContent(html);
             } 
           }).finally(() => {
@@ -679,185 +984,161 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             instance.show();
           });
         }
-      } else {
-        // See if we can fetch a full url (with no hash to target)
-        // This is a special case and we should probably do some content thinning / targeting
-        fetch(url)
-        .then(res => res.text())
-        .then(html => {
-          const parser = new DOMParser();
-          const htmlDoc = parser.parseFromString(html, "text/html");
-          const note = htmlDoc.querySelector('main.content');
-          if (note !== null) {
-            // This should only happen for chapter cross references
-            // (since there is no id in the URL)
-            // remove the first header
-            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
-              note.children[0].remove();
-            }
-            const html = processXRef(null, note);
-            instance.setContent(html);
-          } 
-        }).finally(() => {
-          instance.enable();
-          instance.show();
-        });
-      }
-    }, function(instance) {
-    });
-  }
-      let selectedAnnoteEl;
-      const selectorForAnnotation = ( cell, annotation) => {
-        let cellAttr = 'data-code-cell="' + cell + '"';
-        let lineAttr = 'data-code-annotation="' +  annotation + '"';
-        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
-        return selector;
-      }
-      const selectCodeLines = (annoteEl) => {
-        const doc = window.document;
-        const targetCell = annoteEl.getAttribute("data-target-cell");
-        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
-        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
-        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
-        const lineIds = lines.map((line) => {
-          return targetCell + "-" + line;
-        })
-        let top = null;
-        let height = null;
-        let parent = null;
-        if (lineIds.length > 0) {
-            //compute the position of the single el (top and bottom and make a div)
-            const el = window.document.getElementById(lineIds[0]);
-            top = el.offsetTop;
-            height = el.offsetHeight;
-            parent = el.parentElement.parentElement;
-          if (lineIds.length > 1) {
-            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
-            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
-            height = bottom - top;
-          }
-          if (top !== null && height !== null && parent !== null) {
-            // cook up a div (if necessary) and position it 
-            let div = window.document.getElementById("code-annotation-line-highlight");
-            if (div === null) {
-              div = window.document.createElement("div");
-              div.setAttribute("id", "code-annotation-line-highlight");
-              div.style.position = 'absolute';
-              parent.appendChild(div);
-            }
-            div.style.top = top - 2 + "px";
-            div.style.height = height + 4 + "px";
-            div.style.left = 0;
-            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
-            if (gutterDiv === null) {
-              gutterDiv = window.document.createElement("div");
-              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
-              gutterDiv.style.position = 'absolute';
-              const codeCell = window.document.getElementById(targetCell);
-              const gutter = codeCell.querySelector('.code-annotation-gutter');
-              gutter.appendChild(gutterDiv);
-            }
-            gutterDiv.style.top = top - 2 + "px";
-            gutterDiv.style.height = height + 4 + "px";
-          }
-          selectedAnnoteEl = annoteEl;
-        }
-      };
-      const unselectCodeLines = () => {
-        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
-        elementsIds.forEach((elId) => {
-          const div = window.document.getElementById(elId);
-          if (div) {
-            div.remove();
-          }
-        });
-        selectedAnnoteEl = undefined;
-      };
-        // Handle positioning of the toggle
-    window.addEventListener(
-      "resize",
-      throttle(() => {
-        elRect = undefined;
-        if (selectedAnnoteEl) {
-          selectCodeLines(selectedAnnoteEl);
-        }
-      }, 10)
-    );
-    function throttle(fn, ms) {
-    let throttle = false;
-    let timer;
-      return (...args) => {
-        if(!throttle) { // first call gets through
-            fn.apply(this, args);
-            throttle = true;
-        } else { // all the others get throttled
-            if(timer) clearTimeout(timer); // cancel #2
-            timer = setTimeout(() => {
-              fn.apply(this, args);
-              timer = throttle = false;
-            }, ms);
-        }
-      };
-    }
-      // Attach click handler to the DT
-      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
-      for (const annoteDlNode of annoteDls) {
-        annoteDlNode.addEventListener('click', (event) => {
-          const clickedEl = event.target;
-          if (clickedEl !== selectedAnnoteEl) {
-            unselectCodeLines();
-            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
-            if (activeEl) {
-              activeEl.classList.remove('code-annotation-active');
-            }
-            selectCodeLines(clickedEl);
-            clickedEl.classList.add('code-annotation-active');
-          } else {
-            // Unselect the line
-            unselectCodeLines();
-            clickedEl.classList.remove('code-annotation-active');
-          }
-        });
-      }
-  const findCites = (el) => {
-    const parentEl = el.parentElement;
-    if (parentEl) {
-      const cites = parentEl.dataset.cites;
-      if (cites) {
-        return {
-          el,
-          cites: cites.split(' ')
-        };
-      } else {
-        return findCites(el.parentElement)
-      }
-    } else {
-      return undefined;
-    }
-  };
-  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
-  for (var i=0; i<bibliorefs.length; i++) {
-    const ref = bibliorefs[i];
-    const citeInfo = findCites(ref);
-    if (citeInfo) {
-      tippyHover(citeInfo.el, function() {
-        var popup = window.document.createElement('div');
-        citeInfo.cites.forEach(function(cite) {
-          var citeDiv = window.document.createElement('div');
-          citeDiv.classList.add('hanging-indent');
-          citeDiv.classList.add('csl-entry');
-          var biblioDiv = window.document.getElementById('ref-' + cite);
-          if (biblioDiv) {
-            citeDiv.innerHTML = biblioDiv.innerHTML;
-          }
-          popup.appendChild(citeDiv);
-        });
-        return popup.innerHTML;
+      }, function(instance) {
       });
     }
-  }
-});
-</script>
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
       <a href="./domainresource.html" class="pagination-link" aria-label="Domain Resources">
@@ -865,8 +1146,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./resources_research.html" class="pagination-link" aria-label="Research">
-        <span class="nav-page-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Research</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./resources_research.html" class="pagination-link" aria-label="Research Domain">
+        <span class="nav-page-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Research Domain</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

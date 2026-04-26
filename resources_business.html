@@ -2,13 +2,17 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.5.57">
+<meta name="generator" content="quarto-1.9.37">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="dcterms.date" content="2026-04-26">
 
-<title>9&nbsp; Business Operations – Large Language Model Policy and Practice</title>
+<title>9&nbsp; Business Operations – Implementing AI in Academic Medicine</title>
 <style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
 div.columns{display: flex; gap: min(4vw, 1.5em);}
@@ -20,7 +24,26 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
@@ -30,17 +53,18 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./appendices.html" rel="next">
+<link href="./regulatory_landscape.html" rel="next">
 <link href="./resources_education.html" rel="prev">
-<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-7f8f88aac4f3542376d5c11b86a4c14d.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-36bf55b16c7cb4b1420f41495cb5446a.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -68,20 +92,14 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
-<!-- Google tag (gtag.js) -->
-<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-KLLV1GCF4E"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-KLLV1GCF4E');
-</script>
+<script src="site_libs/quarto-diagram/mermaid.min.js"></script>
+<script src="site_libs/quarto-diagram/mermaid-init.js"></script>
+<link href="site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
 
 
 </head>
 
-<body class="nav-sidebar floating nav-fixed">
+<body class="nav-sidebar floating nav-fixed quarto-light">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -89,7 +107,7 @@ ul.task-list li input[type="checkbox"] {
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
     <a class="navbar-brand" href="./index.html">
-    <span class="navbar-title">Large Language Model Policy and Practice</span>
+    <span class="navbar-title">Implementing AI in Academic Medicine</span>
     </a>
   </div>
         <div class="quarto-navbar-tools tools-wide tools-end">
@@ -98,13 +116,13 @@ ul.task-list li input[type="checkbox"] {
       <a href="" title="Download" id="quarto-navigation-tool-dropdown-0" class="quarto-navigation-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false" role="link" aria-label="Download"><i class="bi bi-download"></i></a>
       <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="quarto-navigation-tool-dropdown-0">
           <li>
-            <a class="dropdown-item quarto-navbar-tools-item" href="./Large-Language-Model-Policy-and-Practice.pdf">
+            <a class="dropdown-item quarto-navbar-tools-item" href="./Implementing-AI-in-Academic-Medicine.pdf">
               <i class="bi bi-file-pdf pe-1"></i>
             Download PDF
             </a>
           </li>
           <li>
-            <a class="dropdown-item quarto-navbar-tools-item" href="./Large-Language-Model-Policy-and-Practice.epub">
+            <a class="dropdown-item quarto-navbar-tools-item" href="./Implementing-AI-in-Academic-Medicine.epub">
               <i class="bi bi-journal pe-1"></i>
             Download ePub
             </a>
@@ -157,13 +175,13 @@ ul.task-list li input[type="checkbox"] {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./preface.html" class="sidebar-item-text sidebar-link">
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Preface</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link">
+  <a href="./overview.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Overview</span></span></a>
   </div>
 </li>
@@ -197,7 +215,7 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./barriers.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Barriers and Obstacles and How to Overcome Them</span></span></a>
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Barriers and How to Address Them</span></span></a>
   </div>
 </li>
       </ul>
@@ -220,13 +238,13 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./resources_research.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Research</span></span></a>
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Research Domain</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./resources_education.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Education</span></span></a>
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Education Domain</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -235,17 +253,93 @@ ul.task-list li input[type="checkbox"] {
  <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Business Operations</span></span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./regulatory_landscape.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Regulatory and Policy Landscape</span></span></a>
+  </div>
+</li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
- <span class="menu-text">Appendices</span></a>
+ <span class="menu-text">Agentic AI in Practice</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./agentic_safety.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Agentic Safety and Guardrails</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./patient_trust.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Patient and Community Trust</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./professional_wellness.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Professional Wellness and Reducing Cognitive Burden</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true">
+ <span class="menu-text">Workstream Resources</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./infrastructure.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">IT Infrastructure and Security</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./workforce.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Training and Workforce Development</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ethics.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Ethics, Equity, and Institutional Accountability</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./data.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Data Access and Governance</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./pm_and_support.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Project Management and AI Portfolio Governance</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true">
+ <span class="menu-text">Appendices</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./appendices.html" class="sidebar-item-text sidebar-link">
@@ -255,13 +349,25 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./bill_of_rights.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">B</span>&nbsp; <span class="chapter-title">Whitehouse AI Bill(s) of rights</span></span></a>
+ <span class="menu-text"><span class="chapter-number">B</span>&nbsp; <span class="chapter-title">OSTP Blueprint for an AI Bill of Rights</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./HHS.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">C</span>&nbsp; <span class="chapter-title">HHS EHR reporting program rule</span></span></a>
+ <span class="menu-text"><span class="chapter-number">C</span>&nbsp; <span class="chapter-title">ONC HTI-1: Algorithm Transparency and Interoperability</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./appendix_workflow.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">D</span>&nbsp; <span class="chapter-title">How This Book Was Written: A Multi-Model AI Authorship Workflow</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./references.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">References</span></a>
   </div>
 </li>
       </ul>
@@ -271,15 +377,32 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#sec-business-domain" id="toc-sec-business-domain" class="nav-link active" data-scroll-target="#sec-business-domain"><span class="header-section-number">9.1</span> A Domain Unlike the Others</a></li>
+  <li><a href="#sec-business-functions" id="toc-sec-business-functions" class="nav-link" data-scroll-target="#sec-business-functions"><span class="header-section-number">9.2</span> What Business Operations AI Actually Does</a></li>
+  <li><a href="#sec-business-regulatory" id="toc-sec-business-regulatory" class="nav-link" data-scroll-target="#sec-business-regulatory"><span class="header-section-number">9.3</span> The Regulatory Layer</a></li>
+  <li><a href="#sec-business-shadow" id="toc-sec-business-shadow" class="nav-link" data-scroll-target="#sec-business-shadow"><span class="header-section-number">9.4</span> The Shadow-IT Problem</a></li>
+  <li><a href="#sec-business-platforms" id="toc-sec-business-platforms" class="nav-link" data-scroll-target="#sec-business-platforms"><span class="header-section-number">9.5</span> Enterprise AI Platforms</a></li>
+  <li><a href="#sec-business-governance" id="toc-sec-business-governance" class="nav-link" data-scroll-target="#sec-business-governance"><span class="header-section-number">9.6</span> Governance as Procurement</a></li>
+  <li><a href="#sec-business-metrics" id="toc-sec-business-metrics" class="nav-link" data-scroll-target="#sec-business-metrics"><span class="header-section-number">9.7</span> What Success Looks Like</a></li>
+  <li><a href="#sec-business-starter" id="toc-sec-business-starter" class="nav-link" data-scroll-target="#sec-business-starter"><span class="header-section-number">9.8</span> Where to Start: Two Starter Projects</a>
+  <ul class="collapse">
+  <li><a href="#project-1-enterprise-ai-gateway-deployment" id="toc-project-1-enterprise-ai-gateway-deployment" class="nav-link" data-scroll-target="#project-1-enterprise-ai-gateway-deployment"><span class="header-section-number">9.8.1</span> Project 1: Enterprise AI Gateway Deployment</a></li>
+  <li><a href="#project-2-internal-policy-qa-chatbot-rag-over-internal-documents" id="toc-project-2-internal-policy-qa-chatbot-rag-over-internal-documents" class="nav-link" data-scroll-target="#project-2-internal-policy-qa-chatbot-rag-over-internal-documents"><span class="header-section-number">9.8.2</span> Project 2: Internal Policy Q&amp;A Chatbot (RAG over Internal Documents)</a></li>
+  </ul></li>
+  </ul>
+<div class="toc-actions"><ul><li><a href="https://github.com/seandavi/campus-llm-kb/edit/main/resources_business.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./domainresource.html">Domain Resources</a></li><li class="breadcrumb-item"><a href="./resources_business.html"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Business Operations</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Business Operations</span></h1>
+<h1 class="title"><span id="sec-business" class="quarto-section-identifier"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Business Operations</span></span></h1>
 </div>
 
 
@@ -287,6 +410,12 @@ ul.task-list li input[type="checkbox"] {
 <div class="quarto-title-meta">
 
     
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">April 26, 2026</p>
+    </div>
+  </div>
   
     
   </div>
@@ -296,244 +425,529 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
+<p>At most academic medical centers, the first place generative AI takes hold is not the clinic or the research lab. It is the finance department’s revenue cycle team, the HR business partner drafting job descriptions after hours, the communications writer who discovered that a rough prompt produces a passable first draft in thirty seconds. Business operations — the finance, HR, supply chain, IT, marketing, philanthropy, facilities, and legal functions that keep an AMC running — are where AI adoption tends to move fastest and where institutional governance tends to lag furthest behind.</p>
+<p>This gap is partly structural. Clinical AI requires FDA clearance or institutional validation before it can touch a patient. Research AI is constrained by IRB requirements and publication ethics. Business-operations AI faces none of these formal gatekeepers, which makes it both the easiest domain to start in and the one most likely to produce a compliance incident before the institution has thought through its policies.</p>
+<p>The argument of this chapter is simple: business operations is the right place to build early institutional capability with generative AI, and the regulatory exposure is higher than most operations leaders assume. Getting both of those things right at the same time is possible — it requires a governance-first procurement approach, a clear data classification framework, and the discipline to deploy an enterprise-grade platform before employees have reason to route around it.</p>
+<section id="sec-business-domain" class="level2" data-number="9.1">
+<h2 data-number="9.1" class="anchored" data-anchor-id="sec-business-domain"><span class="header-section-number">9.1</span> A Domain Unlike the Others</h2>
+<p>The four domains of this framework — education, research, clinical, and business operations — differ not just in what they do but in the regulatory regimes that govern what AI can do inside them. Clinical AI operates under the most demanding oversight: every tool that influences a clinical decision is potentially a medical device subject to FDA regulation, and deployment without local validation is a patient-safety risk. Research AI is constrained by the norms of research integrity, the requirements of IRBs for human-subjects data, and the intellectual-property rules of journals and funders. Educational AI sits inside a web of academic integrity policies and accreditation requirements.</p>
+<p>Business operations has fewer of these formal guardrails, which creates a false sense of safety. The absence of FDA clearance requirements does not mean an absence of legal risk. Three areas carry particular exposure.</p>
+<p>The first is employment. Automated systems used to screen, rank, or evaluate employees and candidates are subject to anti-discrimination law regardless of whether they involve AI. The EEOC’s Strategic Enforcement Plan for fiscal years 2024–2028 explicitly names algorithmic discrimination in employment as an enforcement priority <span class="citation" data-cites="EEOC2024-sep">(<a href="references.html#ref-EEOC2024-sep" role="doc-biblioref">U.S. Equal Employment Opportunity Commission 2024</a>)</span>. New York City’s Local Law 144, which took effect in July 2023, mandates annual independent bias audits for any automated employment decision tool used in hiring or promotion for New York City-based roles <span class="citation" data-cites="NYCLL144">(<a href="references.html#ref-NYCLL144" role="doc-biblioref">Local Law 144 2021</a>)</span>. Colorado’s SB 24-205, signed in 2024, imposes “reasonable care” requirements on developers and deployers of high-risk AI systems, including those used in employment contexts <span class="citation" data-cites="ColoradoSB24205">(<a href="references.html#ref-ColoradoSB24205" role="doc-biblioref"><span>SB 24-205</span> 2024</a>)</span>. An AMC with employees or applicants in these jurisdictions — which includes most major academic medical centers — needs to account for these requirements before deploying any HR automation tool.</p>
+<p>The second is consumer protection and marketing. The Federal Trade Commission’s Operation AI Comply, announced in September 2024, documented enforcement actions against companies making deceptive claims about AI capabilities in consumer-facing contexts <span class="citation" data-cites="FTC2024-operationai">(<a href="references.html#ref-FTC2024-operationai" role="doc-biblioref">Federal Trade Commission 2024</a>)</span>. Patient-facing communications that overstate AI accuracy or imply diagnostic capability without adequate disclosure carry both FTC and state consumer protection risk.</p>
+<p>The third is HIPAA — specifically, the risk that an employee uses a business-operations AI tool in a way that incidentally exposes protected health information. A revenue cycle coordinator who pastes a patient name and insurance ID into a public AI chatbot to draft a denial appeal letter has created a potential HIPAA breach, regardless of how routine the business context feels. The HHS Office for Civil Rights has stated that nondiscrimination requirements extend to algorithmic decision support tools in administrative contexts under the Section 1557 final rule <span class="citation" data-cites="HHS2024-1557">(<a href="references.html#ref-HHS2024-1557" role="doc-biblioref">U.S. Department of Health and Human Services, Office for Civil Rights 2024</a>)</span>. The business case for an enterprise-grade AI platform is partly a compliance case.</p>
+</section>
+<section id="sec-business-functions" class="level2" data-number="9.2">
+<h2 data-number="9.2" class="anchored" data-anchor-id="sec-business-functions"><span class="header-section-number">9.2</span> What Business Operations AI Actually Does</h2>
+<p>Generative AI’s footprint in AMC business operations is already broad. The use cases vary considerably in maturity and risk, and a realistic function-by-function account is more useful than a general endorsement.</p>
+<p><strong>Finance and revenue cycle.</strong> The revenue cycle is among the most labor-intensive administrative functions in any hospital, and also among the most data-structured — claims have standard formats, denial reasons follow defined codes, and appeal letters follow recognizable templates. AI tools are most mature here. Denial management, prior authorization drafting, and coding review are all areas where commercial AI-enabled platforms have demonstrated measurable improvement in denial overturn rates and coder productivity. The risk is vendor lock-in and the assumption that an AI platform’s performance in another institution’s EHR will replicate in yours. Local validation against your payer mix and documentation patterns is necessary before attributing cost savings to the tool.</p>
+<p>Financial planning and analysis benefits more from AI-assisted modeling and scenario generation than from automation. An FP&amp;A analyst who can ask a language model to explain the variance in a budget line, generate competing budget scenarios from a shared set of assumptions, or draft the narrative for a board presentation will work faster and produce better prose — but the model will not catch a misclassified expense or a projection built on an invalid assumption. AI augments the analyst; it does not replace the financial judgment.</p>
+<p><strong>Human resources.</strong> The clearest near-term opportunity is in drafting: job descriptions, offer letters, standard policies, and employee Q&amp;A responses. These are tasks that consume significant HR staff time and produce documents that are largely similar from one iteration to the next. An enterprise AI tool configured to follow the institution’s style, terminology, and legal requirements (pay equity language, for example) can reduce the time from request to first draft dramatically.</p>
+<p>The clearest risk is in screening. Any tool that ranks candidates, filters applications, or produces scores used in hiring decisions is potentially an automated employment decision tool under the legal definitions of NYC Local Law 144 and related state laws. The bias-audit requirement applies. An institution that deploys an AI-based screening tool without an independent audit and a documented remediation process is exposed. The safer path in 2025–2026 is to use AI for drafting and research tasks — generating interview question banks, summarizing employment law updates, drafting performance review templates — while keeping screening and ranking decisions human-driven.</p>
+<p><strong>Supply chain and contracting.</strong> Contract review and vendor risk assessment are natural fits for generative AI: the task requires reading large volumes of structured text, extracting specific terms, and comparing them against standards. AI tools that summarize contract terms, flag non-standard clauses, and generate redlines against a baseline template are available from multiple vendors and are being used in healthcare procurement. The risk here is primarily one of accuracy and audit trail. A contract reviewed by AI and approved by a human who did not re-read the AI’s summary is a contract reviewed by no one in any legally meaningful sense. The tool produces a starting point; a qualified human closes it.</p>
+<p><strong>IT operations.</strong> Ticket triage, incident summarization, code review, and internal documentation generation are all areas where IT teams at major AMCs are already using AI, often through GitHub Copilot, Microsoft 365 Copilot, or custom deployments on internal codebases. The productivity gains for experienced developers and system administrators are real and well-documented. The risk for IT operations specifically is prompt injection — the vulnerability by which malicious input to an AI system can cause it to execute unintended actions. Any AI tool that can invoke shell commands, API calls, or database queries based on natural-language input must be treated as a security surface, not just a productivity tool.</p>
+<p><strong>Marketing and communications.</strong> Content drafting, translation, accessibility reformatting, and social media response generation are areas where the productivity case is straightforward and the risk is manageable. The FTC’s enforcement posture means that AI-generated content making clinical or research claims needs a human review step before publication. The deeper issue is brand and voice consistency: a communications team that uses AI to draft a hundred pieces of content without a style framework will produce a hundred pieces that sound subtly generic. A deliberate style guide and a review process that treats AI output as a first draft, not a final product, addresses most of this.</p>
+<p><strong>Philanthropy and development.</strong> Donor research summarization, draft cultivation letters, and grant prospect identification are all tasks that consume significant staff time at AMC development offices and are tractable for AI. The risk is relationship sensitivity: a donor who receives a letter that was obviously AI-generated from a public database — especially one that contains a factual error about their history with the institution — is a donor at risk of disengagement. AI-generated development communications need a personal review step before they leave the institution.</p>
+<p><strong>Facilities and legal.</strong> Work-order routing, maintenance request summarization, and facilities policy Q&amp;A are low-complexity AI use cases with low risk. Legal is more sensitive: AI tools for contract drafting and policy research are useful, but anything that constitutes legal advice or professional judgment remains the responsibility of licensed counsel.</p>
+<p><a href="#tbl-business-usecases" class="quarto-xref">Table&nbsp;<span>9.1</span></a> summarizes the function-by-function landscape.</p>
+<div id="tbl-business-usecases" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-business-usecases-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;9.1: Business operations AI use cases by function, risk level, and key constraint.
+</figcaption>
+<div aria-describedby="tbl-business-usecases-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<table class="caption-top table">
+<colgroup>
+<col style="width: 18%">
+<col style="width: 30%">
+<col style="width: 21%">
+<col style="width: 29%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Function</th>
+<th>Mature use cases</th>
+<th>Risk level</th>
+<th>Key constraint</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Revenue cycle</td>
+<td>Denial drafting, coding review</td>
+<td>Medium</td>
+<td>Local validation required</td>
+</tr>
+<tr class="even">
+<td>HR</td>
+<td>JD drafting, policy Q&amp;A</td>
+<td>Medium–High</td>
+<td>Bias audit if screening</td>
+</tr>
+<tr class="odd">
+<td>Supply chain</td>
+<td>Contract review, redlining</td>
+<td>Medium</td>
+<td>Accuracy + audit trail</td>
+</tr>
+<tr class="even">
+<td>IT operations</td>
+<td>Ticket triage, code review</td>
+<td>Medium</td>
+<td>Prompt injection risk</td>
+</tr>
+<tr class="odd">
+<td>Marketing</td>
+<td>Content drafting, translation</td>
+<td>Low–Medium</td>
+<td>FTC and brand review</td>
+</tr>
+<tr class="even">
+<td>Philanthropy</td>
+<td>Donor research, letter drafting</td>
+<td>Low</td>
+<td>Relationship sensitivity</td>
+</tr>
+<tr class="odd">
+<td>Facilities</td>
+<td>Work-order routing, policy Q&amp;A</td>
+<td>Low</td>
+<td>Minimal</td>
+</tr>
+<tr class="even">
+<td>Legal</td>
+<td>Contract research, drafting</td>
+<td>Medium</td>
+<td>Professional judgment stays human</td>
+</tr>
+</tbody>
+</table>
+</div>
+</figure>
+</div>
+</section>
+<section id="sec-business-regulatory" class="level2" data-number="9.3">
+<h2 data-number="9.3" class="anchored" data-anchor-id="sec-business-regulatory"><span class="header-section-number">9.3</span> The Regulatory Layer</h2>
+<p>Most AMC operations leaders have read about HIPAA. Fewer have encountered the employment AI laws, the FTC’s AI enforcement posture, or the specific nondiscrimination requirements that apply to algorithmic decision tools. A useful organizing frame is that the regulatory exposure in business operations AI falls into three areas: employment decisions, patient-facing communications, and data handling.</p>
+<p>The employment area is the most actively litigated. The EEOC has been explicit that Title VII, the ADA, and the ADEA apply to automated employment decisions, and that employers cannot shift liability to a third-party AI vendor <span class="citation" data-cites="EEOC2024-sep">(<a href="references.html#ref-EEOC2024-sep" role="doc-biblioref">U.S. Equal Employment Opportunity Commission 2024</a>)</span>. NYC Local Law 144 requires employers using automated employment decision tools for NYC-based roles to conduct and publish annual independent bias audits and to notify candidates before the tool is used <span class="citation" data-cites="NYCLL144">(<a href="references.html#ref-NYCLL144" role="doc-biblioref">Local Law 144 2021</a>)</span>. Colorado’s SB 24-205 requires “deployers” of high-risk AI systems (which include employment AI) to implement risk management programs, conduct impact assessments, and notify consumers when they are subject to an algorithmic decision <span class="citation" data-cites="ColoradoSB24205">(<a href="references.html#ref-ColoradoSB24205" role="doc-biblioref"><span>SB 24-205</span> 2024</a>)</span>. An AMC that operates in New York, Colorado, or is a federal contractor faces compliance obligations that are already in effect. Several other states — Illinois, Texas, Utah — have enacted or proposed similar legislation.</p>
+<p>The Federal Trade Commission’s “Operation AI Comply” matters for AMC marketing teams in particular. The FTC’s enforcement actions targeted companies that made false or unsubstantiated AI capability claims in customer-facing contexts, including claims that AI had reviewed or validated health-related content <span class="citation" data-cites="FTC2024-operationai">(<a href="references.html#ref-FTC2024-operationai" role="doc-biblioref">Federal Trade Commission 2024</a>)</span>. Patient communications that describe AI tools as “reviewed by clinical AI” or “AI-verified” without substantiated validation claims invite FTC scrutiny. The safer approach is to describe what the AI actually did (drafted, organized, translated) rather than making accuracy claims.</p>
+<p>The HIPAA exposure in business operations is subtler than the exposure in clinical domains, but it is real. Revenue cycle, HR (benefit eligibility, medical leave records), and even marketing (patient testimonials, program enrollment data) are all areas where patient information can appear in business-operations workflows. The HHS Section 1557 nondiscrimination rule makes explicit that the nondiscrimination requirements extend to algorithmic tools used in the administration of health programs, not just to clinical decisions <span class="citation" data-cites="HHS2024-1557">(<a href="references.html#ref-HHS2024-1557" role="doc-biblioref">U.S. Department of Health and Human Services, Office for Civil Rights 2024</a>)</span>. A revenue cycle AI tool that systematically produces less aggressive appeal letters for Medicaid patients than for commercially insured patients is potentially a Section 1557 violation, regardless of whether that disparity was intentional.</p>
+<p>The OMB’s Memorandum M-24-10 on advancing AI governance, while directed at federal agencies, establishes the federal government’s expectations for institutions receiving significant federal funding — which describes every AMC <span class="citation" data-cites="OMB2024-M2410">(<a href="references.html#ref-OMB2024-M2410" role="doc-biblioref">Office of Management and Budget 2024</a>)</span>. Its requirements around rights-impacting and safety-impacting AI systems, and its emphasis on impact assessments and transparency, set a standard that AMC AI governance programs should be prepared to meet or justify deviating from.</p>
+</section>
+<section id="sec-business-shadow" class="level2" data-number="9.4">
+<h2 data-number="9.4" class="anchored" data-anchor-id="sec-business-shadow"><span class="header-section-number">9.4</span> The Shadow-IT Problem</h2>
+<p>The single most common business-operations AI event at an AMC today is not a deliberate deployment: it is an employee using a consumer AI tool — ChatGPT, Claude.ai, Gemini — with institutional data, without authorization, because no better option is readily available.</p>
+<p>The dynamics are predictable. Administrative staff are under pressure to produce more documentation with fewer resources. Consumer AI tools are free, fast, and effective for exactly the drafting, summarizing, and reformatting tasks that dominate their workload. The institutional alternatives — if they exist — require tickets, approvals, and onboarding processes that take weeks. The employee uses the consumer tool once, finds it dramatically faster, and makes it a habit.</p>
+<p>The problem is not that employees are careless. The problem is that the institution has not given them a compliant, convenient alternative. The solution is not a prohibition — prohibition without an alternative produces the same behavior plus an incentive to hide it. The solution is a gateway: an institutionally managed AI platform that is as easy to reach as the consumer tools, covered by appropriate data handling agreements, and integrated into the workflows employees actually use.</p>
+<p>This is the core argument for enterprise AI tenancy, which is addressed in the next section. The point here is that the governance problem and the security problem in business operations AI are, at bottom, the same problem: the institution has not built a path of least resistance that is also a path of least risk.</p>
+</section>
+<section id="sec-business-platforms" class="level2" data-number="9.5">
+<h2 data-number="9.5" class="anchored" data-anchor-id="sec-business-platforms"><span class="header-section-number">9.5</span> Enterprise AI Platforms</h2>
+<p>The practical procurement question for most AMCs in 2025–2026 is not whether to build a large language model, but which enterprise platform to deploy and how to configure it. Three platforms dominate the healthcare market: Microsoft 365 Copilot, Google Workspace AI, and ChatGPT Enterprise. Anthropic’s Claude for Enterprise is a smaller but growing option. Each offers a different trade-off between integration depth, data handling controls, and administrative overhead.</p>
+<p>Microsoft 365 Copilot is the obvious choice for institutions already running Microsoft 365, which describes most AMCs. It runs inside the existing Microsoft tenant, inherits existing Entra ID (Azure Active Directory) identity and access management, and operates under Microsoft’s existing HIPAA Business Associate Agreement. The data does not leave the tenant for model training. The limitation is that Copilot’s performance is tightly coupled to the quality of the institution’s Microsoft 365 data hygiene — it surfaces documents, emails, and Teams conversations that are accessible to the user, which means poorly organized SharePoint sites and unclassified document libraries produce low-quality responses. Copilot is a tool that amplifies whatever information architecture the institution already has.</p>
+<p>Google Workspace AI integrates Gemini models into Gmail, Docs, Sheets, and Meet for institutions on Google Workspace. Google offers a BAA for covered entities and expressly excludes customer data from training for Workspace customers. Like Copilot, it inherits the existing identity infrastructure. Its strongest use cases in AMC business operations are in drafting and document summarization.</p>
+<p>ChatGPT Enterprise gives users access to GPT-4 models within an isolated organizational tenant, with a commitment that data is not used for OpenAI model training. It does not currently offer a HIPAA BAA, which limits its use to data that does not constitute protected health information. For many business-operations tasks this is not a constraint — job descriptions, vendor correspondence, and internal policy drafts rarely contain PHI — but revenue cycle and HR use cases that might touch patient data require a compliant alternative.</p>
+<p>Claude for Enterprise (Anthropic) offers similar data handling commitments and organizational controls. It has been adopted at a smaller number of healthcare institutions, but its comparative strength in long-context tasks (reading and summarizing long contracts or policy documents) makes it worth evaluating for legal and supply chain applications specifically.</p>
+<p><a href="#tbl-enterprise-platforms" class="quarto-xref">Table&nbsp;<span>9.2</span></a> compares the platforms on the dimensions that matter most for an AMC deployment decision.</p>
+<div id="tbl-enterprise-platforms" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-enterprise-platforms-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;9.2: Enterprise AI platform comparison on dimensions relevant to AMC deployment. BAA availability has expanded since 2023; verify current BAA scope, data residency options, and sub-processor disclosures directly with each vendor before deployment involving PHI.
+</figcaption>
+<div aria-describedby="tbl-enterprise-platforms-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<table class="caption-top table">
+<colgroup>
+<col style="width: 10%">
+<col style="width: 11%">
+<col style="width: 16%">
+<col style="width: 30%">
+<col style="width: 21%">
+<col style="width: 10%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Platform</th>
+<th>HIPAA BAA</th>
+<th>Data residency</th>
+<th>No training on customer data</th>
+<th>Identity integration</th>
+<th>Best fit</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Microsoft 365 Copilot</td>
+<td>Yes</td>
+<td>US available</td>
+<td>Yes</td>
+<td>Entra ID (SAML/OIDC)</td>
+<td>M365-native AMCs</td>
+</tr>
+<tr class="even">
+<td>Google Workspace AI</td>
+<td>Yes</td>
+<td>US available</td>
+<td>Yes (Workspace customers)</td>
+<td>Google Workspace SSO</td>
+<td>Google Workspace AMCs</td>
+</tr>
+<tr class="odd">
+<td>ChatGPT Enterprise (OpenAI)</td>
+<td>Available (2024+)</td>
+<td>US</td>
+<td>Yes</td>
+<td>SAML SSO</td>
+<td>PHI-containing workflows with signed BAA</td>
+</tr>
+<tr class="even">
+<td>Claude for Enterprise (Anthropic)</td>
+<td>Available</td>
+<td>US</td>
+<td>Yes</td>
+<td>SAML/OIDC</td>
+<td>Long-context tasks; contract review; policy Q&amp;A</td>
+</tr>
+</tbody>
+</table>
+</div>
+</figure>
+</div>
+<p>The buy-versus-build question in business operations has a clearer answer than in clinical or research domains. Building a custom large language model for revenue cycle or HR tasks is not a reasonable investment for any AMC. Even fine-tuning an open-weight model on institutional data requires infrastructure, ML engineering capacity, and an ongoing maintenance commitment that very few AMC IT organizations have. The right question is not build-versus-buy, but which enterprise platform to configure and how deeply to integrate it into existing workflows. The exception is retrieval-augmented generation (RAG) over internal document repositories — this is closer to configuration than model development, it runs on commodity infrastructure, and it produces meaningful value for internal policy Q&amp;A, contract search, and HR knowledge bases.</p>
+</section>
+<section id="sec-business-governance" class="level2" data-number="9.6">
+<h2 data-number="9.6" class="anchored" data-anchor-id="sec-business-governance"><span class="header-section-number">9.6</span> Governance as Procurement</h2>
+<p>The NIST AI Risk Management Framework <span class="citation" data-cites="NIST2023-airm">(<a href="references.html#ref-NIST2023-airm" role="doc-biblioref">National Institute of Standards and Technology 2023</a>)</span> organizes AI risk management into four functions: Govern (establish policies and roles), Map (identify and categorize risks), Measure (analyze and assess), and Manage (prioritize and treat). In the context of business operations AI procurement, these functions translate to a procurement process that is itself the governance mechanism.</p>
+<p>The key insight is that most AMCs already have vendor risk management processes: security reviews, legal review of contract terms, privacy impact assessments for tools handling patient data. The task is not to build new infrastructure from scratch but to add AI-specific steps to existing workflows. The additions are modest: a bias audit requirement for any tool used in employment screening, a PHI-exposure assessment for any tool handling revenue cycle or HR data, a data-training prohibition clause for any AI vendor agreement, and an audit log requirement for all enterprise AI tool usage.</p>
+<p><a href="#fig-procurement-flow" class="quarto-xref">Figure&nbsp;<span>9.1</span></a> illustrates a workable procurement flow for business-operations AI.</p>
+<div class="cell" data-layout-align="default">
+<div class="cell-output-display">
+<div id="fig-procurement-flow" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-procurement-flow-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div>
+<pre class="mermaid mermaid-js" data-label="fig-procurement-flow">flowchart TD
+    A[Unit requests AI tool] --&gt; B{Is it generative AI?}
+    B -- No --&gt; Z[Standard IT procurement]
+    B -- Yes --&gt; C{Does it contact PHI?}
+    C -- Yes --&gt; D[Privacy/HIPAA review\nBAA required]
+    C -- No --&gt; E{Used in hiring/\npromotion decisions?}
+    D --&gt; E
+    E -- Yes --&gt; F[Bias audit required\nNYC LL144 / CO SB 24-205 check]
+    E -- No --&gt; G[Security review\nData classification check]
+    F --&gt; G
+    G --&gt; H{Enterprise platform\nalready available?}
+    H -- Yes --&gt; I[Configure existing tenant\nno new vendor]
+    H -- No --&gt; J[Vendor evaluation\ndata training prohibition required]
+    I --&gt; K[Pilot with defined\nsuccess metrics]
+    J --&gt; K
+    K --&gt; L[Domain lead approval\nAISC notification]
+    L --&gt; M[Deployment with\naudit logging]
+    M --&gt; N[Quarterly review]
+</pre>
+</div>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-procurement-flow-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;9.1: AI procurement decision flow for business operations. PHI contact and employment screening trigger additional review requirements.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>A few principles govern this flow. First, the preference for existing enterprise platforms over new vendors is explicit. The institution already has a Microsoft or Google tenant, already has SSO configured, already has data handling agreements in place. Using those tenants for a new use case is not a procurement event; it is a configuration decision. The governance overhead is lower, the data handling is already contracted, and the identity integration is already done. Second, any tool used in employment decisions requires a bias audit regardless of where in the institution it is used and regardless of whether the vendor claims their product is “bias-free.” Third, every deployment ends with a defined success metric and a quarterly review cadence — not because every business-operations AI tool is high-stakes, but because without review, tools that are not working accumulate rather than being replaced.</p>
+<p>The ISO/IEC 42001 Artificial Intelligence Management System standard <span class="citation" data-cites="ISO2023-42001">(<a href="references.html#ref-ISO2023-42001" role="doc-biblioref"><span>ISO/IEC 42001</span> 2023</a>)</span> provides an international governance framework for AI management that complements the NIST AI RMF. Institutions seeking to demonstrate AI governance maturity to partners, accreditors, or regulators will find that a 42001-aligned management system maps well to NIST and requires no duplication of effort.</p>
+</section>
+<section id="sec-business-metrics" class="level2" data-number="9.7">
+<h2 data-number="9.7" class="anchored" data-anchor-id="sec-business-metrics"><span class="header-section-number">9.7</span> What Success Looks Like</h2>
+<p>Measuring the value of business-operations AI is harder than it sounds, not because the tools produce no value but because the value shows up in forms that are difficult to isolate. Time savings are rarely captured systematically; productivity improvements appear as caseload increases, not headcount reductions; quality improvements in documents produced are hard to quantify. The AMC that waits for a clean ROI calculation before deploying AI will still be waiting when its administrative staff have long since found their own tools.</p>
+<p>A workable measurement approach focuses on three levels. At the output level, track task-level time-to-completion for the specific workflows where AI is deployed — time from ticket receipt to denial letter, time from job requisition to posted description, time from contract receipt to first redline. At the quality level, track human review override rates (what fraction of AI outputs are substantially changed by the reviewing human) and error rates. At the compliance level, track the number of unauthorized AI tool uses detected and the trend over time.</p>
+<p>None of these metrics requires a formal ROI model. Each requires only that the deployment was scoped, that baseline measurements were taken before AI was introduced, and that someone is responsible for tracking the numbers after deployment. The institutional discipline to take the baseline measurement is, in practice, the hardest part.</p>
+</section>
+<section id="sec-business-starter" class="level2" data-number="9.8">
+<h2 data-number="9.8" class="anchored" data-anchor-id="sec-business-starter"><span class="header-section-number">9.8</span> Where to Start: Two Starter Projects</h2>
+<p>The preceding sections describe a governance framework and a set of use cases. This section describes what to actually do in the next ninety days. The goal is not to deploy everything — it is to deploy something well, learn from it, and build institutional capability that the next deployment can inherit.</p>
+<section id="project-1-enterprise-ai-gateway-deployment" class="level3" data-number="9.8.1">
+<h3 data-number="9.8.1" class="anchored" data-anchor-id="project-1-enterprise-ai-gateway-deployment"><span class="header-section-number">9.8.1</span> Project 1: Enterprise AI Gateway Deployment</h3>
+<p><strong>What it is.</strong> Deploy the AI capabilities already included in your existing Microsoft 365 or Google Workspace contract to a defined group of business-operations users — a pilot cohort of 20–50 people across finance, HR, and communications. Configure it within the existing tenant (no new vendor, no new security review), establish a simple usage policy, enable audit logging, and run for 90 days.</p>
+<p><strong>What you need to start.</strong> A Microsoft 365 E3/E5 or Google Workspace Business license already in effect, an IT administrator with tenant configuration access, a data classification policy that tells users what data they can put into the tool, and a willing domain lead in one of the three pilot functions. Nothing else is required.</p>
+<p><strong>What done looks like.</strong> After 90 days: audit logs are running, the pilot cohort has a shared understanding of what the tool can and cannot be used for, at least three specific workflow improvements have been documented with before/after time measurements, and no unauthorized PHI events have occurred. The 90-day report goes to the AISC with a recommendation on whether to expand.</p>
+<p><strong>Build or buy?</strong> Configure. This is not a procurement event. It is turning on a capability already licensed and paying for a governance and usage framework around it.</p>
+</section>
+<section id="project-2-internal-policy-qa-chatbot-rag-over-internal-documents" class="level3" data-number="9.8.2">
+<h3 data-number="9.8.2" class="anchored" data-anchor-id="project-2-internal-policy-qa-chatbot-rag-over-internal-documents"><span class="header-section-number">9.8.2</span> Project 2: Internal Policy Q&amp;A Chatbot (RAG over Internal Documents)</h3>
+<p><strong>What it is.</strong> Build a retrieval-augmented generation system over a defined corpus of institutional policies — HR policies, revenue cycle coding guidelines, facilities maintenance procedures, or any high-traffic internal knowledge base. Users ask questions in natural language; the system retrieves the relevant policy text and generates an answer, with the source document cited.</p>
+<p><strong>Why this one.</strong> Policy Q&amp;A is high volume, low stakes, and naturally auditable. The current alternative — searching a SharePoint site or calling HR — is time-consuming and produces inconsistent answers. The AI system can be evaluated straightforwardly: does it retrieve the right policy section, and does its answer match what the policy actually says?</p>
+<p><strong>What you need to start.</strong> A curated set of no more than 50–100 policy documents in a shared drive, access to an embedding API (Azure OpenAI embeddings or Google Vertex AI embeddings are available within the existing enterprise tenant), a vector store (pgvector on an existing PostgreSQL instance, or a cloud-native option), and one developer with two to four weeks of focused time. No specialized ML expertise is required; RAG over a small document corpus is well within the capability of a competent generalist developer following published patterns.</p>
+<p><strong>Build or buy?</strong> Build. This is one case in business operations where building is clearly preferable: the corpus is institution-specific, the commercial alternatives for internal policy Q&amp;A are expensive, and the technical complexity is low. A developer who builds this system gains skills and understanding that transfer directly to the next RAG project — research literature summarization, clinical protocol Q&amp;A, EHR documentation search.</p>
+<p><strong>What done looks like.</strong> A working system that answers 80% of test questions correctly against the policy corpus, with cited sources, running at acceptable latency. A defined process for adding new policies and reindexing. Usage logs showing which questions are being asked most frequently (which is itself valuable institutional intelligence about where policy documentation is unclear).</p>
 
 
+<div id="refs" class="references csl-bib-body hanging-indent" role="list" style="display: none">
+<div id="ref-FTC2024-operationai" class="csl-entry" role="listitem">
+Federal Trade Commission. 2024. <em>Operation <span>AI</span> Comply: Continuing Actions Against <span>AI</span>-Related Deceptive Practices</em>. <a href="https://www.ftc.gov/news-events/press-releases/2024/09/ftc-announces-operation-ai-comply">https://www.ftc.gov/news-events/press-releases/2024/09/ftc-announces-operation-ai-comply</a>.
+</div>
+<div id="ref-ISO2023-42001" class="csl-entry" role="listitem">
+<span>ISO/IEC 42001</span>: Information Technology — Artificial Intelligence — Management System (2023). <a href="https://www.iso.org/standard/81230.html">https://www.iso.org/standard/81230.html</a>.
+</div>
+<div id="ref-NYCLL144" class="csl-entry" role="listitem">
+Local Law 144: Automated Employment Decision Tools (2021). <a href="https://www.nyc.gov/site/dca/about/automated-employment-decision-tools.page">https://www.nyc.gov/site/dca/about/automated-employment-decision-tools.page</a>.
+</div>
+<div id="ref-NIST2023-airm" class="csl-entry" role="listitem">
+National Institute of Standards and Technology. 2023. <em>Artificial Intelligence Risk Management Framework (<span>AI RMF</span> 1.0)</em>. NIST AI 100-1. U.S. Department of Commerce. <a href="https://doi.org/10.6028/NIST.AI.100-1">https://doi.org/10.6028/NIST.AI.100-1</a>.
+</div>
+<div id="ref-OMB2024-M2410" class="csl-entry" role="listitem">
+Office of Management and Budget. 2024. <em><span>M-24-10</span>: Advancing Governance, Innovation, and Risk Management for Agency Use of Artificial Intelligence</em>. <a href="https://www.whitehouse.gov/wp-content/uploads/2024/03/M-24-10.pdf">https://www.whitehouse.gov/wp-content/uploads/2024/03/M-24-10.pdf</a>.
+</div>
+<div id="ref-ColoradoSB24205" class="csl-entry" role="listitem">
+<span>SB 24-205</span>: Consumer Protections for Artificial Intelligence (2024). <a href="https://leg.colorado.gov/bills/sb24-205">https://leg.colorado.gov/bills/sb24-205</a>.
+</div>
+<div id="ref-HHS2024-1557" class="csl-entry" role="listitem">
+U.S. Department of Health and Human Services, Office for Civil Rights. 2024. <em>Section 1557: Nondiscrimination in Health Programs and Activities (Final Rule)</em>. <a href="https://www.hhs.gov/civil-rights/for-individuals/section-1557/index.html">https://www.hhs.gov/civil-rights/for-individuals/section-1557/index.html</a>.
+</div>
+<div id="ref-EEOC2024-sep" class="csl-entry" role="listitem">
+U.S. Equal Employment Opportunity Commission. 2024. <em>Strategic Enforcement Plan Fiscal Years 2024-2028</em>. <a href="https://www.eeoc.gov/strategic-enforcement-plan-fiscal-years-2024-2028">https://www.eeoc.gov/strategic-enforcement-plan-fiscal-years-2024-2028</a>.
+</div>
+</div>
+</section>
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
-window.document.addEventListener("DOMContentLoaded", function (event) {
-  const toggleBodyColorMode = (bsSheetEl) => {
-    const mode = bsSheetEl.getAttribute("data-mode");
-    const bodyEl = window.document.querySelector("body");
-    if (mode === "dark") {
-      bodyEl.classList.add("quarto-dark");
-      bodyEl.classList.remove("quarto-light");
-    } else {
-      bodyEl.classList.add("quarto-light");
-      bodyEl.classList.remove("quarto-dark");
-    }
-  }
-  const toggleBodyColorPrimary = () => {
-    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
-    if (bsSheetEl) {
-      toggleBodyColorMode(bsSheetEl);
-    }
-  }
-  toggleBodyColorPrimary();  
-  const icon = "";
-  const anchorJS = new window.AnchorJS();
-  anchorJS.options = {
-    placement: 'right',
-    icon: icon
-  };
-  anchorJS.add('.anchored');
-  const isCodeAnnotation = (el) => {
-    for (const clz of el.classList) {
-      if (clz.startsWith('code-annotation-')) {                     
-        return true;
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
       }
+      return false;
     }
-    return false;
-  }
-  const onCopySuccess = function(e) {
-    // button target
-    const button = e.trigger;
-    // don't keep focus
-    button.blur();
-    // flash "checked"
-    button.classList.add('code-copy-button-checked');
-    var currentTitle = button.getAttribute("title");
-    button.setAttribute("title", "Copied!");
-    let tooltip;
-    if (window.bootstrap) {
-      button.setAttribute("data-bs-toggle", "tooltip");
-      button.setAttribute("data-bs-placement", "left");
-      button.setAttribute("data-bs-title", "Copied!");
-      tooltip = new bootstrap.Tooltip(button, 
-        { trigger: "manual", 
-          customClass: "code-copy-button-tooltip",
-          offset: [0, -8]});
-      tooltip.show();    
-    }
-    setTimeout(function() {
-      if (tooltip) {
-        tooltip.hide();
-        button.removeAttribute("data-bs-title");
-        button.removeAttribute("data-bs-toggle");
-        button.removeAttribute("data-bs-placement");
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
       }
-      button.setAttribute("title", currentTitle);
-      button.classList.remove('code-copy-button-checked');
-    }, 1000);
-    // clear code selection
-    e.clearSelection();
-  }
-  const getTextToCopy = function(trigger) {
-      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
       for (const childEl of codeEl.children) {
         if (isCodeAnnotation(childEl)) {
           childEl.remove();
         }
       }
       return codeEl.innerText;
-  }
-  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
-    text: getTextToCopy
-  });
-  clipboard.on('success', onCopySuccess);
-  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
-    // For code content inside modals, clipBoardJS needs to be initialized with a container option
-    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
-    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
-      text: getTextToCopy,
-      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
     });
-    clipboardModal.on('success', onCopySuccess);
-  }
-    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
-    var mailtoRegex = new RegExp(/^mailto:/);
-      var filterRegex = new RegExp("https:\/\/seandavi\.github\.io\/campus-llm-kb\/");
-    var isInternal = (href) => {
-        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
     }
-    // Inspect non-navigation links and adorn them if external
- 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
-    for (var i=0; i<links.length; i++) {
-      const link = links[i];
-      if (!isInternal(link.href)) {
-        // undo the damage that might have been done by quarto-nav.js in the case of
-        // links that we want to consider external
-        if (link.dataset.originalHref !== undefined) {
-          link.href = link.dataset.originalHref;
-        }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/seandavi\.github\.io\/campus-llm-kb\/");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }
-    }
-  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
-    const config = {
-      allowHTML: true,
-      maxWidth: 500,
-      delay: 100,
-      arrow: false,
-      appendTo: function(el) {
-          return el.parentElement;
-      },
-      interactive: true,
-      interactiveBorder: 10,
-      theme: 'quarto',
-      placement: 'bottom-start',
-    };
-    if (contentFn) {
-      config.content = contentFn;
-    }
-    if (onTriggerFn) {
-      config.onTrigger = onTriggerFn;
-    }
-    if (onUntriggerFn) {
-      config.onUntrigger = onUntriggerFn;
-    }
-    window.tippy(el, config); 
-  }
-  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
-  for (var i=0; i<noterefs.length; i++) {
-    const ref = noterefs[i];
-    tippyHover(ref, function() {
-      // use id or data attribute instead here
-      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
-      try { href = new URL(href).hash; } catch {}
-      const id = href.replace(/^#\/?/, "");
-      const note = window.document.getElementById(id);
-      if (note) {
-        return note.innerHTML;
-      } else {
-        return "";
-      }
-    });
-  }
-  const xrefs = window.document.querySelectorAll('a.quarto-xref');
-  const processXRef = (id, note) => {
-    // Strip column container classes
-    const stripColumnClz = (el) => {
-      el.classList.remove("page-full", "page-columns");
-      if (el.children) {
-        for (const child of el.children) {
-          stripColumnClz(child);
-        }
-      }
-    }
-    stripColumnClz(note)
-    if (id === null || id.startsWith('sec-')) {
-      // Special case sections, only their first couple elements
-      const container = document.createElement("div");
-      if (note.children && note.children.length > 2) {
-        container.appendChild(note.children[0].cloneNode(true));
-        for (let i = 1; i < note.children.length; i++) {
-          const child = note.children[i];
-          if (child.tagName === "P" && child.innerText === "") {
-            continue;
-          } else {
-            container.appendChild(child.cloneNode(true));
-            break;
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
           }
         }
-        if (window.Quarto?.typesetMath) {
-          window.Quarto.typesetMath(container);
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
         }
-        return container.innerHTML
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
       } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
         if (window.Quarto?.typesetMath) {
           window.Quarto.typesetMath(note);
         }
-        return note.innerHTML;
-      }
-    } else {
-      // Remove any anchor links if they are present
-      const anchorLink = note.querySelector('a.anchorjs-link');
-      if (anchorLink) {
-        anchorLink.remove();
-      }
-      if (window.Quarto?.typesetMath) {
-        window.Quarto.typesetMath(note);
-      }
-      // TODO in 1.5, we should make sure this works without a callout special case
-      if (note.classList.contains("callout")) {
-        return note.outerHTML;
-      } else {
-        return note.innerHTML;
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
       }
     }
-  }
-  for (var i=0; i<xrefs.length; i++) {
-    const xref = xrefs[i];
-    tippyHover(xref, undefined, function(instance) {
-      instance.disable();
-      let url = xref.getAttribute('href');
-      let hash = undefined; 
-      if (url.startsWith('#')) {
-        hash = url;
-      } else {
-        try { hash = new URL(url).hash; } catch {}
-      }
-      if (hash) {
-        const id = hash.replace(/^#\/?/, "");
-        const note = window.document.getElementById(id);
-        if (note !== null) {
-          try {
-            const html = processXRef(id, note.cloneNode(true));
-            instance.setContent(html);
-          } finally {
-            instance.enable();
-            instance.show();
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
           }
         } else {
-          // See if we can fetch this
-          fetch(url.split('#')[0])
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
           .then(res => res.text())
           .then(html => {
             const parser = new DOMParser();
             const htmlDoc = parser.parseFromString(html, "text/html");
-            const note = htmlDoc.getElementById(id);
+            const note = htmlDoc.querySelector('main.content');
             if (note !== null) {
-              const html = processXRef(id, note);
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
               instance.setContent(html);
             } 
           }).finally(() => {
@@ -541,194 +955,170 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             instance.show();
           });
         }
-      } else {
-        // See if we can fetch a full url (with no hash to target)
-        // This is a special case and we should probably do some content thinning / targeting
-        fetch(url)
-        .then(res => res.text())
-        .then(html => {
-          const parser = new DOMParser();
-          const htmlDoc = parser.parseFromString(html, "text/html");
-          const note = htmlDoc.querySelector('main.content');
-          if (note !== null) {
-            // This should only happen for chapter cross references
-            // (since there is no id in the URL)
-            // remove the first header
-            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
-              note.children[0].remove();
-            }
-            const html = processXRef(null, note);
-            instance.setContent(html);
-          } 
-        }).finally(() => {
-          instance.enable();
-          instance.show();
-        });
-      }
-    }, function(instance) {
-    });
-  }
-      let selectedAnnoteEl;
-      const selectorForAnnotation = ( cell, annotation) => {
-        let cellAttr = 'data-code-cell="' + cell + '"';
-        let lineAttr = 'data-code-annotation="' +  annotation + '"';
-        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
-        return selector;
-      }
-      const selectCodeLines = (annoteEl) => {
-        const doc = window.document;
-        const targetCell = annoteEl.getAttribute("data-target-cell");
-        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
-        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
-        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
-        const lineIds = lines.map((line) => {
-          return targetCell + "-" + line;
-        })
-        let top = null;
-        let height = null;
-        let parent = null;
-        if (lineIds.length > 0) {
-            //compute the position of the single el (top and bottom and make a div)
-            const el = window.document.getElementById(lineIds[0]);
-            top = el.offsetTop;
-            height = el.offsetHeight;
-            parent = el.parentElement.parentElement;
-          if (lineIds.length > 1) {
-            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
-            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
-            height = bottom - top;
-          }
-          if (top !== null && height !== null && parent !== null) {
-            // cook up a div (if necessary) and position it 
-            let div = window.document.getElementById("code-annotation-line-highlight");
-            if (div === null) {
-              div = window.document.createElement("div");
-              div.setAttribute("id", "code-annotation-line-highlight");
-              div.style.position = 'absolute';
-              parent.appendChild(div);
-            }
-            div.style.top = top - 2 + "px";
-            div.style.height = height + 4 + "px";
-            div.style.left = 0;
-            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
-            if (gutterDiv === null) {
-              gutterDiv = window.document.createElement("div");
-              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
-              gutterDiv.style.position = 'absolute';
-              const codeCell = window.document.getElementById(targetCell);
-              const gutter = codeCell.querySelector('.code-annotation-gutter');
-              gutter.appendChild(gutterDiv);
-            }
-            gutterDiv.style.top = top - 2 + "px";
-            gutterDiv.style.height = height + 4 + "px";
-          }
-          selectedAnnoteEl = annoteEl;
-        }
-      };
-      const unselectCodeLines = () => {
-        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
-        elementsIds.forEach((elId) => {
-          const div = window.document.getElementById(elId);
-          if (div) {
-            div.remove();
-          }
-        });
-        selectedAnnoteEl = undefined;
-      };
-        // Handle positioning of the toggle
-    window.addEventListener(
-      "resize",
-      throttle(() => {
-        elRect = undefined;
-        if (selectedAnnoteEl) {
-          selectCodeLines(selectedAnnoteEl);
-        }
-      }, 10)
-    );
-    function throttle(fn, ms) {
-    let throttle = false;
-    let timer;
-      return (...args) => {
-        if(!throttle) { // first call gets through
-            fn.apply(this, args);
-            throttle = true;
-        } else { // all the others get throttled
-            if(timer) clearTimeout(timer); // cancel #2
-            timer = setTimeout(() => {
-              fn.apply(this, args);
-              timer = throttle = false;
-            }, ms);
-        }
-      };
-    }
-      // Attach click handler to the DT
-      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
-      for (const annoteDlNode of annoteDls) {
-        annoteDlNode.addEventListener('click', (event) => {
-          const clickedEl = event.target;
-          if (clickedEl !== selectedAnnoteEl) {
-            unselectCodeLines();
-            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
-            if (activeEl) {
-              activeEl.classList.remove('code-annotation-active');
-            }
-            selectCodeLines(clickedEl);
-            clickedEl.classList.add('code-annotation-active');
-          } else {
-            // Unselect the line
-            unselectCodeLines();
-            clickedEl.classList.remove('code-annotation-active');
-          }
-        });
-      }
-  const findCites = (el) => {
-    const parentEl = el.parentElement;
-    if (parentEl) {
-      const cites = parentEl.dataset.cites;
-      if (cites) {
-        return {
-          el,
-          cites: cites.split(' ')
-        };
-      } else {
-        return findCites(el.parentElement)
-      }
-    } else {
-      return undefined;
-    }
-  };
-  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
-  for (var i=0; i<bibliorefs.length; i++) {
-    const ref = bibliorefs[i];
-    const citeInfo = findCites(ref);
-    if (citeInfo) {
-      tippyHover(citeInfo.el, function() {
-        var popup = window.document.createElement('div');
-        citeInfo.cites.forEach(function(cite) {
-          var citeDiv = window.document.createElement('div');
-          citeDiv.classList.add('hanging-indent');
-          citeDiv.classList.add('csl-entry');
-          var biblioDiv = window.document.getElementById('ref-' + cite);
-          if (biblioDiv) {
-            citeDiv.innerHTML = biblioDiv.innerHTML;
-          }
-          popup.appendChild(citeDiv);
-        });
-        return popup.innerHTML;
+      }, function(instance) {
       });
     }
-  }
-});
-</script>
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./resources_education.html" class="pagination-link" aria-label="Education">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Education</span></span>
+      <a href="./resources_education.html" class="pagination-link" aria-label="Education Domain">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Education Domain</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./appendices.html" class="pagination-link" aria-label="AI principles proposed by select organizations">
-        <span class="nav-page-text"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">AI principles proposed by select organizations</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./regulatory_landscape.html" class="pagination-link" aria-label="Regulatory and Policy Landscape">
+        <span class="nav-page-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Regulatory and Policy Landscape</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
@@ -737,4 +1127,4 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 
 
 
-<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions"><ul><li><a href="https://github.com/seandavi/campus-llm-kb/edit/main/resources_business.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li></ul></div></div></div></footer></body></html>
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/seandavi/campus-llm-kb/edit/main/resources_business.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li></ul></div></div></div></footer></body></html>

@@ -2,13 +2,17 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.5.57">
+<meta name="generator" content="quarto-1.9.37">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="dcterms.date" content="2026-04-26">
 
-<title>8&nbsp; Education – Large Language Model Policy and Practice</title>
+<title>8&nbsp; Education Domain – Implementing AI in Academic Medicine</title>
 <style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
 div.columns{display: flex; gap: min(4vw, 1.5em);}
@@ -20,7 +24,26 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
@@ -32,15 +55,16 @@ ul.task-list li input[type="checkbox"] {
 <meta name="quarto:offset" content="./">
 <link href="./resources_business.html" rel="next">
 <link href="./resources_research.html" rel="prev">
-<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-7f8f88aac4f3542376d5c11b86a4c14d.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-36bf55b16c7cb4b1420f41495cb5446a.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -68,20 +92,14 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
-<!-- Google tag (gtag.js) -->
-<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-KLLV1GCF4E"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-KLLV1GCF4E');
-</script>
+<script src="site_libs/quarto-diagram/mermaid.min.js"></script>
+<script src="site_libs/quarto-diagram/mermaid-init.js"></script>
+<link href="site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
 
 
 </head>
 
-<body class="nav-sidebar floating nav-fixed">
+<body class="nav-sidebar floating nav-fixed quarto-light">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -89,7 +107,7 @@ ul.task-list li input[type="checkbox"] {
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
     <a class="navbar-brand" href="./index.html">
-    <span class="navbar-title">Large Language Model Policy and Practice</span>
+    <span class="navbar-title">Implementing AI in Academic Medicine</span>
     </a>
   </div>
         <div class="quarto-navbar-tools tools-wide tools-end">
@@ -98,13 +116,13 @@ ul.task-list li input[type="checkbox"] {
       <a href="" title="Download" id="quarto-navigation-tool-dropdown-0" class="quarto-navigation-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false" role="link" aria-label="Download"><i class="bi bi-download"></i></a>
       <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="quarto-navigation-tool-dropdown-0">
           <li>
-            <a class="dropdown-item quarto-navbar-tools-item" href="./Large-Language-Model-Policy-and-Practice.pdf">
+            <a class="dropdown-item quarto-navbar-tools-item" href="./Implementing-AI-in-Academic-Medicine.pdf">
               <i class="bi bi-file-pdf pe-1"></i>
             Download PDF
             </a>
           </li>
           <li>
-            <a class="dropdown-item quarto-navbar-tools-item" href="./Large-Language-Model-Policy-and-Practice.epub">
+            <a class="dropdown-item quarto-navbar-tools-item" href="./Implementing-AI-in-Academic-Medicine.epub">
               <i class="bi bi-journal pe-1"></i>
             Download ePub
             </a>
@@ -143,7 +161,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./domainresource.html">Domain Resources</a></li><li class="breadcrumb-item"><a href="./resources_education.html"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Education</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./domainresource.html">Domain Resources</a></li><li class="breadcrumb-item"><a href="./resources_education.html"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Education Domain</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -157,13 +175,13 @@ ul.task-list li input[type="checkbox"] {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./preface.html" class="sidebar-item-text sidebar-link">
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Preface</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link">
+  <a href="./overview.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Overview</span></span></a>
   </div>
 </li>
@@ -197,7 +215,7 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./barriers.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Barriers and Obstacles and How to Overcome Them</span></span></a>
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Barriers and How to Address Them</span></span></a>
   </div>
 </li>
       </ul>
@@ -220,13 +238,13 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./resources_research.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Research</span></span></a>
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Research Domain</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./resources_education.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Education</span></span></a>
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Education Domain</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -235,17 +253,93 @@ ul.task-list li input[type="checkbox"] {
  <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Business Operations</span></span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./regulatory_landscape.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Regulatory and Policy Landscape</span></span></a>
+  </div>
+</li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
- <span class="menu-text">Appendices</span></a>
+ <span class="menu-text">Agentic AI in Practice</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./agentic_safety.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Agentic Safety and Guardrails</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./patient_trust.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Patient and Community Trust</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./professional_wellness.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Professional Wellness and Reducing Cognitive Burden</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true">
+ <span class="menu-text">Workstream Resources</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./infrastructure.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">IT Infrastructure and Security</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./workforce.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Training and Workforce Development</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ethics.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Ethics, Equity, and Institutional Accountability</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./data.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Data Access and Governance</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./pm_and_support.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Project Management and AI Portfolio Governance</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true">
+ <span class="menu-text">Appendices</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./appendices.html" class="sidebar-item-text sidebar-link">
@@ -255,13 +349,25 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./bill_of_rights.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">B</span>&nbsp; <span class="chapter-title">Whitehouse AI Bill(s) of rights</span></span></a>
+ <span class="menu-text"><span class="chapter-number">B</span>&nbsp; <span class="chapter-title">OSTP Blueprint for an AI Bill of Rights</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./HHS.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">C</span>&nbsp; <span class="chapter-title">HHS EHR reporting program rule</span></span></a>
+ <span class="menu-text"><span class="chapter-number">C</span>&nbsp; <span class="chapter-title">ONC HTI-1: Algorithm Transparency and Interoperability</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./appendix_workflow.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">D</span>&nbsp; <span class="chapter-title">How This Book Was Written: A Multi-Model AI Authorship Workflow</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./references.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">References</span></a>
   </div>
 </li>
       </ul>
@@ -276,21 +382,27 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#journals" id="toc-journals" class="nav-link active" data-scroll-target="#journals"><span class="header-section-number">8.1</span> Journals</a></li>
-  <li><a href="#basics-and-background" id="toc-basics-and-background" class="nav-link" data-scroll-target="#basics-and-background"><span class="header-section-number">8.2</span> Basics and Background</a></li>
-  <li><a href="#ai-in-the-classroom" id="toc-ai-in-the-classroom" class="nav-link" data-scroll-target="#ai-in-the-classroom"><span class="header-section-number">8.3</span> AI in the Classroom</a></li>
-  <li><a href="#educational-policy-statements-and-guidelines" id="toc-educational-policy-statements-and-guidelines" class="nav-link" data-scroll-target="#educational-policy-statements-and-guidelines"><span class="header-section-number">8.4</span> Educational policy statements and guidelines</a></li>
-  <li><a href="#bias-and-ethics-in-ai" id="toc-bias-and-ethics-in-ai" class="nav-link" data-scroll-target="#bias-and-ethics-in-ai"><span class="header-section-number">8.5</span> Bias and Ethics in AI</a></li>
-  <li><a href="#podcasts-and-newsletters-for-further-insight" id="toc-podcasts-and-newsletters-for-further-insight" class="nav-link" data-scroll-target="#podcasts-and-newsletters-for-further-insight"><span class="header-section-number">8.6</span> Podcasts and Newsletters for Further Insight</a></li>
+  <li><a href="#sec-education-proxy" id="toc-sec-education-proxy" class="nav-link active" data-scroll-target="#sec-education-proxy"><span class="header-section-number">8.1</span> The Collapse of the Proxy</a></li>
+  <li><a href="#sec-education-detection" id="toc-sec-education-detection" class="nav-link" data-scroll-target="#sec-education-detection"><span class="header-section-number">8.2</span> The Detection Trap</a></li>
+  <li><a href="#sec-education-framing" id="toc-sec-education-framing" class="nav-link" data-scroll-target="#sec-education-framing"><span class="header-section-number">8.3</span> A Workable Framing: Tiered Policies and Process Grading</a></li>
+  <li><a href="#sec-education-usmle" id="toc-sec-education-usmle" class="nav-link" data-scroll-target="#sec-education-usmle"><span class="header-section-number">8.4</span> The USMLE and the Limits of Licensing Exam Reform</a></li>
+  <li><a href="#sec-education-literacy" id="toc-sec-education-literacy" class="nav-link" data-scroll-target="#sec-education-literacy"><span class="header-section-number">8.5</span> AI Literacy as Curriculum</a></li>
+  <li><a href="#sec-education-policies" id="toc-sec-education-policies" class="nav-link" data-scroll-target="#sec-education-policies"><span class="header-section-number">8.6</span> Institutional Policies: What Has Actually Been Published</a></li>
+  <li><a href="#sec-education-safety" id="toc-sec-education-safety" class="nav-link" data-scroll-target="#sec-education-safety"><span class="header-section-number">8.7</span> Academic Integrity as a Patient Safety Issue</a></li>
+  <li><a href="#sec-education-starter" id="toc-sec-education-starter" class="nav-link" data-scroll-target="#sec-education-starter"><span class="header-section-number">8.8</span> Where to Start: Two Starter Projects</a>
+  <ul class="collapse">
+  <li><a href="#project-1-ai-literacy-module-for-all-health-professions-students" id="toc-project-1-ai-literacy-module-for-all-health-professions-students" class="nav-link" data-scroll-target="#project-1-ai-literacy-module-for-all-health-professions-students"><span class="header-section-number">8.8.1</span> Project 1: AI Literacy Module for All Health Professions Students</a></li>
+  <li><a href="#project-2-assessment-redesign-workshop-for-course-directors" id="toc-project-2-assessment-redesign-workshop-for-course-directors" class="nav-link" data-scroll-target="#project-2-assessment-redesign-workshop-for-course-directors"><span class="header-section-number">8.8.2</span> Project 2: Assessment Redesign Workshop for Course Directors</a></li>
+  </ul></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/seandavi/campus-llm-kb/edit/main/resources_education.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./domainresource.html">Domain Resources</a></li><li class="breadcrumb-item"><a href="./resources_education.html"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Education</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./domainresource.html">Domain Resources</a></li><li class="breadcrumb-item"><a href="./resources_education.html"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Education Domain</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Education</span></h1>
+<h1 class="title"><span id="sec-education" class="quarto-section-identifier"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Education Domain</span></span></h1>
 </div>
 
 
@@ -298,6 +410,12 @@ ul.task-list li input[type="checkbox"] {
 <div class="quarto-title-meta">
 
     
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">April 26, 2026</p>
+    </div>
+  </div>
   
     
   </div>
@@ -307,344 +425,511 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>This page is a collection of resources for educators and administrators who are considering how to use generative AI tools in their courses or programs.</p>
-<section id="journals" class="level2" data-number="8.1">
-<h2 data-number="8.1" class="anchored" data-anchor-id="journals"><span class="header-section-number">8.1</span> Journals</h2>
-<ul>
-<li><a href="https://www.sciencedirect.com/journal/computers-and-education-artificial-intelligence">Computers and Education: Artificial Intelligence</a></li>
-</ul>
+<p>The conversation about generative AI in health professions education has been dominated, since late 2022, by two questions that are increasingly beside the point: Can students use AI to cheat? Can we detect it if they do? Both questions assume that the problem is a student behavior problem, and that better enforcement will solve it. Neither assumption holds, and the obsession with both has distracted education leaders from the more consequential question: what does it mean to teach and assess clinical reasoning when a language model can pass the USMLE?</p>
+<p>In January 2023, ChatGPT passed all three steps of the United States Medical Licensing Examination at or above the passing threshold for human test-takers <span class="citation" data-cites="Kung2023-usmle">(<a href="references.html#ref-Kung2023-usmle" role="doc-biblioref">Kung et al. 2023</a>)</span>. That benchmark has since been exceeded: GPT-4 achieves approximately 86% accuracy on Step 1 questions and 87% on Step 2 Clinical Knowledge, performance that meets or exceeds the median medical student <span class="citation" data-cites="Garabet2024-step1 Dhakal2024-step2">(<a href="references.html#ref-Garabet2024-step1" role="doc-biblioref">Garabet et al. 2024</a>; <a href="references.html#ref-Dhakal2024-step2" role="doc-biblioref"><span class="nocase">Dhakal et al.</span> 2024</a>)</span>. The boards were designed to certify that physicians had internalized a body of medical knowledge. They were not designed to certify that a physician could distinguish their own reasoning from AI-generated reasoning. Those are now different things.</p>
+<p>This chapter is not an argument against rigor or assessment. It is an argument that the assessment infrastructure of health professions education needs to be rebuilt around what AI cannot yet do — authentic clinical reasoning, communication under uncertainty, integration of patient values — and that the institution’s job is to support that rebuilding rather than defend the examination infrastructure that preceded it.</p>
+<section id="sec-education-proxy" class="level2" data-number="8.1">
+<h2 data-number="8.1" class="anchored" data-anchor-id="sec-education-proxy"><span class="header-section-number">8.1</span> The Collapse of the Proxy</h2>
+<p>For decades, written assessments in health professions education served as proxies for the cognitive processes educators actually cared about. A well-written clinical case write-up indicated that the student had synthesized information, generated a differential, and reasoned through management options. A literature review demonstrated that the student could retrieve and critically evaluate evidence. A patient encounter note showed that the student could document a clinical interaction coherently.</p>
+<p>These proxies worked because they were hard to produce without actually doing the thinking. They no longer work. A language model given the same case information a student is given can produce a write-up that is, on most dimensions, better than the average student’s write-up — better organized, more comprehensive, with fewer factual errors. It can generate a complete SOAP note from a brief encounter description. It can produce a literature review with a reasonable bibliography.</p>
+<p>The problem is not that students are using AI to do these tasks. The problem is that educators designed the tasks to measure one thing and are now trying to use them to measure another. An assignment that genuinely measures clinical reasoning under AI-augmented conditions looks different from an assignment designed to measure unaided recall. The first step in adapting assessment is to be honest about which kind of measure you need.</p>
 </section>
-<section id="basics-and-background" class="level2" data-number="8.2">
-<h2 data-number="8.2" class="anchored" data-anchor-id="basics-and-background"><span class="header-section-number">8.2</span> Basics and Background</h2>
-<ul>
-<li><a href="https://teaching.cornell.edu/generative-artificial-intelligence">Cornell University resources for educators</a></li>
-<li><a href="https://cft.vanderbilt.edu/guides-sub-pages/teaching-in-the-age-of-ai/">Vanderbilt University Guide to Teaching in the Age of AI</a></li>
-<li><a href="https://sc.edu/about/offices_and_divisions/cte/teaching_resources/chatgpt/index.php">University of South Carolina ChatGPT for Teaching and Learning</a></li>
-<li><a href="https://teaching.cornell.edu/sites/default/files/2024-01/Cornell-GenerativeAIForEducation-Report_2.pdf">Generative Artificial Intelligence in Education and Pedagogy</a></li>
-<li><a href="https://help.openai.com/en/collections/5929286-educator-faq">OpenAI’s Guidelines for Educators</a></li>
-<li><a href="https://poorvucenter.yale.edu/AIguidance">AI Guidance from the Poorvu Center at Yale</a></li>
-<li><a href="https://researchguides.njit.edu/c.php?g=671651&amp;p=9662555">New Jersey Institute of Technology AI and Instruction Guide</a></li>
-<li><a href="https://www.emerald.com/insight/content/doi/10.1108/LHTN-01-2023-0009/full/html">Chatting about ChatGPT: How May AI and ChatGPT Impact Academia and Libraries?</a></li>
-<li><a href="https://arxiv.org/pdf/2212.03551.pdf">Talking about Large Language Models</a></li>
-<li><a href="https://libraryhelp.sfcc.edu/Chat-GPT/articles-etc">SFCC Comprehensive ChatGPT Resource Guide</a></li>
-<li><a href="https://helenarmstrong.info/portfolio/big-data-big-design/">Big Data Big Design</a></li>
-<li><a href="https://www.chronicle.com/article/4-steps-to-help-you-plan-for-chatgpt-in-your-classroom?bc_nonce=xi6lz5ybgnjgwgd950m67e&amp;cid=reg_wall_signup">4 Steps to Help You Plan for ChatGPT in Your Classroom</a></li>
-<li><a href="https://www.cmu.edu/teaching/technology/aitools/index.html">Carnegie Mellon University’s FAQ on AI in education</a></li>
-<li><a href="https://teachonline.ca/ai-resources">AI in Higher Education Resource Hub</a></li>
-</ul>
+<section id="sec-education-detection" class="level2" data-number="8.2">
+<h2 data-number="8.2" class="anchored" data-anchor-id="sec-education-detection"><span class="header-section-number">8.2</span> The Detection Trap</h2>
+<p>The institutional response that gained the most traction in 2023 was enforcement: updated honor codes prohibiting AI use, mandatory disclosure requirements for AI assistance, and AI detection tools. The detection tools — <a href="https://www.turnitin.com">Turnitin</a>’s AI writing detection, <a href="https://gptzero.me">GPTZero</a>, <a href="https://copyleaks.com">Copyleaks</a> — were marketed at a moment of institutional anxiety and adopted widely before their limitations were understood.</p>
+<p>Those limitations are substantial. Detection accuracy varies significantly across writing styles, assignment types, and AI models. False-positive rates — flagging human-written work as AI-generated — disproportionately affect non-native English speakers, whose more formal and pattern-consistent prose is more likely to trigger detection thresholds <span class="citation" data-cites="Liang2023-aidetect">(<a href="references.html#ref-Liang2023-aidetect" role="doc-biblioref">Liang et al. 2023</a>)</span>. Students who have been falsely accused of AI use in high-stakes grading contexts have documented the experience as deeply damaging, and at least one institution faced legal exposure over a misapplied detection finding.</p>
+<p>The Federal Trade Commission’s enforcement posture on AI detection tools — including actions against companies that overstated their detection accuracy — has added a compliance dimension to adoption decisions <span class="citation" data-cites="FTC2024-operationai">(<a href="references.html#ref-FTC2024-operationai" role="doc-biblioref">Federal Trade Commission 2024</a>)</span>. An institution that implements a detection tool based on vendor accuracy claims without independent validation is making a factual representation it may not be able to defend.</p>
+<p>Prohibition without a structural alternative produces the same behavior with added incentive to hide it. Students who are prohibited from using AI but who observe that their future clinical colleagues use it constantly experience the prohibition as arbitrary rather than principled. The honest conversation with students is not “AI use is prohibited” but “here is what you need to be able to do on your own, here is why, and here is how we assess that.”</p>
 </section>
-<section id="ai-in-the-classroom" class="level2" data-number="8.3">
-<h2 data-number="8.3" class="anchored" data-anchor-id="ai-in-the-classroom"><span class="header-section-number">8.3</span> AI in the Classroom</h2>
-<p>This section includes resources that provide insight into the use of AI in the classroom. These resources are intended to provide instructors with a starting point for considering how to use AI in their courses.</p>
-<ul>
-<li><a href="https://davisinstituteai.colby.edu/annual-theme/">Davis Institute for Artificial Intelligence</a></li>
-<li><a href="https://academic.wlu.edu/2023/08/17/thinking-about-updating-your-syllabus-for-chatgpt/">Thinking about updating your syllabus for Chat GPT?</a></li>
-<li><a href="https://www.turnitin.com/resources/academic-integrity-in-the-age-of-AI">Turn It In: Academic Resources in the Age of AI</a></li>
-<li><a href="https://intentionalteaching.buzzsprout.com/2069949/12902485-rethinking-teaching-in-an-age-of-ai-with-james-m-lang-and-michelle-d-miller">Intentional Teaching: Rethinking Teaching in an Age of AI</a></li>
-<li><a href="https://www.youtube.com/playlist?list=PL4_ShpfD3Nu4KF-1NngyyC3ZNW2FdBVg_">Introduction to AI for Teachers and Students</a></li>
-<li><a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4391243">Using AI to Implement Effective Teaching Strategies in Classrooms</a></li>
-<li><a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4300783">New Modes of Learning Enabled by AI Chatbots</a></li>
-<li><a href="https://wac.colostate.edu/repository/collections/textgened/front-matter/cfp-textgened/">Tim Laquintano’s forthcoming work</a></li>
-<li><a href="https://www.montclair.edu/faculty-excellence/teaching-resources/clear-course-design/practical-responses-to-chat-gpt/">Practical Responses to ChatGPT and Other Generative AI</a></li>
-<li><a href="https://www.weforum.org/agenda/2023/03/chatgpt-and-cheating-5-ways-to-change-how-students-are-graded/">World Economic Forum on ChatGPT and Cheating</a></li>
-<li><a href="https://link.springer.com/epdf/10.1007/s00146-022-01397-z?sharing_token=YwKL6HmHeNSxEj6Go63ks_e4RwlQNchNByi7wbcMAY5jYiMNym3xBTAzN52Pp_FuF7Qv_P-Qnug5Ax7FJNWShl1DpAHIbV1fvh8gzqODl_v-dUgF0TEFyk8rlBIfksPNkX2csUNmE3KmnQCA9GDBy9sa4Q9nkg7MfuW4bbwdNNo=">How to Cheat on Your Final Paper: Assigning AI for Student Writing</a></li>
-<li><a href="https://compositionstudiesjournal.files.wordpress.com/2022/07/anson.pdf">AI-Based Text Generation and the Social Construction of “Fraudulent Authorship”</a></li>
-<li><a href="https://wac.colostate.edu/repository/collections/ai-text-generators-and-teaching-writing-starting-points-for-inquiry/">AI Text Generators and Teaching Writing: Starting Points for Inquiry</a></li>
-<li><a href="https://wlu.primo.exlibrisgroup.com/discovery/fulldisplay?docid=cdi_proquest_journals_2776964903&amp;context=PC&amp;vid=01WLU_INST:01WLU&amp;lang=en&amp;search_scope=MyInst_and_CI&amp;adaptor=Primo%20Central&amp;tab=Everything&amp;query=any,contains,Collaborating%20With%20ChatGPT:%20Considering%20the%20Implications%20of%20Generative%20Artificial%20Intelligence%20for%20Journalism%20and%20Media%20Education&amp;mode=Basic">Collaborating with ChatGPT: Considering the Implications of Generative Artificial Intelligence for Journalism and Media Education</a></li>
-<li><a href="https://www.chronicle.com/article/will-chatgpt-change-how-professors-assess-learning?utm_source=Iterable&amp;utm_medium=email&amp;utm_campaign=campaign_7089085_nl_Teaching_date_20230622&amp;cid=te&amp;source=&amp;sourceid=">Will ChatGPT Change How Professors Access Learning?</a></li>
-<li><a href="https://www.youtube.com/playlist?list=PLT7ttc4UUl3SE8AuHnNN-j7qYM4QN-EG3">Charles Knight on AI in Higher Ed</a></li>
-<li><a href="https://www.civicsoftechnology.org/aboutus">Civics of Technology</a></li>
-</ul>
+<section id="sec-education-framing" class="level2" data-number="8.3">
+<h2 data-number="8.3" class="anchored" data-anchor-id="sec-education-framing"><span class="header-section-number">8.3</span> A Workable Framing: Tiered Policies and Process Grading</h2>
+<p>The framing that has produced the most defensible and educationally coherent institutional policies is a tiered approach that distinguishes among assignment types rather than making a blanket determination about AI use.</p>
+<p>Ethan Mollick and Lilach Mollick’s work on assigning AI <span class="citation" data-cites="Mollick2023-assigning">(<a href="references.html#ref-Mollick2023-assigning" role="doc-biblioref">Mollick and Mollick 2023</a>)</span> describes a spectrum of pedagogical stances: AI prohibited (where unaided performance is the learning objective), AI as a tool to be used transparently (where the process of working with AI is part of what is being taught), and AI use as contextually unrestricted (where the product quality matters more than the production process, as it often does in practice). The same framework applies in health professions education, where the three stances correspond roughly to high-stakes clinical reasoning assessments (unaided performance required), literature review and synthesis tasks (AI as tool, process documented), and clinical note drafting and patient communication practice (AI use mirrors professional reality).</p>
+<p><a href="#fig-ed-assessment-decision" class="quarto-xref">Figure&nbsp;<span>8.1</span></a> shows a decision tree an educator can use to assign assessment tier.</p>
+<div class="cell" data-layout-align="default">
+<div class="cell-output-display">
+<div id="fig-ed-assessment-decision" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-ed-assessment-decision-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div>
+<pre class="mermaid mermaid-js" data-label="fig-ed-assessment-decision">flowchart TD
+    A[Define learning objective] --&gt; B{Does the objective\nrequire unaided\nclinical reasoning?}
+    B -- Yes --&gt; C[AI Prohibited\nAssess individual\nperformance]
+    B -- No --&gt; D{Is AI use standard\nin this clinical task\nin practice?}
+    D -- Yes --&gt; E[AI Integrated\nMandatory use + reflection\non AI output quality]
+    D -- No --&gt; F{Can AI complete\nthe task unassisted?}
+    F -- Yes --&gt; G[AI Permitted\nwith disclosure +\nprocess documentation]
+    F -- No --&gt; H[AI as tool\nStructured collaboration\nwith human verification]
+    C --&gt; I[Oral exam,\nOSCE, direct observation]
+    E --&gt; J[Graded: reasoning\ntransparency + oversight quality]
+    G --&gt; J
+    H --&gt; J
+</pre>
+</div>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-ed-assessment-decision-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;8.1: Assessment redesign decision tree for health professions educators. The key question is whether the learning objective requires demonstrating unaided clinical reasoning or demonstrating competent use of AI-augmented tools.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>The shift from product grading to process grading is the most important structural change available to educators. Grading the process — the prompt log, the AI output, the student’s verification and editing decisions, the written reflection on what the AI produced versus what the student changed — measures exactly the skills that matter in AI-augmented clinical practice: the ability to evaluate AI output critically, identify errors, and exercise professional judgment over a generated starting point. This approach is more labor-intensive to design and grade than a conventional written product; it is also considerably harder to outsource entirely to AI, because the reflection on AI output requires a human who actually did the work.</p>
 </section>
-<section id="educational-policy-statements-and-guidelines" class="level2" data-number="8.4">
-<h2 data-number="8.4" class="anchored" data-anchor-id="educational-policy-statements-and-guidelines"><span class="header-section-number">8.4</span> Educational policy statements and guidelines</h2>
-<p>This section includes examples of policy statements and guidelines from institutions of higher education. These examples are intended to provide a starting point for instructors and administrators who are considering how to address the use of generative AI tools in their courses.</p>
-<ul>
-<li><a href="https://www.cmu.edu/teaching/technology/aitools/academicintegrity/index.html">Carnegie Mellon University Examples of AI use policies for educators</a></li>
-<li><a href="https://teach.its.uiowa.edu/artificial-intelligence-tools-and-teaching#collapse-nid7546">University of Iowa, Office of Teaching, Learning, and Technology</a></li>
-<li><a href="https://libraryhelp.sfcc.edu/Chat-GPT/syllabus-statements-course-policies">SFCC Library Faculty Help</a></li>
-<li><a href="https://pressbooks.ulib.csuohio.edu/teachingandlearning/chapter/statements/">Cleveland State University Center for Faculty Excellence</a></li>
-<li><a href="https://docs.google.com/document/d/1RMVwzjc1o0Mi8Blw_-JUTcXv02b2WRH86vw7mi16W3U/edit#heading=h.1cykjn2vg2wx">Classroom Policies Related to ChatGPT and Other AI Tools</a></li>
-<li><a href="https://www.montclair.edu/faculty-excellence/teaching-resources/clear-course-design/practical-responses-to-chat-gpt/9569-2/">Montclair State University AI Course Policies and Assignment Guidelines</a></li>
-<li><a href="https://www.insidehighered.com/views/2023/03/22/ai-policy-advice-administrators-and-faculty-opinion">Inside HigherEd Opinion Piece on Generative AI Policy Making</a></li>
-<li><a href="https://tlhub.stanford.edu/docs/course-policies-on-generative-ai-use/">Stanford</a></li>
-<li><a href="https://learninginnovation.duke.edu/ai-and-teaching-at-duke-2/artificial-intelligence-policies-in-syllabi-guidelines-and-considerations/">Duke</a> and <a href="https://students.duke.edu/get-assistance/community-standard/">here</a></li>
-<li><a href="https://it.wisc.edu/generative-ai-uw-madison-use-policies/">University of Wisconsin-Madison</a></li>
-<li><a href="https://honorcode.nd.edu/generative-ai-policy-for-students-august-2023/">Notre Dame</a></li>
-<li><a href="https://www.boisestate.edu/policy/generative-artificial-intelligence-ai-use-and-policies/">Boise Statue University</a></li>
-<li><a href="https://teaching.resources.osu.edu/teaching-topics/ai-considerations-teaching-learning">OSU’s AI: Considerations for Teaching and Learning</a></li>
-<li><a href="https://umaine.edu/learnwithai/">U of Maine’s Learn with AI</a></li>
-<li><a href="http://sentientsyllabus.org">sentientsyllabus.org</a>)</li>
-<li><a href="https://medium.com/@rwatkins_7167/updating-your-course-syllabus-for-chatgpt-965f4b57b003">Update Your Syllabus for ChatGPT</a></li>
-<li><a href="https://csp.uber.space/phhd/rulesfortools.pdf">Rules for Tools</a> (from Padagogische Hochschule Heidelberg)</li>
-<li><a href="https://www.unesco.org/en/articles/guidance-generative-ai-education-and-research">UNESCO</a></li>
-</ul>
+<section id="sec-education-usmle" class="level2" data-number="8.4">
+<h2 data-number="8.4" class="anchored" data-anchor-id="sec-education-usmle"><span class="header-section-number">8.4</span> The USMLE and the Limits of Licensing Exam Reform</h2>
+<p>The licensing exam context deserves specific attention because it is the external constraint that shapes so much of undergraduate medical education. When AI passes Step 2 CK at 87%, the natural question is: what are we preparing students for?</p>
+<p>The answer from the National Board of Medical Examiners — which has been studying AI performance on its exams since 2023 — is nuanced <span class="citation" data-cites="Yaneva2024-clinreasoning">(<a href="references.html#ref-Yaneva2024-clinreasoning" role="doc-biblioref"><span class="nocase">Yaneva et al.</span> 2024</a>)</span>. High AI performance on multiple-choice clinical vignettes does not mean that AI can replicate authentic clinical reasoning. The vignettes test pattern recognition on structured information; clinical practice requires integrating incomplete, contradictory, and affectively complex information in real time, with a patient whose presentation does not fit the textbook pattern. AI is weaker on these tasks, and considerably weaker on the communicative and relational dimensions of clinical care that licensing exams do not currently measure.</p>
+<p>The implication for medical education is not that the boards are irrelevant but that they are increasingly insufficient. Competency-based medical education (CBME) frameworks — the ACGME milestones, the entrustable professional activities — provide a structure for assessing the capabilities that board exams do not capture. Educators who redesign assessment to emphasize direct observation, structured clinical encounters, and oral examination of reasoning are building toward an assessment model that remains meaningful in an AI-augmented world. Educators who optimize for multiple-choice performance are not.</p>
 </section>
-<section id="bias-and-ethics-in-ai" class="level2" data-number="8.5">
-<h2 data-number="8.5" class="anchored" data-anchor-id="bias-and-ethics-in-ai"><span class="header-section-number">8.5</span> Bias and Ethics in AI</h2>
-<ul>
-<li><a href="https://www.chronicle.com/article/how-chatgpt-could-help-or-hurt-students-with-disabilities?utm_source=Iterable&amp;utm_medium=email&amp;utm_campaign=campaign_7089085_nl_Teaching_date_20230622&amp;cid=te&amp;source=&amp;sourceid=">How ChatGPT Could Help or Hurt Students with Disabilities</a></li>
-<li><a href="https://www.apc.org/en/publications?field_publication_type_tid=All&amp;field_issue_tid=6206&amp;filter-field_region_tid=All&amp;field_project_target_id=All&amp;field_theme_tid=All&amp;body_value=">Association for Progressive Communications</a></li>
-<li><a href="https://wlu.primo.exlibrisgroup.com/discovery/fulldisplay?docid=alma991010595928004161&amp;context=L&amp;vid=01WLU_INST:01WLU&amp;lang=en&amp;search_scope=MyInst_and_CI&amp;adaptor=Local%20Search%20Engine&amp;tab=Everything&amp;query=any,contains,Algorithms%20of%20Oppression&amp;mode=Basic">Algorithms of Oppression: How Search Engines Reinforce Racism — Safiya Umoja Noble</a></li>
-<li><a href="https://wlu.primo.exlibrisgroup.com/discovery/fulldisplay?docid=alma991010591929704161&amp;context=L&amp;vid=01WLU_INST:01WLU&amp;lang=en&amp;search_scope=MyInst_and_CI&amp;adaptor=Local%20Search%20Engine&amp;tab=Everything&amp;query=any,contains,Race%20After%20Technology&amp;offset=0">Race After Technology: Abolitionist Tools for the New Jim Code</a></li>
-<li><a href="https://www.nist.gov/news-events/news/2022/03/theres-more-ai-bias-biased-data-nist-report-highlights">NIST on Bias in AI</a></li>
-<li><a href="https://wlu.primo.exlibrisgroup.com/discovery/fulldisplay?docid=cdi_crossref_primary_10_1007_s13347_020_00405_8&amp;context=PC&amp;vid=01WLU_INST:01WLU&amp;lang=en&amp;search_scope=MyInst_and_CI&amp;adaptor=Primo%20Central&amp;tab=Everything&amp;query=any,contains,Decolonial%20AI&amp;offset=0">Decolonial AI: Decolonial Theory as Sociotechical Foresight in Artificial Intelligence</a></li>
-</ul>
+<section id="sec-education-literacy" class="level2" data-number="8.5">
+<h2 data-number="8.5" class="anchored" data-anchor-id="sec-education-literacy"><span class="header-section-number">8.5</span> AI Literacy as Curriculum</h2>
+<p>The question of what medical students should know about AI was the subject of a foundational 2020 paper by McCoy et al.&nbsp;in <em>npj Digital Medicine</em> <span class="citation" data-cites="McCoy2020-ai-literacy">(<a href="references.html#ref-McCoy2020-ai-literacy" role="doc-biblioref">McCoy et al. 2020</a>)</span>. Their argument — that medical students need literacy in AI as users and evaluators rather than as developers — remains the right framework. The specific competencies have been elaborated since then, and as of 2025 the question has moved from “should we teach this?” to “what exactly are we required to teach and how do we demonstrate compliance?”</p>
+<p>The AAMC’s 2025 AI Competencies Across the Learning Continuum, developed through a formal Delphi process involving medical educators across the country, provides a national standard for AI competency across undergraduate, graduate, and continuing medical education <span class="citation" data-cites="AAMC2025-competencies">(<a href="references.html#ref-AAMC2025-competencies" role="doc-biblioref">Association of American Medical Colleges 2025</a>)</span>. The ACGME’s July 2025 Common Program Requirements include explicit provisions on human-AI teamwork and require residency programs to have institutional policies on AI use — the first time ACGME has required programs to govern AI specifically <span class="citation" data-cites="ACGME2025-CPR">(<a href="references.html#ref-ACGME2025-CPR" role="doc-biblioref">Accreditation Council for Graduate Medical Education 2025</a>)</span>. Programs without documented AI governance are out of compliance starting with the 2025 to 2026 accreditation year. The American Medical Informatics Association has proposed a competency framework for health professionals that distinguishes among AI consumers (who use AI tools in clinical work), AI translators (who evaluate AI tools and advocate for appropriate use), and AI developers (who build and validate AI systems) <span class="citation" data-cites="AMIA2024-competencies">(<a href="references.html#ref-AMIA2024-competencies" role="doc-biblioref">American Medical Informatics Association 2024</a>)</span>.</p>
+<p>The consumer/translator/developer distinction is useful for curriculum design because it implies that different learners need different things. Every medical student needs consumer-level AI literacy: how to evaluate AI-generated clinical information, how to recognize hallucinations and errors, how to document AI use in clinical settings, and how to have an informed conversation with a patient about AI’s role in their care. Only some students will become translators or developers, and the curriculum should not require developer-level technical knowledge of everyone.</p>
+<p>What this means concretely: a required AI literacy module in medical school should cover the basic capabilities and limitations of language models (without requiring programming), the specific failure modes relevant to clinical use (hallucination, bias, over-confidence), the disclosure and documentation standards expected by major journals and by the clinical record, and how to evaluate an AI tool for fitness in a specific clinical task. This module is not optional enrichment — it is basic preparation for the clinical environment students are about to enter.</p>
+<p><a href="#tbl-ed-literacy-frameworks" class="quarto-xref">Table&nbsp;<span>8.1</span></a> summarizes the major competency frameworks proposed for health professions AI literacy.</p>
+<div id="tbl-ed-literacy-frameworks" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-ed-literacy-frameworks-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;8.1: Major AI literacy competency frameworks for health professions education, with target audience and emphasis. The 2025 AAMC and ACGME entries reflect requirements that became effective for the 2025–2026 academic year; programs should verify current language directly with each organization.
+</figcaption>
+<div aria-describedby="tbl-ed-literacy-frameworks-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<table class="caption-top table">
+<colgroup>
+<col style="width: 17%">
+<col style="width: 20%">
+<col style="width: 9%">
+<col style="width: 27%">
+<col style="width: 24%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Framework</th>
+<th>Organization</th>
+<th>Year</th>
+<th>Target audience</th>
+<th>Core emphasis</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>AI Literacy for Medical Students</td>
+<td>McCoy et al., <em>npj Digital Med</em></td>
+<td>2020</td>
+<td>Medical students</td>
+<td>Evaluation, bias, communication</td>
+</tr>
+<tr class="even">
+<td>Principles for Responsible AI Use</td>
+<td>AAMC</td>
+<td>2024</td>
+<td>Medical educators</td>
+<td>Faculty development, equity</td>
+</tr>
+<tr class="odd">
+<td>AI Competencies Across the Learning Continuum</td>
+<td>AAMC</td>
+<td>2025</td>
+<td>UME/GME/CME programs</td>
+<td>National standard; Delphi-developed competency set</td>
+</tr>
+<tr class="even">
+<td>AI Competencies for Health Professionals</td>
+<td>AMIA</td>
+<td>2024</td>
+<td>Health professionals</td>
+<td>Consumer/translator/developer tiers</td>
+</tr>
+<tr class="odd">
+<td>Common Program Requirements (AI provisions)</td>
+<td>ACGME</td>
+<td>2025</td>
+<td>Residency programs</td>
+<td>Human-AI teamwork; institutional AI policies required</td>
+</tr>
+<tr class="even">
+<td>Preparing Clinicians for AI</td>
+<td>James, Wachter, &amp; Woolliscroft, <em>JAMA</em></td>
+<td>2022</td>
+<td>All clinicians</td>
+<td>Reasoning under AI uncertainty</td>
+</tr>
+</tbody>
+</table>
+</div>
+</figure>
+</div>
 </section>
-<section id="podcasts-and-newsletters-for-further-insight" class="level2" data-number="8.6">
-<h2 data-number="8.6" class="anchored" data-anchor-id="podcasts-and-newsletters-for-further-insight"><span class="header-section-number">8.6</span> Podcasts and Newsletters for Further Insight</h2>
-<p>In this section are links to podcasts and newsletters around generative AI and education.</p>
-<ul>
-<li><a href="https://www.timeshighereducation.com/campus/podcast-how-use-generative-ai-your-teaching-and-research">THE Podcast: How to Use Generative AI in Your Teaching and Research</a></li>
-<li><a href="https://www.mckinsey.com/mgi/forward-thinking/forward-thinking-on-the-brave-new-world-of-generative-ai-with-ethan-mollick">Forward Thinking on the Brave New World of Generative AI with Ethan Mollick</a></li>
-<li><a href="https://spencerauthor.com/ai-predict/">We Can’t Predict How AI Will Change the World</a></li>
-<li><a href="https://teachinginhighered.com/podcast/chatgpt-and-good-intentions-in-higher-ed/">ChatGPT and Good Intentions in Higher Ed</a></li>
-<li><a href="https://teaforteaching.com/274-chatgpt/">Tea for Teaching: ChatGPT</a></li>
-<li><a href="https://www.wnycstudios.org/podcasts/otm/episodes/on-the-media-its-a-machines-world">WNYC Studios on the Media: It’s a Machine’s World</a></li>
-<li><a href="https://today.cofc.edu/2023/04/19/cofc-podcast-chatgpt-and-conversational-a-i-explained/">College of Charleston Podcast: ChatGPT and Conversational AI Explained</a></li>
-<li><a href="https://ai.ufl.edu/radio/">University of Florida’s AI Radio Minutes</a></li>
-<li><a href="https://www.oneusefulthing.org/">Ethan Mollick’s Newsletter: One Useful Thing</a></li>
-<li><a href="https://aiandacademia.substack.com/">Bryan Alexander’s Newsletter: AI and Academia</a></li>
-</ul>
+<section id="sec-education-policies" class="level2" data-number="8.6">
+<h2 data-number="8.6" class="anchored" data-anchor-id="sec-education-policies"><span class="header-section-number">8.6</span> Institutional Policies: What Has Actually Been Published</h2>
+<p>The most useful institutional AI policies in health professions education are the ones that specify which tools are permitted, under what data handling conditions, and with what disclosure requirements — not the ones that simply declare a principle of “responsible use.” Several health professions schools have published policies worth examining.</p>
+<p>UCSF’s School of Medicine has implemented a tiered system (AI-1 through AI-4) that signals permitted AI use levels for each assessment, with AI-4 designating full integration of approved tools. The system uses an institutional AI environment (“Versa Chat”) that keeps patient-related data within a HIPAA-compliant boundary. The explicit data-security specification — which tool, under what conditions — is the element most often absent from general university policies and most necessary for a clinical training environment.</p>
+<p>Johns Hopkins University has published a red/yellow/green framework for courses, with green indicating that AI use consistent with professional norms is expected, yellow indicating that AI use is permitted with documentation, and red indicating that AI use is prohibited and the assessment tests unaided performance. The color system is simple enough for students to internalize without reading a policy document for every course.</p>
+<p>The common element across the most effective policies is that they specify the institutional tool rather than deferring to student choice of tool. This is a data governance decision as much as an educational one: medical students on clinical rotations are surrounded by patient information, and a policy that permits “any AI tool the student finds useful” is a policy that permits HIPAA exposure.</p>
+<p><a href="#tbl-ed-policies" class="quarto-xref">Table&nbsp;<span>8.2</span></a> shows a comparison of selected health-professions AI policies.</p>
+<div id="tbl-ed-policies" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-ed-policies-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;8.2: Comparison of health-professions institutional AI policies on key implementation dimensions. Policies were documented in early 2026; institutions update these frequently.
+</figcaption>
+<div aria-describedby="tbl-ed-policies-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<table class="caption-top table">
+<colgroup>
+<col style="width: 12%">
+<col style="width: 17%">
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 20%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Institution</th>
+<th>Tier/color system</th>
+<th>Approved tools specified?</th>
+<th>Data security requirement</th>
+<th>Disclosure required?</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>UCSF School of Medicine</td>
+<td>AI-1 to AI-4</td>
+<td>Yes (Versa Chat)</td>
+<td>HIPAA-compliant only</td>
+<td>Yes</td>
+</tr>
+<tr class="even">
+<td>Johns Hopkins University</td>
+<td>Red/Yellow/Green</td>
+<td>Partial</td>
+<td>Not specified</td>
+<td>Yes</td>
+</tr>
+<tr class="odd">
+<td>Mayo Clinic College</td>
+<td>None (principled guidance)</td>
+<td>No</td>
+<td>“De-identified only”</td>
+<td>Yes</td>
+</tr>
+<tr class="even">
+<td>Harvard Medical School</td>
+<td>Case-by-case faculty decision</td>
+<td>No</td>
+<td>Not specified</td>
+<td>Yes</td>
+</tr>
+</tbody>
+</table>
+</div>
+</figure>
+</div>
+</section>
+<section id="sec-education-safety" class="level2" data-number="8.7">
+<h2 data-number="8.7" class="anchored" data-anchor-id="sec-education-safety"><span class="header-section-number">8.7</span> Academic Integrity as a Patient Safety Issue</h2>
+<p>The stakes of academic integrity in health professions education are not equivalent to the stakes in a general undergraduate program. A student who outsources a history paper to AI has submitted fraudulent work, and the consequence is primarily to their own learning. A medical student who outsources clinical reasoning to AI during training — who presents AI-generated differentials and management plans as their own reasoning through repeated assessments — has learned to operate a clinical workflow they do not understand. The consequence is potentially borne by future patients.</p>
+<p>James, Wachter, and Woolliscroft made this argument directly in their 2022 JAMA piece on preparing clinicians for an AI-influenced clinical world <span class="citation" data-cites="James2022-preparing">(<a href="references.html#ref-James2022-preparing" role="doc-biblioref">James et al. 2022</a>)</span>. The concern is not that AI will replace clinical reasoning but that clinicians who have not developed strong independent reasoning will not be equipped to recognize when AI reasoning is wrong. Automation bias — the tendency to accept automated system output without adequate critical evaluation — is well documented in aviation and other high-stakes domains, and there is no reason to believe clinical medicine is immune.</p>
+<p>This reframes the academic integrity conversation from “students are cheating” to “we are responsible for training clinicians who can function safely when AI fails.” That is a more honest and more motivating frame for curriculum redesign. It also makes the argument for genuine investment in assessment reform: not detection systems that catch cheaters, but assessment methods that require demonstrating the reasoning that makes a physician safe.</p>
+</section>
+<section id="sec-education-starter" class="level2" data-number="8.8">
+<h2 data-number="8.8" class="anchored" data-anchor-id="sec-education-starter"><span class="header-section-number">8.8</span> Where to Start: Two Starter Projects</h2>
+<section id="project-1-ai-literacy-module-for-all-health-professions-students" class="level3" data-number="8.8.1">
+<h3 data-number="8.8.1" class="anchored" data-anchor-id="project-1-ai-literacy-module-for-all-health-professions-students"><span class="header-section-number">8.8.1</span> Project 1: AI Literacy Module for All Health Professions Students</h3>
+<p><strong>What it is.</strong> Develop and deploy a required, one-hour AI literacy module covering: how language models work at a conceptual level (no programming), what they are good for and where they fail, how to evaluate AI-generated clinical information critically, how to document AI use in clinical records per institutional policy, and how to discuss AI with patients. The module is assessed with a short practical exercise — evaluate a clinical AI output and document its errors — not a multiple-choice knowledge test.</p>
+<p><strong>What you need to start.</strong> A course director or clinical informatics faculty member willing to champion it, two to four weeks of faculty time to write and pilot the content, and an LMS slot in a required course. The AAMC’s published principles and the McCoy et al.&nbsp;framework provide the content scaffold; you are writing the local application, not the theory.</p>
+<p><strong>Build or buy?</strong> Write locally. National-level modules are available (the AMA and AAMC have published resources) but they are not calibrated to your institutional tools and policies. The module needs to name your approved AI tools, your data classification rules, and your disclosure requirements — none of which a generic national module will include.</p>
+<p><strong>What done looks like.</strong> Within one academic year: every student in the graduating class has completed the module, the practical exercise has been piloted and revised, at least one faculty group has reviewed it for currency, and the module is integrated into the orientation or first-year curriculum on a recurring basis.</p>
+</section>
+<section id="project-2-assessment-redesign-workshop-for-course-directors" class="level3" data-number="8.8.2">
+<h3 data-number="8.8.2" class="anchored" data-anchor-id="project-2-assessment-redesign-workshop-for-course-directors"><span class="header-section-number">8.8.2</span> Project 2: Assessment Redesign Workshop for Course Directors</h3>
+<p><strong>What it is.</strong> A half-day faculty development workshop that walks course directors through the tiered assessment framework, gives them a structured process for auditing their current assignments against AI capability, and supports them in redesigning one high-stakes assignment per course to assess process rather than product. The output of the workshop is a concrete revised assignment, not an abstract policy commitment.</p>
+<p><strong>Why this matters more than policy.</strong> Policy says “use AI responsibly.” A redesigned assignment with a prompt log requirement and a structured reflection makes “responsible use” measurable and teaches the skills that matter. Faculty who have redesigned one assignment understand the framework well enough to apply it to others.</p>
+<p><strong>What you need to start.</strong> A facilitator familiar with writing-studies pedagogy and clinical education (or one from each), three to five volunteers from courses that have explicit writing or reasoning components, and a half day in the academic calendar. The Mollick &amp; Mollick SSRN paper <span class="citation" data-cites="Mollick2023-assigning">(<a href="references.html#ref-Mollick2023-assigning" role="doc-biblioref">Mollick and Mollick 2023</a>)</span> and the UCSF tier system provide the conceptual scaffolding.</p>
+<p><strong>Build or buy?</strong> Design locally and run it yourself. National faculty development resources on AI exist (AAMC, AACME), but they are not structured to produce revised assignments. The workshop only produces value if it ends with a concrete artifact.</p>
+<p><strong>What done looks like.</strong> Five course directors have revised one assignment each, the revised assignments have been piloted for one academic cycle, and a follow-up session has been held to share what worked and what needed adjustment. The materials from the workshop — the assessment audit rubric, the redesign process — are available for any course director who wants to use them independently.</p>
 
 
+<div id="refs" class="references csl-bib-body hanging-indent" role="list" style="display: none">
+<div id="ref-ACGME2025-CPR" class="csl-entry" role="listitem">
+Accreditation Council for Graduate Medical Education. 2025. <em>Common Program Requirements: <span>July</span> 2025 Updates</em>. <a href="https://www.acgme.org/what-we-do/accreditation/common-program-requirements/" class="uri">Https://www.acgme.org/what-we-do/accreditation/common-program-requirements/</a>. <a href="https://www.acgme.org/what-we-do/accreditation/common-program-requirements/">https://www.acgme.org/what-we-do/accreditation/common-program-requirements/</a>.
+</div>
+<div id="ref-AMIA2024-competencies" class="csl-entry" role="listitem">
+American Medical Informatics Association. 2024. <em><span>AI</span> Competencies for Health Professionals</em>. <a href="https://amia.org/education-events/ai-competencies">https://amia.org/education-events/ai-competencies</a>.
+</div>
+<div id="ref-AAMC2025-competencies" class="csl-entry" role="listitem">
+Association of American Medical Colleges. 2025. <em><span>AI</span> Competencies Across the Learning Continuum</em>. <a href="https://www.aamc.org/about-us/mission-areas/medical-education/artificial-intelligence-competencies-across-learning-continuum" class="uri">Https://www.aamc.org/about-us/mission-areas/medical-education/artificial-intelligence-competencies-across-learning-continuum</a>. <a href="https://www.aamc.org/about-us/mission-areas/medical-education/artificial-intelligence-competencies-across-learning-continuum">https://www.aamc.org/about-us/mission-areas/medical-education/artificial-intelligence-competencies-across-learning-continuum</a>.
+</div>
+<div id="ref-Dhakal2024-step2" class="csl-entry" role="listitem">
+<span class="nocase">Dhakal, Prithvi et al.</span> 2024. <span>“Evaluation of <span>GPT-4</span> on <span>USMLE</span> Step 2 Clinical Knowledge Questions.”</span> <em>JMIR Medical Education</em>.
+</div>
+<div id="ref-FTC2024-operationai" class="csl-entry" role="listitem">
+Federal Trade Commission. 2024. <em>Operation <span>AI</span> Comply: Continuing Actions Against <span>AI</span>-Related Deceptive Practices</em>. <a href="https://www.ftc.gov/news-events/press-releases/2024/09/ftc-announces-operation-ai-comply">https://www.ftc.gov/news-events/press-releases/2024/09/ftc-announces-operation-ai-comply</a>.
+</div>
+<div id="ref-Garabet2024-step1" class="csl-entry" role="listitem">
+Garabet, Liana, Alexei Kasparov, Marc Minciullo, John Tran, and Medhat Sarhan. 2024. <span>“Performance of <span>GPT-4</span> on <span>USMLE</span> Step 1–Style Questions.”</span> <em>Medical Science Educator</em> 34: 89–97. <a href="https://doi.org/10.1007/s40670-023-01968-3">https://doi.org/10.1007/s40670-023-01968-3</a>.
+</div>
+<div id="ref-James2022-preparing" class="csl-entry" role="listitem">
+James, Casey A, Robert M Wachter, and James O Woolliscroft. 2022. <span>“Preparing Clinicians for a Clinical World Influenced by Artificial Intelligence.”</span> <em>JAMA</em> 327 (14): 1333–34. <a href="https://doi.org/10.1001/jama.2022.3580">https://doi.org/10.1001/jama.2022.3580</a>.
+</div>
+<div id="ref-Kung2023-usmle" class="csl-entry" role="listitem">
+Kung, Tiffany H, Morgan Cheatham, Arielle Medenilla, et al. 2023. <span>“Performance of <span>ChatGPT</span> on <span>USMLE</span>: Potential for <span>AI</span>-Assisted Medical Education Using Large Language Models.”</span> <em>PLOS Digital Health</em> 2 (2): e0000198. <a href="https://doi.org/10.1371/journal.pdig.0000198">https://doi.org/10.1371/journal.pdig.0000198</a>.
+</div>
+<div id="ref-Liang2023-aidetect" class="csl-entry" role="listitem">
+Liang, Weixin, Mert Yuksekgonul, Yining Mao, Eric Wu, and James Zou. 2023. <span>“<span>GPT</span> Detectors Are Biased Against Non-Native <span>English</span> Writers.”</span> <em>Patterns</em> 4 (7): 100779. <a href="https://doi.org/10.1016/j.patter.2023.100779">https://doi.org/10.1016/j.patter.2023.100779</a>.
+</div>
+<div id="ref-McCoy2020-ai-literacy" class="csl-entry" role="listitem">
+McCoy, Liam G, Sulaiman Nagaraj, Farouk Morgado, Vinyas Harish, Sunit Das, and Leo Anthony Celi. 2020. <span>“What Do Medical Students Actually Need to Know about Artificial Intelligence?”</span> <em>Npj Digital Medicine</em> 3 (1): 86. <a href="https://doi.org/10.1038/s41746-020-0294-7">https://doi.org/10.1038/s41746-020-0294-7</a>.
+</div>
+<div id="ref-Mollick2023-assigning" class="csl-entry" role="listitem">
+Mollick, Ethan R, and Lilach Mollick. 2023. <em>Assigning <span>AI</span>: Seven Approaches for Students, with Prompts</em>. <span>SSRN</span>. <a href="https://ssrn.com/abstract=4475995">https://ssrn.com/abstract=4475995</a>.
+</div>
+<div id="ref-Yaneva2024-clinreasoning" class="csl-entry" role="listitem">
+<span class="nocase">Yaneva, Victoria et al.</span> 2024. <span>“Evaluating <span>GPT-4</span> on <span>USMLE</span> Step 2 <span>CK</span>: Implications for Clinical Reasoning Assessment.”</span> <em>Academic Medicine</em>.
+</div>
+</div>
+</section>
 </section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
-window.document.addEventListener("DOMContentLoaded", function (event) {
-  const toggleBodyColorMode = (bsSheetEl) => {
-    const mode = bsSheetEl.getAttribute("data-mode");
-    const bodyEl = window.document.querySelector("body");
-    if (mode === "dark") {
-      bodyEl.classList.add("quarto-dark");
-      bodyEl.classList.remove("quarto-light");
-    } else {
-      bodyEl.classList.add("quarto-light");
-      bodyEl.classList.remove("quarto-dark");
-    }
-  }
-  const toggleBodyColorPrimary = () => {
-    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
-    if (bsSheetEl) {
-      toggleBodyColorMode(bsSheetEl);
-    }
-  }
-  toggleBodyColorPrimary();  
-  const icon = "";
-  const anchorJS = new window.AnchorJS();
-  anchorJS.options = {
-    placement: 'right',
-    icon: icon
-  };
-  anchorJS.add('.anchored');
-  const isCodeAnnotation = (el) => {
-    for (const clz of el.classList) {
-      if (clz.startsWith('code-annotation-')) {                     
-        return true;
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
       }
+      return false;
     }
-    return false;
-  }
-  const onCopySuccess = function(e) {
-    // button target
-    const button = e.trigger;
-    // don't keep focus
-    button.blur();
-    // flash "checked"
-    button.classList.add('code-copy-button-checked');
-    var currentTitle = button.getAttribute("title");
-    button.setAttribute("title", "Copied!");
-    let tooltip;
-    if (window.bootstrap) {
-      button.setAttribute("data-bs-toggle", "tooltip");
-      button.setAttribute("data-bs-placement", "left");
-      button.setAttribute("data-bs-title", "Copied!");
-      tooltip = new bootstrap.Tooltip(button, 
-        { trigger: "manual", 
-          customClass: "code-copy-button-tooltip",
-          offset: [0, -8]});
-      tooltip.show();    
-    }
-    setTimeout(function() {
-      if (tooltip) {
-        tooltip.hide();
-        button.removeAttribute("data-bs-title");
-        button.removeAttribute("data-bs-toggle");
-        button.removeAttribute("data-bs-placement");
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
       }
-      button.setAttribute("title", currentTitle);
-      button.classList.remove('code-copy-button-checked');
-    }, 1000);
-    // clear code selection
-    e.clearSelection();
-  }
-  const getTextToCopy = function(trigger) {
-      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
       for (const childEl of codeEl.children) {
         if (isCodeAnnotation(childEl)) {
           childEl.remove();
         }
       }
       return codeEl.innerText;
-  }
-  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
-    text: getTextToCopy
-  });
-  clipboard.on('success', onCopySuccess);
-  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
-    // For code content inside modals, clipBoardJS needs to be initialized with a container option
-    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
-    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
-      text: getTextToCopy,
-      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
     });
-    clipboardModal.on('success', onCopySuccess);
-  }
-    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
-    var mailtoRegex = new RegExp(/^mailto:/);
-      var filterRegex = new RegExp("https:\/\/seandavi\.github\.io\/campus-llm-kb\/");
-    var isInternal = (href) => {
-        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
     }
-    // Inspect non-navigation links and adorn them if external
- 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
-    for (var i=0; i<links.length; i++) {
-      const link = links[i];
-      if (!isInternal(link.href)) {
-        // undo the damage that might have been done by quarto-nav.js in the case of
-        // links that we want to consider external
-        if (link.dataset.originalHref !== undefined) {
-          link.href = link.dataset.originalHref;
-        }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/seandavi\.github\.io\/campus-llm-kb\/");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }
-    }
-  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
-    const config = {
-      allowHTML: true,
-      maxWidth: 500,
-      delay: 100,
-      arrow: false,
-      appendTo: function(el) {
-          return el.parentElement;
-      },
-      interactive: true,
-      interactiveBorder: 10,
-      theme: 'quarto',
-      placement: 'bottom-start',
-    };
-    if (contentFn) {
-      config.content = contentFn;
-    }
-    if (onTriggerFn) {
-      config.onTrigger = onTriggerFn;
-    }
-    if (onUntriggerFn) {
-      config.onUntrigger = onUntriggerFn;
-    }
-    window.tippy(el, config); 
-  }
-  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
-  for (var i=0; i<noterefs.length; i++) {
-    const ref = noterefs[i];
-    tippyHover(ref, function() {
-      // use id or data attribute instead here
-      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
-      try { href = new URL(href).hash; } catch {}
-      const id = href.replace(/^#\/?/, "");
-      const note = window.document.getElementById(id);
-      if (note) {
-        return note.innerHTML;
-      } else {
-        return "";
-      }
-    });
-  }
-  const xrefs = window.document.querySelectorAll('a.quarto-xref');
-  const processXRef = (id, note) => {
-    // Strip column container classes
-    const stripColumnClz = (el) => {
-      el.classList.remove("page-full", "page-columns");
-      if (el.children) {
-        for (const child of el.children) {
-          stripColumnClz(child);
-        }
-      }
-    }
-    stripColumnClz(note)
-    if (id === null || id.startsWith('sec-')) {
-      // Special case sections, only their first couple elements
-      const container = document.createElement("div");
-      if (note.children && note.children.length > 2) {
-        container.appendChild(note.children[0].cloneNode(true));
-        for (let i = 1; i < note.children.length; i++) {
-          const child = note.children[i];
-          if (child.tagName === "P" && child.innerText === "") {
-            continue;
-          } else {
-            container.appendChild(child.cloneNode(true));
-            break;
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
           }
         }
-        if (window.Quarto?.typesetMath) {
-          window.Quarto.typesetMath(container);
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
         }
-        return container.innerHTML
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
       } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
         if (window.Quarto?.typesetMath) {
           window.Quarto.typesetMath(note);
         }
-        return note.innerHTML;
-      }
-    } else {
-      // Remove any anchor links if they are present
-      const anchorLink = note.querySelector('a.anchorjs-link');
-      if (anchorLink) {
-        anchorLink.remove();
-      }
-      if (window.Quarto?.typesetMath) {
-        window.Quarto.typesetMath(note);
-      }
-      // TODO in 1.5, we should make sure this works without a callout special case
-      if (note.classList.contains("callout")) {
-        return note.outerHTML;
-      } else {
-        return note.innerHTML;
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
       }
     }
-  }
-  for (var i=0; i<xrefs.length; i++) {
-    const xref = xrefs[i];
-    tippyHover(xref, undefined, function(instance) {
-      instance.disable();
-      let url = xref.getAttribute('href');
-      let hash = undefined; 
-      if (url.startsWith('#')) {
-        hash = url;
-      } else {
-        try { hash = new URL(url).hash; } catch {}
-      }
-      if (hash) {
-        const id = hash.replace(/^#\/?/, "");
-        const note = window.document.getElementById(id);
-        if (note !== null) {
-          try {
-            const html = processXRef(id, note.cloneNode(true));
-            instance.setContent(html);
-          } finally {
-            instance.enable();
-            instance.show();
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
           }
         } else {
-          // See if we can fetch this
-          fetch(url.split('#')[0])
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
           .then(res => res.text())
           .then(html => {
             const parser = new DOMParser();
             const htmlDoc = parser.parseFromString(html, "text/html");
-            const note = htmlDoc.getElementById(id);
+            const note = htmlDoc.querySelector('main.content');
             if (note !== null) {
-              const html = processXRef(id, note);
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
               instance.setContent(html);
             } 
           }).finally(() => {
@@ -652,189 +937,165 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             instance.show();
           });
         }
-      } else {
-        // See if we can fetch a full url (with no hash to target)
-        // This is a special case and we should probably do some content thinning / targeting
-        fetch(url)
-        .then(res => res.text())
-        .then(html => {
-          const parser = new DOMParser();
-          const htmlDoc = parser.parseFromString(html, "text/html");
-          const note = htmlDoc.querySelector('main.content');
-          if (note !== null) {
-            // This should only happen for chapter cross references
-            // (since there is no id in the URL)
-            // remove the first header
-            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
-              note.children[0].remove();
-            }
-            const html = processXRef(null, note);
-            instance.setContent(html);
-          } 
-        }).finally(() => {
-          instance.enable();
-          instance.show();
-        });
-      }
-    }, function(instance) {
-    });
-  }
-      let selectedAnnoteEl;
-      const selectorForAnnotation = ( cell, annotation) => {
-        let cellAttr = 'data-code-cell="' + cell + '"';
-        let lineAttr = 'data-code-annotation="' +  annotation + '"';
-        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
-        return selector;
-      }
-      const selectCodeLines = (annoteEl) => {
-        const doc = window.document;
-        const targetCell = annoteEl.getAttribute("data-target-cell");
-        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
-        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
-        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
-        const lineIds = lines.map((line) => {
-          return targetCell + "-" + line;
-        })
-        let top = null;
-        let height = null;
-        let parent = null;
-        if (lineIds.length > 0) {
-            //compute the position of the single el (top and bottom and make a div)
-            const el = window.document.getElementById(lineIds[0]);
-            top = el.offsetTop;
-            height = el.offsetHeight;
-            parent = el.parentElement.parentElement;
-          if (lineIds.length > 1) {
-            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
-            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
-            height = bottom - top;
-          }
-          if (top !== null && height !== null && parent !== null) {
-            // cook up a div (if necessary) and position it 
-            let div = window.document.getElementById("code-annotation-line-highlight");
-            if (div === null) {
-              div = window.document.createElement("div");
-              div.setAttribute("id", "code-annotation-line-highlight");
-              div.style.position = 'absolute';
-              parent.appendChild(div);
-            }
-            div.style.top = top - 2 + "px";
-            div.style.height = height + 4 + "px";
-            div.style.left = 0;
-            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
-            if (gutterDiv === null) {
-              gutterDiv = window.document.createElement("div");
-              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
-              gutterDiv.style.position = 'absolute';
-              const codeCell = window.document.getElementById(targetCell);
-              const gutter = codeCell.querySelector('.code-annotation-gutter');
-              gutter.appendChild(gutterDiv);
-            }
-            gutterDiv.style.top = top - 2 + "px";
-            gutterDiv.style.height = height + 4 + "px";
-          }
-          selectedAnnoteEl = annoteEl;
-        }
-      };
-      const unselectCodeLines = () => {
-        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
-        elementsIds.forEach((elId) => {
-          const div = window.document.getElementById(elId);
-          if (div) {
-            div.remove();
-          }
-        });
-        selectedAnnoteEl = undefined;
-      };
-        // Handle positioning of the toggle
-    window.addEventListener(
-      "resize",
-      throttle(() => {
-        elRect = undefined;
-        if (selectedAnnoteEl) {
-          selectCodeLines(selectedAnnoteEl);
-        }
-      }, 10)
-    );
-    function throttle(fn, ms) {
-    let throttle = false;
-    let timer;
-      return (...args) => {
-        if(!throttle) { // first call gets through
-            fn.apply(this, args);
-            throttle = true;
-        } else { // all the others get throttled
-            if(timer) clearTimeout(timer); // cancel #2
-            timer = setTimeout(() => {
-              fn.apply(this, args);
-              timer = throttle = false;
-            }, ms);
-        }
-      };
-    }
-      // Attach click handler to the DT
-      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
-      for (const annoteDlNode of annoteDls) {
-        annoteDlNode.addEventListener('click', (event) => {
-          const clickedEl = event.target;
-          if (clickedEl !== selectedAnnoteEl) {
-            unselectCodeLines();
-            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
-            if (activeEl) {
-              activeEl.classList.remove('code-annotation-active');
-            }
-            selectCodeLines(clickedEl);
-            clickedEl.classList.add('code-annotation-active');
-          } else {
-            // Unselect the line
-            unselectCodeLines();
-            clickedEl.classList.remove('code-annotation-active');
-          }
-        });
-      }
-  const findCites = (el) => {
-    const parentEl = el.parentElement;
-    if (parentEl) {
-      const cites = parentEl.dataset.cites;
-      if (cites) {
-        return {
-          el,
-          cites: cites.split(' ')
-        };
-      } else {
-        return findCites(el.parentElement)
-      }
-    } else {
-      return undefined;
-    }
-  };
-  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
-  for (var i=0; i<bibliorefs.length; i++) {
-    const ref = bibliorefs[i];
-    const citeInfo = findCites(ref);
-    if (citeInfo) {
-      tippyHover(citeInfo.el, function() {
-        var popup = window.document.createElement('div');
-        citeInfo.cites.forEach(function(cite) {
-          var citeDiv = window.document.createElement('div');
-          citeDiv.classList.add('hanging-indent');
-          citeDiv.classList.add('csl-entry');
-          var biblioDiv = window.document.getElementById('ref-' + cite);
-          if (biblioDiv) {
-            citeDiv.innerHTML = biblioDiv.innerHTML;
-          }
-          popup.appendChild(citeDiv);
-        });
-        return popup.innerHTML;
+      }, function(instance) {
       });
     }
-  }
-});
-</script>
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./resources_research.html" class="pagination-link" aria-label="Research">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Research</span></span>
+      <a href="./resources_research.html" class="pagination-link" aria-label="Research Domain">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Research Domain</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">

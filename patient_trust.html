@@ -1,0 +1,1011 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.9.37">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="dcterms.date" content="2026-04-26">
+
+<title>12&nbsp; Patient and Community Trust – Implementing AI in Academic Medicine</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./professional_wellness.html" rel="next">
+<link href="./agentic_safety.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-7f8f88aac4f3542376d5c11b86a4c14d.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-36bf55b16c7cb4b1420f41495cb5446a.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<script src="site_libs/quarto-diagram/mermaid.min.js"></script>
+<script src="site_libs/quarto-diagram/mermaid-init.js"></script>
+<link href="site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
+
+
+</head>
+
+<body class="nav-sidebar floating nav-fixed quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="./index.html">
+    <span class="navbar-title">Implementing AI in Academic Medicine</span>
+    </a>
+  </div>
+        <div class="quarto-navbar-tools tools-wide tools-end">
+    <a href="https://github.com/seandavi/campus-llm-kb/" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
+    <div class="dropdown">
+      <a href="" title="Download" id="quarto-navigation-tool-dropdown-0" class="quarto-navigation-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false" role="link" aria-label="Download"><i class="bi bi-download"></i></a>
+      <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="quarto-navigation-tool-dropdown-0">
+          <li>
+            <a class="dropdown-item quarto-navbar-tools-item" href="./Implementing-AI-in-Academic-Medicine.pdf">
+              <i class="bi bi-file-pdf pe-1"></i>
+            Download PDF
+            </a>
+          </li>
+          <li>
+            <a class="dropdown-item quarto-navbar-tools-item" href="./Implementing-AI-in-Academic-Medicine.epub">
+              <i class="bi bi-journal pe-1"></i>
+            Download ePub
+            </a>
+          </li>
+      </ul>
+    </div>
+    <div class="dropdown">
+      <a href="" title="Share" id="quarto-navigation-tool-dropdown-1" class="quarto-navigation-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false" role="link" aria-label="Share"><i class="bi bi-share"></i></a>
+      <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="quarto-navigation-tool-dropdown-1">
+          <li>
+            <a class="dropdown-item quarto-navbar-tools-item" href="https://twitter.com/intent/tweet?url=|url|">
+              <i class="bi bi-twitter pe-1"></i>
+            Twitter
+            </a>
+          </li>
+          <li>
+            <a class="dropdown-item quarto-navbar-tools-item" href="https://www.facebook.com/sharer/sharer.php?u=|url|">
+              <i class="bi bi-facebook pe-1"></i>
+            Facebook
+            </a>
+          </li>
+          <li>
+            <a class="dropdown-item quarto-navbar-tools-item" href="https://www.linkedin.com/sharing/share-offsite/?url=|url|">
+              <i class="bi bi-linkedin pe-1"></i>
+            LinkedIn
+            </a>
+          </li>
+      </ul>
+    </div>
+</div>
+          <div id="quarto-search" class="" title="Search"></div>
+      </div> <!-- /container-fluid -->
+    </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./agentic_safety.html">Agentic AI in Practice</a></li><li class="breadcrumb-item"><a href="./patient_trust.html"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Patient and Community Trust</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Preface</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./overview.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Overview</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./values.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Values and Principles</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+ <span class="menu-text">Implementation</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./framework.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">The Framework</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./implementation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Domain Implementation Guide</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./barriers.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Barriers and How to Address Them</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="./domainresource.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Domain Resources</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./resources_clinical.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Clinical Domain</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./resources_research.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Research Domain</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./resources_education.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Education Domain</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./resources_business.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Business Operations</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./regulatory_landscape.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Regulatory and Policy Landscape</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
+ <span class="menu-text">Agentic AI in Practice</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./agentic_safety.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Agentic Safety and Guardrails</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./patient_trust.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Patient and Community Trust</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./professional_wellness.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Professional Wellness and Reducing Cognitive Burden</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true">
+ <span class="menu-text">Workstream Resources</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./infrastructure.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">IT Infrastructure and Security</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./workforce.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Training and Workforce Development</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ethics.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Ethics, Equity, and Institutional Accountability</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./data.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Data Access and Governance</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./pm_and_support.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Project Management and AI Portfolio Governance</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true">
+ <span class="menu-text">Appendices</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./appendices.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">AI principles proposed by select organizations</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./bill_of_rights.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">B</span>&nbsp; <span class="chapter-title">OSTP Blueprint for an AI Bill of Rights</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./HHS.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">C</span>&nbsp; <span class="chapter-title">ONC HTI-1: Algorithm Transparency and Interoperability</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./appendix_workflow.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">D</span>&nbsp; <span class="chapter-title">How This Book Was Written: A Multi-Model AI Authorship Workflow</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./references.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">References</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#the-empirical-trust-landscape" id="toc-the-empirical-trust-landscape" class="nav-link active" data-scroll-target="#the-empirical-trust-landscape"><span class="header-section-number">12.1</span> The Empirical Trust Landscape</a></li>
+  <li><a href="#the-historical-roots-of-differential-trust" id="toc-the-historical-roots-of-differential-trust" class="nav-link" data-scroll-target="#the-historical-roots-of-differential-trust"><span class="header-section-number">12.2</span> The Historical Roots of Differential Trust</a></li>
+  <li><a href="#meaningful-disclosure-vs.-boilerplate" id="toc-meaningful-disclosure-vs.-boilerplate" class="nav-link" data-scroll-target="#meaningful-disclosure-vs.-boilerplate"><span class="header-section-number">12.3</span> Meaningful Disclosure vs.&nbsp;Boilerplate</a></li>
+  <li><a href="#informed-consent-and-its-gaps" id="toc-informed-consent-and-its-gaps" class="nav-link" data-scroll-target="#informed-consent-and-its-gaps"><span class="header-section-number">12.4</span> Informed Consent and Its Gaps</a></li>
+  <li><a href="#patient-ai-advisory-councils" id="toc-patient-ai-advisory-councils" class="nav-link" data-scroll-target="#patient-ai-advisory-councils"><span class="header-section-number">12.5</span> Patient AI Advisory Councils</a></li>
+  <li><a href="#the-regulatory-landscape-of-disclosure" id="toc-the-regulatory-landscape-of-disclosure" class="nav-link" data-scroll-target="#the-regulatory-landscape-of-disclosure"><span class="header-section-number">12.6</span> The Regulatory Landscape of Disclosure</a></li>
+  <li><a href="#trust-recovery-after-adverse-ai-events" id="toc-trust-recovery-after-adverse-ai-events" class="nav-link" data-scroll-target="#trust-recovery-after-adverse-ai-events"><span class="header-section-number">12.7</span> Trust Recovery After Adverse AI Events</a></li>
+  <li><a href="#sec-trust-start" id="toc-sec-trust-start" class="nav-link" data-scroll-target="#sec-trust-start"><span class="header-section-number">12.8</span> Where to Start</a>
+  <ul class="collapse">
+  <li><a href="#starter-project-1-patient-ai-disclosure-audit-and-language-standardization" id="toc-starter-project-1-patient-ai-disclosure-audit-and-language-standardization" class="nav-link" data-scroll-target="#starter-project-1-patient-ai-disclosure-audit-and-language-standardization"><span class="header-section-number">12.8.1</span> Starter Project 1: Patient AI Disclosure Audit and Language Standardization</a></li>
+  <li><a href="#starter-project-2-establish-a-patient-ai-advisory-council" id="toc-starter-project-2-establish-a-patient-ai-advisory-council" class="nav-link" data-scroll-target="#starter-project-2-establish-a-patient-ai-advisory-council"><span class="header-section-number">12.8.2</span> Starter Project 2: Establish a Patient AI Advisory Council</a></li>
+  </ul></li>
+  </ul>
+<div class="toc-actions"><ul><li><a href="https://github.com/seandavi/campus-llm-kb/edit/main/patient_trust.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li></ul></div></nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./agentic_safety.html">Agentic AI in Practice</a></li><li class="breadcrumb-item"><a href="./patient_trust.html"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Patient and Community Trust</span></a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title"><span id="sec-patient-trust" class="quarto-section-identifier"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Patient and Community Trust</span></span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">April 26, 2026</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p>There is a tempting shorthand for the case for transparency in clinical AI: institutions disclose how AI is used in patient care because they are required to, or because it reduces liability exposure. Both motivations are real. Neither is sufficient to explain why transparency actually matters for the safety and effectiveness of care.</p>
+<p>The more important reason is that patient trust is a clinical variable. A patient who distrusts an AI tool used in their care will engage with it differently than one who understands and accepts it. They may withhold information, seek care elsewhere, or disregard recommendations they believe were generated by a system optimized for cost reduction rather than their welfare. Trust does not just affect how patients feel about their care; it affects whether the care is effective. An AI system that produces accurate outputs but is deployed in a population that distrusts it will produce worse population-level outcomes than a less accurate system that has earned confidence.</p>
+<p>This chapter addresses the social license for AI in healthcare — the degree to which patients and communities actually believe that an AMC is deploying AI on their behalf. It is distinct from the regulatory compliance chapter, which addresses what institutions are required to do, and from the agentic safety chapter (<a href="agentic_safety.html" class="quarto-xref"><span>Chapter 11</span></a>), which addresses how autonomous systems should be governed. Social license addresses a prior question: do the people served by this institution believe it should be deploying AI at all, and in what ways? Institutions that skip this question and proceed directly to deployment governance are building on ground they have not tested.</p>
+<section id="the-empirical-trust-landscape" class="level2" data-number="12.1">
+<h2 data-number="12.1" class="anchored" data-anchor-id="the-empirical-trust-landscape"><span class="header-section-number">12.1</span> The Empirical Trust Landscape</h2>
+<p>The consistent finding across surveys of patient attitudes toward AI in healthcare is that trust is lower than many technology optimists assume, and more variable across demographic groups than most institutional communications acknowledge.</p>
+<p><a href="https://www.pewresearch.org">Pew Research</a> surveys on AI in healthcare have found that most U.S. adults are uncomfortable with their provider relying on AI for their medical care, and that the large majority would prefer a human provider when it comes to accuracy-sensitive decisions <span class="citation" data-cites="Pew2023-aihealth">(<a href="references.html#ref-Pew2023-aihealth" role="doc-biblioref">Pew Research Center 2023</a>)</span>. The discomfort is not evenly distributed: younger adults, higher-income adults, and those with more experience using digital health tools consistently report more comfort with AI-assisted care than older adults, lower-income adults, and those with less digital access. Insurance status, chronic condition burden, and prior negative experiences with the health system all independently predict lower trust in AI.</p>
+<p>The type of AI application matters as much as the population. Patients who are skeptical of AI-assisted diagnosis are often more accepting of AI in administrative functions — scheduling, prescription refill processing, billing. The concern is concentrated in contexts where the patient perceives the AI as making clinical judgments that might otherwise be made by a physician with whom they have a relationship. Ambient documentation, in which an AI listens during a clinical encounter, occupies a particularly sensitive position: surveys consistently find that patients who receive an explanation of what the ambient system does and how the data is used are substantially more accepting than those who are not told.</p>
+<p>There is also a gap between what patients know and what they prefer. Many patients do not know that AI tools are already embedded in their care — in the risk scores that determine their appointment priority, in the routing of their portal messages, in the sepsis alerts that flag their deterioration. Studies that ask patients how they would feel about AI use in care that they already receive without knowing it frequently find that awareness increases concern, at least initially. Institutions that interpret patient acceptance of current care as patient acceptance of AI in care are drawing an inference that the data does not support.</p>
+</section>
+<section id="the-historical-roots-of-differential-trust" class="level2" data-number="12.2">
+<h2 data-number="12.2" class="anchored" data-anchor-id="the-historical-roots-of-differential-trust"><span class="header-section-number">12.2</span> The Historical Roots of Differential Trust</h2>
+<p>Understanding why trust in healthcare AI is lower in Black, Latino, and Indigenous communities than in white communities requires engaging with history rather than treating differential trust as an artifact to be corrected through better communication. The medical research system has a documented record of using marginalized communities as subjects without genuine consent, without equitable distribution of benefits, and without recourse when harm resulted. The legacy of the Tuskegee syphilis study — in which Black men with syphilis were observed without treatment for decades after effective treatment became available — produced measurable multi-generational effects on participation in medical research and on trust in medical institutions in Black communities that persist decades later.</p>
+<p>These are not historical curiosities that have been corrected by better ethical oversight. Contemporary algorithmic systems in healthcare have replicated structural inequities in ways that researchers have documented repeatedly. A widely cited study found that a commercial algorithm used to allocate healthcare resources to high-need patients systematically underestimated the needs of Black patients, because the algorithm used healthcare utilization as a proxy for health need — and Black patients with equivalent illness burden utilized less care, due to structural barriers in access. The algorithm was not explicitly programmed to be discriminatory; it was trained on data that encoded existing inequities, and it reproduced them at scale.</p>
+<p>For AMC leaders deploying clinical AI, the practical implication is that the communities with the most to gain from AI-enabled improvements in care access and quality are also the communities with the best-documented reasons to distrust the institutions deploying it. Community engagement for AI governance in these communities is not a communication exercise. It is not “informing” the community about a decision that has already been made. It is bringing the community into the governance process before deployment decisions are finalized — which means starting earlier, accepting that community input may change deployment decisions, and being transparent about that possibility from the outset.</p>
+</section>
+<section id="meaningful-disclosure-vs.-boilerplate" class="level2" data-number="12.3">
+<h2 data-number="12.3" class="anchored" data-anchor-id="meaningful-disclosure-vs.-boilerplate"><span class="header-section-number">12.3</span> Meaningful Disclosure vs.&nbsp;Boilerplate</h2>
+<p>The regulatory minimum for AI disclosure — satisfying California AB 3030 <span class="citation" data-cites="CalAB3030-2024">(<a href="references.html#ref-CalAB3030-2024" role="doc-biblioref"><span>AB 3030</span> 2024</a>)</span>, for example — requires that patients be told when AI has been used to generate health communications. The regulatory minimum and the trust-building minimum are not the same thing.</p>
+<p>Boilerplate disclosure — “This message was generated using AI technology” — satisfies the letter of the disclosure requirement. It does not tell the patient which AI system was used, whether a clinician reviewed the output, what the system is and is not capable of, or what the patient can do if they have concerns. Research on patient responses to AI disclosure consistently finds that boilerplate language increases concern without providing the context needed to resolve it. Patients who receive boilerplate disclosure are not better informed than those who received no disclosure; they are more anxious without a framework for understanding what their anxiety is about.</p>
+<p>Meaningful disclosure has three components. It identifies what the AI did specifically (drafted this message, analyzed this image, flagged this result). It clarifies the human role (a physician reviewed this draft before sending; a radiologist reviewed the AI findings). And it provides an actionable recourse (if you have questions about how this was produced, you can ask your care team). None of this requires technical language or a long disclosure form. The most effective disclosure language found in pilot programs is specific and brief: “Dr.&nbsp;[Name] asked our AI system to draft this response based on your message and your recent visit. Dr.&nbsp;[Name] reviewed and approved it before sending.”</p>
+<div class="cell" data-layout-align="default">
+<div class="cell-output-display">
+<div id="fig-trust-engagement" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-trust-engagement-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div>
+<pre class="mermaid mermaid-js" data-label="fig-trust-engagement">flowchart TB
+    A([Identify\nAffected Communities]) --&gt; B[Early Deliberative\nDialogue Pre-Build]
+    B --&gt; C[Co-Design\nDisclosure Language]
+    C --&gt; D[Participatory\nRed-Teaming]
+    D --&gt; E{Does community\naccept deployment?}
+    E --&gt;|Yes, with conditions| F[Pilot with Community\nFeedback Loop]
+    E --&gt;|No| G[Redesign or\nDefer Deployment]
+    G --&gt; B
+    F --&gt; H[Publish\nOutcomes Report]
+    H --&gt; I([Ongoing\nAdvisory Relationship])
+</pre>
+</div>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-trust-engagement-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;12.1: Community engagement workflow for clinical AI deployment. The critical design principle is that community input occurs before deployment decisions are finalized — not after.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>The workflow in <a href="#fig-trust-engagement" class="quarto-xref">Figure&nbsp;<span>12.1</span></a> reflects a principle that is easy to state and difficult to practice: community engagement for AI governance is most valuable before deployment decisions are made, not after. An institution that presents a completed AI deployment to a community advisory group and asks for feedback is not practicing participatory governance; it is practicing consultation theater. The community members who participate in that process will know the difference, and the trust consequences will follow.</p>
+</section>
+<section id="informed-consent-and-its-gaps" class="level2" data-number="12.4">
+<h2 data-number="12.4" class="anchored" data-anchor-id="informed-consent-and-its-gaps"><span class="header-section-number">12.4</span> Informed Consent and Its Gaps</h2>
+<p>Existing patient consent frameworks in most AMCs were designed for interventions that are visible, discrete, and time-bounded: a surgery, a medication, an imaging procedure. Clinical AI tools do not fit this model. A predictive risk score that runs continuously in the background of the EHR, influencing which patients get proactive outreach and which do not, is not an intervention in the usual sense. There is no natural moment at which a patient is informed and asked to consent, because the tool is not doing anything to the patient directly at a specific moment. It is shaping institutional decisions about the patient in ways the patient may never observe.</p>
+<p>Ambient documentation is the most visible gap. A patient who arrives for a clinic visit where an ambient scribe is running is being recorded and having their conversation synthesized by an AI system. They may or may not know this before the encounter begins. California AB 3030 requires disclosure in written communications; it does not address the consent architecture for the encounter itself. The institutions that have managed this most effectively have adopted a verbal consent practice — the clinician explains the ambient system at the start of the encounter, tells the patient they can ask for it to be turned off, and documents the consent in the visit record. This is not complicated; it is a thirty-second conversation that most patients appreciate.</p>
+<p>Predictive risk scoring presents a different consent challenge. The patient does not know whether they scored high or low on the readmission risk model, or whether that score influenced which patients received a follow-up call and which did not. Whether patients should be told their AI risk scores is a question that different institutions have answered differently, and the ethics literature does not offer a clear consensus. What the literature does support is that patients who are told their scores and given an explanation of what the score means and what follows from it are more accepting of AI-influenced care than those who discover after the fact that such scoring was occurring <span class="citation" data-cites="Jones2023-trust">(<a href="references.html#ref-Jones2023-trust" role="doc-biblioref">Jones et al. 2023</a>)</span>.</p>
+</section>
+<section id="patient-ai-advisory-councils" class="level2" data-number="12.5">
+<h2 data-number="12.5" class="anchored" data-anchor-id="patient-ai-advisory-councils"><span class="header-section-number">12.5</span> Patient AI Advisory Councils</h2>
+<p>A small number of health systems have established Patient AI Advisory Councils — governance bodies distinct from standard patient advisory boards, with a specific mandate to advise on AI tool selection, deployment, and oversight. The Vanderbilt University Medical Center’s ADVANCE Center created an AI Patient and Family Advisory Group that participates in “red-teaming” AI tools during the ideation phase — reviewing tools for potential biases and unintended consequences before they reach the pilot stage. The <a href="https://www.dimesociety.org">Digital Medicine Society</a> sets engagement with patients as active partners on AI governance bodies as the gold standard for AI program maturity.</p>
+<p>The structural distinction between a Patient AI Advisory Council and a standard patient advisory board matters. Standard advisory boards typically advise on service delivery and patient experience; their members are selected to represent satisfied patients. A Patient AI Advisory Council needs members who can engage with questions of algorithmic fairness, data use, and automated decision-making — which means it should deliberately recruit from communities with high stakes in those questions, including communities with documented reasons to distrust institutional AI. It should have access to technical staff who can explain how specific tools work, and it should have a defined relationship to the AI Steering Committee, including clarity about which decisions it is consulted on versus which decisions it has authority over.</p>
+<div id="tbl-patient-advisory-council" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-patient-advisory-council-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;12.1: Structural comparison of a standard patient advisory board and a Patient AI Advisory Council. The key distinction is that the AI Advisory Council engages before deployment decisions are finalized.
+</figcaption>
+<div aria-describedby="tbl-patient-advisory-council-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<table class="caption-top table">
+<colgroup>
+<col style="width: 14%">
+<col style="width: 45%">
+<col style="width: 40%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Dimension</th>
+<th>Standard Patient Advisory Board</th>
+<th>Patient AI Advisory Council</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Membership basis</td>
+<td>Satisfied patient representatives</td>
+<td>Diverse community members; includes historically marginalized voices</td>
+</tr>
+<tr class="even">
+<td>Subject matter</td>
+<td>Service delivery, patient experience</td>
+<td>AI tool selection, deployment, bias audits, disclosure language</td>
+</tr>
+<tr class="odd">
+<td>Phase of engagement</td>
+<td>Post-deployment feedback</td>
+<td>Pre-deployment ideation and red-teaming</td>
+</tr>
+<tr class="even">
+<td>Relationship to AISC</td>
+<td>Informational only</td>
+<td>Formal consultative role; documented input on pilot approvals</td>
+</tr>
+<tr class="odd">
+<td>Authority</td>
+<td>Advisory</td>
+<td>Consultative; specific veto scope may be defined for high-risk pilots</td>
+</tr>
+<tr class="even">
+<td>Meeting frequency</td>
+<td>Quarterly</td>
+<td>Monthly (active deployment periods); quarterly (steady state)</td>
+</tr>
+</tbody>
+</table>
+</div>
+</figure>
+</div>
+</section>
+<section id="the-regulatory-landscape-of-disclosure" class="level2" data-number="12.6">
+<h2 data-number="12.6" class="anchored" data-anchor-id="the-regulatory-landscape-of-disclosure"><span class="header-section-number">12.6</span> The Regulatory Landscape of Disclosure</h2>
+<p>The legislative landscape for AI disclosure in healthcare is still forming, but two state laws enacted in 2024 are now in effect and should be treated as the leading edge of a national trend.</p>
+<p>California AB 3030, effective January 2025, requires healthcare providers to include explicit disclosure when AI has been used to generate patient communications, unless a licensed human reviews the content first <span class="citation" data-cites="CalAB3030-2024">(<a href="references.html#ref-CalAB3030-2024" role="doc-biblioref"><span>AB 3030</span> 2024</a>)</span>. The law is narrow in scope — it covers written communications, not real-time verbal interactions — but it is the most specific AI disclosure mandate currently in effect at the state level, and AMCs with any California patient population must comply. Legal teams at national AMCs should treat the California standard as the floor for their disclosure practices regardless of the states in which they primarily operate.</p>
+<p>Colorado Senate Bill 24-205, effective June 2026, goes further: it requires that any entity using AI in a “consequential decision” about health care provide a “pre-decision notice” that explains the purpose of the AI, the nature of the consequential decision, and how to appeal or opt out <span class="citation" data-cites="ColoradoSB24205">(<a href="references.html#ref-ColoradoSB24205" role="doc-biblioref"><span>SB 24-205</span> 2024</a>)</span>. The Colorado law covers a broader range of AI applications than California’s, including predictive scoring and automated triage, and it places the disclosure obligation on the institution using the AI, not just on the party that communicates the output to the patient.</p>
+<p>The FTC’s Operation AI Comply enforcement action in 2024 targeted companies making deceptive claims about AI capabilities in healthcare contexts — claiming human-level accuracy for tools that had not been validated, implying physician oversight for tools that had none <span class="citation" data-cites="FTC2024-operationai">(<a href="references.html#ref-FTC2024-operationai" role="doc-biblioref">Federal Trade Commission 2024</a>)</span>. The enforcement record makes clear that the FTC treats healthcare AI interfaces as covered by existing consumer protection law, and that institutions should expect regulatory attention to the gap between what they claim about AI tools and what the tools actually do.</p>
+</section>
+<section id="trust-recovery-after-adverse-ai-events" class="level2" data-number="12.7">
+<h2 data-number="12.7" class="anchored" data-anchor-id="trust-recovery-after-adverse-ai-events"><span class="header-section-number">12.7</span> Trust Recovery After Adverse AI Events</h2>
+<p>An AI tool will eventually produce an outcome that harms or nearly harms a patient at any AMC that deploys AI at scale. How the institution communicates about that event — to the patient, to the clinical staff involved, and to the public — will matter more for long-term trust than whether the event occurred at all. Institutions that respond to adverse AI events with transparency and accountability recover trust more effectively than those that minimize or deflect <span class="citation" data-cites="Jones2023-trust">(<a href="references.html#ref-Jones2023-trust" role="doc-biblioref">Jones et al. 2023</a>)</span>.</p>
+<p>The trust recovery research in other high-stakes domains — aviation, nuclear power, food safety — is consistent on two principles. First, prompt and specific disclosure of what happened and what is being done in response is more effective than delayed disclosure, even when the complete picture is not yet known. “We are investigating an error in our AI system that may have affected your care, and we will contact you with our findings by [date]” is more trust-preserving than silence followed by a detailed disclosure weeks later. Second, apology without accountability — “we are sorry this happened” without a commitment to specific changes — does not restore trust. Patients want to know that the institution understands what went wrong and has taken concrete steps to prevent recurrence.</p>
+<p>For institutions with an AI transparency report program — a public annual or semi-annual report that describes deployed AI tools, their performance metrics, and any documented adverse events — the adverse event entry provides evidence that the reporting is genuine. A transparency report that reports zero adverse events in a large AI deployment is not credible. A report that describes an adverse event, the investigation findings, and the remediation measures is evidence that the institution is actually monitoring.</p>
+</section>
+<section id="sec-trust-start" class="level2" data-number="12.8">
+<h2 data-number="12.8" class="anchored" data-anchor-id="sec-trust-start"><span class="header-section-number">12.8</span> Where to Start</h2>
+<section id="starter-project-1-patient-ai-disclosure-audit-and-language-standardization" class="level3" data-number="12.8.1">
+<h3 data-number="12.8.1" class="anchored" data-anchor-id="starter-project-1-patient-ai-disclosure-audit-and-language-standardization"><span class="header-section-number">12.8.1</span> Starter Project 1: Patient AI Disclosure Audit and Language Standardization</h3>
+<p><strong>What it is:</strong> An audit of every current patient-facing AI interaction to assess whether disclosure is occurring, what language is being used, and whether that language meets the substantive standard described above — specific, human role clarified, recourse identified.</p>
+<p><strong>Why now:</strong> California AB 3030 is in effect, and Colorado SB24-205 takes effect in 2026. An institution that has not audited its disclosure practices is not in a position to certify compliance, and more importantly, is not in a position to know whether patients understand what AI is being used in their care.</p>
+<p><strong>How to execute:</strong> Map every patient-facing AI touchpoint: portal messages, discharge instructions, appointment communications, chatbot interactions, ambient documentation encounters. For each touchpoint, assess: is disclosure occurring? Is it meaningful or boilerplate? Does it meet AB 3030’s requirement for communications not reviewed by a licensed human? The output is a prioritized remediation plan and a set of standardized disclosure language options for each touchpoint type.</p>
+<p><strong>Buy vs.&nbsp;build:</strong> Process and language work, not a technology purchase. Standardized disclosure language templates require legal review, not a vendor relationship.</p>
+</section>
+<section id="starter-project-2-establish-a-patient-ai-advisory-council" class="level3" data-number="12.8.2">
+<h3 data-number="12.8.2" class="anchored" data-anchor-id="starter-project-2-establish-a-patient-ai-advisory-council"><span class="header-section-number">12.8.2</span> Starter Project 2: Establish a Patient AI Advisory Council</h3>
+<p><strong>What it is:</strong> A standing advisory council with defined membership, mandate, and relationship to the AI Steering Committee, recruited specifically to advise on AI tool selection and deployment from the patient and community perspective.</p>
+<p><strong>Why now:</strong> The institutions that deploy AI most sustainably are the ones that have community confidence before adverse events occur, not the ones scrambling to build community relationships afterward. The DiMe Society clinical AI maturity model places patient advisory engagement as a gold-standard governance indicator. An institution without a Patient AI Advisory Council is not yet at the governance standard the field is converging toward.</p>
+<p><strong>How to execute:</strong> Define the charter before recruiting members: what does the council advise on, how does its input reach the AISC, and what decisions (if any) require council consultation before proceeding? Recruit at least half the membership from communities with documented reasons to be concerned about algorithmic bias in healthcare. Build in access to a technical liaison — a clinical informatics team member who can explain, in accessible terms, how specific AI tools work and what the known risks are. The council should meet monthly during active deployment periods and quarterly during steady-state operations.</p>
+<p><strong>Buy vs.&nbsp;build:</strong> Program design and staff time. No technology purchase required. The significant investment is in the quality of recruitment and the integrity of the governance relationship — specifically, whether the council’s input is genuinely considered or merely documented.</p>
+
+
+<div id="refs" class="references csl-bib-body hanging-indent" role="list" style="display: none">
+<div id="ref-CalAB3030-2024" class="csl-entry" role="listitem">
+<span>AB 3030</span>: Health Care: Artificial Intelligence (2024). <a href="https://leginfo.legislature.ca.gov/faces/billNavClient.xhtml?bill_id=202320240AB3030">https://leginfo.legislature.ca.gov/faces/billNavClient.xhtml?bill_id=202320240AB3030</a>.
+</div>
+<div id="ref-FTC2024-operationai" class="csl-entry" role="listitem">
+Federal Trade Commission. 2024. <em>Operation <span>AI</span> Comply: Continuing Actions Against <span>AI</span>-Related Deceptive Practices</em>. <a href="https://www.ftc.gov/news-events/press-releases/2024/09/ftc-announces-operation-ai-comply">https://www.ftc.gov/news-events/press-releases/2024/09/ftc-announces-operation-ai-comply</a>.
+</div>
+<div id="ref-Jones2023-trust" class="csl-entry" role="listitem">
+Jones, Clare, Janet Thornton, and Jeremy C Wyatt. 2023. <span>“Artificial Intelligence and Clinical Decision Support: Clinicians’ Perspectives on Trust, Trustworthiness, and Liability.”</span> <em>Medical Law Review</em> 31 (3): 501–20. <a href="https://doi.org/10.1093/medlaw/fwad013">https://doi.org/10.1093/medlaw/fwad013</a>.
+</div>
+<div id="ref-Pew2023-aihealth" class="csl-entry" role="listitem">
+Pew Research Center. 2023. <em>Americans’ Views of Artificial Intelligence Use in Health Care</em>. <a href="https://www.pewresearch.org/science/2023/02/22/60-of-americans-would-be-uncomfortable-with-provider-relying-on-ai-in-their-own-health-care/" class="uri">Https://www.pewresearch.org/science/2023/02/22/60-of-americans-would-be-uncomfortable-with-provider-relying-on-ai-in-their-own-health-care/</a>. <a href="https://www.pewresearch.org/science/2023/02/22/60-of-americans-would-be-uncomfortable-with-provider-relying-on-ai-in-their-own-health-care/">https://www.pewresearch.org/science/2023/02/22/60-of-americans-would-be-uncomfortable-with-provider-relying-on-ai-in-their-own-health-care/</a>.
+</div>
+<div id="ref-ColoradoSB24205" class="csl-entry" role="listitem">
+<span>SB 24-205</span>: Consumer Protections for Artificial Intelligence (2024). <a href="https://leg.colorado.gov/bills/sb24-205">https://leg.colorado.gov/bills/sb24-205</a>.
+</div>
+</div>
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/seandavi\.github\.io\/campus-llm-kb\/");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./agentic_safety.html" class="pagination-link" aria-label="Agentic Safety and Guardrails">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Agentic Safety and Guardrails</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./professional_wellness.html" class="pagination-link" aria-label="Professional Wellness and Reducing Cognitive Burden">
+        <span class="nav-page-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Professional Wellness and Reducing Cognitive Burden</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/seandavi/campus-llm-kb/edit/main/patient_trust.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li></ul></div></div></div></footer></body></html>

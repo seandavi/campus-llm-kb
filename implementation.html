@@ -2,16 +2,17 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.5.57">
+<meta name="generator" content="quarto-1.9.37">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Sean Davis">
-<meta name="author" content="Stefan Lindegaard">
-<meta name="dcterms.date" content="2023-05-11">
+<meta name="dcterms.date" content="2026-04-26">
 
-<title>4&nbsp; Domain Implementation Guide – Large Language Model Policy and Practice</title>
+<title>4&nbsp; Domain Implementation Guide – Implementing AI in Academic Medicine</title>
 <style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
 div.columns{display: flex; gap: min(4vw, 1.5em);}
@@ -27,7 +28,6 @@ ul.task-list li input[type="checkbox"] {
 div.csl-bib-body { }
 div.csl-entry {
   clear: both;
-  margin-bottom: 0em;
 }
 .hanging-indent div.csl-entry {
   margin-left:2em;
@@ -55,15 +55,16 @@ div.csl-indent {
 <meta name="quarto:offset" content="./">
 <link href="./barriers.html" rel="next">
 <link href="./framework.html" rel="prev">
-<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-7f8f88aac4f3542376d5c11b86a4c14d.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-36bf55b16c7cb4b1420f41495cb5446a.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -91,20 +92,14 @@ div.csl-indent {
     "search-label": "Search"
   }
 }</script>
-<!-- Google tag (gtag.js) -->
-<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-KLLV1GCF4E"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-KLLV1GCF4E');
-</script>
+<script src="site_libs/quarto-diagram/mermaid.min.js"></script>
+<script src="site_libs/quarto-diagram/mermaid-init.js"></script>
+<link href="site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
 
 
 </head>
 
-<body class="nav-sidebar floating nav-fixed">
+<body class="nav-sidebar floating nav-fixed quarto-light">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -112,7 +107,7 @@ div.csl-indent {
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
     <a class="navbar-brand" href="./index.html">
-    <span class="navbar-title">Large Language Model Policy and Practice</span>
+    <span class="navbar-title">Implementing AI in Academic Medicine</span>
     </a>
   </div>
         <div class="quarto-navbar-tools tools-wide tools-end">
@@ -121,13 +116,13 @@ div.csl-indent {
       <a href="" title="Download" id="quarto-navigation-tool-dropdown-0" class="quarto-navigation-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false" role="link" aria-label="Download"><i class="bi bi-download"></i></a>
       <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="quarto-navigation-tool-dropdown-0">
           <li>
-            <a class="dropdown-item quarto-navbar-tools-item" href="./Large-Language-Model-Policy-and-Practice.pdf">
+            <a class="dropdown-item quarto-navbar-tools-item" href="./Implementing-AI-in-Academic-Medicine.pdf">
               <i class="bi bi-file-pdf pe-1"></i>
             Download PDF
             </a>
           </li>
           <li>
-            <a class="dropdown-item quarto-navbar-tools-item" href="./Large-Language-Model-Policy-and-Practice.epub">
+            <a class="dropdown-item quarto-navbar-tools-item" href="./Implementing-AI-in-Academic-Medicine.epub">
               <i class="bi bi-journal pe-1"></i>
             Download ePub
             </a>
@@ -180,13 +175,13 @@ div.csl-indent {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./preface.html" class="sidebar-item-text sidebar-link">
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Preface</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link">
+  <a href="./overview.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Overview</span></span></a>
   </div>
 </li>
@@ -220,7 +215,7 @@ div.csl-indent {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./barriers.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Barriers and Obstacles and How to Overcome Them</span></span></a>
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Barriers and How to Address Them</span></span></a>
   </div>
 </li>
       </ul>
@@ -243,13 +238,13 @@ div.csl-indent {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./resources_research.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Research</span></span></a>
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Research Domain</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./resources_education.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Education</span></span></a>
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Education Domain</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -258,17 +253,93 @@ div.csl-indent {
  <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Business Operations</span></span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./regulatory_landscape.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Regulatory and Policy Landscape</span></span></a>
+  </div>
+</li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
- <span class="menu-text">Appendices</span></a>
+ <span class="menu-text">Agentic AI in Practice</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./agentic_safety.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Agentic Safety and Guardrails</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./patient_trust.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Patient and Community Trust</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./professional_wellness.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Professional Wellness and Reducing Cognitive Burden</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true">
+ <span class="menu-text">Workstream Resources</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./infrastructure.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">IT Infrastructure and Security</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./workforce.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Training and Workforce Development</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ethics.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Ethics, Equity, and Institutional Accountability</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./data.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Data Access and Governance</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./pm_and_support.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Project Management and AI Portfolio Governance</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true">
+ <span class="menu-text">Appendices</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./appendices.html" class="sidebar-item-text sidebar-link">
@@ -278,13 +349,25 @@ div.csl-indent {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./bill_of_rights.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">B</span>&nbsp; <span class="chapter-title">Whitehouse AI Bill(s) of rights</span></span></a>
+ <span class="menu-text"><span class="chapter-number">B</span>&nbsp; <span class="chapter-title">OSTP Blueprint for an AI Bill of Rights</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./HHS.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">C</span>&nbsp; <span class="chapter-title">HHS EHR reporting program rule</span></span></a>
+ <span class="menu-text"><span class="chapter-number">C</span>&nbsp; <span class="chapter-title">ONC HTI-1: Algorithm Transparency and Interoperability</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./appendix_workflow.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">D</span>&nbsp; <span class="chapter-title">How This Book Was Written: A Multi-Model AI Authorship Workflow</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./references.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">References</span></a>
   </div>
 </li>
       </ul>
@@ -299,18 +382,17 @@ div.csl-indent {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#suggested-tasks" id="toc-suggested-tasks" class="nav-link active" data-scroll-target="#suggested-tasks"><span class="header-section-number">4.1</span> Suggested Tasks</a>
+  <li><a href="#the-domain-divergence" id="toc-the-domain-divergence" class="nav-link active" data-scroll-target="#the-domain-divergence"><span class="header-section-number">4.1</span> The Domain Divergence</a></li>
+  <li><a href="#normalization-not-installation" id="toc-normalization-not-installation" class="nav-link" data-scroll-target="#normalization-not-installation"><span class="header-section-number">4.2</span> Normalization, Not Installation</a></li>
+  <li><a href="#the-clinical-domain-safety-as-the-primary-constraint" id="toc-the-clinical-domain-safety-as-the-primary-constraint" class="nav-link" data-scroll-target="#the-clinical-domain-safety-as-the-primary-constraint"><span class="header-section-number">4.3</span> The Clinical Domain: Safety as the Primary Constraint</a></li>
+  <li><a href="#the-research-domain-integrity-before-efficiency" id="toc-the-research-domain-integrity-before-efficiency" class="nav-link" data-scroll-target="#the-research-domain-integrity-before-efficiency"><span class="header-section-number">4.4</span> The Research Domain: Integrity Before Efficiency</a></li>
+  <li><a href="#the-education-domain-literacy-as-a-prerequisite" id="toc-the-education-domain-literacy-as-a-prerequisite" class="nav-link" data-scroll-target="#the-education-domain-literacy-as-a-prerequisite"><span class="header-section-number">4.5</span> The Education Domain: Literacy as a Prerequisite</a></li>
+  <li><a href="#the-business-operations-domain-efficiency-with-accountability" id="toc-the-business-operations-domain-efficiency-with-accountability" class="nav-link" data-scroll-target="#the-business-operations-domain-efficiency-with-accountability"><span class="header-section-number">4.6</span> The Business Operations Domain: Efficiency With Accountability</a></li>
+  <li><a href="#the-champion-infrastructure" id="toc-the-champion-infrastructure" class="nav-link" data-scroll-target="#the-champion-infrastructure"><span class="header-section-number">4.7</span> The Champion Infrastructure</a></li>
+  <li><a href="#sec-implementation-start" id="toc-sec-implementation-start" class="nav-link" data-scroll-target="#sec-implementation-start"><span class="header-section-number">4.8</span> Where to Start</a>
   <ul class="collapse">
-  <li><a href="#establish-ownership-leadership" id="toc-establish-ownership-leadership" class="nav-link" data-scroll-target="#establish-ownership-leadership"><span class="header-section-number">4.1.1</span> Establish Ownership Leadership</a></li>
-  <li><a href="#lean-into-cross-functional-collaboration" id="toc-lean-into-cross-functional-collaboration" class="nav-link" data-scroll-target="#lean-into-cross-functional-collaboration"><span class="header-section-number">4.1.2</span> Lean Into Cross-functional Collaboration</a></li>
-  <li><a href="#educate-leadership-teams" id="toc-educate-leadership-teams" class="nav-link" data-scroll-target="#educate-leadership-teams"><span class="header-section-number">4.1.3</span> Educate Leadership Teams</a></li>
-  <li><a href="#identify-potential-use-cases" id="toc-identify-potential-use-cases" class="nav-link" data-scroll-target="#identify-potential-use-cases"><span class="header-section-number">4.1.4</span> Identify Potential Use Cases</a></li>
-  <li><a href="#craft-a-communication-strategy" id="toc-craft-a-communication-strategy" class="nav-link" data-scroll-target="#craft-a-communication-strategy"><span class="header-section-number">4.1.5</span> Craft a Communication Strategy</a></li>
-  <li><a href="#prepare-and-integrate-high-value-proprietary-datasets" id="toc-prepare-and-integrate-high-value-proprietary-datasets" class="nav-link" data-scroll-target="#prepare-and-integrate-high-value-proprietary-datasets"><span class="header-section-number">4.1.6</span> Prepare and Integrate High-Value Proprietary Datasets</a></li>
-  <li><a href="#create-employee-training-and-support" id="toc-create-employee-training-and-support" class="nav-link" data-scroll-target="#create-employee-training-and-support"><span class="header-section-number">4.1.7</span> Create Employee Training and Support</a></li>
-  <li><a href="#monitor-progress-and-impact" id="toc-monitor-progress-and-impact" class="nav-link" data-scroll-target="#monitor-progress-and-impact"><span class="header-section-number">4.1.8</span> Monitor Progress and Impact</a></li>
-  <li><a href="#develop-continuous-improvement-and-adaptation" id="toc-develop-continuous-improvement-and-adaptation" class="nav-link" data-scroll-target="#develop-continuous-improvement-and-adaptation"><span class="header-section-number">4.1.9</span> Develop Continuous Improvement and Adaptation</a></li>
-  <li><a href="#recognize-document-and-build-processes-to-address-ethical-considerations" id="toc-recognize-document-and-build-processes-to-address-ethical-considerations" class="nav-link" data-scroll-target="#recognize-document-and-build-processes-to-address-ethical-considerations"><span class="header-section-number">4.1.10</span> Recognize, Document, and Build Processes to Address Ethical Considerations</a></li>
+  <li><a href="#starter-project-1-domain-implementation-roadmap" id="toc-starter-project-1-domain-implementation-roadmap" class="nav-link" data-scroll-target="#starter-project-1-domain-implementation-roadmap"><span class="header-section-number">4.8.1</span> Starter Project 1: Domain Implementation Roadmap</a></li>
+  <li><a href="#starter-project-2-clinician-champion-cohort" id="toc-starter-project-2-clinician-champion-cohort" class="nav-link" data-scroll-target="#starter-project-2-clinician-champion-cohort"><span class="header-section-number">4.8.2</span> Starter Project 2: Clinician Champion Cohort</a></li>
   </ul></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/seandavi/campus-llm-kb/edit/main/implementation.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li></ul></div></nav>
@@ -320,25 +402,18 @@ div.csl-indent {
 
 <header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./framework.html">Implementation</a></li><li class="breadcrumb-item"><a href="./implementation.html"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Domain Implementation Guide</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Domain Implementation Guide</span></h1>
+<h1 class="title"><span id="sec-implementation" class="quarto-section-identifier"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Domain Implementation Guide</span></span></h1>
 </div>
 
 
 
 <div class="quarto-title-meta">
 
-    <div>
-    <div class="quarto-title-meta-heading">Authors</div>
-    <div class="quarto-title-meta-contents">
-             <p>Sean Davis </p>
-             <p>Stefan Lindegaard </p>
-          </div>
-  </div>
     
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">May 11, 2023</p>
+      <p class="date">April 26, 2026</p>
     </div>
   </div>
   
@@ -350,54 +425,168 @@ div.csl-indent {
 </header>
 
 
-<p>Each Domain will work to meet the needs of the campus that align with its community membership and mission. This section provides a rough guide (adapted from <span class="citation" data-cites="lindegaard-vb">Lindegaard (<a href="#ref-lindegaard-vb" role="doc-biblioref">2023</a>)</span>) to implementing a LLM plan within the Domains. Each Domain can work through this guide to develop policies, plans, resources, and deliverables. The combination of cross-domain Workstreams and reporting to the AISC will help to align resource requests and facilitate knowledge sharing, management, and transfer.</p>
-<section id="suggested-tasks" class="level2" data-number="4.1">
-<h2 data-number="4.1" class="anchored" data-anchor-id="suggested-tasks"><span class="header-section-number">4.1</span> Suggested Tasks</h2>
-<section id="establish-ownership-leadership" class="level3" data-number="4.1.1">
-<h3 data-number="4.1.1" class="anchored" data-anchor-id="establish-ownership-leadership"><span class="header-section-number">4.1.1</span> Establish Ownership Leadership</h3>
-<p>Assign a Domain leader and convene a Domain Working Group (represented in blue boxes in <a href="framework.html#fig-framework" class="quarto-xref">Figure&nbsp;<span>3.1</span></a>) as the driving force behind ChatGPT implementation. This leader and Working Group members need to become proficient in the technology and subsequently guide the organization through the process of integration. This includes setting the vision, aligning key stakeholders, and ensuring that the implementation aligns with the organization’s strategic goals.</p>
-<p>In practice, this Domain leader will be the primary point of contact for the AISC and will be responsible for reporting on the Domain’s progress and deliverables. The Domain leader will also be responsible for convening the Domain Working Group and ensuring that the Domain’s Workstreams are progressing.</p>
+<p>When we talk about implementing a new technology in an academic medical center, we default to the language of the IT rollout: go-live dates, user provisioning, help desk tickets. We treat the software as a finished object that needs to be deposited into the workflow, like furniture moved into an office. This mental model works reasonably well for a word processor, where the utility is clear and the risks of failure are largely individual. It fails completely for large language models. In two decades of building data infrastructure for these institutions, I have found that the technology is almost never the bottleneck. The bottleneck is the social and professional fabric of the hospital itself.</p>
+<p>Implementing a language model is not a technological event; it is a sociotechnical negotiation. We are asking highly trained professionals to cede some portion of their cognitive labor to a system that is probabilistic, occasionally wrong, and often opaque about why it is wrong. If you come from a technical background, this looks like an optimization problem. If you come from the clinical side, it looks like a liability problem. Bridging that gap requires moving beyond generic change management checklists and toward a domain-specific understanding of how work actually happens in an AMC.</p>
+<section id="the-domain-divergence" class="level2" data-number="4.1">
+<h2 data-number="4.1" class="anchored" data-anchor-id="the-domain-divergence"><span class="header-section-number">4.1</span> The Domain Divergence</h2>
+<p>There is no generic AI implementation in an academic medical center. The needs of a surgeon managing a complex case have almost nothing in common with the needs of a research coordinator managing a multi-center trial, or a dean of students worried about the integrity of a medical school exam. Each domain operates under different constraints, follows a different regulatory cadence, and answers to different stakeholders. When we force a one-size-fits-all implementation strategy on these groups, we end up with tools that are technically functional but socially rejected.</p>
+<p>In the clinical domain, the primary constraint is patient safety and clinician liability. Every implementation step is filtered through those questions. The research domain cares most about integrity and data provenance — a researcher may accept a slower tool if it guarantees auditability and reproducibility. In education, the implementation must focus on literacy and assessment validity; a tool that inadvertently replaces student reasoning with AI reasoning defeats the educational purpose. Business operations is driven by efficiency and the complex choreography of payer-provider relationships, with success measured in clicks saved and denial rates reduced.</p>
+<div id="tbl-domain-implementation" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-domain-implementation-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;4.1: Domain implementation characteristics across the AMC. Each column represents a distinct deployment context with different risk profiles and accountability structures.
+</figcaption>
+<div aria-describedby="tbl-domain-implementation-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<table class="caption-top table">
+<colgroup>
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Characteristic</th>
+<th>Clinical</th>
+<th>Research</th>
+<th>Education</th>
+<th>Business Ops</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Primary value</td>
+<td>Patient safety</td>
+<td>Scientific integrity</td>
+<td>Academic growth</td>
+<td>Operational efficiency</td>
+</tr>
+<tr class="even">
+<td>Primary risk</td>
+<td>Diagnostic error / liability</td>
+<td>Data provenance / IRB</td>
+<td>Competency loss</td>
+<td>Financial leakage</td>
+</tr>
+<tr class="odd">
+<td>Key stakeholder</td>
+<td>CMO / CMIO</td>
+<td>IRB / VP Research</td>
+<td>Dean</td>
+<td>CFO</td>
+</tr>
+<tr class="even">
+<td>Regulatory lead</td>
+<td>FDA, Joint Commission</td>
+<td>OHRP, NIH</td>
+<td>LCME, accreditors</td>
+<td>CMS, payers</td>
+</tr>
+<tr class="odd">
+<td>Success metric</td>
+<td>Outcomes, time savings</td>
+<td>Publication quality</td>
+<td>Student performance</td>
+<td>Margin, throughput</td>
+</tr>
+</tbody>
+</table>
+</div>
+</figure>
+</div>
+<p>Acknowledging these differences is the prerequisite for a successful deployment. I have watched well-funded projects die because the technical team argued for efficiency to a department chair who was worried about liability. You have to speak the language of the domain you are entering. If you are in the clinic, quantify the integration tax and what the tool will actually save. If you are in the research office, explain the audit trail.</p>
 </section>
-<section id="lean-into-cross-functional-collaboration" class="level3" data-number="4.1.2">
-<h3 data-number="4.1.2" class="anchored" data-anchor-id="lean-into-cross-functional-collaboration"><span class="header-section-number">4.1.2</span> Lean Into Cross-functional Collaboration</h3>
-<p>Form a cross-functional team with representatives from HR, IT, Legal, and other relevant departments to ensure that various perspectives are considered, and organizational needs are met during ChatGPT implementation. This collaboration will help address potential challenges, optimize resources, and facilitate effective knowledge transfer across the organization.</p>
+<section id="normalization-not-installation" class="level2" data-number="4.2">
+<h2 data-number="4.2" class="anchored" data-anchor-id="normalization-not-installation"><span class="header-section-number">4.2</span> Normalization, Not Installation</h2>
+<p>To understand why some implementations stick and others disappear after the pilot phase, it helps to move beyond “adoption” and toward “embedding.” Normalization Process Theory asks how a new practice becomes a normal part of daily work — not just something people are required to use, but something they use without thinking about it, the way they use their email.</p>
+<p>The theory describes four constructs that matter for this process. Coherence — does the clinician understand what the model is doing, or does it feel like a black box? If they cannot form a mental model of when the system is likely to fail, they will not trust it appropriately. Cognitive participation — who decides to engage with the change, and who has the social capital to bring their colleagues along? This is not accomplished by memo; it requires finding the influential people in a department and getting them genuinely invested. Collective action — the actual day-to-day work of using the tool, including the hidden labor (double-checking outputs, mapping data between systems) that project plans routinely underestimate. And reflexive monitoring — the ongoing organizational process of checking whether the tool is doing what it was supposed to do, whether its outputs still reflect current clinical practice, and whether its errors are accumulating in ways that require attention <span class="citation" data-cites="Finlayson2021-shift">(<a href="references.html#ref-Finlayson2021-shift" role="doc-biblioref">Finlayson et al. 2021</a>)</span>.</p>
+<p>The value of this framework is that it focuses implementation planning on the social work rather than the technical work. The technical configuration of an API gateway takes weeks. Building genuine cognitive participation among skeptical clinicians takes months. Planning for the slower process is the difference between a successful deployment and a successful pilot that no one uses six months later.</p>
 </section>
-<section id="educate-leadership-teams" class="level3" data-number="4.1.3">
-<h3 data-number="4.1.3" class="anchored" data-anchor-id="educate-leadership-teams"><span class="header-section-number">4.1.3</span> Educate Leadership Teams</h3>
-<p>Keep leadership teams informed about ChatGPT to enable swift, informed decision-making. Offer workshops and seminars to provide an in-depth understanding of the technology, its potential benefits, and its limitations. This empowers them to make quick, informed decisions that will shape the organization’s adoption and use of the technology.</p>
+<section id="the-clinical-domain-safety-as-the-primary-constraint" class="level2" data-number="4.3">
+<h2 data-number="4.3" class="anchored" data-anchor-id="the-clinical-domain-safety-as-the-primary-constraint"><span class="header-section-number">4.3</span> The Clinical Domain: Safety as the Primary Constraint</h2>
+<p>In the clinical world, implementation must begin with a period of silent or shadow deployment. The tool runs in the background, consuming real patient data and generating outputs that are logged and reviewed but never shown to clinicians. This period validates the model against the clinical environment’s actual patient population and workflow before any outputs influence clinical decisions.</p>
+<p>The <a href="https://www.decide-ai.org/">DECIDE-AI</a> reporting guidelines for early-stage AI pilots give this process a formal structure: pre-registered primary endpoints, prospective design, and monitoring for unexpected harms <span class="citation" data-cites="Vasey2022-decideai">(<a href="references.html#ref-Vasey2022-decideai" role="doc-biblioref"><span class="nocase">Vasey et al.</span> 2022</a>)</span>. The framework shifts the evaluation focus away from aggregate accuracy metrics — “area under the curve” — toward how the model actually changes clinician behavior when it is present. A model that is 95 percent accurate but whose alerts are ignored 90 percent of the time has not been implemented; it has been deployed and ignored <span class="citation" data-cites="Wong2021-esm">(<a href="references.html#ref-Wong2021-esm" role="doc-biblioref">Wong et al. 2021</a>)</span>.</p>
+<p>The Duke Health Sepsis Watch deployment remains the most thoroughly documented example of this staged approach <span class="citation" data-cites="Sendak2020-sepsis">(<a href="references.html#ref-Sendak2020-sepsis" role="doc-biblioref">Sendak et al. 2020</a>)</span>. The team did not simply deploy a model — they spent months in shadow mode, involved nurses in interface design, and built a dedicated rapid-response workflow around the model’s outputs. The technical performance was validated, but the implementation was designed around the social and operational reality of the units where it was deployed. That is the difference between a peer-reviewed model and a working clinical tool.</p>
+<div class="cell" data-layout-align="default">
+<div class="cell-output-display">
+<div id="fig-implementation-lifecycle" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-implementation-lifecycle-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div>
+<pre class="mermaid mermaid-js" data-label="fig-implementation-lifecycle">flowchart TD
+    A([Use Case\nIdentification]) --&gt; B[Feasibility\nand Bias Audit]
+    B --&gt; C{Governance\nGate}
+    C --&gt;|Approved| D[Silent / Shadow\nDeployment]
+    C --&gt;|Rejected| A
+    D --&gt; E[Technical Validation\nand Calibration]
+    E --&gt; F[Champion\nPilot]
+    F --&gt; G{Scale\nDecision}
+    G --&gt;|Pass| H[Enterprise\nIntegration]
+    G --&gt;|Fail| D
+    H --&gt; I[Reflexive\nMonitoring]
+    I --&gt; J[Drift\nDetection]
+</pre>
+</div>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-implementation-lifecycle-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;4.1: Domain-specific staged deployment lifecycle. Most implementations fail at the transition from champion pilot to enterprise integration — the gate where integration tax and workflow friction become visible at scale.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
 </section>
-<section id="identify-potential-use-cases" class="level3" data-number="4.1.4">
-<h3 data-number="4.1.4" class="anchored" data-anchor-id="identify-potential-use-cases"><span class="header-section-number">4.1.4</span> Identify Potential Use Cases</h3>
-<p>Map potential applications across all functions and establish a cohesive implementation plan. Conduct thorough analyses of business processes and functions to identify areas where ChatGPT can bring significant value, prioritize these use cases, and create a detailed roadmap for implementation, including timelines and milestones.</p>
+<section id="the-research-domain-integrity-before-efficiency" class="level2" data-number="4.4">
+<h2 data-number="4.4" class="anchored" data-anchor-id="the-research-domain-integrity-before-efficiency"><span class="header-section-number">4.4</span> The Research Domain: Integrity Before Efficiency</h2>
+<p>Implementation in the research domain is governed by the IRB and by the demands of data provenance. A researcher may be willing to accept a slower, more cumbersome tool if it guarantees that the data remains auditable and the results are reproducible. For someone coming from the clinical side, the data governance overhead of research AI can feel like unnecessary friction. In the research world, a single instance of unattributed AI-generated content can compromise a career and trigger institutional sanctions.</p>
+<p>The implementation sequence here begins with data provenance mapping: where is the data coming from, where is it stored, who has access to the model outputs, and what is the audit trail connecting AI outputs to final research products. Model cards — the structured disclosure format defining training data, performance characteristics, and known limitations — are increasingly required as part of IRB submissions for AI-assisted research, and requiring them is one concrete way the institution operationalizes the transparency principle from <a href="values.html" class="quarto-xref"><span>Chapter 2</span></a>.</p>
+<p>The research domain also requires attention to the human authorship question. The <a href="https://www.icmje.org">ICMJE</a> standards state clearly that AI systems cannot be listed as authors, and that authors are responsible for the integrity of AI-assisted content, including any errors or fabrications introduced by AI tools. The implementation guidance here is straightforward but requires explicit communication: researchers using AI for analysis, writing, or literature synthesis are responsible for verifying AI-generated content to the same standard as any other source.</p>
 </section>
-<section id="craft-a-communication-strategy" class="level3" data-number="4.1.5">
-<h3 data-number="4.1.5" class="anchored" data-anchor-id="craft-a-communication-strategy"><span class="header-section-number">4.1.5</span> Craft a Communication Strategy</h3>
-<p>Develop a comprehensive communication strategy that addresses employee concerns and questions about the implementation of ChatGPT. This approach should be transparent, informative, and reassuring to ensure a smooth transition. It should also highlight the benefits of the technology and address potential misconceptions.</p>
+<section id="the-education-domain-literacy-as-a-prerequisite" class="level2" data-number="4.5">
+<h2 data-number="4.5" class="anchored" data-anchor-id="the-education-domain-literacy-as-a-prerequisite"><span class="header-section-number">4.5</span> The Education Domain: Literacy as a Prerequisite</h2>
+<p>The education domain presents an implementation challenge that has no parallel in the others: if the faculty responsible for teaching and assessing students do not understand how AI tools work and where they fail, they cannot design valid assessments, evaluate AI-assisted student work, or teach the AI literacy that accreditation bodies are beginning to require.</p>
+<p>Implementation in this domain must therefore begin with faculty development, not student- facing tools. Faculty development for AI does not require every professor to become a machine learning specialist. It requires that they understand the specific capabilities and failure modes of the tools their students have access to, and that they can redesign assessments to test for reasoning processes that AI cannot easily replicate. An assessment that can be completed by copy-pasting a prompt into a language model is not testing what it claims to test, regardless of whether the student was authorized to use AI.</p>
+<p>The workforce chapter (<a href="workforce.html" class="quarto-xref"><span>Chapter 15</span></a>) addresses the faculty development gap in detail. For implementation planning, the relevant point is sequencing: student-facing AI tools are appropriate to deploy after, not before, faculty have the literacy to evaluate their outputs and design around their capabilities.</p>
 </section>
-<section id="prepare-and-integrate-high-value-proprietary-datasets" class="level3" data-number="4.1.6">
-<h3 data-number="4.1.6" class="anchored" data-anchor-id="prepare-and-integrate-high-value-proprietary-datasets"><span class="header-section-number">4.1.6</span> Prepare and Integrate High-Value Proprietary Datasets</h3>
-<p>Build APIs and interfaces to combine ChatGPT with organization-specific data for improved innovation and efficiency. Invest in the development of custom solutions that seamlessly integrate ChatGPT with existing systems, databases, and workflows to fully harness the potential of the technology.</p>
+<section id="the-business-operations-domain-efficiency-with-accountability" class="level2" data-number="4.6">
+<h2 data-number="4.6" class="anchored" data-anchor-id="the-business-operations-domain-efficiency-with-accountability"><span class="header-section-number">4.6</span> The Business Operations Domain: Efficiency With Accountability</h2>
+<p>Business operations is often the most ready for AI deployment and the most susceptible to the assumption that efficiency benefits are self-justifying. Revenue cycle management, scheduling optimization, and administrative documentation are legitimate and high-value AI use cases. They are also use cases where error consequences — incorrect billing codes, compliance violations, employment decisions driven by flawed algorithmic screening — can be significant and are sometimes invisible until they accumulate.</p>
+<p>Implementation in the business operations domain requires the same governance structure as clinical deployment: a named owner, documented validation, and monitoring for outcomes that extend beyond throughput metrics. An automated prior authorization tool that systematically denies certain patient populations at higher rates is not an efficiency tool. It is a Section 1557 compliance problem. An AI-assisted hiring screening tool is subject to <a href="https://www.nyc.gov/site/dca/about/automated-employment-decision-tools.page">NYC Local Law 144</a>’s independent bias audit requirement if it is used for employment decisions in New York. Accountability structures in business operations AI are less visible than in clinical AI, but they are no less real.</p>
 </section>
-<section id="create-employee-training-and-support" class="level3" data-number="4.1.7">
-<h3 data-number="4.1.7" class="anchored" data-anchor-id="create-employee-training-and-support"><span class="header-section-number">4.1.7</span> Create Employee Training and Support</h3>
-<p>Provide comprehensive training programs that laverage publicly available content where possible for employees to effectively use ChatGPT in their daily work. Offer hands-on workshops, e-learning modules, and on-the-job training to equip employees with the skills and knowledge necessary to use ChatGPT effectively. Provide ongoing support and resources to help employees adapt to the new technology and address any challenges they may face.</p>
+<section id="the-champion-infrastructure" class="level2" data-number="4.7">
+<h2 data-number="4.7" class="anchored" data-anchor-id="the-champion-infrastructure"><span class="header-section-number">4.7</span> The Champion Infrastructure</h2>
+<p>Every implementation, regardless of domain, depends on champions — people with the social capital and genuine engagement to lead their peers through the discomfort of adopting a new practice. The most effective champions are often not the most technically enthusiastic people in a department. The most effective champions are people who were initially skeptical and changed their minds based on evidence. Their skepticism makes them credible. When a skeptic says the tool saved them time, their colleagues listen in a way they would not listen to an early enthusiast.</p>
+<p>Building a champion infrastructure means two things beyond identifying willing volunteers. First, protected time: champions who are expected to lead AI adoption in addition to a full clinical or research schedule will burn out or quietly deprioritize the role. One to two hours per week of protected time for the champion function is not generous; it is the minimum investment required for the role to be sustainable. Second, a community of practice that connects champions across domains and service lines, giving them a venue to share what is working, flag emerging problems, and develop the translator skills that allow them to bridge between clinical reality and informatics infrastructure.</p>
+<p>The champion program starter project in <a href="workforce.html#sec-workforce-start" class="quarto-xref"><span>Section 15.9</span></a> describes the specific structure; the point here is that champion capacity is not a soft governance element. It is the primary mechanism through which governance reaches the point of care.</p>
 </section>
-<section id="monitor-progress-and-impact" class="level3" data-number="4.1.8">
-<h3 data-number="4.1.8" class="anchored" data-anchor-id="monitor-progress-and-impact"><span class="header-section-number">4.1.8</span> Monitor Progress and Impact</h3>
-<p>Regularly assess the performance of ChatGPT within the organization and evaluate its impact on specific use cases. Develop key performance indicators (KPIs) and metrics to track the technology’s effectiveness, and use this data to inform future improvements and adaptations.</p>
+<section id="sec-implementation-start" class="level2" data-number="4.8">
+<h2 data-number="4.8" class="anchored" data-anchor-id="sec-implementation-start"><span class="header-section-number">4.8</span> Where to Start</h2>
+<section id="starter-project-1-domain-implementation-roadmap" class="level3" data-number="4.8.1">
+<h3 data-number="4.8.1" class="anchored" data-anchor-id="starter-project-1-domain-implementation-roadmap"><span class="header-section-number">4.8.1</span> Starter Project 1: Domain Implementation Roadmap</h3>
+<p>Select one specific use case — a clinical documentation tool, a research literature synthesis tool, or a scheduling optimization tool — and walk it through the staged lifecycle in <a href="#fig-implementation-lifecycle" class="quarto-xref">Figure&nbsp;<span>4.1</span></a>. Do not try to solve the whole institution at once. Pick a single department with a motivated leader, run the shadow deployment phase, document the integration tax, and complete a champion pilot with pre-registered success metrics. The roadmap you produce from this exercise, including what broke and what was harder than expected, becomes the institution’s deployment playbook for the next tool.</p>
+<p><strong>Why now:</strong> The first implementation is always the most instructive. Every subsequent deployment benefits from having lived through the gap between a governance framework on paper and a governance framework tested against a real vendor, a real EHR integration, and real clinicians who have other things to do.</p>
+<p><strong>Buy vs.&nbsp;build:</strong> Process design and documentation work. The shadow deployment requires access to production data under governance approval; the infrastructure for logging model outputs against clinical outcomes may require a modest analytics build, but the governance process itself is documentation and meeting time.</p>
 </section>
-<section id="develop-continuous-improvement-and-adaptation" class="level3" data-number="4.1.9">
-<h3 data-number="4.1.9" class="anchored" data-anchor-id="develop-continuous-improvement-and-adaptation"><span class="header-section-number">4.1.9</span> Develop Continuous Improvement and Adaptation</h3>
-<p>Stay current with AI advancements and adapt ChatGPT implementation to maximize benefits. The AI landscape is constantly evolving, and it’s crucial to stay up-to-date with advancements in the field. Continuously evaluate the performance of ChatGPT and be prepared to adapt its implementation to maximize its benefits and stay ahead of the competition.</p>
-</section>
-<section id="recognize-document-and-build-processes-to-address-ethical-considerations" class="level3" data-number="4.1.10">
-<h3 data-number="4.1.10" class="anchored" data-anchor-id="recognize-document-and-build-processes-to-address-ethical-considerations"><span class="header-section-number">4.1.10</span> Recognize, Document, and Build Processes to Address Ethical Considerations</h3>
-<p>Develop guidelines for responsible use and educate employees on potential risks and challenges of AI technologies like ChatGPT. Be mindful of the ethical implications of using AI-powered technologies. Develop guidelines and best practices for responsible use, and ensure that employees understand the potential risks and challenges associated with AI, such as algorithmic bias or unintended consequences.</p>
+<section id="starter-project-2-clinician-champion-cohort" class="level3" data-number="4.8.2">
+<h3 data-number="4.8.2" class="anchored" data-anchor-id="starter-project-2-clinician-champion-cohort"><span class="header-section-number">4.8.2</span> Starter Project 2: Clinician Champion Cohort</h3>
+<p>Identify five to ten clinicians across departments who have expressed interest in AI and form a structured champion cohort. Provide focused AI literacy training, but spend the majority of cohort time on workflow analysis: where would AI realistically help, and where would it be a distraction or a safety risk? The cohort’s assessments of specific tools under consideration — grounded in their own domain expertise — give governance decisions a clinical reality check that vendor performance data and literature reviews cannot provide.</p>
+<p><strong>Why now:</strong> Champion capacity needs to be built before it is urgently needed. An AMC that trains its first cohort while a pilot is already in crisis is late. An AMC that builds champion capacity as standing infrastructure can evaluate new tools, support ongoing deployments, and surface governance concerns from the frontline on an ongoing basis.</p>
+<p><strong>Buy vs.&nbsp;build:</strong> Curriculum and facilitation. The AAMC and AMA have both published AI literacy curricula that can be adapted without building from scratch. The cohort structure itself — protected time, community of practice, reporting relationship to the AISC — is a governance design and budget decision, not a technology purchase.</p>
 
 
-<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
-<div id="ref-lindegaard-vb" class="csl-entry" role="listitem">
-Lindegaard, Stefan. 2023. <span>“<span>LinkedIn</span>.”</span> <a href="https://www.linkedin.com/pulse/chatgpt-implementation-scaling-organization-your-guide-lindegaard/" class="uri">https://www.linkedin.com/pulse/chatgpt-implementation-scaling-organization-your-guide-lindegaard/</a>. <a href="https://www.linkedin.com/pulse/chatgpt-implementation-scaling-organization-your-guide-lindegaard/">https://www.linkedin.com/pulse/chatgpt-implementation-scaling-organization-your-guide-lindegaard/</a>.
+<div id="refs" class="references csl-bib-body hanging-indent" role="list" style="display: none">
+<div id="ref-Finlayson2021-shift" class="csl-entry" role="listitem">
+Finlayson, Samuel G, Adarsh Subbaswamy, Karandeep Singh, et al. 2021. <span>“The Clinician and Dataset Shift in Artificial Intelligence.”</span> <em>New England Journal of Medicine</em> 385: 283–86. <a href="https://doi.org/10.1056/NEJMc2104626">https://doi.org/10.1056/NEJMc2104626</a>.
+</div>
+<div id="ref-Sendak2020-sepsis" class="csl-entry" role="listitem">
+Sendak, Mark P, William Ratliff, Dina Sarro, et al. 2020. <span>“Real-World Integration of a Sepsis Deep Learning Technology into Routine Clinical Care: Implementation Study.”</span> <em>JMIR Medical Informatics</em> 8 (7): e15182. <a href="https://doi.org/10.2196/15182">https://doi.org/10.2196/15182</a>.
+</div>
+<div id="ref-Vasey2022-decideai" class="csl-entry" role="listitem">
+<span class="nocase">Vasey, Baptiste, Myura Nagendran, Bruce Campbell, et al.</span> 2022. <span>“Reporting Guideline for the Early-Stage Clinical Evaluation of Decision Support Systems Driven by Artificial Intelligence: <span>DECIDE-AI</span>.”</span> <em>Nature Medicine</em> 28: 924–33. <a href="https://doi.org/10.1038/s41591-022-01772-9">https://doi.org/10.1038/s41591-022-01772-9</a>.
+</div>
+<div id="ref-Wong2021-esm" class="csl-entry" role="listitem">
+Wong, Andrew, Erkin Otles, John P Donnelly, et al. 2021. <span>“External Validation of a Widely Implemented Proprietary Sepsis Prediction Model in Hospitalized Patients.”</span> <em>JAMA Internal Medicine</em> 181 (8): 1065–70. <a href="https://doi.org/10.1001/jamainternmed.2021.2626">https://doi.org/10.1001/jamainternmed.2021.2626</a>.
 </div>
 </div>
 </section>
@@ -405,239 +594,243 @@ Lindegaard, Stefan. 2023. <span>“<span>LinkedIn</span>.”</span> <a href="htt
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
-window.document.addEventListener("DOMContentLoaded", function (event) {
-  const toggleBodyColorMode = (bsSheetEl) => {
-    const mode = bsSheetEl.getAttribute("data-mode");
-    const bodyEl = window.document.querySelector("body");
-    if (mode === "dark") {
-      bodyEl.classList.add("quarto-dark");
-      bodyEl.classList.remove("quarto-light");
-    } else {
-      bodyEl.classList.add("quarto-light");
-      bodyEl.classList.remove("quarto-dark");
-    }
-  }
-  const toggleBodyColorPrimary = () => {
-    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
-    if (bsSheetEl) {
-      toggleBodyColorMode(bsSheetEl);
-    }
-  }
-  toggleBodyColorPrimary();  
-  const icon = "";
-  const anchorJS = new window.AnchorJS();
-  anchorJS.options = {
-    placement: 'right',
-    icon: icon
-  };
-  anchorJS.add('.anchored');
-  const isCodeAnnotation = (el) => {
-    for (const clz of el.classList) {
-      if (clz.startsWith('code-annotation-')) {                     
-        return true;
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
       }
+      return false;
     }
-    return false;
-  }
-  const onCopySuccess = function(e) {
-    // button target
-    const button = e.trigger;
-    // don't keep focus
-    button.blur();
-    // flash "checked"
-    button.classList.add('code-copy-button-checked');
-    var currentTitle = button.getAttribute("title");
-    button.setAttribute("title", "Copied!");
-    let tooltip;
-    if (window.bootstrap) {
-      button.setAttribute("data-bs-toggle", "tooltip");
-      button.setAttribute("data-bs-placement", "left");
-      button.setAttribute("data-bs-title", "Copied!");
-      tooltip = new bootstrap.Tooltip(button, 
-        { trigger: "manual", 
-          customClass: "code-copy-button-tooltip",
-          offset: [0, -8]});
-      tooltip.show();    
-    }
-    setTimeout(function() {
-      if (tooltip) {
-        tooltip.hide();
-        button.removeAttribute("data-bs-title");
-        button.removeAttribute("data-bs-toggle");
-        button.removeAttribute("data-bs-placement");
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
       }
-      button.setAttribute("title", currentTitle);
-      button.classList.remove('code-copy-button-checked');
-    }, 1000);
-    // clear code selection
-    e.clearSelection();
-  }
-  const getTextToCopy = function(trigger) {
-      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
       for (const childEl of codeEl.children) {
         if (isCodeAnnotation(childEl)) {
           childEl.remove();
         }
       }
       return codeEl.innerText;
-  }
-  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
-    text: getTextToCopy
-  });
-  clipboard.on('success', onCopySuccess);
-  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
-    // For code content inside modals, clipBoardJS needs to be initialized with a container option
-    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
-    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
-      text: getTextToCopy,
-      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
     });
-    clipboardModal.on('success', onCopySuccess);
-  }
-    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
-    var mailtoRegex = new RegExp(/^mailto:/);
-      var filterRegex = new RegExp("https:\/\/seandavi\.github\.io\/campus-llm-kb\/");
-    var isInternal = (href) => {
-        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
     }
-    // Inspect non-navigation links and adorn them if external
- 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
-    for (var i=0; i<links.length; i++) {
-      const link = links[i];
-      if (!isInternal(link.href)) {
-        // undo the damage that might have been done by quarto-nav.js in the case of
-        // links that we want to consider external
-        if (link.dataset.originalHref !== undefined) {
-          link.href = link.dataset.originalHref;
-        }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/seandavi\.github\.io\/campus-llm-kb\/");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }
-    }
-  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
-    const config = {
-      allowHTML: true,
-      maxWidth: 500,
-      delay: 100,
-      arrow: false,
-      appendTo: function(el) {
-          return el.parentElement;
-      },
-      interactive: true,
-      interactiveBorder: 10,
-      theme: 'quarto',
-      placement: 'bottom-start',
-    };
-    if (contentFn) {
-      config.content = contentFn;
-    }
-    if (onTriggerFn) {
-      config.onTrigger = onTriggerFn;
-    }
-    if (onUntriggerFn) {
-      config.onUntrigger = onUntriggerFn;
-    }
-    window.tippy(el, config); 
-  }
-  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
-  for (var i=0; i<noterefs.length; i++) {
-    const ref = noterefs[i];
-    tippyHover(ref, function() {
-      // use id or data attribute instead here
-      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
-      try { href = new URL(href).hash; } catch {}
-      const id = href.replace(/^#\/?/, "");
-      const note = window.document.getElementById(id);
-      if (note) {
-        return note.innerHTML;
-      } else {
-        return "";
-      }
-    });
-  }
-  const xrefs = window.document.querySelectorAll('a.quarto-xref');
-  const processXRef = (id, note) => {
-    // Strip column container classes
-    const stripColumnClz = (el) => {
-      el.classList.remove("page-full", "page-columns");
-      if (el.children) {
-        for (const child of el.children) {
-          stripColumnClz(child);
-        }
-      }
-    }
-    stripColumnClz(note)
-    if (id === null || id.startsWith('sec-')) {
-      // Special case sections, only their first couple elements
-      const container = document.createElement("div");
-      if (note.children && note.children.length > 2) {
-        container.appendChild(note.children[0].cloneNode(true));
-        for (let i = 1; i < note.children.length; i++) {
-          const child = note.children[i];
-          if (child.tagName === "P" && child.innerText === "") {
-            continue;
-          } else {
-            container.appendChild(child.cloneNode(true));
-            break;
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
           }
         }
-        if (window.Quarto?.typesetMath) {
-          window.Quarto.typesetMath(container);
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
         }
-        return container.innerHTML
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
       } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
         if (window.Quarto?.typesetMath) {
           window.Quarto.typesetMath(note);
         }
-        return note.innerHTML;
-      }
-    } else {
-      // Remove any anchor links if they are present
-      const anchorLink = note.querySelector('a.anchorjs-link');
-      if (anchorLink) {
-        anchorLink.remove();
-      }
-      if (window.Quarto?.typesetMath) {
-        window.Quarto.typesetMath(note);
-      }
-      // TODO in 1.5, we should make sure this works without a callout special case
-      if (note.classList.contains("callout")) {
-        return note.outerHTML;
-      } else {
-        return note.innerHTML;
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
       }
     }
-  }
-  for (var i=0; i<xrefs.length; i++) {
-    const xref = xrefs[i];
-    tippyHover(xref, undefined, function(instance) {
-      instance.disable();
-      let url = xref.getAttribute('href');
-      let hash = undefined; 
-      if (url.startsWith('#')) {
-        hash = url;
-      } else {
-        try { hash = new URL(url).hash; } catch {}
-      }
-      if (hash) {
-        const id = hash.replace(/^#\/?/, "");
-        const note = window.document.getElementById(id);
-        if (note !== null) {
-          try {
-            const html = processXRef(id, note.cloneNode(true));
-            instance.setContent(html);
-          } finally {
-            instance.enable();
-            instance.show();
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
           }
         } else {
-          // See if we can fetch this
-          fetch(url.split('#')[0])
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
           .then(res => res.text())
           .then(html => {
             const parser = new DOMParser();
             const htmlDoc = parser.parseFromString(html, "text/html");
-            const note = htmlDoc.getElementById(id);
+            const note = htmlDoc.querySelector('main.content');
             if (note !== null) {
-              const html = processXRef(id, note);
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
               instance.setContent(html);
             } 
           }).finally(() => {
@@ -645,185 +838,161 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             instance.show();
           });
         }
-      } else {
-        // See if we can fetch a full url (with no hash to target)
-        // This is a special case and we should probably do some content thinning / targeting
-        fetch(url)
-        .then(res => res.text())
-        .then(html => {
-          const parser = new DOMParser();
-          const htmlDoc = parser.parseFromString(html, "text/html");
-          const note = htmlDoc.querySelector('main.content');
-          if (note !== null) {
-            // This should only happen for chapter cross references
-            // (since there is no id in the URL)
-            // remove the first header
-            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
-              note.children[0].remove();
-            }
-            const html = processXRef(null, note);
-            instance.setContent(html);
-          } 
-        }).finally(() => {
-          instance.enable();
-          instance.show();
-        });
-      }
-    }, function(instance) {
-    });
-  }
-      let selectedAnnoteEl;
-      const selectorForAnnotation = ( cell, annotation) => {
-        let cellAttr = 'data-code-cell="' + cell + '"';
-        let lineAttr = 'data-code-annotation="' +  annotation + '"';
-        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
-        return selector;
-      }
-      const selectCodeLines = (annoteEl) => {
-        const doc = window.document;
-        const targetCell = annoteEl.getAttribute("data-target-cell");
-        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
-        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
-        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
-        const lineIds = lines.map((line) => {
-          return targetCell + "-" + line;
-        })
-        let top = null;
-        let height = null;
-        let parent = null;
-        if (lineIds.length > 0) {
-            //compute the position of the single el (top and bottom and make a div)
-            const el = window.document.getElementById(lineIds[0]);
-            top = el.offsetTop;
-            height = el.offsetHeight;
-            parent = el.parentElement.parentElement;
-          if (lineIds.length > 1) {
-            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
-            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
-            height = bottom - top;
-          }
-          if (top !== null && height !== null && parent !== null) {
-            // cook up a div (if necessary) and position it 
-            let div = window.document.getElementById("code-annotation-line-highlight");
-            if (div === null) {
-              div = window.document.createElement("div");
-              div.setAttribute("id", "code-annotation-line-highlight");
-              div.style.position = 'absolute';
-              parent.appendChild(div);
-            }
-            div.style.top = top - 2 + "px";
-            div.style.height = height + 4 + "px";
-            div.style.left = 0;
-            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
-            if (gutterDiv === null) {
-              gutterDiv = window.document.createElement("div");
-              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
-              gutterDiv.style.position = 'absolute';
-              const codeCell = window.document.getElementById(targetCell);
-              const gutter = codeCell.querySelector('.code-annotation-gutter');
-              gutter.appendChild(gutterDiv);
-            }
-            gutterDiv.style.top = top - 2 + "px";
-            gutterDiv.style.height = height + 4 + "px";
-          }
-          selectedAnnoteEl = annoteEl;
-        }
-      };
-      const unselectCodeLines = () => {
-        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
-        elementsIds.forEach((elId) => {
-          const div = window.document.getElementById(elId);
-          if (div) {
-            div.remove();
-          }
-        });
-        selectedAnnoteEl = undefined;
-      };
-        // Handle positioning of the toggle
-    window.addEventListener(
-      "resize",
-      throttle(() => {
-        elRect = undefined;
-        if (selectedAnnoteEl) {
-          selectCodeLines(selectedAnnoteEl);
-        }
-      }, 10)
-    );
-    function throttle(fn, ms) {
-    let throttle = false;
-    let timer;
-      return (...args) => {
-        if(!throttle) { // first call gets through
-            fn.apply(this, args);
-            throttle = true;
-        } else { // all the others get throttled
-            if(timer) clearTimeout(timer); // cancel #2
-            timer = setTimeout(() => {
-              fn.apply(this, args);
-              timer = throttle = false;
-            }, ms);
-        }
-      };
-    }
-      // Attach click handler to the DT
-      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
-      for (const annoteDlNode of annoteDls) {
-        annoteDlNode.addEventListener('click', (event) => {
-          const clickedEl = event.target;
-          if (clickedEl !== selectedAnnoteEl) {
-            unselectCodeLines();
-            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
-            if (activeEl) {
-              activeEl.classList.remove('code-annotation-active');
-            }
-            selectCodeLines(clickedEl);
-            clickedEl.classList.add('code-annotation-active');
-          } else {
-            // Unselect the line
-            unselectCodeLines();
-            clickedEl.classList.remove('code-annotation-active');
-          }
-        });
-      }
-  const findCites = (el) => {
-    const parentEl = el.parentElement;
-    if (parentEl) {
-      const cites = parentEl.dataset.cites;
-      if (cites) {
-        return {
-          el,
-          cites: cites.split(' ')
-        };
-      } else {
-        return findCites(el.parentElement)
-      }
-    } else {
-      return undefined;
-    }
-  };
-  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
-  for (var i=0; i<bibliorefs.length; i++) {
-    const ref = bibliorefs[i];
-    const citeInfo = findCites(ref);
-    if (citeInfo) {
-      tippyHover(citeInfo.el, function() {
-        var popup = window.document.createElement('div');
-        citeInfo.cites.forEach(function(cite) {
-          var citeDiv = window.document.createElement('div');
-          citeDiv.classList.add('hanging-indent');
-          citeDiv.classList.add('csl-entry');
-          var biblioDiv = window.document.getElementById('ref-' + cite);
-          if (biblioDiv) {
-            citeDiv.innerHTML = biblioDiv.innerHTML;
-          }
-          popup.appendChild(citeDiv);
-        });
-        return popup.innerHTML;
+      }, function(instance) {
       });
     }
-  }
-});
-</script>
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
       <a href="./framework.html" class="pagination-link" aria-label="The Framework">
@@ -831,8 +1000,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./barriers.html" class="pagination-link" aria-label="Barriers and Obstacles and How to Overcome Them">
-        <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Barriers and Obstacles and How to Overcome Them</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./barriers.html" class="pagination-link" aria-label="Barriers and How to Address Them">
+        <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Barriers and How to Address Them</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

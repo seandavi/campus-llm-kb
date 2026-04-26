@@ -2,13 +2,17 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.5.57">
+<meta name="generator" content="quarto-1.9.37">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="dcterms.date" content="2026-04-26">
 
-<title>7&nbsp; Research – Large Language Model Policy and Practice</title>
+<title>7&nbsp; Research Domain – Implementing AI in Academic Medicine</title>
 <style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
 div.columns{display: flex; gap: min(4vw, 1.5em);}
@@ -20,7 +24,26 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
@@ -32,15 +55,16 @@ ul.task-list li input[type="checkbox"] {
 <meta name="quarto:offset" content="./">
 <link href="./resources_education.html" rel="next">
 <link href="./resources_clinical.html" rel="prev">
-<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-7f8f88aac4f3542376d5c11b86a4c14d.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-36bf55b16c7cb4b1420f41495cb5446a.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -68,20 +92,14 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
-<!-- Google tag (gtag.js) -->
-<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-KLLV1GCF4E"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-KLLV1GCF4E');
-</script>
+<script src="site_libs/quarto-diagram/mermaid.min.js"></script>
+<script src="site_libs/quarto-diagram/mermaid-init.js"></script>
+<link href="site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
 
 
 </head>
 
-<body class="nav-sidebar floating nav-fixed">
+<body class="nav-sidebar floating nav-fixed quarto-light">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -89,7 +107,7 @@ ul.task-list li input[type="checkbox"] {
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
     <a class="navbar-brand" href="./index.html">
-    <span class="navbar-title">Large Language Model Policy and Practice</span>
+    <span class="navbar-title">Implementing AI in Academic Medicine</span>
     </a>
   </div>
         <div class="quarto-navbar-tools tools-wide tools-end">
@@ -98,13 +116,13 @@ ul.task-list li input[type="checkbox"] {
       <a href="" title="Download" id="quarto-navigation-tool-dropdown-0" class="quarto-navigation-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false" role="link" aria-label="Download"><i class="bi bi-download"></i></a>
       <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="quarto-navigation-tool-dropdown-0">
           <li>
-            <a class="dropdown-item quarto-navbar-tools-item" href="./Large-Language-Model-Policy-and-Practice.pdf">
+            <a class="dropdown-item quarto-navbar-tools-item" href="./Implementing-AI-in-Academic-Medicine.pdf">
               <i class="bi bi-file-pdf pe-1"></i>
             Download PDF
             </a>
           </li>
           <li>
-            <a class="dropdown-item quarto-navbar-tools-item" href="./Large-Language-Model-Policy-and-Practice.epub">
+            <a class="dropdown-item quarto-navbar-tools-item" href="./Implementing-AI-in-Academic-Medicine.epub">
               <i class="bi bi-journal pe-1"></i>
             Download ePub
             </a>
@@ -143,7 +161,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./domainresource.html">Domain Resources</a></li><li class="breadcrumb-item"><a href="./resources_research.html"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Research</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./domainresource.html">Domain Resources</a></li><li class="breadcrumb-item"><a href="./resources_research.html"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Research Domain</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -157,13 +175,13 @@ ul.task-list li input[type="checkbox"] {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./preface.html" class="sidebar-item-text sidebar-link">
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Preface</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link">
+  <a href="./overview.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Overview</span></span></a>
   </div>
 </li>
@@ -197,7 +215,7 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./barriers.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Barriers and Obstacles and How to Overcome Them</span></span></a>
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Barriers and How to Address Them</span></span></a>
   </div>
 </li>
       </ul>
@@ -220,13 +238,13 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./resources_research.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Research</span></span></a>
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Research Domain</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./resources_education.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Education</span></span></a>
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Education Domain</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -235,17 +253,93 @@ ul.task-list li input[type="checkbox"] {
  <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Business Operations</span></span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./regulatory_landscape.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Regulatory and Policy Landscape</span></span></a>
+  </div>
+</li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
- <span class="menu-text">Appendices</span></a>
+ <span class="menu-text">Agentic AI in Practice</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./agentic_safety.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Agentic Safety and Guardrails</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./patient_trust.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Patient and Community Trust</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./professional_wellness.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Professional Wellness and Reducing Cognitive Burden</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true">
+ <span class="menu-text">Workstream Resources</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./infrastructure.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">IT Infrastructure and Security</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./workforce.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Training and Workforce Development</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ethics.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Ethics, Equity, and Institutional Accountability</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./data.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Data Access and Governance</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./pm_and_support.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Project Management and AI Portfolio Governance</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true">
+ <span class="menu-text">Appendices</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./appendices.html" class="sidebar-item-text sidebar-link">
@@ -255,13 +349,25 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./bill_of_rights.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">B</span>&nbsp; <span class="chapter-title">Whitehouse AI Bill(s) of rights</span></span></a>
+ <span class="menu-text"><span class="chapter-number">B</span>&nbsp; <span class="chapter-title">OSTP Blueprint for an AI Bill of Rights</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./HHS.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">C</span>&nbsp; <span class="chapter-title">HHS EHR reporting program rule</span></span></a>
+ <span class="menu-text"><span class="chapter-number">C</span>&nbsp; <span class="chapter-title">ONC HTI-1: Algorithm Transparency and Interoperability</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./appendix_workflow.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">D</span>&nbsp; <span class="chapter-title">How This Book Was Written: A Multi-Model AI Authorship Workflow</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./references.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">References</span></a>
   </div>
 </li>
       </ul>
@@ -271,15 +377,32 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#sec-research-scale" id="toc-sec-research-scale" class="nav-link active" data-scroll-target="#sec-research-scale"><span class="header-section-number">7.1</span> The Information Crisis in Biomedical Research</a></li>
+  <li><a href="#sec-research-synthesis" id="toc-sec-research-synthesis" class="nav-link" data-scroll-target="#sec-research-synthesis"><span class="header-section-number">7.2</span> Literature Discovery and Synthesis</a></li>
+  <li><a href="#sec-research-hypothesis" id="toc-sec-research-hypothesis" class="nav-link" data-scroll-target="#sec-research-hypothesis"><span class="header-section-number">7.3</span> Hypothesis Generation and Study Design</a></li>
+  <li><a href="#sec-research-code" id="toc-sec-research-code" class="nav-link" data-scroll-target="#sec-research-code"><span class="header-section-number">7.4</span> Code Generation and Reproducible Analysis</a></li>
+  <li><a href="#sec-research-integrity" id="toc-sec-research-integrity" class="nav-link" data-scroll-target="#sec-research-integrity"><span class="header-section-number">7.5</span> Manuscript Drafting, Authorship, and the Policy Landscape</a></li>
+  <li><a href="#sec-research-risks" id="toc-sec-research-risks" class="nav-link" data-scroll-target="#sec-research-risks"><span class="header-section-number">7.6</span> Research Integrity Risks</a></li>
+  <li><a href="#sec-research-privacy" id="toc-sec-research-privacy" class="nav-link" data-scroll-target="#sec-research-privacy"><span class="header-section-number">7.7</span> Human Subjects, Privacy, and Secure Infrastructure</a></li>
+  <li><a href="#sec-research-starter" id="toc-sec-research-starter" class="nav-link" data-scroll-target="#sec-research-starter"><span class="header-section-number">7.8</span> Where to Start: Two Starter Projects</a>
+  <ul class="collapse">
+  <li><a href="#project-1-institutional-literature-review-toolkit" id="toc-project-1-institutional-literature-review-toolkit" class="nav-link" data-scroll-target="#project-1-institutional-literature-review-toolkit"><span class="header-section-number">7.8.1</span> Project 1: Institutional Literature Review Toolkit</a></li>
+  <li><a href="#project-2-secure-ai-gateway-for-research-computing" id="toc-project-2-secure-ai-gateway-for-research-computing" class="nav-link" data-scroll-target="#project-2-secure-ai-gateway-for-research-computing"><span class="header-section-number">7.8.2</span> Project 2: Secure AI Gateway for Research Computing</a></li>
+  </ul></li>
+  </ul>
+<div class="toc-actions"><ul><li><a href="https://github.com/seandavi/campus-llm-kb/edit/main/resources_research.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./domainresource.html">Domain Resources</a></li><li class="breadcrumb-item"><a href="./resources_research.html"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Research</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./domainresource.html">Domain Resources</a></li><li class="breadcrumb-item"><a href="./resources_research.html"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Research Domain</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Research</span></h1>
+<h1 class="title"><span id="sec-research" class="quarto-section-identifier"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Research Domain</span></span></h1>
 </div>
 
 
@@ -287,6 +410,12 @@ ul.task-list li input[type="checkbox"] {
 <div class="quarto-title-meta">
 
     
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">April 26, 2026</p>
+    </div>
+  </div>
   
     
   </div>
@@ -296,244 +425,477 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
+<p>The academic medical center’s research enterprise has never been easy to sustain. Investigators spend a growing fraction of their time on grant writing and manuscript administration rather than on investigation. The volume of published literature has outpaced any individual’s ability to track it: PubMed indexed more than 37 million citations by mid-2024, with approximately 1.5 million new records added each year <span class="citation" data-cites="NLM2024-pubmed">(<a href="references.html#ref-NLM2024-pubmed" role="doc-biblioref">National Library of Medicine 2024</a>)</span>. The peer review system strains under submission pressure, and the reproducibility crisis — well documented across biomedical fields for more than a decade — continues to surface failures that call the research enterprise’s integrity into question.</p>
+<p>Generative AI arrived into this strained system and immediately found traction, not because investigators were looking for AI specifically but because they needed relief from exactly the tasks where AI is most useful: reading and synthesizing large volumes of text, drafting standard-form documents, and generating plausible starting points for complex writing tasks. The technology also introduced new failure modes — citation hallucination, data fabrication, peer review confidentiality violations — that are serious enough to warrant careful institutional guidance.</p>
+<p>This chapter maps the real capabilities and real risks of generative AI in the research lifecycle. It does not argue that AI will transform research; the transformation, where it is happening, is more prosaic than that. It argues that an academic medical center that does not give its investigators clear guidance and appropriate infrastructure for AI use in 2025–2026 is leaving a significant productivity gain on the table and creating an integrity risk at the same time.</p>
+<section id="sec-research-scale" class="level2" data-number="7.1">
+<h2 data-number="7.1" class="anchored" data-anchor-id="sec-research-scale"><span class="header-section-number">7.1</span> The Information Crisis in Biomedical Research</h2>
+<p>Understanding why AI has taken hold in research requires understanding the scale of the problem it is solving. Publication volume growth is not a recent phenomenon, but the rate has accelerated. A systematic reviewer completing a comprehensive literature search in oncology or cardiology today can expect to screen thousands of abstracts for a single review. The manual process — reading title and abstract, applying inclusion/exclusion criteria, extracting data from included papers — consumes months of researcher time for a single systematic review. The Cochrane Collaboration, which sets the standard for systematic review methodology, has documented that the time from literature search to publication for a systematic review averages more than two years.</p>
+<p>Grant writing represents a comparable burden. Survey data collected by von Hippel and von Hippel found that principal investigators spend between 116 and 170 hours on a single NIH R01 application, with success rates hovering between 18 and 22 percent <span class="citation" data-cites="vonHippel2015-grants">(<a href="references.html#ref-vonHippel2015-grants" role="doc-biblioref">Hippel and Hippel 2015</a>)</span>. A substantial fraction of that time goes into writing that is formulaic: specific aims language, human subjects sections, data management plans, facilities descriptions. These are exactly the document types where AI drafting assistance has the clearest productivity case.</p>
+<p>The reproducibility crisis adds a third dimension. Estimates of irreproducibility in preclinical biomedical research range widely, but a 2015 survey published in <em>Nature</em> found that more than 70 percent of researchers had tried and failed to reproduce another scientist’s experiments <span class="citation" data-cites="Baker2016-reproducibility">(<a href="references.html#ref-Baker2016-reproducibility" role="doc-biblioref">Baker 2016</a>)</span>. The causes are multiple — inadequate methods reporting, insufficient sample sizes, selective publication — but inadequate documentation is a consistent theme. AI tools that help investigators write more precise and complete methods sections, generate analysis code that is transparent and version-controlled, and produce CONSORT- or PRISMA-compliant reporting checklists address a real problem.</p>
+</section>
+<section id="sec-research-synthesis" class="level2" data-number="7.2">
+<h2 data-number="7.2" class="anchored" data-anchor-id="sec-research-synthesis"><span class="header-section-number">7.2</span> Literature Discovery and Synthesis</h2>
+<p>The most mature and immediately useful AI applications in research are in literature discovery and synthesis. A new generation of “semantic search” tools has emerged that goes well beyond PubMed keyword search: they embed papers as dense vectors, retrieve semantically similar content, and allow natural-language queries over large corpora.</p>
+<p><strong>Elicit</strong> (elicit.com) allows investigators to upload a set of seed papers or pose a research question and receive a literature matrix — a table in which rows are papers and columns are user-specified attributes extracted by AI (sample size, outcome measures, key findings, population). This is meaningfully different from a list of search results: it is a first-pass data extraction that a reviewer can validate and extend. Elicit’s performance on recall is imperfect — it does not replace a comprehensive database search — but it is a useful starting point for scoping reviews and rapid evidence syntheses.</p>
+<p><strong>Consensus</strong> (consensus.app) is optimized for answering specific empirical questions: “Does X intervention improve Y outcome?” It returns a meter indicating the degree of published consensus, a list of supporting and contradicting papers, and extracted quotations. It is less useful for exploratory synthesis than Elicit but more useful for answering bounded clinical questions.</p>
+<p><strong>SciSpace</strong> (scispace.com) and <strong>Semantic Scholar</strong> (semanticscholar.org) offer complementary capabilities — SciSpace for interactive paper reading with AI explanation, Semantic Scholar for citation network analysis and influence mapping.</p>
+<p>Across all these tools, the empirical literature on performance is sobering. A 2024 study in the <em>Journal of Medical Internet Research</em> evaluated GPT-4 on systematic review tasks in orthopedic surgery and found approximately 13% precision in literature recall — the model retrieved many irrelevant papers and missed many relevant ones — with substantial hallucination in the reported findings <span class="citation" data-cites="Chelli2024-llm-sr">(<a href="references.html#ref-Chelli2024-llm-sr" role="doc-biblioref">Chelli et al. 2024</a>)</span>. An earlier study found that AI-generated medical abstracts were indistinguishable from real abstracts by human reviewers more than 30% of the time, and by automated detectors more than 60% of the time <span class="citation" data-cites="Gao2023-chatgpt-abstracts">(<a href="references.html#ref-Gao2023-chatgpt-abstracts" role="doc-biblioref">Gao et al. 2023</a>)</span>. These findings do not argue against using AI tools for literature work; they argue for using them as a first pass that a human reviews, not as a substitute for comprehensive search.</p>
+<p>The practical recommendation for an AMC research computing program is to provide investigators with access to two or three of these tools through an institutional account (most offer institutional pricing), include evaluation guidance in researcher training, and set the expectation that AI-assisted literature search supplements but does not replace structured database search (PubMed, Embase, CENTRAL) for systematic reviews.</p>
+</section>
+<section id="sec-research-hypothesis" class="level2" data-number="7.3">
+<h2 data-number="7.3" class="anchored" data-anchor-id="sec-research-hypothesis"><span class="header-section-number">7.3</span> Hypothesis Generation and Study Design</h2>
+<p>The use of AI in hypothesis generation is the most philosophically interesting application and the one most surrounded by hype. The honest account is more modest.</p>
+<p>Language models have been used to generate candidate hypotheses in drug repurposing, protein function prediction, and epidemiological research. In each of these domains, the model’s output reflects statistical patterns in the training corpus — it will propose hypotheses that are plausible given the existing literature, which means it is most useful for generating well-grounded starting points and least useful for generating genuinely novel ones. A model trained on the biomedical literature will not reliably propose hypotheses that contradict established findings, even when those findings are wrong. The value is in speed and breadth: an investigator exploring a new area can generate twenty candidate research questions in thirty minutes with AI assistance and spend their judgment on evaluating them rather than generating them.</p>
+<p>For study design, AI tools are useful for generating draft statistical analysis plans, identifying potential confounders from the literature, drafting power calculations for common study designs, and checking draft methods sections against reporting standards (CONSORT for randomized trials, STROBE for observational studies, PRISMA for systematic reviews). These are tasks that currently require biostatistician or methodologist time; AI cannot replace that expertise, but it can reduce the number of iterations needed before a statistician review.</p>
+<p>The buy-versus-build question here is clearly “use existing tools.” No AMC should be building a hypothesis generation AI system. The tools that exist — general-purpose models like GPT-4 and Claude, domain-specific tools like Elicit — are adequate for the investigator-facing use cases. The institutional responsibility is to ensure investigators have access to these tools through secure, BAA-compliant channels when the research involves human subjects data.</p>
+</section>
+<section id="sec-research-code" class="level2" data-number="7.4">
+<h2 data-number="7.4" class="anchored" data-anchor-id="sec-research-code"><span class="header-section-number">7.4</span> Code Generation and Reproducible Analysis</h2>
+<p>For investigators who work with data — which is most investigators in clinical and translational research — AI code generation is among the highest-value applications in this chapter. The ability to describe a data manipulation task in natural language and receive working R or Python code is genuinely productivity-transforming for investigators who are competent researchers but not expert programmers.</p>
+<p>The limitations are important. AI-generated code produces what looks like correct code; whether it is correct depends on whether the investigator can evaluate it. A model asked to perform a mixed-effects regression in R will produce syntactically valid code that often produces numerically plausible results, but it may apply the wrong random effects structure, use the wrong reference level, or fail to account for missing data in the way the investigator intended. An investigator who cannot read the code cannot catch these errors.</p>
+<p>The institutional implication is that AI code generation in research requires a floor of computational literacy — the ability to read code, understand its structure, and evaluate whether it implements the intended analysis. This is an argument for including AI-assisted programming in the <a href="workforce.html">Training &amp; Workforce Development chapter</a> curriculum, not an argument against using AI for code generation.</p>
+<p>Reproducibility is a distinct concern. Research code generated by AI should be committed to version control, documented, and included in data and code availability disclosures. The <a href="https://github.com/thu-coai/MarkLLM">MarkLLM toolkit</a> and related watermarking approaches offer technical mechanisms for tracking AI-generated code, though institutional adoption of these tools is not yet widespread. At minimum, investigators should document in their methods sections whether AI tools were used for analysis code generation, consistent with the disclosure norms discussed below.</p>
+</section>
+<section id="sec-research-integrity" class="level2" data-number="7.5">
+<h2 data-number="7.5" class="anchored" data-anchor-id="sec-research-integrity"><span class="header-section-number">7.5</span> Manuscript Drafting, Authorship, and the Policy Landscape</h2>
+<p>The use of AI in manuscript preparation has generated more policy activity than any other AI application in research, and the policies from journals and funders converge on a small number of principles that are worth knowing precisely.</p>
+<p><strong>AI cannot be an author.</strong> The International Committee of Medical Journal Editors updated its authorship recommendations in 2023 to state explicitly that AI tools do not meet authorship criteria because they cannot take responsibility for the work, cannot consent to authorship, and cannot be held accountable for errors <span class="citation" data-cites="ICMJE2023-recommendations">(<a href="references.html#ref-ICMJE2023-recommendations" role="doc-biblioref">International Committee of Medical Journal Editors 2023</a>)</span>. <em>Nature</em>, <em>Science</em>, <em>JAMA</em>, <em>NEJM</em>, and virtually every major biomedical journal has adopted equivalent language. The responsible corresponding author is accountable for any AI-generated content in the manuscript, including any errors it contains.</p>
+<p><strong>AI use must be disclosed.</strong> The specificity of disclosure requirements varies by journal. <em>Cell Press</em> requires a dedicated “Declaration of Generative AI and AI-Assisted Technologies in the Writing Process” section placed before the references. <em>Nature</em> requires disclosure in the methods. <em>JAMA</em> requires disclosure of the tool, the extent of use, and confirmation that the author has verified the final content <span class="citation" data-cites="JAMA2023-aipolicy">(<a href="references.html#ref-JAMA2023-aipolicy" role="doc-biblioref">JAMA Network 2023</a>)</span>. An investigator drafting a manuscript should check the target journal’s specific requirements; the safe default is to describe in the methods or a dedicated section which AI tools were used and for which tasks.</p>
+<p><strong>AI in peer review is prohibited.</strong> The NIH issued Notice NOT-OD-23-149 in June 2023 prohibiting peer reviewers from using AI tools to analyze or critique NIH grant applications, citing confidentiality requirements for the content of applications <span class="citation" data-cites="NIH2023-NOT-OD-23-149">(<a href="references.html#ref-NIH2023-NOT-OD-23-149" role="doc-biblioref">National Institutes of Health 2023</a>)</span>. The NSF issued parallel guidance for its merit review process <span class="citation" data-cites="NSF2024-ai-merit">(<a href="references.html#ref-NSF2024-ai-merit" role="doc-biblioref">National Science Foundation 2024</a>)</span>. Springer Nature explicitly bars uploading manuscripts to AI tools for review purposes. The confidentiality rationale is sound: when a reviewer pastes an unpublished manuscript into a commercial AI service, the manuscript has been disclosed to a third party, potentially in violation of the reviewer’s confidentiality agreement. This is true regardless of whether the AI provider claims not to train on the submitted content.</p>
+<p><strong>Grant applications are subject to disclosure requirements.</strong> NIH has not prohibited the use of AI in preparing grant applications, but has issued guidance on disclosure. The expectation is that the intellectual contribution to the science described in an application is the PI’s own. An application in which the scientific narrative was substantially AI-generated would not meet that expectation. The practical boundary is between AI as an editing and drafting tool for standard-form sections (data management plans, biosketches, resource descriptions) and AI as a substitute for the investigator’s scientific thinking.</p>
+<p><a href="#tbl-research-policies" class="quarto-xref">Table&nbsp;<span>7.1</span></a> summarizes the policy landscape for major journals and funders.</p>
+<div id="tbl-research-policies" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-research-policies-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;7.1: AI policy summary for major biomedical journals and funders. Policies are as of early 2026; investigators should check current journal instructions before submission.
+</figcaption>
+<div aria-describedby="tbl-research-policies-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<table class="caption-top table">
+<colgroup>
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Organization</th>
+<th>AI authorship</th>
+<th>Disclosure required?</th>
+<th>AI in peer review</th>
+<th>Policy date</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>ICMJE (all member journals)</td>
+<td>Prohibited</td>
+<td>Yes, extent of use</td>
+<td>Not addressed</td>
+<td>May 2023</td>
+</tr>
+<tr class="even">
+<td><em>Nature</em></td>
+<td>Prohibited</td>
+<td>Yes, in methods</td>
+<td>Prohibited</td>
+<td>Jan 2023</td>
+</tr>
+<tr class="odd">
+<td><em>Science</em></td>
+<td>Prohibited</td>
+<td>Yes</td>
+<td>Prohibited</td>
+<td>Jan 2023</td>
+</tr>
+<tr class="even">
+<td><em>JAMA</em></td>
+<td>Prohibited</td>
+<td>Yes, tool + extent</td>
+<td>Not explicitly addressed</td>
+<td>2023</td>
+</tr>
+<tr class="odd">
+<td><em>NEJM</em></td>
+<td>Prohibited</td>
+<td>Yes</td>
+<td>Not explicitly addressed</td>
+<td>2023</td>
+</tr>
+<tr class="even">
+<td><em>Cell Press</em></td>
+<td>Prohibited</td>
+<td>Yes, dedicated section</td>
+<td>Not explicitly addressed</td>
+<td>2023</td>
+</tr>
+<tr class="odd">
+<td>NIH (grants)</td>
+<td>N/A</td>
+<td>Expected for substantial use</td>
+<td>Prohibited (NOT-OD-23-149)</td>
+<td>Jun 2023</td>
+</tr>
+<tr class="even">
+<td>NSF (grants)</td>
+<td>N/A</td>
+<td>Expected</td>
+<td>Prohibited</td>
+<td>2024</td>
+</tr>
+</tbody>
+</table>
+</div>
+</figure>
+</div>
+</section>
+<section id="sec-research-risks" class="level2" data-number="7.6">
+<h2 data-number="7.6" class="anchored" data-anchor-id="sec-research-risks"><span class="header-section-number">7.6</span> Research Integrity Risks</h2>
+<p>Two integrity risks in AI-assisted research deserve explicit attention: citation hallucination and data fabrication.</p>
+<p>Citation hallucination — the generation of plausible-sounding but non-existent references — is the most widely documented AI failure mode in research contexts. Studies have found hallucination rates in AI-generated reference lists ranging from 30% to over 90%, depending on the model, the prompt, and whether the task explicitly required citation verification <span class="citation" data-cites="Gao2023-chatgpt-abstracts">(<a href="references.html#ref-Gao2023-chatgpt-abstracts" role="doc-biblioref">Gao et al. 2023</a>)</span>. The pattern is recognizable: a hallucinated citation typically has a plausible author list, a plausible journal, a plausible year, and a DOI that either does not exist or resolves to a different paper. An investigator who does not verify every AI-generated citation before submission will submit manuscripts with fabricated references, which constitutes research misconduct regardless of whether the fabrication was intentional.</p>
+<p>The institutional response is a disclosure and verification norm: any AI tool used for literature-related tasks must have its output verified before it enters a manuscript or grant application. This is not a burden unique to AI — investigators are expected to have read the papers they cite regardless of how they found them. AI makes it easier to accumulate unchecked citations, so explicit verification practice is necessary.</p>
+<p>Data fabrication through AI is a more serious concern that has attracted less attention in the policy literature. An investigator who asks an AI model to “fill in” missing data points, “smooth” irregularities in a dataset, or “generate” plausible results for an underpowered study is committing data fabrication in exactly the same way as manual fabrication. The fact that the fabrication was AI-assisted does not reduce the culpability. Research integrity training programs should explicitly address AI-assisted fabrication as a recognized misconduct category, not only the traditional forms.</p>
+</section>
+<section id="sec-research-privacy" class="level2" data-number="7.7">
+<h2 data-number="7.7" class="anchored" data-anchor-id="sec-research-privacy"><span class="header-section-number">7.7</span> Human Subjects, Privacy, and Secure Infrastructure</h2>
+<p>Research involving human subjects data requires particular care in AI tool selection and use. The Common Rule governs research involving identifiable private information; HIPAA governs the use and disclosure of protected health information. Neither was written with AI in mind, and institutional interpretation of how they apply to AI tool use is still evolving.</p>
+<p>The operative question for an investigator is: what data can be entered into which AI tool? A reasonable institutional framework distinguishes four scenarios.</p>
+<p>First, <strong>publicly available data or fully de-identified data</strong> (under HIPAA Safe Harbor or Expert Determination) may generally be entered into enterprise AI tools — provided the institutional BAA covers the tool. Whether it can be entered into consumer AI tools (public API, no BAA) depends on whether the data remains genuinely non-identifiable at the population level. The re-identification literature is clear that combinations of demographic variables that appear non-identifying individually can uniquely identify individuals in sparse datasets. When in doubt, treat data from clinical sources as identifiable.</p>
+<p>Second, <strong>limited dataset</strong> (HIPAA limited dataset, which retains dates and geographic data at the county level) requires a data use agreement and should be treated as potentially identifiable for AI tool purposes. Enterprise tools with BAAs are appropriate; public APIs are not.</p>
+<p>Third, <strong>the full EHR</strong> — identifiable clinical data — requires a BAA with the AI tool provider and should not be entered into any tool that does not have that agreement in place. Research use of full EHR data through AI tools should go through the institution’s IRB and through the honest broker process if the investigator is not the treating provider.</p>
+<p>Fourth, <strong>genomic and genetic data</strong> is subject to additional constraints — the Genetic Information Nondiscrimination Act (GINA), NIH data sharing policies for GWAS data, and the special re-identification risk of genomic data that is well documented in the literature.</p>
+<p>The infrastructure conclusion from this framework is that the research enterprise needs institutional API access to a language model that operates within an enterprise tenant with BAA, not just general permission to use consumer tools. This is a capital and contract decision that should go through the AI Steering Committee, not an investigator-by-investigator determination.</p>
+<p>A distinct data governance issue that has emerged from NIH’s 2023 Data Management and Sharing Policy is how model weights and training datasets from AI research projects are treated as “scientific data” subject to sharing requirements. The 2025 NIH guidance on AI-derived genomic data specifically designates trained models as data derivatives subject to the same controlled-access restrictions as the underlying genomic data. The practical implications — what must be shared, what may be shared, and what cannot be shared under DMS obligations — are addressed in <a href="data.html" class="quarto-xref"><span>Chapter 17</span></a>.</p>
+<p><a href="#fig-research-lifecycle" class="quarto-xref">Figure&nbsp;<span>7.1</span></a> illustrates the full research lifecycle with AI tool availability and constraints annotated at each stage.</p>
+<div class="cell" data-layout-align="default">
+<div class="cell-output-display">
+<div id="fig-research-lifecycle" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-research-lifecycle-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div>
+<pre class="mermaid mermaid-js" data-label="fig-research-lifecycle">flowchart LR
+    A([Idea\nGeneration]) --&gt; B([Literature\nReview])
+    B --&gt; C([Hypothesis\nFormation])
+    C --&gt; D([Study\nDesign])
+    D --&gt; E([IRB\nSubmission])
+    E --&gt; F([Data\nCollection])
+    F --&gt; G([Analysis &amp;\nCoding])
+    G --&gt; H([Manuscript\nDrafting])
+    H --&gt; I([Peer\nReview])
+    I --&gt; J([Publication &amp;\nDissemination])
+
+    style A fill:#90EE90
+    style B fill:#90EE90
+    style C fill:#FFD700
+    style D fill:#90EE90
+    style E fill:#FFD700
+    style F fill:#FFD700
+    style G fill:#90EE90
+    style H fill:#90EE90
+    style I fill:#FF6B6B
+    style J fill:#90EE90
+</pre>
+</div>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-research-lifecycle-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;7.1: The biomedical research lifecycle with generative AI tool applicability. Green nodes indicate mature, lower-risk AI applications. Yellow nodes indicate useful but higher-risk applications requiring human verification. Red indicates institutional or regulatory prohibition.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="sec-research-starter" class="level2" data-number="7.8">
+<h2 data-number="7.8" class="anchored" data-anchor-id="sec-research-starter"><span class="header-section-number">7.8</span> Where to Start: Two Starter Projects</h2>
+<section id="project-1-institutional-literature-review-toolkit" class="level3" data-number="7.8.1">
+<h3 data-number="7.8.1" class="anchored" data-anchor-id="project-1-institutional-literature-review-toolkit"><span class="header-section-number">7.8.1</span> Project 1: Institutional Literature Review Toolkit</h3>
+<p><strong>What it is.</strong> Negotiate an institutional subscription to Elicit or a comparable semantic search tool and configure it with access for all investigators. Create a one-page usage guide that specifies: which tasks the tool is appropriate for (scoping reviews, rapid evidence maps, initial literature exploration), which tasks require supplementation with structured database search (systematic reviews intended for peer review, Cochrane-style meta-analyses), and how to document AI tool use in methods sections per target journal requirements.</p>
+<p><strong>What you need to start.</strong> A research computing or library liaison who can manage the institutional subscription, budget for a modest annual license (Elicit institutional pricing is public and reasonable), and someone in the research integrity or library team who can write the one-page guide. The guide should take one working day to draft and one meeting with a few senior investigators to validate.</p>
+<p><strong>Build or buy?</strong> Buy — specifically, subscribe to an existing tool. Do not build a literature search AI from scratch. The commercial tools have invested years in recall optimization over biomedical corpora; a locally built vector search over PubMed will not match them and will require ongoing infrastructure investment to maintain.</p>
+<p><strong>What done looks like.</strong> Within 90 days: institutional account active, usage guide published on the research computing or library website, at least 20 investigators have used the tool, and a short usage report has been delivered to the research dean showing which departments are using it and for what. The usage data is itself valuable: it shows where investigators are investing in literature work and where training is needed.</p>
+</section>
+<section id="project-2-secure-ai-gateway-for-research-computing" class="level3" data-number="7.8.2">
+<h3 data-number="7.8.2" class="anchored" data-anchor-id="project-2-secure-ai-gateway-for-research-computing"><span class="header-section-number">7.8.2</span> Project 2: Secure AI Gateway for Research Computing</h3>
+<p><strong>What it is.</strong> Deploy an institutional API gateway that routes requests to a language model (GPT-4, Claude, or Gemini) through an enterprise-tenanted endpoint with a BAA, logs all usage by user and project, and enforces data classification rules — specifically, rejecting or flagging requests that contain patterns matching PHI or genomic identifiers. Researchers submit queries through a simple web interface or through an API key issued against their institutional credentials.</p>
+<p><strong>Why this matters for research specifically.</strong> The alternative — investigators using personal OpenAI or Anthropic accounts for research tasks — creates two problems. It routes research data through personal accounts with no institutional oversight or logging. It makes it impossible to answer the question “what AI tools did you use on this project?” when a journal or funder asks, because there is no institutional record.</p>
+<p><strong>What you need to start.</strong> The core technical components are an Azure OpenAI or AWS Bedrock deployment (both offer BAAs; setup takes one to two weeks for a system administrator familiar with the platform), a simple API gateway (LiteLLM proxy is an open-source option that adds routing, logging, and cost tracking with minimal configuration), and a credential issuance process tied to the institution’s identity provider. The entire system can be built by one competent platform engineer in two to four weeks.</p>
+<p><strong>Build or buy?</strong> Build the gateway, buy the model. The model capability comes from the commercial provider; the gateway is lightweight infrastructure that the institution controls. This is one of the cases where a modest engineering investment produces a durable capability: once the gateway is running, adding new model providers, new data classification rules, or new usage analytics is incremental work.</p>
+<p><strong>What done looks like.</strong> Investigators can make API requests to the institutional gateway from their preferred coding environment (R, Python, Jupyter) or from a simple web interface. Usage is logged by project and researcher. A data classification filter is running on prompt content. A quarterly usage report goes to the research dean and the AISC. When a journal asks “did you use AI on this project?”, the investigator can answer based on their logged requests rather than on memory.</p>
 
 
+<div id="refs" class="references csl-bib-body hanging-indent" role="list" style="display: none">
+<div id="ref-Baker2016-reproducibility" class="csl-entry" role="listitem">
+Baker, Monya. 2016. <span>“1,500 Scientists Lift the Lid on Reproducibility.”</span> <em>Nature</em> 533: 452–54. <a href="https://doi.org/10.1038/533452a">https://doi.org/10.1038/533452a</a>.
+</div>
+<div id="ref-Chelli2024-llm-sr" class="csl-entry" role="listitem">
+Chelli, Mikaël, Julien Descamps, Vincent Lavoue, et al. 2024. <span>“Hallucination Rates and Reference Accuracy of <span>ChatGPT</span> and <span>Bard</span> for Systematic Reviews: Comparative Study.”</span> <em>Journal of Medical Internet Research</em> 26: e53745. <a href="https://doi.org/10.2196/53745">https://doi.org/10.2196/53745</a>.
+</div>
+<div id="ref-Gao2023-chatgpt-abstracts" class="csl-entry" role="listitem">
+Gao, Catherine A, Frederick M Howard, Nikolay S Markov, et al. 2023. <span>“Comparing Scientific Abstracts Generated by <span>ChatGPT</span> to Real Abstracts with Detectors and Blinded Human Reviewers.”</span> <em>Npj Digital Medicine</em> 6: 75. <a href="https://doi.org/10.1038/s41746-023-00772-w">https://doi.org/10.1038/s41746-023-00772-w</a>.
+</div>
+<div id="ref-vonHippel2015-grants" class="csl-entry" role="listitem">
+Hippel, Ted von, and Courtney von Hippel. 2015. <span>“The Time Allocation Effects of Uncertainty: Grant Writing and Scientific Productivity.”</span> <em>PLOS ONE</em> 10 (5): e0127948. <a href="https://doi.org/10.1371/journal.pone.0127948">https://doi.org/10.1371/journal.pone.0127948</a>.
+</div>
+<div id="ref-ICMJE2023-recommendations" class="csl-entry" role="listitem">
+International Committee of Medical Journal Editors. 2023. <em>Recommendations for the Conduct, Reporting, Editing, and Publication of Scholarly Work in Medical Journals</em>. <a href="https://www.icmje.org/recommendations/">https://www.icmje.org/recommendations/</a>.
+</div>
+<div id="ref-JAMA2023-aipolicy" class="csl-entry" role="listitem">
+JAMA Network. 2023. <em>Instructions for Authors: Use of Artificial Intelligence, Language Models, Machine Learning, or Similar Technologies</em>. <a href="https://jamanetwork.com/journals/jama/pages/instructions-for-authors">https://jamanetwork.com/journals/jama/pages/instructions-for-authors</a>.
+</div>
+<div id="ref-NIH2023-NOT-OD-23-149" class="csl-entry" role="listitem">
+National Institutes of Health. 2023. <em>The Use of Generative Artificial Intelligence Technologies Is Not Permitted for <span>NIH</span> Peer Review Activities</em>. NOT-OD-23-149. <a href="https://grants.nih.gov/grants/guide/notice-files/NOT-OD-23-149.html">https://grants.nih.gov/grants/guide/notice-files/NOT-OD-23-149.html</a>.
+</div>
+<div id="ref-NLM2024-pubmed" class="csl-entry" role="listitem">
+National Library of Medicine. 2024. <em><span>PubMed</span> Statistics</em>. <a href="https://pubmed.ncbi.nlm.nih.gov/stats/">https://pubmed.ncbi.nlm.nih.gov/stats/</a>.
+</div>
+<div id="ref-NSF2024-ai-merit" class="csl-entry" role="listitem">
+National Science Foundation. 2024. <em>Notice on the Use of Generative Artificial Intelligence Technology in the <span>NSF</span> Merit Review Process</em>. <a href="https://new.nsf.gov/news/notice-on-the-use-of-generative-artificial-intelligence">https://new.nsf.gov/news/notice-on-the-use-of-generative-artificial-intelligence</a>.
+</div>
+</div>
+</section>
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
-window.document.addEventListener("DOMContentLoaded", function (event) {
-  const toggleBodyColorMode = (bsSheetEl) => {
-    const mode = bsSheetEl.getAttribute("data-mode");
-    const bodyEl = window.document.querySelector("body");
-    if (mode === "dark") {
-      bodyEl.classList.add("quarto-dark");
-      bodyEl.classList.remove("quarto-light");
-    } else {
-      bodyEl.classList.add("quarto-light");
-      bodyEl.classList.remove("quarto-dark");
-    }
-  }
-  const toggleBodyColorPrimary = () => {
-    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
-    if (bsSheetEl) {
-      toggleBodyColorMode(bsSheetEl);
-    }
-  }
-  toggleBodyColorPrimary();  
-  const icon = "";
-  const anchorJS = new window.AnchorJS();
-  anchorJS.options = {
-    placement: 'right',
-    icon: icon
-  };
-  anchorJS.add('.anchored');
-  const isCodeAnnotation = (el) => {
-    for (const clz of el.classList) {
-      if (clz.startsWith('code-annotation-')) {                     
-        return true;
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
       }
+      return false;
     }
-    return false;
-  }
-  const onCopySuccess = function(e) {
-    // button target
-    const button = e.trigger;
-    // don't keep focus
-    button.blur();
-    // flash "checked"
-    button.classList.add('code-copy-button-checked');
-    var currentTitle = button.getAttribute("title");
-    button.setAttribute("title", "Copied!");
-    let tooltip;
-    if (window.bootstrap) {
-      button.setAttribute("data-bs-toggle", "tooltip");
-      button.setAttribute("data-bs-placement", "left");
-      button.setAttribute("data-bs-title", "Copied!");
-      tooltip = new bootstrap.Tooltip(button, 
-        { trigger: "manual", 
-          customClass: "code-copy-button-tooltip",
-          offset: [0, -8]});
-      tooltip.show();    
-    }
-    setTimeout(function() {
-      if (tooltip) {
-        tooltip.hide();
-        button.removeAttribute("data-bs-title");
-        button.removeAttribute("data-bs-toggle");
-        button.removeAttribute("data-bs-placement");
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
       }
-      button.setAttribute("title", currentTitle);
-      button.classList.remove('code-copy-button-checked');
-    }, 1000);
-    // clear code selection
-    e.clearSelection();
-  }
-  const getTextToCopy = function(trigger) {
-      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
       for (const childEl of codeEl.children) {
         if (isCodeAnnotation(childEl)) {
           childEl.remove();
         }
       }
       return codeEl.innerText;
-  }
-  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
-    text: getTextToCopy
-  });
-  clipboard.on('success', onCopySuccess);
-  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
-    // For code content inside modals, clipBoardJS needs to be initialized with a container option
-    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
-    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
-      text: getTextToCopy,
-      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
     });
-    clipboardModal.on('success', onCopySuccess);
-  }
-    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
-    var mailtoRegex = new RegExp(/^mailto:/);
-      var filterRegex = new RegExp("https:\/\/seandavi\.github\.io\/campus-llm-kb\/");
-    var isInternal = (href) => {
-        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
     }
-    // Inspect non-navigation links and adorn them if external
- 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
-    for (var i=0; i<links.length; i++) {
-      const link = links[i];
-      if (!isInternal(link.href)) {
-        // undo the damage that might have been done by quarto-nav.js in the case of
-        // links that we want to consider external
-        if (link.dataset.originalHref !== undefined) {
-          link.href = link.dataset.originalHref;
-        }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/seandavi\.github\.io\/campus-llm-kb\/");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }
-    }
-  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
-    const config = {
-      allowHTML: true,
-      maxWidth: 500,
-      delay: 100,
-      arrow: false,
-      appendTo: function(el) {
-          return el.parentElement;
-      },
-      interactive: true,
-      interactiveBorder: 10,
-      theme: 'quarto',
-      placement: 'bottom-start',
-    };
-    if (contentFn) {
-      config.content = contentFn;
-    }
-    if (onTriggerFn) {
-      config.onTrigger = onTriggerFn;
-    }
-    if (onUntriggerFn) {
-      config.onUntrigger = onUntriggerFn;
-    }
-    window.tippy(el, config); 
-  }
-  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
-  for (var i=0; i<noterefs.length; i++) {
-    const ref = noterefs[i];
-    tippyHover(ref, function() {
-      // use id or data attribute instead here
-      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
-      try { href = new URL(href).hash; } catch {}
-      const id = href.replace(/^#\/?/, "");
-      const note = window.document.getElementById(id);
-      if (note) {
-        return note.innerHTML;
-      } else {
-        return "";
-      }
-    });
-  }
-  const xrefs = window.document.querySelectorAll('a.quarto-xref');
-  const processXRef = (id, note) => {
-    // Strip column container classes
-    const stripColumnClz = (el) => {
-      el.classList.remove("page-full", "page-columns");
-      if (el.children) {
-        for (const child of el.children) {
-          stripColumnClz(child);
-        }
-      }
-    }
-    stripColumnClz(note)
-    if (id === null || id.startsWith('sec-')) {
-      // Special case sections, only their first couple elements
-      const container = document.createElement("div");
-      if (note.children && note.children.length > 2) {
-        container.appendChild(note.children[0].cloneNode(true));
-        for (let i = 1; i < note.children.length; i++) {
-          const child = note.children[i];
-          if (child.tagName === "P" && child.innerText === "") {
-            continue;
-          } else {
-            container.appendChild(child.cloneNode(true));
-            break;
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
           }
         }
-        if (window.Quarto?.typesetMath) {
-          window.Quarto.typesetMath(container);
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
         }
-        return container.innerHTML
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
       } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
         if (window.Quarto?.typesetMath) {
           window.Quarto.typesetMath(note);
         }
-        return note.innerHTML;
-      }
-    } else {
-      // Remove any anchor links if they are present
-      const anchorLink = note.querySelector('a.anchorjs-link');
-      if (anchorLink) {
-        anchorLink.remove();
-      }
-      if (window.Quarto?.typesetMath) {
-        window.Quarto.typesetMath(note);
-      }
-      // TODO in 1.5, we should make sure this works without a callout special case
-      if (note.classList.contains("callout")) {
-        return note.outerHTML;
-      } else {
-        return note.innerHTML;
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
       }
     }
-  }
-  for (var i=0; i<xrefs.length; i++) {
-    const xref = xrefs[i];
-    tippyHover(xref, undefined, function(instance) {
-      instance.disable();
-      let url = xref.getAttribute('href');
-      let hash = undefined; 
-      if (url.startsWith('#')) {
-        hash = url;
-      } else {
-        try { hash = new URL(url).hash; } catch {}
-      }
-      if (hash) {
-        const id = hash.replace(/^#\/?/, "");
-        const note = window.document.getElementById(id);
-        if (note !== null) {
-          try {
-            const html = processXRef(id, note.cloneNode(true));
-            instance.setContent(html);
-          } finally {
-            instance.enable();
-            instance.show();
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
           }
         } else {
-          // See if we can fetch this
-          fetch(url.split('#')[0])
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
           .then(res => res.text())
           .then(html => {
             const parser = new DOMParser();
             const htmlDoc = parser.parseFromString(html, "text/html");
-            const note = htmlDoc.getElementById(id);
+            const note = htmlDoc.querySelector('main.content');
             if (note !== null) {
-              const html = processXRef(id, note);
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
               instance.setContent(html);
             } 
           }).finally(() => {
@@ -541,185 +903,161 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             instance.show();
           });
         }
-      } else {
-        // See if we can fetch a full url (with no hash to target)
-        // This is a special case and we should probably do some content thinning / targeting
-        fetch(url)
-        .then(res => res.text())
-        .then(html => {
-          const parser = new DOMParser();
-          const htmlDoc = parser.parseFromString(html, "text/html");
-          const note = htmlDoc.querySelector('main.content');
-          if (note !== null) {
-            // This should only happen for chapter cross references
-            // (since there is no id in the URL)
-            // remove the first header
-            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
-              note.children[0].remove();
-            }
-            const html = processXRef(null, note);
-            instance.setContent(html);
-          } 
-        }).finally(() => {
-          instance.enable();
-          instance.show();
-        });
-      }
-    }, function(instance) {
-    });
-  }
-      let selectedAnnoteEl;
-      const selectorForAnnotation = ( cell, annotation) => {
-        let cellAttr = 'data-code-cell="' + cell + '"';
-        let lineAttr = 'data-code-annotation="' +  annotation + '"';
-        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
-        return selector;
-      }
-      const selectCodeLines = (annoteEl) => {
-        const doc = window.document;
-        const targetCell = annoteEl.getAttribute("data-target-cell");
-        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
-        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
-        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
-        const lineIds = lines.map((line) => {
-          return targetCell + "-" + line;
-        })
-        let top = null;
-        let height = null;
-        let parent = null;
-        if (lineIds.length > 0) {
-            //compute the position of the single el (top and bottom and make a div)
-            const el = window.document.getElementById(lineIds[0]);
-            top = el.offsetTop;
-            height = el.offsetHeight;
-            parent = el.parentElement.parentElement;
-          if (lineIds.length > 1) {
-            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
-            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
-            height = bottom - top;
-          }
-          if (top !== null && height !== null && parent !== null) {
-            // cook up a div (if necessary) and position it 
-            let div = window.document.getElementById("code-annotation-line-highlight");
-            if (div === null) {
-              div = window.document.createElement("div");
-              div.setAttribute("id", "code-annotation-line-highlight");
-              div.style.position = 'absolute';
-              parent.appendChild(div);
-            }
-            div.style.top = top - 2 + "px";
-            div.style.height = height + 4 + "px";
-            div.style.left = 0;
-            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
-            if (gutterDiv === null) {
-              gutterDiv = window.document.createElement("div");
-              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
-              gutterDiv.style.position = 'absolute';
-              const codeCell = window.document.getElementById(targetCell);
-              const gutter = codeCell.querySelector('.code-annotation-gutter');
-              gutter.appendChild(gutterDiv);
-            }
-            gutterDiv.style.top = top - 2 + "px";
-            gutterDiv.style.height = height + 4 + "px";
-          }
-          selectedAnnoteEl = annoteEl;
-        }
-      };
-      const unselectCodeLines = () => {
-        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
-        elementsIds.forEach((elId) => {
-          const div = window.document.getElementById(elId);
-          if (div) {
-            div.remove();
-          }
-        });
-        selectedAnnoteEl = undefined;
-      };
-        // Handle positioning of the toggle
-    window.addEventListener(
-      "resize",
-      throttle(() => {
-        elRect = undefined;
-        if (selectedAnnoteEl) {
-          selectCodeLines(selectedAnnoteEl);
-        }
-      }, 10)
-    );
-    function throttle(fn, ms) {
-    let throttle = false;
-    let timer;
-      return (...args) => {
-        if(!throttle) { // first call gets through
-            fn.apply(this, args);
-            throttle = true;
-        } else { // all the others get throttled
-            if(timer) clearTimeout(timer); // cancel #2
-            timer = setTimeout(() => {
-              fn.apply(this, args);
-              timer = throttle = false;
-            }, ms);
-        }
-      };
-    }
-      // Attach click handler to the DT
-      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
-      for (const annoteDlNode of annoteDls) {
-        annoteDlNode.addEventListener('click', (event) => {
-          const clickedEl = event.target;
-          if (clickedEl !== selectedAnnoteEl) {
-            unselectCodeLines();
-            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
-            if (activeEl) {
-              activeEl.classList.remove('code-annotation-active');
-            }
-            selectCodeLines(clickedEl);
-            clickedEl.classList.add('code-annotation-active');
-          } else {
-            // Unselect the line
-            unselectCodeLines();
-            clickedEl.classList.remove('code-annotation-active');
-          }
-        });
-      }
-  const findCites = (el) => {
-    const parentEl = el.parentElement;
-    if (parentEl) {
-      const cites = parentEl.dataset.cites;
-      if (cites) {
-        return {
-          el,
-          cites: cites.split(' ')
-        };
-      } else {
-        return findCites(el.parentElement)
-      }
-    } else {
-      return undefined;
-    }
-  };
-  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
-  for (var i=0; i<bibliorefs.length; i++) {
-    const ref = bibliorefs[i];
-    const citeInfo = findCites(ref);
-    if (citeInfo) {
-      tippyHover(citeInfo.el, function() {
-        var popup = window.document.createElement('div');
-        citeInfo.cites.forEach(function(cite) {
-          var citeDiv = window.document.createElement('div');
-          citeDiv.classList.add('hanging-indent');
-          citeDiv.classList.add('csl-entry');
-          var biblioDiv = window.document.getElementById('ref-' + cite);
-          if (biblioDiv) {
-            citeDiv.innerHTML = biblioDiv.innerHTML;
-          }
-          popup.appendChild(citeDiv);
-        });
-        return popup.innerHTML;
+      }, function(instance) {
       });
     }
-  }
-});
-</script>
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
       <a href="./resources_clinical.html" class="pagination-link" aria-label="Clinical Domain">
@@ -727,8 +1065,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./resources_education.html" class="pagination-link" aria-label="Education">
-        <span class="nav-page-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Education</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./resources_education.html" class="pagination-link" aria-label="Education Domain">
+        <span class="nav-page-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Education Domain</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
@@ -737,4 +1075,4 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 
 
 
-<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions"><ul><li><a href="https://github.com/seandavi/campus-llm-kb/edit/main/resources_research.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li></ul></div></div></div></footer></body></html>
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/seandavi/campus-llm-kb/edit/main/resources_research.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li></ul></div></div></div></footer></body></html>
