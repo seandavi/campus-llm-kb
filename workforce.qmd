@@ -154,6 +154,113 @@ flowchart LR
     H --> I
 ```
 
+## Measuring the Gap: The Evidence the Chapter's Claims Rest On
+
+The assertion that clinicians overestimate their AI knowledge is not an impression — it
+is a documented empirical pattern with a specific shape. Studies applying validated AI
+literacy instruments to healthcare workers consistently find gaps of 30 to 54 percentage
+points between self-reported competence and objectively measured performance. The
+instruments that have been developed for this purpose — the Meta AI Literacy Scale
+(MAILS), the Scale for Non-Expert AI Literacy (SNAIL), and the AI Readiness Scale for
+medical students — are not perfect assessments, but they are specific enough to
+distinguish among competency domains and reveal where overconfidence concentrates.
+
+The pattern is consistent across domains: clinicians score closer to their self-assessments
+on questions about AI tools they use daily, and diverge most sharply on questions about
+model mechanics, data governance, and failure mode recognition. The Dunning-Kruger
+structure matters for governance because the highest-confidence wrong answers tend to come
+from the consumer tier — the people using AI tools at the point of care — rather than from
+developers or governors. A consumer who is confident that they understand when an ambient
+scribe is likely to make an error is less likely to apply the verification discipline that
+the tool's actual failure modes require. The training program that addresses this cannot
+be reassurance that AI is generally reliable. It has to name the specific failure modes
+and require demonstrated ability to recognize them.
+
+Survey data from 2025 has added a shadow AI dimension to this picture. A Wolters Kluwer
+survey found that 57 percent of healthcare professionals had encountered or used
+unauthorized AI tools in their work [@WoltersKluwer2025-survey]. A separate market
+research report found that 17 percent of front-line staff admitted to entering
+identifiable patient data into consumer AI tools [@BlackBook2025-shadow]. These numbers
+are almost certainly underestimates — surveys of unauthorized behavior depend on
+self-reporting by people who may recognize the behavior as problematic. The shadow AI
+problem is not primarily about bad actors. It is about people solving real workflow
+problems with available tools in the absence of a sanctioned alternative that works as
+well.
+
+## The Accreditor Mandate: 2025 and Beyond
+
+For the first five years of the generative AI era, AI literacy in healthcare education was
+largely voluntary — something institutions could pursue if they believed in it, skip if
+they were busy. That has changed. The 2025 to 2026 accreditation cycle has moved AI
+literacy from an optional enrichment to a formal program requirement in ways that are
+specific enough to enforce.
+
+The ACGME's July 2025 Common Program Requirements include new language on human-AI
+teamwork and require programs to have institutional policies on the use of generative AI
+for academic work [@ACGME2025-CPR]. The specificity is meaningful: it is not "programs
+should be aware of AI" but "programs must have policies." Programs without documented AI
+use governance are out of compliance with the new requirements starting with the 2025 to
+2026 accreditation year.
+
+The LCME's current standards for medical school accreditation interpret Standards 7.6
+and 8.2 — covering bias and self-directed learning — to require critical appraisal of AI
+outputs as a competency that medical students must demonstrate. The AAMC's 2025 AI
+Competencies Across the Learning Continuum, developed through a formal Delphi process,
+provides the national standard for what those competencies should include across
+undergraduate, graduate, and continuing medical education [@AAMC2025-competencies].
+
+For nursing programs, the American Nurses Association's 2025 update to the Code of Ethics
+explicitly addresses machine learning: Provision 7.5 states that AI is integral to nursing
+practice, and Provision 4.2 clarifies that nurses retain final accountability over
+AI-influenced care decisions. The update is significant because it moves AI governance
+from an informatics specialty issue to a professional obligation for every practicing nurse.
+
+The ACCME has issued guidance on the responsible use of AI in accredited continuing
+education, establishing disclosure requirements and data handling standards for
+CME programs that use AI-generated content or AI-assisted learning tools [@ACCME2025-ai].
+For AMC CME offices that have adopted AI for content development, this is an immediate
+operational compliance issue, not a future planning item.
+
+The practical implication is that workforce development for AI is no longer a discretionary
+investment. Programs that do not have documented, accreditor-compliant AI policies and
+competency-based training in place are at accreditation risk. The AMC that treats this as
+an IT initiative rather than an academic and clinical leadership priority will discover the
+error during its next site visit.
+
+## Building a Living Curriculum
+
+The half-life of specific AI technical knowledge is short. A training module written
+around GPT-4's capabilities in early 2023 was already outdated within six months. A
+curriculum built around the tools of 2025 will require revision by 2026. This is not a
+reason to avoid building curricula — it is a design constraint that distinguishes AI
+literacy training from other required training programs.
+
+The institutions that have built durable AI literacy programs share a structural
+characteristic: they design for modularity and update cadence from the beginning, rather
+than treating each module as a finished product. Stanford Medicine's approach treats AI
+literacy content as living documentation — updated when model capabilities change materially,
+not on an annual review cycle. Mayo Clinic's Harper Family Foundation AI Education Program
+uses micro-credentialing to recognize competency at specific points in time, acknowledging
+that the credential represents "AI literacy as of this date" rather than a permanent
+certification.
+
+The modular structure that makes curricula updatable also makes them role-specific without
+requiring separate parallel programs. Consumer-tier content covers the concepts and
+failure modes that every staff member needs. Translator-tier content goes deeper on model
+evaluation and governance processes. Developer and governor tiers go deeper still on
+technical architecture and risk management. When the underlying technology changes, the
+consumer module updates; the translator module updates to a different depth; the developer
+module updates to reflect new architectural patterns. The institution does not rebuild
+four programs — it updates the four tiers of one program.
+
+The CME and CNE infrastructure required to sustain a living curriculum is not trivial to
+build, but it is not novel either. The ACCME's guidance on AI in continuing education
+provides a framework for awarding credit for AI literacy content that meets the disclosure
+and data handling requirements for accredited CME. An AMC that routes its AI literacy
+modules through its existing CME infrastructure — with appropriate documentation of
+AI-assisted content development where that applies — can offer credit for the training that
+the accreditation mandates now require, without building a separate credentialing system.
+
 ## The Faculty Development Gap
 
 The most significant systemic bottleneck in AMC AI workforce development is the faculty

@@ -173,6 +173,146 @@ in a clinical workflow integration is a safety event.
 
 : Non-negotiable BAA provisions for AI vendors processing clinical data. Standard HIPAA BAAs pre-dating 2023 frequently omit the first three rows. {#tbl-baa-checklist}
 
+## TEFCA and the Nationwide Exchange Layer
+
+The Trusted Exchange Framework and Common Agreement — TEFCA — established a network of
+Qualified Health Information Networks (QHINs) for nationwide clinical data exchange when
+it went live in 2023 [@TEFCA2023-common]. Epic's Nexus Health Network, Health Gorilla,
+Oracle Health, and a handful of other organizations have received QHIN designation,
+creating for the first time a governed national pipe through which clinical data can flow
+across institutional boundaries.
+
+The implications for AI data access are significant, and more complicated than they appear.
+TEFCA defines a set of permitted Exchange Purposes — Treatment, Payment, Health Care
+Operations, Public Health, Individual Access, and a handful of others — that determine
+under what conditions data can be queried across the network. Research is notably absent
+from the permitted purposes for nationwide exchange in the current framework. An AMC that
+wants to use TEFCA-accessed data to train or validate an AI model is operating in legally
+ambiguous territory unless it can characterize the use as Health Care Operations, a framing
+that has a defined statutory meaning and does not extend to all AI development activities.
+
+The practical implication is that TEFCA is most immediately useful for clinical AI
+applications that operate at the point of care — retrieving a patient's medication history
+from an external health system to inform a clinical decision, for example — and least
+immediately useful for the large-scale data aggregation that model training requires. AMCs
+participating in AI research consortia will need to route their data sharing through
+existing research frameworks — IRB oversight, data use agreements, OMOP standardization —
+rather than through TEFCA's exchange infrastructure, at least until research is added as
+a permitted exchange purpose.
+
+The QHIN connection that TEFCA requires does, however, create an infrastructure opportunity
+for AI governance that did not exist before: every query that passes through a QHIN-
+connected endpoint is logged. For the first time, the institution has a national-scale
+audit trail for the external data it accesses. That audit trail is an asset for the AI
+governance program, providing evidence of the provenance of external data inputs to
+clinical AI systems in a way that was previously unavailable.
+
+## The NIH Data Management and Sharing Policy Tension
+
+NIH's Data Management and Sharing Policy, which took effect in January 2023, requires that
+all research conducted with NIH funding produce a data management plan and share the
+resulting scientific data to the extent permitted by law and subject to privacy and ethical
+constraints [@NIH2021-DMS]. The policy was written to address the reproducibility crisis
+in biomedical science — if every investigator shared their data, more findings could be
+independently verified. In the AI context, it creates a specific governance problem: what
+counts as "scientific data" when the research involves training or fine-tuning a language
+model?
+
+NIH clarified in a 2025 notice that AI models trained on controlled-access genomic data
+are Data Derivatives subject to the same access restrictions as the underlying data
+[@NIH2025-genomicAI]. The model weights — the billions of numerical parameters that encode
+what the model learned — may contain information about the training data that must not be
+shared openly. This is the "model weights as PHI" problem: a model trained on genomic
+data from a controlled-access cohort may memorize rare clinical signatures in ways that
+allow adversarial reconstruction of individual patient data, and releasing that model
+is equivalent to releasing a derivative of the controlled-access dataset.
+
+The resulting tension is not abstract. An investigator conducting NIH-funded research on a
+clinical AI model is simultaneously obligated to share scientific data (by the DMS Policy)
+and obligated not to share data that could enable re-identification (by HIPAA, IRB consent
+terms, and the 2025 genomic AI notice). The resolution requires distinguishing among what
+must be shared, what may be shared, and what must not be shared. Model documentation —
+model cards, performance reports, training data descriptions — can satisfy much of the
+transparency obligation without releasing the weights themselves. Code and analysis
+scripts can be shared. The trained model weights require a case-by-case governance
+determination that should involve the institution's research compliance office, not the
+individual investigator.
+
+## Synthetic Data as a Governance Instrument
+
+One response to the tension between data access and privacy protection is to replace real
+clinical data with synthetic data — artificial patient records that preserve the
+statistical structure of the original data without containing information about any real
+individual. The technology for generating high-quality synthetic clinical data has matured
+substantially since 2020. Variational autoencoders, generative adversarial networks, and
+diffusion models have all been applied to EHR data generation, with recent methods
+producing synthetic records that are nearly indistinguishable from real records on most
+clinical research tasks.
+
+The governance value of synthetic data is that it allows the institution to provide data
+access — for model development, testing, algorithm validation, and education — at a risk
+level substantially lower than real PHI. A developer testing a new clinical NLP pipeline
+does not need real patient data to verify that the pipeline runs correctly; synthetic data
+with the same structural properties serves that purpose without the privacy exposure.
+A student learning to write SQL queries against clinical data does not need to practice on
+actual patients.
+
+But synthetic data has real limitations that institutional governance needs to acknowledge.
+First, synthetic data inherits the biases of the data it was generated from. A synthetic
+dataset generated from an EHR that underrepresents certain demographic groups will
+underrepresent those groups in the synthetic version. Bias auditing of synthetic data
+requires the same demographic stratification that bias auditing of real data requires.
+Second, for purposes that require population-level validity — epidemiological analysis,
+model external validation, clinical trial simulations — the fidelity of synthetic data
+is an empirical question that requires evaluation, not an assumption. The institution
+should not claim that a model trained on synthetic data performs equivalently to a model
+trained on real data without evidence.
+
+Third, the privacy protection that synthetic data provides is not absolute. Membership
+inference attacks — attempts to determine whether a specific individual's data was in the
+training set — can be applied to synthetic data generators as well as to trained models.
+The privacy guarantee of synthetic data depends on the generation method and the
+characteristics of the source data. For high-dimensional or rare-condition data, where
+individuals may be uniquely identifiable by their clinical signature, synthetic generation
+requires formal privacy guarantees — differential privacy, for example — rather than
+relying on the assumption that no record in the synthetic set corresponds to any real
+person.
+
+## Federated Learning and the Governance of Distributed Data
+
+Federated learning offers a different architecture for the same problem: rather than
+sharing data with a central model, participating institutions keep their data local and
+share only model updates — the numerical gradients that represent what the model learned
+from a local training round. A central aggregator combines the updates from multiple
+institutions into an improved global model, which is then distributed back to the nodes
+for the next training round. The data never leaves the hospital's firewall.
+
+Production federated learning infrastructure exists in healthcare. The NIH Bridge2AI
+program is developing standardized data and AI-ready infrastructure across four large
+data generation projects, with federated coordination as a design principle
+[@Bridge2AI2023]. The Medical Imaging and Data Resource Center (MIDRC) has used
+federated learning to validate imaging AI models across multiple institutions without
+centralizing imaging data [@MIDRC2024-federated]. NVIDIA FLARE is the dominant production
+framework for healthcare federated learning, with documented deployments at major academic
+medical centers.
+
+Governance of federated learning participation is meaningfully different from governance
+of centralized data sharing, but it is not governance-free. Participating in a federated
+training consortium requires a data use agreement with the consortium that specifies what
+the model is being trained to do, who controls the aggregated model, and how the model
+can be used after training. An AMC that contributes gradients to a federated training
+round for a commercial AI product is contributing to the development of that product — a
+contribution that has intellectual property implications and that may or may not be
+reflected in the benefit the institution receives from the trained model.
+
+The most important governance question for federated learning is model poisoning risk: a
+malicious participant can contribute corrupted gradients that degrade the global model or
+embed adversarial behaviors. For clinical AI models where the output influences patient
+care, this is not a theoretical concern. Federated learning consortia need technical
+safeguards — gradient inspection, anomaly detection, trusted node certification — and
+governance frameworks that define what audit mechanisms participants can rely on to verify
+the integrity of their contribution and the safety of the models they receive.
+
 ## Where to Start {#sec-data-start}
 
 ### Starter Project 1: AI Data Governance Policy and BAA Audit

@@ -1,9 +1,48 @@
-# Chapter brief: Data Access & Use Workstream
+# Chapter brief: Data Access and Governance — EXPAND EXISTING CHAPTER
 
 **Target file:** `data.qmd`
-**Status:** stub — one heading, not in active `_quarto.yml` (commented out).
-**Length target:** ≥6 rendered pages (~3,000–4,500 words of body prose).
-**Position in book:** first workstream chapter under "Workstream Resources" part.
+**Status:** EXISTING chapter (217 lines, ~2,700 words) — excellent foundation, needs additions for TEFCA, synthetic data, federated learning, and 2023 NIH DMS policy.
+**Goal:** Research dossier for targeted additions covering four specific gaps. Do not rewrite — add.
+**Position in book:** Workstream Resources part, second chapter.
+
+## What the current chapter already covers — DO NOT duplicate
+
+- AMC data mosaic: four regulatory regimes (HIPAA/FERPA/Common Rule/institutional), cross-dataset re-identification risk
+- Data classification framework: Public / Internal / Regulated / Restricted tiers
+- HIPAA Safe Harbor limits: Gymrek genomic re-identification; model memorization risk for clinical notes
+- Expert Determination as the appropriate standard for AI training datasets
+- AI-ready honest broker: unstructured text assessment, vendor BAA evaluation, approved tool registry
+- FHIR R5 and OMOP CDM as AI substrate; SMART on FHIR authorization for agentic systems
+- BAA non-negotiables table (no-training clause, zero-data-retention, output ownership, algorithmic change notification)
+- Data governance flow Mermaid diagram
+- Two starter projects: BAA audit + AI data governance policy; institutional AI data enclave
+
+## What is MISSING and must be researched
+
+### Gap 1: TEFCA and Qualified Health Information Networks
+The Trusted Exchange Framework and Common Agreement (TEFCA, implemented 2023) established a network of Qualified Health Information Networks (QHINs) for nationwide health information exchange. How does TEFCA affect AI data access at AMCs? Can QHIN-accessed data be used for AI inference? What are the permitted purposes under TEFCA for AI applications? Which major health systems have designated QHINs?
+
+### Gap 2: NIH 2023 Data Management and Sharing Policy
+NIH's Data Management and Sharing (DMS) Policy took effect January 2023, requiring data management plans and sharing of scientific data from NIH-funded research. How does this policy interact with AI research at AMCs? What are the obligations for sharing AI model outputs, training datasets, or fine-tuned models from NIH-funded work? How do AMCs reconcile DMS sharing requirements with zero-data-retention provisions in vendor BAAs?
+
+### Gap 3: Synthetic data as a governance tool
+The current chapter mentions synthetic data as an alternative but doesn't develop it. What is the current state of synthetic EHR generation methods (variational autoencoders, GANs, diffusion models)? What quality and fidelity metrics are used to evaluate synthetic clinical data? Has ONC or HHS issued guidance on when synthetic data is acceptable for AI validation? What are the known limitations (synthetic data can inherit biases from source data)?
+
+### Gap 4: Federated learning for AMC data consortia
+Federated learning allows model training across multiple institutions without centralizing data. What federated learning frameworks are in production use in healthcare (FeTS, NVIDIA FLARE, PySyft)? What are the governance requirements for participating in a federated learning consortium? What does an AMC's data governance process look like for federated participation vs. centralized data contribution? What real-world AMC federated learning consortia exist (NIH Bridge2AI, MIDRC)?
+
+## Source types needed
+
+**Tier 1 (retrieve and verify directly — most important for this chapter):**
+- TEFCA final rule and Qualified Health Information Networks list — HealthIT.gov/tefca
+- ONC information blocking final rule — healthit.gov
+- NIH 2023 Data Management and Sharing Policy — grants.nih.gov
+- NIH Bridge2AI program documentation — commonfund.nih.gov/bridge2ai
+- ONC HTI-1 final rule on data interoperability — federalregister.gov
+- HHS HIPAA Expert Determination guidance — hhs.gov
+
+**Tier 2 (peer-reviewed — PUBMED-PENDING placeholders only, no DOIs):**
+Synthetic EHR generation studies (GANs, diffusion models for clinical data), federated learning in healthcare consortia, model memorization and privacy attacks on LLMs trained on clinical data, OMOP CDM validation studies.
 
 ## Scope
 

@@ -155,6 +155,118 @@ external model? What is the response when prompt injection is detected? The inci
 response plan for AI security events should be tested annually, like any other security
 incident response plan.
 
+## Ambient AI and the EHR Integration Layer
+
+The gateway architecture assumes a clean separation between the AI system and the EHR.
+By 2025 that assumption no longer holds for clinical documentation. Ambient AI tools —
+Nuance DAX Copilot, Abridge, Suki, Nabla — are now embedded directly inside EHR
+workflows rather than accessed through a separate browser tab or institutional portal.
+DAX Copilot operates within Epic's clinical narrative module via Epic's native integration.
+Abridge's note generation writes directly into Epic's documentation framework. The ambient
+AI is not connecting to the institution's gateway; it is connecting to the EHR vendor's
+infrastructure, under the EHR vendor's BAA, through the EHR vendor's integration channel.
+
+This matters for governance in ways that a standard gateway deployment does not. When the
+ambient AI is an Epic partner product operating inside Epic's infrastructure, the audit
+logging may live in Epic's system rather than the institution's SIEM. The PHI flow —
+patient audio, transcript, structured note — may never touch the institutional gateway at
+all. The institution has traded a single governed chokepoint for a shared-responsibility
+model with the EHR vendor, and the terms of that responsibility are defined by a contract
+most institutions have not specifically negotiated for AI use.
+
+The practical governance response has three components. First, the ambient AI vendor
+contract must explicitly address audio retention policy, transcript handling, and who
+holds the BAA obligations when the tool is operating inside the EHR vendor's
+infrastructure — because in a sub-processor arrangement the primary BAA with the EHR
+vendor may or may not cover the ambient AI module's data flows. Second, the institution
+needs audit logging at the output layer even if it cannot capture the full ambient AI
+session: every AI-generated note that is attested in the EHR creates an audit record,
+and those attestation records are the primary evidence chain for governance oversight of
+ambient AI use. Third, the institutional AI governance committee needs a seat in EHR AI
+integration decisions, not just in standalone tool deployments. When Epic enables a new
+ambient AI partner integration, that is a deployment event. It requires the same
+governance review as any other tool that influences clinical documentation.
+
+## Agentic Infrastructure: Beyond the Advisory Model
+
+The governance architecture described above — gateway, PHI scan, audit log, model API —
+was designed for advisory AI: systems that generate outputs a human evaluates and acts on.
+The AI recommends; the clinician decides. That model is giving way to agentic AI: systems
+that can take autonomous multi-step actions — querying the EHR for lab results, drafting
+a referral order, routing a message to a specialist, scheduling a follow-up appointment.
+
+Epic's Digital Workforce, Oracle Health's Clinical AI Agent, and the first generation of
+clinical AI copilots built on general-purpose agent frameworks are already operating in
+production at some institutions. The infrastructure requirements for these systems are
+fundamentally different from advisory AI. Four controls matter most.
+
+**Non-Human Identity management.** An agentic system that can query and write to the EHR
+needs a service account with defined permissions. The SMART on FHIR backend services
+authorization flow provides the mechanism: the agent authenticates with a private key
+registered against an institutional client credential, and its authorized scopes determine
+exactly which FHIR resources it can read and write. The governance principle is
+least-privilege: an agentic scheduling system should have FHIR scopes limited to the
+Appointment and Schedule resources it actually needs, not a blanket administrative
+credential [@SMART2024-applaunch].
+
+**Semantic circuit breakers.** Agentic systems can enter reasoning loops — taking an
+action, observing the result, taking another action — that compound errors in ways that
+advisory AI cannot. A circuit breaker is a preconfigured rule that halts autonomous action
+when a defined threshold is reached: a maximum number of consecutive actions without human
+confirmation, a rate limit on write operations, a flag on any action outside the agent's
+validated action space. These are engineering controls, not policy statements, and they
+need to be specified before a clinical agent is deployed, not after it takes an unexpected
+action.
+
+**Action rollback capability.** When an agentic system takes an incorrect action — drafts
+an order for the wrong patient, routes a message to the wrong provider — the governance
+question is not just how to prevent this but how to undo it cleanly. Reversible actions
+(draft orders, unsent messages) need a defined rollback path. Irreversible actions (sent
+messages, confirmed appointments) require a higher pre-authorization bar. The boundary
+between reversible and irreversible should be explicit in the system design, not
+discovered after the fact.
+
+**Action-level audit logging.** Prompt logging records what the user asked. Action logging
+records what the system did. For an advisory AI, prompt logging is the primary audit
+record. For an agentic AI, action logging is what regulators, risk managers, and clinical
+safety officers will want when something goes wrong. The immutable audit log in the gateway
+architecture needs to be extended to capture discrete agent actions with timestamps, the
+user or trigger that initiated the action, and whether a human reviewed the action before
+it was executed.
+
+## Sovereign Cloud and On-Premises Deployment
+
+Most AMC AI will run in enterprise cloud tenants — Azure OpenAI, AWS Bedrock, Google
+Vertex AI — because the economics are right and BAA availability has improved
+substantially since 2022. But there is a class of data for which cloud transmission is not
+an appropriate governance posture regardless of BAA provisions.
+
+Genomic sequence data, psychiatric treatment records, substance use treatment records under
+42 CFR Part 2, and data subject to specific research consent restrictions all fall into a
+category where institutional data stewardship obligations exceed what a commercial vendor
+agreement can satisfy. For these use cases, the architecture is either a sovereign cloud
+environment — Azure Government, AWS GovCloud, or Google Assured Workloads, all of which
+offer HIPAA-eligible compute with US-person controls and FedRAMP authorization — or
+on-premises model serving.
+
+On-premises LLM serving has become more tractable than it was three years ago. A
+70-billion-parameter model running on A100 or H100 GPU hardware produces inference
+throughput sufficient for most research and limited clinical use cases. Open-weight models
+under licenses that permit institutional deployment — Llama 3.1, Mistral, Phi-4 — allow
+fine-tuning on local clinical data without the data leaving the institutional network
+boundary. The operational overhead is real: the institution bears the maintenance burden
+for serving infrastructure, model updates, and performance monitoring that commercial
+providers handle invisibly. For restricted data tiers, that overhead is the price of the
+required data sovereignty.
+
+The practical framework is not "cloud or on-prem" but which data tier requires which
+infrastructure tier. The institutional data classification framework in @sec-data is the
+input to this decision. Regulated data (PHI, FERPA, Common Rule) goes through enterprise
+cloud tenants with verified BAAs. Restricted data (genomic, Part 2, specific consent
+restrictions) goes through sovereign cloud or on-premises. Public and internal data can
+use any enterprise-grade service. The governance committee's job is to enforce the mapping
+consistently, not adjudicate it case by case.
+
 ## Defeating Shadow AI
 
 Shadow AI — the use of consumer AI tools (ChatGPT, Gemini, Claude.ai) with institutional

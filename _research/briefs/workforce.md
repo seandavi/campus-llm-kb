@@ -1,9 +1,51 @@
-# Chapter brief: Training & Workforce Development Workstream
+# Chapter brief: Training and Workforce Development — EXPAND EXISTING CHAPTER
 
 **Target file:** `workforce.qmd`
-**Status:** stub — not in active `_quarto.yml`.
-**Length target:** ≥6 rendered pages (~3,000–4,500 words of body prose).
-**Position in book:** fourth workstream chapter.
+**Status:** EXISTING chapter (217 lines, ~2,700 words) — solid structure, good four-tier model, needs evidence upgrades and accreditor content.
+**Goal:** Research dossier for targeted additions: empirical evidence for AI literacy gaps, ACGME/LCME accreditation requirements, shadow AI prevalence data, sustaining the program over time.
+**Position in book:** Workstream Resources part.
+
+## What the current chapter already covers — DO NOT duplicate
+
+- Four-tier competency model (Consumers / Translators / Developers / Governors) — citing Ng 2023
+- National competency frameworks table: AAMC 2024, AMIA 2024, WHO 2024, ANA 2025
+- Clinical human-in-the-loop mandate: specific failure mode training (not just aggregate accuracy)
+- Ambient scribe documentation attestation as professional claim
+- Shadow AI as training failure (not just security failure) — administrative staff as highest-risk group
+- Faculty development gap: clinical educators who were trained before LLMs
+- Workforce lifecycle Mermaid diagram
+- Two starter projects: role-based literacy modules, AI champions program
+
+## What is MISSING and must be researched
+
+### Gap 1: Empirical evidence for the AI literacy gap
+The current chapter makes a strong Dunning-Kruger claim ("clinicians consistently overestimate their AI knowledge") without a specific citation. Find the actual validated assessment studies — what instruments have been used to assess AI literacy in healthcare workers? What do the scores show? Look for studies using the AI Literacy Scale (AILS), MAILS, or similar validated instruments applied to medical students, residents, nurses, or faculty.
+
+### Gap 2: ACGME and LCME requirements
+Do ACGME program requirements now mention AI literacy or AI safety as a competency? Which specialty boards have added AI-related content to their milestones? Has LCME added AI literacy to its standards for medical education? Has COCA (for osteopathic programs) or CCNE/ACEN (for nursing) issued guidance?
+
+### Gap 3: Shadow AI prevalence data
+The chapter asserts that administrative staff are the highest-risk group for shadow AI but doesn't cite empirical data. Are there published surveys of shadow AI use in AMC settings? What percentage of AMC employees report using consumer AI tools for work tasks? Any data on frequency of PHI exposure via consumer AI?
+
+### Gap 4: Sustaining the program: half-life of AI training
+AI capabilities change faster than CME/CNE update cycles. What does a "living curriculum" program for AI literacy look like? Are there peer institutions that have built programs with continuous update mechanisms? What is the CME/CNE credit infrastructure for AI literacy modules — which major society conferences are offering AI CME?
+
+### Gap 5: Measuring AI literacy over time
+The chapter doesn't address how the institution measures whether training worked. What assessment approaches are used by peer AMCs? Is there a standard for "AI literacy proficiency" analogous to BLS certification?
+
+## Source types needed
+
+**Tier 1 (retrieve and verify directly):**
+- AAMC AI Competency Framework (2024) — aamc.org
+- ACGME Program Requirements milestones updates (2024–2025) — acgme.org
+- LCME Standards for Accreditation (current edition) — lcme.org
+- AMA STEPS Forward AI resources — ama-assn.org
+- AMIA Workforce Roadmap (2024) — amia.org
+- ANA position statement on AI in nursing (2025) — nursingworld.org
+- WHO Health Workforce guidance on AI — who.int
+
+**Tier 2 (peer-reviewed — PUBMED-PENDING placeholders only, no DOIs):**
+Studies using validated AI literacy instruments in healthcare workers, surveys of shadow AI use in clinical/administrative settings, evaluation studies of AI literacy training programs in medical education, faculty development programs for AI in health professions education.
 
 ## Scope
 

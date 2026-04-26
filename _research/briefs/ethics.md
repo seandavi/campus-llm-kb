@@ -1,11 +1,55 @@
-# Chapter brief: Ethical, Legal & Social Workstream
+# Chapter brief: Ethics, Equity, and Institutional Accountability — EXPAND EXISTING CHAPTER
 
 **Target file:** `ethics.qmd`
-**Status:** stub — not in active `_quarto.yml`.
-**Length target:** ≥6 rendered pages (~3,000–4,500 words of body prose). This
-chapter should probably run longer — 8–10 pages — given the depth of the
-literature and the importance of the subject.
-**Position in book:** third workstream chapter.
+**Status:** EXISTING chapter (213 lines, ~2,700 words) — structurally strong, good argument, pre-2025 evidence.
+**Goal:** Research dossier for targeted additions: HHS 1557 2024 final rule specifics, recent bias evidence, state privacy laws, consent architecture in ambient AI era, workforce/labor implications.
+**Position in book:** Workstream Resources part.
+
+## What the current chapter already covers — DO NOT duplicate
+
+- Algorithmic bias as structural problem: Obermeyer 2019 (race-cost proxy), Zack 2024 (GPT-4 bias)
+- Equity as performance metric: Badal et al. framework, demographic stratification as standard requirement
+- Informed consent in the continuous AI era: background AI vs. ambient documentation
+- WHO ethics guidance on disclosure to patients
+- California AB 3030 (AI-generated patient communications disclosure)
+- IP and AI authorship gap: US Copyright Office position, ICMJE standards
+- Liability and the "duty to use" emerging argument (Zemmar 2023)
+- Ethics review pipeline Mermaid diagram
+- Two starter projects: equity audit, clinical AI ethics policy
+
+## What is MISSING and must be researched
+
+### Gap 1: HHS Section 1557 (2024 final rule) specifics for clinical AI
+The current chapter mentions HHS 1557 but doesn't describe the 2024 final rule in detail. What does the 2024 final rule actually require for AI-enabled clinical decision support? What is the covered entity's obligation for assessing and documenting AI tool nondiscrimination? What is the enforcement mechanism and timeline?
+
+### Gap 2: Recent algorithmic bias cases beyond Obermeyer
+The Obermeyer 2019 case is well-documented. What are the 2022–2025 documented cases of AI bias in healthcare? Look for: ambient documentation tools performing differently by patient demographics, imaging AI failing on darker skin tones (dermatology), sepsis prediction models underperforming in non-English-speaking patients, prior authorization AI with demographic disparities.
+
+### Gap 3: State privacy laws with healthcare AI implications
+Beyond California AB 3030: Washington My Health MY Data Act (2023), Illinois BIPA in healthcare contexts, Colorado SB 23-169 (Consumer Data Privacy), Texas SCOPE Act — which of these create obligations for AMC AI deployments? What do they require for AI-generated patient communications or AI-assisted clinical decisions?
+
+### Gap 4: Consent architecture for ambient AI — current standards
+The current chapter notes the "tractable" verbal consent model but doesn't describe it in detail. What have UCSF, Mayo, and other peer AMCs published about their patient consent processes for ambient scribes? What does the verbal consent typically include? Are there published templates?
+
+### Gap 5: Workforce and labor implications of AI in the AMC
+This is entirely absent from the current chapter. What does the economic literature say about AI and healthcare workforce? Which AMC roles face displacement risk (medical coders, prior auth specialists, transcriptionists)? What obligations does the institution have to affected workers? Are there AMC examples of AI-related workforce restructuring?
+
+### Gap 6: Community trust and social license for healthcare AI
+The current chapter doesn't address patient and community perspectives. What do patient surveys say about trust in AI-assisted care? Are there racial/ethnic differences in AI trust in healthcare? What does meaningful community engagement in AI governance look like?
+
+## Source types needed
+
+**Tier 1 (retrieve and verify directly — most important for this chapter):**
+- HHS Section 1557 final rule (2024) — federalregister.gov or hhs.gov
+- California AB 3030 full text — leginfo.legislature.ca.gov
+- Washington My Health MY Data Act text — app.leg.wa.gov
+- WHO Ethics and Governance of AI for Health (2024 update) — who.int
+- OSTP Blueprint for an AI Bill of Rights — whitehouse.gov/ostp
+- Brookings Institution healthcare AI equity reports — brookings.edu
+- National Academy of Medicine AI in Health papers — nam.edu
+
+**Tier 2 (peer-reviewed — PUBMED-PENDING placeholders only, no DOIs):**
+Studies on patient trust in AI-assisted care (stratified by demographics), documentation of ambient scribe demographic performance differences, healthcare workforce displacement studies, IRB policy analyses of AI research consent.
 
 ## Scope
 

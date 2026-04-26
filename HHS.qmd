@@ -1,5 +1,80 @@
-# HHS EHR reporting program rule 
+# ONC HTI-1: Algorithm Transparency and Interoperability {.appendix}
 
-- https://www.federalregister.gov/documents/2024/01/09/2023-28857/health-data-technology-and-interoperability-certification-program-updates-algorithm-transparency-and
+The ONC Health Data, Technology, and Interoperability (HTI-1) final rule, published in
+January 2024 and effective later that year, is the federal regulation that AMC AI
+governance programs encounter most frequently in the clinical domain [@ONC2024-hti1].
+It amends the Health IT Certification Program established by the 21st Century Cures Act
+and introduces specific transparency requirements for AI and predictive models embedded
+in certified Electronic Health Records. This appendix summarizes the rule's AI-relevant
+provisions for governance teams who need a working understanding of what it requires
+without reading the full Federal Register text.
 
-This final rule implements the Electronic Health Record (EHR) Reporting Program provision of the 21st Century Cures Act by establishing new Conditions and Maintenance of Certification requirements for health information technology (health IT) developers under the ONC Health IT Certification Program (Program). This final rule also makes several updates to certification criteria and standards recognized by the Program. The Program updates include revised certification criteria for “decision support interventions,” “patient demographics and observations,” and “electronic case reporting,” as well as a new baseline version of the United States Core Data for Interoperability (USCDI) standard to Version 3. Additionally, this final rule provides enhancements to support information sharing under the information blocking regulations. The implementation of these provisions advances interoperability, improves algorithm transparency, and supports the access, exchange, and use of electronic health information (EHI). This final rule also updates numerous technical standards in the Program in additional ways to advance interoperability, enhance health IT certification, and reduce burden and costs for health IT developers and users of health IT.
+## The Decision Support Intervention Framework
+
+The HTI-1 rule restructures how the certification program treats clinical decision support
+by creating a new regulatory category: the “Predictive Decision Support Intervention”
+(Predictive DSI). A Predictive DSI is any clinical decision support function that uses
+AI or machine learning to generate patient-specific output — a risk score, a
+recommendation, an alert — that a clinician is expected to act on. The rule distinguishes
+Predictive DSIs from evidence-based DSIs (which cite explicit guideline references) and
+from workflow tools (which do not generate patient-specific clinical recommendations).
+
+The distinction matters because Predictive DSIs are subject to substantially more rigorous
+transparency requirements than other DSI types. EHR vendors must make 31 structured source
+attributes available for every Predictive DSI in a certified system. Those attributes
+include training data sources and date ranges, the populations on which the model was
+validated, performance characteristics on those validation populations, known limitations
+and failure modes, update history and versioning, and instructions for appropriate
+interpretation. The attributes must be accessible at the point of care — meaning a
+clinician using a sepsis prediction model should be able to see the model's source
+attributes without leaving the clinical workflow.
+
+## What This Means for AMC Governance
+
+For AMC AI governance programs, HTI-1 creates obligations in two directions.
+
+For clinically deployed AI tools procured from vendors: the institution can and should
+require that every AI tool used in a certified EHR context provide the full set of HTI-1
+source attributes. Vendors who cannot or will not provide this documentation are not in
+compliance with federal certification requirements, and that non-compliance transfers risk
+to the institution that deploys the tool. The intake checklist in @sec-pm-support includes
+HTI-1 source attribute documentation as a required intake item for clinical AI tools.
+
+For internally developed clinical AI tools deployed in or alongside certified EHR systems:
+the institution is effectively in the position of a developer and bears the documentation
+obligations itself. An internally developed readmission risk model that generates
+patient-specific recommendations in a certified EHR workflow is a Predictive DSI for
+purposes of the rule, and the institution must be able to provide the 31 source attributes
+for it. This requirement has driven several major AMC AI governance programs to adopt
+the model card standard as the format for their internal AI documentation — a format that
+maps naturally onto the HTI-1 attribute list.
+
+## USCDI v3 and AI Data Access
+
+HTI-1 also establishes the United States Core Data for Interoperability version 3 (USCDI
+v3) as the baseline data standard for certified health IT. USCDI v3 expands the required
+data elements that EHR systems must be able to capture and exchange, including patient
+demographic and social determinants fields that are directly relevant to AI equity
+monitoring. The addition of more granular race, ethnicity, sexual orientation, and gender
+identity fields to the required data set means that institutions updating to USCDI v3
+compliance will have better demographic data available for bias auditing than they had
+under earlier versions. Treating the USCDI v3 compliance effort as an AI readiness
+investment — specifically, as infrastructure for the demographic stratification that equity
+monitoring requires — is a practical way to align two compliance obligations that might
+otherwise proceed independently.
+
+## Information Blocking and AI Data Access
+
+The HTI-1 rule includes updates to the information blocking regulations under 45 C.F.R.
+Part 171. Information blocking — practices by EHR developers, health information networks,
+and health care providers that interfere with the access, exchange, or use of electronic
+health information — is prohibited with exceptions. The updated exceptions framework is
+relevant to AI governance in two ways. First, institutions that restrict clinical AI tool
+access to certain data elements need to ensure those restrictions fall within a defined
+exception, or they may constitute information blocking. Second, institutions using FHIR
+APIs to connect AI tools to EHR data must ensure their API access policies comply with the
+information blocking rules, which require that certified APIs be made available to any
+application a patient authorizes, not just to institution-selected tools.
+
+The full text of the rule is available at the Federal Register:
+<https://www.federalregister.gov/documents/2024/01/09/2023-28857/health-data-technology-and-interoperability-certification-program-updates-algorithm-transparency-and>
