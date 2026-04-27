@@ -24,6 +24,10 @@ and whether the governance structures are in place to ensure it is being used we
 This book exists because the answer to that second question, at most institutions, is not
 yet yes.
 
+::: {.callout-note}
+This book is fully compliant with the [llms.txt standard](https://llmstxt.org/). Every page is available in plain Markdown format for use with AI assistants and large language models. See the [Quarto llms.txt documentation](https://quarto.org/docs/websites/website-llms.html) for details.
+:::
+
 ## What changed between 2020 and 2024
 
 Previous waves of AI in healthcare did not land like this. Expert systems in the 1980s
