@@ -1,0 +1,143 @@
+# 14  IT Infrastructure and Security
+
+Published
+
+April 26, 2026
+
+Every AMC CIO faces a version of the same question: should we build our own AI infrastructure, buy commercial AI platforms, or connect existing systems to foundation models through APIs? The framing of “build vs. buy” is familiar from decades of enterprise IT decisions, but it maps poorly onto the current AI landscape. Building a frontier foundation model is not a realistic option for any AMC; the compute and data requirements are measured in thousands of GPUs and hundreds of millions of dollars. Buying a turnkey clinical AI platform means accepting the vendor’s model choices, governance design, and update cadence. The third option — connecting existing institutional systems to foundation models through a managed API gateway — is the approach that gives most AMCs the best combination of capability, control, and cost at the current state of the technology.
+
+This chapter describes what that “connect” architecture looks like, how to secure it, and how to use it to defeat the most common AMC AI security failure: clinicians and researchers bypassing institutional governance by using consumer AI tools with patient data.
+
+## 14.1 The Buy/Build/Connect Trilemma
+
+Training a proprietary foundation model requires computational resources and data volumes that exist at a handful of commercial research labs. Most AMC AI programs that have pursued model training — fine-tuning a clinical model on institutional EHR data, for example — are doing so not to build a new foundation model but to adapt an existing one to their specific clinical context. This is a meaningful distinction. Fine-tuning a 7-billion-parameter open model on OMOP-formatted clinical notes is a tractable project for an AMC with a GPU cluster. Training a 70-billion-parameter foundation model from scratch is not.
+
+The “buy” option has improved rapidly. Microsoft Azure OpenAI, AWS Bedrock, and Google Vertex AI all offer HIPAA-eligible foundation model APIs with signed BAAs, US-only data residency options, and zero-data-retention configurations for prompt content. For most clinical and administrative AI use cases, the question is not whether to connect to a foundation model but which one and how to govern the connection.
+
+The “connect” approach means building institutional infrastructure around the API connection rather than around the model itself. The critical institutional asset is not the model — which the vendor manages and updates — but the governance layer: the access controls, audit logging, PHI filtering, and use policies that determine who can connect to what model with what data under what oversight conditions.
+
+## 14.2 The Institutional API Gateway
+
+The central architectural element of a sound AMC AI infrastructure is a managed API gateway — a system that routes all AI API calls from institutional users and applications through a single, governed chokepoint. Rather than allowing each clinical application, research tool, and administrative system to connect directly to AI model APIs with its own credentials and its own security posture, the gateway enforces institutional policy uniformly across all connections.
+
+A purpose-built AI gateway ([LiteLLM](https://www.litellm.ai/), [Kong AI Gateway](https://konghq.com/products/kong-ai-gateway), or equivalent) provides several capabilities that direct API connections lack. It enforces authentication and authorization — only institutional users with appropriate roles can access specific model endpoints, and the gateway can enforce role-based access control tied to the existing institutional identity provider. It performs real-time PHI scanning on outbound prompts, flagging or blocking requests that contain identifiable patient information before they leave the institutional network boundary. It enforces model-specific policies — certain models may be authorized for clinical use but not for research, or for internal communications but not for patient-facing outputs. And it maintains an immutable audit log of every API call: who made it, from which application, to which model, at what time, with what response latency.
+
+``` mermaid
+flowchart LR
+    A([Clinician\nApplication]) --> G
+    B([Research\nTool]) --> G
+    C([Admin\nSystem]) --> G
+    G["Central API Gateway\nAuth · PHI Filter · Rate Limit\nAudit Logging · Cost Tracking"] --> M1[Azure OpenAI\nBAA · ZDR]
+    G --> M2[AWS Bedrock\nBAA · ZDR]
+    G --> M3[On-Prem\nOpen Model]
+    G --> L[(Immutable\nAudit Log)]
+```
+
+Figure 14.1: Institutional AI API gateway architecture. The gateway is the single chokepoint through which all AI traffic flows, enabling centralized security enforcement, audit logging, and cost management.
+
+The gateway approach also solves the cost management problem that enterprise AI programs frequently underestimate. Foundation model API calls are priced per token, and usage can grow dramatically when a new tool is adopted at scale. Without centralized cost tracking, an AMC has no visibility into which applications are driving spend, no mechanism to enforce usage limits on individual applications or users, and no early warning when an anomalously large request — a sign of either misconfigured behavior or adversarial input — is consuming unexpected resources.
+
+## 14.3 Clinical RAG Architecture
+
+The dominant architectural pattern for grounding clinical AI outputs in institutional knowledge is Retrieval-Augmented Generation (RAG). Rather than relying on a foundation model’s training-time knowledge — which has a cutoff date and does not include institution-specific clinical protocols, formularies, or guidelines — a RAG system retrieves relevant documents from a curated knowledge base and includes them in the prompt context at inference time. The model generates its response grounded in the retrieved documents rather than in parametric memory alone.
+
+For clinical applications, the RAG knowledge base typically contains institutional clinical guidelines, formulary information, drug interaction databases, local evidence-based protocols, and relevant peer-reviewed literature. The quality of the RAG output is bounded by the quality of the knowledge base: a model that retrieves an outdated clinical protocol will produce an outdated recommendation, and there is nothing in the model itself that will flag the content as outdated.
+
+``` mermaid
+flowchart LR
+    A([User Query]) --> B[Embedding\nModel]
+    B --> C[(Vector\nStore)]
+    C -->|Top-K\nRelevant Docs| D[Augmented\nPrompt Builder]
+    A --> D
+    D --> E[Foundation\nModel API]
+    E --> F([Grounded\nResponse])
+    G[("Knowledge Base\nGuidelines · Protocols\nFormulary · Literature")] --> C
+```
+
+Figure 14.2: Clinical RAG pipeline. The retrieval step grounds the model’s response in current institutional knowledge, reducing hallucination risk for institution-specific content.
+
+The security implications of RAG deserve explicit attention. The retrieved documents are included in the prompt context, which means they are transmitted to the model API. If the knowledge base contains PHI — patient-specific clinical notes, for example — those notes will be transmitted in every query that retrieves them. For clinical RAG systems, the knowledge base should consist of de-identified or non-PHI content where possible; patient-specific RAG requires patient-specific access controls at the retrieval layer and should be treated as a regulated data use case under the governance framework in [sec-data](#sec-data).
+
+Indirect prompt injection — an attack in which malicious content embedded in retrieved documents manipulates the model’s behavior — is a genuine security risk for RAG systems ([Greshake et al. 2023](#ref-Greshake2023-injection)). A clinical RAG system that retrieves documents from external sources (web pages, external literature databases) is more vulnerable than one that retrieves from a curated, internally controlled knowledge base. For clinical use, the knowledge base should be controlled, versioned, and audited, with external content ingested only after review.
+
+## 14.4 The Security Stack
+
+The NIST AI Risk Management Framework provides the governance structure for AMC AI security; the concrete security controls map the abstract framework functions to operational implementations ([National Institute of Standards and Technology 2023](#ref-NIST2023-airm), [2024](#ref-NIST2024-gen600)).
+
+The Govern function requires documented policies for who can use what AI tools with what data, and a governance body with authority to approve or restrict deployments. The gateway architecture is the technical implementation of this function.
+
+The Map function requires identifying which AI tools are deployed, what risks they pose, and which organizational functions they affect. The AI tool inventory (see [sec-clinical-start](#sec-clinical-start)) is the primary Map artifact.
+
+The Measure function requires performance monitoring — not just accuracy metrics, but security metrics: PHI scan false-negative rate, prompt injection attempt detection rate, anomalous usage patterns. These metrics should be reviewed by the CISO and the AI governance committee on a regular cadence.
+
+The Manage function requires documented incident response procedures for AI security events. What is the response when a PHI scan failure allows patient data to reach an external model? What is the response when prompt injection is detected? The incident response plan for AI security events should be tested annually, like any other security incident response plan.
+
+## 14.5 Ambient AI and the EHR Integration Layer
+
+The gateway architecture assumes a clean separation between the AI system and the EHR. By 2025 that assumption no longer holds for clinical documentation. Ambient AI tools — [Nuance DAX Copilot](https://www.nuance.com/healthcare/ambient-clinical-intelligence.html), [Abridge](https://www.abridge.com), [Suki](https://www.suki.ai), [Nabla](https://www.nabla.com) — are now embedded directly inside EHR workflows rather than accessed through a separate browser tab or institutional portal. DAX Copilot operates within Epic’s clinical narrative module via Epic’s native integration. Abridge’s note generation writes directly into Epic’s documentation framework. The ambient AI is not connecting to the institution’s gateway; it is connecting to the EHR vendor’s infrastructure, under the EHR vendor’s BAA, through the EHR vendor’s integration channel.
+
+This matters for governance in ways that a standard gateway deployment does not. When the ambient AI is an Epic partner product operating inside Epic’s infrastructure, the audit logging may live in Epic’s system rather than the institution’s SIEM. The PHI flow — patient audio, transcript, structured note — may never touch the institutional gateway at all. The institution has traded a single governed chokepoint for a shared-responsibility model with the EHR vendor, and the terms of that responsibility are defined by a contract most institutions have not specifically negotiated for AI use.
+
+The practical governance response has three components. First, the ambient AI vendor contract must explicitly address audio retention policy, transcript handling, and who holds the BAA obligations when the tool is operating inside the EHR vendor’s infrastructure — because in a sub-processor arrangement the primary BAA with the EHR vendor may or may not cover the ambient AI module’s data flows. Second, the institution needs audit logging at the output layer even if it cannot capture the full ambient AI session: every AI-generated note that is attested in the EHR creates an audit record, and those attestation records are the primary evidence chain for governance oversight of ambient AI use. Third, the institutional AI governance committee needs a seat in EHR AI integration decisions, not just in standalone tool deployments. When Epic enables a new ambient AI partner integration, that is a deployment event. It requires the same governance review as any other tool that influences clinical documentation.
+
+## 14.6 Agentic Infrastructure: Beyond the Advisory Model
+
+The governance architecture described above — gateway, PHI scan, audit log, model API — was designed for advisory AI: systems that generate outputs a human evaluates and acts on. The AI recommends; the clinician decides. That model is giving way to agentic AI: systems that can take autonomous multi-step actions — querying the EHR for lab results, drafting a referral order, routing a message to a specialist, scheduling a follow-up appointment.
+
+Epic’s Digital Workforce, [Oracle Health](https://www.oracle.com/health/)’s Clinical AI Agent, and the first generation of clinical AI copilots built on general-purpose agent frameworks are already operating in production at some institutions. The infrastructure requirements for these systems are fundamentally different from advisory AI. Four controls matter most.
+
+**Non-Human Identity management.** An agentic system that can query and write to the EHR needs a service account with defined permissions. The SMART on FHIR backend services authorization flow provides the mechanism: the agent authenticates with a private key registered against an institutional client credential, and its authorized scopes determine exactly which FHIR resources it can read and write. The governance principle is least-privilege: an agentic scheduling system should have FHIR scopes limited to the Appointment and Schedule resources it actually needs, not a blanket administrative credential ([HL7 International 2024](#ref-SMART2024-applaunch)).
+
+**Semantic circuit breakers.** Agentic systems can enter reasoning loops — taking an action, observing the result, taking another action — that compound errors in ways that advisory AI cannot. A circuit breaker is a preconfigured rule that halts autonomous action when a defined threshold is reached: a maximum number of consecutive actions without human confirmation, a rate limit on write operations, a flag on any action outside the agent’s validated action space. These are engineering controls, not policy statements, and they need to be specified before a clinical agent is deployed, not after it takes an unexpected action.
+
+**Action rollback capability.** When an agentic system takes an incorrect action — drafts an order for the wrong patient, routes a message to the wrong provider — the governance question is not just how to prevent this but how to undo it cleanly. Reversible actions (draft orders, unsent messages) need a defined rollback path. Irreversible actions (sent messages, confirmed appointments) require a higher pre-authorization bar. The boundary between reversible and irreversible should be explicit in the system design, not discovered after the fact.
+
+**Action-level audit logging.** Prompt logging records what the user asked. Action logging records what the system did. For an advisory AI, prompt logging is the primary audit record. For an agentic AI, action logging is what regulators, risk managers, and clinical safety officers will want when something goes wrong. The immutable audit log in the gateway architecture needs to be extended to capture discrete agent actions with timestamps, the user or trigger that initiated the action, and whether a human reviewed the action before it was executed.
+
+## 14.7 Sovereign Cloud and On-Premises Deployment
+
+Most AMC AI will run in enterprise cloud tenants — Azure OpenAI, AWS Bedrock, Google Vertex AI — because the economics are right and BAA availability has improved substantially since 2022. But there is a class of data for which cloud transmission is not an appropriate governance posture regardless of BAA provisions.
+
+Genomic sequence data, psychiatric treatment records, substance use treatment records under 42 CFR Part 2, and data subject to specific research consent restrictions all fall into a category where institutional data stewardship obligations exceed what a commercial vendor agreement can satisfy. For these use cases, the architecture is either a sovereign cloud environment — Azure Government, AWS GovCloud, or Google Assured Workloads, all of which offer HIPAA-eligible compute with US-person controls and FedRAMP authorization — or on-premises model serving.
+
+On-premises LLM serving has become more tractable than it was three years ago. A 70-billion-parameter model running on A100 or H100 GPU hardware produces inference throughput sufficient for most research and limited clinical use cases. Open-weight models under licenses that permit institutional deployment — Llama 3.1, [Mistral](https://mistral.ai/), Phi-4 — allow fine-tuning on local clinical data without the data leaving the institutional network boundary. The operational overhead is real: the institution bears the maintenance burden for serving infrastructure, model updates, and performance monitoring that commercial providers handle invisibly. For restricted data tiers, that overhead is the price of the required data sovereignty.
+
+The practical framework is not “cloud or on-prem” but which data tier requires which infrastructure tier. The institutional data classification framework in [sec-data](#sec-data) is the input to this decision. Regulated data (PHI, FERPA, Common Rule) goes through enterprise cloud tenants with verified BAAs. Restricted data (genomic, Part 2, specific consent restrictions) goes through sovereign cloud or on-premises. Public and internal data can use any enterprise-grade service. The governance committee’s job is to enforce the mapping consistently, not adjudicate it case by case.
+
+## 14.8 Defeating Shadow AI
+
+Shadow AI — the use of consumer AI tools (ChatGPT, Gemini, Claude.ai) with institutional data, in violation of institutional policy — is the most common AMC AI security failure. It happens because the sanctioned alternatives are inconvenient, the consumer tools are capable, and the clinicians and researchers using them do not understand the specific risks they are creating. A “zero tolerance” approach — blocking all consumer AI sites at the network boundary — is both technically difficult and likely to fail: motivated users find workarounds, and overly aggressive blocking damages the institutional relationship with clinicians who are trying to do their jobs.
+
+The more effective approach is to make the sanctioned path easier than the unsanctioned path. An internal AI assistant — accessible through the institutional portal, pre-authorized for appropriate data types, and connected to the institutional knowledge base through RAG — eliminates the most common reason for shadow AI use: the institutional tool either doesn’t exist or is harder to access than the consumer alternative. This is the “infrastructure as policy” principle: the security control is the product quality, not the network block ([Thirunavukarasu et al. 2023](#ref-Thirunavukarasu2023-natmed)).
+
+## 14.9 Where to Start
+
+### 14.9.1 Starter Project 1: Institutional API Gateway Deployment
+
+**What it is:** Deployment of a centralized AI API gateway that routes all institutional AI traffic through a single managed system with authentication, PHI scanning, audit logging, and cost tracking.
+
+**Why now:** Every day that institutional users connect directly to AI model APIs without a gateway is a day without audit logging, without PHI scanning on outbound prompts, and without visibility into institutional AI usage patterns. The gateway is the foundational security control that everything else depends on.
+
+**How to execute:** LiteLLM and Kong AI Gateway are the leading open-source options; Azure API Management can serve the same function for Azure OpenAI-heavy deployments. The implementation work involves: (1) provisioning the gateway instance; (2) configuring connections to each approved model provider; (3) integrating with the institutional IdP for authentication; (4) configuring PHI scanning rules; (5) connecting audit log output to the SIEM. This is a four-to-eight week engineering project for a team with cloud infrastructure experience.
+
+**Buy vs. build:** The gateway software is open-source or commercial off-the-shelf. The institutional work is configuration, integration, and governance policy definition.
+
+### 14.9.2 Starter Project 2: Internal AI Assistant with Clinical RAG
+
+**What it is:** An institution-facing AI assistant that clinical and administrative staff can use for productivity tasks — drafting, summarization, question answering — with access controls appropriate to their role and grounding in institutional knowledge through a curated RAG knowledge base.
+
+**Why now:** This is the primary countermeasure to shadow AI. An internal tool that works well for the most common productivity use cases eliminates the primary motivation for using consumer tools with institutional data.
+
+**How to execute:** Build on top of the API gateway. Define the knowledge base content for the initial deployment — clinical guidelines, formulary, institutional policies. Implement FHIR-based access controls for role-specific knowledge access. Deploy through the institutional intranet or EHR patient context for clinical staff. Measure shadow AI usage (via network telemetry) before and after deployment to assess effectiveness.
+
+**Buy vs. build:** Mixed. The gateway and RAG infrastructure is a build project. Several vendors (Nabla, Abridge, Microsoft Copilot for Healthcare, Google Workspace AI) offer institutional assistant products with existing EHR integrations that can reduce the build burden for common clinical use cases.
+
+Greshake, Kai, Sahar Abdelnabi, Shailesh Mishra, Christoph Endres, Thorsten Holz, and Mario Fritz. 2023. “Not What You’ve Signed up for: Compromising Real-World LLM-Integrated Applications with Indirect Prompt Injection.” *Proceedings of the 16th ACM Workshop on Artificial Intelligence and Security*. <https://doi.org/10.48550/arXiv.2302.12173>.
+
+HL7 International. 2024. *SMART App Launch Framework V2.2.0*. [Https://hl7.org/fhir/smart-app-launch/](https://hl7.org/fhir/smart-app-launch/). <https://hl7.org/fhir/smart-app-launch/>.
+
+National Institute of Standards and Technology. 2023. *Artificial Intelligence Risk Management Framework (AI RMF 1.0)*. NIST AI 100-1. U.S. Department of Commerce. <https://doi.org/10.6028/NIST.AI.100-1>.
+
+National Institute of Standards and Technology. 2024. *Artificial Intelligence 600-1: Generative Artificial Intelligence Profile*. NIST AI 600-1. U.S. Department of Commerce. <https://doi.org/10.6028/NIST.AI.600-1>.
+
+Thirunavukarasu, Arun James, Darren Shu Jeng Ting, Kabilan Elangovan, Laura Gutierrez, Ting Fang Tan, and Daniel Shu Wei Ting. 2023. “Large Language Models in Medicine.” *Nature Medicine* 29: 1930–40. <https://doi.org/10.1038/s41591-023-02448-8>.

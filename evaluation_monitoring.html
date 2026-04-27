@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.7.33">
+<meta name="generator" content="quarto-1.9.37">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -10,6 +10,9 @@
 
 <title>19&nbsp; Evaluation and Monitoring – Implementing AI in Academic Medicine</title>
 <style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
 div.columns{display: flex; gap: min(4vw, 1.5em);}
@@ -25,7 +28,6 @@ ul.task-list li input[type="checkbox"] {
 div.csl-bib-body { }
 div.csl-entry {
   clear: both;
-  margin-bottom: 0em;
 }
 .hanging-indent div.csl-entry {
   margin-left:2em;
@@ -59,10 +61,10 @@ div.csl-indent {
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-ea385d0e468b0dd5ea5bf0780b1290d9.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-7f8f88aac4f3542376d5c11b86a4c14d.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-96934157685b0ce66cf1cdc82e4f4849.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-9f6c963996d703caa3964aac5caf13bb.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -448,7 +450,7 @@ div.csl-indent {
 <p>Pre-deployment evaluation has two components: local validation and shadow deployment.</p>
 <p>Local validation asks whether the model performs adequately on a retrospective dataset drawn from your own institution’s population, documentation practices, and time period. This is not the same as accepting the vendor’s validation dataset, even if that dataset includes data from institutions that resemble yours. A model validated exclusively on academic medical center data from the northeast may not perform adequately at a safety-net hospital serving a different demographic mix. The validation data needs to be yours.</p>
 <p>Shadow deployment, sometimes called silent mode, runs the model in parallel with real clinical or operational workflow, generating outputs that are not shown to the users making decisions. This phase answers questions that retrospective validation cannot. What is the alert burden this model generates in real operations? What is the false positive rate under live documentation patterns? Are there systematic differences in performance across demographic subgroups that did not appear in the retrospective dataset? The answers sometimes differ substantially from what the validation study suggested, and finding out during silent mode rather than during live rollout is the point.</p>
-<p>For clinical AI tools, the <a href="https://www.decide-ai.org/">DECIDE-AI</a> reporting standard provides a structured framework for this early evaluation phase, covering the evidence required before moving from silent mode to supervised deployment and from supervised deployment to unsupervised live use <span class="citation" data-cites="Vasey2022-decideai">(<a href="references.html#ref-Vasey2022-decideai" role="doc-biblioref">Vasey et al. 2022</a>)</span>. <a href="https://www.tripod-statement.org/">TRIPOD+AI</a> provides the reporting standard for the pre-deployment validation study itself: a 27-item checklist specifying what must be documented about model development, calibration, and performance before a prediction model goes live in any setting <span class="citation" data-cites="Collins2024-tripodai">(<a href="references.html#ref-Collins2024-tripodai" role="doc-biblioref">Collins et al. 2024</a>)</span>.</p>
+<p>For clinical AI tools, the <a href="https://www.decide-ai.org/">DECIDE-AI</a> reporting standard provides a structured framework for this early evaluation phase, covering the evidence required before moving from silent mode to supervised deployment and from supervised deployment to unsupervised live use <span class="citation" data-cites="Vasey2022-decideai">(<a href="references.html#ref-Vasey2022-decideai" role="doc-biblioref"><span class="nocase">Vasey et al.</span> 2022</a>)</span>. <a href="https://www.tripod-statement.org/">TRIPOD+AI</a> provides the reporting standard for the pre-deployment validation study itself: a 27-item checklist specifying what must be documented about model development, calibration, and performance before a prediction model goes live in any setting <span class="citation" data-cites="Collins2024-tripodai">(<a href="references.html#ref-Collins2024-tripodai" role="doc-biblioref"><span class="nocase">Collins et al.</span> 2024</a>)</span>.</p>
 <p>For large language models, a third pre-deployment step applies that does not exist for traditional prediction models. LLMs can fail in ways prediction models do not: hallucinating plausible-sounding clinical information, exposing protected patient data in responses to queries that appear innocuous, producing outputs with demographic biases that standard performance metrics do not capture. A pre-deployment red-teaming exercise, structured adversarial testing by domain experts attempting to elicit harmful outputs, is the minimum bar for any LLM in a clinical or educational context.</p>
 <p>Model cards, standardized by <a href="https://www.coalitionforhealthai.org/">CHAI</a> as a “nutrition label” for AI tools, document the intended population, known performance limitations, demographic subgroup performance, and deployment constraints. Requiring vendors to provide a CHAI-compliant model card before evaluation begins shifts accountability appropriately. If the vendor cannot characterize subgroup performance, the institution has learned something important about what the vendor actually knows about its own model <span class="citation" data-cites="CHAI2024-trust">(<a href="references.html#ref-CHAI2024-trust" role="doc-biblioref">Coalition for Health AI 2024</a>)</span>.</p>
 </section>
@@ -608,8 +610,8 @@ Figure&nbsp;19.1: AI deployment lifecycle. All four AMC domains share this struc
 <section id="business-operations" class="level3" data-number="19.6.4">
 <h3 data-number="19.6.4" class="anchored" data-anchor-id="business-operations"><span class="header-section-number">19.6.4</span> Business Operations</h3>
 <p>Business operations AI monitoring combines operational efficiency KPIs with equity obligations that are often underweighted in standard ROI analyses.</p>
-<p>The efficiency KPIs are tractable: throughput rates, processing time, error rates, revenue cycle metrics. For ambient documentation tools, the relevant operational KPI is the actual reduction in documentation burden measured against the time required for AI output review and correction, not against the theoretical maximum <span class="citation" data-cites="Tierney2024-scribe">(<a href="references.html#ref-Tierney2024-scribe" role="doc-biblioref">Tierney et al. 2024</a>)</span>. Tools that reduce total documentation time are different from tools that redistribute documentation burden from typing to reviewing.</p>
-<p>Algorithmic hiring bias monitoring is a legal requirement in jurisdictions that have enacted AI employment law. New York City’s Local Law 144 requires employers using automated employment decision tools to conduct annual bias audits and disclose the results publicly <span class="citation" data-cites="NYCLL144">(<a href="references.html#ref-NYCLL144" role="doc-biblioref">New York City Council 2021</a>)</span>. AMC human resources teams using AI in any part of the hiring or promotion process should know whether they fall under this or analogous state-level requirements, and build the audit infrastructure to comply before an enforcement inquiry requires it.</p>
+<p>The efficiency KPIs are tractable: throughput rates, processing time, error rates, revenue cycle metrics. For ambient documentation tools, the relevant operational KPI is the actual reduction in documentation burden measured against the time required for AI output review and correction, not against the theoretical maximum <span class="citation" data-cites="Tierney2024-scribe">(<a href="references.html#ref-Tierney2024-scribe" role="doc-biblioref"><span class="nocase">Tierney et al.</span> 2024</a>)</span>. Tools that reduce total documentation time are different from tools that redistribute documentation burden from typing to reviewing.</p>
+<p>Algorithmic hiring bias monitoring is a legal requirement in jurisdictions that have enacted AI employment law. New York City’s Local Law 144 requires employers using automated employment decision tools to conduct annual bias audits and disclose the results publicly <span class="citation" data-cites="NYCLL144">(<a href="references.html#ref-NYCLL144" role="doc-biblioref">Local Law 144 2021</a>)</span>. AMC human resources teams using AI in any part of the hiring or promotion process should know whether they fall under this or analogous state-level requirements, and build the audit infrastructure to comply before an enforcement inquiry requires it.</p>
 <p>Frontline administrative staff are both the primary operational monitors and the primary workforce equity stakeholders. When AI automation displaces tasks that staff were previously performing, monitoring should include tracking of role changes, retraining uptake, and whether the efficiency gains from automation are distributed equitably across staff levels. The AMC that deploys an AI billing tool to reduce administrative headcount without monitoring the workforce equity dimensions of that reduction is carrying risk — regulatory, reputational, and labor relations — that standard operational dashboards will not surface.</p>
 <div id="tbl-domain-comparison" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-tbl figure">
@@ -689,48 +691,48 @@ Table&nbsp;19.2: Domain comparison for AI monitoring. Each domain shares the gen
 <p>The minimum bar for research, education, and business operations AI is different in some dimensions and lower in others, but the structure is identical: every deployment should have a named monitoring owner, defined KPIs, a defined review cadence, and criteria that would result in the tool being taken offline. These are not aspirational targets for mature programs. They are the preconditions under which responsible deployment is possible at all.</p>
 
 
-<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list" style="display: none">
+<div id="refs" class="references csl-bib-body hanging-indent" role="list" style="display: none">
 <div id="ref-ACGME2025-CPR" class="csl-entry" role="listitem">
-Accreditation Council for Graduate Medical Education. 2025. <span>“Common Program Requirements: <span>July</span> 2025 Updates.”</span> <a href="https://www.acgme.org/what-we-do/accreditation/common-program-requirements/" class="uri">https://www.acgme.org/what-we-do/accreditation/common-program-requirements/</a>. <a href="https://www.acgme.org/what-we-do/accreditation/common-program-requirements/">https://www.acgme.org/what-we-do/accreditation/common-program-requirements/</a>.
+Accreditation Council for Graduate Medical Education. 2025. <em>Common Program Requirements: <span>July</span> 2025 Updates</em>. <a href="https://www.acgme.org/what-we-do/accreditation/common-program-requirements/" class="uri">Https://www.acgme.org/what-we-do/accreditation/common-program-requirements/</a>. <a href="https://www.acgme.org/what-we-do/accreditation/common-program-requirements/">https://www.acgme.org/what-we-do/accreditation/common-program-requirements/</a>.
 </div>
 <div id="ref-Baker2016-reproducibility" class="csl-entry" role="listitem">
 Baker, Monya. 2016. <span>“1,500 Scientists Lift the Lid on Reproducibility.”</span> <em>Nature</em> 533: 452–54. <a href="https://doi.org/10.1038/533452a">https://doi.org/10.1038/533452a</a>.
 </div>
 <div id="ref-CHAI2024-trust" class="csl-entry" role="listitem">
-Coalition for Health AI. 2024. <span>“Patient Trust and <span>AI</span> Accountability Survey.”</span> <a href="https://www.coalitionforhealthai.org/publications/" class="uri">https://www.coalitionforhealthai.org/publications/</a>. <a href="https://www.coalitionforhealthai.org/publications/">https://www.coalitionforhealthai.org/publications/</a>.
+Coalition for Health AI. 2024. <em>Patient Trust and <span>AI</span> Accountability Survey</em>. <a href="https://www.coalitionforhealthai.org/publications/" class="uri">Https://www.coalitionforhealthai.org/publications/</a>. <a href="https://www.coalitionforhealthai.org/publications/">https://www.coalitionforhealthai.org/publications/</a>.
 </div>
 <div id="ref-Collins2024-tripodai" class="csl-entry" role="listitem">
-Collins, Gary S, Karel G M Moons, Paula Dhiman, Richard D Riley, Andrew L Beam, Ben Van Calster, Marzyeh Ghassemi, et al. 2024. <span>“<span>TRIPOD+AI</span> Statement: Updated Guidance for Reporting Clinical Prediction Models That Use Regression or Machine Learning Methods.”</span> <em>BMJ</em> 385: e078378. <a href="https://doi.org/10.1136/bmj-2023-078378">https://doi.org/10.1136/bmj-2023-078378</a>.
+<span class="nocase">Collins, Gary S, Karel G M Moons, Paula Dhiman, et al.</span> 2024. <span>“<span>TRIPOD+AI</span> Statement: Updated Guidance for Reporting Clinical Prediction Models That Use Regression or Machine Learning Methods.”</span> <em>BMJ</em> 385: e078378. <a href="https://doi.org/10.1136/bmj-2023-078378">https://doi.org/10.1136/bmj-2023-078378</a>.
 </div>
 <div id="ref-Finlayson2021-shift" class="csl-entry" role="listitem">
-Finlayson, Samuel G, Adarsh Subbaswamy, Karandeep Singh, John Bowers, Annabel Kupke, Jonathan Zittrain, Isaac S Kohane, and Suchi Saria. 2021. <span>“The Clinician and Dataset Shift in Artificial Intelligence.”</span> <em>New England Journal of Medicine</em> 385: 283–86. <a href="https://doi.org/10.1056/NEJMc2104626">https://doi.org/10.1056/NEJMc2104626</a>.
+Finlayson, Samuel G, Adarsh Subbaswamy, Karandeep Singh, et al. 2021. <span>“The Clinician and Dataset Shift in Artificial Intelligence.”</span> <em>New England Journal of Medicine</em> 385: 283–86. <a href="https://doi.org/10.1056/NEJMc2104626">https://doi.org/10.1056/NEJMc2104626</a>.
 </div>
 <div id="ref-ICMJE2023-recommendations" class="csl-entry" role="listitem">
-International Committee of Medical Journal Editors. 2023. <span>“Recommendations for the Conduct, Reporting, Editing, and Publication of Scholarly Work in Medical Journals.”</span> <a href="https://www.icmje.org/recommendations/">https://www.icmje.org/recommendations/</a>.
+International Committee of Medical Journal Editors. 2023. <em>Recommendations for the Conduct, Reporting, Editing, and Publication of Scholarly Work in Medical Journals</em>. <a href="https://www.icmje.org/recommendations/">https://www.icmje.org/recommendations/</a>.
 </div>
 <div id="ref-Liang2023-aidetect" class="csl-entry" role="listitem">
 Liang, Weixin, Mert Yuksekgonul, Yining Mao, Eric Wu, and James Zou. 2023. <span>“<span>GPT</span> Detectors Are Biased Against Non-Native <span>English</span> Writers.”</span> <em>Patterns</em> 4 (7): 100779. <a href="https://doi.org/10.1016/j.patter.2023.100779">https://doi.org/10.1016/j.patter.2023.100779</a>.
 </div>
 <div id="ref-NYCLL144" class="csl-entry" role="listitem">
-New York City Council. 2021. <em>Local Law 144: Automated Employment Decision Tools</em>. <a href="https://www.nyc.gov/site/dca/about/automated-employment-decision-tools.page">https://www.nyc.gov/site/dca/about/automated-employment-decision-tools.page</a>.
+Local Law 144: Automated Employment Decision Tools (2021). <a href="https://www.nyc.gov/site/dca/about/automated-employment-decision-tools.page">https://www.nyc.gov/site/dca/about/automated-employment-decision-tools.page</a>.
 </div>
 <div id="ref-Tierney2024-scribe" class="csl-entry" role="listitem">
-Tierney, Aaron A, Shreya Bhatt, Aakash Houndie, et al. 2024. <span>“Ambient Artificial Intelligence Scribes to Alleviate the Burden of Clinical Documentation.”</span> <em>NEJM Catalyst Innovations in Care Delivery</em> 5 (1): CAT.23.0404. <a href="https://doi.org/10.1056/CAT.23.0404">https://doi.org/10.1056/CAT.23.0404</a>.
+<span class="nocase">Tierney, Aaron A, Shreya Bhatt, Aakash Houndie, et al.</span> 2024. <span>“Ambient Artificial Intelligence Scribes to Alleviate the Burden of Clinical Documentation.”</span> <em>NEJM Catalyst Innovations in Care Delivery</em> 5 (1): CAT.23.0404. <a href="https://doi.org/10.1056/CAT.23.0404">https://doi.org/10.1056/CAT.23.0404</a>.
 </div>
 <div id="ref-HHS2024-1557" class="csl-entry" role="listitem">
-U.S. Department of Health and Human Services, Office for Civil Rights. 2024. <span>“Section 1557: Nondiscrimination in Health Programs and Activities (Final Rule).”</span> <a href="https://www.hhs.gov/civil-rights/for-individuals/section-1557/index.html">https://www.hhs.gov/civil-rights/for-individuals/section-1557/index.html</a>.
+U.S. Department of Health and Human Services, Office for Civil Rights. 2024. <em>Section 1557: Nondiscrimination in Health Programs and Activities (Final Rule)</em>. <a href="https://www.hhs.gov/civil-rights/for-individuals/section-1557/index.html">https://www.hhs.gov/civil-rights/for-individuals/section-1557/index.html</a>.
 </div>
 <div id="ref-FDA2024-pccp" class="csl-entry" role="listitem">
-U.S. Food and Drug Administration. 2024. <span>“Marketing Submission Recommendations for a Predetermined Change Control Plan for <span>Artificial Intelligence/Machine Learning</span>-Enabled Device Software Functions.”</span> <a href="https://www.fda.gov/regulatory-information/search-fda-guidance-documents/marketing-submission-recommendations-predetermined-change-control-plan-aiml-enabled-device-software">https://www.fda.gov/regulatory-information/search-fda-guidance-documents/marketing-submission-recommendations-predetermined-change-control-plan-aiml-enabled-device-software</a>.
+U.S. Food and Drug Administration. 2024. <em>Marketing Submission Recommendations for a Predetermined Change Control Plan for <span>Artificial Intelligence/Machine Learning</span>-Enabled Device Software Functions</em>. <a href="https://www.fda.gov/regulatory-information/search-fda-guidance-documents/marketing-submission-recommendations-predetermined-change-control-plan-aiml-enabled-device-software">https://www.fda.gov/regulatory-information/search-fda-guidance-documents/marketing-submission-recommendations-predetermined-change-control-plan-aiml-enabled-device-software</a>.
 </div>
 <div id="ref-Vasey2022-decideai" class="csl-entry" role="listitem">
-Vasey, Baptiste, Myura Nagendran, Bruce Campbell, David A Clifton, Gary S Collins, Spiros Denaxas, Alastair K Denniston, et al. 2022. <span>“Reporting Guideline for the Early-Stage Clinical Evaluation of Decision Support Systems Driven by Artificial Intelligence: <span>DECIDE-AI</span>.”</span> <em>Nature Medicine</em> 28: 924–33. <a href="https://doi.org/10.1038/s41591-022-01772-9">https://doi.org/10.1038/s41591-022-01772-9</a>.
+<span class="nocase">Vasey, Baptiste, Myura Nagendran, Bruce Campbell, et al.</span> 2022. <span>“Reporting Guideline for the Early-Stage Clinical Evaluation of Decision Support Systems Driven by Artificial Intelligence: <span>DECIDE-AI</span>.”</span> <em>Nature Medicine</em> 28: 924–33. <a href="https://doi.org/10.1038/s41591-022-01772-9">https://doi.org/10.1038/s41591-022-01772-9</a>.
 </div>
 <div id="ref-Wiens2019-harm" class="csl-entry" role="listitem">
-Wiens, Jenna, Suchi Saria, Mark Sendak, Marzyeh Ghassemi, Vincent X Liu, Finale Doshi-Velez, Kenneth Jung, et al. 2019. <span>“Do No Harm: A Roadmap for Responsible Machine Learning for Health Care.”</span> <em>Nature Medicine</em> 25: 1337–40. <a href="https://doi.org/10.1038/s41591-019-0548-6">https://doi.org/10.1038/s41591-019-0548-6</a>.
+Wiens, Jenna, Suchi Saria, Mark Sendak, et al. 2019. <span>“Do No Harm: A Roadmap for Responsible Machine Learning for Health Care.”</span> <em>Nature Medicine</em> 25: 1337–40. <a href="https://doi.org/10.1038/s41591-019-0548-6">https://doi.org/10.1038/s41591-019-0548-6</a>.
 </div>
 <div id="ref-Wong2021-esm" class="csl-entry" role="listitem">
-Wong, Andrew, Erkin Otles, John P Donnelly, Andrew Krumm, Jeffrey McCullough, Olivia DeTroyer-Coopmans, Dina Rojas, Douglas Westergaard, Aakash Trivedi, and Karandeep Singh. 2021. <span>“External Validation of a Widely Implemented Proprietary Sepsis Prediction Model in Hospitalized Patients.”</span> <em>JAMA Internal Medicine</em> 181 (8): 1065–70. <a href="https://doi.org/10.1001/jamainternmed.2021.2626">https://doi.org/10.1001/jamainternmed.2021.2626</a>.
+Wong, Andrew, Erkin Otles, John P Donnelly, et al. 2021. <span>“External Validation of a Widely Implemented Proprietary Sepsis Prediction Model in Hospitalized Patients.”</span> <em>JAMA Internal Medicine</em> 181 (8): 1065–70. <a href="https://doi.org/10.1001/jamainternmed.2021.2626">https://doi.org/10.1001/jamainternmed.2021.2626</a>.
 </div>
 </div>
 </section>
@@ -787,13 +789,14 @@ Wong, Andrew, Erkin Otles, John P Donnelly, Andrew Krumm, Jeffrey McCullough, Ol
       e.clearSelection();
     }
     const getTextToCopy = function(trigger) {
-        const codeEl = trigger.previousElementSibling.cloneNode(true);
-        for (const childEl of codeEl.children) {
-          if (isCodeAnnotation(childEl)) {
-            childEl.remove();
-          }
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
         }
-        return codeEl.innerText;
+      }
+      return codeEl.innerText;
     }
     const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
       text: getTextToCopy

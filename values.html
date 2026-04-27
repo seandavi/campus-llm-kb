@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.7.33">
+<meta name="generator" content="quarto-1.9.37">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -10,6 +10,9 @@
 
 <title>2&nbsp; Values and Principles – Implementing AI in Academic Medicine</title>
 <style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
 div.columns{display: flex; gap: min(4vw, 1.5em);}
@@ -25,7 +28,6 @@ ul.task-list li input[type="checkbox"] {
 div.csl-bib-body { }
 div.csl-entry {
   clear: both;
-  margin-bottom: 0em;
 }
 .hanging-indent div.csl-entry {
   margin-left:2em;
@@ -59,10 +61,10 @@ div.csl-indent {
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-ea385d0e468b0dd5ea5bf0780b1290d9.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-7f8f88aac4f3542376d5c11b86a4c14d.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-96934157685b0ce66cf1cdc82e4f4849.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-9f6c963996d703caa3964aac5caf13bb.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -432,7 +434,7 @@ div.csl-indent {
 <h2 data-number="2.2" class="anchored" data-anchor-id="equity-as-performance-requirement"><span class="header-section-number">2.2</span> Equity as Performance Requirement</h2>
 <p>Equity is the principle that most AMC AI governance programs acknowledge and fewest operationalize. The acknowledgment is easy: any institutional AI values statement will include language about not exacerbating health disparities. The operationalization requires something specific: demographic stratification of performance metrics as a standard component of AI validation, not an optional audit.</p>
 <p>The Obermeyer 2019 demonstration that a widely deployed risk stratification algorithm systematically underestimated the health needs of Black patients was not a finding about a biased algorithm <span class="citation" data-cites="Obermeyer2019-bias">(<a href="references.html#ref-Obermeyer2019-bias" role="doc-biblioref">Obermeyer et al. 2019</a>)</span>. It was a finding about a technically correct algorithm that encoded an existing inequity by using healthcare utilization as a proxy for health need. The algorithm did exactly what it was designed to do. The design was the problem. Catching this kind of structural inequity before deployment requires stratified performance analysis across race, ethnicity, age, insurance status, and language as a baseline requirement — not a step that happens if someone raises a concern.</p>
-<p>Badal and colleagues proposed a framework that frames alleviation of health disparities as the first principle of responsible clinical AI, not a supplementary consideration <span class="citation" data-cites="Badal2023-bt">(<a href="references.html#ref-Badal2023-bt" role="doc-biblioref">Badal, Lee, and Esserman 2023</a>)</span>. In practice, this means that a model achieving 85 percent accuracy overall but 70 percent accuracy for the subpopulation with the highest disease burden is not a high-performing model. It performs best for the patients who need it least. The equity audit process described in <a href="ethics.html#sec-ethics-start" class="quarto-xref"><span>Section 16.11</span></a> is the operational mechanism for this principle. Without that audit, equity is a value statement, not a program element.</p>
+<p>Badal and colleagues proposed a framework that frames alleviation of health disparities as the first principle of responsible clinical AI, not a supplementary consideration <span class="citation" data-cites="Badal2023-bt">(<a href="references.html#ref-Badal2023-bt" role="doc-biblioref">Badal et al. 2023</a>)</span>. In practice, this means that a model achieving 85 percent accuracy overall but 70 percent accuracy for the subpopulation with the highest disease burden is not a high-performing model. It performs best for the patients who need it least. The equity audit process described in <a href="ethics.html#sec-ethics-start" class="quarto-xref"><span>Section 16.11</span></a> is the operational mechanism for this principle. Without that audit, equity is a value statement, not a program element.</p>
 </section>
 <section id="transparency-from-principle-to-attribute-list" class="level2" data-number="2.3">
 <h2 data-number="2.3" class="anchored" data-anchor-id="transparency-from-principle-to-attribute-list"><span class="header-section-number">2.3</span> Transparency: From Principle to Attribute List</h2>
@@ -520,27 +522,27 @@ Table&nbsp;2.1: Governance principles mapped to regulatory requirements and oper
 <p>These examples share a common architecture: principles that are specific enough to be falsifiable, checkpoints that create documented records of compliance, and ownership structures that ensure someone is accountable for the principle being honored. That architecture is what this book is about. The values are the starting point. The mechanisms are the work.</p>
 
 
-<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list" style="display: none">
+<div id="refs" class="references csl-bib-body hanging-indent" role="list" style="display: none">
 <div id="ref-Badal2023-bt" class="csl-entry" role="listitem">
 Badal, Kimberly, Carmen M Lee, and Laura J Esserman. 2023. <span>“Guiding Principles for the Responsible Development of Artificial Intelligence Tools for Healthcare.”</span> <em>Communication &amp; Medicine</em> 3 (1): 47. <a href="https://doi.org/10.1038/s43856-023-00279-9">https://doi.org/10.1038/s43856-023-00279-9</a>.
 </div>
 <div id="ref-Bedoya2022-abcds" class="csl-entry" role="listitem">
-Bedoya, Armando D, Nicoleta J Economou-Zavlanos, Benjamin A Goldstein, Allison Young, J Eric Jelovsek, Cara O’Brien, Amanda B Parrish, et al. 2022. <span>“A Framework for the Oversight and Local Deployment of Safe and High-Quality Prediction Models.”</span> <em>Journal of the American Medical Informatics Association</em> 29 (9): 1631–36. <a href="https://doi.org/10.1093/jamia/ocac078">https://doi.org/10.1093/jamia/ocac078</a>.
+Bedoya, Armando D, Nicoleta J Economou-Zavlanos, Benjamin A Goldstein, et al. 2022. <span>“A Framework for the Oversight and Local Deployment of Safe and High-Quality Prediction Models.”</span> <em>Journal of the American Medical Informatics Association</em> 29 (9): 1631–36. <a href="https://doi.org/10.1093/jamia/ocac078">https://doi.org/10.1093/jamia/ocac078</a>.
 </div>
 <div id="ref-Mitchell2019-modelcards" class="csl-entry" role="listitem">
-Mitchell, Margaret, Simone Wu, Andrew Zaldivar, Parker Barnes, Lucy Vasserman, Ben Hutchinson, Elena Spitzer, Inioluwa Deborah Raji, and Timnit Gebru. 2019. <span>“Model Cards for Model Reporting.”</span> In <em>Proceedings of the Conference on Fairness, Accountability, and Transparency</em>. <a href="https://doi.org/10.1145/3287560.3287596">https://doi.org/10.1145/3287560.3287596</a>.
+Mitchell, Margaret, Simone Wu, Andrew Zaldivar, et al. 2019. <span>“Model Cards for Model Reporting.”</span> <em>Proceedings of the Conference on Fairness, Accountability, and Transparency</em>. <a href="https://doi.org/10.1145/3287560.3287596">https://doi.org/10.1145/3287560.3287596</a>.
 </div>
 <div id="ref-Obermeyer2019-bias" class="csl-entry" role="listitem">
 Obermeyer, Ziad, Brian Powers, Christine Vogeli, and Sendhil Mullainathan. 2019. <span>“Dissecting Racial Bias in an Algorithm Used to Manage the Health of Populations.”</span> <em>Science</em> 366 (6464): 447–53. <a href="https://doi.org/10.1126/science.aax2342">https://doi.org/10.1126/science.aax2342</a>.
 </div>
 <div id="ref-ONC2024-hti1" class="csl-entry" role="listitem">
-Office of the National Coordinator for Health Information Technology. 2024. <span>“Health Data, Technology, and Interoperability: Certification Program Updates, Algorithm Transparency, and Information Sharing (<span>HTI-1</span>).”</span> <em>Federal Register</em>. <a href="https://www.federalregister.gov/documents/2024/01/09/2023-28824/health-data-technology-and-interoperability-certification-program-updates-algorithm-transparency-and">https://www.federalregister.gov/documents/2024/01/09/2023-28824/health-data-technology-and-interoperability-certification-program-updates-algorithm-transparency-and</a>.
+Office of the National Coordinator for Health Information Technology. 2024. <span>“Health Data, Technology, and Interoperability: Certification Program Updates, Algorithm Transparency, and Information Sharing (<span>HTI-1</span>).”</span> In <em>Federal Register</em>, No. 8, vol. 89. <a href="https://www.federalregister.gov/documents/2024/01/09/2023-28824/health-data-technology-and-interoperability-certification-program-updates-algorithm-transparency-and">https://www.federalregister.gov/documents/2024/01/09/2023-28824/health-data-technology-and-interoperability-certification-program-updates-algorithm-transparency-and</a>.
 </div>
 <div id="ref-Parasuraman2010-automation" class="csl-entry" role="listitem">
 Parasuraman, Raja, and Dietrich H Manzey. 2010. <span>“Complacency and Bias in Human Use of Automation: An Updated Understanding.”</span> <em>Human Factors</em> 52 (3): 381–410. <a href="https://doi.org/10.1177/0018720810376055">https://doi.org/10.1177/0018720810376055</a>.
 </div>
 <div id="ref-WHO2024-ai-ethics" class="csl-entry" role="listitem">
-World Health Organization. 2024. <span>“Ethics and Governance of Artificial Intelligence for Health.”</span> <a href="https://www.who.int/publications/i/item/9789240029200">https://www.who.int/publications/i/item/9789240029200</a>.
+World Health Organization. 2024. <em>Ethics and Governance of Artificial Intelligence for Health</em>. <a href="https://www.who.int/publications/i/item/9789240029200">https://www.who.int/publications/i/item/9789240029200</a>.
 </div>
 </div>
 </section>
@@ -597,13 +599,14 @@ World Health Organization. 2024. <span>“Ethics and Governance of Artificial In
       e.clearSelection();
     }
     const getTextToCopy = function(trigger) {
-        const codeEl = trigger.previousElementSibling.cloneNode(true);
-        for (const childEl of codeEl.children) {
-          if (isCodeAnnotation(childEl)) {
-            childEl.remove();
-          }
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
         }
-        return codeEl.innerText;
+      }
+      return codeEl.innerText;
     }
     const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
       text: getTextToCopy

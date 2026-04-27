@@ -1,0 +1,108 @@
+# 5  Barriers and How to Address Them
+
+Published
+
+April 26, 2026
+
+The standard narrative for why technology fails in academic medicine is as predictable as it is condescending. Clinicians are resistant to change. Faculty lack the expertise to adapt. The institution does not have the resources to see a project through. I have watched dozens of implementations over two decades, and I have rarely found these explanations to be true. The people on the front lines are often desperate for tools that actually work. They do not resist change because they are stubborn; they resist it because they have been burned by software that added three clicks to their workflow without removing a single one.
+
+When an AI implementation fails in an academic medical center, it is almost never because of a lack of will. It is because of structural friction — the grit in the machine that no one wants to name during the kickoff meeting. We fail because governance structures are too slow for the pace of the technology, because electronic health records are built like fortresses rather than platforms, and because we treat AI deployment as a technological event rather than a sociotechnical integration. If we want to move past the pilot phase, we have to stop blaming users and start naming the structural barriers that make adoption genuinely hard. Some of those barriers are fixable. Some are not. This chapter tries to distinguish between them.
+
+## 5.1 The Governance Vacuum
+
+The most immediate barrier is the silence of the institution. At most AMCs, if a resident wants to use a spreadsheet to track their patients, they just do it. But if that same resident wants to use a language model to summarize a complex patient history, they find themselves in a gray zone — no policy that authorizes it, no policy that prohibits it, and no committee with the authority to make the call. This is the permission paradox, and it produces two outcomes, neither good.
+
+In some institutions, the vacuum creates paralysis. Innovation stalls in the inbox of a risk officer who lacks the technical background to evaluate a tool but has the authority to say no. In others, the vacuum is filled by shadow AI: clinicians and researchers using consumer tools because the institutional alternative does not exist or is harder to access than ChatGPT on a personal phone. They are not trying to be reckless. They are trying to get through their shift. But operating outside any formal framework means their experience cannot be validated, shared, or built on — and it means institutional data is moving through systems with no audit trail, no BAA, and no governance oversight.
+
+The absence of a formal AI Steering Committee is a structural failure of leadership, not a temporary gap to be filled by individual judgment. Without a central body to set the rules for data provenance, validation requirements, and deployment authorization, every department reinvents the wheel independently, and the institutional AI program fragments into a collection of unconnected pilots with incompatible governance. The AISC structure and intake process that addresses this vacuum are described in [sec-pm-support](#sec-pm-support); the point here is that the vacuum itself is a choice the institution has made, whether or not anyone framed it that way.
+
+``` mermaid
+flowchart TD
+    A([Governance Vacuum:\nNo Clear AI Policy]) --> B[Permission Paradox]
+    B --> C[Institutional Paralysis:\nPilots Stalled]
+    B --> D[Shadow AI Adoption:\nConsumer Tools with PHI]
+    D --> E[Security and\nCompliance Risk]
+    D --> F[No Peer Validation\nor Knowledge Sharing]
+    C --> G[Talent Attrition:\nInnovators Leave]
+    E --> H[Emergency Prohibition]
+    H --> A
+```
+
+Figure 5.1: The governance vacuum and its downstream effects. Shadow AI adoption is a predictable response to institutional silence, not a security failure to be solved by network blocking alone.
+
+## 5.2 EHR Integration Friction
+
+Even with governance clarity, implementation runs into the technical debt of the electronic health record. Many capable AI tools have failed not because they did not work but because they could not be embedded in the clinician’s natural workflow. The integration tax — the hidden labor required to make a modern tool communicate with a legacy system — is not just a matter of writing code. It means navigating proprietary APIs, paying app marketplace fees that can exceed the project budget, and resolving semantic mismatches where the AI’s output does not map to any existing field in the clinical record.
+
+Major EHR vendors have historically prioritized billing and documentation over interoperability. FHIR API support varies significantly across EHR versions and implementations, and the access required to embed AI into the clinical workflow is frequently incomplete. The result is brittle integrations: a team spends months getting a pilot working in a specific EHR configuration, and a scheduled vendor update breaks the connection. The clinical AI tool ends up as a sidecar application in a separate browser tab — and we know from years of informatics research that every additional context switch reduces adoption, often fatally.
+
+This barrier is the primary reason why the infrastructure chapter ([sec-infrastructure](#sec-infrastructure)) emphasizes the institutional API gateway as the architectural foundation for everything else. A gateway that centralizes all AI traffic through a managed chokepoint insulates individual tools from EHR version changes and gives the institution governance leverage over the integration points it would otherwise negotiate tool by tool with each vendor.
+
+## 5.3 The Alert Fatigue Trap
+
+Clinical decision support has a documented failure mode so well-established it has its own name, and large language model deployment is at risk of reproducing it at scale. Alert fatigue — the clinical survival mechanism that develops when a system generates more low-specificity alerts than the clinician can meaningfully evaluate — has been measured at override rates exceeding 90 percent in traditional CDS deployments. A clinician in an intensive care unit where monitors chirp continuously reaches past the screen and silences the alarm without looking at it. This is not negligence. It is rational adaptation to an environment where most alerts carry no useful information.
+
+The external validation of the Epic Sepsis Model illustrates the problem precisely. When Wong and colleagues validated the model against a real patient population, they found that the tool’s reported accuracy substantially overstated its performance in the specific context where it mattered most: early identification of patients not yet suspected of having sepsis ([Wong et al. 2021](#ref-Wong2021-esm)). The model was generating alerts that mostly captured patients already on the clinical team’s radar, contributing to alert burden without proportional clinical value.
+
+The structural response is not to generate fewer alerts by being more conservative — that just means missing more cases. It is to rethink what AI outputs look like in clinical workflows. AI that surfaces one high-confidence recommendation in a relevant clinical context is more useful than AI that flags everything above a low threshold and lets the clinician decide. This is a design choice, not a model improvement. It requires the clinical informatics team and the clinical leadership to agree on what a “good” alert looks like before the tool is configured, not after the override rate accumulates. The clinical AI governance process in [sec-clinical](#sec-clinical) addresses how to make these design decisions before deployment.
+
+## 5.4 The Trust Calibration Problem
+
+Trust is the most misunderstood variable in AI adoption. The goal is not to get clinicians to trust AI more. The goal is calibrated trust — where clinicians trust AI outputs in the contexts where the model is reliable and maintain appropriate skepticism in the contexts where it is not. The automation complacency literature documents clearly that consistent accuracy leads to reduced scrutiny, and that reduced scrutiny is precisely where errors compound ([Parasuraman and Manzey 2010](#ref-Parasuraman2010-automation)). A tool that is accurate 95 percent of the time creates a cognitive environment where the 5 percent of errors are less likely to be caught.
+
+Over-trust is one failure mode. Under-trust is the other. A single high-profile error — a hallucinated medication dose, an incorrect lab interpretation, an AI-generated note that a subsequent clinician relied on without independent verification — can cause an entire department to reject a tool that was, on net, performing well. Neither failure mode is solved by more training alone. Both require training programs that address specific failure modes, not just aggregate accuracy, and operational designs that make scrutiny structurally easy rather than cognitively expensive. The training requirements for clinical human-in-the- loop practice are detailed in [sec-workforce](#sec-workforce).
+
+The trust calibration problem is also a transparency problem. When a vendor cannot or will not disclose how a model was trained, what its performance looks like across demographic subgroups, or what types of inputs cause it to fail, clinicians are being asked to trust a black box. In an academic environment built on evidence and accountability, that ask has limited shelf life. The transparency requirements at intake — the model card, the source attributes required under ONC HTI-1, the demographic performance stratification required under HHS Section 1557 — exist precisely because trust without transparency is not a stable governance posture.
+
+## 5.5 Budget Fragmentation
+
+In AMC governance, budget is the most accurate statement of institutional priorities, and AI implementation routinely falls into the gap between the IT infrastructure budget and clinical departments’ operational funds. I have watched projects die not because they were expensive but because no one could agree on who should pay for the API tokens.
+
+IT views AI as an enterprise capability that clinical departments should fund as operational expense. Clinical departments view it as infrastructure that IT should provide. Research operates on grants that expire in three years. Education has no dedicated technology budget at all. This fragmentation means the institution never builds the shared infrastructure — managed API gateway, data enclave, model monitoring platform — that makes individual projects sustainable. Every project starts by solving the same infrastructure problems the previous project solved, usually in a slightly incompatible way.
+
+Solving this requires a governance decision about AI infrastructure funding, not a clever business case. The right analogy is the institutional network: nobody argues about whether each department should fund its own network switches. The network is shared infrastructure, funded centrally, available to all. AI infrastructure has the same property. The project management chapter ([sec-pm-support](#sec-pm-support)) describes the central AI portfolio budget as a governance mechanism rather than an IT line item.
+
+| Barrier | Affected Domains | Root Cause | Countermeasure | Addressed In |
+|----|----|----|----|----|
+| Governance vacuum | All | No AISC or policy | Establish AISC + intake process | [sec-pm-support](#sec-pm-support) |
+| EHR integration friction | Clinical, Research | Closed vendor APIs | Institutional API gateway | [sec-infrastructure](#sec-infrastructure) |
+| Alert fatigue | Clinical | High-volume low-precision CDS | Design-before-deploy, alert review | [sec-clinical](#sec-clinical) |
+| Trust miscalibration | All | Opacity, training deficit | Specific failure mode training, transparency at intake | [sec-workforce](#sec-workforce) |
+| Budget fragmentation | All | Siloed funding | Central AI portfolio budget | [sec-pm-support](#sec-pm-support) |
+| Shadow AI adoption | All | Governance vacuum + usability gap | Make sanctioned path easier | [sec-infrastructure](#sec-infrastructure) |
+
+Table 5.1: AMC AI implementation barrier taxonomy. Each barrier traces to a root cause and a countermeasure described in a specific chapter. The pattern: structural problems require structural solutions.
+
+## 5.6 The Barriers You Cannot Fix
+
+I want to be honest about the constraints that are not within institutional control, because planning around them is different from solving them.
+
+Regulatory lag is real. The FDA, ONC, CMS, and state legislatures are regulating a technology that moves faster than their meeting cycles. The rules in [sec-regulatory](#sec-regulatory) represent the current state; they will change. The governance program that treats current compliance as sufficient will find itself out of compliance in eighteen months. The governance program built around documented evidence of responsible practice — validation records, monitoring logs, equity audits — is better positioned to adapt because it is building the institutional record that every new regulatory requirement will ask for.
+
+Vendor opacity is a structural feature of the current AI market, not a problem any one institution can solve. Foundation model providers control model weights that AMCs cannot inspect, update models on schedules the institution does not control, and write terms of service that protect their liability rather than the institution’s patients. The practical response is contractual: the no-training clause, zero-data-retention provisions, and algorithmic change notification requirements described in [sec-data](#sec-data). These do not make the opacity go away, but they create contractual leverage that the institution can exercise when a vendor’s model changes and clinical behavior changes with it.
+
+The pace of the technology is the constraint that most consistently defeats institution- specific deployment strategies. A deployment built around a specific model version is likely to be disrupted by that model’s successor within a year. The infrastructure investment that ages best is not model-specific — it is the governance layer: the API gateway, the audit logging, the validation framework, the monitoring dashboards. Those persist across model generations. The model configurations inside them change. Building for model interchangeability is not a technical aspiration; it is the only governance strategy with a shelf life longer than twelve months.
+
+## 5.7 Where to Start
+
+### 5.7.1 Starter Project 1: Barrier Audit and Governance Gap Analysis
+
+Conduct a structured audit of any currently running AI pilots — not the model performance, but the governance experience. How long did it take to get authorization to start? Who paid for it? Who owns it now? Is there a monitoring plan? What happens when it breaks? The answers will map the institution’s specific governance gaps more accurately than any framework assessment. Presented to leadership as a roadmap rather than a complaint — these are the hidden costs the institution is already paying, in wasted time and unmanaged risk — the audit becomes the business case for the governance program the institution is not yet running.
+
+**Why now:** The governance gap is already costing something. Every pilot that runs without authorization is liability exposure. Every shadow AI user is potential PHI exposure. Every tool without a monitoring plan is a future safety event that has not happened yet. The audit surfaces these costs before they become incidents.
+
+**Buy vs. build:** Analytical work using interviews and document review. No technology required. Frame the output as an internal report to the AISC or equivalent, not as a compliance audit — the goal is to understand the current state, not to assign blame.
+
+### 5.7.2 Starter Project 2: Shadow AI Discovery and Triage
+
+Rather than attempting to ban unsanctioned AI use — which will fail and will damage the institution’s relationship with the clinicians and researchers it needs as partners — try to understand why it is happening. Anonymous surveys or focus groups with residents, junior faculty, and administrative staff will identify the specific tasks that are driving consumer AI adoption: summarizing long patient histories the EHR makes unreadable, drafting patient education materials in multiple languages, abstracting data from unstructured notes. These are the institution’s most urgent AI use cases, identified by the people who know the work.
+
+The output of this project is a prioritized list of sanctioned alternatives to develop or procure, grounded in actual use rather than assumed need. The most effective governance response to shadow AI is not the network block; it is the institutional tool that does the job better than the consumer alternative, with appropriate governance built in. The infrastructure chapter ([sec-infrastructure](#sec-infrastructure)) describes the internal AI assistant as the primary countermeasure to shadow AI. This discovery project is what tells you what that assistant needs to do.
+
+**Why now:** Shadow AI is not a future risk. It is a present one. Most AMCs that survey honestly find that consumer AI is already in use with sensitive data across their institution. The discovery project defines the scope of the current exposure before an adverse event defines it for the institution.
+
+**Buy vs. build:** Survey design and facilitation. Anonymous survey platforms are available institutionally. The analysis is qualitative coding of open-ended responses — two to three weeks of research team time, not a technology project.
+
+Parasuraman, Raja, and Dietrich H Manzey. 2010. “Complacency and Bias in Human Use of Automation: An Updated Understanding.” *Human Factors* 52 (3): 381–410. <https://doi.org/10.1177/0018720810376055>.
+
+Wong, Andrew, Erkin Otles, John P Donnelly, et al. 2021. “External Validation of a Widely Implemented Proprietary Sepsis Prediction Model in Hospitalized Patients.” *JAMA Internal Medicine* 181 (8): 1065–70. <https://doi.org/10.1001/jamainternmed.2021.2626>.

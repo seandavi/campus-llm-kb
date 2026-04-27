@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.7.33">
+<meta name="generator" content="quarto-1.9.37">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -10,6 +10,9 @@
 
 <title>11&nbsp; Agentic Safety and Guardrails – Implementing AI in Academic Medicine</title>
 <style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
 div.columns{display: flex; gap: min(4vw, 1.5em);}
@@ -25,7 +28,6 @@ ul.task-list li input[type="checkbox"] {
 div.csl-bib-body { }
 div.csl-entry {
   clear: both;
-  margin-bottom: 0em;
 }
 .hanging-indent div.csl-entry {
   margin-left:2em;
@@ -59,10 +61,10 @@ div.csl-indent {
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-ea385d0e468b0dd5ea5bf0780b1290d9.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-7f8f88aac4f3542376d5c11b86a4c14d.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-96934157685b0ce66cf1cdc82e4f4849.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-9f6c963996d703caa3964aac5caf13bb.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -528,7 +530,7 @@ Figure&nbsp;11.2: Agentic AI loop architecture with layered safety controls. Eac
 <p>The regulatory landscape for agentic clinical AI is unsettled, and AMC leaders should approach it with the same expectation of ambiguity that currently governs AI medical devices generally. Several regulatory frameworks bear directly on agentic systems, even where they do not address agenticity explicitly.</p>
 <p>The FDA’s Predetermined Change Control Plan guidance, discussed in <a href="resources_clinical.html" class="quarto-xref"><span>Chapter 6</span></a>, applies with special force to agentic systems that learn and adapt as they operate. A prior authorization agent that updates its matching criteria based on approval outcomes is an adaptive system; if it meets the Software as a Medical Device definition, it requires either a PCCP or a new regulatory filing for each adaptation <span class="citation" data-cites="FDA2024-pccp">(<a href="references.html#ref-FDA2024-pccp" role="doc-biblioref">U.S. Food and Drug Administration 2024</a>)</span>. The PCCP pathway is available but requires pre-specifying the bounds of the adaptation — which is precisely the kind of disciplined governance that agentic systems require in any case.</p>
 <p>The CMS Interoperability and Prior Authorization Final Rule (CMS-0057-F) mandates that payers respond to prior authorization requests within 72 hours for urgent requests and seven days for standard requests <span class="citation" data-cites="CMS2024-interop">(<a href="references.html#ref-CMS2024-interop" role="doc-biblioref">Centers for Medicare and Medicaid Services 2024</a>)</span>. This regulatory pressure is a primary driver of agentic PA deployment: health systems need to submit faster, and automation is the only technically feasible path at volume. It does not, however, change the safety requirements for those systems; it increases the operational pressure to skip them.</p>
-<p>California AB 3030’s disclosure requirement for AI-generated patient communications <span class="citation" data-cites="CalAB3030-2024">(<a href="references.html#ref-CalAB3030-2024" role="doc-biblioref">California State Legislature 2024</a>)</span> becomes more complex in agentic contexts. When a human clinician reviews and attests to an AI-drafted message, the disclosure is straightforward. When an agent routes and sends a communication without clinician review, the disclosure architecture requires more thought: what is being disclosed, to whom, and when? AMCs deploying agentic communication tools should consult legal counsel on whether AB 3030 and similar state laws require the disclosure to appear before the communication is sent, not after.</p>
+<p>California AB 3030’s disclosure requirement for AI-generated patient communications <span class="citation" data-cites="CalAB3030-2024">(<a href="references.html#ref-CalAB3030-2024" role="doc-biblioref"><span>AB 3030</span> 2024</a>)</span> becomes more complex in agentic contexts. When a human clinician reviews and attests to an AI-drafted message, the disclosure is straightforward. When an agent routes and sends a communication without clinician review, the disclosure architecture requires more thought: what is being disclosed, to whom, and when? AMCs deploying agentic communication tools should consult legal counsel on whether AB 3030 and similar state laws require the disclosure to appear before the communication is sent, not after.</p>
 <p>The NIST AI Risk Management Framework’s Govern/Map/Measure/Manage structure <span class="citation" data-cites="NIST2024-gen600">(<a href="references.html#ref-NIST2024-gen600" role="doc-biblioref">National Institute of Standards and Technology 2024</a>)</span> provides the most practical scaffold for AMC agentic AI governance. Specifically, the Measure function — developing metrics for agentic AI performance, error rates, and override patterns — is where most institutions are currently underprepared. You cannot govern what you are not measuring.</p>
 </section>
 <section id="the-action-risk-authorization-matrix" class="level2" data-number="11.7">
@@ -624,21 +626,21 @@ Table&nbsp;11.1: Risk-level and authorization matrix for agentic AI actions in t
 <p><strong>Buy vs.&nbsp;build:</strong> Design and process work, not a technology purchase. Most commercial vendors have a pause mechanism; the gap is typically in the institutional design of when and how to use it.</p>
 
 
-<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list" style="display: none">
+<div id="refs" class="references csl-bib-body hanging-indent" role="list" style="display: none">
 <div id="ref-CalAB3030-2024" class="csl-entry" role="listitem">
-California State Legislature. 2024. <em><span>AB 3030</span>: Health Care: Artificial Intelligence</em>. <a href="https://leginfo.legislature.ca.gov/faces/billNavClient.xhtml?bill_id=202320240AB3030">https://leginfo.legislature.ca.gov/faces/billNavClient.xhtml?bill_id=202320240AB3030</a>.
+<span>AB 3030</span>: Health Care: Artificial Intelligence (2024). <a href="https://leginfo.legislature.ca.gov/faces/billNavClient.xhtml?bill_id=202320240AB3030">https://leginfo.legislature.ca.gov/faces/billNavClient.xhtml?bill_id=202320240AB3030</a>.
 </div>
 <div id="ref-CMS2024-interop" class="csl-entry" role="listitem">
-Centers for Medicare and Medicaid Services. 2024. <span>“Medicare and Medicaid Programs; Patient Protection and Affordable Care Act; Advancing Interoperability and Improving Prior Authorization Processes for <span>Medicare Advantage</span> Organizations, Medicaid Managed Care Plans, State Medicaid Agencies, <span>CHIP</span> Fee-for-Service Programs, <span>CHIP</span> Managed Care Entities, and Qualified Health Plan Issuers in the Federally-Facilitated Exchanges (Final Rule, <span>CMS-0057-F</span>).”</span> <em>Federal Register</em>. <a href="https://www.federalregister.gov/documents/2024/02/08/2024-00895/medicare-and-medicaid-programs-patient-protection-and-affordable-care-act-advancing-interoperability">https://www.federalregister.gov/documents/2024/02/08/2024-00895/medicare-and-medicaid-programs-patient-protection-and-affordable-care-act-advancing-interoperability</a>.
+Centers for Medicare and Medicaid Services. 2024. <span>“Medicare and Medicaid Programs; Patient Protection and Affordable Care Act; Advancing Interoperability and Improving Prior Authorization Processes for <span>Medicare Advantage</span> Organizations, Medicaid Managed Care Plans, State Medicaid Agencies, <span>CHIP</span> Fee-for-Service Programs, <span>CHIP</span> Managed Care Entities, and Qualified Health Plan Issuers in the Federally-Facilitated Exchanges (Final Rule, <span>CMS-0057-F</span>).”</span> In <em>Federal Register</em>, No. 25, vol. 89. <a href="https://www.federalregister.gov/documents/2024/02/08/2024-00895/medicare-and-medicaid-programs-patient-protection-and-affordable-care-act-advancing-interoperability">https://www.federalregister.gov/documents/2024/02/08/2024-00895/medicare-and-medicaid-programs-patient-protection-and-affordable-care-act-advancing-interoperability</a>.
 </div>
 <div id="ref-NIST2024-gen600" class="csl-entry" role="listitem">
-National Institute of Standards and Technology. 2024. <span>“Artificial Intelligence 600-1: Generative Artificial Intelligence Profile.”</span> NIST AI 600-1. U.S. Department of Commerce. <a href="https://doi.org/10.6028/NIST.AI.600-1">https://doi.org/10.6028/NIST.AI.600-1</a>.
+National Institute of Standards and Technology. 2024. <em>Artificial Intelligence 600-1: Generative Artificial Intelligence Profile</em>. NIST AI 600-1. U.S. Department of Commerce. <a href="https://doi.org/10.6028/NIST.AI.600-1">https://doi.org/10.6028/NIST.AI.600-1</a>.
 </div>
 <div id="ref-Parasuraman2010-automation" class="csl-entry" role="listitem">
 Parasuraman, Raja, and Dietrich H Manzey. 2010. <span>“Complacency and Bias in Human Use of Automation: An Updated Understanding.”</span> <em>Human Factors</em> 52 (3): 381–410. <a href="https://doi.org/10.1177/0018720810376055">https://doi.org/10.1177/0018720810376055</a>.
 </div>
 <div id="ref-FDA2024-pccp" class="csl-entry" role="listitem">
-U.S. Food and Drug Administration. 2024. <span>“Marketing Submission Recommendations for a Predetermined Change Control Plan for <span>Artificial Intelligence/Machine Learning</span>-Enabled Device Software Functions.”</span> <a href="https://www.fda.gov/regulatory-information/search-fda-guidance-documents/marketing-submission-recommendations-predetermined-change-control-plan-aiml-enabled-device-software">https://www.fda.gov/regulatory-information/search-fda-guidance-documents/marketing-submission-recommendations-predetermined-change-control-plan-aiml-enabled-device-software</a>.
+U.S. Food and Drug Administration. 2024. <em>Marketing Submission Recommendations for a Predetermined Change Control Plan for <span>Artificial Intelligence/Machine Learning</span>-Enabled Device Software Functions</em>. <a href="https://www.fda.gov/regulatory-information/search-fda-guidance-documents/marketing-submission-recommendations-predetermined-change-control-plan-aiml-enabled-device-software">https://www.fda.gov/regulatory-information/search-fda-guidance-documents/marketing-submission-recommendations-predetermined-change-control-plan-aiml-enabled-device-software</a>.
 </div>
 </div>
 </section>
@@ -696,13 +698,14 @@ U.S. Food and Drug Administration. 2024. <span>“Marketing Submission Recommend
       e.clearSelection();
     }
     const getTextToCopy = function(trigger) {
-        const codeEl = trigger.previousElementSibling.cloneNode(true);
-        for (const childEl of codeEl.children) {
-          if (isCodeAnnotation(childEl)) {
-            childEl.remove();
-          }
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
         }
-        return codeEl.innerText;
+      }
+      return codeEl.innerText;
     }
     const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
       text: getTextToCopy

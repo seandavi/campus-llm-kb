@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.7.33">
+<meta name="generator" content="quarto-1.9.37">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -10,6 +10,9 @@
 
 <title>18&nbsp; Project Management and AI Portfolio Governance – Implementing AI in Academic Medicine</title>
 <style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
 div.columns{display: flex; gap: min(4vw, 1.5em);}
@@ -25,7 +28,6 @@ ul.task-list li input[type="checkbox"] {
 div.csl-bib-body { }
 div.csl-entry {
   clear: both;
-  margin-bottom: 0em;
 }
 .hanging-indent div.csl-entry {
   margin-left:2em;
@@ -59,10 +61,10 @@ div.csl-indent {
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-ea385d0e468b0dd5ea5bf0780b1290d9.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-7f8f88aac4f3542376d5c11b86a4c14d.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-96934157685b0ce66cf1cdc82e4f4849.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-9f6c963996d703caa3964aac5caf13bb.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -523,7 +525,7 @@ Table&nbsp;18.1: AMC AI project intake checklist, tiered by risk. The named cham
 <section id="stage-gate-discipline-from-ideation-to-scale" class="level2" data-number="18.3">
 <h2 data-number="18.3" class="anchored" data-anchor-id="stage-gate-discipline-from-ideation-to-scale"><span class="header-section-number">18.3</span> Stage-Gate Discipline: From Ideation to Scale</h2>
 <p>The clinical trial phase model is the correct analogy for AI deployment in a clinical institution. A compound that passes safety screens in preclinical work is not approved for patient use; it proceeds through Phase I, II, and III trials with pre-registered hypotheses, independent monitoring, and pre-defined stopping rules. An AI tool that performs well on a held-out test set has cleared the equivalent of a preclinical screen. Deploying it directly to clinical use without a supervised piloting phase is the equivalent of moving from animal testing to widespread patient administration.</p>
-<p>The <a href="https://www.decide-ai.org/">DECIDE-AI</a> reporting guidelines for early-stage clinical evaluation of AI decision support systems — developed by a multinational consensus group and published in Nature Medicine — define the specific requirements for pilot evaluation that parallel Phase I and Phase II trial standards: prospective design, pre-registered primary endpoints, independent oversight, and monitoring for unexpected harms <span class="citation" data-cites="Vasey2022-decideai">(<a href="references.html#ref-Vasey2022-decideai" role="doc-biblioref">Vasey et al. 2022</a>)</span>. The stage-gate model operationalizes these requirements within the AMC portfolio management process.</p>
+<p>The <a href="https://www.decide-ai.org/">DECIDE-AI</a> reporting guidelines for early-stage clinical evaluation of AI decision support systems — developed by a multinational consensus group and published in Nature Medicine — define the specific requirements for pilot evaluation that parallel Phase I and Phase II trial standards: prospective design, pre-registered primary endpoints, independent oversight, and monitoring for unexpected harms <span class="citation" data-cites="Vasey2022-decideai">(<a href="references.html#ref-Vasey2022-decideai" role="doc-biblioref"><span class="nocase">Vasey et al.</span> 2022</a>)</span>. The stage-gate model operationalizes these requirements within the AMC portfolio management process.</p>
 <div class="cell" data-layout-align="default">
 <div class="cell-output-display">
 <div id="fig-stage-gate" class="quarto-float quarto-figure quarto-figure-center anchored">
@@ -676,30 +678,30 @@ Table&nbsp;18.2: RACI matrix for AMC AI portfolio governance decisions. R = Resp
 <p><strong>Buy vs.&nbsp;build:</strong> The analytics infrastructure is primarily a configuration project layered on existing institutional systems. Commercial MLOps platforms (Azure AI, Arize AI) offer purpose-built model monitoring capabilities that can accelerate the build for institutions with active internal AI development programs. For vendor-managed tools, performance monitoring obligations should be included in vendor contracts at procurement — with data export rights specified — so that vendor-provided metrics can be integrated into the central dashboard rather than reviewed only in vendor portals.</p>
 
 
-<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list" style="display: none">
+<div id="refs" class="references csl-bib-body hanging-indent" role="list" style="display: none">
 <div id="ref-AMA2024-ai-principles" class="csl-entry" role="listitem">
-American Medical Association. 2024. <span>“<span>AMA</span> Principles for Augmented Intelligence Development, Deployment, and Use.”</span> <a href="https://www.ama-assn.org/practice-management/digital/ama-principles-augmented-intelligence-development-deployment-and-use">https://www.ama-assn.org/practice-management/digital/ama-principles-augmented-intelligence-development-deployment-and-use</a>.
+American Medical Association. 2024. <em><span>AMA</span> Principles for Augmented Intelligence Development, Deployment, and Use</em>. <a href="https://www.ama-assn.org/practice-management/digital/ama-principles-augmented-intelligence-development-deployment-and-use">https://www.ama-assn.org/practice-management/digital/ama-principles-augmented-intelligence-development-deployment-and-use</a>.
 </div>
 <div id="ref-Finlayson2021-shift" class="csl-entry" role="listitem">
-Finlayson, Samuel G, Adarsh Subbaswamy, Karandeep Singh, John Bowers, Annabel Kupke, Jonathan Zittrain, Isaac S Kohane, and Suchi Saria. 2021. <span>“The Clinician and Dataset Shift in Artificial Intelligence.”</span> <em>New England Journal of Medicine</em> 385: 283–86. <a href="https://doi.org/10.1056/NEJMc2104626">https://doi.org/10.1056/NEJMc2104626</a>.
+Finlayson, Samuel G, Adarsh Subbaswamy, Karandeep Singh, et al. 2021. <span>“The Clinician and Dataset Shift in Artificial Intelligence.”</span> <em>New England Journal of Medicine</em> 385: 283–86. <a href="https://doi.org/10.1056/NEJMc2104626">https://doi.org/10.1056/NEJMc2104626</a>.
 </div>
 <div id="ref-Mitchell2019-modelcards" class="csl-entry" role="listitem">
-Mitchell, Margaret, Simone Wu, Andrew Zaldivar, Parker Barnes, Lucy Vasserman, Ben Hutchinson, Elena Spitzer, Inioluwa Deborah Raji, and Timnit Gebru. 2019. <span>“Model Cards for Model Reporting.”</span> In <em>Proceedings of the Conference on Fairness, Accountability, and Transparency</em>. <a href="https://doi.org/10.1145/3287560.3287596">https://doi.org/10.1145/3287560.3287596</a>.
+Mitchell, Margaret, Simone Wu, Andrew Zaldivar, et al. 2019. <span>“Model Cards for Model Reporting.”</span> <em>Proceedings of the Conference on Fairness, Accountability, and Transparency</em>. <a href="https://doi.org/10.1145/3287560.3287596">https://doi.org/10.1145/3287560.3287596</a>.
 </div>
 <div id="ref-NIST2023-airm" class="csl-entry" role="listitem">
-National Institute of Standards and Technology. 2023. <span>“Artificial Intelligence Risk Management Framework (<span>AI RMF</span> 1.0).”</span> NIST AI 100-1. U.S. Department of Commerce. <a href="https://doi.org/10.6028/NIST.AI.100-1">https://doi.org/10.6028/NIST.AI.100-1</a>.
+National Institute of Standards and Technology. 2023. <em>Artificial Intelligence Risk Management Framework (<span>AI RMF</span> 1.0)</em>. NIST AI 100-1. U.S. Department of Commerce. <a href="https://doi.org/10.6028/NIST.AI.100-1">https://doi.org/10.6028/NIST.AI.100-1</a>.
 </div>
 <div id="ref-ONC2024-hti1" class="csl-entry" role="listitem">
-Office of the National Coordinator for Health Information Technology. 2024. <span>“Health Data, Technology, and Interoperability: Certification Program Updates, Algorithm Transparency, and Information Sharing (<span>HTI-1</span>).”</span> <em>Federal Register</em>. <a href="https://www.federalregister.gov/documents/2024/01/09/2023-28824/health-data-technology-and-interoperability-certification-program-updates-algorithm-transparency-and">https://www.federalregister.gov/documents/2024/01/09/2023-28824/health-data-technology-and-interoperability-certification-program-updates-algorithm-transparency-and</a>.
+Office of the National Coordinator for Health Information Technology. 2024. <span>“Health Data, Technology, and Interoperability: Certification Program Updates, Algorithm Transparency, and Information Sharing (<span>HTI-1</span>).”</span> In <em>Federal Register</em>, No. 8, vol. 89. <a href="https://www.federalregister.gov/documents/2024/01/09/2023-28824/health-data-technology-and-interoperability-certification-program-updates-algorithm-transparency-and">https://www.federalregister.gov/documents/2024/01/09/2023-28824/health-data-technology-and-interoperability-certification-program-updates-algorithm-transparency-and</a>.
 </div>
 <div id="ref-Parasuraman2010-automation" class="csl-entry" role="listitem">
 Parasuraman, Raja, and Dietrich H Manzey. 2010. <span>“Complacency and Bias in Human Use of Automation: An Updated Understanding.”</span> <em>Human Factors</em> 52 (3): 381–410. <a href="https://doi.org/10.1177/0018720810376055">https://doi.org/10.1177/0018720810376055</a>.
 </div>
 <div id="ref-Sendak2020-sepsis" class="csl-entry" role="listitem">
-Sendak, Mark P, William Ratliff, Dina Sarro, Elizabeth Alderton, Joseph Futoma, Michael Gao, Marshall Nichols, et al. 2020. <span>“Real-World Integration of a Sepsis Deep Learning Technology into Routine Clinical Care: Implementation Study.”</span> <em>JMIR Medical Informatics</em> 8 (7): e15182. <a href="https://doi.org/10.2196/15182">https://doi.org/10.2196/15182</a>.
+Sendak, Mark P, William Ratliff, Dina Sarro, et al. 2020. <span>“Real-World Integration of a Sepsis Deep Learning Technology into Routine Clinical Care: Implementation Study.”</span> <em>JMIR Medical Informatics</em> 8 (7): e15182. <a href="https://doi.org/10.2196/15182">https://doi.org/10.2196/15182</a>.
 </div>
 <div id="ref-Vasey2022-decideai" class="csl-entry" role="listitem">
-Vasey, Baptiste, Myura Nagendran, Bruce Campbell, David A Clifton, Gary S Collins, Spiros Denaxas, Alastair K Denniston, et al. 2022. <span>“Reporting Guideline for the Early-Stage Clinical Evaluation of Decision Support Systems Driven by Artificial Intelligence: <span>DECIDE-AI</span>.”</span> <em>Nature Medicine</em> 28: 924–33. <a href="https://doi.org/10.1038/s41591-022-01772-9">https://doi.org/10.1038/s41591-022-01772-9</a>.
+<span class="nocase">Vasey, Baptiste, Myura Nagendran, Bruce Campbell, et al.</span> 2022. <span>“Reporting Guideline for the Early-Stage Clinical Evaluation of Decision Support Systems Driven by Artificial Intelligence: <span>DECIDE-AI</span>.”</span> <em>Nature Medicine</em> 28: 924–33. <a href="https://doi.org/10.1038/s41591-022-01772-9">https://doi.org/10.1038/s41591-022-01772-9</a>.
 </div>
 </div>
 </section>
@@ -757,13 +759,14 @@ Vasey, Baptiste, Myura Nagendran, Bruce Campbell, David A Clifton, Gary S Collin
       e.clearSelection();
     }
     const getTextToCopy = function(trigger) {
-        const codeEl = trigger.previousElementSibling.cloneNode(true);
-        for (const childEl of codeEl.children) {
-          if (isCodeAnnotation(childEl)) {
-            childEl.remove();
-          }
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
         }
-        return codeEl.innerText;
+      }
+      return codeEl.innerText;
     }
     const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
       text: getTextToCopy

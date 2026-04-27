@@ -1,0 +1,153 @@
+# 15  Training and Workforce Development
+
+Published
+
+April 26, 2026
+
+The most sophisticated AI infrastructure an AMC can build is only as effective as the workforce that uses it. A clinical AI tool that clinicians do not trust will not be used. An inbox management system that administrative staff route around will not reduce the documentation burden. An AI platform that no one in the institution can evaluate for bias or validate for accuracy is a governance fiction. AI literacy — the practical capacity to understand, evaluate, and deploy AI tools appropriately in a specific role — is not a peripheral technical skill. It is a prerequisite for the institutional AI strategy to work at all.
+
+The gap between what AMC AI programs assume about workforce readiness and actual current readiness is substantial. Multiple validated assessment instruments have found that medical students, residents, nurses, and faculty consistently overestimate their AI knowledge on self-report measures and score substantially lower on objective assessments. This Dunning- Kruger pattern in AI literacy is a governance risk: clinicians who believe they understand AI well enough to evaluate it will not recognize when they need help doing so, and will not escalate concerns that a more calibrated colleague would flag.
+
+This chapter describes the tiered competency model that matches training requirements to role-specific AI use, the national frameworks that define the content of those competencies, and the practical governance interventions that make AI literacy sustainable rather than a one-time onboarding event.
+
+## 15.1 The Four-Tier Competency Model
+
+The most durable framework for AMC AI workforce development is a four-tier model adapted from the evidence-based medicine approach proposed by Ng and colleagues ([Ng et al. 2023](#ref-Ng2023-celrep)). The four tiers map to different relationships with AI tools, different risk profiles, and different training requirements.
+
+**Consumers** use AI tools for their intended purpose without modifying them — a clinician using an ambient scribe, an administrator using an AI drafting tool, a nurse using an AI inbox triage system. Consumer literacy requires understanding what the tool does, what its known limitations are, how to identify outputs that warrant skepticism, and how to document AI-assisted work in the institutional record. This is the baseline literacy that every AMC employee who touches an AI tool needs.
+
+**Translators** bridge between AI capabilities and clinical or operational applications — a clinical informatics specialist evaluating a vendor’s predictive model, a quality improvement lead using AI to analyze patient safety data, a department champion who helps colleagues adopt a new AI workflow. Translator literacy requires the ability to read and interpret model performance reports, evaluate bias audit findings, understand the difference between validation and calibration, and communicate AI limitations to non-technical audiences.
+
+**Developers** build and deploy AI tools — data scientists training models, engineers integrating AI APIs into clinical systems, informatics fellows creating RAG pipelines. Developer literacy requires formal training in machine learning, statistical inference, data governance, and the regulatory landscape for AI-enabled medical devices.
+
+**Governors** oversee institutional AI strategy and assume accountability for AI risk — CMIOs, CIOs, CMOs, CFOs, and board members. Governor literacy is not technical; it is risk-management literacy. Governors need to understand how to ask the right questions of the people who build and deploy AI tools, how to evaluate vendor claims, how to structure accountability across the institution, and how to recognize when an AI governance failure is occurring before it becomes a patient safety event.
+
+## 15.2 National Competency Frameworks
+
+The [AAMC](https://www.aamc.org) published national AI competency standards for medical education in 2024, defining what medical students and residents need to know about AI foundational concepts, ethical and legal implications, data literacy, and collaborative practice ([Association of American Medical Colleges 2024](#ref-AAMC2024-ai-principles)). These competencies are organized across the learning continuum — from pre-clinical students through practicing faculty — and are the closest thing to a national standard that medical education currently has.
+
+The [AMIA](https://www.amia.org) Informatics Workforce Roadmap defines competencies for clinical informatics specialists, extending the consumer and translator tiers into the technical domains required for production AI deployment: prompt engineering, retrieval-augmented generation architecture, model drift management, and regulatory compliance for AI-enabled devices ([American Medical Informatics Association 2024](#ref-AMIA2024-competencies)).
+
+The WHO ethics and governance guidance specifically addresses workforce reskilling as a prerequisite for responsible AI in healthcare, framing AI literacy as a component of the human oversight obligation ([World Health Organization 2024](#ref-WHO2024-ai-ethics)). The [ANA](https://www.nursingworld.org) has published a position statement on ethical AI in nursing practice that updates the nursing Code of Ethics to include professional accountability for AI-influenced care decisions.
+
+| Framework | Organization | Target Audience | Core Emphasis |
+|----|----|----|----|
+| National AI Competencies | AAMC (2024) | Medical students, residents, faculty | Foundational literacy, ethics, collaborative practice |
+| Informatics Workforce Roadmap | AMIA (2024) | Clinical informatics specialists | Technical deployment, governance, regulatory compliance |
+| AI Competencies for Health Professionals | AMIA (2024) | All clinical staff | Critical appraisal, safe use, documentation |
+| Ethics and Governance of AI for Health | WHO (2024) | Healthcare institutions | Human oversight, transparency, reskilling |
+| Ethical Use of AI in Nursing Practice | ANA (2025) | Nurses and APPs | Professional accountability, patient safety, documentation |
+
+Table 15.1: Summary of national AI competency frameworks for healthcare workforces. Each framework targets a distinct audience and emphasizes different competency domains. AMC workforce programs should map their training content against all relevant frameworks for the roles they serve.
+
+## 15.3 The Clinical Human-in-the-Loop Mandate
+
+For clinicians at the consumer tier, the most critical training component is not conceptual — it is behavioral. Clinicians need to develop and sustain the habit of genuine review, as opposed to passive acceptance, of AI-generated outputs. As discussed in [sec-wellness](#sec-wellness) and [sec-agentic-safety](#sec-agentic-safety), the automation complacency literature documents clearly that consistent accuracy leads to reduced scrutiny, and reduced scrutiny is precisely when errors slip through ([Parasuraman and Manzey 2010](#ref-Parasuraman2010-automation)).
+
+Clinical AI training should include explicit instruction on the error types that AI tools make — not just their aggregate accuracy, but the specific failure modes. Ambient scribes are more likely to omit negative findings than to hallucinate findings that did not occur. Diagnostic AI in radiology tends to underperform at rare presentations and at the boundaries of its training distribution. Prior authorization agents may match coverage criteria to clinical data in ways that differ subtly from clinical judgment. A clinician who knows the specific failure modes of the tools they use is a better human-in-the-loop than one who knows only the overall accuracy figure.
+
+Training on clinical AI should also address documentation of AI use in the medical record. The attestation of an AI-generated note is a professional claim; clinicians need to understand what they are attesting to and why the integrity of that attestation matters for both patient safety and institutional liability.
+
+## 15.4 Shadow AI as a Training Priority
+
+Shadow AI — the use of consumer AI tools with institutional data — is primarily a training failure, not a security failure. Most clinicians and administrators who route clinical data through personal ChatGPT or Gmail AI accounts do so because they do not know the risks, not because they have decided the risks are acceptable. The solution is not exclusively a security intervention (blocking consumer AI sites) but a training intervention (making the risks specific and tangible) combined with an infrastructure intervention (making the institutional alternative easier to use than the consumer alternative, as discussed in [sec-infrastructure](#sec-infrastructure)).
+
+The training component of shadow AI prevention is the same consumer-tier literacy that all AMC staff need: specific understanding of what happens to data entered into consumer AI tools (it may be logged, reviewed for safety, and potentially used for model training unless enterprise terms apply), what the HIPAA implications of that exposure are, and what the institutional consequences of a PHI exposure event are for the individual employee and the institution.
+
+Administrative staff are the highest-risk population for shadow AI not because they are less trustworthy than clinical staff, but because their tasks — summarizing reports, drafting communications, analyzing spreadsheets — are exactly the tasks for which consumer AI tools are most immediately useful, and because administrative staff frequently have access to data that is sensitive without being obviously PHI-labeled.
+
+``` mermaid
+flowchart LR
+    A([New Employee\nOnboarding]) --> B[Tier Assignment\nRole-based]
+    B --> C[Baseline Training\nConsumer literacy\nShadow AI risks]
+    C --> D[Role-Specific\nDeepening]
+    D --> E[Supervised\nPractice]
+    E --> F[Error Reporting\nFeedback Loop]
+    F --> G{Advanced\nPath?}
+    G -->|Translator+| H[AI Champion\nProgram]
+    G -->|Continue| I[Annual\nRefresher]
+    I --> C
+    H --> I
+```
+
+Figure 15.1: Workforce AI literacy development lifecycle. The loop structure reflects the reality that AI capabilities evolve continuously and training cannot be a one-time event.
+
+## 15.5 Measuring the Gap: The Evidence the Chapter’s Claims Rest On
+
+The assertion that clinicians overestimate their AI knowledge is not an impression — it is a documented empirical pattern with a specific shape. Studies applying validated AI literacy instruments to healthcare workers consistently find gaps of 30 to 54 percentage points between self-reported competence and objectively measured performance. The instruments that have been developed for this purpose — the Meta AI Literacy Scale (MAILS), the Scale for Non-Expert AI Literacy (SNAIL), and the AI Readiness Scale for medical students — are not perfect assessments, but they are specific enough to distinguish among competency domains and reveal where overconfidence concentrates.
+
+The pattern is consistent across domains: clinicians score closer to their self-assessments on questions about AI tools they use daily, and diverge most sharply on questions about model mechanics, data governance, and failure mode recognition. The Dunning-Kruger structure matters for governance because the highest-confidence wrong answers tend to come from the consumer tier — the people using AI tools at the point of care — rather than from developers or governors. A consumer who is confident that they understand when an ambient scribe is likely to make an error is less likely to apply the verification discipline that the tool’s actual failure modes require. The training program that addresses this cannot be reassurance that AI is generally reliable. It has to name the specific failure modes and require demonstrated ability to recognize them.
+
+Survey data from 2025 has added a shadow AI dimension to this picture. A [Wolters Kluwer](https://www.wolterskluwer.com) survey found that 57 percent of healthcare professionals had encountered or used unauthorized AI tools in their work ([Wolters Kluwer 2025](#ref-WoltersKluwer2025-survey)). A separate market research report found that 17 percent of front-line staff admitted to entering identifiable patient data into consumer AI tools ([Black Book Market Research 2025](#ref-BlackBook2025-shadow)). These numbers are almost certainly underestimates — surveys of unauthorized behavior depend on self-reporting by people who may recognize the behavior as problematic. The shadow AI problem is not primarily about bad actors. It is about people solving real workflow problems with available tools in the absence of a sanctioned alternative that works as well.
+
+## 15.6 The Accreditor Mandate: 2025 and Beyond
+
+For the first five years of the generative AI era, AI literacy in healthcare education was largely voluntary — something institutions could pursue if they believed in it, skip if they were busy. That has changed. The 2025 to 2026 accreditation cycle has moved AI literacy from an optional enrichment to a formal program requirement in ways that are specific enough to enforce.
+
+The [ACGME](https://www.acgme.org)’s July 2025 Common Program Requirements include new language on human-AI teamwork and require programs to have institutional policies on the use of generative AI for academic work ([Accreditation Council for Graduate Medical Education 2025](#ref-ACGME2025-CPR)). The specificity is meaningful: it is not “programs should be aware of AI” but “programs must have policies.” Programs without documented AI use governance are out of compliance with the new requirements starting with the 2025 to 2026 accreditation year.
+
+The [LCME](https://lcme.org)’s current standards for medical school accreditation interpret Standards 7.6 and 8.2 — covering bias and self-directed learning — to require critical appraisal of AI outputs as a competency that medical students must demonstrate. The AAMC’s 2025 AI Competencies Across the Learning Continuum, developed through a formal Delphi process, provides the national standard for what those competencies should include across undergraduate, graduate, and continuing medical education ([Association of American Medical Colleges 2025](#ref-AAMC2025-competencies)).
+
+For nursing programs, the American Nurses Association’s 2025 update to the Code of Ethics explicitly addresses machine learning: Provision 7.5 states that AI is integral to nursing practice, and Provision 4.2 clarifies that nurses retain final accountability over AI-influenced care decisions. The update is significant because it moves AI governance from an informatics specialty issue to a professional obligation for every practicing nurse.
+
+The [ACCME](https://www.accme.org) has issued guidance on the responsible use of AI in accredited continuing education, establishing disclosure requirements and data handling standards for CME programs that use AI-generated content or AI-assisted learning tools ([Accreditation Council for Continuing Medical Education 2025](#ref-ACCME2025-ai)). For AMC CME offices that have adopted AI for content development, this is an immediate operational compliance issue, not a future planning item.
+
+The practical implication is that workforce development for AI is no longer a discretionary investment. Programs that do not have documented, accreditor-compliant AI policies and competency-based training in place are at accreditation risk. The AMC that treats this as an IT initiative rather than an academic and clinical leadership priority will discover the error during its next site visit.
+
+## 15.7 Building a Living Curriculum
+
+The half-life of specific AI technical knowledge is short. A training module written around GPT-4’s capabilities in early 2023 was already outdated within six months. A curriculum built around the tools of 2025 will require revision by 2026. This is not a reason to avoid building curricula — it is a design constraint that distinguishes AI literacy training from other required training programs.
+
+The institutions that have built durable AI literacy programs share a structural characteristic: they design for modularity and update cadence from the beginning, rather than treating each module as a finished product. Stanford Medicine’s approach treats AI literacy content as living documentation — updated when model capabilities change materially, not on an annual review cycle. Mayo Clinic’s Harper Family Foundation AI Education Program uses micro-credentialing to recognize competency at specific points in time, acknowledging that the credential represents “AI literacy as of this date” rather than a permanent certification.
+
+The modular structure that makes curricula updatable also makes them role-specific without requiring separate parallel programs. Consumer-tier content covers the concepts and failure modes that every staff member needs. Translator-tier content goes deeper on model evaluation and governance processes. Developer and governor tiers go deeper still on technical architecture and risk management. When the underlying technology changes, the consumer module updates; the translator module updates to a different depth; the developer module updates to reflect new architectural patterns. The institution does not rebuild four programs — it updates the four tiers of one program.
+
+The CME and CNE infrastructure required to sustain a living curriculum is not trivial to build, but it is not novel either. The ACCME’s guidance on AI in continuing education provides a framework for awarding credit for AI literacy content that meets the disclosure and data handling requirements for accredited CME. An AMC that routes its AI literacy modules through its existing CME infrastructure — with appropriate documentation of AI-assisted content development where that applies — can offer credit for the training that the accreditation mandates now require, without building a separate credentialing system.
+
+## 15.8 The Faculty Development Gap
+
+The most significant systemic bottleneck in AMC AI workforce development is the faculty development gap: the clinicians and educators responsible for training the next generation cannot teach AI literacy they do not have themselves. Faculty who were trained before large language models existed, and who have not had protected time or institutional support for AI education, are not positioned to integrate AI literacy into medical education curricula.
+
+Addressing this gap requires institutional investment in faculty development specifically for AI, not as a one-day workshop but as a sustained program. The most effective models combine peer learning — faculty who have developed AI competence mentoring colleagues — with micro-credentialing that provides formal recognition of AI literacy achievement and creates a career incentive for the investment. The AAMC and AMIA have both published frameworks for faculty AI development that AMC education offices can adapt.
+
+## 15.9 Where to Start
+
+### 15.9.1 Starter Project 1: Role-Based AI Literacy Module Deployment
+
+**What it is:** Mandatory role-based AI literacy training for all clinical and administrative staff, tiered by role (consumer, translator, governor), with completion required within 90 days of the launch and annually thereafter.
+
+**Why now:** Colorado SB 24-205 requires that staff using high-risk AI in healthcare understand the tool’s purpose and limitations. More broadly, no AMC AI governance program can operate effectively if the staff expected to apply governance controls do not understand why they exist.
+
+**How to execute:** The AAMC, AMIA, and AMA STEPS Forward have all published training content that can be adapted without building from scratch. Consumer-tier training should cover: what is an LLM, what are its failure modes, what is shadow AI and why does it matter, how to document AI use. Translator-tier training should add model evaluation, bias audit interpretation, and regulatory basics. Governor-tier training should cover risk governance, vendor evaluation, and board-level AI accountability. Track completion in the LMS and include AI literacy completion as a metric in the annual AI governance report.
+
+**Buy vs. build:** Primarily adapt and configure existing content. Build additional modules for institution-specific tools and institutional policies.
+
+### 15.9.2 Starter Project 2: AI Champions Program
+
+**What it is:** A formal program that identifies, trains, and supports clinician AI champions across departments — translators who can bridge between the informatics team and bedside clinical practice, help colleagues adopt new AI tools, and surface governance concerns from the frontline.
+
+**Why now:** Adoption of clinical AI tools without champions in the departments is slower, and the governance feedback loop from frontline use back to the AISC is weaker. Champions are the mechanism by which governance reaches the point of care.
+
+**How to execute:** Identify one champion per department or service line. Provide advanced translator-tier training plus explicit instruction in governance processes and escalation paths. Give champions protected time (one to two hours per week) for the AI champion role. Connect champions to each other through a community of practice that shares experience across departments. Route frontline governance feedback — anomalous AI outputs, patient concerns, workflow problems — from champions to the AI Steering Committee on a regular cadence.
+
+**Buy vs. build:** Program design and staff time. No technology purchase required.
+
+Accreditation Council for Continuing Medical Education. 2025. *Guidance on the Responsible Use of AI in Accredited Continuing Education*. [Https://www.accme.org/news-releases/guidance-responsible-use-ai-accredited-ce](https://www.accme.org/news-releases/guidance-responsible-use-ai-accredited-ce). <https://www.accme.org/news-releases/guidance-responsible-use-ai-accredited-ce>.
+
+Accreditation Council for Graduate Medical Education. 2025. *Common Program Requirements: July 2025 Updates*. [Https://www.acgme.org/what-we-do/accreditation/common-program-requirements/](https://www.acgme.org/what-we-do/accreditation/common-program-requirements/). <https://www.acgme.org/what-we-do/accreditation/common-program-requirements/>.
+
+American Medical Informatics Association. 2024. *AI Competencies for Health Professionals*. <https://amia.org/education-events/ai-competencies>.
+
+Association of American Medical Colleges. 2024. *Principles for the Responsible Use of Artificial Intelligence in and for Medical Education*. <https://www.aamc.org/about-us/mission-areas/medical-education/principles-responsible-use-artificial-intelligence-and-medical-education>.
+
+Association of American Medical Colleges. 2025. *AI Competencies Across the Learning Continuum*. [Https://www.aamc.org/about-us/mission-areas/medical-education/artificial-intelligence-competencies-across-learning-continuum](https://www.aamc.org/about-us/mission-areas/medical-education/artificial-intelligence-competencies-across-learning-continuum). <https://www.aamc.org/about-us/mission-areas/medical-education/artificial-intelligence-competencies-across-learning-continuum>.
+
+Black Book Market Research. 2025. *AI Integration and Shadow IT in Health Systems*. [Https://blackbookmarketresearch.com/healthcare-technology-reports](https://blackbookmarketresearch.com/healthcare-technology-reports). <https://blackbookmarketresearch.com/healthcare-technology-reports>.
+
+Ng, Felix Y C, Arun James Thirunavukarasu, Helen Cheng, et al. 2023. “Artificial Intelligence Education: An Evidence-Based Medicine Approach for Consumers, Translators, and Developers.” *Cell Reports Medicine* 4 (10): 101230. <https://doi.org/10.1016/j.xcrm.2023.101230>.
+
+Parasuraman, Raja, and Dietrich H Manzey. 2010. “Complacency and Bias in Human Use of Automation: An Updated Understanding.” *Human Factors* 52 (3): 381–410. <https://doi.org/10.1177/0018720810376055>.
+
+Wolters Kluwer. 2025. *Survey: Generative AI in Healthcare — Clinician Use and Risks*. [Https://www.wolterskluwer.com/en/news/survey-reveals-doctors-using-ai](https://www.wolterskluwer.com/en/news/survey-reveals-doctors-using-ai). <https://www.wolterskluwer.com/en/news/survey-reveals-doctors-using-ai>.
+
+World Health Organization. 2024. *Ethics and Governance of Artificial Intelligence for Health*. <https://www.who.int/publications/i/item/9789240029200>.

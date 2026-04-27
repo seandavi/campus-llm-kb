@@ -1,0 +1,215 @@
+# 6  Clinical Domain
+
+The clinical deployment of AI has moved faster than most governance frameworks anticipated. Emergency departments use predictive sepsis models as standard workflow. Radiology reading rooms incorporate AI preliminary reads before the attending opens the queue. Primary care practices evaluate ambient scribes that transcribe and synthesize the clinical encounter without the physician touching a keyboard. In each setting, the governing question is no longer whether to deploy AI but how to deploy it in a way that extends rather than erodes the quality, equity, and safety of care.
+
+This chapter builds on the foundational principles proposed by Badal and colleagues ([2023](#ref-Badal2023-bt)) and extends them into the operational and regulatory terrain that now confronts AMC clinical and informatics leaders. The framework offers an eight-principle scaffold — from alleviating health disparities to facilitating shared decision-making — that remains the most clinically grounded normative structure available for this work. But principles require operational counterparts, and those counterparts now have regulatory teeth. The ONC’s Health Data, Technology, and Interoperability (HTI-1) rule mandating algorithm transparency inside EHR workflows, the FDA’s guidance on Predetermined Change Control Plans for adaptive AI-enabled devices, and the CMS Medicare Advantage rule prohibiting AI-only coverage denials took effect in 2024 and 2025. Institutions that have not yet mapped those rules onto their existing AI governance structures are already behind.
+
+## 6.1 The Guiding Principles Framework
+
+The table below summarizes the eight principles Badal and colleagues propose for evaluating AI in clinical and healthcare contexts. Principles 1–4 establish the ethical foundation; Principles 5–8 define the operational requirements for AI tools to be genuinely useful in the specific deployment context.
+
+| Principle | Questions |
+|----|----|
+| 1\. Alleviate healthcare disparities | What health disparities are reported for the present AI application? How can the AI tool be designed to be accessible to and improve outcomes for the disadvantaged population? What clinical interventions are needed to realize the benefit, and are these accessible? How can data collection be supported in underserved communities for tool retraining over time? |
+| 2\. Report clinically meaningful outcomes | How is clinical benefit defined in this domain? What is the present threshold for the clinical benefit of existing tools, and how can the AI tool improve upon this threshold? |
+| 3\. Reduce overdiagnosis and overtreatment | What disease state is an overdiagnosis? For every case of overdiagnosis, what are the downstream costs to the patient and healthcare system? How can this AI application reduce the number of overdiagnoses compared to existing approaches? |
+| 4\. Have high healthcare value | Is this AI tool addressing a high-priority healthcare need? What would be the cost to the healthcare system in implementation, maintenance, and update? What would be the cost to the patient who does and does not benefit from this tool? Does this tool have high healthcare value, and if not, how can it be improved? |
+| 5\. Incorporate biography | What biographical data can be collected or carefully coded for the intended population? How do these factors vary in the intended population? How can these factors be included when developing AI tools? |
+| 6\. Be easily tailored to the local population | Can the training features be easily collected in different settings? Are these features reliable for training across different populations? Will the AI/ML workflow be made open-access? |
+| 7\. Promote a learning healthcare system | How will this AI application be evaluated over time, and at what intervals? What are acceptable thresholds for performance? How will the evaluation results contribute to continuous improvement? |
+| 8\. Facilitate shared decision-making | Have AI explainability tools been explored and utilized? Do clinicians and patients find the explainability results helpful? Have simpler, explainable algorithms been tried and compared to ‘black-box’ algorithms to determine if a simpler model performs just as well? How can patient values be easily integrated into the use of the AI tool? |
+
+Table 6.1: Questions that can be used when considering each principle in the AI development process ([Badal et al. 2023](#ref-Badal2023-bt))
+
+### 6.1.1 Principle 1: AI Tools Should Aim to Alleviate Existing Health Disparities
+
+Reaching health equity requires eliminating the disparities in health outcomes that are closely linked with social, economic, and environmental disadvantages. At their very core, AI tools require specialized and high-quality data, advanced computing infrastructure, capacity to purchase or partner models from commercial entities, and unique technical expertise — all of which are less available to healthcare systems that serve the most disadvantaged populations.
+
+More careful training and model development that accounts for the unique needs of disadvantaged populations is needed to ensure that AI tools do not exacerbate existing health disparities. Creating equitable AI tools may require prioritizing simpler models for deployment, and the trade-off between balancing accuracy and equity can potentially be resolved by designing tools that can be tailored to the local population. AI tools designed to serve disadvantaged groups must not unnecessarily divert resources from higher-priority areas and more effective interventions (see Principle 4 below).
+
+### 6.1.2 Principle 2: AI Tools Should Produce Clinically Meaningful Outcomes
+
+AI tools should be evaluated based on their ability to improve clinically meaningful outcomes. The clinical benefit of AI tools should be defined in the context of the existing standard of care, and the AI tool should be evaluated against this standard. If AI practitioners do not define clinical metrics for clinical benefit *a priori*, they risk producing tools that clinicians cannot evaluate or use. Clinician partners of AI researchers should evaluate accuracy, fairness, and risks of overdiagnosis and overtreatment, as well as the healthcare value and explainability of AI tools and models (see [Table tbl-healthcare-guiding-principles](#tbl-healthcare-guiding-principles)).
+
+### 6.1.3 Principle 3: AI Tools Should Reduce Overdiagnosis and Overtreatment
+
+Particularly in the United States, overdiagnosis and overtreatment are major drivers of healthcare costs and patient harm. Overdiagnosis occurs when a disease is diagnosed that would not have caused symptoms or death in a patient’s lifetime. Overtreatment occurs when a patient is treated for a disease that would not have caused symptoms or death in a patient’s lifetime. AI tools should be carefully constructed with attention to the full spectrum of disease and treatment burden, with the goal of reducing unnecessary interventions rather than simply maximizing detection rates.
+
+### 6.1.4 Principle 4: AI Tools Should Have High Healthcare Value
+
+AI tools applied in healthcare should result in the same outcomes for reduced cost, or better outcomes for comparable cost. Costs to gather inputs, build, maintain, update, interpret, and deploy in clinical practice must be estimated and included in weighing decisions around AI tool adoption. What is cost-effective in one setting may be extremely cost-ineffective in settings where resources are scarce — a point that becomes especially sharp when comparing deployment in well-resourced academic medical centers with the conditions facing safety-net or rural institutions.
+
+## 6.2 Principles 5–8: From Ethics to Operations
+
+Principles 1–4 address whether a clinical AI tool should be built at all — whether the intervention is equitable, meaningful, safe, and cost-effective. Principles 5–8 address a harder question: whether the tool will work for the specific patients an AMC actually serves, under the specific clinical workflows and social conditions of that institution. These four principles mark the transition from governance-as-ethics to governance-as-operations.
+
+### 6.2.1 Principle 5: Incorporating Biographical and Structural Drivers of Health
+
+The fifth principle calls for AI tools to account for the full range of social, structural, emotional, and psychological factors that shape health outcomes. In practice, this means models must incorporate social determinants of health (SDOH) as genuine features, not afterthoughts appended during a bias audit.
+
+The problem is that SDOH documentation in the structured EHR is systemically undercaptured. ICD-10 Z-codes — the designated mechanism for recording housing instability, food insecurity, and transportation barriers — appear in a small fraction of encounters for patients known to experience these conditions ([Wiens et al. 2019](#ref-Wiens2019-harm)). The information often exists, but in unstructured text: clinician notes, social work assessments, telephone triage summaries. LLMs are proving to be effective extraction tools for exactly this kind of problem. Models applied to clinical narrative notes can identify SDOH indicators with substantially higher recall than structured coding alone, though performance varies across demographic groups and institutions — a disparity that creates its own equity risk and demands ongoing monitoring.
+
+The operational implication for AMC leaders is direct: deploying an AI model without auditing SDOH feature coverage is equivalent to deploying a sepsis predictor on a population where the most at-risk patients have systematically missing data. That audit must happen before deployment, not after the first disparity finding surfaces in a quality review.
+
+### 6.2.2 Principle 6: Local Calibration for the Local Population
+
+A model trained and validated at a tertiary academic medical center does not automatically perform in a safety-net hospital, a rural affiliate, or a bilingual federally qualified health center. Population shift — the statistical mismatch between training distribution and deployment distribution — is one of the most documented causes of clinical AI failure after initial deployment ([Wiens et al. 2019](#ref-Wiens2019-harm)). The sepsis prediction model trained on a predominantly insured, English-speaking cohort may require substantially different decision thresholds when deployed in an emergency department serving a high proportion of recently incarcerated or housing-unstable patients.
+
+Local calibration is the process of adjusting a pre-trained model’s parameters or decision thresholds to match the local case mix, documentation practices, and outcome base rates. This is well-established methodology in the biostatistical literature under the name recalibration, and it applies with particular force to predictive models in clinical settings.
+
+AMCs that procure commercial AI tools should expect vendors to provide validation data from populations that approximate their own, and should treat validation studies conducted exclusively in academic medical centers as a cautionary flag when deploying in different institutional contexts. Contract language for AI procurement should include explicit provisions for post-deployment performance monitoring and for model recalibration if performance degrades beyond agreed thresholds.
+
+### 6.2.3 Principle 7: Promoting a Learning Healthcare System
+
+The seventh principle asks whether an AI tool contributes to continuous improvement over time, or whether it is deployed, validated once, and then left to degrade silently. The learning healthcare system (LHS) model holds that clinical care generates data, that data enables learning, and that learning improves care in an ongoing cycle.
+
+Clinical AI fits naturally into this loop — but only if the monitoring infrastructure is built into the deployment plan rather than retrofitted after the fact. For AMC leaders, this means specifying performance metrics and acceptable degradation thresholds before deployment; building a mechanism to detect when those thresholds are crossed; and defining the institutional response (recalibration, temporary suspension, vendor escalation, or retirement) in advance of any incident.
+
+The ONC HTI-1 rule, discussed in detail below, adds a regulatory dimension to this operational requirement. For AI tools qualifying as Decision Support Interventions under the rule, vendors are required to provide specific source attributes about the model — including performance characteristics and the populations on which the model was validated — that can be surfaced within the clinical workflow. Institutions should treat these attributes as inputs to ongoing LHS monitoring, not as one-time procurement documents.
+
+### 6.2.4 Principle 8: Facilitating Shared Decision-Making Through Explainability
+
+The final Badal principle asks whether clinicians and patients can understand why an AI tool produced a given output well enough to incorporate it meaningfully into a clinical decision. This is the explainability question, and it has both a technical and a human-factors dimension that are frequently conflated.
+
+The technical question is which explainability method to apply. The two most widely deployed methods in clinical settings are SHAP (SHapley Additive exPlanations, grounded in cooperative game theory) and LIME (Local Interpretable Model-Agnostic Explanations, which fits a simpler surrogate model locally around each prediction). SHAP values are globally consistent — the same feature receives the same attribution across comparable patients — while LIME explanations can vary for patients with similar risk profiles. For clinical AI tools where consistency across patients matters (discharge planning, readmission prediction), SHAP has become the preferred method. For rapid bedside use where approximate feature attribution is sufficient, the lower computational cost of LIME may be acceptable.
+
+The human-factors question is harder: does presenting explainability output to a clinician actually improve decision quality, or does it create a new form of over-reliance? The evidence is mixed. Clinicians who understand the top features driving a risk score may correctly identify when the model is pattern-matching to correlational rather than causal features ([Jones et al. 2023](#ref-Jones2023-trust)). Clinicians under high cognitive load — which describes most of clinical practice — may instead anchor on the AI output, with the explainability display functioning as post-hoc rationalization rather than genuine scrutiny. Designing human review checkpoints that are genuinely scrutinized rather than rubber-stamped is an open problem addressed in [sec-agentic-safety](#sec-agentic-safety).
+
+For shared decision-making with patients, the bar is different. Patients rarely need SHAP waterfall plots. They need to know that an AI tool was involved in their care, what it was used for, and that their clinician evaluated and took responsibility for the recommendation. Disclosure language that meets this bar is not technically complex; it requires institutional will to adopt and apply consistently.
+
+## 6.3 Clinical AI in Practice
+
+The principles framework addresses the normative question: what should clinical AI accomplish and what risks should it avoid? The following sections address the operational question: what does clinical AI deployment actually look like in 2025–2026, what regulatory requirements govern it, and where do institutions most commonly stumble?
+
+### 6.3.1 Ambient Documentation and the Documentation Burden
+
+The most widely deployed category of clinical AI at AMCs is now ambient documentation — AI systems that listen to the clinical encounter, generate a draft clinical note, and return it to the clinician for review and attestation. [Abridge](https://www.abridge.com), [Microsoft DAX](https://www.nuance.com/healthcare/ambient-clinical-intelligence.html) (Dragon Ambient eXperience), [Nabla](https://www.nabla.com), and [Suki](https://www.suki.ai) are the leading commercial systems; [Epic](https://www.epic.com) has introduced native ambient documentation for institutions already on its platform.
+
+The evidence that ambient systems reduce documentation time is now substantial. Tierney and colleagues found that physicians using an ambient scribe system reported meaningful reductions in time spent on documentation, with the largest gains in primary care and outpatient specialties where note volume is highest ([Tierney et al. 2024](#ref-Tierney2024-scribe)). The same work reported improvements in clinician well-being and in patients’ perception that their physician was present and attentive during the encounter — because the physician was not looking at a screen. The professional wellness chapter of this book examines this evidence in greater depth ([sec-wellness](#sec-wellness)).
+
+The safety concern that receives less attention in the promotional literature is omission error. Ambient systems are optimized to produce fluent, complete-sounding notes, but they can silently omit clinically significant findings mentioned during the encounter — a patient’s reference to chest pain that the system categorizes as chronic rather than new, a medication allergy mentioned during the social history, a patient-reported symptom that the system filters out as conversational noise. These omissions are more dangerous than transcription errors precisely because they produce notes that look complete. A clinician reviewing a well-formatted, plausible note is less likely to detect a missing item than one reviewing a note with obvious structural gaps.
+
+The operational response is to treat ambient documentation as draft generation, not as finished note production — a tool that eliminates the blank-page problem and compresses documentation time, but not one that relieves the clinician of responsibility to verify every clinical fact before attestation. Institutions deploying ambient systems should document this expectation explicitly in clinical AI policy and should monitor attestation patterns: a clinician attesting in under sixty seconds is almost certainly not reviewing the draft.
+
+``` mermaid
+flowchart LR
+    A([Patient Encounter\nBegins]) --> B[Verbal Consent\nObtained]
+    B --> C[AI Processes\nAudio Stream]
+    C --> D[Draft Note Generated\nwith Linked Evidence]
+    D --> E{Clinician Review\nCritical Safety Point}
+    E -->|Gaps or errors\nfound| F[Clinician Edits]
+    F --> E
+    E -->|Draft verified| G[Attestation with\nAI Disclosure Statement]
+    G --> H([Note Signed\nto EHR])
+```
+
+Figure 6.1: Ambient AI scribe workflow with consent and verification checkpoints. Clinician review before attestation is the critical safety step.
+
+### 6.3.2 The Federal Regulatory Landscape
+
+Three regulatory actions in 2024–2025 significantly changed the compliance obligations for AMCs deploying clinical AI. Understanding their scope — and their limits — is a prerequisite for sound clinical AI governance.
+
+| Agency | Rule / Guidance | Effective Date | Key AMC Obligation |
+|----|----|----|----|
+| ONC | HTI-1: Algorithm Transparency | January 2025 | EHR vendors must surface algorithm source attributes (training data, performance, limitations) for Decision Support Interventions within the clinical workflow |
+| FDA | Predetermined Change Control Plan Guidance | December 2024 | AI-enabled medical devices may update within pre-specified bounds without new 510(k) or PMA submissions |
+| CMS | Medicare Advantage 2025 Final Rule | January 2025 | AI outputs may not serve as the sole basis for coverage denials; human review is required |
+| HHS OCR | Section 1557 Final Rule | May 2025 | Covered entities may not apply discriminatory algorithms in patient care decisions |
+
+Table 6.2: Federal regulatory actions affecting clinical AI deployment at AMCs, 2024–2025 ([Office of the National Coordinator for Health Information Technology 2024](#ref-ONC2024-hti1); [U.S. Food and Drug Administration 2024](#ref-FDA2024-pccp); [Centers for Medicare and Medicaid Services 2024](#ref-CMS2024-maai); [U.S. Department of Health and Human Services, Office for Civil Rights 2024](#ref-HHS2024-1557))
+
+The ONC HTI-1 rule is the most operationally significant for clinical informatics teams. It defines a new regulatory category — Decision Support Interventions — that includes EHR-based algorithms meeting specified criteria for automated decision-making. For each qualifying tool, EHR vendors are required to make accessible a structured set of source attributes: the model’s training data sources, performance characteristics, known limitations, and the populations on which it was validated. These attributes must be surfaced within the clinical workflow, not buried in procurement contracts. The practical implication is that AMC clinical informatics leaders should be engaging their EHR vendor about DSI compliance now, and should verify that the source attributes being provided are substantive rather than boilerplate ([Office of the National Coordinator for Health Information Technology 2024](#ref-ONC2024-hti1)).
+
+The FDA PCCP guidance addresses the governance of AI tools that learn and adapt after initial deployment. Traditional medical device regulation assumes a static device that functions the same way throughout its useful life. AI systems that update their parameters based on new data do not fit this model. The PCCP guidance establishes a pathway under which developers specify in advance the types of changes they intend to make, the bounds of those changes, and the performance criteria that must be met before changes are implemented. An AMC that has developed an internally deployed predictive model and intends to update it over time should assess whether the tool qualifies as an FDA-regulated Software as a Medical Device (SaMD) and, if so, whether a PCCP would be the appropriate regulatory pathway ([U.S. Food and Drug Administration 2024](#ref-FDA2024-pccp)).
+
+The CMS Medicare Advantage rule responds to documented cases of health insurers using AI-driven prior authorization systems to systematically deny claims with minimal human review. For AMC care management teams working with Medicare Advantage plans, this rule creates leverage: a plan that cites AI output as the basis for a clinical denial without demonstrable human review is operating out of compliance with CMS requirements ([Centers for Medicare and Medicaid Services 2024](#ref-CMS2024-maai)).
+
+### 6.3.3 Governing Adaptive AI: FDA SaMD and the PCCP Framework
+
+The boundary between a clinical AI tool and an FDA-regulated medical device is not as clear as many AMC leaders assume. The FDA’s definition of Software as a Medical Device is broad: software that meets the device definition and is intended to diagnose, treat, cure, mitigate, or prevent disease or other conditions. Many clinical AI tools that AMCs use or develop — risk stratification models, diagnostic decision support, monitoring algorithms — may qualify.
+
+The critical governance question is whether a tool was purchased from a vendor who has obtained FDA clearance or approval, or whether it was developed internally. Vendor-developed tools with FDA clearance carry the regulatory burden on the vendor side; AMC responsibility is largely limited to ensuring the tool is used within its cleared indication. Internally developed tools present a more complex picture. An institution that develops and deploys a predictive model for clinical decision support may be operating an uncleared medical device if the tool meets the SaMD definition — even if the institution does not market or sell the tool externally.
+
+The practical governance recommendation is direct: any clinical AI tool that informs a treatment decision — as opposed to a purely administrative one — should be assessed against the FDA SaMD definition before deployment, and the assessment should be documented. Tools that qualify should be cleared through the appropriate regulatory pathway, structured to meet the clinical decision support exemption criteria, or restricted to research use until regulatory status is resolved ([U.S. Food and Drug Administration 2024](#ref-FDA2024-pccp)).
+
+``` mermaid
+flowchart TB
+    A([Clinical Need\nIdentified]) --> B[Governance Review\nAISC + Clinical Leadership]
+    B --> C{Procure or\nBuild?}
+    C -->|Procure| D[Vendor Assessment\nFDA Status · BAA · DSI Attributes]
+    C -->|Build| E[FDA SaMD Assessment\nPCCP if Adaptive]
+    D --> F[Local Calibration\nPrinciples 5-6]
+    E --> F
+    F --> G[Pilot Deployment\nConsent + Disclosure]
+    G --> H[Performance Monitoring\nHTI-1 Source Attributes]
+    H --> I{Thresholds\nMet?}
+    I -->|Yes| J([Continuous Operation\nLHS Learning Loop])
+    I -->|No| K[Recalibrate ·\nEscalate · Retire]
+    K --> B
+```
+
+Figure 6.2: The clinical AI governance lifecycle, integrating procurement assessment, local calibration, and the continuous monitoring loop required by the learning healthcare system model.
+
+### 6.3.4 Explainability, Trust, and the Liability Frontier
+
+The liability question in clinical AI is still developing, but the direction is clear. Legal commentary and early judicial precedent are examining two categories of AI-related clinical liability: the failure to exercise adequate oversight of an AI tool that produced a harmful recommendation, and — less intuitive but increasingly discussed — the failure to use an AI tool that has become part of the standard of care ([Jones et al. 2023](#ref-Jones2023-trust)). The second category is newer and more unsettling to many clinicians: the idea that using AI could become an obligation, not merely a permission.
+
+The AMA survey data indicates that approximately 65% of physicians see potential value in AI for non-diagnostic tasks — documentation, prior authorization, administrative work — while confidence in AI for diagnostic support is substantially lower ([American Medical Association 2023](#ref-AMA2023-survey)). This gap is clinically rational. The cost of a documentation error is generally lower and more recoverable than the cost of a diagnostic error. But as validated diagnostic AI tools accumulate peer-reviewed evidence of performance at or above attending-level accuracy in specific domains, the hesitancy will come under increasing scrutiny from patients and from liability counsel.
+
+The prudent governance posture is to treat each deployed clinical AI tool as carrying its own liability profile: who is responsible for verifying the output, how that verification is documented in the medical record, and what the institutional protocol is when an AI recommendation is not followed. The clinician who overrides an AI recommendation and documents the clinical reasoning is in a defensible position. The clinician who follows an AI recommendation without review, or who overrides it without documentation, is not ([Jones et al. 2023](#ref-Jones2023-trust)).
+
+### 6.3.5 Patient-Facing AI and the Consent Gap
+
+The clinical AI tools discussed above are largely invisible to patients: the ambient scribe listens during encounters, but the patient may not know a draft note is being generated; risk stratification models run in the background without patient-facing output. Patient-facing AI tools present a different problem: the patient is the primary user, and the risk of misunderstanding what the tool can and cannot do is concentrated in that interaction.
+
+Epic’s patient-facing messaging features, including AI-drafted responses to patient portal messages, are now deployed at dozens of major health systems. A pilot study at UC San Diego Health found that clinician-reviewed AI-drafted patient message responses maintained quality comparable to clinician-authored messages while substantially reducing the time required — though the study also raised open questions about whether patients were adequately informed that AI was involved in the drafting process ([Polubriaginof et al. 2024](#ref-UCSD2024-epic)).
+
+California Assembly Bill 3030, effective January 2025, requires healthcare providers to include explicit disclosure when AI has generated patient communications ([AB 3030 2024](#ref-CalAB3030-2024)). The law covers written communications — letters, portal messages, discharge instructions — but does not extend to real-time verbal interactions. AB 3030 is the most specific AI disclosure mandate currently in effect at the state level, and several states are considering similar requirements. AMC compliance and legal teams should treat the California standard as a leading indicator of where disclosure requirements are heading nationally, and should evaluate adopting it as a default even for institutions serving patients primarily outside California.
+
+The disclosure language itself does not need to be alarming. A statement that some communications may be drafted with AI assistance and reviewed by the clinical team before sending accomplishes the core transparency goal. Institutions that have adopted such language consistently report minimal patient concern when it is introduced alongside explanation of how the tool is used; the concern is substantially higher when patients discover the practice without prior notice.
+
+## 6.4 Where to Start
+
+Clinical AI governance can feel paralyzing when confronted simultaneously with FDA guidance documents, ONC rulemaking, the breadth of the Badal framework, and a vendor landscape that changes quarterly. The two projects below are scoped to produce tangible institutional value within six months, using infrastructure most AMCs already have.
+
+### 6.4.1 Starter Project 1: Clinical AI Inventory and Regulatory Risk Assessment
+
+**What it is:** A structured inventory of every AI tool currently deployed in clinical workflows — including EHR-embedded tools that clinical informatics teams may not have formally reviewed — with a brief assessment of FDA regulatory status, DSI qualification under HTI-1, and the existence or absence of active performance monitoring.
+
+**Why now:** The ONC HTI-1 rule is in effect. The FDA PCCP guidance has been published. An institution that cannot identify which of its deployed clinical AI tools are regulated under which frameworks cannot meaningfully comply with either requirement, and cannot answer the liability question if an AI-related adverse event occurs.
+
+**How to execute:** This is primarily a governance and documentation exercise, not a technical project. The clinical informatics team, the AI governance committee, and the EHR team collectively identify all deployed tools with a clinical workflow touchpoint. Each tool is assessed against a standardized template: FDA clearance status, DSI qualification, BAA coverage, active performance monitoring, and last validation date. The output is a register reviewed by the AI Steering Committee on a quarterly schedule.
+
+**Buy vs. build:** This is governance work, not a technology purchase. The output is a document and a process. Software tools for AI governance inventory exist (Credo AI, IBM OpenScale) but are not prerequisites for starting; a shared spreadsheet with enforced schema is sufficient for a first-pass inventory at most institutions.
+
+### 6.4.2 Starter Project 2: Ambient Documentation Pilot with Pre/Post Measurement
+
+**What it is:** A structured pilot of an ambient AI scribe system in a high-volume outpatient specialty, with pre-specified measurement of after-hours EHR time, note quality, and clinician well-being scores before and after the intervention.
+
+**Why now:** The evidence base for ambient documentation is strong enough to act on ([Tierney et al. 2024](#ref-Tierney2024-scribe)). But the institution that deploys without measurement cannot know whether its specific deployment produced the expected benefit, or whether local workflow factors attenuated it — and cannot make the internal business case for broader rollout without outcome data.
+
+**How to execute:** Select a single outpatient specialty with a measurable documentation burden and an identified clinical champion. Establish baseline metrics before deployment: after-hours EHR time (available from EHR audit logs at most institutions), note length, attestation turnaround, and a validated burnout or well-being survey. Deploy the ambient system with explicit workflow expectations — draft generation, not autonomous documentation — and with the consent and attestation disclosure language described above. Measure the same metrics at 60 and 120 days. Share results transparently with clinical leadership regardless of outcome; a null result has governance value.
+
+**Buy vs. build:** Buy. The commercial ambient systems have existing EHR integrations, BAA coverage, and vendor-side regulatory responsibility for the AI component. Building an ambient documentation system from scratch is not a tractable project for most AMC informatics teams, and the commercial market has matured rapidly. The institutional work is in selecting the system, structuring the measurement framework, and managing the change management required for sustainable clinical adoption.
+
+AB 3030: Health Care: Artificial Intelligence (2024). <https://leginfo.legislature.ca.gov/faces/billNavClient.xhtml?bill_id=202320240AB3030>.
+
+American Medical Association. 2023. *Physicians Optimistic about AI in Health Care with Some Concerns*. <https://www.ama-assn.org/practice-management/digital/physicians-optimistic-about-ai-health-care-some-concerns>.
+
+Badal, Kimberly, Carmen M Lee, and Laura J Esserman. 2023. “Guiding Principles for the Responsible Development of Artificial Intelligence Tools for Healthcare.” *Communication & Medicine* 3 (1): 47. <https://doi.org/10.1038/s43856-023-00279-9>.
+
+Centers for Medicare and Medicaid Services. 2024. “Medicare Program; Contract Year 2025 Policy and Technical Changes to the Medicare Advantage Program, Medicare Prescription Drug Benefit Program, Medicare Cost Plan Program, and Programs of All-Inclusive Care for the Elderly (Final Rule).” In *Federal Register*, No. 79, vol. 89. <https://www.federalregister.gov/documents/2024/04/23/2024-07105/medicare-program-contract-year-2025-policy-and-technical-changes>.
+
+Jones, Clare, Janet Thornton, and Jeremy C Wyatt. 2023. “Artificial Intelligence and Clinical Decision Support: Clinicians’ Perspectives on Trust, Trustworthiness, and Liability.” *Medical Law Review* 31 (3): 501–20. <https://doi.org/10.1093/medlaw/fwad013>.
+
+Office of the National Coordinator for Health Information Technology. 2024. “Health Data, Technology, and Interoperability: Certification Program Updates, Algorithm Transparency, and Information Sharing (HTI-1).” In *Federal Register*, No. 8, vol. 89. <https://www.federalregister.gov/documents/2024/01/09/2023-28824/health-data-technology-and-interoperability-certification-program-updates-algorithm-transparency-and>.
+
+Polubriaginof, Fernanda C G et al. 2024. “Implementation of a Generative Artificial Intelligence Solution for Patient Message Drafting in an Academic Medical Center.” *JAMIA Open*, ahead of print. <https://doi.org/10.1093/jamiaopen/ooae024>.
+
+Tierney, Aaron A, Shreya Bhatt, Aakash Houndie, et al. 2024. “Ambient Artificial Intelligence Scribes to Alleviate the Burden of Clinical Documentation.” *NEJM Catalyst Innovations in Care Delivery* 5 (1): CAT.23.0404. <https://doi.org/10.1056/CAT.23.0404>.
+
+U.S. Department of Health and Human Services, Office for Civil Rights. 2024. *Section 1557: Nondiscrimination in Health Programs and Activities (Final Rule)*. <https://www.hhs.gov/civil-rights/for-individuals/section-1557/index.html>.
+
+U.S. Food and Drug Administration. 2024. *Marketing Submission Recommendations for a Predetermined Change Control Plan for Artificial Intelligence/Machine Learning-Enabled Device Software Functions*. <https://www.fda.gov/regulatory-information/search-fda-guidance-documents/marketing-submission-recommendations-predetermined-change-control-plan-aiml-enabled-device-software>.
+
+Wiens, Jenna, Suchi Saria, Mark Sendak, et al. 2019. “Do No Harm: A Roadmap for Responsible Machine Learning for Health Care.” *Nature Medicine* 25: 1337–40. <https://doi.org/10.1038/s41591-019-0548-6>.

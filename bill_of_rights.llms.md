@@ -1,0 +1,30 @@
+# Appendix B — OSTP Blueprint for an AI Bill of Rights
+
+The White House Office of Science and Technology Policy published the Blueprint for an AI Bill of Rights in October 2022 as a nonbinding framework for the design, use, and deployment of automated systems affecting the American public. It is not a law, and it creates no enforceable obligations. It matters for AMC AI governance in a specific way: it is the clearest statement of the federal government’s normative expectations for AI systems before those expectations were codified into binding regulation, and several of its five principles have since been incorporated, in varying forms, into enforceable rules — including the HHS Section 1557 algorithmic nondiscrimination requirements, the ONC HTI-1 transparency mandates, and the FTC’s enforcement posture on AI capability claims.
+
+Reading the Blueprint alongside the regulatory chapters of this book shows which principles have made the transition from aspiration to obligation and which remain in the aspirational category. That distinction is useful for governance planning: AMC AI programs that have operationalized the Blueprint’s principles are better positioned for the regulatory requirements that have followed from them.
+
+## B.1 The Five Principles
+
+**Safe and Effective Systems.** Automated systems should be tested for safety and effectiveness before deployment, and should not be used where they pose unacceptable risks of harm to individuals. For clinical AI, this principle maps directly onto the validation requirements in [sec-pm-support](#sec-pm-support) and the staged deployment framework in [sec-implementation](#sec-implementation). The ONC HTI-1 rule’s requirement for performance documentation on validated populations is the regulatory operationalization of this principle.
+
+**Algorithmic Discrimination Protections.** Automated systems should not discriminate on the basis of protected characteristics, and institutions should proactively ensure equitable design and deployment. This principle is the direct precursor to the HHS Section 1557 duty-to-mitigate requirement. The equity audit process in [sec-ethics-start](#sec-ethics-start) and the demographic performance stratification requirement that runs throughout the clinical and ethics chapters are the institutional operationalization.
+
+**Data Privacy.** People should be protected from abusive data practices, with built-in privacy protections and meaningful agency over how data about them is used. The data governance framework in [sec-data](#sec-data) — including the honest broker function, the BAA non-negotiables, the expert determination standard for AI training data — implements this principle. The state laws that have followed (Washington My Health MY Data Act, California AB 3030) give it additional specificity in their respective jurisdictions.
+
+**Notice and Explanation.** People should know when an automated system is being used and understand how and why it contributes to outcomes affecting them. This principle maps to the consent architecture in [sec-ethics](#sec-ethics), the ONC HTI-1 source attribute requirements, and the California AB 3030 disclosure mandate for AI-generated patient communications. It is the principle with the largest gap between aspiration and current institutional practice: most patients whose care involves AI-assisted documentation, prediction, or decision support receive no meaningful disclosure.
+
+**Human Alternatives, Consideration, and Fallback.** People should be able to opt out of automated systems where appropriate and have access to a human who can remedy problems. For clinical AI, this principle requires that every AI-assisted clinical process have a defined human override path — that a clinician can decline an AI recommendation without penalty, that a patient can request human-only care documentation, and that the governance program has a mechanism for escalating and investigating AI-related errors. The CMS requirement that AI systems cannot substitute for human clinical review in Medicare coverage decisions gives this principle binding force in one specific regulatory context.
+
+## B.2 The Blueprint’s Limitations
+
+Two aspects of the Blueprint are worth naming honestly. First, it was written primarily with consumer-facing AI in mind — recommendation algorithms, hiring screens, benefits determinations — and its application to complex clinical AI requires interpretation. The “notice and explanation” principle is tractable for a patient receiving a denial letter. It is considerably harder to operationalize for a sepsis prediction model running continuously in the background of an ICU. Governance teams should treat the Blueprint as a values framework that requires domain-specific translation, not a procedure manual.
+
+Second, the Blueprint is nonbinding. Institutions that have aligned their AI governance programs to its principles have done so voluntarily. The regulatory obligations that have followed from the Blueprint — Section 1557, HTI-1, the FTC’s AI enforcement actions — are binding, but they do not cover the full scope of the Blueprint’s five principles. An AMC that interprets “compliance with the Blueprint” as “compliance with the regulations it inspired” will have operationalized some of its principles and left others as aspirations. That is not necessarily wrong — governance programs have to prioritize — but it should be an explicit institutional choice rather than an implicit one.
+
+## B.3 Primary Sources
+
+- Blueprint for an AI Bill of Rights: <https://www.whitehouse.gov/ostp/ai-bill-of-rights/>
+- Applying the Blueprint: <https://www.whitehouse.gov/ostp/ai-bill-of-rights/applying-the-blueprint-for-an-ai-bill-of-rights/>
+- Brookings analysis of the Blueprint’s opportunities and gaps: <https://www.brookings.edu/research/algorithms-of-care-navigating-equity-in-healthcare-ai/>
+- HealthITAnalytics — Healthcare application of the Blueprint: <https://healthitanalytics.com/features/how-does-the-white-house-ai-bill-of-rights-apply-to-healthcare>
