@@ -126,31 +126,52 @@ conflict with each other. The workstreams are shared services not because centra
 is desirable in principle but because fragmentation in these specific areas is costly
 in practice.
 
-```{mermaid}
-%%| label: fig-framework-architecture
-%%| fig-cap: "The AMC AI governance framework. Domains (columns) maintain semi-independent deployment authority. Workstreams (rows) are shared capabilities governed centrally. The AISC provides portfolio oversight and accountability above both dimensions."
-graph TD
-    AISC[AI Steering Committee] --> D1 & D2 & D3 & D4
+```{dot}
+//| label: fig-framework
+//| fig-cap: "A schematic framework for organizing workstreams (orange boxes), domains (blue boxes), and work products and tasks (green ovals). Domains (vertical dimension) capture semi-independent organizations, each with largely independent use cases, budgets and business plans, priorities, and leadership. The workstreams (horizontal dimension) will often require similar or overlapping expertise, and can serve as knowledge resources to provide synergy and uniformity in implementation across domains."
 
-    subgraph Domains
-        D1[Clinical]
-        D2[Research]
-        D3[Education]
-        D4[Business Ops]
-    end
+graph
+{
+   pad="3.0,0.5"
+	fontname="Helvetica,Arial,sans-serif"
+	node [fontname="Helvetica,Arial,sans-serif"]
+	edge [fontname="Helvetica,Arial,sans-serif"]
+	layout=dot
+	labelloc = "t"
+    node [shape=box, style="rounded,filled", fillcolor="lightblue", margin=0.2, fontsize=18]
+    ED[label="Education", group=1]
+    RE[label="Research"]
+    CL[label="Clinical"]
+    BU[label="Business\nOperations"]
 
-    subgraph Workstreams
-        W1[Data & Governance]
-        W2[IT & Infrastructure]
-        W3[Ethics & ELSI]
-        W4[Workforce Development]
-        W5[PM & Support]
-    end
+    node [fillcolor="orange"]
+    DA[label="Data Access\n& Use"]
+    IT[label="IT, Security\n& Infrastructure"]
+    ELSI[label="Ethical, Legal,\n& Social"]
+    WD[label="Training &\nWorkforce Development"]
+    OWN[label="Project Management\n& Support Personnel"]
 
-    W1 & W2 & W3 & W4 & W5 --> D1
-    W1 & W2 & W3 & W4 & W5 --> D2
-    W1 & W2 & W3 & W4 & W5 --> D3
-    W1 & W2 & W3 & W4 & W5 --> D4
+    node [shape=oval, margin=0.1, style=filled, fillcolor="lightgreen", fontsize=12]
+    ED, A1, A2, A3, A4, A5 [ group=1]
+    RE, B1, B2, B3, B4, B5 [ group=2]
+    CL, C1, C2, C3, C4, C5 [ group=3]
+    BU, D1, D2, D3, D4, D5 [ group=4]
+
+	edge [weight=1000 style=dashed color=dimgrey]
+
+    node [shape=oval]
+        ED -- A1 -- A2 -- A3 -- A4 -- A5
+	    RE -- B1 -- B2 -- B3 -- B4 -- B5
+	CL -- C1 -- C2 -- C3 -- C4 -- C5
+	BU -- D1 -- D2 -- D3 -- D4 -- D5
+
+	rank=same {ED -- RE -- CL -- BU}
+	rank=same {DA -- A1 -- B1 -- C1 -- D1 }
+	rank=same {IT -- A2 -- B2 -- C2 -- D2 }
+	rank=same {ELSI -- A3 -- B3 -- C3 -- D3 }
+	rank=same {WD -- A4 -- B4 -- C4 -- D4 }
+	rank=same {OWN -- A5 -- B5 -- C5 -- D5 }
+}
 ```
 
 The AISC is what makes the matrix function as a governance program rather than a
