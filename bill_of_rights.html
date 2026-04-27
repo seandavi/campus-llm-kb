@@ -23,7 +23,26 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
@@ -327,7 +346,7 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./appendices.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">AI principles proposed by select organizations</span></span></a>
+ <span class="menu-text"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">AI Principles Across Governance Frameworks</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -367,8 +386,9 @@ ul.task-list li input[type="checkbox"] {
    
   <ul>
   <li><a href="#the-five-principles" id="toc-the-five-principles" class="nav-link active" data-scroll-target="#the-five-principles"><span class="header-section-number">B.1</span> The Five Principles</a></li>
-  <li><a href="#the-blueprints-limitations" id="toc-the-blueprints-limitations" class="nav-link" data-scroll-target="#the-blueprints-limitations"><span class="header-section-number">B.2</span> The Blueprint’s Limitations</a></li>
-  <li><a href="#primary-sources" id="toc-primary-sources" class="nav-link" data-scroll-target="#primary-sources"><span class="header-section-number">B.3</span> Primary Sources</a></li>
+  <li><a href="#current-status" id="toc-current-status" class="nav-link" data-scroll-target="#current-status"><span class="header-section-number">B.2</span> Current Status</a></li>
+  <li><a href="#the-blueprints-limitations" id="toc-the-blueprints-limitations" class="nav-link" data-scroll-target="#the-blueprints-limitations"><span class="header-section-number">B.3</span> The Blueprint’s Limitations</a></li>
+  <li><a href="#primary-sources" id="toc-primary-sources" class="nav-link" data-scroll-target="#primary-sources"><span class="header-section-number">B.4</span> Primary Sources</a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/seandavi/amc-ai-governance/edit/main/bill_of_rights.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li></ul></div></nav>
     </div>
@@ -377,7 +397,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./appendices.html">Appendices</a></li><li class="breadcrumb-item"><a href="./bill_of_rights.html"><span class="chapter-number">B</span>&nbsp; <span class="chapter-title">OSTP Blueprint for an AI Bill of Rights</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">Appendix B — OSTP Blueprint for an AI Bill of Rights</h1>
+<h1 class="title"><span id="sec-bill-of-rights" class="quarto-section-identifier">Appendix B — OSTP Blueprint for an AI Bill of Rights</span></h1>
 </div>
 
 
@@ -404,21 +424,29 @@ ul.task-list li input[type="checkbox"] {
 <p><strong>Notice and Explanation.</strong> People should know when an automated system is being used and understand how and why it contributes to outcomes affecting them. This principle maps to the consent architecture in <a href="ethics.html" class="quarto-xref"><span>Chapter 16</span></a>, the ONC HTI-1 source attribute requirements, and the California AB 3030 disclosure mandate for AI-generated patient communications. It is the principle with the largest gap between aspiration and current institutional practice: most patients whose care involves AI-assisted documentation, prediction, or decision support receive no meaningful disclosure.</p>
 <p><strong>Human Alternatives, Consideration, and Fallback.</strong> People should be able to opt out of automated systems where appropriate and have access to a human who can remedy problems. For clinical AI, this principle requires that every AI-assisted clinical process have a defined human override path — that a clinician can decline an AI recommendation without penalty, that a patient can request human-only care documentation, and that the governance program has a mechanism for escalating and investigating AI-related errors. The CMS requirement that AI systems cannot substitute for human clinical review in Medicare coverage decisions gives this principle binding force in one specific regulatory context.</p>
 </section>
-<section id="the-blueprints-limitations" class="level2" data-number="B.2">
-<h2 data-number="B.2" class="anchored" data-anchor-id="the-blueprints-limitations"><span class="header-section-number">B.2</span> The Blueprint’s Limitations</h2>
+<section id="current-status" class="level2" data-number="B.2">
+<h2 data-number="B.2" class="anchored" data-anchor-id="current-status"><span class="header-section-number">B.2</span> Current Status</h2>
+<p>The Blueprint was published in October 2022 under the Biden administration and was connected to a broader federal AI governance agenda that included Executive Order 14110 on the Safe, Secure, and Trustworthy Development of Artificial Intelligence (October 2023). Executive Order 14110 was revoked by Executive Order 14179 in January 2025 <span class="citation" data-cites="EO14179">(<a href="references.html#ref-EO14179" role="doc-biblioref">Executive Office of the President 2025</a>)</span>. The Blueprint itself — as an OSTP white paper rather than an executive order — was not formally revoked and remains publicly available, but its status as an expression of federal normative expectations has changed. Governance teams citing the Blueprint as evidence of federal alignment should note this distinction: the Blueprint’s five principles remain a useful values framework, but they no longer carry the same signal about the direction of federal regulatory development that they did in 2022–2024.</p>
+</section>
+<section id="the-blueprints-limitations" class="level2" data-number="B.3">
+<h2 data-number="B.3" class="anchored" data-anchor-id="the-blueprints-limitations"><span class="header-section-number">B.3</span> The Blueprint’s Limitations</h2>
 <p>Two aspects of the Blueprint are worth naming honestly. First, it was written primarily with consumer-facing AI in mind — recommendation algorithms, hiring screens, benefits determinations — and its application to complex clinical AI requires interpretation. The “notice and explanation” principle is tractable for a patient receiving a denial letter. It is considerably harder to operationalize for a sepsis prediction model running continuously in the background of an ICU. Governance teams should treat the Blueprint as a values framework that requires domain-specific translation, not a procedure manual.</p>
 <p>Second, the Blueprint is nonbinding. Institutions that have aligned their AI governance programs to its principles have done so voluntarily. The regulatory obligations that have followed from the Blueprint — Section 1557, HTI-1, the FTC’s AI enforcement actions — are binding, but they do not cover the full scope of the Blueprint’s five principles. An AMC that interprets “compliance with the Blueprint” as “compliance with the regulations it inspired” will have operationalized some of its principles and left others as aspirations. That is not necessarily wrong — governance programs have to prioritize — but it should be an explicit institutional choice rather than an implicit one.</p>
 </section>
-<section id="primary-sources" class="level2" data-number="B.3">
-<h2 data-number="B.3" class="anchored" data-anchor-id="primary-sources"><span class="header-section-number">B.3</span> Primary Sources</h2>
+<section id="primary-sources" class="level2" data-number="B.4">
+<h2 data-number="B.4" class="anchored" data-anchor-id="primary-sources"><span class="header-section-number">B.4</span> Primary Sources</h2>
 <ul>
-<li>Blueprint for an AI Bill of Rights: <a href="https://www.whitehouse.gov/ostp/ai-bill-of-rights/" class="uri">https://www.whitehouse.gov/ostp/ai-bill-of-rights/</a></li>
-<li>Applying the Blueprint: <a href="https://www.whitehouse.gov/ostp/ai-bill-of-rights/applying-the-blueprint-for-an-ai-bill-of-rights/" class="uri">https://www.whitehouse.gov/ostp/ai-bill-of-rights/applying-the-blueprint-for-an-ai-bill-of-rights/</a></li>
-<li>Brookings analysis of the Blueprint’s opportunities and gaps: <a href="https://www.brookings.edu/research/algorithms-of-care-navigating-equity-in-healthcare-ai/" class="uri">https://www.brookings.edu/research/algorithms-of-care-navigating-equity-in-healthcare-ai/</a></li>
-<li>HealthITAnalytics — Healthcare application of the Blueprint: <a href="https://healthitanalytics.com/features/how-does-the-white-house-ai-bill-of-rights-apply-to-healthcare" class="uri">https://healthitanalytics.com/features/how-does-the-white-house-ai-bill-of-rights-apply-to-healthcare</a></li>
+<li>Blueprint for an AI Bill of Rights (OSTP, October 2022): <a href="https://www.whitehouse.gov/ostp/ai-bill-of-rights/" class="uri">https://www.whitehouse.gov/ostp/ai-bill-of-rights/</a></li>
+<li>Applying the Blueprint — sector-specific guidance: <a href="https://www.whitehouse.gov/ostp/ai-bill-of-rights/applying-the-blueprint-for-an-ai-bill-of-rights/" class="uri">https://www.whitehouse.gov/ostp/ai-bill-of-rights/applying-the-blueprint-for-an-ai-bill-of-rights/</a></li>
+<li>Executive Order 14179, Removing Barriers to American Leadership in Artificial Intelligence (January 2025) <span class="citation" data-cites="EO14179">(<a href="references.html#ref-EO14179" role="doc-biblioref">Executive Office of the President 2025</a>)</span></li>
 </ul>
 
 
+<div id="refs" class="references csl-bib-body hanging-indent" role="list" style="display: none">
+<div id="ref-EO14179" class="csl-entry" role="listitem">
+Executive Office of the President. 2025. <span>“Removing Barriers to American Leadership in Artificial Intelligence.”</span> In <em>Federal Register</em>, No. 8741, vol. 90. <a href="https://www.federalregister.gov/documents/2025/01/23/2025-01953/removing-barriers-to-american-leadership-in-artificial-intelligence">https://www.federalregister.gov/documents/2025/01/23/2025-01953/removing-barriers-to-american-leadership-in-artificial-intelligence</a>.
+</div>
+</div>
 </section>
 
 </main> <!-- /main -->
@@ -824,8 +852,8 @@ ul.task-list li input[type="checkbox"] {
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./appendices.html" class="pagination-link" aria-label="AI principles proposed by select organizations">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">AI principles proposed by select organizations</span></span>
+      <a href="./appendices.html" class="pagination-link" aria-label="AI Principles Across Governance Frameworks">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">AI Principles Across Governance Frameworks</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">

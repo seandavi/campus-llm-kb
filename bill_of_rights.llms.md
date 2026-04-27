@@ -16,15 +16,20 @@ Reading the Blueprint alongside the regulatory chapters of this book shows which
 
 **Human Alternatives, Consideration, and Fallback.** People should be able to opt out of automated systems where appropriate and have access to a human who can remedy problems. For clinical AI, this principle requires that every AI-assisted clinical process have a defined human override path — that a clinician can decline an AI recommendation without penalty, that a patient can request human-only care documentation, and that the governance program has a mechanism for escalating and investigating AI-related errors. The CMS requirement that AI systems cannot substitute for human clinical review in Medicare coverage decisions gives this principle binding force in one specific regulatory context.
 
-## B.2 The Blueprint’s Limitations
+## B.2 Current Status
+
+The Blueprint was published in October 2022 under the Biden administration and was connected to a broader federal AI governance agenda that included Executive Order 14110 on the Safe, Secure, and Trustworthy Development of Artificial Intelligence (October 2023). Executive Order 14110 was revoked by Executive Order 14179 in January 2025 ([Executive Office of the President 2025](#ref-EO14179)). The Blueprint itself — as an OSTP white paper rather than an executive order — was not formally revoked and remains publicly available, but its status as an expression of federal normative expectations has changed. Governance teams citing the Blueprint as evidence of federal alignment should note this distinction: the Blueprint’s five principles remain a useful values framework, but they no longer carry the same signal about the direction of federal regulatory development that they did in 2022–2024.
+
+## B.3 The Blueprint’s Limitations
 
 Two aspects of the Blueprint are worth naming honestly. First, it was written primarily with consumer-facing AI in mind — recommendation algorithms, hiring screens, benefits determinations — and its application to complex clinical AI requires interpretation. The “notice and explanation” principle is tractable for a patient receiving a denial letter. It is considerably harder to operationalize for a sepsis prediction model running continuously in the background of an ICU. Governance teams should treat the Blueprint as a values framework that requires domain-specific translation, not a procedure manual.
 
 Second, the Blueprint is nonbinding. Institutions that have aligned their AI governance programs to its principles have done so voluntarily. The regulatory obligations that have followed from the Blueprint — Section 1557, HTI-1, the FTC’s AI enforcement actions — are binding, but they do not cover the full scope of the Blueprint’s five principles. An AMC that interprets “compliance with the Blueprint” as “compliance with the regulations it inspired” will have operationalized some of its principles and left others as aspirations. That is not necessarily wrong — governance programs have to prioritize — but it should be an explicit institutional choice rather than an implicit one.
 
-## B.3 Primary Sources
+## B.4 Primary Sources
 
-- Blueprint for an AI Bill of Rights: <https://www.whitehouse.gov/ostp/ai-bill-of-rights/>
-- Applying the Blueprint: <https://www.whitehouse.gov/ostp/ai-bill-of-rights/applying-the-blueprint-for-an-ai-bill-of-rights/>
-- Brookings analysis of the Blueprint’s opportunities and gaps: <https://www.brookings.edu/research/algorithms-of-care-navigating-equity-in-healthcare-ai/>
-- HealthITAnalytics — Healthcare application of the Blueprint: <https://healthitanalytics.com/features/how-does-the-white-house-ai-bill-of-rights-apply-to-healthcare>
+- Blueprint for an AI Bill of Rights (OSTP, October 2022): <https://www.whitehouse.gov/ostp/ai-bill-of-rights/>
+- Applying the Blueprint — sector-specific guidance: <https://www.whitehouse.gov/ostp/ai-bill-of-rights/applying-the-blueprint-for-an-ai-bill-of-rights/>
+- Executive Order 14179, Removing Barriers to American Leadership in Artificial Intelligence (January 2025) ([Executive Office of the President 2025](#ref-EO14179))
+
+Executive Office of the President. 2025. “Removing Barriers to American Leadership in Artificial Intelligence.” In *Federal Register*, No. 8741, vol. 90. <https://www.federalregister.gov/documents/2025/01/23/2025-01953/removing-barriers-to-american-leadership-in-artificial-intelligence>.
