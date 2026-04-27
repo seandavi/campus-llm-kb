@@ -395,66 +395,74 @@ ul.task-list li input[type="checkbox"] {
 
 
 <p>This appendix documents the workflow used to research and write the chapters of this book. We include it not as a novelty item but because it is itself an instance of the kind of human-AI collaboration the book describes — and because the specific tool choices, failure modes, and tradeoffs we encountered are illustrative of the decisions any organization faces when it tries to use AI for substantive knowledge work.</p>
-<p>The workflow involved four distinct agents with different roles: a human author who owned the intellectual direction, Claude Opus 4.7 as the planning and architectural intelligence, Claude Sonnet 4.6 as the orchestrating author, and Gemini as the research engine. Each played to its comparative advantage, and the division of labor was not arbitrary — it emerged from thinking carefully about what each tool does well and where each fails.</p>
+<p>The workflow involved four distinct agents with different roles: a human author who owned the intellectual direction, Claude Opus 4.7 as the planning and architectural intelligence, Claude Sonnet 4.6 as the orchestrating author, and Gemini as the research engine. Each played to its comparative advantage, and the division of labor was not arbitrary — it emerged from thinking carefully about what each tool does well and where each fails. The human author was present and directing at every phase: writing the prompts, evaluating the outputs, redirecting scope when the AI’s framing was wrong, and deciding what to accept, revise, or discard. No phase ran autonomously to completion without human review.</p>
 <section id="the-workflow-in-brief" class="level2" data-number="D.1">
 <h2 data-number="D.1" class="anchored" data-anchor-id="the-workflow-in-brief"><span class="header-section-number">D.1</span> The Workflow in Brief</h2>
 <p>The workflow proceeded in five phases. <a href="#tbl-workflow-phases" class="quarto-xref">Table&nbsp;<span>D.1</span></a> summarizes them.</p>
 <div id="tbl-workflow-phases" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-tbl figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-workflow-phases-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Table&nbsp;D.1: The six-phase multi-model authorship workflow. Each phase has a distinct responsible agent and produces a defined artifact.
+Table&nbsp;D.1: The six-phase multi-model authorship workflow. The human author directed and evaluated every phase; no phase ran to completion without human review. The AI agents contributed throughput and breadth; the human author contributed judgment, direction, and accountability for the final text.
 </figcaption>
 <div aria-describedby="tbl-workflow-phases-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <table class="caption-top table">
 <colgroup>
+<col style="width: 11%">
+<col style="width: 15%">
 <col style="width: 26%">
-<col style="width: 19%">
-<col style="width: 23%">
-<col style="width: 30%">
+<col style="width: 33%">
+<col style="width: 12%">
 </colgroup>
 <thead>
 <tr class="header">
 <th>Phase</th>
-<th>Who</th>
-<th>What</th>
+<th>AI agent</th>
+<th>What the AI did</th>
+<th>Human author’s role</th>
 <th>Output</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td>1. Scaffold</td>
-<td>Human author</td>
+<td>—</td>
+<td>—</td>
 <td>Built the Quarto book structure, wrote initial chapter drafts, established the domain/workstream framework</td>
 <td>Existing <code>.qmd</code> files, <code>_quarto.yml</code>, <code>references.bib</code></td>
 </tr>
 <tr class="even">
 <td>2. Analysis and planning</td>
 <td>Claude Opus 4.7</td>
-<td>Reviewed the repo, identified gaps, wrote a detailed research plan specifying structure, voice, citation standards, and figure requirements</td>
+<td>Reviewed the repo, identified gaps, drafted a research plan covering structure, voice, citation standards, and figure requirements</td>
+<td>Directed the analysis with specific prompts; reviewed the master prompt and revised scope before accepting it</td>
 <td><code>_research/MASTER_PROMPT.md</code> (~500 words)</td>
 </tr>
 <tr class="odd">
 <td>3. Brief writing</td>
 <td>Claude Sonnet 4.6</td>
-<td>Wrote per-chapter research briefs specifying the argument arc, source targets, figure sketches, and open questions for each of 17 chapters</td>
+<td>Wrote per-chapter research briefs specifying argument arc, source targets, figure sketches, and open questions</td>
+<td>Reviewed each brief; redirected scope where framing was wrong (e.g., ensuring all four AMC domains were covered, not just clinical)</td>
 <td>17 briefs in <code>_research/briefs/</code> (~16,500 words total)</td>
 </tr>
 <tr class="even">
 <td>4. Deep research</td>
 <td>Gemini (via CLI)</td>
-<td>Executed web-search-backed research for each chapter brief, producing annotated source lists, argument spines, section outlines, and figure sketches</td>
+<td>Executed web-search-backed research for each brief, producing annotated source lists, argument spines, section outlines, and figure sketches</td>
+<td>Reviewed each dossier for scope gaps; evaluated source quality; accepted, rejected, or re-ran research sessions as needed</td>
 <td>17 dossiers in <code>_research/dossiers/</code> (~30,900 words total)</td>
 </tr>
 <tr class="odd">
 <td>5. Authorship</td>
 <td>Claude Sonnet 4.6</td>
-<td>Wrote chapter prose from dossiers, verified citations, created Quarto-formatted diagrams and tables, added BibTeX entries</td>
+<td>Wrote chapter prose from dossiers, verified citations, created diagrams and tables, added BibTeX entries</td>
+<td>Reviewed each chapter; evaluated voice, argument, and factual accuracy; directed revisions and approved final text</td>
 <td>Chapter <code>.qmd</code> files, updated <code>references.bib</code></td>
 </tr>
 <tr class="even">
 <td>6. Review pass</td>
 <td>Gemini + Claude Sonnet 4.6</td>
-<td>Audited completed chapters for unsupported factual claims and unlinked entities; resolved high-confidence gaps with citations and inline links</td>
+<td>Audited completed chapters for unsupported factual claims and unlinked entities; flagged gaps for resolution</td>
+<td>Evaluated each flagged item; approved or rejected proposed citations; made final editorial calls on what to add, revise, or leave as synthesis</td>
 <td>Updated <code>.qmd</code> files, new BibTeX entries, <code>_research/REVIEW_PROMPT.md</code>, <code>_research/review_groups/</code></td>
 </tr>
 </tbody>
