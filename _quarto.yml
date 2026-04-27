@@ -8,8 +8,15 @@ book:
   cover-image: cover.jpg
   title: "Implementing AI in Academic Medicine"
   subtitle: "A guide to governance and principled practice"
-  #author: "Sean Davis"
-  #date: "2023-05-13"
+  author:
+    - name: Sean Davis, MD, PhD
+      email: seandavi@gmail.com
+      affiliations:
+        - name: "Departments of Biomedical Informatics and Medicine, University of Colorado Anschutz School of Medicine"
+          city: Aurora
+          state: CO
+          country: USA
+  date: last-modified
   site-url: https://seandavi.github.io/amc-ai-governance/
   repo-url: https://github.com/seandavi/amc-ai-governance/
   repo-branch: main
