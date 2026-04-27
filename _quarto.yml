@@ -2,7 +2,8 @@ project:
   type: book
 
 website:
-  google-analytics: "G-KCEE2FZL6D"
+  google-analytics: 
+    tracking-id: "G-KCEE2FZL6D"
   cookie-consent: true
   llms-txt: true
 
