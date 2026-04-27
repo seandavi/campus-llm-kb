@@ -50,6 +50,6 @@ appendix (@sec-workflow-appendix) describes that process in detail, including wh
 AI contributes most and where human judgment remains the necessary check.
 
 This is a living document. Scope and content can and will continue to change and evolve.
-All the material is open for comment. Contributions are welcome (process is documented 
-at the github repo: https://githbub.com/seandavi/amc-ai-governance). Reuse and 
+All the material is open for comment. Contributions are welcome via the 
+[github repo](https://githbub.com/seandavi/amc-ai-governance)). Reuse and 
 sharing are encouraged. 
