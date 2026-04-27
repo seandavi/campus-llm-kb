@@ -71,9 +71,6 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 <style>html{ scroll-behavior: smooth; }</style>
-<script src="site_libs/quarto-diagram/mermaid.min.js"></script>
-<script src="site_libs/quarto-diagram/mermaid-init.js"></script>
-<link href="site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
 
 
 </head>
@@ -422,37 +419,414 @@ ul.task-list li input[type="checkbox"] {
 <p>Workstream-level decisions — the data governance framework, the institutional API architecture, the workforce development curriculum, the portfolio management process — belong to centralized institutional functions because the alternatives are worse. An institution where each domain maintains its own data governance policy, its own API infrastructure, and its own workforce development program will produce four incompatible frameworks, four redundant technical stacks, and four sets of training content that conflict with each other. The workstreams are shared services not because central control is desirable in principle but because fragmentation in these specific areas is costly in practice.</p>
 <div class="cell" data-layout-align="default">
 <div class="cell-output-display">
-<div id="fig-framework-architecture" class="quarto-float quarto-figure quarto-figure-center anchored">
+<div id="fig-framework" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-framework-architecture-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div aria-describedby="fig-framework-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div>
-<pre class="mermaid mermaid-js" data-label="fig-framework-architecture">graph TD
-    AISC[AI Steering Committee] --&gt; D1 &amp; D2 &amp; D3 &amp; D4
-
-    subgraph Domains
-        D1[Clinical]
-        D2[Research]
-        D3[Education]
-        D4[Business Ops]
-    end
-
-    subgraph Workstreams
-        W1[Data &amp; Governance]
-        W2[IT &amp; Infrastructure]
-        W3[Ethics &amp; ELSI]
-        W4[Workforce Development]
-        W5[PM &amp; Support]
-    end
-
-    W1 &amp; W2 &amp; W3 &amp; W4 &amp; W5 --&gt; D1
-    W1 &amp; W2 &amp; W3 &amp; W4 &amp; W5 --&gt; D2
-    W1 &amp; W2 &amp; W3 &amp; W4 &amp; W5 --&gt; D3
-    W1 &amp; W2 &amp; W3 &amp; W4 &amp; W5 --&gt; D4
-</pre>
+<svg width="672" height="480" viewbox="0.00 0.00 1074.20 679.20" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" style="; max-width: none; max-height: none">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(216 643.2)">
+<polygon fill="white" stroke="transparent" points="-216,36 -216,-643.2 858.2,-643.2 858.2,36 -216,36"></polygon>
+<!-- ED -->
+<g id="node1" class="node">
+<title>ED</title>
+<path fill="lightblue" stroke="black" d="M291.19,-596.2C291.19,-596.2 214.23,-596.2 214.23,-596.2 208.23,-596.2 202.23,-590.2 202.23,-584.2 202.23,-584.2 202.23,-559 202.23,-559 202.23,-553 208.23,-547 214.23,-547 214.23,-547 291.19,-547 291.19,-547 297.19,-547 303.19,-553 303.19,-559 303.19,-559 303.19,-584.2 303.19,-584.2 303.19,-590.2 297.19,-596.2 291.19,-596.2"></path>
+<text text-anchor="middle" x="252.71" y="-566.2" font-family="Helvetica,Arial,sans-serif" font-size="18.00">Education</text>
+</g>
+<!-- RE -->
+<g id="node2" class="node">
+<title>RE</title>
+<path fill="lightblue" stroke="black" d="M402.67,-596.2C402.67,-596.2 332.75,-596.2 332.75,-596.2 326.75,-596.2 320.75,-590.2 320.75,-584.2 320.75,-584.2 320.75,-559 320.75,-559 320.75,-553 326.75,-547 332.75,-547 332.75,-547 402.67,-547 402.67,-547 408.67,-547 414.67,-553 414.67,-559 414.67,-559 414.67,-584.2 414.67,-584.2 414.67,-590.2 408.67,-596.2 402.67,-596.2"></path>
+<text text-anchor="middle" x="367.71" y="-566.2" font-family="Helvetica,Arial,sans-serif" font-size="18.00">Research</text>
+</g>
+<!-- ED&#45;&#45;RE -->
+<g id="edge21" class="edge">
+<title>ED--RE</title>
+<path fill="none" stroke="dimgrey" stroke-dasharray="5,2" d="M303.47,-571.6C309.16,-571.6 314.85,-571.6 320.53,-571.6"></path>
+</g>
+<!-- A1 -->
+<g id="node10" class="node">
+<title>A1</title>
+<ellipse fill="lightgreen" stroke="black" cx="252.71" cy="-464.4" rx="27" ry="20.16"></ellipse>
+<text text-anchor="middle" x="252.71" y="-460.8" font-family="Helvetica,Arial,sans-serif" font-size="12.00">A1</text>
+</g>
+<!-- ED&#45;&#45;A1 -->
+<g id="edge1" class="edge">
+<title>ED--A1</title>
+<path fill="none" stroke="dimgrey" stroke-dasharray="5,2" d="M252.71,-546.99C252.71,-528.21 252.71,-502.26 252.71,-484.71"></path>
+</g>
+<!-- CL -->
+<g id="node3" class="node">
+<title>CL</title>
+<path fill="lightblue" stroke="black" d="M505.2,-596.2C505.2,-596.2 444.22,-596.2 444.22,-596.2 438.22,-596.2 432.22,-590.2 432.22,-584.2 432.22,-584.2 432.22,-559 432.22,-559 432.22,-553 438.22,-547 444.22,-547 444.22,-547 505.2,-547 505.2,-547 511.2,-547 517.2,-553 517.2,-559 517.2,-559 517.2,-584.2 517.2,-584.2 517.2,-590.2 511.2,-596.2 505.2,-596.2"></path>
+<text text-anchor="middle" x="474.71" y="-566.2" font-family="Helvetica,Arial,sans-serif" font-size="18.00">Clinical</text>
+</g>
+<!-- RE&#45;&#45;CL -->
+<g id="edge22" class="edge">
+<title>RE--CL</title>
+<path fill="none" stroke="dimgrey" stroke-dasharray="5,2" d="M414.94,-571.6C420.7,-571.6 426.46,-571.6 432.22,-571.6"></path>
+</g>
+<!-- B1 -->
+<g id="node15" class="node">
+<title>B1</title>
+<ellipse fill="lightgreen" stroke="black" cx="367.71" cy="-464.4" rx="27" ry="20.16"></ellipse>
+<text text-anchor="middle" x="367.71" y="-460.8" font-family="Helvetica,Arial,sans-serif" font-size="12.00">B1</text>
+</g>
+<!-- RE&#45;&#45;B1 -->
+<g id="edge6" class="edge">
+<title>RE--B1</title>
+<path fill="none" stroke="dimgrey" stroke-dasharray="5,2" d="M367.71,-546.99C367.71,-528.21 367.71,-502.26 367.71,-484.71"></path>
+</g>
+<!-- BU -->
+<g id="node4" class="node">
+<title>BU</title>
+<path fill="lightblue" stroke="black" d="M630.19,-607.3C630.19,-607.3 547.23,-607.3 547.23,-607.3 541.23,-607.3 535.23,-601.3 535.23,-595.3 535.23,-595.3 535.23,-547.9 535.23,-547.9 535.23,-541.9 541.23,-535.9 547.23,-535.9 547.23,-535.9 630.19,-535.9 630.19,-535.9 636.19,-535.9 642.19,-541.9 642.19,-547.9 642.19,-547.9 642.19,-595.3 642.19,-595.3 642.19,-601.3 636.19,-607.3 630.19,-607.3"></path>
+<text text-anchor="middle" x="588.71" y="-577" font-family="Helvetica,Arial,sans-serif" font-size="18.00">Business</text>
+<text text-anchor="middle" x="588.71" y="-555.4" font-family="Helvetica,Arial,sans-serif" font-size="18.00">Operations</text>
+</g>
+<!-- CL&#45;&#45;BU -->
+<g id="edge23" class="edge">
+<title>CL--BU</title>
+<path fill="none" stroke="dimgrey" stroke-dasharray="5,2" d="M517.46,-571.6C523.3,-571.6 529.15,-571.6 534.99,-571.6"></path>
+</g>
+<!-- C1 -->
+<g id="node20" class="node">
+<title>C1</title>
+<ellipse fill="lightgreen" stroke="black" cx="474.71" cy="-464.4" rx="27" ry="20.16"></ellipse>
+<text text-anchor="middle" x="474.71" y="-460.8" font-family="Helvetica,Arial,sans-serif" font-size="12.00">C1</text>
+</g>
+<!-- CL&#45;&#45;C1 -->
+<g id="edge11" class="edge">
+<title>CL--C1</title>
+<path fill="none" stroke="dimgrey" stroke-dasharray="5,2" d="M474.71,-546.99C474.71,-528.21 474.71,-502.26 474.71,-484.71"></path>
+</g>
+<!-- D1 -->
+<g id="node25" class="node">
+<title>D1</title>
+<ellipse fill="lightgreen" stroke="black" cx="588.71" cy="-464.4" rx="27" ry="20.16"></ellipse>
+<text text-anchor="middle" x="588.71" y="-460.8" font-family="Helvetica,Arial,sans-serif" font-size="12.00">D1</text>
+</g>
+<!-- BU&#45;&#45;D1 -->
+<g id="edge16" class="edge">
+<title>BU--D1</title>
+<path fill="none" stroke="dimgrey" stroke-dasharray="5,2" d="M588.71,-535.86C588.71,-518.87 588.71,-499.04 588.71,-484.76"></path>
+</g>
+<!-- DA -->
+<g id="node5" class="node">
+<title>DA</title>
+<path fill="orange" stroke="black" d="M195.67,-500.1C195.67,-500.1 101.75,-500.1 101.75,-500.1 95.75,-500.1 89.75,-494.1 89.75,-488.1 89.75,-488.1 89.75,-440.7 89.75,-440.7 89.75,-434.7 95.75,-428.7 101.75,-428.7 101.75,-428.7 195.67,-428.7 195.67,-428.7 201.67,-428.7 207.67,-434.7 207.67,-440.7 207.67,-440.7 207.67,-488.1 207.67,-488.1 207.67,-494.1 201.67,-500.1 195.67,-500.1"></path>
+<text text-anchor="middle" x="148.71" y="-469.8" font-family="Helvetica,Arial,sans-serif" font-size="18.00">Data Access</text>
+<text text-anchor="middle" x="148.71" y="-448.2" font-family="Helvetica,Arial,sans-serif" font-size="18.00">&amp; Use</text>
+</g>
+<!-- DA&#45;&#45;A1 -->
+<g id="edge24" class="edge">
+<title>DA--A1</title>
+<path fill="none" stroke="dimgrey" stroke-dasharray="5,2" d="M207.62,-464.4C213.61,-464.4 219.59,-464.4 225.58,-464.4"></path>
+</g>
+<!-- IT -->
+<g id="node6" class="node">
+<title>IT</title>
+<path fill="orange" stroke="black" d="M196.16,-392.9C196.16,-392.9 75.26,-392.9 75.26,-392.9 69.26,-392.9 63.26,-386.9 63.26,-380.9 63.26,-380.9 63.26,-333.5 63.26,-333.5 63.26,-327.5 69.26,-321.5 75.26,-321.5 75.26,-321.5 196.16,-321.5 196.16,-321.5 202.16,-321.5 208.16,-327.5 208.16,-333.5 208.16,-333.5 208.16,-380.9 208.16,-380.9 208.16,-386.9 202.16,-392.9 196.16,-392.9"></path>
+<text text-anchor="middle" x="135.71" y="-362.6" font-family="Helvetica,Arial,sans-serif" font-size="18.00">IT, Security</text>
+<text text-anchor="middle" x="135.71" y="-341" font-family="Helvetica,Arial,sans-serif" font-size="18.00">&amp; Infrastructure</text>
+</g>
+<!-- A2 -->
+<g id="node11" class="node">
+<title>A2</title>
+<ellipse fill="lightgreen" stroke="black" cx="252.71" cy="-357.2" rx="27" ry="20.16"></ellipse>
+<text text-anchor="middle" x="252.71" y="-353.6" font-family="Helvetica,Arial,sans-serif" font-size="12.00">A2</text>
+</g>
+<!-- IT&#45;&#45;A2 -->
+<g id="edge28" class="edge">
+<title>IT--A2</title>
+<path fill="none" stroke="dimgrey" stroke-dasharray="5,2" d="M208.38,-357.2C214.15,-357.2 219.92,-357.2 225.7,-357.2"></path>
+</g>
+<!-- ELSI -->
+<g id="node7" class="node">
+<title>ELSI</title>
+<path fill="orange" stroke="black" d="M195.66,-285.7C195.66,-285.7 85.76,-285.7 85.76,-285.7 79.76,-285.7 73.76,-279.7 73.76,-273.7 73.76,-273.7 73.76,-226.3 73.76,-226.3 73.76,-220.3 79.76,-214.3 85.76,-214.3 85.76,-214.3 195.66,-214.3 195.66,-214.3 201.66,-214.3 207.66,-220.3 207.66,-226.3 207.66,-226.3 207.66,-273.7 207.66,-273.7 207.66,-279.7 201.66,-285.7 195.66,-285.7"></path>
+<text text-anchor="middle" x="140.71" y="-255.4" font-family="Helvetica,Arial,sans-serif" font-size="18.00">Ethical, Legal,</text>
+<text text-anchor="middle" x="140.71" y="-233.8" font-family="Helvetica,Arial,sans-serif" font-size="18.00">&amp; Social</text>
+</g>
+<!-- A3 -->
+<g id="node12" class="node">
+<title>A3</title>
+<ellipse fill="lightgreen" stroke="black" cx="252.71" cy="-250" rx="27" ry="20.16"></ellipse>
+<text text-anchor="middle" x="252.71" y="-246.4" font-family="Helvetica,Arial,sans-serif" font-size="12.00">A3</text>
+</g>
+<!-- ELSI&#45;&#45;A3 -->
+<g id="edge32" class="edge">
+<title>ELSI--A3</title>
+<path fill="none" stroke="dimgrey" stroke-dasharray="5,2" d="M207.65,-250C213.63,-250 219.62,-250 225.6,-250"></path>
+</g>
+<!-- WD -->
+<g id="node8" class="node">
+<title>WD</title>
+<path fill="orange" stroke="black" d="M195.63,-178.5C195.63,-178.5 11.79,-178.5 11.79,-178.5 5.79,-178.5 -0.21,-172.5 -0.21,-166.5 -0.21,-166.5 -0.21,-119.1 -0.21,-119.1 -0.21,-113.1 5.79,-107.1 11.79,-107.1 11.79,-107.1 195.63,-107.1 195.63,-107.1 201.63,-107.1 207.63,-113.1 207.63,-119.1 207.63,-119.1 207.63,-166.5 207.63,-166.5 207.63,-172.5 201.63,-178.5 195.63,-178.5"></path>
+<text text-anchor="middle" x="103.71" y="-148.2" font-family="Helvetica,Arial,sans-serif" font-size="18.00">Training &amp;</text>
+<text text-anchor="middle" x="103.71" y="-126.6" font-family="Helvetica,Arial,sans-serif" font-size="18.00">Workforce Development</text>
+</g>
+<!-- A4 -->
+<g id="node13" class="node">
+<title>A4</title>
+<ellipse fill="lightgreen" stroke="black" cx="252.71" cy="-142.8" rx="27" ry="20.16"></ellipse>
+<text text-anchor="middle" x="252.71" y="-139.2" font-family="Helvetica,Arial,sans-serif" font-size="12.00">A4</text>
+</g>
+<!-- WD&#45;&#45;A4 -->
+<g id="edge36" class="edge">
+<title>WD--A4</title>
+<path fill="none" stroke="dimgrey" stroke-dasharray="5,2" d="M207.6,-142.8C213.59,-142.8 219.58,-142.8 225.58,-142.8"></path>
+</g>
+<!-- OWN -->
+<g id="node9" class="node">
+<title>OWN</title>
+<path fill="orange" stroke="black" d="M196.21,-71.3C196.21,-71.3 41.21,-71.3 41.21,-71.3 35.21,-71.3 29.21,-65.3 29.21,-59.3 29.21,-59.3 29.21,-11.9 29.21,-11.9 29.21,-5.9 35.21,0.1 41.21,0.1 41.21,0.1 196.21,0.1 196.21,0.1 202.21,0.1 208.21,-5.9 208.21,-11.9 208.21,-11.9 208.21,-59.3 208.21,-59.3 208.21,-65.3 202.21,-71.3 196.21,-71.3"></path>
+<text text-anchor="middle" x="118.71" y="-41" font-family="Helvetica,Arial,sans-serif" font-size="18.00">Project Management</text>
+<text text-anchor="middle" x="118.71" y="-19.4" font-family="Helvetica,Arial,sans-serif" font-size="18.00">&amp; Support Personnel</text>
+</g>
+<!-- A5 -->
+<g id="node14" class="node">
+<title>A5</title>
+<ellipse fill="lightgreen" stroke="black" cx="252.71" cy="-35.6" rx="27" ry="20.16"></ellipse>
+<text text-anchor="middle" x="252.71" y="-32" font-family="Helvetica,Arial,sans-serif" font-size="12.00">A5</text>
+</g>
+<!-- OWN&#45;&#45;A5 -->
+<g id="edge40" class="edge">
+<title>OWN--A5</title>
+<path fill="none" stroke="dimgrey" stroke-dasharray="5,2" d="M208.22,-35.6C214.01,-35.6 219.8,-35.6 225.6,-35.6"></path>
+</g>
+<!-- A1&#45;&#45;A2 -->
+<g id="edge2" class="edge">
+<title>A1--A2</title>
+<path fill="none" stroke="dimgrey" stroke-dasharray="5,2" d="M252.71,-444.1C252.71,-425.12 252.71,-396.31 252.71,-377.37"></path>
+</g>
+<!-- A1&#45;&#45;B1 -->
+<g id="edge25" class="edge">
+<title>A1--B1</title>
+<path fill="none" stroke="dimgrey" stroke-dasharray="5,2" d="M280.11,-464.4C300.3,-464.4 320.49,-464.4 340.68,-464.4"></path>
+</g>
+<!-- A2&#45;&#45;A3 -->
+<g id="edge3" class="edge">
+<title>A2--A3</title>
+<path fill="none" stroke="dimgrey" stroke-dasharray="5,2" d="M252.71,-336.9C252.71,-317.92 252.71,-289.11 252.71,-270.17"></path>
+</g>
+<!-- B2 -->
+<g id="node16" class="node">
+<title>B2</title>
+<ellipse fill="lightgreen" stroke="black" cx="367.71" cy="-357.2" rx="27" ry="20.16"></ellipse>
+<text text-anchor="middle" x="367.71" y="-353.6" font-family="Helvetica,Arial,sans-serif" font-size="12.00">B2</text>
+</g>
+<!-- A2&#45;&#45;B2 -->
+<g id="edge29" class="edge">
+<title>A2--B2</title>
+<path fill="none" stroke="dimgrey" stroke-dasharray="5,2" d="M280.11,-357.2C300.3,-357.2 320.49,-357.2 340.68,-357.2"></path>
+</g>
+<!-- A3&#45;&#45;A4 -->
+<g id="edge4" class="edge">
+<title>A3--A4</title>
+<path fill="none" stroke="dimgrey" stroke-dasharray="5,2" d="M252.71,-229.7C252.71,-210.72 252.71,-181.91 252.71,-162.97"></path>
+</g>
+<!-- B3 -->
+<g id="node17" class="node">
+<title>B3</title>
+<ellipse fill="lightgreen" stroke="black" cx="367.71" cy="-250" rx="27" ry="20.16"></ellipse>
+<text text-anchor="middle" x="367.71" y="-246.4" font-family="Helvetica,Arial,sans-serif" font-size="12.00">B3</text>
+</g>
+<!-- A3&#45;&#45;B3 -->
+<g id="edge33" class="edge">
+<title>A3--B3</title>
+<path fill="none" stroke="dimgrey" stroke-dasharray="5,2" d="M280.11,-250C300.3,-250 320.49,-250 340.68,-250"></path>
+</g>
+<!-- A4&#45;&#45;A5 -->
+<g id="edge5" class="edge">
+<title>A4--A5</title>
+<path fill="none" stroke="dimgrey" stroke-dasharray="5,2" d="M252.71,-122.5C252.71,-103.52 252.71,-74.71 252.71,-55.77"></path>
+</g>
+<!-- B4 -->
+<g id="node18" class="node">
+<title>B4</title>
+<ellipse fill="lightgreen" stroke="black" cx="367.71" cy="-142.8" rx="27" ry="20.16"></ellipse>
+<text text-anchor="middle" x="367.71" y="-139.2" font-family="Helvetica,Arial,sans-serif" font-size="12.00">B4</text>
+</g>
+<!-- A4&#45;&#45;B4 -->
+<g id="edge37" class="edge">
+<title>A4--B4</title>
+<path fill="none" stroke="dimgrey" stroke-dasharray="5,2" d="M280.11,-142.8C300.3,-142.8 320.49,-142.8 340.68,-142.8"></path>
+</g>
+<!-- B5 -->
+<g id="node19" class="node">
+<title>B5</title>
+<ellipse fill="lightgreen" stroke="black" cx="367.71" cy="-35.6" rx="27" ry="20.16"></ellipse>
+<text text-anchor="middle" x="367.71" y="-32" font-family="Helvetica,Arial,sans-serif" font-size="12.00">B5</text>
+</g>
+<!-- A5&#45;&#45;B5 -->
+<g id="edge41" class="edge">
+<title>A5--B5</title>
+<path fill="none" stroke="dimgrey" stroke-dasharray="5,2" d="M280.11,-35.6C300.3,-35.6 320.49,-35.6 340.68,-35.6"></path>
+</g>
+<!-- B1&#45;&#45;B2 -->
+<g id="edge7" class="edge">
+<title>B1--B2</title>
+<path fill="none" stroke="dimgrey" stroke-dasharray="5,2" d="M367.71,-444.1C367.71,-425.12 367.71,-396.31 367.71,-377.37"></path>
+</g>
+<!-- B1&#45;&#45;C1 -->
+<g id="edge26" class="edge">
+<title>B1--C1</title>
+<path fill="none" stroke="dimgrey" stroke-dasharray="5,2" d="M394.88,-464.4C412.45,-464.4 430.01,-464.4 447.58,-464.4"></path>
+</g>
+<!-- B2&#45;&#45;B3 -->
+<g id="edge8" class="edge">
+<title>B2--B3</title>
+<path fill="none" stroke="dimgrey" stroke-dasharray="5,2" d="M367.71,-336.9C367.71,-317.92 367.71,-289.11 367.71,-270.17"></path>
+</g>
+<!-- C2 -->
+<g id="node21" class="node">
+<title>C2</title>
+<ellipse fill="lightgreen" stroke="black" cx="474.71" cy="-357.2" rx="27" ry="20.16"></ellipse>
+<text text-anchor="middle" x="474.71" y="-353.6" font-family="Helvetica,Arial,sans-serif" font-size="12.00">C2</text>
+</g>
+<!-- B2&#45;&#45;C2 -->
+<g id="edge30" class="edge">
+<title>B2--C2</title>
+<path fill="none" stroke="dimgrey" stroke-dasharray="5,2" d="M394.88,-357.2C412.45,-357.2 430.01,-357.2 447.58,-357.2"></path>
+</g>
+<!-- B3&#45;&#45;B4 -->
+<g id="edge9" class="edge">
+<title>B3--B4</title>
+<path fill="none" stroke="dimgrey" stroke-dasharray="5,2" d="M367.71,-229.7C367.71,-210.72 367.71,-181.91 367.71,-162.97"></path>
+</g>
+<!-- C3 -->
+<g id="node22" class="node">
+<title>C3</title>
+<ellipse fill="lightgreen" stroke="black" cx="474.71" cy="-250" rx="27" ry="20.16"></ellipse>
+<text text-anchor="middle" x="474.71" y="-246.4" font-family="Helvetica,Arial,sans-serif" font-size="12.00">C3</text>
+</g>
+<!-- B3&#45;&#45;C3 -->
+<g id="edge34" class="edge">
+<title>B3--C3</title>
+<path fill="none" stroke="dimgrey" stroke-dasharray="5,2" d="M394.88,-250C412.45,-250 430.01,-250 447.58,-250"></path>
+</g>
+<!-- B4&#45;&#45;B5 -->
+<g id="edge10" class="edge">
+<title>B4--B5</title>
+<path fill="none" stroke="dimgrey" stroke-dasharray="5,2" d="M367.71,-122.5C367.71,-103.52 367.71,-74.71 367.71,-55.77"></path>
+</g>
+<!-- C4 -->
+<g id="node23" class="node">
+<title>C4</title>
+<ellipse fill="lightgreen" stroke="black" cx="474.71" cy="-142.8" rx="27" ry="20.16"></ellipse>
+<text text-anchor="middle" x="474.71" y="-139.2" font-family="Helvetica,Arial,sans-serif" font-size="12.00">C4</text>
+</g>
+<!-- B4&#45;&#45;C4 -->
+<g id="edge38" class="edge">
+<title>B4--C4</title>
+<path fill="none" stroke="dimgrey" stroke-dasharray="5,2" d="M394.88,-142.8C412.45,-142.8 430.01,-142.8 447.58,-142.8"></path>
+</g>
+<!-- C5 -->
+<g id="node24" class="node">
+<title>C5</title>
+<ellipse fill="lightgreen" stroke="black" cx="474.71" cy="-35.6" rx="27" ry="20.16"></ellipse>
+<text text-anchor="middle" x="474.71" y="-32" font-family="Helvetica,Arial,sans-serif" font-size="12.00">C5</text>
+</g>
+<!-- B5&#45;&#45;C5 -->
+<g id="edge42" class="edge">
+<title>B5--C5</title>
+<path fill="none" stroke="dimgrey" stroke-dasharray="5,2" d="M394.88,-35.6C412.45,-35.6 430.01,-35.6 447.58,-35.6"></path>
+</g>
+<!-- C1&#45;&#45;C2 -->
+<g id="edge12" class="edge">
+<title>C1--C2</title>
+<path fill="none" stroke="dimgrey" stroke-dasharray="5,2" d="M474.71,-444.1C474.71,-425.12 474.71,-396.31 474.71,-377.37"></path>
+</g>
+<!-- C1&#45;&#45;D1 -->
+<g id="edge27" class="edge">
+<title>C1--D1</title>
+<path fill="none" stroke="dimgrey" stroke-dasharray="5,2" d="M501.87,-464.4C521.77,-464.4 541.67,-464.4 561.57,-464.4"></path>
+</g>
+<!-- C2&#45;&#45;C3 -->
+<g id="edge13" class="edge">
+<title>C2--C3</title>
+<path fill="none" stroke="dimgrey" stroke-dasharray="5,2" d="M474.71,-336.9C474.71,-317.92 474.71,-289.11 474.71,-270.17"></path>
+</g>
+<!-- D2 -->
+<g id="node26" class="node">
+<title>D2</title>
+<ellipse fill="lightgreen" stroke="black" cx="588.71" cy="-357.2" rx="27" ry="20.16"></ellipse>
+<text text-anchor="middle" x="588.71" y="-353.6" font-family="Helvetica,Arial,sans-serif" font-size="12.00">D2</text>
+</g>
+<!-- C2&#45;&#45;D2 -->
+<g id="edge31" class="edge">
+<title>C2--D2</title>
+<path fill="none" stroke="dimgrey" stroke-dasharray="5,2" d="M501.87,-357.2C521.77,-357.2 541.67,-357.2 561.57,-357.2"></path>
+</g>
+<!-- C3&#45;&#45;C4 -->
+<g id="edge14" class="edge">
+<title>C3--C4</title>
+<path fill="none" stroke="dimgrey" stroke-dasharray="5,2" d="M474.71,-229.7C474.71,-210.72 474.71,-181.91 474.71,-162.97"></path>
+</g>
+<!-- D3 -->
+<g id="node27" class="node">
+<title>D3</title>
+<ellipse fill="lightgreen" stroke="black" cx="588.71" cy="-250" rx="27" ry="20.16"></ellipse>
+<text text-anchor="middle" x="588.71" y="-246.4" font-family="Helvetica,Arial,sans-serif" font-size="12.00">D3</text>
+</g>
+<!-- C3&#45;&#45;D3 -->
+<g id="edge35" class="edge">
+<title>C3--D3</title>
+<path fill="none" stroke="dimgrey" stroke-dasharray="5,2" d="M501.87,-250C521.77,-250 541.67,-250 561.57,-250"></path>
+</g>
+<!-- C4&#45;&#45;C5 -->
+<g id="edge15" class="edge">
+<title>C4--C5</title>
+<path fill="none" stroke="dimgrey" stroke-dasharray="5,2" d="M474.71,-122.5C474.71,-103.52 474.71,-74.71 474.71,-55.77"></path>
+</g>
+<!-- D4 -->
+<g id="node28" class="node">
+<title>D4</title>
+<ellipse fill="lightgreen" stroke="black" cx="588.71" cy="-142.8" rx="27" ry="20.16"></ellipse>
+<text text-anchor="middle" x="588.71" y="-139.2" font-family="Helvetica,Arial,sans-serif" font-size="12.00">D4</text>
+</g>
+<!-- C4&#45;&#45;D4 -->
+<g id="edge39" class="edge">
+<title>C4--D4</title>
+<path fill="none" stroke="dimgrey" stroke-dasharray="5,2" d="M501.87,-142.8C521.77,-142.8 541.67,-142.8 561.57,-142.8"></path>
+</g>
+<!-- D5 -->
+<g id="node29" class="node">
+<title>D5</title>
+<ellipse fill="lightgreen" stroke="black" cx="588.71" cy="-35.6" rx="27" ry="20.16"></ellipse>
+<text text-anchor="middle" x="588.71" y="-32" font-family="Helvetica,Arial,sans-serif" font-size="12.00">D5</text>
+</g>
+<!-- C5&#45;&#45;D5 -->
+<g id="edge43" class="edge">
+<title>C5--D5</title>
+<path fill="none" stroke="dimgrey" stroke-dasharray="5,2" d="M501.87,-35.6C521.77,-35.6 541.67,-35.6 561.57,-35.6"></path>
+</g>
+<!-- D1&#45;&#45;D2 -->
+<g id="edge17" class="edge">
+<title>D1--D2</title>
+<path fill="none" stroke="dimgrey" stroke-dasharray="5,2" d="M588.71,-444.1C588.71,-425.12 588.71,-396.31 588.71,-377.37"></path>
+</g>
+<!-- D2&#45;&#45;D3 -->
+<g id="edge18" class="edge">
+<title>D2--D3</title>
+<path fill="none" stroke="dimgrey" stroke-dasharray="5,2" d="M588.71,-336.9C588.71,-317.92 588.71,-289.11 588.71,-270.17"></path>
+</g>
+<!-- D3&#45;&#45;D4 -->
+<g id="edge19" class="edge">
+<title>D3--D4</title>
+<path fill="none" stroke="dimgrey" stroke-dasharray="5,2" d="M588.71,-229.7C588.71,-210.72 588.71,-181.91 588.71,-162.97"></path>
+</g>
+<!-- D4&#45;&#45;D5 -->
+<g id="edge20" class="edge">
+<title>D4--D5</title>
+<path fill="none" stroke="dimgrey" stroke-dasharray="5,2" d="M588.71,-122.5C588.71,-103.52 588.71,-74.71 588.71,-55.77"></path>
+</g>
+</g>
+</svg>
 </div>
 </div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-framework-architecture-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;3.1: The AMC AI governance framework. Domains (columns) maintain semi-independent deployment authority. Workstreams (rows) are shared capabilities governed centrally. The AISC provides portfolio oversight and accountability above both dimensions.
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-framework-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;3.1: A schematic framework for organizing workstreams (orange boxes), domains (blue boxes), and work products and tasks (green ovals). Domains (vertical dimension) capture semi-independent organizations, each with largely independent use cases, budgets and business plans, priorities, and leadership. The workstreams (horizontal dimension) will often require similar or overlapping expertise, and can serve as knowledge resources to provide synergy and uniformity in implementation across domains.
 </figcaption>
 </figure>
 </div>
