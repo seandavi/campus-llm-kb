@@ -126,31 +126,19 @@ conflict with each other. The workstreams are shared services not because centra
 is desirable in principle but because fragmentation in these specific areas is costly
 in practice.
 
-```{mermaid}
-%%| label: fig-framework-architecture
-%%| fig-cap: "The AMC AI governance framework. Domains (columns) maintain semi-independent deployment authority. Workstreams (rows) are shared capabilities governed centrally. The AISC provides portfolio oversight and accountability above both dimensions."
-flowchart TD
-    AISC[AI Steering Committee]
+::: {.aisc-header}
+**AI Steering Committee** — portfolio oversight · accountability · authority to fund and terminate
+:::
 
-    subgraph Domains[Domains]
-        D1[Clinical]
-        D2[Research]
-        D3[Education]
-        D4[Business Ops]
-    end
+| Workstream | Clinical | Research | Education | Business Ops |
+|:-----------|:--------:|:--------:|:---------:|:------------:|
+| Data & Governance     | ● | ● | ● | ● |
+| IT & Infrastructure   | ● | ● | ● | ● |
+| Ethics & ELSI         | ● | ● | ● | ● |
+| Workforce Development | ● | ● | ● | ● |
+| PM & Support          | ● | ● | ● | ● |
 
-    subgraph Workstreams[Workstreams]
-        W1[Data & Governance]
-        W2[IT & Infrastructure]
-        W3[Ethics & ELSI]
-        W4[Workforce Development]
-        W5[PM & Support]
-    end
-
-    AISC --> Domains
-    AISC --> Workstreams
-    Workstreams -->|cross-cutting| Domains
-```
+: The AMC AI governance matrix. Workstreams (rows) are shared institutional capabilities that operate across all four deployment domains (columns), each of which maintains semi-independent deployment authority. The AISC sits above both dimensions. {#tbl-framework-architecture}
 
 The AISC is what makes the matrix function as a governance program rather than a
 conceptual diagram. Without the AISC — a body with actual authority over AI deployment
