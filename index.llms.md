@@ -12,7 +12,7 @@ Departments of Biomedical Informatics and Medicine, University of Colorado Ansch
 
 Published
 
-April 26, 2026
+April 27, 2026
 
 Doi
 
@@ -36,4 +36,4 @@ This is a living document. The regulatory environment described in the governanc
 
 It is also, itself, a product of AI collaboration. The research, drafting, and ongoing maintenance of this book are conducted with the assistance of large language models — primarily Claude and Gemini — working under human direction and review. The workflow appendix ([sec-workflow-appendix](#sec-workflow-appendix)) describes that process in detail, including where the AI contributes most and where human judgment remains the necessary check.
 
-This is a living document. Scope and content can and will continue to change and evolve. All the material is open for comment. Contributions are welcome (process is documented at the github repo: https://githbub.com/seandavi/amc-ai-governance). Reuse and sharing are encouraged.
+This is a living document. Scope and content can and will continue to change and evolve. All the material is open for comment. Contributions are welcome via the [github repo](https://githbub.com/seandavi/amc-ai-governance). Reuse and sharing are encouraged.
