@@ -140,7 +140,7 @@ American Medical Informatics Association. 2024. *AI Competencies for Health Prof
 
 Association of American Medical Colleges. 2024. *Principles for the Responsible Use of Artificial Intelligence in and for Medical Education*. <https://www.aamc.org/about-us/mission-areas/medical-education/principles-responsible-use-artificial-intelligence-and-medical-education>.
 
-Association of American Medical Colleges. 2025. *AI Competencies Across the Learning Continuum*. [Https://www.aamc.org/about-us/mission-areas/medical-education/artificial-intelligence-competencies-across-learning-continuum](https://www.aamc.org/about-us/mission-areas/medical-education/artificial-intelligence-competencies-across-learning-continuum). <https://www.aamc.org/about-us/mission-areas/medical-education/artificial-intelligence-competencies-across-learning-continuum>.
+Association of American Medical Colleges. 2025. *AI Competencies Across the Learning Continuum*. [Https://www.aamc.org/about-us/mission-areas/medical-education/ai-competencies](https://www.aamc.org/about-us/mission-areas/medical-education/ai-competencies). <https://www.aamc.org/about-us/mission-areas/medical-education/ai-competencies>.
 
 Black Book Market Research. 2025. *AI Integration and Shadow IT in Health Systems*. [Https://blackbookmarketresearch.com/healthcare-technology-reports](https://blackbookmarketresearch.com/healthcare-technology-reports). <https://blackbookmarketresearch.com/healthcare-technology-reports>.
 

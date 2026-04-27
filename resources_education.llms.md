@@ -143,7 +143,7 @@ Accreditation Council for Graduate Medical Education. 2025. *Common Program Requ
 
 American Medical Informatics Association. 2024. *AI Competencies for Health Professionals*. <https://amia.org/education-events/ai-competencies>.
 
-Association of American Medical Colleges. 2025. *AI Competencies Across the Learning Continuum*. [Https://www.aamc.org/about-us/mission-areas/medical-education/artificial-intelligence-competencies-across-learning-continuum](https://www.aamc.org/about-us/mission-areas/medical-education/artificial-intelligence-competencies-across-learning-continuum). <https://www.aamc.org/about-us/mission-areas/medical-education/artificial-intelligence-competencies-across-learning-continuum>.
+Association of American Medical Colleges. 2025. *AI Competencies Across the Learning Continuum*. [Https://www.aamc.org/about-us/mission-areas/medical-education/ai-competencies](https://www.aamc.org/about-us/mission-areas/medical-education/ai-competencies). <https://www.aamc.org/about-us/mission-areas/medical-education/ai-competencies>.
 
 Dhakal, Prithvi et al. 2024. “Evaluation of GPT-4 on USMLE Step 2 Clinical Knowledge Questions.” *JMIR Medical Education*.
 

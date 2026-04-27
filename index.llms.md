@@ -32,4 +32,4 @@ This is a living document. The regulatory environment described in the governanc
 
 It is also, itself, a product of AI collaboration. The research, drafting, and ongoing maintenance of this book are conducted with the assistance of large language models — primarily Claude and Gemini — working under human direction and review. The workflow appendix ([sec-workflow-appendix](#sec-workflow-appendix)) describes that process in detail, including where the AI contributes most and where human judgment remains the necessary check.
 
-If something in here is wrong, or if your institution has found a better approach, I would genuinely like to know. The point is not to be right on paper. The point is to help institutions govern AI programs that are already real.
+This is a living document. Scope and content can and will continue to change and evolve. All the material is open for comment. Contributions are welcome (process is documented at the github repo: https://githbub.com/seandavi/amc-ai-governance). Reuse and sharing are encouraged.
