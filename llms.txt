@@ -1,5 +1,7 @@
 # Implementing AI in Academic Medicine
 
+> A comprehensive guide to implementing and governing AI in academic medicine, covering clinical, research, education, and business domains.
+
 ## Pages
 
 - [Implementing AI in Academic Medicine](https://seandavi.github.io/amc-ai-governance/index.llms.md)
