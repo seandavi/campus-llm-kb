@@ -10,8 +10,8 @@ book:
   subtitle: "A guide to governance and principled practice"
   #author: "Sean Davis"
   #date: "2023-05-13"
-  site-url: https://seandavi.github.io/campus-llm-kb/
-  repo-url: https://github.com/seandavi/campus-llm-kb/
+  site-url: https://seandavi.github.io/amc-ai-governance/
+  repo-url: https://github.com/seandavi/amc-ai-governance/
   repo-branch: main
   repo-actions: [edit]
   sharing: [twitter, facebook, linkedin]
