@@ -2,14 +2,17 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.7.33">
+<meta name="generator" content="quarto-1.9.37">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="dcterms.date" content="2026-04-26">
+<meta name="dcterms.date" content="2026-04-27">
 
 <title>8&nbsp; Education Domain – Implementing AI in Academic Medicine</title>
 <style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
 div.columns{display: flex; gap: min(4vw, 1.5em);}
@@ -25,7 +28,6 @@ ul.task-list li input[type="checkbox"] {
 div.csl-bib-body { }
 div.csl-entry {
   clear: both;
-  margin-bottom: 0em;
 }
 .hanging-indent div.csl-entry {
   margin-left:2em;
@@ -59,10 +61,10 @@ div.csl-indent {
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-ea385d0e468b0dd5ea5bf0780b1290d9.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-7f8f88aac4f3542376d5c11b86a4c14d.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-96934157685b0ce66cf1cdc82e4f4849.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-6c776516069454354cc3aff2d99c460c.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -418,7 +420,7 @@ div.csl-indent {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">April 26, 2026</p>
+      <p class="date">April 27, 2026</p>
     </div>
   </div>
   
@@ -431,7 +433,7 @@ div.csl-indent {
 
 
 <p>The conversation about generative AI in health professions education has been dominated, since late 2022, by two questions that are increasingly beside the point: Can students use AI to cheat? Can we detect it if they do? Both questions assume that the problem is a student behavior problem, and that better enforcement will solve it. Neither assumption holds, and the obsession with both has distracted education leaders from the more consequential question: what does it mean to teach and assess clinical reasoning when a language model can pass the USMLE?</p>
-<p>In January 2023, ChatGPT passed all three steps of the United States Medical Licensing Examination at or above the passing threshold for human test-takers <span class="citation" data-cites="Kung2023-usmle">(<a href="references.html#ref-Kung2023-usmle" role="doc-biblioref">Kung et al. 2023</a>)</span>. That benchmark has since been exceeded: GPT-4 achieves approximately 86% accuracy on Step 1 questions and 87% on Step 2 Clinical Knowledge, performance that meets or exceeds the median medical student <span class="citation" data-cites="Garabet2024-step1 Dhakal2024-step2">(<a href="references.html#ref-Garabet2024-step1" role="doc-biblioref">Garabet et al. 2024</a>; <a href="references.html#ref-Dhakal2024-step2" role="doc-biblioref">Dhakal et al. 2024</a>)</span>. The boards were designed to certify that physicians had internalized a body of medical knowledge. They were not designed to certify that a physician could distinguish their own reasoning from AI-generated reasoning. Those are now different things.</p>
+<p>In January 2023, ChatGPT passed all three steps of the United States Medical Licensing Examination at or above the passing threshold for human test-takers <span class="citation" data-cites="Kung2023-usmle">(<a href="references.html#ref-Kung2023-usmle" role="doc-biblioref">Kung et al. 2023</a>)</span>. That benchmark has since been exceeded: GPT-4 achieves approximately 86% accuracy on Step 1 questions and 87% on Step 2 Clinical Knowledge, performance that meets or exceeds the median medical student <span class="citation" data-cites="Garabet2024-step1 Dhakal2024-step2">(<a href="references.html#ref-Garabet2024-step1" role="doc-biblioref">Garabet et al. 2024</a>; <a href="references.html#ref-Dhakal2024-step2" role="doc-biblioref"><span class="nocase">Dhakal et al.</span> 2024</a>)</span>. The boards were designed to certify that physicians had internalized a body of medical knowledge. They were not designed to certify that a physician could distinguish their own reasoning from AI-generated reasoning. Those are now different things.</p>
 <p>This chapter is not an argument against rigor or assessment. It is an argument that the assessment infrastructure of health professions education needs to be rebuilt around what AI cannot yet do — authentic clinical reasoning, communication under uncertainty, integration of patient values — and that the institution’s job is to support that rebuilding rather than defend the examination infrastructure that preceded it.</p>
 <section id="sec-education-proxy" class="level2" data-number="8.1">
 <h2 data-number="8.1" class="anchored" data-anchor-id="sec-education-proxy"><span class="header-section-number">8.1</span> The Collapse of the Proxy</h2>
@@ -484,7 +486,7 @@ Figure&nbsp;8.1: Assessment redesign decision tree for health professions educat
 <section id="sec-education-usmle" class="level2" data-number="8.4">
 <h2 data-number="8.4" class="anchored" data-anchor-id="sec-education-usmle"><span class="header-section-number">8.4</span> The USMLE and the Limits of Licensing Exam Reform</h2>
 <p>The licensing exam context deserves specific attention because it is the external constraint that shapes so much of undergraduate medical education. When AI passes Step 2 CK at 87%, the natural question is: what are we preparing students for?</p>
-<p>The answer from the National Board of Medical Examiners — which has been studying AI performance on its exams since 2023 — is nuanced <span class="citation" data-cites="Yaneva2024-clinreasoning">(<a href="references.html#ref-Yaneva2024-clinreasoning" role="doc-biblioref">Yaneva et al. 2024</a>)</span>. High AI performance on multiple-choice clinical vignettes does not mean that AI can replicate authentic clinical reasoning. The vignettes test pattern recognition on structured information; clinical practice requires integrating incomplete, contradictory, and affectively complex information in real time, with a patient whose presentation does not fit the textbook pattern. AI is weaker on these tasks, and considerably weaker on the communicative and relational dimensions of clinical care that licensing exams do not currently measure.</p>
+<p>The answer from the National Board of Medical Examiners — which has been studying AI performance on its exams since 2023 — is nuanced <span class="citation" data-cites="Yaneva2024-clinreasoning">(<a href="references.html#ref-Yaneva2024-clinreasoning" role="doc-biblioref"><span class="nocase">Yaneva et al.</span> 2024</a>)</span>. High AI performance on multiple-choice clinical vignettes does not mean that AI can replicate authentic clinical reasoning. The vignettes test pattern recognition on structured information; clinical practice requires integrating incomplete, contradictory, and affectively complex information in real time, with a patient whose presentation does not fit the textbook pattern. AI is weaker on these tasks, and considerably weaker on the communicative and relational dimensions of clinical care that licensing exams do not currently measure.</p>
 <p>The implication for medical education is not that the boards are irrelevant but that they are increasingly insufficient. Competency-based medical education (CBME) frameworks — the ACGME milestones, the entrustable professional activities — provide a structure for assessing the capabilities that board exams do not capture. Educators who redesign assessment to emphasize direct observation, structured clinical encounters, and oral examination of reasoning are building toward an assessment model that remains meaningful in an AI-augmented world. Educators who optimize for multiple-choice performance are not.</p>
 </section>
 <section id="sec-education-literacy" class="level2" data-number="8.5">
@@ -634,7 +636,7 @@ Table&nbsp;8.2: Comparison of health-professions institutional AI policies on ke
 <section id="sec-education-safety" class="level2" data-number="8.7">
 <h2 data-number="8.7" class="anchored" data-anchor-id="sec-education-safety"><span class="header-section-number">8.7</span> Academic Integrity as a Patient Safety Issue</h2>
 <p>The stakes of academic integrity in health professions education are not equivalent to the stakes in a general undergraduate program. A student who outsources a history paper to AI has submitted fraudulent work, and the consequence is primarily to their own learning. A medical student who outsources clinical reasoning to AI during training — who presents AI-generated differentials and management plans as their own reasoning through repeated assessments — has learned to operate a clinical workflow they do not understand. The consequence is potentially borne by future patients.</p>
-<p>James, Wachter, and Woolliscroft made this argument directly in their 2022 JAMA piece on preparing clinicians for an AI-influenced clinical world <span class="citation" data-cites="James2022-preparing">(<a href="references.html#ref-James2022-preparing" role="doc-biblioref">James, Wachter, and Woolliscroft 2022</a>)</span>. The concern is not that AI will replace clinical reasoning but that clinicians who have not developed strong independent reasoning will not be equipped to recognize when AI reasoning is wrong. Automation bias — the tendency to accept automated system output without adequate critical evaluation — is well documented in aviation and other high-stakes domains, and there is no reason to believe clinical medicine is immune.</p>
+<p>James, Wachter, and Woolliscroft made this argument directly in their 2022 JAMA piece on preparing clinicians for an AI-influenced clinical world <span class="citation" data-cites="James2022-preparing">(<a href="references.html#ref-James2022-preparing" role="doc-biblioref">James et al. 2022</a>)</span>. The concern is not that AI will replace clinical reasoning but that clinicians who have not developed strong independent reasoning will not be equipped to recognize when AI reasoning is wrong. Automation bias — the tendency to accept automated system output without adequate critical evaluation — is well documented in aviation and other high-stakes domains, and there is no reason to believe clinical medicine is immune.</p>
 <p>This reframes the academic integrity conversation from “students are cheating” to “we are responsible for training clinicians who can function safely when AI fails.” That is a more honest and more motivating frame for curriculum redesign. It also makes the argument for genuine investment in assessment reform: not detection systems that catch cheaters, but assessment methods that require demonstrating the reasoning that makes a physician safe.</p>
 </section>
 <section id="sec-education-starter" class="level2" data-number="8.8">
@@ -655,21 +657,21 @@ Table&nbsp;8.2: Comparison of health-professions institutional AI policies on ke
 <p><strong>What done looks like.</strong> Five course directors have revised one assignment each, the revised assignments have been piloted for one academic cycle, and a follow-up session has been held to share what worked and what needed adjustment. The materials from the workshop — the assessment audit rubric, the redesign process — are available for any course director who wants to use them independently.</p>
 
 
-<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list" style="display: none">
+<div id="refs" class="references csl-bib-body hanging-indent" role="list" style="display: none">
 <div id="ref-ACGME2025-CPR" class="csl-entry" role="listitem">
-Accreditation Council for Graduate Medical Education. 2025. <span>“Common Program Requirements: <span>July</span> 2025 Updates.”</span> <a href="https://www.acgme.org/what-we-do/accreditation/common-program-requirements/" class="uri">https://www.acgme.org/what-we-do/accreditation/common-program-requirements/</a>. <a href="https://www.acgme.org/what-we-do/accreditation/common-program-requirements/">https://www.acgme.org/what-we-do/accreditation/common-program-requirements/</a>.
+Accreditation Council for Graduate Medical Education. 2025. <em>Common Program Requirements: <span>July</span> 2025 Updates</em>. <a href="https://www.acgme.org/what-we-do/accreditation/common-program-requirements/" class="uri">Https://www.acgme.org/what-we-do/accreditation/common-program-requirements/</a>. <a href="https://www.acgme.org/what-we-do/accreditation/common-program-requirements/">https://www.acgme.org/what-we-do/accreditation/common-program-requirements/</a>.
 </div>
 <div id="ref-AMIA2024-competencies" class="csl-entry" role="listitem">
-American Medical Informatics Association. 2024. <span>“<span>AI</span> Competencies for Health Professionals.”</span> <a href="https://amia.org/education-events/ai-competencies">https://amia.org/education-events/ai-competencies</a>.
+American Medical Informatics Association. 2024. <em><span>AI</span> Competencies for Health Professionals</em>. <a href="https://amia.org/education-events/ai-competencies">https://amia.org/education-events/ai-competencies</a>.
 </div>
 <div id="ref-AAMC2025-competencies" class="csl-entry" role="listitem">
-Association of American Medical Colleges. 2025. <span>“<span>AI</span> Competencies Across the Learning Continuum.”</span> <a href="https://www.aamc.org/about-us/mission-areas/medical-education/artificial-intelligence-competencies-across-learning-continuum" class="uri">https://www.aamc.org/about-us/mission-areas/medical-education/artificial-intelligence-competencies-across-learning-continuum</a>. <a href="https://www.aamc.org/about-us/mission-areas/medical-education/artificial-intelligence-competencies-across-learning-continuum">https://www.aamc.org/about-us/mission-areas/medical-education/artificial-intelligence-competencies-across-learning-continuum</a>.
+Association of American Medical Colleges. 2025. <em><span>AI</span> Competencies Across the Learning Continuum</em>. <a href="https://www.aamc.org/about-us/mission-areas/medical-education/artificial-intelligence-competencies-across-learning-continuum" class="uri">Https://www.aamc.org/about-us/mission-areas/medical-education/artificial-intelligence-competencies-across-learning-continuum</a>. <a href="https://www.aamc.org/about-us/mission-areas/medical-education/artificial-intelligence-competencies-across-learning-continuum">https://www.aamc.org/about-us/mission-areas/medical-education/artificial-intelligence-competencies-across-learning-continuum</a>.
 </div>
 <div id="ref-Dhakal2024-step2" class="csl-entry" role="listitem">
-Dhakal, Prithvi et al. 2024. <span>“Evaluation of <span>GPT-4</span> on <span>USMLE</span> Step 2 Clinical Knowledge Questions.”</span> <em>JMIR Medical Education</em>.
+<span class="nocase">Dhakal, Prithvi et al.</span> 2024. <span>“Evaluation of <span>GPT-4</span> on <span>USMLE</span> Step 2 Clinical Knowledge Questions.”</span> <em>JMIR Medical Education</em>.
 </div>
 <div id="ref-FTC2024-operationai" class="csl-entry" role="listitem">
-Federal Trade Commission. 2024. <span>“Operation <span>AI</span> Comply: Continuing Actions Against <span>AI</span>-Related Deceptive Practices.”</span> <a href="https://www.ftc.gov/news-events/press-releases/2024/09/ftc-announces-operation-ai-comply">https://www.ftc.gov/news-events/press-releases/2024/09/ftc-announces-operation-ai-comply</a>.
+Federal Trade Commission. 2024. <em>Operation <span>AI</span> Comply: Continuing Actions Against <span>AI</span>-Related Deceptive Practices</em>. <a href="https://www.ftc.gov/news-events/press-releases/2024/09/ftc-announces-operation-ai-comply">https://www.ftc.gov/news-events/press-releases/2024/09/ftc-announces-operation-ai-comply</a>.
 </div>
 <div id="ref-Garabet2024-step1" class="csl-entry" role="listitem">
 Garabet, Liana, Alexei Kasparov, Marc Minciullo, John Tran, and Medhat Sarhan. 2024. <span>“Performance of <span>GPT-4</span> on <span>USMLE</span> Step 1–Style Questions.”</span> <em>Medical Science Educator</em> 34: 89–97. <a href="https://doi.org/10.1007/s40670-023-01968-3">https://doi.org/10.1007/s40670-023-01968-3</a>.
@@ -678,7 +680,7 @@ Garabet, Liana, Alexei Kasparov, Marc Minciullo, John Tran, and Medhat Sarhan. 2
 James, Casey A, Robert M Wachter, and James O Woolliscroft. 2022. <span>“Preparing Clinicians for a Clinical World Influenced by Artificial Intelligence.”</span> <em>JAMA</em> 327 (14): 1333–34. <a href="https://doi.org/10.1001/jama.2022.3580">https://doi.org/10.1001/jama.2022.3580</a>.
 </div>
 <div id="ref-Kung2023-usmle" class="csl-entry" role="listitem">
-Kung, Tiffany H, Morgan Cheatham, Arielle Medenilla, Czarina Sillos, Lorie De Leon, Camille Elepano, Mary Madriaga, et al. 2023. <span>“Performance of <span>ChatGPT</span> on <span>USMLE</span>: Potential for <span>AI</span>-Assisted Medical Education Using Large Language Models.”</span> <em>PLOS Digital Health</em> 2 (2): e0000198. <a href="https://doi.org/10.1371/journal.pdig.0000198">https://doi.org/10.1371/journal.pdig.0000198</a>.
+Kung, Tiffany H, Morgan Cheatham, Arielle Medenilla, et al. 2023. <span>“Performance of <span>ChatGPT</span> on <span>USMLE</span>: Potential for <span>AI</span>-Assisted Medical Education Using Large Language Models.”</span> <em>PLOS Digital Health</em> 2 (2): e0000198. <a href="https://doi.org/10.1371/journal.pdig.0000198">https://doi.org/10.1371/journal.pdig.0000198</a>.
 </div>
 <div id="ref-Liang2023-aidetect" class="csl-entry" role="listitem">
 Liang, Weixin, Mert Yuksekgonul, Yining Mao, Eric Wu, and James Zou. 2023. <span>“<span>GPT</span> Detectors Are Biased Against Non-Native <span>English</span> Writers.”</span> <em>Patterns</em> 4 (7): 100779. <a href="https://doi.org/10.1016/j.patter.2023.100779">https://doi.org/10.1016/j.patter.2023.100779</a>.
@@ -687,10 +689,10 @@ Liang, Weixin, Mert Yuksekgonul, Yining Mao, Eric Wu, and James Zou. 2023. <span
 McCoy, Liam G, Sulaiman Nagaraj, Farouk Morgado, Vinyas Harish, Sunit Das, and Leo Anthony Celi. 2020. <span>“What Do Medical Students Actually Need to Know about Artificial Intelligence?”</span> <em>Npj Digital Medicine</em> 3 (1): 86. <a href="https://doi.org/10.1038/s41746-020-0294-7">https://doi.org/10.1038/s41746-020-0294-7</a>.
 </div>
 <div id="ref-Mollick2023-assigning" class="csl-entry" role="listitem">
-Mollick, Ethan R, and Lilach Mollick. 2023. <span>“Assigning <span>AI</span>: Seven Approaches for Students, with Prompts.”</span> <span>SSRN</span>. <a href="https://ssrn.com/abstract=4475995">https://ssrn.com/abstract=4475995</a>.
+Mollick, Ethan R, and Lilach Mollick. 2023. <em>Assigning <span>AI</span>: Seven Approaches for Students, with Prompts</em>. <span>SSRN</span>. <a href="https://ssrn.com/abstract=4475995">https://ssrn.com/abstract=4475995</a>.
 </div>
 <div id="ref-Yaneva2024-clinreasoning" class="csl-entry" role="listitem">
-Yaneva, Victoria et al. 2024. <span>“Evaluating <span>GPT-4</span> on <span>USMLE</span> Step 2 <span>CK</span>: Implications for Clinical Reasoning Assessment.”</span> <em>Academic Medicine</em>.
+<span class="nocase">Yaneva, Victoria et al.</span> 2024. <span>“Evaluating <span>GPT-4</span> on <span>USMLE</span> Step 2 <span>CK</span>: Implications for Clinical Reasoning Assessment.”</span> <em>Academic Medicine</em>.
 </div>
 </div>
 </section>
@@ -748,13 +750,14 @@ Yaneva, Victoria et al. 2024. <span>“Evaluating <span>GPT-4</span> on <span>US
       e.clearSelection();
     }
     const getTextToCopy = function(trigger) {
-        const codeEl = trigger.previousElementSibling.cloneNode(true);
-        for (const childEl of codeEl.children) {
-          if (isCodeAnnotation(childEl)) {
-            childEl.remove();
-          }
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
         }
-        return codeEl.innerText;
+      }
+      return codeEl.innerText;
     }
     const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
       text: getTextToCopy
