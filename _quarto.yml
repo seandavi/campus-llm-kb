@@ -9,6 +9,7 @@ book:
   google-analytics: "G-KCEE2FZL6D"
   cookie-consent: true
   cover-image: cover.jpg
+  doi: "10.5281/zenodo.19820586"
   title: "Implementing AI in Academic Medicine"
   subtitle: "A guide to governance and principled practice"
   author:
