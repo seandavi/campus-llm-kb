@@ -1,4 +1,4 @@
-# OSTP Blueprint for an AI Bill of Rights {.appendix}
+# OSTP Blueprint for an AI Bill of Rights {#sec-bill-of-rights .appendix}
 
 The White House Office of Science and Technology Policy published the Blueprint for an
 AI Bill of Rights in October 2022 as a nonbinding framework for the design, use, and
@@ -57,6 +57,10 @@ has a mechanism for escalating and investigating AI-related errors. The CMS requ
 that AI systems cannot substitute for human clinical review in Medicare coverage decisions
 gives this principle binding force in one specific regulatory context.
 
+## Current Status
+
+The Blueprint was published in October 2022 under the Biden administration and was connected to a broader federal AI governance agenda that included Executive Order 14110 on the Safe, Secure, and Trustworthy Development of Artificial Intelligence (October 2023). Executive Order 14110 was revoked by Executive Order 14179 in January 2025 [@EO14179]. The Blueprint itself — as an OSTP white paper rather than an executive order — was not formally revoked and remains publicly available, but its status as an expression of federal normative expectations has changed. Governance teams citing the Blueprint as evidence of federal alignment should note this distinction: the Blueprint’s five principles remain a useful values framework, but they no longer carry the same signal about the direction of federal regulatory development that they did in 2022–2024.
+
 ## The Blueprint’s Limitations
 
 Two aspects of the Blueprint are worth naming honestly. First, it was written primarily
@@ -78,7 +82,6 @@ it should be an explicit institutional choice rather than an implicit one.
 
 ## Primary Sources
 
-- Blueprint for an AI Bill of Rights: <https://www.whitehouse.gov/ostp/ai-bill-of-rights/>
-- Applying the Blueprint: <https://www.whitehouse.gov/ostp/ai-bill-of-rights/applying-the-blueprint-for-an-ai-bill-of-rights/>
-- Brookings analysis of the Blueprint’s opportunities and gaps: <https://www.brookings.edu/research/algorithms-of-care-navigating-equity-in-healthcare-ai/>
-- HealthITAnalytics — Healthcare application of the Blueprint: <https://healthitanalytics.com/features/how-does-the-white-house-ai-bill-of-rights-apply-to-healthcare>
+- Blueprint for an AI Bill of Rights (OSTP, October 2022): <https://www.whitehouse.gov/ostp/ai-bill-of-rights/>
+- Applying the Blueprint — sector-specific guidance: <https://www.whitehouse.gov/ostp/ai-bill-of-rights/applying-the-blueprint-for-an-ai-bill-of-rights/>
+- Executive Order 14179, Removing Barriers to American Leadership in Artificial Intelligence (January 2025) [@EO14179]
