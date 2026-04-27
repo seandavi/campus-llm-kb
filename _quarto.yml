@@ -1,6 +1,11 @@
 project:
   type: book
 
+
+comments:
+  giscus: 
+    repo: seandavi/amc-ai-governance
+
 website:
   google-analytics: "G-KCEE2FZL6D"
   cookie-consent: true
