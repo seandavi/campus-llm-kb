@@ -4,6 +4,7 @@ project:
 website:
   google-analytics: "G-KCEE2FZL6D"
   cookie-consent: true
+  llms-txt: true
 
 book:
   cover-image: cover.jpg
