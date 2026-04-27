@@ -2,7 +2,7 @@
 
 Published
 
-April 27, 2026
+April 26, 2026
 
 The most common bottleneck in AMC AI deployment is not model selection, compute availability, or vendor relationships. It is data governance. Not in the abstract sense — every institution has HIPAA policies — but in the specific sense that most AMC data governance frameworks were designed for uses that look nothing like LLM training or inference. The HIPAA Safe Harbor de-identification standard was written to support data sharing for research and public health uses. It was not designed to account for a model that can infer a patient’s identity from the statistical patterns in clinical notes after every explicitly identifying field has been removed. Understanding why existing frameworks are insufficient, and what a governance structure adequate to the LLM era requires, is the starting point for sound data strategy.
 

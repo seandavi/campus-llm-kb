@@ -2,7 +2,7 @@
 
 Published
 
-April 27, 2026
+April 26, 2026
 
 Deploying an AI tool without a monitoring plan is not a deployment. It is an experiment, one in which patients, students, researchers, and administrative staff are the unwitting subjects. The experiment ends when something goes wrong visibly enough that someone shuts it off. What the institution rarely knows at that point is how long the model had been quietly performing below the threshold it was validated against, or how many people were affected before the degradation became obvious.
 

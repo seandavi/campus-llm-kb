@@ -2,7 +2,7 @@
 
 Published
 
-April 27, 2026
+April 26, 2026
 
 At most academic medical centers right now, AI is being deployed faster than the governance structures meant to oversee it. The 2025 CHIME/Censinet survey found that 84 percent of U.S. health systems have some form of AI steering committee — but only 10 percent maintain an automated inventory of which AI tools are actually running in clinical environments ([College of Healthcare Information Management Executives and Censinet 2025](#ref-CHIME2025-censinet)). The committee exists. The operational visibility does not.
 

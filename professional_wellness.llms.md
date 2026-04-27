@@ -2,7 +2,7 @@
 
 Published
 
-April 27, 2026
+April 26, 2026
 
 The case for AI in healthcare governance documents is typically framed around what AI can do for patients — more accurate diagnoses, more consistent treatment recommendations, earlier identification of deterioration. That framing is appropriate for those purposes. But there is a second case for clinical AI that rarely receives the same sustained attention, and that is the case for what it can do for the people providing care.
 

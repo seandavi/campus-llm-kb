@@ -2,7 +2,7 @@
 
 Published
 
-April 27, 2026
+April 26, 2026
 
 The most sophisticated AI infrastructure an AMC can build is only as effective as the workforce that uses it. A clinical AI tool that clinicians do not trust will not be used. An inbox management system that administrative staff route around will not reduce the documentation burden. An AI platform that no one in the institution can evaluate for bias or validate for accuracy is a governance fiction. AI literacy — the practical capacity to understand, evaluate, and deploy AI tools appropriately in a specific role — is not a peripheral technical skill. It is a prerequisite for the institutional AI strategy to work at all.
 

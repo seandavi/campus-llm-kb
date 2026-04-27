@@ -2,7 +2,7 @@
 
 Published
 
-April 27, 2026
+April 26, 2026
 
 Every AMC CIO faces a version of the same question: should we build our own AI infrastructure, buy commercial AI platforms, or connect existing systems to foundation models through APIs? The framing of “build vs. buy” is familiar from decades of enterprise IT decisions, but it maps poorly onto the current AI landscape. Building a frontier foundation model is not a realistic option for any AMC; the compute and data requirements are measured in thousands of GPUs and hundreds of millions of dollars. Buying a turnkey clinical AI platform means accepting the vendor’s model choices, governance design, and update cadence. The third option — connecting existing institutional systems to foundation models through a managed API gateway — is the approach that gives most AMCs the best combination of capability, control, and cost at the current state of the technology.
 

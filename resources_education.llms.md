@@ -2,7 +2,7 @@
 
 Published
 
-April 27, 2026
+April 26, 2026
 
 The conversation about generative AI in health professions education has been dominated, since late 2022, by two questions that are increasingly beside the point: Can students use AI to cheat? Can we detect it if they do? Both questions assume that the problem is a student behavior problem, and that better enforcement will solve it. Neither assumption holds, and the obsession with both has distracted education leaders from the more consequential question: what does it mean to teach and assess clinical reasoning when a language model can pass the USMLE?
 
