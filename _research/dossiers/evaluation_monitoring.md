@@ -1,133 +1,190 @@
-I will begin by researching the core topics for the Evaluation and Monitoring chapter, focusing on peer-reviewed literature for clinical AI evaluation, FDA guidance on AI/ML (including PCCP and post-market surveillance), the CHAI framework, and established case studies like the Epic sepsis model and dermatology bias.
+YOLO mode is enabled. All tool calls will be automatically approved.
+YOLO mode is enabled. All tool calls will be automatically approved.
+I will research the "Evaluation and Monitoring" chapter for the Campus LLM Knowledge Base, focusing on the core principles of AI validation, drift detection, and domain-specific KPIs across clinical, research, education, and business operations.
 
-I will now search for specific case studies of clinical AI performance degradation, such as the Epic sepsis model and dermatology bias in diverse populations, and identify structured red-teaming frameworks for healthcare-specific LLMs to complete the technical depth required for the dossier.
+First, I'll search for the specified primary sources and frameworks.
 
-I have gathered substantial evidence across all required domains, including specific case studies, regulatory milestones (FDA PCCP 2025/2026), and technical frameworks (CHAI RAIG, TRIPOD-AI). I will now perform a final targeted search for operational requirements of "silent mode" or "shadow" deployment in clinical settings to ensure the dossier provides actionable guidance on implementation before I synthesize the final document.
+Attempt 1 failed: You have exhausted your capacity on this model. Your quota will reset after 1s.. Retrying after 5926ms...
+Attempt 1 failed: You have exhausted your capacity on this model. Your quota will reset after 1s.. Retrying after 5712ms...
+Attempt 1 failed: You have exhausted your capacity on this model. Your quota will reset after 1s.. Retrying after 5172ms...
+I've gathered significant information on clinical AI evaluation standards (TRIPOD+AI, CHAI, FDA post-market surveillance). I will now conduct targeted research into the evaluation and monitoring of AI in Research, Education, and Business Operations within the Academic Medical Center context, as well as searching for specific examples of performance degradation and academic integrity monitoring.
+
+Attempt 1 failed: You have exhausted your capacity on this model. Your quota will reset after 2s.. Retrying after 5206ms...
+I have gathered substantial information for the Clinical, Education, and Business sectors, but I need to further investigate the specific roles of IRBs in AI monitoring, as well as data provenance and reproducibility KPIs in research AI, and the risks of publication bias associated with AI-assisted analysis. I will also look for specific clinical drift cases, such as the Epic Sepsis Model external validation by Wong (2021), to complete the dossier.
+
+Attempt 1 failed: You have exhausted your capacity on this model. Your quota will reset after 0s.. Retrying after 5657ms...
+Attempt 1 failed: You have exhausted your capacity on this model. Your quota will reset after 0s.. Retrying after 5759ms...
+I have gathered a comprehensive set of information covering clinical AI evaluation (TRIPOD+AI, CHAI, FDA), clinical drift (Wong 2021, Finlayson 2021), participatory design, and AI monitoring in research, education, and business. This includes specific KPIs, regulatory updates, and emerging risks like "recursive drift." I am now prepared to develop the domain comparison and KPI taxonomy tables, draft the argument spine and section outline, and ensure proper citation formatting, including checking the `references.bib` file for existing keys.
 
 # Research Dossier: Evaluation and Monitoring
 
-This dossier provides research materials for the chapter on the evaluation and monitoring lifecycle of generative AI in an Academic Medical Center (AMC).
+This dossier provides the research foundation for the `evaluation_monitoring.qmd` chapter of the *Large Language Model Policy and Practice* book. It outlines the transition from static AI benchmarking to a total product lifecycle (TPLC) approach, emphasizing that evaluation and monitoring are the minimum bar for responsible AI adoption in an Academic Medical Center (AMC).
 
 ## 1. Argument spine
 
-Deploying an AI tool without a rigorous monitoring plan is not a clinical deployment; it is an uncontrolled experiment with patients and staff as unwitting subjects. The "evaluation gap" exists because high performance on vendor benchmarks or general medical exams (e.g., USMLE) is a poor proxy for safe, equitable performance in local clinical workflows where data distributions and practice patterns vary. Consequently, the minimum bar for responsible adoption requires a transition from one-time "black box" validation to a Total Product Lifecycle (TPLC) approach. This lifecycle begins with local validation and "silent-mode" (shadow) deployment to establish a baseline of clinical safety without impacting care. It proceeds to live deployment governed by a Predetermined Change Control Plan (PCCP) and continuous monitoring for performance decay, concept drift, and demographic bias. Ultimately, effective monitoring serves as a "pharmacovigilance" for digital health, where algorithmic drift is treated with the same institutional gravity as an adverse drug event, feeding directly into a governance structure that can pause or retire a tool when safety thresholds are breached.
+Deploying an AI tool without a rigorous monitoring plan is not a standard implementation; it is an unmonitored experiment with patients, students, and staff as subjects. The core of the chapter argues that vendor-provided benchmark performance is a poor predictor of local performance because models are sensitive to the specific data distributions, clinical workflows, and cultural contexts of individual institutions. Evaluation must therefore be a multi-stage process that begins with local validation and "shadow" deployments to confirm safety and utility before live use. Once deployed, models inevitably suffer from "drift"—technical decay, operational shifts, or conceptual changes—that can only be caught through active, ongoing monitoring. While the technical principles of drift detection remain constant, the chapter demonstrates that the key performance indicators (KPIs), relevant stakeholders, and ethical obligations vary significantly across the AMC’s four domains. Clinical monitoring prioritizes patient safety and equity; research monitoring focuses on reproducibility and provenance; education monitoring guards against the erosion of foundational skills; and business operations monitoring balances efficiency with employment equity. Ultimately, effective oversight requires a shift from technical "human-in-the-loop" checks to participatory systems of governance that involve patients, faculty, and frontline staff in the continuous evaluation of whether a tool remains fit for its intended purpose.
 
 ## 2. Section outline
 
-1.  **The Evaluation Gap: Why Benchmarks Fail**
-    *   Argues that "top-of-the-class" performance on general benchmarks (MedQA, MMLU) masks significant "performance decay" (10–30%) when models encounter the messiness of local EHR data and site-specific clinical practices.
-2.  **Pre-deployment Frameworks and the TRIPOD-AI Standard**
-    *   Argues for the adoption of the TRIPOD-AI reporting standard to ensure that local validation studies are transparent, reproducible, and account for potential data leakage and over-fitting.
-3.  **The Shadow Phase: Operationalizing Silent Deployment**
-    *   Argues that "silent-mode" deployment—running AI in parallel with standard care without clinician visibility—is the essential operational step to gather real-world evidence of safety and UI/UX friction before a tool influences clinical decisions.
-4.  **Clinical Metrics for a Generative Era**
-    *   Argues that traditional accuracy metrics must be augmented with "clinician-in-the-loop" evaluations (Helpfulness, Correctness, Potential Harm) and fairness-stratified metrics to ensure equitable outcomes across all patient demographics.
-5.  **Adversarial Defense: Red-Teaming Healthcare LLMs**
-    *   Argues that general safety filters are insufficient for clinical LLMs; institutions must perform structured red-teaming (e.g., PIEE or QUEST frameworks) to probe for dangerous dosing, contraindication bypasses, and medical misinformation.
-6.  **Post-deployment Vigilance: Drift and Pharmacovigilance**
-    *   Argues that AI models are "living" products that require continuous monitoring for covariate shift and concept drift, using a pharmacovigilance analogy to treat algorithmic failure as a reportable adverse event.
-7.  **The Governance Feedback Loop: PCCP and Retirement**
-    *   Argues that monitoring is futile without an escalation path, where findings feed into an AI Review Board empowered to trigger Corrective and Preventive Actions (CAPA) or retire a model under a Predetermined Change Control Plan.
+1.  **The Mirage of Static Performance:** Arguments for why local validation is mandatory and why "benchmarking" is an insufficient indicator of real-world safety in a specific AMC environment.
+2.  **Pre-deployment Evaluation: The Anatomy of a Decision:** A description of the "shadow mode" deployment phase, red-teaming for LLM-specific failures, and the application of TRIPOD+AI and DECIDE-AI reporting standards.
+3.  **Post-deployment Monitoring: Detecting Silent Drift:** An analysis of the technical, operational, and concept drift that occurs over time, using the pharmacovigilance model as a framework for AI safety.
+4.  **Clinical Dimensions: Safety, Equity, and Patient Engagement:** Focuses on patient safety KPIs, demographic bias tracking under HHS 1557, and the shift toward participatory governance involving patient advisory boards.
+5.  **Research Integrity: Reproducibility in the Age of AI:** Examines how to monitor for publication bias, p-hacking, and the "recursive drift" that occurs when models are trained on AI-generated data.
+6.  **Education: Protecting Foundational Learning:** Discusses the monitoring of student learning outcomes and the move from AI detection tools to authentic assessment as an integrity safeguard.
+7.  **Business Operations: Efficiency without Exploitation:** KPIs for revenue cycle management and administrative throughput, balanced against monitoring for algorithmic hiring bias and labor relations impact.
+8.  **Decommissioning and Governance Escalation:** Defines the "kill switch" criteria for retiring models that no longer meet safety or utility thresholds and the governance pathways for remediation.
 
 ## 3. Annotated source list
 
-1.  **Singhal, K., et al. (2023). "Large language models encode clinical knowledge." *Nature*, 620(7972), 172-180. [DOI: 10.1038/s41586-023-06291-2]**
-    *   Annotation: Describes the development and evaluation of Med-PaLM, introducing the "clinician-aligned" axes (Scientific Consensus, Medical Reasoning, Evidence of Harm). This is the foundational source for why general LLMs need healthcare-specific tuning and safety evaluation.
-    *   Type: `peer-reviewed`
-2.  **Wong, A., et al. (2021). "External Validation of a Widely Implemented Proprietary Sepsis Prediction Model." *JAMA Internal Medicine*, 181(8), 1065–1070. [DOI: 10.1001/jamainternmed.2021.2626]**
-    *   Annotation: A landmark study showing the Epic Sepsis Model's performance dropped from a reported AUC of 0.76–0.83 to 0.63 upon independent validation. Supports the claim that vendor-reported performance often fails locally due to billing code reliance.
-    *   Type: `peer-reviewed`
-3.  **Daneshjou, R., et al. (2022). "Disparities in dermatology AI performance on a diverse, curated clinical image set." *Science Advances*, 8(34). [DOI: 10.1126/sciadv.abq6147]**
-    *   Annotation: Demonstrates that dermatology AI models significantly underperform on darker skin tones (FST V-VI) due to training set imbalance. Highlights the necessity of biopsy-confirmed local validation for equity.
-    *   Type: `peer-reviewed`
-4.  **Collins, G. S., et al. (2024). "Transparent reporting of a multivariable prediction model for individual prognosis or diagnosis-artificial intelligence (TRIPOD-AI): explanation and elaboration." *The BMJ*, 385, e078378. [DOI: 10.1136/bmj-2023-078378]**
-    *   Annotation: The definitive reporting standard for clinical AI studies. Provides the 27-item checklist for transparently documenting model development and validation, emphasizing data separation and fairness.
-    *   Type: `regulatory-primary`
-5.  **FDA (2025). "Marketing Submission Recommendations for a Predetermined Change Control Plan (PCCP) for AI-Enabled Device Software Functions." [URL: https://www.fda.gov/regulatory-information/search-fda-guidance-documents/]**
-    *   Annotation: Finalized guidance detailing how manufacturers can pre-authorize algorithm updates. Supports the section on TPLC and the regulatory requirements for post-market modification protocols.
-    *   Type: `regulatory-primary`
-6.  **Coalition for Health AI (CHAI). (2026). "CHAI Responsible AI Guide (RAIG) v2026." [URL: https://www.coalitionforhealthai.org/raig]**
-    *   Annotation: Provides the 2026 industry-standard framework for model cards and assurance labs. Essential for the section on CHAI membership and vendor evaluation benchmarks.
-    *   Type: `professional-society`
-7.  **Stanford Health Care. (2025). "Monitoring Deployed AI Systems in Health Care." *ResearchGate/Stanford Medicine*. [URL: https://med.stanford.edu/rai.html]**
-    *   Annotation: Outlines the three-pillar monitoring strategy: System Integrity, Performance (Drift), and Impact. Provides specific operational "alerting thresholds" for health systems.
-    *   Type: `institutional-policy`
-8.  **Zhu, L., et al. (2025). "Reproducible generative artificial intelligence evaluation for health care: a clinician-in-the-loop approach." *JAMIA Open*, 8(1). [DOI: 10.1093/jamiaopen/ooae123]**
-    *   Annotation: Proposes the 5-dimension evaluation framework for GenAI (Helpfulness, Comprehension, Correctness, Completeness, Potential Harm). Critical for the section on metrics beyond accuracy.
-    *   Type: `peer-reviewed`
-9.  **Ghassemi, M., et al. (2021). "The false hope of current approaches to explainable AI in health care." *The Lancet Digital Health*, 3(11), e745-e750. [DOI: 10.1016/S2589-7500(21)00208-9]**
-    *   Annotation: Argues that local validation and rigorous performance monitoring are more important for safety than "explainability" features, which can be misleading in clinical settings.
-    *   Type: `peer-reviewed`
-10. **Kelly, C. J., et al. (2019). "Key challenges for delivering clinical AI in health care." *Nature Medicine*, 25(10), 1474–1482. [DOI: 10.1038/s41591-019-0627-9]**
-    *   Annotation: Introduces the concept of "silent trials" (shadow deployment) as a bridge between development and clinical use. Supports the operational requirements section.
-    *   Type: `peer-reviewed`
-11. **Singhal, K., et al. (2023). "Towards Expert-Level Medical Question Answering with Large Language Models." *arXiv:2305.09617*. [DOI: 10.48550/arXiv.2305.09617]**
-    *   Annotation: Detailed look at Med-PaLM 2's red-teaming strategy, including adversarial dataset probing for health equity and scientific consensus.
-    *   Type: `peer-reviewed`
-12. **FDA (2024). "Artificial Intelligence and Medical Products: How CBER, CDER, CDRH, and OCP are Working Together." [URL: https://www.fda.gov/science-research/science-and-strategic-partnerships/artificial-intelligence-and-medical-products]**
-    *   Annotation: High-level strategy for cross-center AI oversight, emphasizing the "Total Product Lifecycle" approach.
-    *   Type: `regulatory-primary`
-13. **Higginson, A. D., et al. (2026). "The Knowledge-Practice Gap in Clinical LLMs: A Systematic Review." *medRxiv*. [DOI: 10.1101/2026.01.15.26300123]**
-    *   Annotation: Meta-analysis of 50+ clinical LLMs showing high USMLE scores (85%+) but low practical competence (55%) in real-world diagnostic tasks.
-    *   Type: `peer-reviewed`
-14. **Hippocratic AI. (2025). "RWE-LLM: A Framework for Large-Scale Clinician Red Teaming." [URL: https://www.hippocraticai.com/safety]**
-    *   Annotation: Describes a framework using thousands of licensed clinicians to stress-test medical LLM outputs. Useful for the red-teaming section.
-    *   Type: `vendor`
-15. **Paulus, J. K., & Kent, D. M. (2020). "Predicting the effects of clinical AI." *The Lancet Digital Health*, 2(6), e332-e339. [DOI: 10.1016/S2589-7500(20)30104-X]**
-    *   Annotation: Discusses the "pharmacovigilance" model for AI, focusing on the need for post-market surveillance of patient outcomes.
-    *   Type: `peer-reviewed`
-16. **NIST (2024). "AI Risk Management Framework: Generative AI Profile." [URL: https://www.nist.gov/itl/ai-risk-management-framework]**
-    *   Annotation: Technical guidance on identifying risks in GenAI, including hallucination and bias, mapped to healthcare workflows.
-    *   Type: `regulatory-primary`
-17. **Finlayson, S. G., et al. (2021). "The Clinician and Dataset Drift." *New England Journal of Medicine*, 385(23), 2113-2116. [DOI: 10.1056/NEJMp2113143]**
-    *   Annotation: Explains "covariate shift" and "concept drift" in simple clinical terms (e.g., how changing a lab assay breaks a model). Supports the drift detection section.
-    *   Type: `peer-reviewed`
-18. **Seneviratne, M. G., et al. (2023). "A Governance Framework for Algorithmic Health Equity." *JAMIA*, 30(2), 241-248. [DOI: 10.1093/jamia/ocac210]**
-    *   Annotation: Specific framework for integrating fairness monitoring into hospital governance. Supports the escalation path section.
-    *   Type: `peer-reviewed`
-19. **ONC (2025). "Health Data, Technology, and Interoperability (HTI-1) Final Rule." [URL: https://www.healthit.gov/topic/laws-regulation-and-policy/health-data-technology-and-interoperability-hti-1]**
-    *   Annotation: Mandates transparency for "predictive decision support interventions" (DSIs), effectively requiring CHAI-style model cards for EHR-integrated AI.
-    *   Type: `regulatory-primary`
-20. **Rajpurkar, P., et al. (2022). "AI in health and medicine." *Nature Medicine*, 28, 31–38. [DOI: 10.1038/s41591-021-01614-0]**
-    *   Annotation: Comprehensive review of the technical and ethical barriers to deployment, emphasizing that "FDA clearance is the beginning, not the end, of validation."
-    *   Type: `peer-reviewed`
-21. **McCradden, M. D., et al. (2020). "Ethical limitations of algorithmic fairness in oncology." *The Lancet Digital Health*, 2(5), e221-e223. [DOI: 10.1016/S2589-7500(20)30065-3]**
-    *   Annotation: Critiques purely mathematical fairness metrics, arguing for institutional oversight that considers social context.
-    *   Type: `peer-reviewed`
-22. **Sendak, M. P., et al. (2020). "The Sepsis Watch: a case study in implementing machine learning in clinical care." *BMJ Innovations*, 6(4). [DOI: 10.1136/bmjinnov-2020-000433]**
-    *   Annotation: A positive case study from Duke Health on how they successfully implemented local validation and a human-in-the-loop system for sepsis.
-    *   Type: `peer-reviewed`
-23. **Beede, E., et al. (2020). "A Human-Centered Evaluation of a Deep Learning System Deployed in Clinics for the Detection of Diabetic Retinopathy." *CHI Conference Proceedings*. [DOI: 10.1145/3313831.3376718]**
-    *   Annotation: Empirical study of how a "perfect" model failed in Thailand due to internet latency and lighting conditions. Supports the section on operational "messiness."
-    *   Type: `peer-reviewed`
-24. **Obermeyer, Z., et al. (2019). "Dissecting racial bias in an algorithm used to manage the health of populations." *Science*, 366(6464), 447-453. [DOI: 10.1126/science.aax2342]**
-    *   Annotation: Landmark study of bias in a care management algorithm that used "cost" as a proxy for "need," resulting in racial disparities. Illustrates the danger of "spurious shortcuts."
-    *   Type: `peer-reviewed`
-25. **Gulshan, V., et al. (2016). "Development and Validation of a Deep Learning Algorithm for Detection of Diabetic Retinopathy in Retinal Fundus Photographs." *JAMA*, 316(22), 2402–2410. [DOI: 10.1001/jama.2016.17216]**
-    *   Annotation: Early foundational paper on clinical AI validation. Highlights the importance of multiple independent validation sets (EyePACS vs. Messidor-2).
-    *   Type: `peer-reviewed`
+1.  **Collins GS, et al. (2024). TRIPOD+AI statement: updated guidance for reporting clinical prediction models that use regression or machine learning methods. BMJ.**
+    - DOI: 10.1136/bmj-2023-078378
+    - *Annotation:* The 2024 update to the gold-standard reporting guideline for prediction models. It expands the 2015 TRIPOD checklist to include AI-specific requirements like hyperparameter tuning and feature engineering. It supports the chapter's argument for transparent pre-deployment reporting.
+    - *Flag:* `peer-reviewed`
+
+2.  **Coalition for Health AI (CHAI). (2025). CHAI Applied Model Card Framework.**
+    - URL: <https://github.com/coalitionforhealthai/model-card>
+    - *Annotation:* Released in January 2025, this framework provides the "nutrition label" for health AI, focusing on HTI-1 compliance and transparency regarding training populations and known biases. It is the primary reference for the "KPI taxonomy" and "Technical KPI" sections.
+    - *Flag:* `institutional-policy`
+
+3.  **FDA. (2025). Artificial Intelligence-Enabled Device Software Functions: Lifecycle Management and Marketing Submission Recommendations (Draft Guidance).**
+    - URL: <https://www.fda.gov/regulatory-information/search-fda-guidance-documents/>
+    - *Annotation:* Issued January 7, 2025, this landmark draft guidance formalizes the Total Product Lifecycle (TPLC) approach, mandating real-world performance monitoring and active surveillance for performance drift and bias.
+    - *Flag:* `regulatory-primary`
+
+4.  **Wong A, et al. (2021). External Validation of a Widely Implemented Proprietary Sepsis Prediction Model in Hospitalized Patients. JAMA Internal Medicine.**
+    - DOI: 10.1001/jamainternmed.2021.2626
+    - *Annotation:* A critical study documenting the poor performance (AUC 0.63) of the Epic Sepsis Model when validated at a local site (Michigan Medicine), significantly lower than vendor-reported values. Supports the argument that benchmarking is a poor predictor of local performance.
+    - *Flag:* `peer-reviewed`
+
+5.  **Vasey B, et al. (2022). Reporting guideline for the early-stage clinical evaluation of decision support systems driven by artificial intelligence: DECIDE-AI. Nature Medicine.**
+    - DOI: 10.1038/s41591-022-01772-9
+    - *Annotation:* Already in bib; provides the standard for evaluating AI in its early, "shadow" or "pilot" phases. Essential for the "Pre-deployment" section of the outline.
+    - *Flag:* `peer-reviewed`
+
+6.  **Pillai et al. (2025). Principles and Practices of Community Engagement in AI for Population Health. NIH PubMed.**
+    - [PUBMED-PENDING: Pillai 2025 — Community Engagement in AI for Population Health — JMIR Public Health and Surveillance]
+    - *Annotation:* Highlights the "engagement gap" in AI governance and proposes the IAP2 spectrum for moving from "inform" to "empower" in patient participation. Supports the Participatory Governance section.
+    - *Flag:* `peer-reviewed`
+
+7.  **Finlayson SG, et al. (2021). The Clinician and Dataset Shift in Artificial Intelligence. New England Journal of Medicine.**
+    - DOI: 10.1056/nejmc2104626
+    - *Annotation:* Already in bib; documents how COVID-19 induced dataset shift rendered many clinical models inaccurate. Essential for explaining "concept drift."
+    - *Flag:* `peer-reviewed`
+
+8.  **HHS Office for Civil Rights. (2024). Nondiscrimination in Health Programs and Activities (Section 1557 Final Rule).**
+    - URL: <https://www.hhs.gov/civil-rights/for-individuals/section-1557/index.html>
+    - *Annotation:* Establishes an affirmative duty for health systems to identify and mitigate discrimination in their use of clinical decision support tools. This is the legal "stick" for equity monitoring.
+    - *Flag:* `regulatory-primary`
+
+9.  **ACGME. (2025). Common Program Requirements: July 2025 Updates.**
+    - URL: <https://www.acgme.org/what-we-do/accreditation/common-program-requirements/>
+    - *Annotation:* New 2025 requirements for human-AI teamwork and institutional AI use policies in residency programs. Supports the Education domain monitoring section.
+    - *Flag:* `professional-society`
+
+10. **Liang W, et al. (2023). GPT detectors are biased against non-native English writers. Patterns.**
+    - DOI: 10.1016/j.patter.2023.100779
+    - *Annotation:* Demonstrates that AI detection tools frequently produce false positives for non-native English speakers. Supports the argument against using "policing" tools for integrity monitoring in education.
+    - *Flag:* `peer-reviewed`
+
+11. **Salloch S & Eriksen A. (2024). From 'Human in the Loop' to a Participatory System of Governance for AI in Healthcare. Bioethics.**
+    - [PUBMED-PENDING: Salloch 2024 — Participatory System of Governance for AI — Bioethics]
+    - *Annotation:* Argues for structural community oversight over individual clinical oversight. Provides the philosophical framing for section 7 of the outline.
+    - *Flag:* `peer-reviewed`
+
+12. **U.S. Senate Committee on Homeland Security. (2024). AI in Medicare Advantage: A Review of Care Denials.**
+    - URL: <https://www.hsgac.senate.gov/wp-content/uploads/2024-Senate-MA-AI-Report.pdf>
+    - *Annotation:* Documents AI-driven care denial rates up to 16x higher than human-led reviews. Provides a concrete example of business/operational monitoring failures.
+    - *Flag:* `regulatory-primary`
+
+13. **[PUBMED-PENDING: Mitchell 2019 — Model Cards for Model Reporting — Proceedings of FAT*]**
+    - *Annotation:* The foundational paper on Model Cards. Essential for the technical KPI section and "CHAI model card" implementation.
+    - *Flag:* `peer-reviewed`
+
+14. **[PUBMED-PENDING: Bedoya 2022 — ABCDS Framework for Local Deployment — JAMIA]**
+    - *Annotation:* Already in bib; describes the "shadow deployment" and "silent pilot" process. Core to the strategy of pre-deployment evaluation.
+    - *Flag:* `peer-reviewed`
+
+15. **[PUBMED-PENDING: Wong 2025 — AI-Assisted Oncology Survival Prediction Degradation — Communications Medicine]**
+    - *Annotation:* Documentation of performance decay in oncology AI due to laboratory utilization shifts. Provides a post-sepsis clinical drift example.
+    - *Flag:* `peer-reviewed`
+
+16. **[PUBMED-PENDING: Freeman 2025 — The Educate, Enable, Expect Model for AI Integrity — International Journal for Educational Integrity]**
+    - *Annotation:* Proposes moving monitoring from detection to transparency and "AI Use Statements." Core for the Education domain section.
+    - *Flag:* `peer-reviewed`
+
+17. **New York City Council. (2021/2023). Local Law 144: Automated Employment Decision Tools.**
+    - URL: <https://www.nyc.gov/site/dca/about/automated-employment-decision-tools.page>
+    - *Annotation:* Mandates annual bias audits for AI tools used in hiring and promotion. Primary source for "Business Operations" equity monitoring.
+    - *Flag:* `regulatory-primary`
+
+18. **[PUBMED-PENDING: Banerjee 2025 — Patient Trust in Artificial Intelligence — Nature Digital Medicine]**
+    - *Annotation:* Qualitative study identifying trust as the critical factor for adoption and the role of early involvement in building it.
+    - *Flag:* `peer-reviewed`
+
+19. **[PUBMED-PENDING: Gymrek 2013 — Identifying Personal Genomes by Surname Inference — Science]**
+    - *Annotation:* Foundational paper for "reproducibility" and "provenance" risks in research AI, specifically regarding re-identification from "de-identified" data.
+    - *Flag:* `peer-reviewed`
+
+20. **[PUBMED-PENDING: Tierney 2024 — Ambient AI Scribes documentation burden — NEJM Catalyst]**
+    - *Annotation:* Provides metrics for "Operational KPIs" in business/clinical crossovers (reduction in documentation time vs. error rates).
+    - *Flag:* `peer-reviewed`
+
+21. **[PUBMED-PENDING: Ghassemi 2021 — False Hope of Explainability in Health Care AI — Lancet Digital Health]**
+    - *Annotation:* Already in bib; cautions that technical "explainability" is not a substitute for rigorous outcome monitoring. Supports section 3.
+    - *Flag:* `peer-reviewed`
+
+22. **Coalition for Health AI (CHAI). (2024). Assurance Standards Guide (Draft).**
+    - URL: <https://www.coalitionforhealthai.org/publications/>
+    - *Annotation:* Technical requirements for the AI lifecycle, aligning with NIST AI RMF. Essential for the "KPI Architecture" section.
+    - *Flag:* `institutional-policy`
+
+23. **AMA. (2024). AMA Principles for Augmented Intelligence Development, Deployment, and Use.**
+    - URL: <https://www.ama-assn.org/practice-management/digital/ama-principles-augmented-intelligence-development-deployment-and-use>
+    - *Annotation:* Provides professional-society standards for "meaningful human oversight" and "post-deployment monitoring."
+    - *Flag:* `professional-society`
+
+24. **[PUBMED-PENDING: McDonald 2025 — Bias in AI Detectors for L2 Writers — Higher Education]**
+    - *Annotation:* 2025 update confirming that detection tools disproportionately flag non-native writers, reinforcing the case for authentic assessment.
+    - *Flag:* `peer-reviewed`
+
+25. **ICMJE. (2023). Recommendations for Scholarly Work in Medical Journals.**
+    - URL: <https://www.icmje.org/recommendations/>
+    - *Annotation:* Standardizes AI disclosure requirements for research. Primary source for monitoring research provenance.
+    - *Flag:* `professional-society`
 
 ## 4. Candidate figures and tables
 
-1.  **AI Lifecycle Diagram**
-    *   Type: `mermaid-diagram`
-    *   Description: A flow diagram showing the transition from `Local Validation (Retrospective)` → `Shadow Deployment (Silent Mode)` → `Deployment Gate (AISC Approval)` → `Live Deployment (Human-in-the-loop)` → `Continuous Monitoring (Drift/Fairness)` → `Feedback/PCCP Update` or `Decommissioning`.
-2.  **Generative AI Performance Metrics Table**
-    *   Type: `data-table`
-    *   Description: A table mapping five dimensions: Dimension (Helpfulness, Correctness, etc.), Definition, Clinical Risk if low, Quantitative Proxy (e.g., BERTScore, ROUGE), and Qualitative Proxy (Clinician Likert Scale).
-3.  **Red-Teaming Checklist for Healthcare LLMs**
-    *   Type: `data-table`
-    *   Description: A structured checklist for red-teaming teams. Categories include: `Clinical Safety` (dosage, contraindications), `Health Equity` (demographic bias), `Privacy` (PHI extraction), and `Reasoning` (hallucinated citations, logic gaps). Each includes example "attack" prompts and pass/fail criteria.
-4.  **The Pharmacovigilance Analogy Map**
-    *   Type: `data-table`
-    *   Description: Columns: `Drug Monitoring Concept` vs. `AI Monitoring Concept`. Maps `Adverse Reaction` to `Algorithmic Bias/Harm`; `Efficacy Decay` to `Performance Drift`; `Phase IV Trial` to `Post-market Surveillance`; `Recall` to `Model Retirement`.
-5.  **Shadow Mode Operational Requirements Table**
-    *   Type: `data-table`
-    *   Description: Lists requirements across `Infrastructure` (data mirroring, HL7/FHIR feeds), `Blinding` (clinician masking protocols), `Ground Truth` (outcome capture mechanism), and `Governance` (weekly review of suppressed outputs).
+1.  **AI Lifecycle Monitoring Diagram**
+    - *Description:* A Mermaid lifecycle diagram showing the path from pre-deployment evaluation (local validation, shadow deployment, red-teaming) to the go/no-go decision, followed by live deployment, ongoing monitoring (drift, bias, utility), and the escalation loop for remediation or retirement.
+    - *Type:* `mermaid-diagram`
+    - *Sketch:* Nodes representing stages: [Eval] -> [Shadow] -> [Decision] -> [Live] -> [Monitor]. Monitor has three sub-nodes: [Technical], [Operational], [Outcome]. Feedback loop from [Monitor] back to [Eval] or [Retire].
+
+2.  **Domain Comparison Table**
+    - *Description:* Compares how monitoring differs across the four domains. Rows: Clinical, Research, Education, Business Ops. Columns: Primary KPI Type, Key Stakeholders, Main Ethical Obligation, Governance Body, Example Metric.
+    - *Type:* `data-table`
+    - *Sketch:* 
+        - Clinical: Safety/Equity, Patients, Non-maleficence, AMC AI Committee, AUC-ROC vs. Patient Harm.
+        - Research: Reproducibility, Researchers/IRB, Integrity, IRB, Data Provenance Hash.
+        - Education: Learning Outcomes, Faculty/Students, Competency, Curriculum Committee, Assessment Validity.
+        - Business: Efficiency/Equity, Admin Staff, Fairness, CFO/HR, Denial Rate % vs. Hiring Bias Audit.
+
+3.  **KPI Taxonomy for AMC AI**
+    - *Description:* A table categorizing KPIs into Technical, Operational, and Outcome categories.
+    - *Type:* `data-table`
+    - *Sketch:* 
+        - Technical: Calibration, covariate shift, hallucination rate (interprets: MLOps/Data Science).
+        - Operational: Utilization rate, override rate, time-to-task (interprets: Department Heads).
+        - Outcome: Mortality, denial rates, student competency scores (interprets: QM/Deans).
+
+4.  **The "Nutritional Label" (CHAI Model Card Sample)**
+    - *Description:* A Graphviz or simple data-table representation of a simplified CHAI Applied Model Card for a hypothetical sepsis model.
+    - *Type:* `graphviz-diagram`
+    - *Sketch:* Boxes showing "Intended Use," "Exclusion Criteria," "Demographic Performance," and "Re-training Trigger."
 
 ## 5. Open questions for the author
 
-1.  **CHAI Model Card Finality:** While CHAI's 2026 RAIG is the "gold standard," it is not yet a legal mandate like FDA regulations. Should the chapter frame CHAI adoption as "recommended best practice" or "institutional requirement" for a top-tier AMC?
-2.  **FDA Final Rules vs. Guidance:** As of 2026, the FDA TPLC framework has several "Final Guidance" documents, but some aspects of AI/ML "software as a medical device" (SaMD) are still in draft. The author should verify the final status of the "Total Product Lifecycle" rule at the time of writing.
-3.  **The Empirical Strength of "Shadow Trials":** While literature (Stanford/Duke) strongly supports shadow trials, there is debate about their ROI for low-risk administrative LLMs (e.g., draft email generation). Should the chapter mandate shadow trials for *all* AI, or only "High-Risk" clinical ones?
-4.  **Local vs. Central Monitoring:** Should the AMC centralize monitoring in an "AI Operations Center" (AI-OC) or distribute it to individual clinical departments? This is a significant resource and governance choice.
+1.  **CHAI Assurance Lab Status:** The dossier notes CHAI intends to certify Independent Assurance Labs by April 2025. The author should check if the first labs are operational and if any major AMC has formally partnered with one for third-party monitoring.
+2.  **FDA TPLC Draft vs. Final:** The January 2025 TPLC guidance is currently a *draft*. The author must verify if a final version or updated enforcement memo has been issued by the time of writing.
+3.  **Participatory Design Maturity:** The literature (e.g., Pillai 2025) suggests methods like "Research Advisory Groups" are effective, but many remain pilots. The author should decide whether to frame these as "best practices" or "emerging experimental models."
+4.  **Education vs. General Higher-Ed:** While health-professions-specific literature (ACGME 2025) is emerging, much of the integrity monitoring research is general higher-ed. The author should confirm the balance of domain-specific vs. general sources.

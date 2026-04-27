@@ -52,6 +52,7 @@ book:
         - ethics.qmd
         - data.qmd
         - pm_and_support.qmd
+        - evaluation_monitoring.qmd
   appendices:
     - appendices.qmd
     - bill_of_rights.qmd
