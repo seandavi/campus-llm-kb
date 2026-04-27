@@ -2,22 +2,22 @@
 
 This appendix documents the workflow used to research and write the chapters of this book. We include it not as a novelty item but because it is itself an instance of the kind of human-AI collaboration the book describes — and because the specific tool choices, failure modes, and tradeoffs we encountered are illustrative of the decisions any organization faces when it tries to use AI for substantive knowledge work.
 
-The workflow involved four distinct agents with different roles: a human author who owned the intellectual direction, Claude Opus 4.7 as the planning and architectural intelligence, Claude Sonnet 4.6 as the orchestrating author, and Gemini as the research engine. Each played to its comparative advantage, and the division of labor was not arbitrary — it emerged from thinking carefully about what each tool does well and where each fails.
+The workflow involved four distinct agents with different roles: a human author who owned the intellectual direction, Claude Opus 4.7 as the planning and architectural intelligence, Claude Sonnet 4.6 as the orchestrating author, and Gemini as the research engine. Each played to its comparative advantage, and the division of labor was not arbitrary — it emerged from thinking carefully about what each tool does well and where each fails. The human author was present and directing at every phase: writing the prompts, evaluating the outputs, redirecting scope when the AI's framing was wrong, and deciding what to accept, revise, or discard. No phase ran autonomously to completion without human review.
 
 ## The Workflow in Brief
 
 The workflow proceeded in five phases. @tbl-workflow-phases summarizes them.
 
-| Phase | Who | What | Output |
-|-------|-----|------|--------|
-| 1. Scaffold | Human author | Built the Quarto book structure, wrote initial chapter drafts, established the domain/workstream framework | Existing `.qmd` files, `_quarto.yml`, `references.bib` |
-| 2. Analysis and planning | Claude Opus 4.7 | Reviewed the repo, identified gaps, wrote a detailed research plan specifying structure, voice, citation standards, and figure requirements | `_research/MASTER_PROMPT.md` (~500 words) |
-| 3. Brief writing | Claude Sonnet 4.6 | Wrote per-chapter research briefs specifying the argument arc, source targets, figure sketches, and open questions for each of 17 chapters | 17 briefs in `_research/briefs/` (~16,500 words total) |
-| 4. Deep research | Gemini (via CLI) | Executed web-search-backed research for each chapter brief, producing annotated source lists, argument spines, section outlines, and figure sketches | 17 dossiers in `_research/dossiers/` (~30,900 words total) |
-| 5. Authorship | Claude Sonnet 4.6 | Wrote chapter prose from dossiers, verified citations, created Quarto-formatted diagrams and tables, added BibTeX entries | Chapter `.qmd` files, updated `references.bib` |
-| 6. Review pass | Gemini + Claude Sonnet 4.6 | Audited completed chapters for unsupported factual claims and unlinked entities; resolved high-confidence gaps with citations and inline links | Updated `.qmd` files, new BibTeX entries, `_research/REVIEW_PROMPT.md`, `_research/review_groups/` |
+| Phase | AI agent | What the AI did | Human author's role | Output |
+|-------|----------|-----------------|---------------------|--------|
+| 1. Scaffold | — | — | Built the Quarto book structure, wrote initial chapter drafts, established the domain/workstream framework | Existing `.qmd` files, `_quarto.yml`, `references.bib` |
+| 2. Analysis and planning | Claude Opus 4.7 | Reviewed the repo, identified gaps, drafted a research plan covering structure, voice, citation standards, and figure requirements | Directed the analysis with specific prompts; reviewed the master prompt and revised scope before accepting it | `_research/MASTER_PROMPT.md` (~500 words) |
+| 3. Brief writing | Claude Sonnet 4.6 | Wrote per-chapter research briefs specifying argument arc, source targets, figure sketches, and open questions | Reviewed each brief; redirected scope where framing was wrong (e.g., ensuring all four AMC domains were covered, not just clinical) | 17 briefs in `_research/briefs/` (~16,500 words total) |
+| 4. Deep research | Gemini (via CLI) | Executed web-search-backed research for each brief, producing annotated source lists, argument spines, section outlines, and figure sketches | Reviewed each dossier for scope gaps; evaluated source quality; accepted, rejected, or re-ran research sessions as needed | 17 dossiers in `_research/dossiers/` (~30,900 words total) |
+| 5. Authorship | Claude Sonnet 4.6 | Wrote chapter prose from dossiers, verified citations, created diagrams and tables, added BibTeX entries | Reviewed each chapter; evaluated voice, argument, and factual accuracy; directed revisions and approved final text | Chapter `.qmd` files, updated `references.bib` |
+| 6. Review pass | Gemini + Claude Sonnet 4.6 | Audited completed chapters for unsupported factual claims and unlinked entities; flagged gaps for resolution | Evaluated each flagged item; approved or rejected proposed citations; made final editorial calls on what to add, revise, or leave as synthesis | Updated `.qmd` files, new BibTeX entries, `_research/REVIEW_PROMPT.md`, `_research/review_groups/` |
 
-: The six-phase multi-model authorship workflow. Each phase has a distinct responsible agent and produces a defined artifact. {#tbl-workflow-phases}
+: The six-phase multi-model authorship workflow. The human author directed and evaluated every phase; no phase ran to completion without human review. The AI agents contributed throughput and breadth; the human author contributed judgment, direction, and accountability for the final text. {#tbl-workflow-phases}
 
 ## Why These Tools in These Roles
 
