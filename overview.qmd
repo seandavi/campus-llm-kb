@@ -1,11 +1,189 @@
-# Overview
+---
+date: last-modified
+---
 
-This book exists because the answer to that second question, at most institutions, is not yet yes.
+# Overview {#sec-overview}
 
-::: {.callout-note}
-This book is fully compliant with the [llms.txt standard](https://llmstxt.org/). Every page is available in plain Markdown format for use with AI assistants and large language models. See the [Quarto llms.txt documentation](https://quarto.org/docs/websites/website-llms.html) for details.
-:::
+At most academic medical centers right now, AI is being deployed faster than the
+governance structures meant to oversee it. The 2025 CHIME/Censinet survey found that
+84 percent of U.S. health systems have some form of AI steering committee — but only
+10 percent maintain an automated inventory of which AI tools are actually running in
+clinical environments [@CHIME2025-censinet]. The committee exists. The operational visibility does not.
+
+That gap is not a small administrative oversight. Ambient documentation tools are now
+used by more than 600,000 clinicians across U.S. health systems. [Epic](https://www.epic.com) has embedded
+AI across the clinical workflow at thousands of hospitals without requiring most of those
+hospitals to make a deliberate procurement decision. Research teams are running
+LLM-assisted literature synthesis, grant applications, and protocol drafts whether
+or not anyone has worked through the research integrity implications. Administrative staff
+are using consumer AI for tasks that touch sensitive data, often without knowing what
+the privacy exposure actually is. The question is no longer whether AI has been
+deployed at your AMC. The question is whether anyone knows what has been deployed,
+and whether the governance structures are in place to ensure it is being used well.
+
+This book exists because the answer to that second question, at most institutions, is not
+yet yes.
 
 ## What changed between 2020 and 2024
 
-...
+Previous waves of AI in healthcare did not land like this. Expert systems in the 1980s
+and 1990s required custom development and remained isolated experiments. The early machine
+learning wave of the 2010s produced promising models in research settings — genomic risk
+prediction, sepsis alert systems, radiology AI — but deployment at scale was slow, expensive,
+and required deep integration with clinical informatics teams. The tooling was hard. The
+data pipelines were fragile. Most models never left the institution that built them.
+
+What changed was the API. Starting in 2023, [Microsoft Azure OpenAI](https://azure.microsoft.com/en-us/products/ai-services/openai-service), [AWS Bedrock](https://aws.amazon.com/bedrock/), and
+[Google Vertex AI](https://cloud.google.com/vertex-ai) began offering foundation model access through enterprise APIs with signed
+Business Associate Agreements, U.S.-only data residency options, and zero-data-retention
+configurations for prompt content. The computational barrier to deploying a capable
+language model collapsed. An AMC with no machine learning infrastructure could connect
+a clinical workflow tool to a frontier model in weeks rather than years.
+
+The second change was the nature of the tools. Previous clinical AI was episodic and
+discrete: this radiology image, this EHR record, this risk score calculated at a specific
+decision point. The new AI is ambient and continuous. An ambient documentation system is
+active in every patient encounter, listening to a conversation, and generating a clinical
+note that the physician then attests to as their professional documentation. A predictive
+readmission model runs on every patient in the hospital, updating continuously as new data
+arrives. A care gap identification algorithm touches every patient in the panel, every
+night. These tools do not generate outputs at discrete moments when a clinician is paying
+attention. They operate continuously, at scale, in the background.
+
+That shift from episodic to ambient changes everything about governance. A governance
+model designed for discrete, intentional AI queries does not cover a system that is
+continuously analyzing every patient encounter without any individual triggering event.
+
+## The evidence: what is actually working
+
+The ambient documentation case is the clearest current evidence of clinical AI value.
+Studies of early adopters at academic medical centers have found consistent reductions
+in documentation time — typically 10 to 15 minutes per patient encounter — alongside
+improvements in note quality and physician satisfaction [@Tierney2024-scribe]. The AMA's
+2023 survey found that most physicians who reported using AI tools had positive
+perceptions of their impact on efficiency, though they were more skeptical about the
+tools' accuracy and their own ability to verify AI-generated content [@AMA2023-survey].
+The burnout implications are real: documentation burden is a primary driver of physician
+attrition, and attrition at AMCs is measured in millions of dollars per departing
+physician. Ambient documentation is not just a convenience tool. It is a workforce
+retention intervention.
+
+Diagnostic AI in radiology and pathology has accumulated the strongest clinical evidence
+base outside of documentation. FDA-cleared AI tools for diabetic retinopathy screening,
+mammography triage, pulmonary nodule detection, and stroke identification have demonstrated
+performance at or near specialist-level accuracy in prospective validation studies. The
+evidence for diagnostic AI reducing time-to-diagnosis and, in some cases, improving
+outcomes in underserved populations where specialist access is limited is compelling enough
+that the liability question has begun to cut both ways: institutions may face exposure not
+only for harms caused by deploying AI but, increasingly, for failing to deploy AI tools
+that have become part of the standard of care for specific diagnostic tasks.
+
+## The evidence: where it has gone wrong
+
+The counterpart to this evidence base is a set of high-profile failures that share a
+common diagnosis. IBM Watson for Oncology was deployed at major cancer centers with
+confident marketing claims about its ability to recommend treatment plans. Physicians at
+several institutions found its recommendations unsafe, based on synthetic training cases
+rather than real patient records, and in direct conflict with clinical judgment. The
+product was eventually discontinued. The failure was not primarily algorithmic. It was
+a governance failure: inadequate validation against the populations and workflows where
+the tool was actually deployed, and institutional decisions made on the basis of vendor
+claims rather than independent evidence.
+
+The Epic Sepsis Model story is more instructive because it involves a tool that was
+widely deployed across real clinical environments and subjected to rigorous external
+validation. When Wong and colleagues at the University of Michigan validated the model
+against their own patient population, they found that its area under the curve — 87
+percent in the vendor's reported validation — dropped to 63 percent in their environment
+[@Wong2021-esm]. More significantly, when they analyzed what the model was actually
+predicting, they found it was largely capturing patients who were already suspected of
+having sepsis and who had already had diagnostic cultures ordered. As a predictive tool
+that could trigger earlier intervention, it was performing close to chance. The model was
+doing something, just not what the deployment decision assumed it was doing.
+
+This pattern — a tool that performs well on a vendor-provided validation set and
+underperforms in the real clinical environment — is not an Epic-specific failure. It is
+a predictable consequence of deploying models without independent local validation. The
+validation set reflects the population and workflow context where the model was developed.
+Your population and workflow are different. Sometimes the difference is small. Sometimes
+it is the difference between an 87 percent AUC and a 63 percent AUC.
+
+The algorithmic bias literature documents a third failure mode that is less about
+performance in aggregate and more about who the performance failures fall on. Obermeyer
+and colleagues' demonstration that a commercial risk stratification algorithm systematically
+underestimated the health needs of Black patients — because it used healthcare cost as a
+proxy for health need, encoding unequal access into the model's outputs — remains the
+clearest published example of how a technically functional AI tool can produce
+inequitable outcomes [@Obermeyer2019-bias]. The algorithm was working as designed. The
+design encoded an injustice.
+
+## Where governance stands right now
+
+The governance response to this evidence — both the successes and the failures — has been
+substantial in scope and uneven in implementation. A handful of academic medical centers
+have built genuinely operational AI governance programs. Duke Health published a framework
+for Algorithm-Based Clinical Decision Support oversight that treats deployed algorithms as
+clinical assets with full lifecycle management requirements: a clinical owner, a technical
+owner, a silent evaluation phase before any tool influences clinical decisions, and a
+registry that maintains visibility into every algorithm in the environment
+[@Bedoya2022-abcds]. UCSF developed a Trustworthy AI playbook grounded in six operating
+principles — Fair, Robust, Transparent, Responsible, Privacy, and Safe — with mandatory
+checkpoints at data validation, pilot deployment, and enterprise scale. Vanderbilt built
+a REDCap-based intake process that applies structured triage to every AI tool proposal
+before it consumes governance committee bandwidth.
+
+These are working models. They are not yet the norm. The same CHIME/Censinet survey that
+found 84 percent of health systems with AI governance committees found that only 59 percent
+have a formal intake process for evaluating new AI tools, and only 10 percent have
+automated inventory of what is actually deployed [@CHIME2025-censinet]. The governance aspiration is widespread.
+The operational machinery is not.
+
+At the same time, the regulatory environment has moved from guidance to enforcement.
+The ONC Health Data, Technology, and Interoperability rule took effect in 2025, requiring
+EHR vendors to surface 31 structured source attributes — training data provenance,
+demographic performance breakdowns, known limitations — for every certified AI-enabled
+clinical decision support tool in the workflow. The HHS Section 1557 nondiscrimination
+rule now holds covered entities liable for deploying patient care decision-support tools
+that produce discriminatory outcomes. Colorado's AI Act requires annual impact assessments
+for high-risk AI. These rules are described in detail in @sec-regulatory. For present
+purposes, the point is that the option of deploying AI and revisiting governance later is
+closing.
+
+## What this book is and isn't
+
+This is a working framework, not a finished playbook. It was developed for a specific
+context — an academic medical center trying to organize the deployment of AI tools across
+four semi-independent organizational domains (clinical care, research, education, and
+business operations) while maintaining coherent governance — and that context shapes
+every recommendation in it.
+
+The framework is organized around the recognition that an AMC is not a single AI deployment
+environment. It is four. Clinical AI governance is shaped by patient safety obligations,
+FDA regulation, and EHR integration realities that have nothing to do with research AI
+governance. Research AI governance is shaped by IRB requirements, data sharing agreements,
+and publication integrity standards that are irrelevant to the education domain. Each domain
+has its own risk profile, its own leadership structure, its own budget authority, and its
+own pace of adoption. A governance program designed for clinical AI and applied wholesale
+to educational uses will miss things that matter. The converse is equally true.
+
+Across all four domains, the same five operational questions recur: who can access what
+data under what conditions, how is the technical infrastructure governed and secured, what
+are the ethical and legal obligations, how does the workforce develop the competency to
+use AI responsibly, and who manages the AI program across its full lifecycle from intake
+to decommission. These five questions are the workstreams that cross-cut the domain
+structure, and they are the organizational scaffolding of this book.
+
+The chapters that follow are written to be useful independently as well as together.
+A CMIO who needs to stand up a clinical AI governance program can read the clinical
+chapter, the infrastructure chapter, and the project management chapter without reading
+everything in between. A CHRO who needs to build a workforce AI literacy program can
+read the workforce chapter without needing the data governance chapter. The cross-references
+are there for context, not for prerequisite reading.
+
+I wrote the first version of this framework in 2023, when the dominant institutional
+question was still "should we let people use ChatGPT?" That question has been overtaken
+by events. The question now is how to govern AI programs that are already real, already
+large, and already affecting patients, researchers, students, and staff in ways that
+most institutions do not yet have full visibility into. This version of the book tries
+to be useful to that question. Whether it succeeds is something you will be better
+positioned to judge than I am.
