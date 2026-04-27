@@ -1,0 +1,1156 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.7.33">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="dcterms.date" content="2026-04-26">
+
+<title>19&nbsp; Evaluation and Monitoring – Implementing AI in Academic Medicine</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./appendices.html" rel="next">
+<link href="./pm_and_support.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-ea385d0e468b0dd5ea5bf0780b1290d9.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-96934157685b0ce66cf1cdc82e4f4849.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<style>html{ scroll-behavior: smooth; }</style>
+<script src="site_libs/quarto-diagram/mermaid.min.js"></script>
+<script src="site_libs/quarto-diagram/mermaid-init.js"></script>
+<link href="site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
+
+
+</head>
+
+<body class="nav-sidebar floating nav-fixed quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="./index.html">
+    <span class="navbar-title">Implementing AI in Academic Medicine</span>
+    </a>
+  </div>
+        <div class="quarto-navbar-tools tools-wide tools-end">
+    <a href="https://github.com/seandavi/amc-ai-governance/" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
+    <div class="dropdown">
+      <a href="" title="Download" id="quarto-navigation-tool-dropdown-0" class="quarto-navigation-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false" role="link" aria-label="Download"><i class="bi bi-download"></i></a>
+      <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="quarto-navigation-tool-dropdown-0">
+          <li>
+            <a class="dropdown-item quarto-navbar-tools-item" href="./Implementing-AI-in-Academic-Medicine.pdf">
+              <i class="bi bi-file-pdf pe-1"></i>
+            Download PDF
+            </a>
+          </li>
+          <li>
+            <a class="dropdown-item quarto-navbar-tools-item" href="./Implementing-AI-in-Academic-Medicine.epub">
+              <i class="bi bi-journal pe-1"></i>
+            Download ePub
+            </a>
+          </li>
+      </ul>
+    </div>
+    <div class="dropdown">
+      <a href="" title="Share" id="quarto-navigation-tool-dropdown-1" class="quarto-navigation-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false" role="link" aria-label="Share"><i class="bi bi-share"></i></a>
+      <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="quarto-navigation-tool-dropdown-1">
+          <li>
+            <a class="dropdown-item quarto-navbar-tools-item" href="https://twitter.com/intent/tweet?url=|url|">
+              <i class="bi bi-twitter pe-1"></i>
+            Twitter
+            </a>
+          </li>
+          <li>
+            <a class="dropdown-item quarto-navbar-tools-item" href="https://www.facebook.com/sharer/sharer.php?u=|url|">
+              <i class="bi bi-facebook pe-1"></i>
+            Facebook
+            </a>
+          </li>
+          <li>
+            <a class="dropdown-item quarto-navbar-tools-item" href="https://www.linkedin.com/sharing/share-offsite/?url=|url|">
+              <i class="bi bi-linkedin pe-1"></i>
+            LinkedIn
+            </a>
+          </li>
+      </ul>
+    </div>
+</div>
+          <div id="quarto-search" class="" title="Search"></div>
+      </div> <!-- /container-fluid -->
+    </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./infrastructure.html">Workstream Resources</a></li><li class="breadcrumb-item"><a href="./evaluation_monitoring.html"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Evaluation and Monitoring</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Preface</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./overview.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Overview</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./values.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Values and Principles</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+ <span class="menu-text">Implementation</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./framework.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">The Framework</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./implementation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Domain Implementation Guide</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./barriers.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Barriers and How to Address Them</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="./domainresource.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Domain Resources</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./resources_clinical.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Clinical Domain</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./resources_research.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Research Domain</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./resources_education.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Education Domain</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./resources_business.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Business Operations</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./regulatory_landscape.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Regulatory and Policy Landscape</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
+ <span class="menu-text">Agentic AI in Practice</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./agentic_safety.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Agentic Safety and Guardrails</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./patient_trust.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Patient and Community Trust</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./professional_wellness.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Professional Wellness and Reducing Cognitive Burden</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true">
+ <span class="menu-text">Workstream Resources</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./infrastructure.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">IT Infrastructure and Security</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./workforce.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Training and Workforce Development</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ethics.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Ethics, Equity, and Institutional Accountability</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./data.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Data Access and Governance</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./pm_and_support.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Project Management and AI Portfolio Governance</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./evaluation_monitoring.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Evaluation and Monitoring</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true">
+ <span class="menu-text">Appendices</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./appendices.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">AI principles proposed by select organizations</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./bill_of_rights.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">B</span>&nbsp; <span class="chapter-title">OSTP Blueprint for an AI Bill of Rights</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./HHS.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">C</span>&nbsp; <span class="chapter-title">ONC HTI-1: Algorithm Transparency and Interoperability</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./appendix_workflow.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">D</span>&nbsp; <span class="chapter-title">How This Book Was Written: A Multi-Model AI Authorship Workflow</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./references.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">References</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#why-benchmark-performance-does-not-transfer" id="toc-why-benchmark-performance-does-not-transfer" class="nav-link active" data-scroll-target="#why-benchmark-performance-does-not-transfer"><span class="header-section-number">19.1</span> Why Benchmark Performance Does Not Transfer</a></li>
+  <li><a href="#pre-deployment-evaluation" id="toc-pre-deployment-evaluation" class="nav-link" data-scroll-target="#pre-deployment-evaluation"><span class="header-section-number">19.2</span> Pre-Deployment Evaluation</a></li>
+  <li><a href="#post-deployment-monitoring-catching-drift" id="toc-post-deployment-monitoring-catching-drift" class="nav-link" data-scroll-target="#post-deployment-monitoring-catching-drift"><span class="header-section-number">19.3</span> Post-Deployment Monitoring: Catching Drift</a></li>
+  <li><a href="#kpi-architecture-three-tiers" id="toc-kpi-architecture-three-tiers" class="nav-link" data-scroll-target="#kpi-architecture-three-tiers"><span class="header-section-number">19.4</span> KPI Architecture: Three Tiers</a></li>
+  <li><a href="#stakeholder-feedback-as-a-monitoring-method" id="toc-stakeholder-feedback-as-a-monitoring-method" class="nav-link" data-scroll-target="#stakeholder-feedback-as-a-monitoring-method"><span class="header-section-number">19.5</span> Stakeholder Feedback as a Monitoring Method</a></li>
+  <li><a href="#domain-specific-dimensions" id="toc-domain-specific-dimensions" class="nav-link" data-scroll-target="#domain-specific-dimensions"><span class="header-section-number">19.6</span> Domain-Specific Dimensions</a>
+  <ul class="collapse">
+  <li><a href="#clinical" id="toc-clinical" class="nav-link" data-scroll-target="#clinical"><span class="header-section-number">19.6.1</span> Clinical</a></li>
+  <li><a href="#research" id="toc-research" class="nav-link" data-scroll-target="#research"><span class="header-section-number">19.6.2</span> Research</a></li>
+  <li><a href="#education" id="toc-education" class="nav-link" data-scroll-target="#education"><span class="header-section-number">19.6.3</span> Education</a></li>
+  <li><a href="#business-operations" id="toc-business-operations" class="nav-link" data-scroll-target="#business-operations"><span class="header-section-number">19.6.4</span> Business Operations</a></li>
+  </ul></li>
+  <li><a href="#decommissioning" id="toc-decommissioning" class="nav-link" data-scroll-target="#decommissioning"><span class="header-section-number">19.7</span> Decommissioning</a></li>
+  <li><a href="#minimum-responsible-bar" id="toc-minimum-responsible-bar" class="nav-link" data-scroll-target="#minimum-responsible-bar"><span class="header-section-number">19.8</span> Minimum Responsible Bar</a></li>
+  </ul>
+<div class="toc-actions"><ul><li><a href="https://github.com/seandavi/amc-ai-governance/edit/main/evaluation_monitoring.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li></ul></div></nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./infrastructure.html">Workstream Resources</a></li><li class="breadcrumb-item"><a href="./evaluation_monitoring.html"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Evaluation and Monitoring</span></a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title"><span id="sec-eval-monitoring" class="quarto-section-identifier"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Evaluation and Monitoring</span></span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">April 26, 2026</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p>Deploying an AI tool without a monitoring plan is not a deployment. It is an experiment, one in which patients, students, researchers, and administrative staff are the unwitting subjects. The experiment ends when something goes wrong visibly enough that someone shuts it off. What the institution rarely knows at that point is how long the model had been quietly performing below the threshold it was validated against, or how many people were affected before the degradation became obvious.</p>
+<p>Evaluation and monitoring are not bureaucratic overhead bolted onto AI deployment to satisfy governance committees. They are the mechanism by which an institution finds out whether a tool is actually doing what it claimed to do, in the specific population and context where it was deployed, after the vendor demonstration is a memory. Without them, the institution is flying on instruments it has not calibrated.</p>
+<p>The principles underlying good evaluation and monitoring are largely domain-agnostic. Local validation before deployment, shadow-mode testing before live use, drift detection after go-live, structured feedback loops from the people using the tool: these apply whether you are deploying a sepsis prediction model in the ICU or an AI-assisted grant writing tool in the research office. What differs substantially by domain is what you measure, who you ask, what a bad result means, and what governance body you escalate to when you find one. A clinical AI tool that degrades in performance is a patient safety event. The same degradation in a business operations tool is a financial exposure. The same degradation in a student assessment tool is an equity problem. Same principle, completely different response.</p>
+<section id="why-benchmark-performance-does-not-transfer" class="level2" data-number="19.1">
+<h2 data-number="19.1" class="anchored" data-anchor-id="why-benchmark-performance-does-not-transfer"><span class="header-section-number">19.1</span> Why Benchmark Performance Does Not Transfer</h2>
+<p>Vendor-reported performance numbers tell you very little about how a model will perform at your institution.</p>
+<p>Every prediction model is a function of the data it was trained on. That data reflects a specific case mix, specific documentation practices, and specific clinical workflows. When any of those change, model performance changes too. Sometimes the change is modest. Sometimes it is not.</p>
+<p>The Epic Sepsis Model is the most-cited illustration. The vendor-reported AUC was approximately 0.76 to 0.83. When researchers at Michigan Medicine conducted an independent external validation using actual patient outcomes rather than the training-population data, the AUC dropped to 0.63, indistinguishable from the performance of a much simpler severity score already in clinical use <span class="citation" data-cites="Wong2021-esm">(<a href="references.html#ref-Wong2021-esm" role="doc-biblioref">Wong et al. 2021</a>)</span>. The model had been implemented at hundreds of health systems before that external validation was published. The question is not whether external validation should have been required. It obviously should have been. The question is what institutional infrastructure makes local validation the default rather than the exception.</p>
+<p>Performance degradation does not only happen at implementation. It also happens over time, in production, to models that performed adequately at go-live. Finlayson and colleagues documented how the COVID-19 pandemic induced rapid dataset shift across a wide range of clinical models, not because the models were flawed, but because the patient population, treatment patterns, and documentation practices in 2020 were structurally different from the training data those models had learned from <span class="citation" data-cites="Finlayson2021-shift">(<a href="references.html#ref-Finlayson2021-shift" role="doc-biblioref">Finlayson et al. 2021</a>)</span>. This form of drift, where the underlying relationship between inputs and outputs changes, is particularly insidious because the model continues to generate predictions with the same apparent confidence. The output does not flag that the world has changed.</p>
+<p>This is why every AI deployment requires two distinct activities: pre-deployment evaluation to confirm adequate local performance before the tool influences any decision, and post-deployment monitoring to confirm that it continues to do so over time.</p>
+</section>
+<section id="pre-deployment-evaluation" class="level2" data-number="19.2">
+<h2 data-number="19.2" class="anchored" data-anchor-id="pre-deployment-evaluation"><span class="header-section-number">19.2</span> Pre-Deployment Evaluation</h2>
+<p>Pre-deployment evaluation has two components: local validation and shadow deployment.</p>
+<p>Local validation asks whether the model performs adequately on a retrospective dataset drawn from your own institution’s population, documentation practices, and time period. This is not the same as accepting the vendor’s validation dataset, even if that dataset includes data from institutions that resemble yours. A model validated exclusively on academic medical center data from the northeast may not perform adequately at a safety-net hospital serving a different demographic mix. The validation data needs to be yours.</p>
+<p>Shadow deployment, sometimes called silent mode, runs the model in parallel with real clinical or operational workflow, generating outputs that are not shown to the users making decisions. This phase answers questions that retrospective validation cannot. What is the alert burden this model generates in real operations? What is the false positive rate under live documentation patterns? Are there systematic differences in performance across demographic subgroups that did not appear in the retrospective dataset? The answers sometimes differ substantially from what the validation study suggested, and finding out during silent mode rather than during live rollout is the point.</p>
+<p>For clinical AI tools, the <a href="https://www.decide-ai.org/">DECIDE-AI</a> reporting standard provides a structured framework for this early evaluation phase, covering the evidence required before moving from silent mode to supervised deployment and from supervised deployment to unsupervised live use <span class="citation" data-cites="Vasey2022-decideai">(<a href="references.html#ref-Vasey2022-decideai" role="doc-biblioref">Vasey et al. 2022</a>)</span>. <a href="https://www.tripod-statement.org/">TRIPOD+AI</a> provides the reporting standard for the pre-deployment validation study itself: a 27-item checklist specifying what must be documented about model development, calibration, and performance before a prediction model goes live in any setting <span class="citation" data-cites="Collins2024-tripodai">(<a href="references.html#ref-Collins2024-tripodai" role="doc-biblioref">Collins et al. 2024</a>)</span>.</p>
+<p>For large language models, a third pre-deployment step applies that does not exist for traditional prediction models. LLMs can fail in ways prediction models do not: hallucinating plausible-sounding clinical information, exposing protected patient data in responses to queries that appear innocuous, producing outputs with demographic biases that standard performance metrics do not capture. A pre-deployment red-teaming exercise, structured adversarial testing by domain experts attempting to elicit harmful outputs, is the minimum bar for any LLM in a clinical or educational context.</p>
+<p>Model cards, standardized by <a href="https://www.coalitionforhealthai.org/">CHAI</a> as a “nutrition label” for AI tools, document the intended population, known performance limitations, demographic subgroup performance, and deployment constraints. Requiring vendors to provide a CHAI-compliant model card before evaluation begins shifts accountability appropriately. If the vendor cannot characterize subgroup performance, the institution has learned something important about what the vendor actually knows about its own model <span class="citation" data-cites="CHAI2024-trust">(<a href="references.html#ref-CHAI2024-trust" role="doc-biblioref">Coalition for Health AI 2024</a>)</span>.</p>
+</section>
+<section id="post-deployment-monitoring-catching-drift" class="level2" data-number="19.3">
+<h2 data-number="19.3" class="anchored" data-anchor-id="post-deployment-monitoring-catching-drift"><span class="header-section-number">19.3</span> Post-Deployment Monitoring: Catching Drift</h2>
+<p>Once a model is live, the monitoring question changes from “does this model perform well enough to deploy?” to “is it still performing well enough to remain deployed?”</p>
+<p>Drift comes in three forms. Covariate drift occurs when the statistical distribution of the input data changes: the patient population ages, a new referral pattern alters the case mix, a workflow change affects how lab values are captured. The model was not trained on this new distribution and may perform worse on it without anyone noticing, because it is still generating outputs and users have adapted their interpretation of those outputs based on the tool’s historical behavior. Concept drift is more fundamental: the underlying relationship between inputs and the outcome the model predicts changes. The COVID pandemic induced concept drift across virtually every clinical model trained on pre-2020 data. Concept drift cannot be fixed by retraining on more data from the same period; it requires recognizing that the world has changed and deciding whether the model can be updated to reflect that change. Data pipeline failures, upstream changes to EHR configuration or coding practices, can cause models to receive inputs structurally different from their training data without any change in the patient population. This is the most operationally tractable form of drift because it has an identifiable technical cause, but it is also easily missed because it does not look like a model failure from the outside.</p>
+<p>The pharmacovigilance analogy is useful here. A drug approved by the FDA carries a post-market surveillance obligation: the manufacturer must monitor for adverse events that did not appear in the clinical trials. AI/ML-based Software as a Medical Device is now subject to analogous requirements. As of early 2025, the FDA’s Total Product Lifecycle guidance for AI/ML-enabled device software functions remains a draft document and has not been finalized into a binding rule, but the agency’s direction is clear: ongoing performance monitoring and active surveillance for drift and bias are expected elements of any clinical AI program <span class="citation" data-cites="FDA2024-pccp">(<a href="references.html#ref-FDA2024-pccp" role="doc-biblioref">U.S. Food and Drug Administration 2024</a>)</span>. Flag this as an area to check; a final rule may be in effect by the time you read this.</p>
+</section>
+<section id="kpi-architecture-three-tiers" class="level2" data-number="19.4">
+<h2 data-number="19.4" class="anchored" data-anchor-id="kpi-architecture-three-tiers"><span class="header-section-number">19.4</span> KPI Architecture: Three Tiers</h2>
+<p>The KPIs that matter for AI monitoring fall into three tiers that are frequently conflated, with real consequences for what gets measured and what gets missed.</p>
+<p>Technical KPIs measure model performance: calibration, discrimination (AUC-ROC, F1), sensitivity and specificity at the operating threshold, subgroup performance across demographic categories. These are what data scientists measure. They are necessary but not sufficient, because a model that performs adequately on technical metrics can still fail to improve the outcomes it was deployed to affect, or actively harm them.</p>
+<p>Operational KPIs measure behavior in the workflow: utilization rate (what fraction of eligible cases are receiving the model’s output?), override rate (how often do clinicians or administrators reject the recommendation?), alert burden, and time effects. The override rate is particularly informative. A model with a high override rate either has poor accuracy that frontline users have recognized and are compensating for, or has accurate outputs that the workflow integration is presenting poorly. Both are problems requiring different responses, and neither is visible on a calibration curve.</p>
+<p>Outcome KPIs measure whether the tool is actually improving what it was deployed to improve. Sepsis mortality rates, medication error rates, student board exam pass rates, revenue cycle denial rates: whatever the tool was meant to move. These are the hardest to measure because they require attributing outcomes to the tool in a context where many other things are changing simultaneously. They are also the only KPIs that answer the question the institution actually cares about.</p>
+<div id="tbl-kpi-taxonomy" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-kpi-taxonomy-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;19.1: KPI taxonomy for AMC AI monitoring. Technical KPIs catch model degradation. Operational KPIs catch workflow and adoption problems. Outcome KPIs answer whether the tool is achieving its purpose. All three tiers are required; monitoring only technical KPIs is the most common failure mode in practice.
+</figcaption>
+<div aria-describedby="tbl-kpi-taxonomy-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<table class="caption-top table">
+<colgroup>
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>KPI Category</th>
+<th>Example Metric</th>
+<th>What It Detects</th>
+<th>Who Interprets It</th>
+<th>Monitoring Cadence</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Technical</td>
+<td>AUC-ROC by demographic subgroup</td>
+<td>Performance degradation, bias</td>
+<td>Data science / MLOps</td>
+<td>Monthly</td>
+</tr>
+<tr class="even">
+<td>Technical</td>
+<td>Calibration curve</td>
+<td>Probability over/underprediction</td>
+<td>Data science</td>
+<td>Quarterly</td>
+</tr>
+<tr class="odd">
+<td>Operational</td>
+<td>Override / rejection rate</td>
+<td>Workflow misfit, user distrust</td>
+<td>Department head, AI champion</td>
+<td>Weekly / monthly</td>
+</tr>
+<tr class="even">
+<td>Operational</td>
+<td>Alert burden per user-hour</td>
+<td>Automation bias risk</td>
+<td>Clinical informatics</td>
+<td>Weekly</td>
+</tr>
+<tr class="odd">
+<td>Operational</td>
+<td>Time-to-task delta</td>
+<td>Efficiency impact</td>
+<td>Operations / QI</td>
+<td>Quarterly</td>
+</tr>
+<tr class="even">
+<td>Outcome</td>
+<td>Downstream outcome rate</td>
+<td>Whether the tool is working</td>
+<td>QI officer, domain lead</td>
+<td>Quarterly / annually</td>
+</tr>
+<tr class="odd">
+<td>Outcome</td>
+<td>Subgroup outcome equity</td>
+<td>Disparity amplification</td>
+<td>Equity officer, ethics</td>
+<td>Quarterly</td>
+</tr>
+</tbody>
+</table>
+</div>
+</figure>
+</div>
+</section>
+<section id="stakeholder-feedback-as-a-monitoring-method" class="level2" data-number="19.5">
+<h2 data-number="19.5" class="anchored" data-anchor-id="stakeholder-feedback-as-a-monitoring-method"><span class="header-section-number">19.5</span> Stakeholder Feedback as a Monitoring Method</h2>
+<p>Quantitative dashboards miss failure modes that only show up in how people experience a tool.</p>
+<p>A clinician who has learned to distrust a sepsis model’s outputs because the false positive rate is too high, and who now processes the alert as background noise, is a monitoring signal that no AUC metric captures. A student who submits AI-generated text not to cheat but because the assessment format rewards performance over learning is a monitoring signal about assessment design. An administrative staff member who has developed informal workarounds for an AI-assisted billing tool because it fails on certain claim types is a monitoring signal about the model’s coverage gaps.</p>
+<p>Structured mechanisms for collecting this kind of signal are part of a monitoring program, not an optional supplement to it. For clinical AI, this means building feedback pathways for frontline clinicians and, where the tool directly affects patient care, for patients. Patient advisory boards and community advisory bodies have been used by some health systems as governance mechanisms for equity-sensitive tools, providing ongoing input from affected communities rather than one-time consent at enrollment. The literature on participatory design in health AI is still developing; replicable methods exist but most programs remain institutional pilots.</p>
+<p>For educational AI, faculty are both users and evaluators. Their sense of whether students are developing genuine clinical reasoning or outsourcing it to AI tools is a monitoring input that no automated system can provide. For research AI, the IRB and the research integrity office can surface concerns from researchers and trainees about data provenance, analysis reproducibility, and authorship questions that would otherwise not reach institutional visibility. For business operations AI, frontline administrative staff are the first to notice when an AI-assisted authorization tool starts generating unusual denial patterns, or when an automated scheduling system creates downstream inefficiencies invisible to management dashboards.</p>
+</section>
+<section id="domain-specific-dimensions" class="level2" data-number="19.6">
+<h2 data-number="19.6" class="anchored" data-anchor-id="domain-specific-dimensions"><span class="header-section-number">19.6</span> Domain-Specific Dimensions</h2>
+<p>The general principles above apply across all four domains. What differs are the KPIs that matter most, who the primary stakeholders are, what the main ethical obligation is, and what governance body is responsible for escalation.</p>
+<div class="cell" data-layout-align="default">
+<div class="cell-output-display">
+<div id="fig-ai-lifecycle" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-ai-lifecycle-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div>
+<pre class="mermaid mermaid-js" data-label="fig-ai-lifecycle">flowchart TD
+    A[Local Validation\n&amp; Red-Teaming] --&gt; B{Go / No-Go\nDecision}
+    B --&gt;|Pass| C[Shadow Deployment\n— Silent Mode]
+    B --&gt;|Fail| Z[Remediate\nor Reject]
+    C --&gt; D{Supervised\nRelease Gate}
+    D --&gt;|Pass| E[Live Deployment]
+    D --&gt;|Fail| Z
+    E --&gt; F[Ongoing Monitoring\nTechnical · Operational · Outcome]
+    F --&gt; G{Alert\nThreshold}
+    G --&gt;|Within tolerance| F
+    G --&gt;|Threshold exceeded| H[Governance\nEscalation]
+    H --&gt; I{Remediation\nFeasible?}
+    I --&gt;|Yes| J[Retrain / Reconfigure\n/ Update Workflow]
+    I --&gt;|No| K[Decommission]
+    J --&gt; E
+    Z --&gt; L[Archive\nand Document]
+    K --&gt; L
+</pre>
+</div>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-ai-lifecycle-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;19.1: AI deployment lifecycle. All four AMC domains share this structure. The domain-specific differences are in what constitutes a failed gate (not the existence of gates), what drift detection looks like (not the need for it), and which governance body has escalation authority.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<section id="clinical" class="level3" data-number="19.6.1">
+<h3 data-number="19.6.1" class="anchored" data-anchor-id="clinical"><span class="header-section-number">19.6.1</span> Clinical</h3>
+<p>Clinical AI monitoring operates under the most developed regulatory framework and carries the highest stakes for patient harm. Patient safety KPIs — near-miss events, adverse outcomes where the model’s output was in the clinical record — are the core of outcome monitoring. Clinician override rates serve as a leading indicator; high false positive rates tend to show up as alert fatigue well before they appear as measurable patient harm events, and that pattern is visible through operational monitoring.</p>
+<p>Equity monitoring is a legal requirement under the HHS Section 1557 final rule, which creates an affirmative obligation for health systems to identify and mitigate discrimination in their use of clinical decision support <span class="citation" data-cites="HHS2024-1557">(<a href="references.html#ref-HHS2024-1557" role="doc-biblioref">U.S. Department of Health and Human Services, Office for Civil Rights 2024</a>)</span>. Demographic subgroup performance is not an optional component of technical monitoring. It is a compliance obligation.</p>
+<p>The FDA PCCP framework requires that any predetermined changes to an AI/ML-based Software as a Medical Device — retraining triggers, performance floor thresholds, the training data update protocol — be specified and approved before they are implemented <span class="citation" data-cites="FDA2024-pccp">(<a href="references.html#ref-FDA2024-pccp" role="doc-biblioref">U.S. Food and Drug Administration 2024</a>)</span>. This gives the monitoring program a regulatory anchor: the decommissioning criteria and retraining triggers are documented commitments made at deployment time, not decisions improvised when a problem has already become visible.</p>
+<p>Patient engagement in clinical AI monitoring extends beyond consent forms. Community advisory bodies with ongoing governance roles provide a channel for affected communities to surface concerns before they reach the level of documented harm. The literature on what this looks like in practice is still thin; the most replicable models involve structured advisory processes with defined input pathways into the AI governance committee, rather than ad hoc consultation that happens when a problem is already public.</p>
+</section>
+<section id="research" class="level3" data-number="19.6.2">
+<h3 data-number="19.6.2" class="anchored" data-anchor-id="research"><span class="header-section-number">19.6.2</span> Research</h3>
+<p>Research AI monitoring focuses on a different set of failure modes. The primary risks are not immediate patient harm but the slower, harder-to-reverse harms of corrupted science: results that are not reproducible, published findings not attributable to real effects, and training data used in violation of its collection consent.</p>
+<p>Data provenance monitoring — tracking whether the data used for AI-assisted analysis was collected, consented, and used under IRB protocols that cover that use — is the research equivalent of clinical safety monitoring. An AI tool used in ways that fall outside its approved IRB protocol should trigger the same reporting pathway as any other protocol deviation. The IRB is the governance body for escalation in this domain.</p>
+<p>Reproducibility KPIs include whether the code and configuration needed to reproduce an analysis are archived alongside the data, whether model outputs are stable across re-runs, and whether AI-assisted analysis steps are disclosed in publications per ICMJE standards <span class="citation" data-cites="ICMJE2023-recommendations">(<a href="references.html#ref-ICMJE2023-recommendations" role="doc-biblioref">International Committee of Medical Journal Editors 2023</a>)</span>. The reproducibility crisis in biomedical research predates AI: about 70% of researchers in one large survey reported being unable to reproduce another scientist’s results, and about 50% had failed to reproduce their own <span class="citation" data-cites="Baker2016-reproducibility">(<a href="references.html#ref-Baker2016-reproducibility" role="doc-biblioref">Baker 2016</a>)</span>. AI-assisted analysis adds new dimensions to this problem, particularly when models are used to identify patterns in data without explicit hypothesis specification. Faster analysis is not more rigorous analysis, and the monitoring program needs to include mechanisms that reflect that distinction.</p>
+</section>
+<section id="education" class="level3" data-number="19.6.3">
+<h3 data-number="19.6.3" class="anchored" data-anchor-id="education"><span class="header-section-number">19.6.3</span> Education</h3>
+<p>The monitoring challenge in education is distinct because the failure mode is often invisible from outside. A student who produces AI-generated work that satisfies the stated learning objectives on paper, while the cognitive development those objectives were meant to build does not occur, is not detectable by any automated system.</p>
+<p>The most important education monitoring KPI is assessment validity: does the assessment format still distinguish students who have developed genuine clinical reasoning from students who have not? This is a question for faculty, not for a dashboard. ACGME has introduced requirements for programs to demonstrate that trainees can engage competently with AI tools and that faculty are equipped to evaluate that competency <span class="citation" data-cites="ACGME2025-CPR">(<a href="references.html#ref-ACGME2025-CPR" role="doc-biblioref">Accreditation Council for Graduate Medical Education 2025</a>)</span>. Those external requirements create an institutional monitoring obligation that exists independent of what any individual program director chooses to prioritize.</p>
+<p>The case against AI detection tools as a primary integrity monitoring mechanism rests on two documented problems. They produce false positives for non-native English speakers at rates high enough to constitute a discriminatory monitoring practice <span class="citation" data-cites="Liang2023-aidetect">(<a href="references.html#ref-Liang2023-aidetect" role="doc-biblioref">Liang et al. 2023</a>)</span>. And they are a defensive posture that treats the symptom, AI-generated text submitted for assessment, rather than the cause, which is assessment design that does not require authentic engagement. Moving monitoring from policing toward assessment design, asking whether the assessments themselves require reasoning that AI cannot substitute for, is a more durable response. For health professions education specifically, peer-reviewed literature on AI monitoring in clinical training contexts remains limited as of 2025; most available evidence comes from general higher education contexts and should be applied with awareness that the competency stakes in clinical training are higher.</p>
+</section>
+<section id="business-operations" class="level3" data-number="19.6.4">
+<h3 data-number="19.6.4" class="anchored" data-anchor-id="business-operations"><span class="header-section-number">19.6.4</span> Business Operations</h3>
+<p>Business operations AI monitoring combines operational efficiency KPIs with equity obligations that are often underweighted in standard ROI analyses.</p>
+<p>The efficiency KPIs are tractable: throughput rates, processing time, error rates, revenue cycle metrics. For ambient documentation tools, the relevant operational KPI is the actual reduction in documentation burden measured against the time required for AI output review and correction, not against the theoretical maximum <span class="citation" data-cites="Tierney2024-scribe">(<a href="references.html#ref-Tierney2024-scribe" role="doc-biblioref">Tierney et al. 2024</a>)</span>. Tools that reduce total documentation time are different from tools that redistribute documentation burden from typing to reviewing.</p>
+<p>Algorithmic hiring bias monitoring is a legal requirement in jurisdictions that have enacted AI employment law. New York City’s Local Law 144 requires employers using automated employment decision tools to conduct annual bias audits and disclose the results publicly <span class="citation" data-cites="NYCLL144">(<a href="references.html#ref-NYCLL144" role="doc-biblioref">New York City Council 2021</a>)</span>. AMC human resources teams using AI in any part of the hiring or promotion process should know whether they fall under this or analogous state-level requirements, and build the audit infrastructure to comply before an enforcement inquiry requires it.</p>
+<p>Frontline administrative staff are both the primary operational monitors and the primary workforce equity stakeholders. When AI automation displaces tasks that staff were previously performing, monitoring should include tracking of role changes, retraining uptake, and whether the efficiency gains from automation are distributed equitably across staff levels. The AMC that deploys an AI billing tool to reduce administrative headcount without monitoring the workforce equity dimensions of that reduction is carrying risk — regulatory, reputational, and labor relations — that standard operational dashboards will not surface.</p>
+<div id="tbl-domain-comparison" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-domain-comparison-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;19.2: Domain comparison for AI monitoring. Each domain shares the general monitoring lifecycle but differs in what KPIs matter most, which stakeholders are primary, and what governance body has escalation authority.
+</figcaption>
+<div aria-describedby="tbl-domain-comparison-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<table class="caption-top table">
+<colgroup>
+<col style="width: 16%">
+<col style="width: 16%">
+<col style="width: 16%">
+<col style="width: 16%">
+<col style="width: 16%">
+<col style="width: 16%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Domain</th>
+<th>Primary KPI Type</th>
+<th>Key Stakeholders</th>
+<th>Main Ethical Obligation</th>
+<th>Governance Body</th>
+<th>Illustrative Metric</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Clinical</td>
+<td>Safety and equity</td>
+<td>Clinicians, patients, patient advisory board</td>
+<td>Non-maleficence; HHS 1557 compliance</td>
+<td>AISC, CMIO, patient safety</td>
+<td>Override rate; subgroup AUC-ROC</td>
+</tr>
+<tr class="even">
+<td>Research</td>
+<td>Reproducibility and provenance</td>
+<td>Researchers, trainees, IRB</td>
+<td>Research integrity; consent compliance</td>
+<td>IRB, research integrity office</td>
+<td>Protocol compliance rate; analysis reproducibility</td>
+</tr>
+<tr class="odd">
+<td>Education</td>
+<td>Assessment validity</td>
+<td>Faculty, students, accreditors</td>
+<td>Genuine competency development</td>
+<td>Curriculum committee, ACGME</td>
+<td>Assessment authenticity; faculty evaluation</td>
+</tr>
+<tr class="even">
+<td>Business Ops</td>
+<td>Efficiency and equity</td>
+<td>Admin staff, HR, finance</td>
+<td>Fairness; workforce equity</td>
+<td>CFO, CHRO, labor relations</td>
+<td>Denial rate delta; hiring bias audit results</td>
+</tr>
+</tbody>
+</table>
+</div>
+</figure>
+</div>
+</section>
+</section>
+<section id="decommissioning" class="level2" data-number="19.7">
+<h2 data-number="19.7" class="anchored" data-anchor-id="decommissioning"><span class="header-section-number">19.7</span> Decommissioning</h2>
+<p>Every deployed AI tool needs pre-defined criteria for when it should be taken offline. Setting those criteria at deployment time, rather than when a problem has become large enough to be undeniable, is one of the clearest markers of a monitoring program that is designed to work.</p>
+<p>Decommissioning criteria should specify performance floors below which the tool goes offline regardless of workflow integration costs, subgroup equity thresholds that trigger mandatory review, data pipeline failure modes that trigger automatic suspension, and a review cadence at which continued deployment requires affirmative re-authorization rather than passive continuance. The specifics will differ by domain and by the risk profile of the tool. What matters is that they exist in writing before go-live.</p>
+<p>Wiens and colleagues argued that the harm from deploying a poorly performing AI tool in a high-stakes clinical setting is not a theoretical risk that might materialize. It is a predictable consequence of a decision made without adequate evaluation infrastructure <span class="citation" data-cites="Wiens2019-harm">(<a href="references.html#ref-Wiens2019-harm" role="doc-biblioref">Wiens et al. 2019</a>)</span>. Decommissioning criteria are the mechanism by which that infrastructure acknowledges its own limits.</p>
+</section>
+<section id="minimum-responsible-bar" class="level2" data-number="19.8">
+<h2 data-number="19.8" class="anchored" data-anchor-id="minimum-responsible-bar"><span class="header-section-number">19.8</span> Minimum Responsible Bar</h2>
+<p>It is worth being direct about what the minimum responsible bar actually is, because “comprehensive” monitoring programs are sometimes invoked as an argument for indefinite delay rather than a target for implementation.</p>
+<p>For clinical AI, the minimum bar is: local validation on institutional data before go-live, shadow deployment with monitoring before clinician-facing rollout, pre-defined decommissioning criteria in writing, and at least quarterly review of technical and operational KPIs with a named reviewer. Below this bar, the institution is not governing its AI program. It is hoping the vendor got it right.</p>
+<p>The minimum bar for research, education, and business operations AI is different in some dimensions and lower in others, but the structure is identical: every deployment should have a named monitoring owner, defined KPIs, a defined review cadence, and criteria that would result in the tool being taken offline. These are not aspirational targets for mature programs. They are the preconditions under which responsible deployment is possible at all.</p>
+
+
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list" style="display: none">
+<div id="ref-ACGME2025-CPR" class="csl-entry" role="listitem">
+Accreditation Council for Graduate Medical Education. 2025. <span>“Common Program Requirements: <span>July</span> 2025 Updates.”</span> <a href="https://www.acgme.org/what-we-do/accreditation/common-program-requirements/" class="uri">https://www.acgme.org/what-we-do/accreditation/common-program-requirements/</a>. <a href="https://www.acgme.org/what-we-do/accreditation/common-program-requirements/">https://www.acgme.org/what-we-do/accreditation/common-program-requirements/</a>.
+</div>
+<div id="ref-Baker2016-reproducibility" class="csl-entry" role="listitem">
+Baker, Monya. 2016. <span>“1,500 Scientists Lift the Lid on Reproducibility.”</span> <em>Nature</em> 533: 452–54. <a href="https://doi.org/10.1038/533452a">https://doi.org/10.1038/533452a</a>.
+</div>
+<div id="ref-CHAI2024-trust" class="csl-entry" role="listitem">
+Coalition for Health AI. 2024. <span>“Patient Trust and <span>AI</span> Accountability Survey.”</span> <a href="https://www.coalitionforhealthai.org/publications/" class="uri">https://www.coalitionforhealthai.org/publications/</a>. <a href="https://www.coalitionforhealthai.org/publications/">https://www.coalitionforhealthai.org/publications/</a>.
+</div>
+<div id="ref-Collins2024-tripodai" class="csl-entry" role="listitem">
+Collins, Gary S, Karel G M Moons, Paula Dhiman, Richard D Riley, Andrew L Beam, Ben Van Calster, Marzyeh Ghassemi, et al. 2024. <span>“<span>TRIPOD+AI</span> Statement: Updated Guidance for Reporting Clinical Prediction Models That Use Regression or Machine Learning Methods.”</span> <em>BMJ</em> 385: e078378. <a href="https://doi.org/10.1136/bmj-2023-078378">https://doi.org/10.1136/bmj-2023-078378</a>.
+</div>
+<div id="ref-Finlayson2021-shift" class="csl-entry" role="listitem">
+Finlayson, Samuel G, Adarsh Subbaswamy, Karandeep Singh, John Bowers, Annabel Kupke, Jonathan Zittrain, Isaac S Kohane, and Suchi Saria. 2021. <span>“The Clinician and Dataset Shift in Artificial Intelligence.”</span> <em>New England Journal of Medicine</em> 385: 283–86. <a href="https://doi.org/10.1056/NEJMc2104626">https://doi.org/10.1056/NEJMc2104626</a>.
+</div>
+<div id="ref-ICMJE2023-recommendations" class="csl-entry" role="listitem">
+International Committee of Medical Journal Editors. 2023. <span>“Recommendations for the Conduct, Reporting, Editing, and Publication of Scholarly Work in Medical Journals.”</span> <a href="https://www.icmje.org/recommendations/">https://www.icmje.org/recommendations/</a>.
+</div>
+<div id="ref-Liang2023-aidetect" class="csl-entry" role="listitem">
+Liang, Weixin, Mert Yuksekgonul, Yining Mao, Eric Wu, and James Zou. 2023. <span>“<span>GPT</span> Detectors Are Biased Against Non-Native <span>English</span> Writers.”</span> <em>Patterns</em> 4 (7): 100779. <a href="https://doi.org/10.1016/j.patter.2023.100779">https://doi.org/10.1016/j.patter.2023.100779</a>.
+</div>
+<div id="ref-NYCLL144" class="csl-entry" role="listitem">
+New York City Council. 2021. <em>Local Law 144: Automated Employment Decision Tools</em>. <a href="https://www.nyc.gov/site/dca/about/automated-employment-decision-tools.page">https://www.nyc.gov/site/dca/about/automated-employment-decision-tools.page</a>.
+</div>
+<div id="ref-Tierney2024-scribe" class="csl-entry" role="listitem">
+Tierney, Aaron A, Shreya Bhatt, Aakash Houndie, et al. 2024. <span>“Ambient Artificial Intelligence Scribes to Alleviate the Burden of Clinical Documentation.”</span> <em>NEJM Catalyst Innovations in Care Delivery</em> 5 (1): CAT.23.0404. <a href="https://doi.org/10.1056/CAT.23.0404">https://doi.org/10.1056/CAT.23.0404</a>.
+</div>
+<div id="ref-HHS2024-1557" class="csl-entry" role="listitem">
+U.S. Department of Health and Human Services, Office for Civil Rights. 2024. <span>“Section 1557: Nondiscrimination in Health Programs and Activities (Final Rule).”</span> <a href="https://www.hhs.gov/civil-rights/for-individuals/section-1557/index.html">https://www.hhs.gov/civil-rights/for-individuals/section-1557/index.html</a>.
+</div>
+<div id="ref-FDA2024-pccp" class="csl-entry" role="listitem">
+U.S. Food and Drug Administration. 2024. <span>“Marketing Submission Recommendations for a Predetermined Change Control Plan for <span>Artificial Intelligence/Machine Learning</span>-Enabled Device Software Functions.”</span> <a href="https://www.fda.gov/regulatory-information/search-fda-guidance-documents/marketing-submission-recommendations-predetermined-change-control-plan-aiml-enabled-device-software">https://www.fda.gov/regulatory-information/search-fda-guidance-documents/marketing-submission-recommendations-predetermined-change-control-plan-aiml-enabled-device-software</a>.
+</div>
+<div id="ref-Vasey2022-decideai" class="csl-entry" role="listitem">
+Vasey, Baptiste, Myura Nagendran, Bruce Campbell, David A Clifton, Gary S Collins, Spiros Denaxas, Alastair K Denniston, et al. 2022. <span>“Reporting Guideline for the Early-Stage Clinical Evaluation of Decision Support Systems Driven by Artificial Intelligence: <span>DECIDE-AI</span>.”</span> <em>Nature Medicine</em> 28: 924–33. <a href="https://doi.org/10.1038/s41591-022-01772-9">https://doi.org/10.1038/s41591-022-01772-9</a>.
+</div>
+<div id="ref-Wiens2019-harm" class="csl-entry" role="listitem">
+Wiens, Jenna, Suchi Saria, Mark Sendak, Marzyeh Ghassemi, Vincent X Liu, Finale Doshi-Velez, Kenneth Jung, et al. 2019. <span>“Do No Harm: A Roadmap for Responsible Machine Learning for Health Care.”</span> <em>Nature Medicine</em> 25: 1337–40. <a href="https://doi.org/10.1038/s41591-019-0548-6">https://doi.org/10.1038/s41591-019-0548-6</a>.
+</div>
+<div id="ref-Wong2021-esm" class="csl-entry" role="listitem">
+Wong, Andrew, Erkin Otles, John P Donnelly, Andrew Krumm, Jeffrey McCullough, Olivia DeTroyer-Coopmans, Dina Rojas, Douglas Westergaard, Aakash Trivedi, and Karandeep Singh. 2021. <span>“External Validation of a Widely Implemented Proprietary Sepsis Prediction Model in Hospitalized Patients.”</span> <em>JAMA Internal Medicine</em> 181 (8): 1065–70. <a href="https://doi.org/10.1001/jamainternmed.2021.2626">https://doi.org/10.1001/jamainternmed.2021.2626</a>.
+</div>
+</div>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+        const codeEl = trigger.previousElementSibling.cloneNode(true);
+        for (const childEl of codeEl.children) {
+          if (isCodeAnnotation(childEl)) {
+            childEl.remove();
+          }
+        }
+        return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/seandavi\.github\.io\/amc-ai-governance\/");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./pm_and_support.html" class="pagination-link" aria-label="Project Management and AI Portfolio Governance">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Project Management and AI Portfolio Governance</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./appendices.html" class="pagination-link" aria-label="AI principles proposed by select organizations">
+        <span class="nav-page-text"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">AI principles proposed by select organizations</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/seandavi/amc-ai-governance/edit/main/evaluation_monitoring.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li></ul></div></div></div></footer><script src="site_libs/quarto-html/zenscroll-min.js"></script>
+</body></html>
