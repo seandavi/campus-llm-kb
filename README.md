@@ -1,9 +1,8 @@
 # Implementing AI in Academic Medicine
 
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.19820586.svg)](https://doi.org/10.5281/zenodo.19820586)
-
 **A guide to governance and principled practice**
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.19820586.svg)](https://doi.org/10.5281/zenodo.19820586)
 [![CC BY 4.0](https://img.shields.io/badge/License-CC%20BY%204.0-lightgrey.svg)](LICENSE)
 
 This book provides a governance framework for academic medical centers deploying
