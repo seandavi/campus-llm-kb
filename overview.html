@@ -2,17 +2,14 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.9.37">
+<meta name="generator" content="quarto-1.7.33">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="dcterms.date" content="2026-04-27">
+<meta name="dcterms.date" content="2026-04-26">
 
 <title>1&nbsp; Overview – Implementing AI in Academic Medicine</title>
 <style>
-/* Default styles provided by pandoc.
-** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
-*/
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
 div.columns{display: flex; gap: min(4vw, 1.5em);}
@@ -28,6 +25,7 @@ ul.task-list li input[type="checkbox"] {
 div.csl-bib-body { }
 div.csl-entry {
   clear: both;
+  margin-bottom: 0em;
 }
 .hanging-indent div.csl-entry {
   margin-left:2em;
@@ -61,10 +59,10 @@ div.csl-indent {
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-7f8f88aac4f3542376d5c11b86a4c14d.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-ea385d0e468b0dd5ea5bf0780b1290d9.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-6c776516069454354cc3aff2d99c460c.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-96934157685b0ce66cf1cdc82e4f4849.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -404,7 +402,7 @@ div.csl-indent {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">April 27, 2026</p>
+      <p class="date">April 26, 2026</p>
     </div>
   </div>
   
@@ -428,7 +426,7 @@ div.csl-indent {
 </section>
 <section id="the-evidence-what-is-actually-working" class="level2" data-number="1.2">
 <h2 data-number="1.2" class="anchored" data-anchor-id="the-evidence-what-is-actually-working"><span class="header-section-number">1.2</span> The evidence: what is actually working</h2>
-<p>The ambient documentation case is the clearest current evidence of clinical AI value. Studies of early adopters at academic medical centers have found consistent reductions in documentation time — typically 10 to 15 minutes per patient encounter — alongside improvements in note quality and physician satisfaction <span class="citation" data-cites="Tierney2024-scribe">(<a href="references.html#ref-Tierney2024-scribe" role="doc-biblioref"><span class="nocase">Tierney et al.</span> 2024</a>)</span>. The AMA’s 2023 survey found that most physicians who reported using AI tools had positive perceptions of their impact on efficiency, though they were more skeptical about the tools’ accuracy and their own ability to verify AI-generated content <span class="citation" data-cites="AMA2023-survey">(<a href="references.html#ref-AMA2023-survey" role="doc-biblioref">American Medical Association 2023</a>)</span>. The burnout implications are real: documentation burden is a primary driver of physician attrition, and attrition at AMCs is measured in millions of dollars per departing physician. Ambient documentation is not just a convenience tool. It is a workforce retention intervention.</p>
+<p>The ambient documentation case is the clearest current evidence of clinical AI value. Studies of early adopters at academic medical centers have found consistent reductions in documentation time — typically 10 to 15 minutes per patient encounter — alongside improvements in note quality and physician satisfaction <span class="citation" data-cites="Tierney2024-scribe">(<a href="references.html#ref-Tierney2024-scribe" role="doc-biblioref">Tierney et al. 2024</a>)</span>. The AMA’s 2023 survey found that most physicians who reported using AI tools had positive perceptions of their impact on efficiency, though they were more skeptical about the tools’ accuracy and their own ability to verify AI-generated content <span class="citation" data-cites="AMA2023-survey">(<a href="references.html#ref-AMA2023-survey" role="doc-biblioref">American Medical Association 2023</a>)</span>. The burnout implications are real: documentation burden is a primary driver of physician attrition, and attrition at AMCs is measured in millions of dollars per departing physician. Ambient documentation is not just a convenience tool. It is a workforce retention intervention.</p>
 <p>Diagnostic AI in radiology and pathology has accumulated the strongest clinical evidence base outside of documentation. FDA-cleared AI tools for diabetic retinopathy screening, mammography triage, pulmonary nodule detection, and stroke identification have demonstrated performance at or near specialist-level accuracy in prospective validation studies. The evidence for diagnostic AI reducing time-to-diagnosis and, in some cases, improving outcomes in underserved populations where specialist access is limited is compelling enough that the liability question has begun to cut both ways: institutions may face exposure not only for harms caused by deploying AI but, increasingly, for failing to deploy AI tools that have become part of the standard of care for specific diagnostic tasks.</p>
 </section>
 <section id="the-evidence-where-it-has-gone-wrong" class="level2" data-number="1.3">
@@ -453,24 +451,24 @@ div.csl-indent {
 <p>I wrote the first version of this framework in 2023, when the dominant institutional question was still “should we let people use ChatGPT?” That question has been overtaken by events. The question now is how to govern AI programs that are already real, already large, and already affecting patients, researchers, students, and staff in ways that most institutions do not yet have full visibility into. This version of the book tries to be useful to that question. Whether it succeeds is something you will be better positioned to judge than I am.</p>
 
 
-<div id="refs" class="references csl-bib-body hanging-indent" role="list" style="display: none">
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list" style="display: none">
 <div id="ref-AMA2023-survey" class="csl-entry" role="listitem">
-American Medical Association. 2023. <em>Physicians Optimistic about <span>AI</span> in Health Care with Some Concerns</em>. <a href="https://www.ama-assn.org/practice-management/digital/physicians-optimistic-about-ai-health-care-some-concerns">https://www.ama-assn.org/practice-management/digital/physicians-optimistic-about-ai-health-care-some-concerns</a>.
+American Medical Association. 2023. <span>“Physicians Optimistic about <span>AI</span> in Health Care with Some Concerns.”</span> <a href="https://www.ama-assn.org/practice-management/digital/physicians-optimistic-about-ai-health-care-some-concerns">https://www.ama-assn.org/practice-management/digital/physicians-optimistic-about-ai-health-care-some-concerns</a>.
 </div>
 <div id="ref-Bedoya2022-abcds" class="csl-entry" role="listitem">
-Bedoya, Armando D, Nicoleta J Economou-Zavlanos, Benjamin A Goldstein, et al. 2022. <span>“A Framework for the Oversight and Local Deployment of Safe and High-Quality Prediction Models.”</span> <em>Journal of the American Medical Informatics Association</em> 29 (9): 1631–36. <a href="https://doi.org/10.1093/jamia/ocac078">https://doi.org/10.1093/jamia/ocac078</a>.
+Bedoya, Armando D, Nicoleta J Economou-Zavlanos, Benjamin A Goldstein, Allison Young, J Eric Jelovsek, Cara O’Brien, Amanda B Parrish, et al. 2022. <span>“A Framework for the Oversight and Local Deployment of Safe and High-Quality Prediction Models.”</span> <em>Journal of the American Medical Informatics Association</em> 29 (9): 1631–36. <a href="https://doi.org/10.1093/jamia/ocac078">https://doi.org/10.1093/jamia/ocac078</a>.
 </div>
 <div id="ref-CHIME2025-censinet" class="csl-entry" role="listitem">
-College of Healthcare Information Management Executives, and Censinet. 2025. <em>2025 <span>CHIME/Censinet</span> Healthcare Cybersecurity and <span>AI</span> Governance Survey</em>. <a href="https://chimecentral.org/chime-censinet/" class="uri">Https://chimecentral.org/chime-censinet/</a>. <a href="https://chimecentral.org/chime-censinet/">https://chimecentral.org/chime-censinet/</a>.
+College of Healthcare Information Management Executives, and Censinet. 2025. <span>“2025 <span>CHIME/Censinet</span> Healthcare Cybersecurity and <span>AI</span> Governance Survey.”</span> <a href="https://chimecentral.org/chime-censinet/" class="uri">https://chimecentral.org/chime-censinet/</a>. <a href="https://chimecentral.org/chime-censinet/">https://chimecentral.org/chime-censinet/</a>.
 </div>
 <div id="ref-Obermeyer2019-bias" class="csl-entry" role="listitem">
 Obermeyer, Ziad, Brian Powers, Christine Vogeli, and Sendhil Mullainathan. 2019. <span>“Dissecting Racial Bias in an Algorithm Used to Manage the Health of Populations.”</span> <em>Science</em> 366 (6464): 447–53. <a href="https://doi.org/10.1126/science.aax2342">https://doi.org/10.1126/science.aax2342</a>.
 </div>
 <div id="ref-Tierney2024-scribe" class="csl-entry" role="listitem">
-<span class="nocase">Tierney, Aaron A, Shreya Bhatt, Aakash Houndie, et al.</span> 2024. <span>“Ambient Artificial Intelligence Scribes to Alleviate the Burden of Clinical Documentation.”</span> <em>NEJM Catalyst Innovations in Care Delivery</em> 5 (1): CAT.23.0404. <a href="https://doi.org/10.1056/CAT.23.0404">https://doi.org/10.1056/CAT.23.0404</a>.
+Tierney, Aaron A, Shreya Bhatt, Aakash Houndie, et al. 2024. <span>“Ambient Artificial Intelligence Scribes to Alleviate the Burden of Clinical Documentation.”</span> <em>NEJM Catalyst Innovations in Care Delivery</em> 5 (1): CAT.23.0404. <a href="https://doi.org/10.1056/CAT.23.0404">https://doi.org/10.1056/CAT.23.0404</a>.
 </div>
 <div id="ref-Wong2021-esm" class="csl-entry" role="listitem">
-Wong, Andrew, Erkin Otles, John P Donnelly, et al. 2021. <span>“External Validation of a Widely Implemented Proprietary Sepsis Prediction Model in Hospitalized Patients.”</span> <em>JAMA Internal Medicine</em> 181 (8): 1065–70. <a href="https://doi.org/10.1001/jamainternmed.2021.2626">https://doi.org/10.1001/jamainternmed.2021.2626</a>.
+Wong, Andrew, Erkin Otles, John P Donnelly, Andrew Krumm, Jeffrey McCullough, Olivia DeTroyer-Coopmans, Dina Rojas, Douglas Westergaard, Aakash Trivedi, and Karandeep Singh. 2021. <span>“External Validation of a Widely Implemented Proprietary Sepsis Prediction Model in Hospitalized Patients.”</span> <em>JAMA Internal Medicine</em> 181 (8): 1065–70. <a href="https://doi.org/10.1001/jamainternmed.2021.2626">https://doi.org/10.1001/jamainternmed.2021.2626</a>.
 </div>
 </div>
 </section>
@@ -527,14 +525,13 @@ Wong, Andrew, Erkin Otles, John P Donnelly, et al. 2021. <span>“External Valid
       e.clearSelection();
     }
     const getTextToCopy = function(trigger) {
-      const outerScaffold = trigger.parentElement.cloneNode(true);
-      const codeEl = outerScaffold.querySelector('code');
-      for (const childEl of codeEl.children) {
-        if (isCodeAnnotation(childEl)) {
-          childEl.remove();
+        const codeEl = trigger.previousElementSibling.cloneNode(true);
+        for (const childEl of codeEl.children) {
+          if (isCodeAnnotation(childEl)) {
+            childEl.remove();
+          }
         }
-      }
-      return codeEl.innerText;
+        return codeEl.innerText;
     }
     const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
       text: getTextToCopy

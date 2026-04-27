@@ -2,16 +2,13 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.9.37">
+<meta name="generator" content="quarto-1.7.33">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
 <title>6&nbsp; Clinical Domain – Implementing AI in Academic Medicine</title>
 <style>
-/* Default styles provided by pandoc.
-** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
-*/
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
 div.columns{display: flex; gap: min(4vw, 1.5em);}
@@ -27,6 +24,7 @@ ul.task-list li input[type="checkbox"] {
 div.csl-bib-body { }
 div.csl-entry {
   clear: both;
+  margin-bottom: 0em;
 }
 .hanging-indent div.csl-entry {
   margin-left:2em;
@@ -60,10 +58,10 @@ div.csl-indent {
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-7f8f88aac4f3542376d5c11b86a4c14d.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-ea385d0e468b0dd5ea5bf0780b1290d9.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-6c776516069454354cc3aff2d99c460c.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-96934157685b0ce66cf1cdc82e4f4849.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -442,7 +440,7 @@ div.csl-indent {
 <div id="tbl-healthcare-guiding-principles" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-tbl figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-healthcare-guiding-principles-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Table&nbsp;6.1: Questions that can be used when considering each principle in the AI development process <span class="citation" data-cites="Badal2023-bt">(<a href="references.html#ref-Badal2023-bt" role="doc-biblioref">Badal et al. 2023</a>)</span>
+Table&nbsp;6.1: Questions that can be used when considering each principle in the AI development process <span class="citation" data-cites="Badal2023-bt">(<a href="references.html#ref-Badal2023-bt" role="doc-biblioref">Badal, Lee, and Esserman 2023</a>)</span>
 </figcaption>
 <div aria-describedby="tbl-healthcare-guiding-principles-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <table class="caption-top table">
@@ -537,7 +535,7 @@ Table&nbsp;6.1: Questions that can be used when considering each principle in th
 <h3 data-number="6.2.4" class="anchored" data-anchor-id="principle-8-facilitating-shared-decision-making-through-explainability"><span class="header-section-number">6.2.4</span> Principle 8: Facilitating Shared Decision-Making Through Explainability</h3>
 <p>The final Badal principle asks whether clinicians and patients can understand why an AI tool produced a given output well enough to incorporate it meaningfully into a clinical decision. This is the explainability question, and it has both a technical and a human-factors dimension that are frequently conflated.</p>
 <p>The technical question is which explainability method to apply. The two most widely deployed methods in clinical settings are SHAP (SHapley Additive exPlanations, grounded in cooperative game theory) and LIME (Local Interpretable Model-Agnostic Explanations, which fits a simpler surrogate model locally around each prediction). SHAP values are globally consistent — the same feature receives the same attribution across comparable patients — while LIME explanations can vary for patients with similar risk profiles. For clinical AI tools where consistency across patients matters (discharge planning, readmission prediction), SHAP has become the preferred method. For rapid bedside use where approximate feature attribution is sufficient, the lower computational cost of LIME may be acceptable.</p>
-<p>The human-factors question is harder: does presenting explainability output to a clinician actually improve decision quality, or does it create a new form of over-reliance? The evidence is mixed. Clinicians who understand the top features driving a risk score may correctly identify when the model is pattern-matching to correlational rather than causal features <span class="citation" data-cites="Jones2023-trust">(<a href="references.html#ref-Jones2023-trust" role="doc-biblioref">Jones et al. 2023</a>)</span>. Clinicians under high cognitive load — which describes most of clinical practice — may instead anchor on the AI output, with the explainability display functioning as post-hoc rationalization rather than genuine scrutiny. Designing human review checkpoints that are genuinely scrutinized rather than rubber-stamped is an open problem addressed in <a href="agentic_safety.html" class="quarto-xref"><span>Chapter 11</span></a>.</p>
+<p>The human-factors question is harder: does presenting explainability output to a clinician actually improve decision quality, or does it create a new form of over-reliance? The evidence is mixed. Clinicians who understand the top features driving a risk score may correctly identify when the model is pattern-matching to correlational rather than causal features <span class="citation" data-cites="Jones2023-trust">(<a href="references.html#ref-Jones2023-trust" role="doc-biblioref">Jones, Thornton, and Wyatt 2023</a>)</span>. Clinicians under high cognitive load — which describes most of clinical practice — may instead anchor on the AI output, with the explainability display functioning as post-hoc rationalization rather than genuine scrutiny. Designing human review checkpoints that are genuinely scrutinized rather than rubber-stamped is an open problem addressed in <a href="agentic_safety.html" class="quarto-xref"><span>Chapter 11</span></a>.</p>
 <p>For shared decision-making with patients, the bar is different. Patients rarely need SHAP waterfall plots. They need to know that an AI tool was involved in their care, what it was used for, and that their clinician evaluated and took responsibility for the recommendation. Disclosure language that meets this bar is not technically complex; it requires institutional will to adopt and apply consistently.</p>
 </section>
 </section>
@@ -547,7 +545,7 @@ Table&nbsp;6.1: Questions that can be used when considering each principle in th
 <section id="ambient-documentation-and-the-documentation-burden" class="level3" data-number="6.3.1">
 <h3 data-number="6.3.1" class="anchored" data-anchor-id="ambient-documentation-and-the-documentation-burden"><span class="header-section-number">6.3.1</span> Ambient Documentation and the Documentation Burden</h3>
 <p>The most widely deployed category of clinical AI at AMCs is now ambient documentation — AI systems that listen to the clinical encounter, generate a draft clinical note, and return it to the clinician for review and attestation. <a href="https://www.abridge.com">Abridge</a>, <a href="https://www.nuance.com/healthcare/ambient-clinical-intelligence.html">Microsoft DAX</a> (Dragon Ambient eXperience), <a href="https://www.nabla.com">Nabla</a>, and <a href="https://www.suki.ai">Suki</a> are the leading commercial systems; <a href="https://www.epic.com">Epic</a> has introduced native ambient documentation for institutions already on its platform.</p>
-<p>The evidence that ambient systems reduce documentation time is now substantial. Tierney and colleagues found that physicians using an ambient scribe system reported meaningful reductions in time spent on documentation, with the largest gains in primary care and outpatient specialties where note volume is highest <span class="citation" data-cites="Tierney2024-scribe">(<a href="references.html#ref-Tierney2024-scribe" role="doc-biblioref"><span class="nocase">Tierney et al.</span> 2024</a>)</span>. The same work reported improvements in clinician well-being and in patients’ perception that their physician was present and attentive during the encounter — because the physician was not looking at a screen. The professional wellness chapter of this book examines this evidence in greater depth (<a href="professional_wellness.html" class="quarto-xref"><span>Chapter 13</span></a>).</p>
+<p>The evidence that ambient systems reduce documentation time is now substantial. Tierney and colleagues found that physicians using an ambient scribe system reported meaningful reductions in time spent on documentation, with the largest gains in primary care and outpatient specialties where note volume is highest <span class="citation" data-cites="Tierney2024-scribe">(<a href="references.html#ref-Tierney2024-scribe" role="doc-biblioref">Tierney et al. 2024</a>)</span>. The same work reported improvements in clinician well-being and in patients’ perception that their physician was present and attentive during the encounter — because the physician was not looking at a screen. The professional wellness chapter of this book examines this evidence in greater depth (<a href="professional_wellness.html" class="quarto-xref"><span>Chapter 13</span></a>).</p>
 <p>The safety concern that receives less attention in the promotional literature is omission error. Ambient systems are optimized to produce fluent, complete-sounding notes, but they can silently omit clinically significant findings mentioned during the encounter — a patient’s reference to chest pain that the system categorizes as chronic rather than new, a medication allergy mentioned during the social history, a patient-reported symptom that the system filters out as conversational noise. These omissions are more dangerous than transcription errors precisely because they produce notes that look complete. A clinician reviewing a well-formatted, plausible note is less likely to detect a missing item than one reviewing a note with obvious structural gaps.</p>
 <p>The operational response is to treat ambient documentation as draft generation, not as finished note production — a tool that eliminates the blank-page problem and compresses documentation time, but not one that relieves the clinician of responsibility to verify every clinical fact before attestation. Institutions deploying ambient systems should document this expectation explicitly in clinical AI policy and should monitor attestation patterns: a clinician attesting in under sixty seconds is almost certainly not reviewing the draft.</p>
 <div class="cell" data-layout-align="default">
@@ -671,15 +669,15 @@ Figure&nbsp;6.2: The clinical AI governance lifecycle, integrating procurement a
 </section>
 <section id="explainability-trust-and-the-liability-frontier" class="level3" data-number="6.3.4">
 <h3 data-number="6.3.4" class="anchored" data-anchor-id="explainability-trust-and-the-liability-frontier"><span class="header-section-number">6.3.4</span> Explainability, Trust, and the Liability Frontier</h3>
-<p>The liability question in clinical AI is still developing, but the direction is clear. Legal commentary and early judicial precedent are examining two categories of AI-related clinical liability: the failure to exercise adequate oversight of an AI tool that produced a harmful recommendation, and — less intuitive but increasingly discussed — the failure to use an AI tool that has become part of the standard of care <span class="citation" data-cites="Jones2023-trust">(<a href="references.html#ref-Jones2023-trust" role="doc-biblioref">Jones et al. 2023</a>)</span>. The second category is newer and more unsettling to many clinicians: the idea that using AI could become an obligation, not merely a permission.</p>
+<p>The liability question in clinical AI is still developing, but the direction is clear. Legal commentary and early judicial precedent are examining two categories of AI-related clinical liability: the failure to exercise adequate oversight of an AI tool that produced a harmful recommendation, and — less intuitive but increasingly discussed — the failure to use an AI tool that has become part of the standard of care <span class="citation" data-cites="Jones2023-trust">(<a href="references.html#ref-Jones2023-trust" role="doc-biblioref">Jones, Thornton, and Wyatt 2023</a>)</span>. The second category is newer and more unsettling to many clinicians: the idea that using AI could become an obligation, not merely a permission.</p>
 <p>The AMA survey data indicates that approximately 65% of physicians see potential value in AI for non-diagnostic tasks — documentation, prior authorization, administrative work — while confidence in AI for diagnostic support is substantially lower <span class="citation" data-cites="AMA2023-survey">(<a href="references.html#ref-AMA2023-survey" role="doc-biblioref">American Medical Association 2023</a>)</span>. This gap is clinically rational. The cost of a documentation error is generally lower and more recoverable than the cost of a diagnostic error. But as validated diagnostic AI tools accumulate peer-reviewed evidence of performance at or above attending-level accuracy in specific domains, the hesitancy will come under increasing scrutiny from patients and from liability counsel.</p>
-<p>The prudent governance posture is to treat each deployed clinical AI tool as carrying its own liability profile: who is responsible for verifying the output, how that verification is documented in the medical record, and what the institutional protocol is when an AI recommendation is not followed. The clinician who overrides an AI recommendation and documents the clinical reasoning is in a defensible position. The clinician who follows an AI recommendation without review, or who overrides it without documentation, is not <span class="citation" data-cites="Jones2023-trust">(<a href="references.html#ref-Jones2023-trust" role="doc-biblioref">Jones et al. 2023</a>)</span>.</p>
+<p>The prudent governance posture is to treat each deployed clinical AI tool as carrying its own liability profile: who is responsible for verifying the output, how that verification is documented in the medical record, and what the institutional protocol is when an AI recommendation is not followed. The clinician who overrides an AI recommendation and documents the clinical reasoning is in a defensible position. The clinician who follows an AI recommendation without review, or who overrides it without documentation, is not <span class="citation" data-cites="Jones2023-trust">(<a href="references.html#ref-Jones2023-trust" role="doc-biblioref">Jones, Thornton, and Wyatt 2023</a>)</span>.</p>
 </section>
 <section id="patient-facing-ai-and-the-consent-gap" class="level3" data-number="6.3.5">
 <h3 data-number="6.3.5" class="anchored" data-anchor-id="patient-facing-ai-and-the-consent-gap"><span class="header-section-number">6.3.5</span> Patient-Facing AI and the Consent Gap</h3>
 <p>The clinical AI tools discussed above are largely invisible to patients: the ambient scribe listens during encounters, but the patient may not know a draft note is being generated; risk stratification models run in the background without patient-facing output. Patient-facing AI tools present a different problem: the patient is the primary user, and the risk of misunderstanding what the tool can and cannot do is concentrated in that interaction.</p>
-<p>Epic’s patient-facing messaging features, including AI-drafted responses to patient portal messages, are now deployed at dozens of major health systems. A pilot study at UC San Diego Health found that clinician-reviewed AI-drafted patient message responses maintained quality comparable to clinician-authored messages while substantially reducing the time required — though the study also raised open questions about whether patients were adequately informed that AI was involved in the drafting process <span class="citation" data-cites="UCSD2024-epic">(<a href="references.html#ref-UCSD2024-epic" role="doc-biblioref"><span class="nocase">Polubriaginof et al.</span> 2024</a>)</span>.</p>
-<p>California Assembly Bill 3030, effective January 2025, requires healthcare providers to include explicit disclosure when AI has generated patient communications <span class="citation" data-cites="CalAB3030-2024">(<a href="references.html#ref-CalAB3030-2024" role="doc-biblioref"><span>AB 3030</span> 2024</a>)</span>. The law covers written communications — letters, portal messages, discharge instructions — but does not extend to real-time verbal interactions. AB 3030 is the most specific AI disclosure mandate currently in effect at the state level, and several states are considering similar requirements. AMC compliance and legal teams should treat the California standard as a leading indicator of where disclosure requirements are heading nationally, and should evaluate adopting it as a default even for institutions serving patients primarily outside California.</p>
+<p>Epic’s patient-facing messaging features, including AI-drafted responses to patient portal messages, are now deployed at dozens of major health systems. A pilot study at UC San Diego Health found that clinician-reviewed AI-drafted patient message responses maintained quality comparable to clinician-authored messages while substantially reducing the time required — though the study also raised open questions about whether patients were adequately informed that AI was involved in the drafting process <span class="citation" data-cites="UCSD2024-epic">(<a href="references.html#ref-UCSD2024-epic" role="doc-biblioref">Polubriaginof et al. 2024</a>)</span>.</p>
+<p>California Assembly Bill 3030, effective January 2025, requires healthcare providers to include explicit disclosure when AI has generated patient communications <span class="citation" data-cites="CalAB3030-2024">(<a href="references.html#ref-CalAB3030-2024" role="doc-biblioref">California State Legislature 2024</a>)</span>. The law covers written communications — letters, portal messages, discharge instructions — but does not extend to real-time verbal interactions. AB 3030 is the most specific AI disclosure mandate currently in effect at the state level, and several states are considering similar requirements. AMC compliance and legal teams should treat the California standard as a leading indicator of where disclosure requirements are heading nationally, and should evaluate adopting it as a default even for institutions serving patients primarily outside California.</p>
 <p>The disclosure language itself does not need to be alarming. A statement that some communications may be drafted with AI assistance and reviewed by the clinical team before sending accomplishes the core transparency goal. Institutions that have adopted such language consistently report minimal patient concern when it is introduced alongside explanation of how the tool is used; the concern is substantially higher when patients discover the practice without prior notice.</p>
 </section>
 </section>
@@ -696,44 +694,44 @@ Figure&nbsp;6.2: The clinical AI governance lifecycle, integrating procurement a
 <section id="starter-project-2-ambient-documentation-pilot-with-prepost-measurement" class="level3" data-number="6.4.2">
 <h3 data-number="6.4.2" class="anchored" data-anchor-id="starter-project-2-ambient-documentation-pilot-with-prepost-measurement"><span class="header-section-number">6.4.2</span> Starter Project 2: Ambient Documentation Pilot with Pre/Post Measurement</h3>
 <p><strong>What it is:</strong> A structured pilot of an ambient AI scribe system in a high-volume outpatient specialty, with pre-specified measurement of after-hours EHR time, note quality, and clinician well-being scores before and after the intervention.</p>
-<p><strong>Why now:</strong> The evidence base for ambient documentation is strong enough to act on <span class="citation" data-cites="Tierney2024-scribe">(<a href="references.html#ref-Tierney2024-scribe" role="doc-biblioref"><span class="nocase">Tierney et al.</span> 2024</a>)</span>. But the institution that deploys without measurement cannot know whether its specific deployment produced the expected benefit, or whether local workflow factors attenuated it — and cannot make the internal business case for broader rollout without outcome data.</p>
+<p><strong>Why now:</strong> The evidence base for ambient documentation is strong enough to act on <span class="citation" data-cites="Tierney2024-scribe">(<a href="references.html#ref-Tierney2024-scribe" role="doc-biblioref">Tierney et al. 2024</a>)</span>. But the institution that deploys without measurement cannot know whether its specific deployment produced the expected benefit, or whether local workflow factors attenuated it — and cannot make the internal business case for broader rollout without outcome data.</p>
 <p><strong>How to execute:</strong> Select a single outpatient specialty with a measurable documentation burden and an identified clinical champion. Establish baseline metrics before deployment: after-hours EHR time (available from EHR audit logs at most institutions), note length, attestation turnaround, and a validated burnout or well-being survey. Deploy the ambient system with explicit workflow expectations — draft generation, not autonomous documentation — and with the consent and attestation disclosure language described above. Measure the same metrics at 60 and 120 days. Share results transparently with clinical leadership regardless of outcome; a null result has governance value.</p>
 <p><strong>Buy vs.&nbsp;build:</strong> Buy. The commercial ambient systems have existing EHR integrations, BAA coverage, and vendor-side regulatory responsibility for the AI component. Building an ambient documentation system from scratch is not a tractable project for most AMC informatics teams, and the commercial market has matured rapidly. The institutional work is in selecting the system, structuring the measurement framework, and managing the change management required for sustainable clinical adoption.</p>
 
 
-<div id="refs" class="references csl-bib-body hanging-indent" role="list" style="display: none">
-<div id="ref-CalAB3030-2024" class="csl-entry" role="listitem">
-<span>AB 3030</span>: Health Care: Artificial Intelligence (2024). <a href="https://leginfo.legislature.ca.gov/faces/billNavClient.xhtml?bill_id=202320240AB3030">https://leginfo.legislature.ca.gov/faces/billNavClient.xhtml?bill_id=202320240AB3030</a>.
-</div>
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list" style="display: none">
 <div id="ref-AMA2023-survey" class="csl-entry" role="listitem">
-American Medical Association. 2023. <em>Physicians Optimistic about <span>AI</span> in Health Care with Some Concerns</em>. <a href="https://www.ama-assn.org/practice-management/digital/physicians-optimistic-about-ai-health-care-some-concerns">https://www.ama-assn.org/practice-management/digital/physicians-optimistic-about-ai-health-care-some-concerns</a>.
+American Medical Association. 2023. <span>“Physicians Optimistic about <span>AI</span> in Health Care with Some Concerns.”</span> <a href="https://www.ama-assn.org/practice-management/digital/physicians-optimistic-about-ai-health-care-some-concerns">https://www.ama-assn.org/practice-management/digital/physicians-optimistic-about-ai-health-care-some-concerns</a>.
 </div>
 <div id="ref-Badal2023-bt" class="csl-entry" role="listitem">
 Badal, Kimberly, Carmen M Lee, and Laura J Esserman. 2023. <span>“Guiding Principles for the Responsible Development of Artificial Intelligence Tools for Healthcare.”</span> <em>Communication &amp; Medicine</em> 3 (1): 47. <a href="https://doi.org/10.1038/s43856-023-00279-9">https://doi.org/10.1038/s43856-023-00279-9</a>.
 </div>
+<div id="ref-CalAB3030-2024" class="csl-entry" role="listitem">
+California State Legislature. 2024. <em><span>AB 3030</span>: Health Care: Artificial Intelligence</em>. <a href="https://leginfo.legislature.ca.gov/faces/billNavClient.xhtml?bill_id=202320240AB3030">https://leginfo.legislature.ca.gov/faces/billNavClient.xhtml?bill_id=202320240AB3030</a>.
+</div>
 <div id="ref-CMS2024-maai" class="csl-entry" role="listitem">
-Centers for Medicare and Medicaid Services. 2024. <span>“Medicare Program; Contract Year 2025 Policy and Technical Changes to the <span>Medicare Advantage</span> Program, Medicare Prescription Drug Benefit Program, <span>Medicare</span> Cost Plan Program, and Programs of All-Inclusive Care for the Elderly (Final Rule).”</span> In <em>Federal Register</em>, No. 79, vol. 89. <a href="https://www.federalregister.gov/documents/2024/04/23/2024-07105/medicare-program-contract-year-2025-policy-and-technical-changes">https://www.federalregister.gov/documents/2024/04/23/2024-07105/medicare-program-contract-year-2025-policy-and-technical-changes</a>.
+Centers for Medicare and Medicaid Services. 2024. <span>“Medicare Program; Contract Year 2025 Policy and Technical Changes to the <span>Medicare Advantage</span> Program, Medicare Prescription Drug Benefit Program, <span>Medicare</span> Cost Plan Program, and Programs of All-Inclusive Care for the Elderly (Final Rule).”</span> <em>Federal Register</em>. <a href="https://www.federalregister.gov/documents/2024/04/23/2024-07105/medicare-program-contract-year-2025-policy-and-technical-changes">https://www.federalregister.gov/documents/2024/04/23/2024-07105/medicare-program-contract-year-2025-policy-and-technical-changes</a>.
 </div>
 <div id="ref-Jones2023-trust" class="csl-entry" role="listitem">
 Jones, Clare, Janet Thornton, and Jeremy C Wyatt. 2023. <span>“Artificial Intelligence and Clinical Decision Support: Clinicians’ Perspectives on Trust, Trustworthiness, and Liability.”</span> <em>Medical Law Review</em> 31 (3): 501–20. <a href="https://doi.org/10.1093/medlaw/fwad013">https://doi.org/10.1093/medlaw/fwad013</a>.
 </div>
 <div id="ref-ONC2024-hti1" class="csl-entry" role="listitem">
-Office of the National Coordinator for Health Information Technology. 2024. <span>“Health Data, Technology, and Interoperability: Certification Program Updates, Algorithm Transparency, and Information Sharing (<span>HTI-1</span>).”</span> In <em>Federal Register</em>, No. 8, vol. 89. <a href="https://www.federalregister.gov/documents/2024/01/09/2023-28824/health-data-technology-and-interoperability-certification-program-updates-algorithm-transparency-and">https://www.federalregister.gov/documents/2024/01/09/2023-28824/health-data-technology-and-interoperability-certification-program-updates-algorithm-transparency-and</a>.
+Office of the National Coordinator for Health Information Technology. 2024. <span>“Health Data, Technology, and Interoperability: Certification Program Updates, Algorithm Transparency, and Information Sharing (<span>HTI-1</span>).”</span> <em>Federal Register</em>. <a href="https://www.federalregister.gov/documents/2024/01/09/2023-28824/health-data-technology-and-interoperability-certification-program-updates-algorithm-transparency-and">https://www.federalregister.gov/documents/2024/01/09/2023-28824/health-data-technology-and-interoperability-certification-program-updates-algorithm-transparency-and</a>.
 </div>
 <div id="ref-UCSD2024-epic" class="csl-entry" role="listitem">
-<span class="nocase">Polubriaginof, Fernanda C G et al.</span> 2024. <span>“Implementation of a Generative Artificial Intelligence Solution for Patient Message Drafting in an Academic Medical Center.”</span> <em>JAMIA Open</em>, ahead of print. <a href="https://doi.org/10.1093/jamiaopen/ooae024">https://doi.org/10.1093/jamiaopen/ooae024</a>.
+Polubriaginof, Fernanda C G et al. 2024. <span>“Implementation of a Generative Artificial Intelligence Solution for Patient Message Drafting in an Academic Medical Center.”</span> <em>JAMIA Open</em>. <a href="https://doi.org/10.1093/jamiaopen/ooae024">https://doi.org/10.1093/jamiaopen/ooae024</a>.
 </div>
 <div id="ref-Tierney2024-scribe" class="csl-entry" role="listitem">
-<span class="nocase">Tierney, Aaron A, Shreya Bhatt, Aakash Houndie, et al.</span> 2024. <span>“Ambient Artificial Intelligence Scribes to Alleviate the Burden of Clinical Documentation.”</span> <em>NEJM Catalyst Innovations in Care Delivery</em> 5 (1): CAT.23.0404. <a href="https://doi.org/10.1056/CAT.23.0404">https://doi.org/10.1056/CAT.23.0404</a>.
+Tierney, Aaron A, Shreya Bhatt, Aakash Houndie, et al. 2024. <span>“Ambient Artificial Intelligence Scribes to Alleviate the Burden of Clinical Documentation.”</span> <em>NEJM Catalyst Innovations in Care Delivery</em> 5 (1): CAT.23.0404. <a href="https://doi.org/10.1056/CAT.23.0404">https://doi.org/10.1056/CAT.23.0404</a>.
 </div>
 <div id="ref-HHS2024-1557" class="csl-entry" role="listitem">
-U.S. Department of Health and Human Services, Office for Civil Rights. 2024. <em>Section 1557: Nondiscrimination in Health Programs and Activities (Final Rule)</em>. <a href="https://www.hhs.gov/civil-rights/for-individuals/section-1557/index.html">https://www.hhs.gov/civil-rights/for-individuals/section-1557/index.html</a>.
+U.S. Department of Health and Human Services, Office for Civil Rights. 2024. <span>“Section 1557: Nondiscrimination in Health Programs and Activities (Final Rule).”</span> <a href="https://www.hhs.gov/civil-rights/for-individuals/section-1557/index.html">https://www.hhs.gov/civil-rights/for-individuals/section-1557/index.html</a>.
 </div>
 <div id="ref-FDA2024-pccp" class="csl-entry" role="listitem">
-U.S. Food and Drug Administration. 2024. <em>Marketing Submission Recommendations for a Predetermined Change Control Plan for <span>Artificial Intelligence/Machine Learning</span>-Enabled Device Software Functions</em>. <a href="https://www.fda.gov/regulatory-information/search-fda-guidance-documents/marketing-submission-recommendations-predetermined-change-control-plan-aiml-enabled-device-software">https://www.fda.gov/regulatory-information/search-fda-guidance-documents/marketing-submission-recommendations-predetermined-change-control-plan-aiml-enabled-device-software</a>.
+U.S. Food and Drug Administration. 2024. <span>“Marketing Submission Recommendations for a Predetermined Change Control Plan for <span>Artificial Intelligence/Machine Learning</span>-Enabled Device Software Functions.”</span> <a href="https://www.fda.gov/regulatory-information/search-fda-guidance-documents/marketing-submission-recommendations-predetermined-change-control-plan-aiml-enabled-device-software">https://www.fda.gov/regulatory-information/search-fda-guidance-documents/marketing-submission-recommendations-predetermined-change-control-plan-aiml-enabled-device-software</a>.
 </div>
 <div id="ref-Wiens2019-harm" class="csl-entry" role="listitem">
-Wiens, Jenna, Suchi Saria, Mark Sendak, et al. 2019. <span>“Do No Harm: A Roadmap for Responsible Machine Learning for Health Care.”</span> <em>Nature Medicine</em> 25: 1337–40. <a href="https://doi.org/10.1038/s41591-019-0548-6">https://doi.org/10.1038/s41591-019-0548-6</a>.
+Wiens, Jenna, Suchi Saria, Mark Sendak, Marzyeh Ghassemi, Vincent X Liu, Finale Doshi-Velez, Kenneth Jung, et al. 2019. <span>“Do No Harm: A Roadmap for Responsible Machine Learning for Health Care.”</span> <em>Nature Medicine</em> 25: 1337–40. <a href="https://doi.org/10.1038/s41591-019-0548-6">https://doi.org/10.1038/s41591-019-0548-6</a>.
 </div>
 </div>
 </section>
@@ -791,14 +789,13 @@ Wiens, Jenna, Suchi Saria, Mark Sendak, et al. 2019. <span>“Do No Harm: A Road
       e.clearSelection();
     }
     const getTextToCopy = function(trigger) {
-      const outerScaffold = trigger.parentElement.cloneNode(true);
-      const codeEl = outerScaffold.querySelector('code');
-      for (const childEl of codeEl.children) {
-        if (isCodeAnnotation(childEl)) {
-          childEl.remove();
+        const codeEl = trigger.previousElementSibling.cloneNode(true);
+        for (const childEl of codeEl.children) {
+          if (isCodeAnnotation(childEl)) {
+            childEl.remove();
+          }
         }
-      }
-      return codeEl.innerText;
+        return codeEl.innerText;
     }
     const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
       text: getTextToCopy

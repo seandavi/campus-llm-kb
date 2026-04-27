@@ -2,17 +2,14 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.9.37">
+<meta name="generator" content="quarto-1.7.33">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="dcterms.date" content="2026-04-27">
+<meta name="dcterms.date" content="2026-04-26">
 
 <title>4&nbsp; Domain Implementation Guide – Implementing AI in Academic Medicine</title>
 <style>
-/* Default styles provided by pandoc.
-** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
-*/
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
 div.columns{display: flex; gap: min(4vw, 1.5em);}
@@ -28,6 +25,7 @@ ul.task-list li input[type="checkbox"] {
 div.csl-bib-body { }
 div.csl-entry {
   clear: both;
+  margin-bottom: 0em;
 }
 .hanging-indent div.csl-entry {
   margin-left:2em;
@@ -61,10 +59,10 @@ div.csl-indent {
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-7f8f88aac4f3542376d5c11b86a4c14d.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-ea385d0e468b0dd5ea5bf0780b1290d9.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-6c776516069454354cc3aff2d99c460c.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-96934157685b0ce66cf1cdc82e4f4849.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -414,7 +412,7 @@ div.csl-indent {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">April 27, 2026</p>
+      <p class="date">April 26, 2026</p>
     </div>
   </div>
   
@@ -507,7 +505,7 @@ Table&nbsp;4.1: Domain implementation characteristics across the AMC. Each colum
 <section id="the-clinical-domain-safety-as-the-primary-constraint" class="level2" data-number="4.3">
 <h2 data-number="4.3" class="anchored" data-anchor-id="the-clinical-domain-safety-as-the-primary-constraint"><span class="header-section-number">4.3</span> The Clinical Domain: Safety as the Primary Constraint</h2>
 <p>In the clinical world, implementation must begin with a period of silent or shadow deployment. The tool runs in the background, consuming real patient data and generating outputs that are logged and reviewed but never shown to clinicians. This period validates the model against the clinical environment’s actual patient population and workflow before any outputs influence clinical decisions.</p>
-<p>The <a href="https://www.decide-ai.org/">DECIDE-AI</a> reporting guidelines for early-stage AI pilots give this process a formal structure: pre-registered primary endpoints, prospective design, and monitoring for unexpected harms <span class="citation" data-cites="Vasey2022-decideai">(<a href="references.html#ref-Vasey2022-decideai" role="doc-biblioref"><span class="nocase">Vasey et al.</span> 2022</a>)</span>. The framework shifts the evaluation focus away from aggregate accuracy metrics — “area under the curve” — toward how the model actually changes clinician behavior when it is present. A model that is 95 percent accurate but whose alerts are ignored 90 percent of the time has not been implemented; it has been deployed and ignored <span class="citation" data-cites="Wong2021-esm">(<a href="references.html#ref-Wong2021-esm" role="doc-biblioref">Wong et al. 2021</a>)</span>.</p>
+<p>The <a href="https://www.decide-ai.org/">DECIDE-AI</a> reporting guidelines for early-stage AI pilots give this process a formal structure: pre-registered primary endpoints, prospective design, and monitoring for unexpected harms <span class="citation" data-cites="Vasey2022-decideai">(<a href="references.html#ref-Vasey2022-decideai" role="doc-biblioref">Vasey et al. 2022</a>)</span>. The framework shifts the evaluation focus away from aggregate accuracy metrics — “area under the curve” — toward how the model actually changes clinician behavior when it is present. A model that is 95 percent accurate but whose alerts are ignored 90 percent of the time has not been implemented; it has been deployed and ignored <span class="citation" data-cites="Wong2021-esm">(<a href="references.html#ref-Wong2021-esm" role="doc-biblioref">Wong et al. 2021</a>)</span>.</p>
 <p>The Duke Health Sepsis Watch deployment remains the most thoroughly documented example of this staged approach <span class="citation" data-cites="Sendak2020-sepsis">(<a href="references.html#ref-Sendak2020-sepsis" role="doc-biblioref">Sendak et al. 2020</a>)</span>. The team did not simply deploy a model — they spent months in shadow mode, involved nurses in interface design, and built a dedicated rapid-response workflow around the model’s outputs. The technical performance was validated, but the implementation was designed around the social and operational reality of the units where it was deployed. That is the difference between a peer-reviewed model and a working clinical tool.</p>
 <div class="cell" data-layout-align="default">
 <div class="cell-output-display">
@@ -576,18 +574,18 @@ Figure&nbsp;4.1: Domain-specific staged deployment lifecycle. Most implementatio
 <p><strong>Buy vs.&nbsp;build:</strong> Curriculum and facilitation. The AAMC and AMA have both published AI literacy curricula that can be adapted without building from scratch. The cohort structure itself — protected time, community of practice, reporting relationship to the AISC — is a governance design and budget decision, not a technology purchase.</p>
 
 
-<div id="refs" class="references csl-bib-body hanging-indent" role="list" style="display: none">
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list" style="display: none">
 <div id="ref-Finlayson2021-shift" class="csl-entry" role="listitem">
-Finlayson, Samuel G, Adarsh Subbaswamy, Karandeep Singh, et al. 2021. <span>“The Clinician and Dataset Shift in Artificial Intelligence.”</span> <em>New England Journal of Medicine</em> 385: 283–86. <a href="https://doi.org/10.1056/NEJMc2104626">https://doi.org/10.1056/NEJMc2104626</a>.
+Finlayson, Samuel G, Adarsh Subbaswamy, Karandeep Singh, John Bowers, Annabel Kupke, Jonathan Zittrain, Isaac S Kohane, and Suchi Saria. 2021. <span>“The Clinician and Dataset Shift in Artificial Intelligence.”</span> <em>New England Journal of Medicine</em> 385: 283–86. <a href="https://doi.org/10.1056/NEJMc2104626">https://doi.org/10.1056/NEJMc2104626</a>.
 </div>
 <div id="ref-Sendak2020-sepsis" class="csl-entry" role="listitem">
-Sendak, Mark P, William Ratliff, Dina Sarro, et al. 2020. <span>“Real-World Integration of a Sepsis Deep Learning Technology into Routine Clinical Care: Implementation Study.”</span> <em>JMIR Medical Informatics</em> 8 (7): e15182. <a href="https://doi.org/10.2196/15182">https://doi.org/10.2196/15182</a>.
+Sendak, Mark P, William Ratliff, Dina Sarro, Elizabeth Alderton, Joseph Futoma, Michael Gao, Marshall Nichols, et al. 2020. <span>“Real-World Integration of a Sepsis Deep Learning Technology into Routine Clinical Care: Implementation Study.”</span> <em>JMIR Medical Informatics</em> 8 (7): e15182. <a href="https://doi.org/10.2196/15182">https://doi.org/10.2196/15182</a>.
 </div>
 <div id="ref-Vasey2022-decideai" class="csl-entry" role="listitem">
-<span class="nocase">Vasey, Baptiste, Myura Nagendran, Bruce Campbell, et al.</span> 2022. <span>“Reporting Guideline for the Early-Stage Clinical Evaluation of Decision Support Systems Driven by Artificial Intelligence: <span>DECIDE-AI</span>.”</span> <em>Nature Medicine</em> 28: 924–33. <a href="https://doi.org/10.1038/s41591-022-01772-9">https://doi.org/10.1038/s41591-022-01772-9</a>.
+Vasey, Baptiste, Myura Nagendran, Bruce Campbell, David A Clifton, Gary S Collins, Spiros Denaxas, Alastair K Denniston, et al. 2022. <span>“Reporting Guideline for the Early-Stage Clinical Evaluation of Decision Support Systems Driven by Artificial Intelligence: <span>DECIDE-AI</span>.”</span> <em>Nature Medicine</em> 28: 924–33. <a href="https://doi.org/10.1038/s41591-022-01772-9">https://doi.org/10.1038/s41591-022-01772-9</a>.
 </div>
 <div id="ref-Wong2021-esm" class="csl-entry" role="listitem">
-Wong, Andrew, Erkin Otles, John P Donnelly, et al. 2021. <span>“External Validation of a Widely Implemented Proprietary Sepsis Prediction Model in Hospitalized Patients.”</span> <em>JAMA Internal Medicine</em> 181 (8): 1065–70. <a href="https://doi.org/10.1001/jamainternmed.2021.2626">https://doi.org/10.1001/jamainternmed.2021.2626</a>.
+Wong, Andrew, Erkin Otles, John P Donnelly, Andrew Krumm, Jeffrey McCullough, Olivia DeTroyer-Coopmans, Dina Rojas, Douglas Westergaard, Aakash Trivedi, and Karandeep Singh. 2021. <span>“External Validation of a Widely Implemented Proprietary Sepsis Prediction Model in Hospitalized Patients.”</span> <em>JAMA Internal Medicine</em> 181 (8): 1065–70. <a href="https://doi.org/10.1001/jamainternmed.2021.2626">https://doi.org/10.1001/jamainternmed.2021.2626</a>.
 </div>
 </div>
 </section>
@@ -645,14 +643,13 @@ Wong, Andrew, Erkin Otles, John P Donnelly, et al. 2021. <span>“External Valid
       e.clearSelection();
     }
     const getTextToCopy = function(trigger) {
-      const outerScaffold = trigger.parentElement.cloneNode(true);
-      const codeEl = outerScaffold.querySelector('code');
-      for (const childEl of codeEl.children) {
-        if (isCodeAnnotation(childEl)) {
-          childEl.remove();
+        const codeEl = trigger.previousElementSibling.cloneNode(true);
+        for (const childEl of codeEl.children) {
+          if (isCodeAnnotation(childEl)) {
+            childEl.remove();
+          }
         }
-      }
-      return codeEl.innerText;
+        return codeEl.innerText;
     }
     const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
       text: getTextToCopy
