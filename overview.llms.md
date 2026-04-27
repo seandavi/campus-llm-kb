@@ -2,13 +2,17 @@
 
 Published
 
-April 26, 2026
+April 27, 2026
 
 At most academic medical centers right now, AI is being deployed faster than the governance structures meant to oversee it. The 2025 CHIME/Censinet survey found that 84 percent of U.S. health systems have some form of AI steering committee — but only 10 percent maintain an automated inventory of which AI tools are actually running in clinical environments ([College of Healthcare Information Management Executives and Censinet 2025](#ref-CHIME2025-censinet)). The committee exists. The operational visibility does not.
 
 That gap is not a small administrative oversight. Ambient documentation tools are now used by more than 600,000 clinicians across U.S. health systems. [Epic](https://www.epic.com) has embedded AI across the clinical workflow at thousands of hospitals without requiring most of those hospitals to make a deliberate procurement decision. Research teams are running LLM-assisted literature synthesis, grant applications, and protocol drafts whether or not anyone has worked through the research integrity implications. Administrative staff are using consumer AI for tasks that touch sensitive data, often without knowing what the privacy exposure actually is. The question is no longer whether AI has been deployed at your AMC. The question is whether anyone knows what has been deployed, and whether the governance structures are in place to ensure it is being used well.
 
 This book exists because the answer to that second question, at most institutions, is not yet yes.
+
+> **NOTE:**
+>
+> This book is fully compliant with the [llms.txt standard](https://llmstxt.org/). Every page is available in plain Markdown format for use with AI assistants and large language models. See the [Quarto llms.txt documentation](https://quarto.org/docs/websites/website-llms.html) for details.
 
 ## 1.1 What changed between 2020 and 2024
 
