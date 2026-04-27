@@ -2,7 +2,7 @@
 
 Published
 
-April 26, 2026
+April 27, 2026
 
 In order to successfully integrate AI across an academic medical center, it helps to start by acknowledging what an AMC actually is. It is not a single organization with a unified mission, a single budget, and consistent risk tolerance. It is a federation of at least four semi-independent domains — clinical care, research, education, and business operations — that share governance overhead and physical infrastructure but operate under largely independent leadership, funding models, regulatory obligations, and definitions of what success looks like. A tool or policy that makes perfect sense for clinical operations may be irrelevant or actively counterproductive in the research context. An AI use case that is urgent in the business operations domain may be low priority in the education domain, and vice versa.
 

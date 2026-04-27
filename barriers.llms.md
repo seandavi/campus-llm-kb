@@ -2,7 +2,7 @@
 
 Published
 
-April 26, 2026
+April 27, 2026
 
 The standard narrative for why technology fails in academic medicine is as predictable as it is condescending. Clinicians are resistant to change. Faculty lack the expertise to adapt. The institution does not have the resources to see a project through. I have watched dozens of implementations over two decades, and I have rarely found these explanations to be true. The people on the front lines are often desperate for tools that actually work. They do not resist change because they are stubborn; they resist it because they have been burned by software that added three clicks to their workflow without removing a single one.
 

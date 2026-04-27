@@ -2,7 +2,7 @@
 
 Published
 
-April 26, 2026
+April 27, 2026
 
 There is a meaningful safety boundary between an AI system that suggests a course of action and one that executes it. On one side of that boundary, a clinician reads the output and decides what to do next; the human is the actor, and the AI is a source of input. On the other side, the AI plans and executes a sequence of steps — placing a message in a patient’s portal, submitting a prior authorization request, updating a medication list — while a human nominally supervises but does not approve each individual action. Most AMC governance frameworks were designed for advisory AI. They ask how to validate a model’s output and how to surface it appropriately in the clinical workflow. They were not designed to govern systems that initiate actions in the world.
 

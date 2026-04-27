@@ -2,7 +2,7 @@
 
 Published
 
-April 26, 2026
+April 27, 2026
 
 At most academic medical centers, the first place generative AI takes hold is not the clinic or the research lab. It is the finance department’s revenue cycle team, the HR business partner drafting job descriptions after hours, the communications writer who discovered that a rough prompt produces a passable first draft in thirty seconds. Business operations — the finance, HR, supply chain, IT, marketing, philanthropy, facilities, and legal functions that keep an AMC running — are where AI adoption tends to move fastest and where institutional governance tends to lag furthest behind.
 

@@ -2,7 +2,7 @@
 
 Published
 
-April 26, 2026
+April 27, 2026
 
 The most common failure mode in AMC AI programs is not technical. It is organizational. Across health systems that have published candid accounts of AI implementation, the recurring pattern is a graveyard of pilots: technically sound models that achieved strong performance on held-out test sets and then stalled or failed at the point of clinical deployment. The failures trace not to the models but to the institutional machinery around them — absent ownership, underfunded maintenance, clinicians who were not consulted during development, and a go-live event that mistook deployment for done.
 

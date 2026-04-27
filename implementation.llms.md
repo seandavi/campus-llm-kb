@@ -2,7 +2,7 @@
 
 Published
 
-April 26, 2026
+April 27, 2026
 
 When we talk about implementing a new technology in an academic medical center, we default to the language of the IT rollout: go-live dates, user provisioning, help desk tickets. We treat the software as a finished object that needs to be deposited into the workflow, like furniture moved into an office. This mental model works reasonably well for a word processor, where the utility is clear and the risks of failure are largely individual. It fails completely for large language models. In two decades of building data infrastructure for these institutions, I have found that the technology is almost never the bottleneck. The bottleneck is the social and professional fabric of the hospital itself.
 
