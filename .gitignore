@@ -6,3 +6,15 @@ _book
 *html
 *pdf
 test_files
+
+# LaTeX build artifacts
+*.aux
+*.idx
+*.ilg
+*.ind
+*.toc
+index.log
+index.tex
+
+# Temp files
+*.bak
