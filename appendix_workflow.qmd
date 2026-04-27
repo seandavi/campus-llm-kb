@@ -1,4 +1,4 @@
-# How This Book Was Written: A Multi-Model AI Authorship Workflow {.appendix}
+# How This Book Was Written: A Multi-Model AI Authorship Workflow {#sec-workflow-appendix .appendix}
 
 This appendix documents the workflow used to research and write the chapters of this book. We include it not as a novelty item but because it is itself an instance of the kind of human-AI collaboration the book describes — and because the specific tool choices, failure modes, and tradeoffs we encountered are illustrative of the decisions any organization faces when it tries to use AI for substantive knowledge work.
 
