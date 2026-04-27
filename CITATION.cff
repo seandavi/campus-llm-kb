@@ -4,7 +4,7 @@ authors:
 - family-names: "Sean"
   given-names: "Davis"
   orcid: "https://orcid.org/0000-0002-8991-6458"
-title: "Implementing AI in Academic Medicine"
-subtitle: "A guide to governance and principled practice"
+title: "Implementing AI in Academic Medicine: A guide to governance and principled practice"
+doi: "https://doi.org/10.5281/zenodo.13121149"
 date-released: 2026-04-26
 url: "https://github.com/seandavi/amc-ai-governance"
