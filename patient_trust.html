@@ -2,17 +2,14 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.9.37">
+<meta name="generator" content="quarto-1.7.33">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="dcterms.date" content="2026-04-27">
+<meta name="dcterms.date" content="2026-04-26">
 
 <title>12&nbsp; Patient and Community Trust – Implementing AI in Academic Medicine</title>
 <style>
-/* Default styles provided by pandoc.
-** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
-*/
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
 div.columns{display: flex; gap: min(4vw, 1.5em);}
@@ -28,6 +25,7 @@ ul.task-list li input[type="checkbox"] {
 div.csl-bib-body { }
 div.csl-entry {
   clear: both;
+  margin-bottom: 0em;
 }
 .hanging-indent div.csl-entry {
   margin-left:2em;
@@ -61,10 +59,10 @@ div.csl-indent {
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-7f8f88aac4f3542376d5c11b86a4c14d.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-ea385d0e468b0dd5ea5bf0780b1290d9.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-6c776516069454354cc3aff2d99c460c.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-96934157685b0ce66cf1cdc82e4f4849.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -420,7 +418,7 @@ div.csl-indent {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">April 27, 2026</p>
+      <p class="date">April 26, 2026</p>
     </div>
   </div>
   
@@ -450,7 +448,7 @@ div.csl-indent {
 </section>
 <section id="meaningful-disclosure-vs.-boilerplate" class="level2" data-number="12.3">
 <h2 data-number="12.3" class="anchored" data-anchor-id="meaningful-disclosure-vs.-boilerplate"><span class="header-section-number">12.3</span> Meaningful Disclosure vs.&nbsp;Boilerplate</h2>
-<p>The regulatory minimum for AI disclosure — satisfying California AB 3030 <span class="citation" data-cites="CalAB3030-2024">(<a href="references.html#ref-CalAB3030-2024" role="doc-biblioref"><span>AB 3030</span> 2024</a>)</span>, for example — requires that patients be told when AI has been used to generate health communications. The regulatory minimum and the trust-building minimum are not the same thing.</p>
+<p>The regulatory minimum for AI disclosure — satisfying California AB 3030 <span class="citation" data-cites="CalAB3030-2024">(<a href="references.html#ref-CalAB3030-2024" role="doc-biblioref">California State Legislature 2024</a>)</span>, for example — requires that patients be told when AI has been used to generate health communications. The regulatory minimum and the trust-building minimum are not the same thing.</p>
 <p>Boilerplate disclosure — “This message was generated using AI technology” — satisfies the letter of the disclosure requirement. It does not tell the patient which AI system was used, whether a clinician reviewed the output, what the system is and is not capable of, or what the patient can do if they have concerns. Research on patient responses to AI disclosure consistently finds that boilerplate language increases concern without providing the context needed to resolve it. Patients who receive boilerplate disclosure are not better informed than those who received no disclosure; they are more anxious without a framework for understanding what their anxiety is about.</p>
 <p>Meaningful disclosure has three components. It identifies what the AI did specifically (drafted this message, analyzed this image, flagged this result). It clarifies the human role (a physician reviewed this draft before sending; a radiologist reviewed the AI findings). And it provides an actionable recourse (if you have questions about how this was produced, you can ask your care team). None of this requires technical language or a long disclosure form. The most effective disclosure language found in pilot programs is specific and brief: “Dr.&nbsp;[Name] asked our AI system to draft this response based on your message and your recent visit. Dr.&nbsp;[Name] reviewed and approved it before sending.”</p>
 <div class="cell" data-layout-align="default">
@@ -485,7 +483,7 @@ Figure&nbsp;12.1: Community engagement workflow for clinical AI deployment. The 
 <h2 data-number="12.4" class="anchored" data-anchor-id="informed-consent-and-its-gaps"><span class="header-section-number">12.4</span> Informed Consent and Its Gaps</h2>
 <p>Existing patient consent frameworks in most AMCs were designed for interventions that are visible, discrete, and time-bounded: a surgery, a medication, an imaging procedure. Clinical AI tools do not fit this model. A predictive risk score that runs continuously in the background of the EHR, influencing which patients get proactive outreach and which do not, is not an intervention in the usual sense. There is no natural moment at which a patient is informed and asked to consent, because the tool is not doing anything to the patient directly at a specific moment. It is shaping institutional decisions about the patient in ways the patient may never observe.</p>
 <p>Ambient documentation is the most visible gap. A patient who arrives for a clinic visit where an ambient scribe is running is being recorded and having their conversation synthesized by an AI system. They may or may not know this before the encounter begins. California AB 3030 requires disclosure in written communications; it does not address the consent architecture for the encounter itself. The institutions that have managed this most effectively have adopted a verbal consent practice — the clinician explains the ambient system at the start of the encounter, tells the patient they can ask for it to be turned off, and documents the consent in the visit record. This is not complicated; it is a thirty-second conversation that most patients appreciate.</p>
-<p>Predictive risk scoring presents a different consent challenge. The patient does not know whether they scored high or low on the readmission risk model, or whether that score influenced which patients received a follow-up call and which did not. Whether patients should be told their AI risk scores is a question that different institutions have answered differently, and the ethics literature does not offer a clear consensus. What the literature does support is that patients who are told their scores and given an explanation of what the score means and what follows from it are more accepting of AI-influenced care than those who discover after the fact that such scoring was occurring <span class="citation" data-cites="Jones2023-trust">(<a href="references.html#ref-Jones2023-trust" role="doc-biblioref">Jones et al. 2023</a>)</span>.</p>
+<p>Predictive risk scoring presents a different consent challenge. The patient does not know whether they scored high or low on the readmission risk model, or whether that score influenced which patients received a follow-up call and which did not. Whether patients should be told their AI risk scores is a question that different institutions have answered differently, and the ethics literature does not offer a clear consensus. What the literature does support is that patients who are told their scores and given an explanation of what the score means and what follows from it are more accepting of AI-influenced care than those who discover after the fact that such scoring was occurring <span class="citation" data-cites="Jones2023-trust">(<a href="references.html#ref-Jones2023-trust" role="doc-biblioref">Jones, Thornton, and Wyatt 2023</a>)</span>.</p>
 </section>
 <section id="patient-ai-advisory-councils" class="level2" data-number="12.5">
 <h2 data-number="12.5" class="anchored" data-anchor-id="patient-ai-advisory-councils"><span class="header-section-number">12.5</span> Patient AI Advisory Councils</h2>
@@ -550,13 +548,13 @@ Table&nbsp;12.1: Structural comparison of a standard patient advisory board and 
 <section id="the-regulatory-landscape-of-disclosure" class="level2" data-number="12.6">
 <h2 data-number="12.6" class="anchored" data-anchor-id="the-regulatory-landscape-of-disclosure"><span class="header-section-number">12.6</span> The Regulatory Landscape of Disclosure</h2>
 <p>The legislative landscape for AI disclosure in healthcare is still forming, but two state laws enacted in 2024 are now in effect and should be treated as the leading edge of a national trend.</p>
-<p>California AB 3030, effective January 2025, requires healthcare providers to include explicit disclosure when AI has been used to generate patient communications, unless a licensed human reviews the content first <span class="citation" data-cites="CalAB3030-2024">(<a href="references.html#ref-CalAB3030-2024" role="doc-biblioref"><span>AB 3030</span> 2024</a>)</span>. The law is narrow in scope — it covers written communications, not real-time verbal interactions — but it is the most specific AI disclosure mandate currently in effect at the state level, and AMCs with any California patient population must comply. Legal teams at national AMCs should treat the California standard as the floor for their disclosure practices regardless of the states in which they primarily operate.</p>
-<p>Colorado Senate Bill 24-205, effective June 2026, goes further: it requires that any entity using AI in a “consequential decision” about health care provide a “pre-decision notice” that explains the purpose of the AI, the nature of the consequential decision, and how to appeal or opt out <span class="citation" data-cites="ColoradoSB24205">(<a href="references.html#ref-ColoradoSB24205" role="doc-biblioref"><span>SB 24-205</span> 2024</a>)</span>. The Colorado law covers a broader range of AI applications than California’s, including predictive scoring and automated triage, and it places the disclosure obligation on the institution using the AI, not just on the party that communicates the output to the patient.</p>
+<p>California AB 3030, effective January 2025, requires healthcare providers to include explicit disclosure when AI has been used to generate patient communications, unless a licensed human reviews the content first <span class="citation" data-cites="CalAB3030-2024">(<a href="references.html#ref-CalAB3030-2024" role="doc-biblioref">California State Legislature 2024</a>)</span>. The law is narrow in scope — it covers written communications, not real-time verbal interactions — but it is the most specific AI disclosure mandate currently in effect at the state level, and AMCs with any California patient population must comply. Legal teams at national AMCs should treat the California standard as the floor for their disclosure practices regardless of the states in which they primarily operate.</p>
+<p>Colorado Senate Bill 24-205, effective June 2026, goes further: it requires that any entity using AI in a “consequential decision” about health care provide a “pre-decision notice” that explains the purpose of the AI, the nature of the consequential decision, and how to appeal or opt out <span class="citation" data-cites="ColoradoSB24205">(<a href="references.html#ref-ColoradoSB24205" role="doc-biblioref">Colorado General Assembly 2024</a>)</span>. The Colorado law covers a broader range of AI applications than California’s, including predictive scoring and automated triage, and it places the disclosure obligation on the institution using the AI, not just on the party that communicates the output to the patient.</p>
 <p>The FTC’s Operation AI Comply enforcement action in 2024 targeted companies making deceptive claims about AI capabilities in healthcare contexts — claiming human-level accuracy for tools that had not been validated, implying physician oversight for tools that had none <span class="citation" data-cites="FTC2024-operationai">(<a href="references.html#ref-FTC2024-operationai" role="doc-biblioref">Federal Trade Commission 2024</a>)</span>. The enforcement record makes clear that the FTC treats healthcare AI interfaces as covered by existing consumer protection law, and that institutions should expect regulatory attention to the gap between what they claim about AI tools and what the tools actually do.</p>
 </section>
 <section id="trust-recovery-after-adverse-ai-events" class="level2" data-number="12.7">
 <h2 data-number="12.7" class="anchored" data-anchor-id="trust-recovery-after-adverse-ai-events"><span class="header-section-number">12.7</span> Trust Recovery After Adverse AI Events</h2>
-<p>An AI tool will eventually produce an outcome that harms or nearly harms a patient at any AMC that deploys AI at scale. How the institution communicates about that event — to the patient, to the clinical staff involved, and to the public — will matter more for long-term trust than whether the event occurred at all. Institutions that respond to adverse AI events with transparency and accountability recover trust more effectively than those that minimize or deflect <span class="citation" data-cites="Jones2023-trust">(<a href="references.html#ref-Jones2023-trust" role="doc-biblioref">Jones et al. 2023</a>)</span>.</p>
+<p>An AI tool will eventually produce an outcome that harms or nearly harms a patient at any AMC that deploys AI at scale. How the institution communicates about that event — to the patient, to the clinical staff involved, and to the public — will matter more for long-term trust than whether the event occurred at all. Institutions that respond to adverse AI events with transparency and accountability recover trust more effectively than those that minimize or deflect <span class="citation" data-cites="Jones2023-trust">(<a href="references.html#ref-Jones2023-trust" role="doc-biblioref">Jones, Thornton, and Wyatt 2023</a>)</span>.</p>
 <p>The trust recovery research in other high-stakes domains — aviation, nuclear power, food safety — is consistent on two principles. First, prompt and specific disclosure of what happened and what is being done in response is more effective than delayed disclosure, even when the complete picture is not yet known. “We are investigating an error in our AI system that may have affected your care, and we will contact you with our findings by [date]” is more trust-preserving than silence followed by a detailed disclosure weeks later. Second, apology without accountability — “we are sorry this happened” without a commitment to specific changes — does not restore trust. Patients want to know that the institution understands what went wrong and has taken concrete steps to prevent recurrence.</p>
 <p>For institutions with an AI transparency report program — a public annual or semi-annual report that describes deployed AI tools, their performance metrics, and any documented adverse events — the adverse event entry provides evidence that the reporting is genuine. A transparency report that reports zero adverse events in a large AI deployment is not credible. A report that describes an adverse event, the investigation findings, and the remediation measures is evidence that the institution is actually monitoring.</p>
 </section>
@@ -577,21 +575,21 @@ Table&nbsp;12.1: Structural comparison of a standard patient advisory board and 
 <p><strong>Buy vs.&nbsp;build:</strong> Program design and staff time. No technology purchase required. The significant investment is in the quality of recruitment and the integrity of the governance relationship — specifically, whether the council’s input is genuinely considered or merely documented.</p>
 
 
-<div id="refs" class="references csl-bib-body hanging-indent" role="list" style="display: none">
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list" style="display: none">
 <div id="ref-CalAB3030-2024" class="csl-entry" role="listitem">
-<span>AB 3030</span>: Health Care: Artificial Intelligence (2024). <a href="https://leginfo.legislature.ca.gov/faces/billNavClient.xhtml?bill_id=202320240AB3030">https://leginfo.legislature.ca.gov/faces/billNavClient.xhtml?bill_id=202320240AB3030</a>.
+California State Legislature. 2024. <em><span>AB 3030</span>: Health Care: Artificial Intelligence</em>. <a href="https://leginfo.legislature.ca.gov/faces/billNavClient.xhtml?bill_id=202320240AB3030">https://leginfo.legislature.ca.gov/faces/billNavClient.xhtml?bill_id=202320240AB3030</a>.
+</div>
+<div id="ref-ColoradoSB24205" class="csl-entry" role="listitem">
+Colorado General Assembly. 2024. <em><span>SB 24-205</span>: Consumer Protections for Artificial Intelligence</em>. <a href="https://leg.colorado.gov/bills/sb24-205">https://leg.colorado.gov/bills/sb24-205</a>.
 </div>
 <div id="ref-FTC2024-operationai" class="csl-entry" role="listitem">
-Federal Trade Commission. 2024. <em>Operation <span>AI</span> Comply: Continuing Actions Against <span>AI</span>-Related Deceptive Practices</em>. <a href="https://www.ftc.gov/news-events/press-releases/2024/09/ftc-announces-operation-ai-comply">https://www.ftc.gov/news-events/press-releases/2024/09/ftc-announces-operation-ai-comply</a>.
+Federal Trade Commission. 2024. <span>“Operation <span>AI</span> Comply: Continuing Actions Against <span>AI</span>-Related Deceptive Practices.”</span> <a href="https://www.ftc.gov/news-events/press-releases/2024/09/ftc-announces-operation-ai-comply">https://www.ftc.gov/news-events/press-releases/2024/09/ftc-announces-operation-ai-comply</a>.
 </div>
 <div id="ref-Jones2023-trust" class="csl-entry" role="listitem">
 Jones, Clare, Janet Thornton, and Jeremy C Wyatt. 2023. <span>“Artificial Intelligence and Clinical Decision Support: Clinicians’ Perspectives on Trust, Trustworthiness, and Liability.”</span> <em>Medical Law Review</em> 31 (3): 501–20. <a href="https://doi.org/10.1093/medlaw/fwad013">https://doi.org/10.1093/medlaw/fwad013</a>.
 </div>
 <div id="ref-Pew2023-aihealth" class="csl-entry" role="listitem">
-Pew Research Center. 2023. <em>Americans’ Views of Artificial Intelligence Use in Health Care</em>. <a href="https://www.pewresearch.org/science/2023/02/22/60-of-americans-would-be-uncomfortable-with-provider-relying-on-ai-in-their-own-health-care/" class="uri">Https://www.pewresearch.org/science/2023/02/22/60-of-americans-would-be-uncomfortable-with-provider-relying-on-ai-in-their-own-health-care/</a>. <a href="https://www.pewresearch.org/science/2023/02/22/60-of-americans-would-be-uncomfortable-with-provider-relying-on-ai-in-their-own-health-care/">https://www.pewresearch.org/science/2023/02/22/60-of-americans-would-be-uncomfortable-with-provider-relying-on-ai-in-their-own-health-care/</a>.
-</div>
-<div id="ref-ColoradoSB24205" class="csl-entry" role="listitem">
-<span>SB 24-205</span>: Consumer Protections for Artificial Intelligence (2024). <a href="https://leg.colorado.gov/bills/sb24-205">https://leg.colorado.gov/bills/sb24-205</a>.
+Pew Research Center. 2023. <span>“Americans’ Views of Artificial Intelligence Use in Health Care.”</span> <a href="https://www.pewresearch.org/science/2023/02/22/60-of-americans-would-be-uncomfortable-with-provider-relying-on-ai-in-their-own-health-care/" class="uri">https://www.pewresearch.org/science/2023/02/22/60-of-americans-would-be-uncomfortable-with-provider-relying-on-ai-in-their-own-health-care/</a>. <a href="https://www.pewresearch.org/science/2023/02/22/60-of-americans-would-be-uncomfortable-with-provider-relying-on-ai-in-their-own-health-care/">https://www.pewresearch.org/science/2023/02/22/60-of-americans-would-be-uncomfortable-with-provider-relying-on-ai-in-their-own-health-care/</a>.
 </div>
 </div>
 </section>
@@ -649,14 +647,13 @@ Pew Research Center. 2023. <em>Americans’ Views of Artificial Intelligence Use
       e.clearSelection();
     }
     const getTextToCopy = function(trigger) {
-      const outerScaffold = trigger.parentElement.cloneNode(true);
-      const codeEl = outerScaffold.querySelector('code');
-      for (const childEl of codeEl.children) {
-        if (isCodeAnnotation(childEl)) {
-          childEl.remove();
+        const codeEl = trigger.previousElementSibling.cloneNode(true);
+        for (const childEl of codeEl.children) {
+          if (isCodeAnnotation(childEl)) {
+            childEl.remove();
+          }
         }
-      }
-      return codeEl.innerText;
+        return codeEl.innerText;
     }
     const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
       text: getTextToCopy

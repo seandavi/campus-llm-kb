@@ -2,17 +2,14 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.9.37">
+<meta name="generator" content="quarto-1.7.33">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="dcterms.date" content="2026-04-27">
+<meta name="dcterms.date" content="2026-04-26">
 
 <title>9&nbsp; Business Operations – Implementing AI in Academic Medicine</title>
 <style>
-/* Default styles provided by pandoc.
-** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
-*/
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
 div.columns{display: flex; gap: min(4vw, 1.5em);}
@@ -28,6 +25,7 @@ ul.task-list li input[type="checkbox"] {
 div.csl-bib-body { }
 div.csl-entry {
   clear: both;
+  margin-bottom: 0em;
 }
 .hanging-indent div.csl-entry {
   margin-left:2em;
@@ -61,10 +59,10 @@ div.csl-indent {
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-7f8f88aac4f3542376d5c11b86a4c14d.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-ea385d0e468b0dd5ea5bf0780b1290d9.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-6c776516069454354cc3aff2d99c460c.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-96934157685b0ce66cf1cdc82e4f4849.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -420,7 +418,7 @@ div.csl-indent {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">April 27, 2026</p>
+      <p class="date">April 26, 2026</p>
     </div>
   </div>
   
@@ -439,7 +437,7 @@ div.csl-indent {
 <h2 data-number="9.1" class="anchored" data-anchor-id="sec-business-domain"><span class="header-section-number">9.1</span> A Domain Unlike the Others</h2>
 <p>The four domains of this framework — education, research, clinical, and business operations — differ not just in what they do but in the regulatory regimes that govern what AI can do inside them. Clinical AI operates under the most demanding oversight: every tool that influences a clinical decision is potentially a medical device subject to FDA regulation, and deployment without local validation is a patient-safety risk. Research AI is constrained by the norms of research integrity, the requirements of IRBs for human-subjects data, and the intellectual-property rules of journals and funders. Educational AI sits inside a web of academic integrity policies and accreditation requirements.</p>
 <p>Business operations has fewer of these formal guardrails, which creates a false sense of safety. The absence of FDA clearance requirements does not mean an absence of legal risk. Three areas carry particular exposure.</p>
-<p>The first is employment. Automated systems used to screen, rank, or evaluate employees and candidates are subject to anti-discrimination law regardless of whether they involve AI. The EEOC’s Strategic Enforcement Plan for fiscal years 2024–2028 explicitly names algorithmic discrimination in employment as an enforcement priority <span class="citation" data-cites="EEOC2024-sep">(<a href="references.html#ref-EEOC2024-sep" role="doc-biblioref">U.S. Equal Employment Opportunity Commission 2024</a>)</span>. New York City’s Local Law 144, which took effect in July 2023, mandates annual independent bias audits for any automated employment decision tool used in hiring or promotion for New York City-based roles <span class="citation" data-cites="NYCLL144">(<a href="references.html#ref-NYCLL144" role="doc-biblioref">Local Law 144 2021</a>)</span>. Colorado’s SB 24-205, signed in 2024, imposes “reasonable care” requirements on developers and deployers of high-risk AI systems, including those used in employment contexts <span class="citation" data-cites="ColoradoSB24205">(<a href="references.html#ref-ColoradoSB24205" role="doc-biblioref"><span>SB 24-205</span> 2024</a>)</span>. An AMC with employees or applicants in these jurisdictions — which includes most major academic medical centers — needs to account for these requirements before deploying any HR automation tool.</p>
+<p>The first is employment. Automated systems used to screen, rank, or evaluate employees and candidates are subject to anti-discrimination law regardless of whether they involve AI. The EEOC’s Strategic Enforcement Plan for fiscal years 2024–2028 explicitly names algorithmic discrimination in employment as an enforcement priority <span class="citation" data-cites="EEOC2024-sep">(<a href="references.html#ref-EEOC2024-sep" role="doc-biblioref">U.S. Equal Employment Opportunity Commission 2024</a>)</span>. New York City’s Local Law 144, which took effect in July 2023, mandates annual independent bias audits for any automated employment decision tool used in hiring or promotion for New York City-based roles <span class="citation" data-cites="NYCLL144">(<a href="references.html#ref-NYCLL144" role="doc-biblioref">New York City Council 2021</a>)</span>. Colorado’s SB 24-205, signed in 2024, imposes “reasonable care” requirements on developers and deployers of high-risk AI systems, including those used in employment contexts <span class="citation" data-cites="ColoradoSB24205">(<a href="references.html#ref-ColoradoSB24205" role="doc-biblioref">Colorado General Assembly 2024</a>)</span>. An AMC with employees or applicants in these jurisdictions — which includes most major academic medical centers — needs to account for these requirements before deploying any HR automation tool.</p>
 <p>The second is consumer protection and marketing. The Federal Trade Commission’s Operation AI Comply, announced in September 2024, documented enforcement actions against companies making deceptive claims about AI capabilities in consumer-facing contexts <span class="citation" data-cites="FTC2024-operationai">(<a href="references.html#ref-FTC2024-operationai" role="doc-biblioref">Federal Trade Commission 2024</a>)</span>. Patient-facing communications that overstate AI accuracy or imply diagnostic capability without adequate disclosure carry both FTC and state consumer protection risk.</p>
 <p>The third is HIPAA — specifically, the risk that an employee uses a business-operations AI tool in a way that incidentally exposes protected health information. A revenue cycle coordinator who pastes a patient name and insurance ID into a public AI chatbot to draft a denial appeal letter has created a potential HIPAA breach, regardless of how routine the business context feels. The HHS Office for Civil Rights has stated that nondiscrimination requirements extend to algorithmic decision support tools in administrative contexts under the Section 1557 final rule <span class="citation" data-cites="HHS2024-1557">(<a href="references.html#ref-HHS2024-1557" role="doc-biblioref">U.S. Department of Health and Human Services, Office for Civil Rights 2024</a>)</span>. The business case for an enterprise-grade AI platform is partly a compliance case.</p>
 </section>
@@ -535,7 +533,7 @@ Table&nbsp;9.1: Business operations AI use cases by function, risk level, and ke
 <section id="sec-business-regulatory" class="level2" data-number="9.3">
 <h2 data-number="9.3" class="anchored" data-anchor-id="sec-business-regulatory"><span class="header-section-number">9.3</span> The Regulatory Layer</h2>
 <p>Most AMC operations leaders have read about HIPAA. Fewer have encountered the employment AI laws, the FTC’s AI enforcement posture, or the specific nondiscrimination requirements that apply to algorithmic decision tools. A useful organizing frame is that the regulatory exposure in business operations AI falls into three areas: employment decisions, patient-facing communications, and data handling.</p>
-<p>The employment area is the most actively litigated. The EEOC has been explicit that Title VII, the ADA, and the ADEA apply to automated employment decisions, and that employers cannot shift liability to a third-party AI vendor <span class="citation" data-cites="EEOC2024-sep">(<a href="references.html#ref-EEOC2024-sep" role="doc-biblioref">U.S. Equal Employment Opportunity Commission 2024</a>)</span>. NYC Local Law 144 requires employers using automated employment decision tools for NYC-based roles to conduct and publish annual independent bias audits and to notify candidates before the tool is used <span class="citation" data-cites="NYCLL144">(<a href="references.html#ref-NYCLL144" role="doc-biblioref">Local Law 144 2021</a>)</span>. Colorado’s SB 24-205 requires “deployers” of high-risk AI systems (which include employment AI) to implement risk management programs, conduct impact assessments, and notify consumers when they are subject to an algorithmic decision <span class="citation" data-cites="ColoradoSB24205">(<a href="references.html#ref-ColoradoSB24205" role="doc-biblioref"><span>SB 24-205</span> 2024</a>)</span>. An AMC that operates in New York, Colorado, or is a federal contractor faces compliance obligations that are already in effect. Several other states — Illinois, Texas, Utah — have enacted or proposed similar legislation.</p>
+<p>The employment area is the most actively litigated. The EEOC has been explicit that Title VII, the ADA, and the ADEA apply to automated employment decisions, and that employers cannot shift liability to a third-party AI vendor <span class="citation" data-cites="EEOC2024-sep">(<a href="references.html#ref-EEOC2024-sep" role="doc-biblioref">U.S. Equal Employment Opportunity Commission 2024</a>)</span>. NYC Local Law 144 requires employers using automated employment decision tools for NYC-based roles to conduct and publish annual independent bias audits and to notify candidates before the tool is used <span class="citation" data-cites="NYCLL144">(<a href="references.html#ref-NYCLL144" role="doc-biblioref">New York City Council 2021</a>)</span>. Colorado’s SB 24-205 requires “deployers” of high-risk AI systems (which include employment AI) to implement risk management programs, conduct impact assessments, and notify consumers when they are subject to an algorithmic decision <span class="citation" data-cites="ColoradoSB24205">(<a href="references.html#ref-ColoradoSB24205" role="doc-biblioref">Colorado General Assembly 2024</a>)</span>. An AMC that operates in New York, Colorado, or is a federal contractor faces compliance obligations that are already in effect. Several other states — Illinois, Texas, Utah — have enacted or proposed similar legislation.</p>
 <p>The Federal Trade Commission’s “Operation AI Comply” matters for AMC marketing teams in particular. The FTC’s enforcement actions targeted companies that made false or unsubstantiated AI capability claims in customer-facing contexts, including claims that AI had reviewed or validated health-related content <span class="citation" data-cites="FTC2024-operationai">(<a href="references.html#ref-FTC2024-operationai" role="doc-biblioref">Federal Trade Commission 2024</a>)</span>. Patient communications that describe AI tools as “reviewed by clinical AI” or “AI-verified” without substantiated validation claims invite FTC scrutiny. The safer approach is to describe what the AI actually did (drafted, organized, translated) rather than making accuracy claims.</p>
 <p>The HIPAA exposure in business operations is subtler than the exposure in clinical domains, but it is real. Revenue cycle, HR (benefit eligibility, medical leave records), and even marketing (patient testimonials, program enrollment data) are all areas where patient information can appear in business-operations workflows. The HHS Section 1557 nondiscrimination rule makes explicit that the nondiscrimination requirements extend to algorithmic tools used in the administration of health programs, not just to clinical decisions <span class="citation" data-cites="HHS2024-1557">(<a href="references.html#ref-HHS2024-1557" role="doc-biblioref">U.S. Department of Health and Human Services, Office for Civil Rights 2024</a>)</span>. A revenue cycle AI tool that systematically produces less aggressive appeal letters for Medicaid patients than for commercially insured patients is potentially a Section 1557 violation, regardless of whether that disparity was intentional.</p>
 <p>The OMB’s Memorandum M-24-10 on advancing AI governance, while directed at federal agencies, establishes the federal government’s expectations for institutions receiving significant federal funding — which describes every AMC <span class="citation" data-cites="OMB2024-M2410">(<a href="references.html#ref-OMB2024-M2410" role="doc-biblioref">Office of Management and Budget 2024</a>)</span>. Its requirements around rights-impacting and safety-impacting AI systems, and its emphasis on impact assessments and transparency, set a standard that AMC AI governance programs should be prepared to meet or justify deviating from.</p>
@@ -660,7 +658,7 @@ Figure&nbsp;9.1: AI procurement decision flow for business operations. PHI conta
 </div>
 </div>
 <p>A few principles govern this flow. First, the preference for existing enterprise platforms over new vendors is explicit. The institution already has a Microsoft or Google tenant, already has SSO configured, already has data handling agreements in place. Using those tenants for a new use case is not a procurement event; it is a configuration decision. The governance overhead is lower, the data handling is already contracted, and the identity integration is already done. Second, any tool used in employment decisions requires a bias audit regardless of where in the institution it is used and regardless of whether the vendor claims their product is “bias-free.” Third, every deployment ends with a defined success metric and a quarterly review cadence — not because every business-operations AI tool is high-stakes, but because without review, tools that are not working accumulate rather than being replaced.</p>
-<p>The ISO/IEC 42001 Artificial Intelligence Management System standard <span class="citation" data-cites="ISO2023-42001">(<a href="references.html#ref-ISO2023-42001" role="doc-biblioref"><span>ISO/IEC 42001</span> 2023</a>)</span> provides an international governance framework for AI management that complements the NIST AI RMF. Institutions seeking to demonstrate AI governance maturity to partners, accreditors, or regulators will find that a 42001-aligned management system maps well to NIST and requires no duplication of effort.</p>
+<p>The ISO/IEC 42001 Artificial Intelligence Management System standard <span class="citation" data-cites="ISO2023-42001">(<a href="references.html#ref-ISO2023-42001" role="doc-biblioref">International Organization for Standardization 2023</a>)</span> provides an international governance framework for AI management that complements the NIST AI RMF. Institutions seeking to demonstrate AI governance maturity to partners, accreditors, or regulators will find that a 42001-aligned management system maps well to NIST and requires no duplication of effort.</p>
 </section>
 <section id="sec-business-metrics" class="level2" data-number="9.7">
 <h2 data-number="9.7" class="anchored" data-anchor-id="sec-business-metrics"><span class="header-section-number">9.7</span> What Success Looks Like</h2>
@@ -687,30 +685,30 @@ Figure&nbsp;9.1: AI procurement decision flow for business operations. PHI conta
 <p><strong>What done looks like.</strong> A working system that answers 80% of test questions correctly against the policy corpus, with cited sources, running at acceptable latency. A defined process for adding new policies and reindexing. Usage logs showing which questions are being asked most frequently (which is itself valuable institutional intelligence about where policy documentation is unclear).</p>
 
 
-<div id="refs" class="references csl-bib-body hanging-indent" role="list" style="display: none">
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list" style="display: none">
+<div id="ref-ColoradoSB24205" class="csl-entry" role="listitem">
+Colorado General Assembly. 2024. <em><span>SB 24-205</span>: Consumer Protections for Artificial Intelligence</em>. <a href="https://leg.colorado.gov/bills/sb24-205">https://leg.colorado.gov/bills/sb24-205</a>.
+</div>
 <div id="ref-FTC2024-operationai" class="csl-entry" role="listitem">
-Federal Trade Commission. 2024. <em>Operation <span>AI</span> Comply: Continuing Actions Against <span>AI</span>-Related Deceptive Practices</em>. <a href="https://www.ftc.gov/news-events/press-releases/2024/09/ftc-announces-operation-ai-comply">https://www.ftc.gov/news-events/press-releases/2024/09/ftc-announces-operation-ai-comply</a>.
+Federal Trade Commission. 2024. <span>“Operation <span>AI</span> Comply: Continuing Actions Against <span>AI</span>-Related Deceptive Practices.”</span> <a href="https://www.ftc.gov/news-events/press-releases/2024/09/ftc-announces-operation-ai-comply">https://www.ftc.gov/news-events/press-releases/2024/09/ftc-announces-operation-ai-comply</a>.
 </div>
 <div id="ref-ISO2023-42001" class="csl-entry" role="listitem">
-<span>ISO/IEC 42001</span>: Information Technology — Artificial Intelligence — Management System (2023). <a href="https://www.iso.org/standard/81230.html">https://www.iso.org/standard/81230.html</a>.
-</div>
-<div id="ref-NYCLL144" class="csl-entry" role="listitem">
-Local Law 144: Automated Employment Decision Tools (2021). <a href="https://www.nyc.gov/site/dca/about/automated-employment-decision-tools.page">https://www.nyc.gov/site/dca/about/automated-employment-decision-tools.page</a>.
+International Organization for Standardization. 2023. <em><span>ISO/IEC 42001</span>: Information Technology — Artificial Intelligence — Management System</em>. <a href="https://www.iso.org/standard/81230.html">https://www.iso.org/standard/81230.html</a>.
 </div>
 <div id="ref-NIST2023-airm" class="csl-entry" role="listitem">
-National Institute of Standards and Technology. 2023. <em>Artificial Intelligence Risk Management Framework (<span>AI RMF</span> 1.0)</em>. NIST AI 100-1. U.S. Department of Commerce. <a href="https://doi.org/10.6028/NIST.AI.100-1">https://doi.org/10.6028/NIST.AI.100-1</a>.
+National Institute of Standards and Technology. 2023. <span>“Artificial Intelligence Risk Management Framework (<span>AI RMF</span> 1.0).”</span> NIST AI 100-1. U.S. Department of Commerce. <a href="https://doi.org/10.6028/NIST.AI.100-1">https://doi.org/10.6028/NIST.AI.100-1</a>.
+</div>
+<div id="ref-NYCLL144" class="csl-entry" role="listitem">
+New York City Council. 2021. <em>Local Law 144: Automated Employment Decision Tools</em>. <a href="https://www.nyc.gov/site/dca/about/automated-employment-decision-tools.page">https://www.nyc.gov/site/dca/about/automated-employment-decision-tools.page</a>.
 </div>
 <div id="ref-OMB2024-M2410" class="csl-entry" role="listitem">
-Office of Management and Budget. 2024. <em><span>M-24-10</span>: Advancing Governance, Innovation, and Risk Management for Agency Use of Artificial Intelligence</em>. <a href="https://www.whitehouse.gov/wp-content/uploads/2024/03/M-24-10.pdf">https://www.whitehouse.gov/wp-content/uploads/2024/03/M-24-10.pdf</a>.
-</div>
-<div id="ref-ColoradoSB24205" class="csl-entry" role="listitem">
-<span>SB 24-205</span>: Consumer Protections for Artificial Intelligence (2024). <a href="https://leg.colorado.gov/bills/sb24-205">https://leg.colorado.gov/bills/sb24-205</a>.
+Office of Management and Budget. 2024. <span>“<span>M-24-10</span>: Advancing Governance, Innovation, and Risk Management for Agency Use of Artificial Intelligence.”</span> <a href="https://www.whitehouse.gov/wp-content/uploads/2024/03/M-24-10.pdf">https://www.whitehouse.gov/wp-content/uploads/2024/03/M-24-10.pdf</a>.
 </div>
 <div id="ref-HHS2024-1557" class="csl-entry" role="listitem">
-U.S. Department of Health and Human Services, Office for Civil Rights. 2024. <em>Section 1557: Nondiscrimination in Health Programs and Activities (Final Rule)</em>. <a href="https://www.hhs.gov/civil-rights/for-individuals/section-1557/index.html">https://www.hhs.gov/civil-rights/for-individuals/section-1557/index.html</a>.
+U.S. Department of Health and Human Services, Office for Civil Rights. 2024. <span>“Section 1557: Nondiscrimination in Health Programs and Activities (Final Rule).”</span> <a href="https://www.hhs.gov/civil-rights/for-individuals/section-1557/index.html">https://www.hhs.gov/civil-rights/for-individuals/section-1557/index.html</a>.
 </div>
 <div id="ref-EEOC2024-sep" class="csl-entry" role="listitem">
-U.S. Equal Employment Opportunity Commission. 2024. <em>Strategic Enforcement Plan Fiscal Years 2024-2028</em>. <a href="https://www.eeoc.gov/strategic-enforcement-plan-fiscal-years-2024-2028">https://www.eeoc.gov/strategic-enforcement-plan-fiscal-years-2024-2028</a>.
+U.S. Equal Employment Opportunity Commission. 2024. <span>“Strategic Enforcement Plan Fiscal Years 2024-2028.”</span> <a href="https://www.eeoc.gov/strategic-enforcement-plan-fiscal-years-2024-2028">https://www.eeoc.gov/strategic-enforcement-plan-fiscal-years-2024-2028</a>.
 </div>
 </div>
 </section>
@@ -768,14 +766,13 @@ U.S. Equal Employment Opportunity Commission. 2024. <em>Strategic Enforcement Pl
       e.clearSelection();
     }
     const getTextToCopy = function(trigger) {
-      const outerScaffold = trigger.parentElement.cloneNode(true);
-      const codeEl = outerScaffold.querySelector('code');
-      for (const childEl of codeEl.children) {
-        if (isCodeAnnotation(childEl)) {
-          childEl.remove();
+        const codeEl = trigger.previousElementSibling.cloneNode(true);
+        for (const childEl of codeEl.children) {
+          if (isCodeAnnotation(childEl)) {
+            childEl.remove();
+          }
         }
-      }
-      return codeEl.innerText;
+        return codeEl.innerText;
     }
     const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
       text: getTextToCopy

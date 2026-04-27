@@ -2,17 +2,14 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.9.37">
+<meta name="generator" content="quarto-1.7.33">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="dcterms.date" content="2026-04-27">
+<meta name="dcterms.date" content="2026-04-26">
 
 <title>16&nbsp; Ethics, Equity, and Institutional Accountability – Implementing AI in Academic Medicine</title>
 <style>
-/* Default styles provided by pandoc.
-** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
-*/
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
 div.columns{display: flex; gap: min(4vw, 1.5em);}
@@ -28,6 +25,7 @@ ul.task-list li input[type="checkbox"] {
 div.csl-bib-body { }
 div.csl-entry {
   clear: both;
+  margin-bottom: 0em;
 }
 .hanging-indent div.csl-entry {
   margin-left:2em;
@@ -61,10 +59,10 @@ div.csl-indent {
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-7f8f88aac4f3542376d5c11b86a4c14d.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-ea385d0e468b0dd5ea5bf0780b1290d9.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-6c776516069454354cc3aff2d99c460c.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-96934157685b0ce66cf1cdc82e4f4849.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -423,7 +421,7 @@ div.csl-indent {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">April 27, 2026</p>
+      <p class="date">April 26, 2026</p>
     </div>
   </div>
   
@@ -440,14 +438,14 @@ div.csl-indent {
 <section id="algorithmic-bias-as-a-structural-problem" class="level2" data-number="16.1">
 <h2 data-number="16.1" class="anchored" data-anchor-id="algorithmic-bias-as-a-structural-problem"><span class="header-section-number">16.1</span> Algorithmic Bias as a Structural Problem</h2>
 <p>The most cited demonstration of algorithmic bias in healthcare involves a commercial risk stratification algorithm used by major health systems to identify high-risk patients who would benefit from care management programs <span class="citation" data-cites="Obermeyer2019-bias">(<a href="references.html#ref-Obermeyer2019-bias" role="doc-biblioref">Obermeyer et al. 2019</a>)</span>. The algorithm used healthcare costs as a proxy for health need — a reasonable proxy if access to care were uniformly distributed, which it is not. Black patients with the same actual health burden as white patients had systematically lower costs, because they had systematically less access to care. The algorithm therefore scored them as lower risk, directing care management resources away from patients who needed them more.</p>
-<p>The finding was not that the algorithm was malicious. It was that the algorithm was trained on data that encoded an existing inequity, using a proxy variable that faithfully reproduced that inequity at scale. The authors estimated the bias caused the algorithm to miss 43% of high-risk Black patients compared to a race-neutral approach <span class="citation" data-cites="Obermeyer2019-bias">(<a href="references.html#ref-Obermeyer2019-bias" role="doc-biblioref">Obermeyer et al. 2019</a>)</span>. Subsequent work has documented similar patterns in algorithms for kidney disease (using race as a correction factor), cardiac risk assessment, and dermatology imaging models <span class="citation" data-cites="Zack2024-gpt4bias">(<a href="references.html#ref-Zack2024-gpt4bias" role="doc-biblioref"><span class="nocase">Zack et al.</span> 2024</a>)</span>.</p>
+<p>The finding was not that the algorithm was malicious. It was that the algorithm was trained on data that encoded an existing inequity, using a proxy variable that faithfully reproduced that inequity at scale. The authors estimated the bias caused the algorithm to miss 43% of high-risk Black patients compared to a race-neutral approach <span class="citation" data-cites="Obermeyer2019-bias">(<a href="references.html#ref-Obermeyer2019-bias" role="doc-biblioref">Obermeyer et al. 2019</a>)</span>. Subsequent work has documented similar patterns in algorithms for kidney disease (using race as a correction factor), cardiac risk assessment, and dermatology imaging models <span class="citation" data-cites="Zack2024-gpt4bias">(<a href="references.html#ref-Zack2024-gpt4bias" role="doc-biblioref">Zack et al. 2024</a>)</span>.</p>
 <p>The structural governance response requires three elements that individual ethical review cannot provide alone. First, demographic stratification of performance metrics as a standard part of AI validation — not an optional audit, but a required table in every model evaluation. Second, monitoring that continues after deployment, because bias can emerge over time as the population served changes or as the model is applied to use cases outside the validation set. Third, a reporting structure that routes performance stratification findings to clinical leadership and the governance committee, not just to the informatics team.</p>
 </section>
 <section id="health-equity-as-a-performance-metric" class="level2" data-number="16.2">
 <h2 data-number="16.2" class="anchored" data-anchor-id="health-equity-as-a-performance-metric"><span class="header-section-number">16.2</span> Health Equity as a Performance Metric</h2>
 <p>The framework proposed by Badal and colleagues, introduced in <a href="resources_clinical.html" class="quarto-xref"><span>Chapter 6</span></a>, includes the alleviation of health disparities as the first principle of responsible clinical AI. In practice, this requires operationalizing “equity” as a quantitative performance dimension alongside accuracy. A model that achieves 85% accuracy overall but 70% accuracy for the subpopulation with the highest disease burden is not a high-performing model — it is a model that performs best for the patients who need it least.</p>
 <p>The practical implementation of equity monitoring requires demographic data in the validation and monitoring datasets. This is straightforward in principle and difficult in practice, because demographic data in EHRs is often missing, inconsistent, or coded in ways that do not capture the granularity needed for subgroup analysis. AMCs that serve diverse populations should treat demographic data quality as an AI readiness issue: the return on investment for improving race, ethnicity, and language data completeness comes precisely when the institution needs to assess whether its AI tools are performing equitably.</p>
-<p>The <a href="https://future-ai.eu/">FUTURE-AI</a> principles for trustworthy AI in medical imaging establish fairness as one of six foundational requirements, alongside universality, traceability, usability, robustness, and explainability <span class="citation" data-cites="FUTURE-AI2022">(<a href="references.html#ref-FUTURE-AI2022" role="doc-biblioref"><span class="nocase">Lekadir et al.</span> 2022</a>)</span>. These principles map to operational AMC practices: fairness requires subgroup performance evaluation; traceability requires audit logging of model outputs; explainability requires that clinicians can access the reasoning behind a model recommendation. The NIST AI RMF <span class="citation" data-cites="NIST2023-airm">(<a href="references.html#ref-NIST2023-airm" role="doc-biblioref">National Institute of Standards and Technology 2023</a>)</span> maps these same principles to the Govern/Map/Measure/Manage operational structure that AMC governance programs can implement directly.</p>
+<p>The <a href="https://future-ai.eu/">FUTURE-AI</a> principles for trustworthy AI in medical imaging establish fairness as one of six foundational requirements, alongside universality, traceability, usability, robustness, and explainability <span class="citation" data-cites="FUTURE-AI2022">(<a href="references.html#ref-FUTURE-AI2022" role="doc-biblioref">Lekadir et al. 2022</a>)</span>. These principles map to operational AMC practices: fairness requires subgroup performance evaluation; traceability requires audit logging of model outputs; explainability requires that clinicians can access the reasoning behind a model recommendation. The NIST AI RMF <span class="citation" data-cites="NIST2023-airm">(<a href="references.html#ref-NIST2023-airm" role="doc-biblioref">National Institute of Standards and Technology 2023</a>)</span> maps these same principles to the Govern/Map/Measure/Manage operational structure that AMC governance programs can implement directly.</p>
 </section>
 <section id="informed-consent-in-the-continuous-ai-era" class="level2" data-number="16.3">
 <h2 data-number="16.3" class="anchored" data-anchor-id="informed-consent-in-the-continuous-ai-era"><span class="header-section-number">16.3</span> Informed Consent in the Continuous AI Era</h2>
@@ -526,7 +524,7 @@ Figure&nbsp;16.1: AMC AI ethics review pipeline. Equity impact assessment and co
 <section id="liability-the-standard-of-care-and-the-duty-to-use" class="level2" data-number="16.10">
 <h2 data-number="16.10" class="anchored" data-anchor-id="liability-the-standard-of-care-and-the-duty-to-use"><span class="header-section-number">16.10</span> Liability, the Standard of Care, and the Duty to Use</h2>
 <p>The liability landscape for clinical AI is developing, not settled, but the direction is clear in both directions. Clinicians and institutions face potential liability both for harms caused by following AI recommendations without adequate oversight, and — as AI tools become validated for specific clinical tasks — for failing to use tools that have become part of the standard of care.</p>
-<p>The second direction is counterintuitive but increasingly argued in the literature. As AI tools for specific diagnostic tasks — retinal disease screening, dermatology imaging, sepsis prediction — accumulate evidence of performance at or above specialist-level accuracy, the ethical argument for using them begins to shade into a professional obligation <span class="citation" data-cites="Zemmar2023-duty">(<a href="references.html#ref-Zemmar2023-duty" role="doc-biblioref">Zemmar et al. 2023</a>)</span>. A radiologist who does not use an FDA-cleared AI tool to detect pneumothorax, when the tool has demonstrated sensitivity superior to unassisted reading, may eventually face liability for the missed diagnosis.</p>
+<p>The second direction is counterintuitive but increasingly argued in the literature. As AI tools for specific diagnostic tasks — retinal disease screening, dermatology imaging, sepsis prediction — accumulate evidence of performance at or above specialist-level accuracy, the ethical argument for using them begins to shade into a professional obligation <span class="citation" data-cites="Zemmar2023-duty">(<a href="references.html#ref-Zemmar2023-duty" role="doc-biblioref">Zemmar, Lozano, and Nelson 2023</a>)</span>. A radiologist who does not use an FDA-cleared AI tool to detect pneumothorax, when the tool has demonstrated sensitivity superior to unassisted reading, may eventually face liability for the missed diagnosis.</p>
 <p>The prudent governance posture is to document, for each deployed clinical AI tool, the institutional reasoning about when and how it should be used — not just the existence of the tool, but the clinical judgment about its appropriate role. When a clinician overrides an AI recommendation, that decision should be documentable. When a clinician relies on an AI recommendation, that reliance should be documentable. The medical record is the primary liability defense; it should reflect the clinician’s engagement with AI tools, not hide it.</p>
 </section>
 <section id="sec-ethics-start" class="level2" data-number="16.11">
@@ -545,42 +543,42 @@ Figure&nbsp;16.1: AMC AI ethics review pipeline. Equity impact assessment and co
 <p><strong>How to execute:</strong> Draft using the NIST AI RMF as the governance scaffold and the FUTURE-AI principles as the technical requirements framework. Review with legal (liability and IP), compliance (Section 1557 and Colorado SB 24-205), clinical leadership (standard of care implications), and patient representatives (consent and disclosure language). Publish as institutional policy with a defined review cycle aligned with the annual AI governance report.</p>
 
 
-<div id="refs" class="references csl-bib-body hanging-indent" role="list" style="display: none">
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list" style="display: none">
 <div id="ref-CHAI2024-trust" class="csl-entry" role="listitem">
-Coalition for Health AI. 2024. <em>Patient Trust and <span>AI</span> Accountability Survey</em>. <a href="https://www.coalitionforhealthai.org/publications/" class="uri">Https://www.coalitionforhealthai.org/publications/</a>. <a href="https://www.coalitionforhealthai.org/publications/">https://www.coalitionforhealthai.org/publications/</a>.
+Coalition for Health AI. 2024. <span>“Patient Trust and <span>AI</span> Accountability Survey.”</span> <a href="https://www.coalitionforhealthai.org/publications/" class="uri">https://www.coalitionforhealthai.org/publications/</a>. <a href="https://www.coalitionforhealthai.org/publications/">https://www.coalitionforhealthai.org/publications/</a>.
 </div>
 <div id="ref-ColoradoHB24-1139" class="csl-entry" role="listitem">
-Colorado General Assembly. 2024. <em><span>HB</span> 24-1139: Concerning Human Review of Health Insurance Denials</em>. <a href="https://leg.colorado.gov/bills/hb24-1139" class="uri">Https://leg.colorado.gov/bills/hb24-1139</a>. <a href="https://leg.colorado.gov/bills/hb24-1139">https://leg.colorado.gov/bills/hb24-1139</a>.
+Colorado General Assembly. 2024. <span>“<span>HB</span> 24-1139: Concerning Human Review of Health Insurance Denials.”</span> <a href="https://leg.colorado.gov/bills/hb24-1139" class="uri">https://leg.colorado.gov/bills/hb24-1139</a>. <a href="https://leg.colorado.gov/bills/hb24-1139">https://leg.colorado.gov/bills/hb24-1139</a>.
 </div>
 <div id="ref-ICMJE2023-recommendations" class="csl-entry" role="listitem">
-International Committee of Medical Journal Editors. 2023. <em>Recommendations for the Conduct, Reporting, Editing, and Publication of Scholarly Work in Medical Journals</em>. <a href="https://www.icmje.org/recommendations/">https://www.icmje.org/recommendations/</a>.
+International Committee of Medical Journal Editors. 2023. <span>“Recommendations for the Conduct, Reporting, Editing, and Publication of Scholarly Work in Medical Journals.”</span> <a href="https://www.icmje.org/recommendations/">https://www.icmje.org/recommendations/</a>.
 </div>
 <div id="ref-ProPublica2023-cigna" class="csl-entry" role="listitem">
-Kirchner, Lauren, and Annie Waldman. 2023. <em>How Cigna Saves Millions by Having Its Doctors Reject Claims Without Reading Them</em>. <a href="https://www.propublica.org/article/cigna-pxdx-medical-health-insurance-rejection-claims-without-reading" class="uri">Https://www.propublica.org/article/cigna-pxdx-medical-health-insurance-rejection-claims-without-reading</a>. <a href="https://www.propublica.org/article/cigna-pxdx-medical-health-insurance-rejection-claims-without-reading">https://www.propublica.org/article/cigna-pxdx-medical-health-insurance-rejection-claims-without-reading</a>.
+Kirchner, Lauren, and Annie Waldman. 2023. <span>“How Cigna Saves Millions by Having Its Doctors Reject Claims Without Reading Them.”</span> <a href="https://www.propublica.org/article/cigna-pxdx-medical-health-insurance-rejection-claims-without-reading" class="uri">https://www.propublica.org/article/cigna-pxdx-medical-health-insurance-rejection-claims-without-reading</a>. <a href="https://www.propublica.org/article/cigna-pxdx-medical-health-insurance-rejection-claims-without-reading">https://www.propublica.org/article/cigna-pxdx-medical-health-insurance-rejection-claims-without-reading</a>.
 </div>
 <div id="ref-FUTURE-AI2022" class="csl-entry" role="listitem">
-<span class="nocase">Lekadir, Karim, Aasa Feragen, Abdul Joseph Faris, et al.</span> 2022. <span>“<span>FUTURE-AI</span>: Guiding Principles and Consensus Recommendations for Trustworthy Artificial Intelligence in Medical Imaging.”</span> <em>Insights into Imaging</em> 13: 169. <a href="https://doi.org/10.1186/s13244-022-01307-w">https://doi.org/10.1186/s13244-022-01307-w</a>.
+Lekadir, Karim, Aasa Feragen, Abdul Joseph Faris, Oya Beyan, Jacob Bull, Yanda Cai, Jorge Cardoso, et al. 2022. <span>“<span>FUTURE-AI</span>: Guiding Principles and Consensus Recommendations for Trustworthy Artificial Intelligence in Medical Imaging.”</span> <em>Insights into Imaging</em> 13: 169. <a href="https://doi.org/10.1186/s13244-022-01307-w">https://doi.org/10.1186/s13244-022-01307-w</a>.
 </div>
 <div id="ref-NIST2023-airm" class="csl-entry" role="listitem">
-National Institute of Standards and Technology. 2023. <em>Artificial Intelligence Risk Management Framework (<span>AI RMF</span> 1.0)</em>. NIST AI 100-1. U.S. Department of Commerce. <a href="https://doi.org/10.6028/NIST.AI.100-1">https://doi.org/10.6028/NIST.AI.100-1</a>.
+National Institute of Standards and Technology. 2023. <span>“Artificial Intelligence Risk Management Framework (<span>AI RMF</span> 1.0).”</span> NIST AI 100-1. U.S. Department of Commerce. <a href="https://doi.org/10.6028/NIST.AI.100-1">https://doi.org/10.6028/NIST.AI.100-1</a>.
 </div>
 <div id="ref-Obermeyer2019-bias" class="csl-entry" role="listitem">
 Obermeyer, Ziad, Brian Powers, Christine Vogeli, and Sendhil Mullainathan. 2019. <span>“Dissecting Racial Bias in an Algorithm Used to Manage the Health of Populations.”</span> <em>Science</em> 366 (6464): 447–53. <a href="https://doi.org/10.1126/science.aax2342">https://doi.org/10.1126/science.aax2342</a>.
 </div>
 <div id="ref-HHS2024-1557final" class="csl-entry" role="listitem">
-U.S. Department of Health and Human Services, Office for Civil Rights. 2024. <em>Nondiscrimination in Health Programs and Activities (<span>45 C.F.R. § 92.210</span>)</em>. 89 FR 37522. <a href="https://www.federalregister.gov/d/2024-08967" class="uri">https://www.federalregister.gov/d/2024-08967</a>. <a href="https://www.federalregister.gov/d/2024-08967">https://www.federalregister.gov/d/2024-08967</a>.
+U.S. Department of Health and Human Services, Office for Civil Rights. 2024. <span>“Nondiscrimination in Health Programs and Activities (<span>45 C.F.R. § 92.210</span>).”</span> 89 FR 37522. <a href="https://www.federalregister.gov/d/2024-08967" class="uri">https://www.federalregister.gov/d/2024-08967</a>. <a href="https://www.federalregister.gov/d/2024-08967">https://www.federalregister.gov/d/2024-08967</a>.
 </div>
 <div id="ref-SenateHSGAC2024-MAdenials" class="csl-entry" role="listitem">
-U.S. Senate Committee on Homeland Security and Governmental Affairs. 2024. <em><span>AI</span> in Medicare Advantage: A Review of Care Denials</em>. <a href="https://www.hsgac.senate.gov/wp-content/uploads/2024-Senate-MA-AI-Report.pdf" class="uri">Https://www.hsgac.senate.gov/wp-content/uploads/2024-Senate-MA-AI-Report.pdf</a>. <a href="https://www.hsgac.senate.gov/wp-content/uploads/2024-Senate-MA-AI-Report.pdf">https://www.hsgac.senate.gov/wp-content/uploads/2024-Senate-MA-AI-Report.pdf</a>.
+U.S. Senate Committee on Homeland Security and Governmental Affairs. 2024. <span>“<span>AI</span> in Medicare Advantage: A Review of Care Denials.”</span> <a href="https://www.hsgac.senate.gov/wp-content/uploads/2024-Senate-MA-AI-Report.pdf" class="uri">https://www.hsgac.senate.gov/wp-content/uploads/2024-Senate-MA-AI-Report.pdf</a>. <a href="https://www.hsgac.senate.gov/wp-content/uploads/2024-Senate-MA-AI-Report.pdf">https://www.hsgac.senate.gov/wp-content/uploads/2024-Senate-MA-AI-Report.pdf</a>.
 </div>
 <div id="ref-WA2023-MHMDA" class="csl-entry" role="listitem">
-Washington State Legislature. 2023. <em>My Health <span>MY</span> Data Act</em>. RCW 19.373. <a href="https://app.leg.wa.gov/RCW/default.aspx?cite=19.373" class="uri">https://app.leg.wa.gov/RCW/default.aspx?cite=19.373</a>. <a href="https://app.leg.wa.gov/RCW/default.aspx?cite=19.373">https://app.leg.wa.gov/RCW/default.aspx?cite=19.373</a>.
+Washington State Legislature. 2023. <span>“My Health <span>MY</span> Data Act.”</span> RCW 19.373. <a href="https://app.leg.wa.gov/RCW/default.aspx?cite=19.373" class="uri">https://app.leg.wa.gov/RCW/default.aspx?cite=19.373</a>. <a href="https://app.leg.wa.gov/RCW/default.aspx?cite=19.373">https://app.leg.wa.gov/RCW/default.aspx?cite=19.373</a>.
 </div>
 <div id="ref-WHO2024-ai-ethics" class="csl-entry" role="listitem">
-World Health Organization. 2024. <em>Ethics and Governance of Artificial Intelligence for Health</em>. <a href="https://www.who.int/publications/i/item/9789240029200">https://www.who.int/publications/i/item/9789240029200</a>.
+World Health Organization. 2024. <span>“Ethics and Governance of Artificial Intelligence for Health.”</span> <a href="https://www.who.int/publications/i/item/9789240029200">https://www.who.int/publications/i/item/9789240029200</a>.
 </div>
 <div id="ref-Zack2024-gpt4bias" class="csl-entry" role="listitem">
-<span class="nocase">Zack, Travis, Eric Lehman, Mirac Suzgun, et al.</span> 2024. <span>“Assessing the Potential of <span>GPT-4</span> to Perpetuate Racial and Gender Biases in Health Care: A Model Evaluation Study.”</span> <em>The Lancet Digital Health</em> 6 (1): e12–22. <a href="https://doi.org/10.1016/S2589-7500(23)00225-X">https://doi.org/10.1016/S2589-7500(23)00225-X</a>.
+Zack, Travis, Eric Lehman, Mirac Suzgun, Pedro A Rodriguez, Leo Anthony Celi, Judy Gichoya, Dan Jurafsky, et al. 2024. <span>“Assessing the Potential of <span>GPT-4</span> to Perpetuate Racial and Gender Biases in Health Care: A Model Evaluation Study.”</span> <em>The Lancet Digital Health</em> 6 (1): e12–22. <a href="https://doi.org/10.1016/S2589-7500(23)00225-X">https://doi.org/10.1016/S2589-7500(23)00225-X</a>.
 </div>
 <div id="ref-Zemmar2023-duty" class="csl-entry" role="listitem">
 Zemmar, Adjmal, Andres M Lozano, and Bradley J Nelson. 2023. <span>“The Ethical Imperative for the Use of Artificial Intelligence in Surgery.”</span> <em>Nature Machine Intelligence</em> 5: 1184–90. <a href="https://doi.org/10.1038/s42256-023-00742-6">https://doi.org/10.1038/s42256-023-00742-6</a>.
@@ -641,14 +639,13 @@ Zemmar, Adjmal, Andres M Lozano, and Bradley J Nelson. 2023. <span>“The Ethica
       e.clearSelection();
     }
     const getTextToCopy = function(trigger) {
-      const outerScaffold = trigger.parentElement.cloneNode(true);
-      const codeEl = outerScaffold.querySelector('code');
-      for (const childEl of codeEl.children) {
-        if (isCodeAnnotation(childEl)) {
-          childEl.remove();
+        const codeEl = trigger.previousElementSibling.cloneNode(true);
+        for (const childEl of codeEl.children) {
+          if (isCodeAnnotation(childEl)) {
+            childEl.remove();
+          }
         }
-      }
-      return codeEl.innerText;
+        return codeEl.innerText;
     }
     const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
       text: getTextToCopy

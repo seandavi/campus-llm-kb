@@ -2,17 +2,14 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.9.37">
+<meta name="generator" content="quarto-1.7.33">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="dcterms.date" content="2026-04-27">
+<meta name="dcterms.date" content="2026-04-26">
 
 <title>13&nbsp; Professional Wellness and Reducing Cognitive Burden – Implementing AI in Academic Medicine</title>
 <style>
-/* Default styles provided by pandoc.
-** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
-*/
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
 div.columns{display: flex; gap: min(4vw, 1.5em);}
@@ -28,6 +25,7 @@ ul.task-list li input[type="checkbox"] {
 div.csl-bib-body { }
 div.csl-entry {
   clear: both;
+  margin-bottom: 0em;
 }
 .hanging-indent div.csl-entry {
   margin-left:2em;
@@ -61,10 +59,10 @@ div.csl-indent {
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-7f8f88aac4f3542376d5c11b86a4c14d.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-ea385d0e468b0dd5ea5bf0780b1290d9.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-6c776516069454354cc3aff2d99c460c.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-96934157685b0ce66cf1cdc82e4f4849.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -420,7 +418,7 @@ div.csl-indent {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">April 27, 2026</p>
+      <p class="date">April 26, 2026</p>
     </div>
   </div>
   
@@ -450,7 +448,7 @@ div.csl-indent {
 <section id="ambient-ai-documentation-the-evidence-base" class="level2" data-number="13.3">
 <h2 data-number="13.3" class="anchored" data-anchor-id="ambient-ai-documentation-the-evidence-base"><span class="header-section-number">13.3</span> Ambient AI Documentation: The Evidence Base</h2>
 <p>Ambient AI documentation systems — which listen to the clinical encounter, transcribe and synthesize the conversation, and generate a structured draft clinical note — entered serious clinical deployment in 2023 and have accumulated a meaningful evidence base in the following two years. The headline findings are consistent enough across sites and vendors to warrant treatment as established rather than emerging.</p>
-<p>Tierney and colleagues conducted one of the most rigorous early evaluations of an ambient scribe deployment across a large multispecialty practice. They found that physicians reported meaningful reductions in documentation time, with the largest effects in primary care and outpatient mental health — the two specialties with the highest note volume and the highest burnout rates <span class="citation" data-cites="Tierney2024-scribe">(<a href="references.html#ref-Tierney2024-scribe" role="doc-biblioref"><span class="nocase">Tierney et al.</span> 2024</a>)</span>. Notes generated with AI assistance were rated comparable in quality to physician-authored notes on blinded review. Clinician well-being scores improved, and — notably — patients reported that their physicians seemed more attentive during encounters, because the physician was no longer managing a keyboard.</p>
+<p>Tierney and colleagues conducted one of the most rigorous early evaluations of an ambient scribe deployment across a large multispecialty practice. They found that physicians reported meaningful reductions in documentation time, with the largest effects in primary care and outpatient mental health — the two specialties with the highest note volume and the highest burnout rates <span class="citation" data-cites="Tierney2024-scribe">(<a href="references.html#ref-Tierney2024-scribe" role="doc-biblioref">Tierney et al. 2024</a>)</span>. Notes generated with AI assistance were rated comparable in quality to physician-authored notes on blinded review. Clinician well-being scores improved, and — notably — patients reported that their physicians seemed more attentive during encounters, because the physician was no longer managing a keyboard.</p>
 <p>The patient attention finding deserves emphasis because it connects the wellness value proposition to the care quality value proposition. An encounter in which the clinician maintains eye contact, responds to nonverbal communication, and does not divide attention between the patient and a screen is a different clinical interaction from one in which documentation competes with the patient for the physician’s attention. A 2025 study found that patients who received care from physicians using an ambient scribe system rated their clinician’s attentiveness significantly higher than patients in a control group — not because the physician was doing anything differently in terms of clinical care, but because removing the documentation burden from the room changed the quality of the relationship.</p>
 <p>Table <a href="#tbl-ambient-evidence" class="quarto-xref">Table&nbsp;<span>13.1</span></a> summarizes the time-savings findings from major evaluations of the leading commercial ambient AI systems. Figures should be treated as directional rather than precise: study designs vary, comparison conditions vary, and the systems themselves have continued to evolve.</p>
 <div id="tbl-ambient-evidence" class="quarto-float quarto-figure quarto-figure-center anchored">
@@ -522,7 +520,7 @@ Table&nbsp;13.1: Summary of time-savings and clinician satisfaction findings fro
 <section id="the-ambient-consent-architecture" class="level2" data-number="13.4">
 <h2 data-number="13.4" class="anchored" data-anchor-id="the-ambient-consent-architecture"><span class="header-section-number">13.4</span> The Ambient Consent Architecture</h2>
 <p>The fact that ambient systems listen to clinical encounters — by definition, in the same room as the patient — creates a consent and privacy obligation that institutions deploying these tools must address explicitly. The patient is being recorded; the patient’s words are being processed by an AI system operated by a third party; and in many states, the patient has a legal right to know this before it occurs.</p>
-<p>The consent architecture should have four components. First, the patient should be told, at the start of the encounter, that an ambient AI system is active, what it does, and that they can ask for it to be turned off. This does not require a lengthy explanation; a brief verbal explanation plus an opportunity to decline is sufficient for most clinical contexts. Second, the vendor contract should specify that audio data is processed in transit and is not retained after note generation — a “zero-retention” policy that reduces the privacy risk surface. Third, the generated transcript and the note should be treated as protected health information under HIPAA from the moment of creation. Fourth, the attestation statement that the clinician signs should acknowledge AI involvement in the note’s preparation, consistent with California AB 3030 <span class="citation" data-cites="CalAB3030-2024">(<a href="references.html#ref-CalAB3030-2024" role="doc-biblioref"><span>AB 3030</span> 2024</a>)</span> and the general transparency standards described in <a href="patient_trust.html" class="quarto-xref"><span>Chapter 12</span></a>.</p>
+<p>The consent architecture should have four components. First, the patient should be told, at the start of the encounter, that an ambient AI system is active, what it does, and that they can ask for it to be turned off. This does not require a lengthy explanation; a brief verbal explanation plus an opportunity to decline is sufficient for most clinical contexts. Second, the vendor contract should specify that audio data is processed in transit and is not retained after note generation — a “zero-retention” policy that reduces the privacy risk surface. Third, the generated transcript and the note should be treated as protected health information under HIPAA from the moment of creation. Fourth, the attestation statement that the clinician signs should acknowledge AI involvement in the note’s preparation, consistent with California AB 3030 <span class="citation" data-cites="CalAB3030-2024">(<a href="references.html#ref-CalAB3030-2024" role="doc-biblioref">California State Legislature 2024</a>)</span> and the general transparency standards described in <a href="patient_trust.html" class="quarto-xref"><span>Chapter 12</span></a>.</p>
 <div class="cell" data-layout-align="default">
 <div class="cell-output-display">
 <div id="fig-ambient-consent" class="quarto-float quarto-figure quarto-figure-center anchored">
@@ -587,24 +585,24 @@ Figure&nbsp;13.1: Ambient AI documentation workflow with consent and privacy che
 <p><strong>Buy vs.&nbsp;build:</strong> Evaluate and likely buy. PA automation requires deep payer integration that is impractical to build de novo. The institutional differentiation is in the governance design — specifically, the HITL architecture for cases where the AI recommendation should not be submitted without human review.</p>
 
 
-<div id="refs" class="references csl-bib-body hanging-indent" role="list" style="display: none">
-<div id="ref-CalAB3030-2024" class="csl-entry" role="listitem">
-<span>AB 3030</span>: Health Care: Artificial Intelligence (2024). <a href="https://leginfo.legislature.ca.gov/faces/billNavClient.xhtml?bill_id=202320240AB3030">https://leginfo.legislature.ca.gov/faces/billNavClient.xhtml?bill_id=202320240AB3030</a>.
-</div>
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list" style="display: none">
 <div id="ref-AMA2023-survey" class="csl-entry" role="listitem">
-American Medical Association. 2023. <em>Physicians Optimistic about <span>AI</span> in Health Care with Some Concerns</em>. <a href="https://www.ama-assn.org/practice-management/digital/physicians-optimistic-about-ai-health-care-some-concerns">https://www.ama-assn.org/practice-management/digital/physicians-optimistic-about-ai-health-care-some-concerns</a>.
+American Medical Association. 2023. <span>“Physicians Optimistic about <span>AI</span> in Health Care with Some Concerns.”</span> <a href="https://www.ama-assn.org/practice-management/digital/physicians-optimistic-about-ai-health-care-some-concerns">https://www.ama-assn.org/practice-management/digital/physicians-optimistic-about-ai-health-care-some-concerns</a>.
+</div>
+<div id="ref-CalAB3030-2024" class="csl-entry" role="listitem">
+California State Legislature. 2024. <em><span>AB 3030</span>: Health Care: Artificial Intelligence</em>. <a href="https://leginfo.legislature.ca.gov/faces/billNavClient.xhtml?bill_id=202320240AB3030">https://leginfo.legislature.ca.gov/faces/billNavClient.xhtml?bill_id=202320240AB3030</a>.
 </div>
 <div id="ref-CMS2024-interop" class="csl-entry" role="listitem">
-Centers for Medicare and Medicaid Services. 2024. <span>“Medicare and Medicaid Programs; Patient Protection and Affordable Care Act; Advancing Interoperability and Improving Prior Authorization Processes for <span>Medicare Advantage</span> Organizations, Medicaid Managed Care Plans, State Medicaid Agencies, <span>CHIP</span> Fee-for-Service Programs, <span>CHIP</span> Managed Care Entities, and Qualified Health Plan Issuers in the Federally-Facilitated Exchanges (Final Rule, <span>CMS-0057-F</span>).”</span> In <em>Federal Register</em>, No. 25, vol. 89. <a href="https://www.federalregister.gov/documents/2024/02/08/2024-00895/medicare-and-medicaid-programs-patient-protection-and-affordable-care-act-advancing-interoperability">https://www.federalregister.gov/documents/2024/02/08/2024-00895/medicare-and-medicaid-programs-patient-protection-and-affordable-care-act-advancing-interoperability</a>.
+Centers for Medicare and Medicaid Services. 2024. <span>“Medicare and Medicaid Programs; Patient Protection and Affordable Care Act; Advancing Interoperability and Improving Prior Authorization Processes for <span>Medicare Advantage</span> Organizations, Medicaid Managed Care Plans, State Medicaid Agencies, <span>CHIP</span> Fee-for-Service Programs, <span>CHIP</span> Managed Care Entities, and Qualified Health Plan Issuers in the Federally-Facilitated Exchanges (Final Rule, <span>CMS-0057-F</span>).”</span> <em>Federal Register</em>. <a href="https://www.federalregister.gov/documents/2024/02/08/2024-00895/medicare-and-medicaid-programs-patient-protection-and-affordable-care-act-advancing-interoperability">https://www.federalregister.gov/documents/2024/02/08/2024-00895/medicare-and-medicaid-programs-patient-protection-and-affordable-care-act-advancing-interoperability</a>.
 </div>
 <div id="ref-Parasuraman2010-automation" class="csl-entry" role="listitem">
 Parasuraman, Raja, and Dietrich H Manzey. 2010. <span>“Complacency and Bias in Human Use of Automation: An Updated Understanding.”</span> <em>Human Factors</em> 52 (3): 381–410. <a href="https://doi.org/10.1177/0018720810376055">https://doi.org/10.1177/0018720810376055</a>.
 </div>
 <div id="ref-Tierney2024-scribe" class="csl-entry" role="listitem">
-<span class="nocase">Tierney, Aaron A, Shreya Bhatt, Aakash Houndie, et al.</span> 2024. <span>“Ambient Artificial Intelligence Scribes to Alleviate the Burden of Clinical Documentation.”</span> <em>NEJM Catalyst Innovations in Care Delivery</em> 5 (1): CAT.23.0404. <a href="https://doi.org/10.1056/CAT.23.0404">https://doi.org/10.1056/CAT.23.0404</a>.
+Tierney, Aaron A, Shreya Bhatt, Aakash Houndie, et al. 2024. <span>“Ambient Artificial Intelligence Scribes to Alleviate the Burden of Clinical Documentation.”</span> <em>NEJM Catalyst Innovations in Care Delivery</em> 5 (1): CAT.23.0404. <a href="https://doi.org/10.1056/CAT.23.0404">https://doi.org/10.1056/CAT.23.0404</a>.
 </div>
 <div id="ref-SurgeonGeneral2022-burnout" class="csl-entry" role="listitem">
-U.S. Department of Health and Human Services, Office of the Surgeon General. 2022. <em>Addressing Health Worker Burnout: The <span>U.S.</span> Surgeon General’s Advisory on Building a Thriving Health Workforce</em>. <a href="https://www.hhs.gov/surgeongeneral/reports-and-publications/health-worker-burnout/index.html" class="uri">Https://www.hhs.gov/surgeongeneral/reports-and-publications/health-worker-burnout/index.html</a>. <a href="https://www.hhs.gov/surgeongeneral/reports-and-publications/health-worker-burnout/index.html">https://www.hhs.gov/surgeongeneral/reports-and-publications/health-worker-burnout/index.html</a>.
+U.S. Department of Health and Human Services, Office of the Surgeon General. 2022. <span>“Addressing Health Worker Burnout: The <span>U.S.</span> Surgeon General’s Advisory on Building a Thriving Health Workforce.”</span> <a href="https://www.hhs.gov/surgeongeneral/reports-and-publications/health-worker-burnout/index.html" class="uri">https://www.hhs.gov/surgeongeneral/reports-and-publications/health-worker-burnout/index.html</a>. <a href="https://www.hhs.gov/surgeongeneral/reports-and-publications/health-worker-burnout/index.html">https://www.hhs.gov/surgeongeneral/reports-and-publications/health-worker-burnout/index.html</a>.
 </div>
 </div>
 </section>
@@ -662,14 +660,13 @@ U.S. Department of Health and Human Services, Office of the Surgeon General. 202
       e.clearSelection();
     }
     const getTextToCopy = function(trigger) {
-      const outerScaffold = trigger.parentElement.cloneNode(true);
-      const codeEl = outerScaffold.querySelector('code');
-      for (const childEl of codeEl.children) {
-        if (isCodeAnnotation(childEl)) {
-          childEl.remove();
+        const codeEl = trigger.previousElementSibling.cloneNode(true);
+        for (const childEl of codeEl.children) {
+          if (isCodeAnnotation(childEl)) {
+            childEl.remove();
+          }
         }
-      }
-      return codeEl.innerText;
+        return codeEl.innerText;
     }
     const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
       text: getTextToCopy
