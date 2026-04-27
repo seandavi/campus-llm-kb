@@ -2,12 +2,12 @@ project:
   type: book
 
 website:
-  google-analytics: 
-    tracking-id: "G-KCEE2FZL6D"
-  cookie-consent: true
   llms-txt: true
+  description: "A comprehensive guide to implementing and governing AI in academic medicine, covering clinical, research, education, and business domains."
 
 book:
+  google-analytics: "G-KCEE2FZL6D"
+  cookie-consent: true
   cover-image: cover.jpg
   title: "Implementing AI in Academic Medicine"
   subtitle: "A guide to governance and principled practice"

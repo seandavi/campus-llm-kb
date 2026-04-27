@@ -18,3 +18,5 @@ index.tex
 
 # Temp files
 *.bak
+
+**/*.quarto_ipynb
