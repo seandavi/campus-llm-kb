@@ -2,11 +2,11 @@
 
 Published
 
-April 26, 2026
+April 29, 2026
 
 Every AMC that has published an AI governance framework lists roughly the same values: patient safety, equity, transparency, accountability, privacy, and human oversight. The lists are not wrong. They are also not differentiating. The meaningful question is not which values an institution holds — that convergence is real and appropriate — but whether those values are encoded in governance structures that make them operational, or whether they remain aspirational statements that authorize AI deployments without constraining them.
 
-This distinction matters because value statements are not self-enforcing. An institution can publish a principle of “transparency” and simultaneously deploy clinical AI tools with no documentation of training data provenance, no disclosure to clinicians of the model’s known limitations, and no audit trail connecting AI outputs to clinical decisions. The principle is present. The operational mechanism that would give it meaning is not. The chapters that follow this one are primarily about the mechanisms. This chapter is about why the principles matter and how peer institutions have translated them into governance practice.
+This distinction matters because value statements are not self-enforcing. An institution can publish a principle of “transparency” and simultaneously deploy clinical AI tools with no documentation of training data provenance, no disclosure to clinicians of the model’s known limitations, and no audit trail connecting AI outputs to clinical decisions. The principle is present. The operational mechanism that would give it meaning is not. Three-quarters of U.S. health systems now report deploying at least one AI application ([Fierce Healthcare 2026](#ref-FierceHealthcare2026-adoption)). At that scale, the gap between a values statement and an operational mechanism is not a planning problem. It is already consequential. The chapters that follow this one are primarily about the mechanisms. This chapter is about why the principles matter and how peer institutions have translated them into governance practice.
 
 ## 2.1 Patient Safety and the Primacy of Clinical Judgment
 
@@ -64,6 +64,8 @@ These examples share a common architecture: principles that are specific enough 
 Badal, Kimberly, Carmen M Lee, and Laura J Esserman. 2023. “Guiding Principles for the Responsible Development of Artificial Intelligence Tools for Healthcare.” *Communication & Medicine* 3 (1): 47. <https://doi.org/10.1038/s43856-023-00279-9>.
 
 Bedoya, Armando D, Nicoleta J Economou-Zavlanos, Benjamin A Goldstein, et al. 2022. “A Framework for the Oversight and Local Deployment of Safe and High-Quality Prediction Models.” *Journal of the American Medical Informatics Association* 29 (9): 1631–36. <https://doi.org/10.1093/jamia/ocac078>.
+
+Fierce Healthcare. 2026. *75% of US Healthcare Systems Use or Plan to Use AI Platform in 2026*. Fierce Healthcare. <https://www.fiercehealthcare.com/ai-and-machine-learning/75-us-healthcare-systems-use-plan-use-ai-platform-2026>.
 
 Mitchell, Margaret, Simone Wu, Andrew Zaldivar, et al. 2019. “Model Cards for Model Reporting.” *Proceedings of the Conference on Fairness, Accountability, and Transparency*. <https://doi.org/10.1145/3287560.3287596>.
 

@@ -2,7 +2,7 @@
 
 Published
 
-April 26, 2026
+April 29, 2026
 
 At most academic medical centers, the first place generative AI takes hold is not the clinic or the research lab. It is the finance department’s revenue cycle team, the HR business partner drafting job descriptions after hours, the communications writer who discovered that a rough prompt produces a passable first draft in thirty seconds. Business operations — the finance, HR, supply chain, IT, marketing, philanthropy, facilities, and legal functions that keep an AMC running — are where AI adoption tends to move fastest and where institutional governance tends to lag furthest behind.
 
@@ -14,7 +14,11 @@ The argument of this chapter is simple: business operations is the right place t
 
 The four domains of this framework — education, research, clinical, and business operations — differ not just in what they do but in the regulatory regimes that govern what AI can do inside them. Clinical AI operates under the most demanding oversight: every tool that influences a clinical decision is potentially a medical device subject to FDA regulation, and deployment without local validation is a patient-safety risk. Research AI is constrained by the norms of research integrity, the requirements of IRBs for human-subjects data, and the intellectual-property rules of journals and funders. Educational AI sits inside a web of academic integrity policies and accreditation requirements.
 
-Business operations has fewer of these formal guardrails, which creates a false sense of safety. The absence of FDA clearance requirements does not mean an absence of legal risk. Three areas carry particular exposure.
+Business operations has fewer of these formal guardrails, which creates a false sense of safety.
+
+Median U.S. hospital operating margins reached 1.3 percent in 2025 and turned negative at the start of 2026, with labor accounting for 84 percent of total hospital expenses ([Kaufman Hall 2026](#ref-KaufmanHall2026-flash)). The nursing workforce gap approaches 500,000 vacancies nationally, with 40 percent of currently employed nurses reporting plans to leave the profession by 2029 ([American Hospital Association 2025](#ref-AHA2026-workforce)). Operations leaders reaching for AI-assisted administrative tools against that backdrop are making a reasonable call. The compliance obligations attached to those tools do not diminish because no clinical oversight body is in the room.
+
+The absence of FDA clearance requirements does not mean an absence of legal risk. Three areas carry particular exposure.
 
 The first is employment. Automated systems used to screen, rank, or evaluate employees and candidates are subject to anti-discrimination law regardless of whether they involve AI. The EEOC’s Strategic Enforcement Plan for fiscal years 2024–2028 explicitly names algorithmic discrimination in employment as an enforcement priority ([U.S. Equal Employment Opportunity Commission 2024](#ref-EEOC2024-sep)). New York City’s Local Law 144, which took effect in July 2023, mandates annual independent bias audits for any automated employment decision tool used in hiring or promotion for New York City-based roles ([Local Law 144 2021](#ref-NYCLL144)). Colorado’s SB 24-205, signed in 2024, imposes “reasonable care” requirements on developers and deployers of high-risk AI systems, including those used in employment contexts ([SB 24-205 2024](#ref-ColoradoSB24205)). An AMC with employees or applicants in these jurisdictions — which includes most major academic medical centers — needs to account for these requirements before deploying any HR automation tool.
 
@@ -175,9 +179,13 @@ The preceding sections describe a governance framework and a set of use cases. T
 
 **What done looks like.** A working system that answers 80% of test questions correctly against the policy corpus, with cited sources, running at acceptable latency. A defined process for adding new policies and reindexing. Usage logs showing which questions are being asked most frequently (which is itself valuable institutional intelligence about where policy documentation is unclear).
 
+American Hospital Association. 2025. *Health Care Workforce System Under Pressure, Poised for Reinvention*. AHA Center for Health Innovation Market Scan. <https://www.aha.org/aha-center-health-innovation-market-scan/2025-12-09-health-care-workforce-system-under-pressure-poised-reinvention>.
+
 Federal Trade Commission. 2024. *Operation AI Comply: Continuing Actions Against AI-Related Deceptive Practices*. <https://www.ftc.gov/news-events/press-releases/2024/09/ftc-announces-operation-ai-comply>.
 
 ISO/IEC 42001: Information Technology — Artificial Intelligence — Management System (2023). <https://www.iso.org/standard/81230.html>.
+
+Kaufman Hall. 2026. *Hospitals Face 2026 New Normal: Rising Expenses and Shifts in Revenue Mix*. Kaufman Hall National Hospital Flash Report. <https://www.kaufmanhall.com/news/hospitals-face-2026-new-normal-rising-expenses-and-shifts-revenue-mix>.
 
 Local Law 144: Automated Employment Decision Tools (2021). <https://www.nyc.gov/site/dca/about/automated-employment-decision-tools.page>.
 
