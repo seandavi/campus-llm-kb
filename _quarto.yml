@@ -6,7 +6,7 @@ website:
   description: "A comprehensive guide to implementing and governing AI in academic medicine, covering clinical, research, education, and business domains."
 
 book:
-  google-analytics: "G-KCEE2FZL6D"
+  google-analytics: "G-KHM6W9PRES"
   cookie-consent: true
   cover-image: cover.jpg
   doi: "10.5281/zenodo.19820586"
