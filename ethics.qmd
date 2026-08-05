@@ -9,10 +9,11 @@ individual clinicians. They are structural. A predictive model that systematical
 underestimates the health needs of Black patients does not fail because the clinician
 using it is biased; it fails because it was trained on data that encodes decades of
 inequitable access to care, and deployed without monitoring that would detect the
-systematic underperformance [@Obermeyer2019-bias]. An ambient documentation system that
-malfunctions differently for patients with non-standard accents does not fail because the
-clinician was careless; it fails because the model was trained on data that overrepresented
-certain speech patterns and deployed without demographic performance stratification. The
+systematic underperformance [@Obermeyer2019-bias]. If an ambient documentation system turns
+out to transcribe some patients less accurately than others, it will not be because the
+clinician was careless; it will be because the model was trained on speech that
+overrepresented certain patterns and deployed without anyone stratifying its performance.
+The
 pattern is consistent: the ethical failures that have actually occurred in deployed
 healthcare AI are structural failures, predictable in advance, and correctable through
 governance — if the governance exists.
@@ -37,10 +38,12 @@ management resources away from patients who needed them more.
 
 The finding was not that the algorithm was malicious. It was that the algorithm was
 trained on data that encoded an existing inequity, using a proxy variable that faithfully
-reproduced that inequity at scale. The authors estimated the bias caused the algorithm to
-miss 43% of high-risk Black patients compared to a race-neutral approach [@Obermeyer2019-bias]. Subsequent work
-has documented similar patterns in algorithms for kidney disease (using race as a correction
-factor), cardiac risk assessment, and dermatology imaging models [@Zack2024-gpt4bias].
+reproduced that inequity at scale. Race was never an input. The authors estimated that
+changing the prediction target from cost to illness would raise the share of Black patients
+flagged for additional help from 17.7% to 46.5% [@Obermeyer2019-bias]. Subsequent work has
+documented the same shape of problem in other tools: race correction factors built directly
+into kidney function estimates and cardiac risk calculators [@Vyas2020-racecorrection], and
+dermatology imaging models that lose accuracy on darker skin tones [@Daneshjou2022-ddi].
 
 The structural governance response requires three elements that individual ethical review
 cannot provide alone. First, demographic stratification of performance metrics as a
@@ -53,8 +56,9 @@ the informatics team.
 
 ## Health Equity as a Performance Metric
 
-The framework proposed by Badal and colleagues, introduced in @sec-clinical, includes the
-alleviation of health disparities as the first principle of responsible clinical AI. In
+The framework proposed by Badal and colleagues [@Badal2023-bt], introduced in @sec-clinical,
+includes the alleviation of health disparities as the first principle of responsible
+clinical AI. In
 practice, this requires operationalizing "equity" as a quantitative performance dimension
 alongside accuracy. A model that achieves 85% accuracy overall but 70% accuracy for the
 subpopulation with the highest disease burden is not a high-performing model — it is a
@@ -68,14 +72,18 @@ diverse populations should treat demographic data quality as an AI readiness iss
 return on investment for improving race, ethnicity, and language data completeness comes
 precisely when the institution needs to assess whether its AI tools are performing equitably.
 
-The [FUTURE-AI](https://future-ai.eu/) principles for trustworthy AI in medical imaging establish fairness as one
-of six foundational requirements, alongside universality, traceability, usability,
-robustness, and explainability [@FUTURE-AI2022]. These principles map to operational
-AMC practices: fairness requires subgroup performance evaluation; traceability requires
-audit logging of model outputs; explainability requires that clinicians can access the
-reasoning behind a model recommendation. The NIST AI RMF [@NIST2023-airm] maps these
-same principles to the Govern/Map/Measure/Manage operational structure that AMC governance
-programs can implement directly.
+The [FUTURE-AI](https://future-ai.eu/) international consensus guideline, developed by 117
+experts across 50 countries and published in 2025, establishes fairness as one of six
+guiding principles for trustworthy healthcare AI, alongside universality, traceability,
+usability, robustness, and explainability [@Lekadir2025-futureai]. These principles map to
+operational AMC practices: fairness requires subgroup performance evaluation; traceability
+requires audit logging of model outputs; explainability requires that clinicians can access
+the reasoning behind a model recommendation. The NIST AI RMF [@NIST2023-airm] organizes its
+own trustworthiness characteristics into a Govern/Map/Measure/Manage structure rather than
+FUTURE-AI's, and neither document maps itself onto the other. They are compatible enough in
+practice that an institution can run the FUTURE-AI principles as technical requirements
+inside the NIST functions, but that pairing is a recommendation of this book rather than
+something either framework prescribes.
 
 ## Informed Consent in the Continuous AI Era
 
@@ -93,21 +101,23 @@ specific authorization. The harder case is the background AI: the readmission ri
 the sepsis predictor, the no-show prediction algorithm. These tools affect every patient
 encounter without any patient-facing disclosure.
 
-The emerging consensus from bioethics and patient advocacy is that "invisible" background
-AI requires institutional-level disclosure rather than individual patient consent: the
-institution publishes a clear statement of which AI tools are used in patient care, how
+The position this book takes, and it is a position rather than a settled consensus, is that
+"invisible" background AI calls for institutional-level disclosure rather than individual
+patient consent: the institution publishes a clear statement of which AI tools are used in patient care, how
 they affect clinical decisions, and what patients can do to learn more. This does not
 resolve the ethical tension between efficient deployment and individual autonomy, but it
-addresses the transparency gap. The WHO ethics guidance on AI for health specifically
-recommends meaningful transparency about automated decision-making as a prerequisite for
-the ethical deployment of clinical AI [@WHO2024-ai-ethics].
+addresses the transparency gap. The 2021 WHO guidance on the ethics and governance of AI
+for health treats meaningful transparency about automated decision-making as a prerequisite
+for ethical deployment [@WHO2021-ai-ethics].
 
 ## Intellectual Property and the AI Authorship Gap
 
-The U.S. Copyright Office and the U.S. Patent and Trademark Office have both taken
-consistent positions that AI cannot be an author or an inventor; copyright and patent
-protection requires human creative contribution. For AMCs, this creates several practical
-IP implications.
+The U.S. Copyright Office and the U.S. Patent and Trademark Office have each taken the
+position that AI cannot itself be an author or an inventor, and that protection requires
+human creative or inventive contribution. The line between assisted and generated work is
+still being drawn, and an institution should track the guidance rather than rely on this
+paragraph. For AMCs, the practical IP implications follow regardless of where that line
+finally lands.
 
 Research outputs that are substantially AI-generated — whether grant applications, academic
 papers, or clinical protocol drafts — may not be protectable under copyright if the human
@@ -151,14 +161,15 @@ in AMC values statements and academic papers but carried no specific legal oblig
 The 2024 HHS Section 1557 final rule changed that [@HHS2024-1557final]. Under 45 C.F.R.
 § 92.210, covered entities are required to take reasonable steps to identify and mitigate
 discrimination in patient care decision support tools that are used to make, recommend, or
-facilitate clinical decisions. The rule explicitly covers algorithmic and AI-assisted
-tools. The compliance deadline for covered entities was May 2025.
+facilitate clinical decisions [@eCFR-92-210]. The rule explicitly covers algorithmic and
+AI-assisted tools, and compliance was required by May 1, 2025, three hundred days after the
+rule took effect.
 
-What "reasonable steps" means in practice is not fully defined by the rule, but the
-regulatory record is instructive. HHS explicitly cited the Obermeyer 2019 risk
-stratification algorithm as the paradigmatic case the rule is designed to address.
-The implication is that an institution deploying a care management algorithm — a
-readmission risk model, a care gap identification tool, a utilization management system —
+What "reasonable steps" means in practice is not fully defined by the rule. But the class of
+tool it targets is not mysterious: a care management algorithm that scores patients on a
+proxy for need is exactly the pattern Obermeyer and colleagues documented, and it is the
+pattern the rule's identify-and-mitigate duty is shaped around. An institution deploying a
+readmission risk model, a care gap identification tool, or a utilization management system
 without having assessed its performance across demographic groups cannot demonstrate
 compliance. The assessment does not need to be a clinical trial; it needs to be documented
 evidence that someone looked. The equity audit process in @sec-ethics-start is what that
@@ -179,54 +190,86 @@ most cited demonstration of algorithmic bias in healthcare, and it risks becomin
 comfortable historical example that lets institutions off the hook for examining what
 their own deployed tools are doing right now.
 
-The 2022 to 2025 literature documents the pattern continuing. Daneshjou and colleagues
-demonstrated that dermatology imaging AI performs substantially worse on images of patients
-with darker skin tones, a predictable consequence of training datasets that
-overrepresented lighter skin phenotypes. Ambient documentation tools have been found to
-have higher error rates for patients with non-standard accents — specifically omitting
-nuances in social history that require parsing speech patterns underrepresented in the
-training data. A 2024 Senate investigation documented that AI-assisted care denial systems
-used by Medicare Advantage insurers produced denial rates up to 16 times higher than
-human review in post-acute care — with the automation of denial decisions structured to
-make human review functionally impossible at the volumes the AI generated
-[@SenateHSGAC2024-MAdenials].
+The 2022 to 2025 literature documents the pattern continuing. Daneshjou and colleagues built
+the Diverse Dermatology Images dataset, the first publicly available image set that is both
+pathologically confirmed and curated for skin tone diversity, and showed that
+state-of-the-art dermatology models degrade substantially on dark skin tones and on
+uncommon diseases. Fine-tuning those models on the new images closed the gap between light
+and dark skin, which places the fault in the training data rather than in the task
+[@Daneshjou2022-ddi]. Ambient documentation is the obvious place to look for a speech-based
+analogue, and an AMC can measure that locally, but the published evidence on clinical
+dictation accuracy stratified by accent or dialect is thin. Treat it as a hypothesis to test
+in your own deployment, not as an established finding.
 
-The [ProPublica](https://www.propublica.org) investigation into Cigna's PxDx system described physicians reviewing AI-
-generated denial recommendations at a rate of 1.2 seconds per claim [@ProPublica2023-cigna]. That is not human-
-in-the-loop review. It is human-in-the-loop theater. For an AMC that uses AI-assisted
-prior authorization or utilization management tools, the governance question is not whether
-those tools carry demographic bias — they almost certainly do, to some degree — but whether
-the human review process is substantive enough to catch and override it when it manifests.
+The 2024 Senate Permanent Subcommittee on Investigations report on Medicare Advantage prior
+authorization deserves to be read precisely, because it is routinely cited for more than it
+says [@PSI2024-refusal]. The subcommittee found that in 2022 UnitedHealthcare and CVS denied
+prior authorization for post-acute care at roughly three times their overall denial rates,
+and Humana at more than sixteen times its overall rate. That is a comparison between service
+lines within each insurer, not a comparison between algorithmic and human review, and the
+report is explicit that the evidence it obtained did not establish the extent of Humana's
+use of automation at all. The number does not show what it is usually quoted to show.
 
-## State Privacy Laws and the Post-HIPAA Landscape
+What the report does document about automation is narrower and, for governance purposes,
+more useful. An internal UnitedHealthcare committee reviewing an automated authorization
+model in early 2021 recorded that testing had produced faster handling times along with
+"an increase in adverse determination rate," and voted to approve the model the following
+month. An institution watched automation raise its own denial rate, wrote that down, and
+proceeded. The governance failure there is not that the tool was biased. It is that a
+measured increase in adverse decisions was treated as an acceptable cost of speed.
+
+The [ProPublica](https://www.propublica.org) investigation into Cigna's PxDx system found
+company physicians rejecting claims at an average of 1.2 seconds each, more than 300,000
+denials over two months [@ProPublica2023-cigna-pxdx]. PxDx is not a learning model; it is an
+algorithm that flags mismatches between diagnosis codes and the procedures Cigna considers
+acceptable for them, after which physicians sign off on denials in batches. The distinction
+matters less than it appears. What made the system work was not the sophistication of the
+matching but the volume it created, which reduced physician review to a formality. That is
+not human-in-the-loop review. It is human-in-the-loop theater. For an AMC using algorithmic
+or AI-assisted prior authorization and utilization management, the governance question is
+not only whether those tools carry demographic bias, which to some degree they almost
+certainly do, but whether the human review attached to them is substantive enough to catch
+and override the bias when it appears.
+
+## State Privacy Laws Beyond HIPAA
 
 HIPAA remains the dominant privacy framework for clinical AI, but it is no longer
 sufficient as a complete governance guide. A patchwork of state laws has emerged in the
 2022 to 2025 period that creates obligations for AI use at AMCs that operate in, or serve
 patients from, specific states.
 
-Washington's My Health MY Data Act, effective 2023, regulates consumer health data that
-falls outside HIPAA's scope — data collected by apps, wellness tools, and AI systems that
-are not covered entities [@WA2023-MHMDA]. It requires a separate opt-in consent for
-collection and sharing, imposes restrictions on data retention, and bans geofencing around
-healthcare facilities, which has implications for location-based AI tools and mobile
-health applications. Because the Act's definition of "consumer health data" is broad
+Washington's My Health MY Data Act regulates consumer health data that falls outside
+HIPAA's scope, meaning data collected by apps, wellness tools, and AI systems whose
+operators are not covered entities [@WA2023-MHMDA]. It was signed in 2023, but the dates
+that matter are staggered: the geofencing prohibition took effect in July 2023, and the main
+obligations on most regulated entities on March 31, 2024. The Act requires separate opt-in
+consent for collection and for sharing, gives consumers a right to withdraw consent and to
+demand deletion, and bans geofencing around healthcare facilities, which reaches
+location-based AI tools and mobile health applications. Because the Act's definition of "consumer health data" is broad
 enough to capture AI-generated health inferences, an AMC deploying patient-facing AI
 tools that touch Washington residents needs to analyze the Act's requirements specifically.
 
-Colorado HB 24-1139, signed in 2024, prohibits health insurers from using AI as the
-sole basis for an adverse medical determination, requiring that all AI-generated denial
-recommendations receive substantive review by a qualified clinician [@ColoradoHB24-1139].
-The bill explicitly addresses the pattern documented in the Senate Medicare Advantage
-investigation. For AMCs that operate health plans or manage care programs with AI-assisted
-utilization management, this is a direct compliance obligation in Colorado.
+Colorado HB 26-1139, signed on June 2, 2026 and effective January 1, 2027, bars entities
+performing utilization review from denying coverage on medical necessity grounds "solely on
+the output of an AI system without human review by a licensed clinician or physician or
+other competent regulated professional" [@ColoradoHB26-1139]. The statute also requires that
+any AI used in utilization review base its determinations on the patient's own clinical
+history rather than on group data alone, that it comply with anti-discrimination law, and
+that it be reviewed periodically for accuracy. Note the bill number carefully: HB 24-1139,
+from the 2024 session, is an unrelated workers' compensation measure. For AMCs that operate
+health plans or run care management programs with AI-assisted utilization management, the
+2026 statute is a direct Colorado compliance obligation, and the January 2027 effective date
+means the work of documenting where AI touches utilization review needs to happen now.
 
-Illinois BIPA's healthcare exemption — clarified in a 2023 Illinois Supreme Court ruling
-— exempts biometric data used for healthcare treatment, payment, or operations from the
-Act's consent and notice requirements. This is relevant for AMCs using ambient audio,
-retinal scans, or other biometric identification in clinical workflows. The exemption is
-narrower than it appears; biometric data used for security access, time and attendance, or
-administrative identification may not fall within the healthcare exemption.
+Illinois BIPA's health care exemption is broader than plaintiffs had argued and narrower
+than institutions sometimes assume. In *Mosby v. Ingalls Memorial Hospital*, decided
+November 30, 2023, the Illinois Supreme Court held that the exemption is not limited to
+patients' biometric information, and covers nurses' fingerprint scans used to access
+medication and supply cabinets in the course of patient treatment [@Mosby2023-bipa]. That
+matters for AMCs using ambient audio, retinal scans, or other biometric identification in
+clinical workflows. What *Mosby* did not do is exempt biometric data collected for security
+access, time and attendance, or administrative identification, and those uses remain exposed
+to the Act's consent and notice requirements.
 
 The broader pattern is that HIPAA compliance is a floor, not a ceiling. Each state where
 an AMC operates patients, employs staff, or deploys patient-facing digital tools may impose
@@ -265,11 +308,13 @@ Patients have expectations about how their health data is used, how AI figures i
 care, and what control they retain over algorithmic decisions that affect them. Those
 expectations are not uniformly positive, and they are not uniformly distributed.
 
-Survey data from 2024 to 2025 shows that patient trust in AI-assisted healthcare varies
-significantly by demographic group, with Black and Hispanic patients expressing more
-skepticism about clinical AI than white patients in multiple studies. This asymmetry is
-not irrational — it reflects historical experience with healthcare systems that produced
-the very biases that AI tools now replicate at scale. An institution that deploys AI tools
+Patient trust in AI-assisted healthcare is not evenly distributed, and an institution should
+expect that the patients with the most reason to be skeptical of its algorithms are the ones
+whose skepticism is best founded. The argument here does not depend on any particular survey
+estimate of how trust varies by group, and this book does not have one it can stand behind.
+It depends on something simpler: the same populations that were underserved by the systems
+whose records became training data are the populations those models are most likely to serve
+badly. An institution that deploys AI tools
 with demonstrated demographic performance disparities, in service of a patient population
 that has historically been underserved, and then frames the resulting errors as
 "algorithmic" rather than institutional, is trading on trust it may not have fully earned.
@@ -282,28 +327,54 @@ how they affect care decisions, community engagement in AI governance processes,
 audit process that reports findings publicly, and a willingness to suspend tools that
 produce harm even when the RO business case for them is positive.
 
-The [Coalition for Health AI](https://www.coalitionforhealthai.org)'s 2024 patient trust survey found that 51 percent of patients
-reported trusting healthcare less due to AI, but 80 percent said their trust would increase
-if they knew who was accountable for the AI's decisions and that training on those
-decisions was documented [@CHAI2024-trust]. The accountability and training documentation
-that this book's governance chapters describe are not just operational mechanisms. They
-are the substance of the social license that AMC AI requires to function.
+The [Coalition for Health AI](https://www.chai.org)'s patient survey, fielded by NORC and
+released in January 2026, found that 51 percent of patients said AI makes them trust health
+care less, while more than 80 percent said their trust would increase if clear accountability
+measures were in place [@CHAI2026-trust]. The survey asked about accountability, not about
+documentation of training, so it does not by itself vindicate every mechanism this book
+recommends. What it does establish is that the thing patients say would move them is
+knowing who answers for the decision. Accountability structures are not only operational
+machinery. They are the substance of the social license that AMC AI requires to function.
 
 ## Liability, the Standard of Care, and the Duty to Use
 
-The liability landscape for clinical AI is developing, not settled, but the direction is
-clear in both directions. Clinicians and institutions face potential liability both for
-harms caused by following AI recommendations without adequate oversight, and — as AI tools
-become validated for specific clinical tasks — for failing to use tools that have become
-part of the standard of care.
+Liability for clinical AI is developing rather than settled, and the honest summary is that
+almost all of the settled part runs one way. Clinicians and institutions face recognized
+exposure for harms caused by following AI recommendations without adequate oversight. The
+mirror-image exposure, liability for failing to use a tool, has not been established by any
+court, and this section should not be read as reporting that it has.
 
-The second direction is counterintuitive but increasingly argued in the literature. As
-AI tools for specific diagnostic tasks — retinal disease screening, dermatology imaging,
-sepsis prediction — accumulate evidence of performance at or above specialist-level
-accuracy, the ethical argument for using them begins to shade into a professional
-obligation [@Zemmar2023-duty]. A radiologist who does not use an FDA-cleared AI tool
-to detect pneumothorax, when the tool has demonstrated sensitivity superior to
-unassisted reading, may eventually face liability for the missed diagnosis.
+What the legal literature does establish is narrower and more interesting. Price, Gerke, and
+Cohen laid out the template that most subsequent analysis works from: under existing tort
+doctrine, a physician's liability turns on whether the course taken matched the standard of
+care, not on whether an algorithm was consulted [@Price2019-liability]. The practical
+consequence is that current law protects the physician who follows standard care and
+declines the AI, and offers the least protection precisely where AI would add the most
+value, when the model correctly identifies that the standard course is wrong for this
+patient. On that reading, tort law is a brake on AI adoption rather than an engine of it.
+
+The experimental evidence complicates that picture. Tobia, Nielsen, and Stremitzer put four
+vignettes to a nationally representative sample of 2,000 U.S. adults, varying whether an AI
+system recommended standard or nonstandard care and whether the physician accepted or
+rejected the recommendation, with harm resulting in every case. Potential jurors judged
+physicians who accepted standard-care AI advice less harshly than those who rejected it,
+and there was no comparable protection from rejecting nonstandard advice in favor of the
+standard course. The authors concluded that tort law is unlikely to undermine the use of
+medical AI and may encourage it [@Tobia2021-jurors]. A later replication extended the design
+to German physicians and German adults, testing whether the pattern survives in a regime
+where court-appointed experts rather than lay jurors determine liability. It did
+[@Tacconelli2026-crossnational].
+
+Read together, these are evidence about how decisions get evaluated after the fact, not a
+holding that a duty to use AI exists. The extrapolation this book makes from them is its
+own: as tools for specific tasks accumulate evidence of performance at or above
+specialist-level accuracy, and as the people who judge reasonableness come to treat
+consulting those tools as the ordinary thing a careful clinician does, the gap between
+ethical argument and professional expectation narrows. A radiologist who does not use an
+FDA-cleared tool for pneumothorax detection, where that tool has demonstrated sensitivity
+superior to unassisted reading, is in a position that will be harder to defend in 2032 than
+in 2026. That is a prediction. Institutions should plan for it without treating it as
+current law.
 
 The prudent governance posture is to document, for each deployed clinical AI tool, the
 institutional reasoning about when and how it should be used — not just the existence of
@@ -336,8 +407,10 @@ model or an irreducible clinical population difference. Report findings to clini
 leadership and the governance committee. For tools with significant performance disparities,
 develop a remediation plan.
 
-**Buy vs. build:** Analytical work using existing institutional data. Commercial bias
-audit tools (Credo AI, IBM OpenScale) can accelerate the analysis but are not prerequisites.
+**Buy vs. build:** Analytical work using existing institutional data. Commercial AI
+governance and model monitoring platforms are marketed for this purpose and may save
+engineering time, but none of them is a prerequisite, and the subgroup comparisons at the
+core of the audit are ordinary statistics your analysts can already do.
 
 ### Starter Project 2: Clinical AI Ethics and Accountability Policy
 
@@ -352,8 +425,10 @@ and no document to point to when a patient asks why an AI tool was used in their
 
 **How to execute:** Draft using the NIST AI RMF as the governance scaffold and the
 FUTURE-AI principles as the technical requirements framework. Review with legal (liability
-and IP), compliance (Section 1557 and applicable state AI law, which for Colorado
-institutions means SB 26-189 from January 2027), clinical leadership (standard
+and IP), compliance (Section 1557, applicable state AI law, which for Colorado institutions
+means SB 26-189 from January 2027 [@ColoradoSB26189] and HB 26-1139 from the same date if
+the institution touches utilization review [@ColoradoHB26-1139], and the rest of
+@sec-regulatory), clinical leadership (standard
 of care implications), and patient representatives (consent and disclosure language).
 Publish as institutional policy with a defined review cycle aligned with the annual
 AI governance report.
