@@ -8,6 +8,8 @@ without the physician touching a keyboard. In each setting, the governing questi
 longer whether to deploy AI but how to deploy it in a way that extends rather than erodes
 the quality, equity, and safety of care.
 
+By 2026, three-quarters of U.S. health systems report using at least one AI application, up from 59 percent the year before [@FierceHealthcare2026-adoption]. Cleveland Clinic's 2025 expanded rollout of Bayesian Health's sepsis detection platform shows what that adoption looks like when the validation work comes first. The underlying system was studied prospectively across five hospitals and 590,736 monitored patients, where it caught 82 percent of sepsis cases, drew a provider response to 89 percent of its alerts, and cut median time to first antibiotic order by 1.85 hours when a provider confirmed the alert within three hours [@Adams2022-trews; @Henry2022-trews-adoption]. Cleveland Clinic then ran its own pilot at Fairview Hospital before expanding, reporting a 46 percent increase in identified cases and a ten-fold drop in false alerts across more than 3,330 patients [@ClevelandClinic2025-sepsis]. The sequence matters more than any single number: published multi-site evidence first, local validation second, expansion third. The more common pattern is the reverse, with tools deployed on vendor-reported accuracy that does not hold at the deploying institution and governance questions deferred until after the gap shows up in patient outcomes.
+
 This chapter builds on the foundational principles proposed by Badal and colleagues
 [-@Badal2023-bt] and extends them into the operational and regulatory terrain that now
 confronts AMC clinical and informatics leaders. The framework offers an eight-principle
@@ -206,7 +208,7 @@ govern it, and where do institutions most commonly stumble?
 
 ### Ambient Documentation and the Documentation Burden
 
-The most widely deployed category of clinical AI at AMCs is now ambient documentation —
+Physicians spend roughly a third of a 57.8-hour work week on indirect patient care and administrative tasks, and 22.5 percent of them log more than eight hours a week in the EHR outside the normal workday [@AMA2025-documentation]. The most widely deployed category of clinical AI at AMCs is now ambient documentation —
 AI systems that listen to the clinical encounter, generate a draft clinical note, and return
 it to the clinician for review and attestation. [Abridge](https://www.abridge.com), [Microsoft DAX](https://www.nuance.com/healthcare/ambient-clinical-intelligence.html) (Dragon Ambient
 eXperience), [Nabla](https://www.nabla.com), and [Suki](https://www.suki.ai) are the leading commercial systems; [Epic](https://www.epic.com) has introduced
