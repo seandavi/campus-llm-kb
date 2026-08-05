@@ -154,7 +154,12 @@ enforcement while the preliminary injunction motion was briefed [@XAI2026-weiser
 a half weeks later the legislature made the litigation moot. Senate Bill 26-189, signed
 May 14, 2026, repealed the Colorado AI Act and reenacted it as a considerably narrower
 statute governing "automated decision-making technology" that materially influences a
-consequential decision [@ColoradoSB26189].
+consequential decision [@ColoradoSB26189]. Health-care services remain on the enumerated
+list of consequential decisions, alongside education, employment, housing, financial and
+lending services, insurance, and essential government services, and the duties attach to any
+deployer rather than only to payers. An AMC using an automated system that materially
+influences a patient's access to or eligibility for care is therefore covered as a provider,
+not merely as a plan operator.
 
 What survives matters as much as what does not. The new statute drops the three obligations
 that made the original demanding: the risk management program, the impact assessment, and
