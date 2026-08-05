@@ -231,7 +231,7 @@ not only whether those tools carry demographic bias, which to some degree they a
 certainly do, but whether the human review attached to them is substantive enough to catch
 and override the bias when it appears.
 
-## State Privacy Laws and the Post-HIPAA Landscape
+## State Privacy Laws Beyond HIPAA
 
 HIPAA remains the dominant privacy framework for clinical AI, but it is no longer
 sufficient as a complete governance guide. A patchwork of state laws has emerged in the
