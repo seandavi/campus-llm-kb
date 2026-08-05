@@ -264,10 +264,10 @@ for sound clinical AI governance.
 |--------|-----------------|----------------|--------------------|
 | ONC | HTI-1: Algorithm Transparency | January 2025 | EHR vendors must surface algorithm source attributes (training data, performance, limitations) for Decision Support Interventions within the clinical workflow |
 | FDA | Predetermined Change Control Plan Guidance | December 2024 | AI-enabled medical devices may update within pre-specified bounds without new 510(k) or PMA submissions |
-| CMS | Medicare Advantage 2025 Final Rule | January 2025 | AI outputs may not serve as the sole basis for coverage denials; human review is required |
-| HHS OCR | Section 1557 Final Rule | May 2025 | Covered entities may not apply discriminatory algorithms in patient care decisions |
+| CMS | Medicare Advantage regulations (42 CFR 422.101(c)), applied to AI by HPMS memorandum | February 2024 | Medical necessity determinations must rest on the individual patient's circumstances; an algorithm working from a larger data set cannot be the sole basis for a coverage denial |
+| HHS OCR | Section 1557 Final Rule | July 2024 (algorithm provisions: compliance by May 2025) | Covered entities may not apply discriminatory algorithms in patient care decisions |
 
-: Federal regulatory actions affecting clinical AI deployment at AMCs, 2024–2025 [@ONC2024-hti1; @FDA2024-pccp; @CMS2024-maai; @HHS2024-1557] {#tbl-clinical-regulatory-landscape}
+: Federal regulatory actions affecting clinical AI deployment at AMCs, 2024–2025 [@ONC2024-hti1; @FDA2024-pccp; @CFR422101; @CMS2024-mafaq; @HHS2024-1557] {#tbl-clinical-regulatory-landscape}
 
 The ONC HTI-1 rule is the most operationally significant for clinical informatics teams. It
 defines a new regulatory category — Decision Support Interventions — that includes EHR-based
@@ -289,11 +289,16 @@ developed an internally deployed predictive model and intends to update it over 
 assess whether the tool qualifies as an FDA-regulated Software as a Medical Device (SaMD)
 and, if so, whether a PCCP would be the appropriate regulatory pathway [@FDA2024-pccp].
 
-The CMS Medicare Advantage rule responds to documented cases of health insurers using
-AI-driven prior authorization systems to systematically deny claims with minimal human review.
-For AMC care management teams working with Medicare Advantage plans, this rule creates
-leverage: a plan that cites AI output as the basis for a clinical denial without demonstrable
-human review is operating out of compliance with CMS requirements [@CMS2024-maai].
+CMS's application of the Medicare Advantage regulations to AI responds to documented cases
+of health insurers using AI-driven prior authorization systems to systematically deny claims
+with minimal human review. The regulation, 42 CFR 422.101(c), requires medical necessity
+determinations to rest on the individual patient's circumstances, and CMS's February 2024
+memorandum states plainly that an algorithm determining coverage from a larger data set
+rather than the patient's medical history, the treating physician's recommendations, and the
+clinical notes does not comply. For AMC care management teams working with Medicare Advantage
+plans, this creates leverage: a plan that cites AI output as the basis for a clinical denial
+without demonstrable individualized review is operating out of compliance with CMS
+requirements [@CFR422101; @CMS2024-mafaq].
 
 ### Governing Adaptive AI: FDA SaMD and the PCCP Framework
 

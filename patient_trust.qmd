@@ -219,21 +219,30 @@ California patient population must comply. Legal teams at national AMCs should t
 California standard as the floor for their disclosure practices regardless of the states
 in which they primarily operate.
 
-Colorado Senate Bill 24-205, effective June 2026, goes further: it requires that any
-entity using AI in a "consequential decision" about health care provide a "pre-decision
-notice" that explains the purpose of the AI, the nature of the consequential decision, and
-how to appeal or opt out [@ColoradoSB24205]. The Colorado law covers a broader range of AI
-applications than California's, including predictive scoring and automated triage, and it
-places the disclosure obligation on the institution using the AI, not just on the party
-that communicates the output to the patient.
+Colorado goes further, though it took two attempts. Senate Bill 24-205, which would have
+required a pre-decision notice for any AI used in a consequential health care decision,
+was stayed by a federal court and repealed before it ever took effect. Its replacement,
+the Automated Decision-Making Technology Act, keeps the disclosure architecture: deployers
+must give clear and conspicuous notice at the point of interaction with a covered system,
+provide a plain-language explanation of the system's role within thirty days of a
+consequential decision that produces an adverse outcome, and offer human review, with
+health care services among the enumerated consequential-decision domains
+(§6-1-1701(6)(f)) and deployer duties phasing in through January 1, 2027
+[@ColoradoSB26189]. The Colorado law covers a broader range of AI applications than
+California's, including predictive scoring and automated triage, and it places the
+disclosure obligation on the institution deploying the AI, not just on the party that
+communicates the output to the patient.
 
-The FTC's Operation AI Comply enforcement action in 2024 targeted companies making
-deceptive claims about AI capabilities in healthcare contexts — claiming human-level
-accuracy for tools that had not been validated, implying physician oversight for tools
-that had none [@FTC2024-operationai]. The enforcement record makes clear that the FTC
-treats healthcare AI interfaces as covered by existing consumer protection law, and that
-institutions should expect regulatory attention to the gap between what they claim about
-AI tools and what the tools actually do.
+The FTC's Operation AI Comply sweep in September 2024 established that AI capability
+claims are subject to ordinary consumer protection law, though none of its named
+respondents was a health care company [@FTC2024-operationai]. The on-point health care
+precedent came from a state enforcer in the same month: the Texas Attorney General's
+settlement with Pieces Technologies over accuracy claims the company could not
+substantiate for the generative AI summarization tools it had deployed in Texas hospitals
+[@TexasAG2024-pieces]. The enforcement record makes clear that regulators treat health
+care AI interfaces as covered by existing consumer protection law, and that institutions
+should expect attention to the gap between what they claim about AI tools and what the
+tools actually do.
 
 ## Trust Recovery After Adverse AI Events
 
