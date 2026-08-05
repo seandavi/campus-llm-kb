@@ -8,6 +8,8 @@ without the physician touching a keyboard. In each setting, the governing questi
 longer whether to deploy AI but how to deploy it in a way that extends rather than erodes
 the quality, equity, and safety of care.
 
+By 2026, three-quarters of U.S. health systems report using at least one AI application, up from 59 percent the year before [@FierceHealthcare2026-adoption]. Cleveland Clinic's 2025 expanded rollout of Bayesian Health's sepsis detection platform shows what that adoption looks like when the validation work comes first. The underlying system was studied prospectively across five hospitals and 590,736 monitored patients, where it caught 82 percent of sepsis cases, drew a provider response to 89 percent of its alerts, and cut median time to first antibiotic order by 1.85 hours when a provider confirmed the alert within three hours [@Adams2022-trews; @Henry2022-trews-adoption]. Cleveland Clinic then ran its own pilot at Fairview Hospital before expanding, reporting a 46 percent increase in identified cases and a ten-fold drop in false alerts across more than 3,330 patients [@ClevelandClinic2025-sepsis]. The sequence matters more than any single number: published multi-site evidence first, local validation second, expansion third. The more common pattern is the reverse, with tools deployed on vendor-reported accuracy that does not hold at the deploying institution and governance questions deferred until after the gap shows up in patient outcomes.
+
 This chapter builds on the foundational principles proposed by Badal and colleagues
 [-@Badal2023-bt] and extends them into the operational and regulatory terrain that now
 confronts AMC clinical and informatics leaders. The framework offers an eight-principle
@@ -206,7 +208,7 @@ govern it, and where do institutions most commonly stumble?
 
 ### Ambient Documentation and the Documentation Burden
 
-The most widely deployed category of clinical AI at AMCs is now ambient documentation —
+Physicians spend roughly a third of a 57.8-hour work week on indirect patient care and administrative tasks, and 22.5 percent of them log more than eight hours a week in the EHR outside the normal workday [@AMA2025-documentation]. The most widely deployed category of clinical AI at AMCs is now ambient documentation —
 AI systems that listen to the clinical encounter, generate a draft clinical note, and return
 it to the clinician for review and attestation. [Abridge](https://www.abridge.com), [Microsoft DAX](https://www.nuance.com/healthcare/ambient-clinical-intelligence.html) (Dragon Ambient
 eXperience), [Nabla](https://www.nabla.com), and [Suki](https://www.suki.ai) are the leading commercial systems; [Epic](https://www.epic.com) has introduced
@@ -262,10 +264,10 @@ for sound clinical AI governance.
 |--------|-----------------|----------------|--------------------|
 | ONC | HTI-1: Algorithm Transparency | January 2025 | EHR vendors must surface algorithm source attributes (training data, performance, limitations) for Decision Support Interventions within the clinical workflow |
 | FDA | Predetermined Change Control Plan Guidance | December 2024 | AI-enabled medical devices may update within pre-specified bounds without new 510(k) or PMA submissions |
-| CMS | Medicare Advantage 2025 Final Rule | January 2025 | AI outputs may not serve as the sole basis for coverage denials; human review is required |
-| HHS OCR | Section 1557 Final Rule | May 2025 | Covered entities may not apply discriminatory algorithms in patient care decisions |
+| CMS | Medicare Advantage regulations (42 CFR 422.101(c)), applied to AI by HPMS memorandum | February 2024 | Medical necessity determinations must rest on the individual patient's circumstances; an algorithm working from a larger data set cannot be the sole basis for a coverage denial |
+| HHS OCR | Section 1557 Final Rule | July 2024 (algorithm provisions: compliance by May 2025) | Covered entities may not apply discriminatory algorithms in patient care decisions |
 
-: Federal regulatory actions affecting clinical AI deployment at AMCs, 2024–2025 [@ONC2024-hti1; @FDA2024-pccp; @CMS2024-maai; @HHS2024-1557] {#tbl-clinical-regulatory-landscape}
+: Federal regulatory actions affecting clinical AI deployment at AMCs, 2024–2025 [@ONC2024-hti1; @FDA2024-pccp; @CFR422101; @CMS2024-mafaq; @HHS2024-1557] {#tbl-clinical-regulatory-landscape}
 
 The ONC HTI-1 rule is the most operationally significant for clinical informatics teams. It
 defines a new regulatory category — Decision Support Interventions — that includes EHR-based
@@ -287,11 +289,16 @@ developed an internally deployed predictive model and intends to update it over 
 assess whether the tool qualifies as an FDA-regulated Software as a Medical Device (SaMD)
 and, if so, whether a PCCP would be the appropriate regulatory pathway [@FDA2024-pccp].
 
-The CMS Medicare Advantage rule responds to documented cases of health insurers using
-AI-driven prior authorization systems to systematically deny claims with minimal human review.
-For AMC care management teams working with Medicare Advantage plans, this rule creates
-leverage: a plan that cites AI output as the basis for a clinical denial without demonstrable
-human review is operating out of compliance with CMS requirements [@CMS2024-maai].
+CMS's application of the Medicare Advantage regulations to AI responds to documented cases
+of health insurers using AI-driven prior authorization systems to systematically deny claims
+with minimal human review. The regulation, 42 CFR 422.101(c), requires medical necessity
+determinations to rest on the individual patient's circumstances, and CMS's February 2024
+memorandum states plainly that an algorithm determining coverage from a larger data set
+rather than the patient's medical history, the treating physician's recommendations, and the
+clinical notes does not comply. For AMC care management teams working with Medicare Advantage
+plans, this creates leverage: a plan that cites AI output as the basis for a clinical denial
+without demonstrable individualized review is operating out of compliance with CMS
+requirements [@CFR422101; @CMS2024-mafaq].
 
 ### Governing Adaptive AI: FDA SaMD and the PCCP Framework
 
@@ -314,8 +321,10 @@ The practical governance recommendation is direct: any clinical AI tool that inf
 treatment decision — as opposed to a purely administrative one — should be assessed against
 the FDA SaMD definition before deployment, and the assessment should be documented. Tools
 that qualify should be cleared through the appropriate regulatory pathway, structured to meet
-the clinical decision support exemption criteria, or restricted to research use until
-regulatory status is resolved [@FDA2024-pccp].
+the clinical decision support exemption criteria — reassessed against FDA's January 2026
+revision of the CDS guidance, which widened the exemption for single-recommendation
+software, so assessments made under the 2022 guidance are worth redoing [@FDA2026-cds] —
+or restricted to research use until regulatory status is resolved [@FDA2024-pccp].
 
 ```{mermaid}
 %%| label: fig-clinical-ai-lifecycle

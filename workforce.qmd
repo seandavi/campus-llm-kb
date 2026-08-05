@@ -60,7 +60,20 @@ the people who build and deploy AI tools, how to evaluate vendor claims, how to 
 accountability across the institution, and how to recognize when an AI governance failure
 is occurring before it becomes a patient safety event.
 
-## National Competency Frameworks
+The four tiers are a taxonomy of who — they classify people by their relationship to AI
+tools. They do not yet say what a person whose AI use enters the scientific record must
+know. A bench or clinical investigator using AI in the conduct of research is, by the
+definitions above, a consumer, and consumer-tier literacy as defined here (know what the
+tool does, know its limits, document your use) is not sufficient for someone whose
+AI-assisted literature synthesis, analysis code, or drafting will be published under
+their name and cited by others. The research-specific competencies that fill this gap —
+citation verification, reporting of model versions and parameters, prompt-sensitivity
+testing, disclosure — are developed in the [Research Domain chapter](#sec-research-training),
+which also documents that the national competency frameworks in @tbl-competency-frameworks
+stop at the clinical workforce and do not reach PhD students, postdoctoral fellows, or the
+faculty who supervise them. Those supervisors are the same faculty this chapter's
+development programs must reach, and a workforce program that trains them for clinical AI
+literacy but not research supervision has covered only half of their teaching role.
 
 The [AAMC](https://www.aamc.org) published national AI competency standards for medical education in 2024, defining
 what medical students and residents need to know about AI foundational concepts, ethical
@@ -69,23 +82,26 @@ These competencies are organized across the learning continuum — from pre-clin
 through practicing faculty — and are the closest thing to a national standard that medical
 education currently has.
 
-The [AMIA](https://www.amia.org) Informatics Workforce Roadmap defines competencies for clinical informatics
-specialists, extending the consumer and translator tiers into the technical domains
-required for production AI deployment: prompt engineering, retrieval-augmented generation
-architecture, model drift management, and regulatory compliance for AI-enabled devices
-[@AMIA2024-competencies].
+[AMIA](https://www.amia.org)'s competency work arrives in two layers, both peer-reviewed. The 2017 core
+competencies for applied health informatics, an AMIA Board white paper, define ten
+foundational domains for graduate informatics training [@Valenta2018-amiacomp]. AMIA's
+artificial intelligence principles then name the properties an informatics workforce must
+be able to evaluate in a deployed system — explainability, interpretability, fairness,
+dependability, auditability, and active knowledge management — extending the consumer and
+translator tiers toward what production AI deployment actually requires
+[@AMIA2022-principles].
 
 The WHO ethics and governance guidance specifically addresses workforce reskilling as a
 prerequisite for responsible AI in healthcare, framing AI literacy as a component of
-the human oversight obligation [@WHO2024-ai-ethics]. The [ANA](https://www.nursingworld.org) has published a position
+the human oversight obligation [@WHO2021-ai-ethics]. The [ANA](https://www.nursingworld.org) has published a position
 statement on ethical AI in nursing practice that updates the nursing Code of Ethics to
 include professional accountability for AI-influenced care decisions.
 
 | Framework | Organization | Target Audience | Core Emphasis |
 |-----------|--------------|-----------------|---------------|
 | National AI Competencies | AAMC (2024) | Medical students, residents, faculty | Foundational literacy, ethics, collaborative practice |
-| Informatics Workforce Roadmap | AMIA (2024) | Clinical informatics specialists | Technical deployment, governance, regulatory compliance |
-| AI Competencies for Health Professionals | AMIA (2024) | All clinical staff | Critical appraisal, safe use, documentation |
+| Core Competencies for Applied Health Informatics | AMIA (2018) | Clinical informatics specialists | Foundational domains for graduate informatics training |
+| Artificial Intelligence Principles | AMIA (2022) | Health informatics professionals | Explainability, dependability, auditability, knowledge management |
 | Ethics and Governance of AI for Health | WHO (2024) | Healthcare institutions | Human oversight, transparency, reskilling |
 | Ethical Use of AI in Nursing Practice | ANA (2025) | Nurses and APPs | Professional accountability, patient safety, documentation |
 
@@ -187,27 +203,37 @@ problem is not primarily about bad actors. It is about people solving real workf
 problems with available tools in the absence of a sanctioned alternative that works as
 well.
 
-## The Accreditor Mandate: 2025 and Beyond
+## What the Accreditors Have and Have Not Done
 
-For the first five years of the generative AI era, AI literacy in healthcare education was
-largely voluntary — something institutions could pursue if they believed in it, skip if
-they were busy. That has changed. The 2025 to 2026 accreditation cycle has moved AI
-literacy from an optional enrichment to a formal program requirement in ways that are
-specific enough to enforce.
+It is widely believed inside AMCs that the accreditors have already acted on AI, and that
+belief is doing damage. It produces policies written against imaginary standards, and it
+produces the opposite error just as often, a program that waits for the site visit to tell
+it what to do. The accurate picture is more useful, and it puts the responsibility where it
+actually sits.
 
-The [ACGME](https://www.acgme.org)'s July 2025 Common Program Requirements include new language on human-AI
-teamwork and require programs to have institutional policies on the use of generative AI
-for academic work [@ACGME2025-CPR]. The specificity is meaningful: it is not "programs
-should be aware of AI" but "programs must have policies." Programs without documented AI
-use governance are out of compliance with the new requirements starting with the 2025 to
-2026 accreditation year.
+The [ACGME](https://www.acgme.org) Common Program Requirements contain no AI language. A full-text
+search of the residency requirements effective July 1, 2026, including the FAQs
+incorporated into them, returns no occurrence of "artificial intelligence," "machine
+learning," or "AI," and the July 2025 version they replaced returns none either
+[@ACGME2025-CPR]. There is no human-AI teamwork provision, no requirement that programs
+maintain an AI use policy, and consequently no program that is out of compliance for
+lacking one. A major revision of the Common Program Requirements is underway, with
+stakeholder surveys out to the community, so this may change. It has not changed yet.
 
-The [LCME](https://lcme.org)'s current standards for medical school accreditation interpret Standards 7.6
-and 8.2 — covering bias and self-directed learning — to require critical appraisal of AI
-outputs as a competency that medical students must demonstrate. The AAMC's 2025 AI
-Competencies Across the Learning Continuum, developed through a formal Delphi process,
-provides the national standard for what those competencies should include across
-undergraduate, graduate, and continuing medical education [@AAMC2025-competencies].
+The [LCME](https://lcme.org) standards are silent as well. Nothing in the current *Functions
+and Structure of a Medical School* mentions AI [@LCME2026-functions]. Two standards are
+close enough to bear the weight if a school chooses to read them that way: Standard 6.3
+requires self-directed learning experiences that include appraisal of the credibility of
+information sources, and Standard 7.6 requires that students learn to recognize and
+address bias in themselves, in others, and in the health care delivery process. Reading
+those to cover the appraisal of AI output is a reasonable interpretation and a good basis
+for local curriculum policy. Presenting it to faculty as an LCME requirement is not, and
+the credibility cost of being caught doing so is higher than whatever the shortcut buys.
+
+The AAMC's AI Competencies Across the Learning Continuum is the closest thing to a
+national reference, and it is still a draft. The modified Delphi process and focus groups
+are in the feedback-gathering phase, with the final report targeted for fall 2026
+[@AAMC2025-competencies].
 
 For nursing programs, the American Nurses Association's 2025 update to the Code of Ethics
 explicitly addresses machine learning: Provision 7.5 states that AI is integral to nursing
@@ -221,11 +247,14 @@ CME programs that use AI-generated content or AI-assisted learning tools [@ACCME
 For AMC CME offices that have adopted AI for content development, this is an immediate
 operational compliance issue, not a future planning item.
 
-The practical implication is that workforce development for AI is no longer a discretionary
-investment. Programs that do not have documented, accreditor-compliant AI policies and
-competency-based training in place are at accreditation risk. The AMC that treats this as
-an IT initiative rather than an academic and clinical leadership priority will discover the
-error during its next site visit.
+So the accreditation picture is uneven. Continuing education is already governed. Graduate
+and undergraduate medical education are not, and will not be until the ACGME major
+revision and the AAMC final report land. The practical implication is not the comfortable
+one that a deadline is forcing everyone's hand. It is that for the largest part of the
+training pipeline there is no deadline, no site visit finding to fear, and no external
+authority that will make this happen on the institution's behalf. Waiting for the mandate
+is a decision to arrive late with nothing built, and it is a decision the AMC will have
+made without ever discussing it.
 
 ## Building a Living Curriculum
 

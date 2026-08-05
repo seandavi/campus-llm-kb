@@ -21,8 +21,9 @@ in an AMC has both domain-specific and cross-domain dimensions, and that good go
 requires handling each dimension appropriately. The domains are organized vertically,
 reflecting their semi-independence. The workstreams are organized horizontally, reflecting
 the shared capabilities and governance functions that cut across all domains. The AI
-Steering Committee sits above both, providing the portfolio management and accountability
-function that neither the domains nor the workstreams can provide alone.
+Steering Committee (AISC) sits above both, providing the portfolio management and
+accountability function that neither the domains nor the workstreams can provide alone.
+That acronym recurs throughout the rest of the book, and it always means this body.
 
 ## The Four Domains
 
@@ -102,6 +103,17 @@ committees) that makes deployment sustainable? The project management workstream
 described in @sec-pm-support, is the connective tissue that keeps everything else from
 being a set of independent good intentions.
 
+A note on the count, since the book's structure appears to contradict it. Evaluation and
+monitoring gets its own chapter, @sec-eval-monitoring, which makes six chapters under a
+five-workstream framework. That is deliberate. Evaluation and monitoring is governed as part
+of project management and support, because the same people who run intake are the people who
+have to decide when a tool comes out of production, and splitting those decisions across two
+owners is how models end up running for years past their useful life. It earns a separate
+chapter because the technical depth involved, drift detection, subgroup performance
+monitoring, and the metric architecture behind both, does not fit inside a chapter that also
+has to cover portfolio intake. Treat it as a workstream capability with a chapter of its own,
+not as a sixth column in the matrix.
+
 ## Why This Structure
 
 The value of the matrix structure is not that it is theoretically elegant. It is that it
@@ -125,6 +137,16 @@ frameworks, four redundant technical stacks, and four sets of training content t
 conflict with each other. The workstreams are shared services not because central control
 is desirable in principle but because fragmentation in these specific areas is costly
 in practice.
+
+@fig-framework shows the two dimensions together. The green ovals are deliberately
+unlabeled, because what belongs in any given cell is institution-specific and filling them
+in is the first real exercise. The clinical row crossed with data access, to take one, holds
+the data use agreements governing which clinical data may train or evaluate a model, the
+de-identification standard applied before it leaves the clinical environment, and the record
+of who approved both. Your institution may put those work products somewhere else entirely.
+The claim of the matrix is not that these are the right twenty cells; it is that every cell
+has an owner, and that an institution which cannot name the owner has found a gap rather
+than an exception.
 
 ```{dot}
 //| label: fig-framework
@@ -173,6 +195,30 @@ graph
 	rank=same {OWN -- A5 -- B5 -- C5 -- D5 }
 }
 ```
+
+The hardest cases are the tools that land in several domains at once, and a framework built
+on domain ownership has to say what happens to them. Ambient documentation is the standing
+example: it is a clinical tool subject to clinical safety review, a revenue cycle tool
+because the notes it produces drive coding, and an education problem because residents who
+never draft a note may never learn to think through one [@Tierney2024-scribe]. The routing
+rule I would use is locus of harm. Assign primary ownership to the domain where a failure
+does the most damage, which for ambient documentation is clinical; name the other domains as
+consulting parties with standing to raise objections and no power to block unilaterally; and
+send the tie to the AISC, which exists in part to break exactly this kind of tie. What
+matters is less which rule you adopt than that you adopt one before the first contested tool
+arrives, because the alternative is a deployment that stalls for a year while three
+committees each wait for one of the others to claim it.
+
+It is worth saying how this relates to the frameworks an AMC governance lead has probably
+already read. The NIST AI Risk Management Framework [@NIST2023-airm] describes the process
+functions a mature program performs, but it is organization-agnostic by design and does not
+tell an institution who decides. ISO/IEC 42001 [@ISO2023-42001] certifies that a management
+system exists and is being followed, which is a different question again from whether the
+right people are in the room. Duke's ABCDS program [@Bedoya2022-abcds] is the closest
+peer-institution instance of local oversight actually working, and it operates chiefly in
+the clinical domain. This framework is not an alternative to any of them. It is the
+allocation layer they leave unspecified: a way of deciding which body owns which decision,
+into which the NIST functions can then be installed as the process each body runs.
 
 The AISC is what makes the matrix function as a governance program rather than a
 conceptual diagram. Without the AISC — a body with actual authority over AI deployment
