@@ -205,28 +205,38 @@ sufficient as a complete governance guide. A patchwork of state laws has emerged
 2022 to 2025 period that creates obligations for AI use at AMCs that operate in, or serve
 patients from, specific states.
 
-Washington's My Health MY Data Act, effective 2023, regulates consumer health data that
-falls outside HIPAA's scope — data collected by apps, wellness tools, and AI systems that
-are not covered entities [@WA2023-MHMDA]. It requires a separate opt-in consent for
-collection and sharing, imposes restrictions on data retention, and bans geofencing around
-healthcare facilities, which has implications for location-based AI tools and mobile
-health applications. Because the Act's definition of "consumer health data" is broad
+Washington's My Health MY Data Act regulates consumer health data that falls outside
+HIPAA's scope, meaning data collected by apps, wellness tools, and AI systems whose
+operators are not covered entities [@WA2023-MHMDA]. It was signed in 2023, but the dates
+that matter are staggered: the geofencing prohibition took effect in July 2023, and the main
+obligations on most regulated entities on March 31, 2024. The Act requires separate opt-in
+consent for collection and for sharing, gives consumers a right to withdraw consent and to
+demand deletion, and bans geofencing around healthcare facilities, which reaches
+location-based AI tools and mobile health applications. Because the Act's definition of "consumer health data" is broad
 enough to capture AI-generated health inferences, an AMC deploying patient-facing AI
 tools that touch Washington residents needs to analyze the Act's requirements specifically.
 
-Colorado HB 24-1139, signed in 2024, prohibits health insurers from using AI as the
-sole basis for an adverse medical determination, requiring that all AI-generated denial
-recommendations receive substantive review by a qualified clinician [@ColoradoHB24-1139].
-The bill explicitly addresses the pattern documented in the Senate Medicare Advantage
-investigation. For AMCs that operate health plans or manage care programs with AI-assisted
-utilization management, this is a direct compliance obligation in Colorado.
+Colorado HB 26-1139, signed on June 2, 2026 and effective January 1, 2027, bars entities
+performing utilization review from denying coverage on medical necessity grounds "solely on
+the output of an AI system without human review by a licensed clinician or physician or
+other competent regulated professional" [@ColoradoHB26-1139]. The statute also requires that
+any AI used in utilization review base its determinations on the patient's own clinical
+history rather than on group data alone, that it comply with anti-discrimination law, and
+that it be reviewed periodically for accuracy. Note the bill number carefully: HB 24-1139,
+from the 2024 session, is an unrelated workers' compensation measure. For AMCs that operate
+health plans or run care management programs with AI-assisted utilization management, the
+2026 statute is a direct Colorado compliance obligation, and the January 2027 effective date
+means the work of documenting where AI touches utilization review needs to happen now.
 
-Illinois BIPA's healthcare exemption — clarified in a 2023 Illinois Supreme Court ruling
-— exempts biometric data used for healthcare treatment, payment, or operations from the
-Act's consent and notice requirements. This is relevant for AMCs using ambient audio,
-retinal scans, or other biometric identification in clinical workflows. The exemption is
-narrower than it appears; biometric data used for security access, time and attendance, or
-administrative identification may not fall within the healthcare exemption.
+Illinois BIPA's health care exemption is broader than plaintiffs had argued and narrower
+than institutions sometimes assume. In *Mosby v. Ingalls Memorial Hospital*, decided
+November 30, 2023, the Illinois Supreme Court held that the exemption is not limited to
+patients' biometric information, and covers nurses' fingerprint scans used to access
+medication and supply cabinets in the course of patient treatment [@Mosby2023-bipa]. That
+matters for AMCs using ambient audio, retinal scans, or other biometric identification in
+clinical workflows. What *Mosby* did not do is exempt biometric data collected for security
+access, time and attendance, or administrative identification, and those uses remain exposed
+to the Act's consent and notice requirements.
 
 The broader pattern is that HIPAA compliance is a floor, not a ceiling. Each state where
 an AMC operates patients, employs staff, or deploys patient-facing digital tools may impose
@@ -378,7 +388,9 @@ and no document to point to when a patient asks why an AI tool was used in their
 
 **How to execute:** Draft using the NIST AI RMF as the governance scaffold and the
 FUTURE-AI principles as the technical requirements framework. Review with legal (liability
-and IP), compliance (Section 1557 and Colorado SB 24-205), clinical leadership (standard
+and IP), compliance (Section 1557, Colorado HB 26-1139 if the institution touches
+utilization review [@ColoradoHB26-1139], and whichever state AI statutes apply per
+@sec-regulatory), clinical leadership (standard
 of care implications), and patient representatives (consent and disclosure language).
 Publish as institutional policy with a defined review cycle aligned with the annual
 AI governance report.
