@@ -24,6 +24,11 @@ jobs:
       - name: Install Chromium (Mermaid diagrams in PDF)
         run: quarto install chromium --no-prompt
 
+      - name: Install quartobot (citation pre-render hook)
+        run: |
+          curl -LsSf https://astral.sh/uv/install.sh | sh
+          uv tool install quartobot
+
       - name: Render (HTML + PDF + EPUB)
         run: quarto render
 
