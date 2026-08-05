@@ -89,7 +89,7 @@ in a way that the values statement alone never could.
 
 The transparency principle extends to patients. The [WHO](https://www.who.int) ethics guidance on AI for health
 recommends meaningful disclosure to patients about which AI tools are used in their care
-and how those tools affect clinical decisions [@WHO2024-ai-ethics]. California AB 3030
+and how those tools affect clinical decisions [@WHO2021-ai-ethics]. California AB 3030
 now requires disclosure on AI-generated patient communications. The operational mechanism
 here is the consent architecture described in @sec-ethics: an institutional policy on
 when and how patients are informed about clinical AI use, not a case-by-case determination

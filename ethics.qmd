@@ -114,9 +114,13 @@ for ethical deployment [@WHO2021-ai-ethics].
 
 The U.S. Copyright Office and the U.S. Patent and Trademark Office have each taken the
 position that AI cannot itself be an author or an inventor, and that protection requires
-human creative or inventive contribution. The line between assisted and generated work is
-still being drawn, and an institution should track the guidance rather than rely on this
-paragraph. For AMCs, the practical IP implications follow regardless of where that line
+human creative or inventive contribution. The Copyright Office's January 2025
+copyrightability report holds that material whose expressive elements are wholly
+AI-generated is not protectable, while AI-assisted work remains protectable to the extent
+of the human contribution [@USCO2025-copyrightability]; on the patent side, the Federal
+Circuit held in *Thaler v. Vidal* that an inventor must be a natural person
+[@Thaler2022-vidal]. The line between assisted and generated work is still being drawn,
+and an institution should track the guidance rather than rely on this paragraph. For AMCs, the practical IP implications follow regardless of where that line
 finally lands.
 
 Research outputs that are substantially AI-generated — whether grant applications, academic

@@ -321,8 +321,10 @@ The practical governance recommendation is direct: any clinical AI tool that inf
 treatment decision — as opposed to a purely administrative one — should be assessed against
 the FDA SaMD definition before deployment, and the assessment should be documented. Tools
 that qualify should be cleared through the appropriate regulatory pathway, structured to meet
-the clinical decision support exemption criteria, or restricted to research use until
-regulatory status is resolved [@FDA2024-pccp].
+the clinical decision support exemption criteria — reassessed against FDA's January 2026
+revision of the CDS guidance, which widened the exemption for single-recommendation
+software, so assessments made under the 2022 guidance are worth redoing [@FDA2026-cds] —
+or restricted to research use until regulatory status is resolved [@FDA2024-pccp].
 
 ```{mermaid}
 %%| label: fig-clinical-ai-lifecycle

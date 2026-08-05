@@ -82,23 +82,26 @@ These competencies are organized across the learning continuum — from pre-clin
 through practicing faculty — and are the closest thing to a national standard that medical
 education currently has.
 
-The [AMIA](https://www.amia.org) Informatics Workforce Roadmap defines competencies for clinical informatics
-specialists, extending the consumer and translator tiers into the technical domains
-required for production AI deployment: prompt engineering, retrieval-augmented generation
-architecture, model drift management, and regulatory compliance for AI-enabled devices
-[@AMIA2024-competencies].
+[AMIA](https://www.amia.org)'s competency work arrives in two layers, both peer-reviewed. The 2017 core
+competencies for applied health informatics, an AMIA Board white paper, define ten
+foundational domains for graduate informatics training [@Valenta2018-amiacomp]. AMIA's
+artificial intelligence principles then name the properties an informatics workforce must
+be able to evaluate in a deployed system — explainability, interpretability, fairness,
+dependability, auditability, and active knowledge management — extending the consumer and
+translator tiers toward what production AI deployment actually requires
+[@AMIA2022-principles].
 
 The WHO ethics and governance guidance specifically addresses workforce reskilling as a
 prerequisite for responsible AI in healthcare, framing AI literacy as a component of
-the human oversight obligation [@WHO2024-ai-ethics]. The [ANA](https://www.nursingworld.org) has published a position
+the human oversight obligation [@WHO2021-ai-ethics]. The [ANA](https://www.nursingworld.org) has published a position
 statement on ethical AI in nursing practice that updates the nursing Code of Ethics to
 include professional accountability for AI-influenced care decisions.
 
 | Framework | Organization | Target Audience | Core Emphasis |
 |-----------|--------------|-----------------|---------------|
 | National AI Competencies | AAMC (2024) | Medical students, residents, faculty | Foundational literacy, ethics, collaborative practice |
-| Informatics Workforce Roadmap | AMIA (2024) | Clinical informatics specialists | Technical deployment, governance, regulatory compliance |
-| AI Competencies for Health Professionals | AMIA (2024) | All clinical staff | Critical appraisal, safe use, documentation |
+| Core Competencies for Applied Health Informatics | AMIA (2018) | Clinical informatics specialists | Foundational domains for graduate informatics training |
+| Artificial Intelligence Principles | AMIA (2022) | Health informatics professionals | Explainability, dependability, auditability, knowledge management |
 | Ethics and Governance of AI for Health | WHO (2024) | Healthcare institutions | Human oversight, transparency, reskilling |
 | Ethical Use of AI in Nursing Practice | ANA (2025) | Nurses and APPs | Professional accountability, patient safety, documentation |
 
