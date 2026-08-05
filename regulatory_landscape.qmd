@@ -142,6 +142,11 @@ give consumers notice of AI use in consequential decisions, and use reasonable c
 prevent algorithmic discrimination [@ColoradoSB24205]. Many institutions, this book's
 earlier draft included, built their planning around a June 30, 2026 effective date.
 
+That date was itself a retreat. The Act was originally to take effect February 1, 2026,
+and the legislature moved it to June 30 in an August 2025 special session, which is the
+first sign that the compliance regime it described was harder to stand up than it had
+looked on passage [@ColoradoSB25B004].
+
 None of it took effect. xAI sued Colorado's attorney general in April 2026 on First
 Amendment, Commerce Clause, and due process grounds; the United States moved to intervene
 on the same side; and on April 27, 2026 a magistrate judge granted a joint motion staying
@@ -169,6 +174,19 @@ not an argument for dismantling it. Impact assessments and bias auditing remain 
 institution answers the Section 1557 question, and Section 1557 has not moved. But an
 institution that justified those activities to its board solely as Colorado compliance
 should expect to be asked why it is still doing them, and should have a better answer ready.
+
+Colorado also did something narrower and more durable in the same session, and it is the
+part an AMC that operates a health plan should read first. House Bill 26-1139, signed June
+2, 2026 and effective January 1, 2027, governs AI used in utilization review by health
+insurers, pharmacy benefit managers, utilization review organizations, and managed care
+entities [@ColoradoHB26-1139]. It requires such systems to rest on the patient's medical
+history and individual clinical circumstances rather than on group data alone, and it bars
+a medical necessity denial that rests solely on AI output without review by a licensed
+clinician. Regulated entities must disclose their AI utilization review functions to state
+agencies and retain audit information demonstrating compliance. The structure will look
+familiar: it is the Medicare Advantage requirement at 42 CFR 422.101(c), generalized beyond
+Medicare Advantage and given a documentation duty and an audit trail. An AMC that runs a
+provider-sponsored plan in Colorado now faces both.
 
 California's posture is more fragmented but cumulatively significant. AB 3030, effective
 January 2025, requires disclosure on AI-generated patient communications, though it exempts
@@ -207,14 +225,15 @@ strictest standard may not survive the year.
 | FDA | Clinical Decision Support Software Guidance | Final, reissued January 2026 | Four criteria determine whether a CDS tool is a regulated device |
 | HHS OCR | Section 1557 Final Rule | In effect; §92.210 compliance date May 1, 2025 | Covered entities may not use discriminatory patient care decision-support tools |
 | CMS | 42 CFR 422.101(c), applied to AI by February 2024 memorandum | In effect | Coverage determinations must rest on the individual patient's circumstances, not on an algorithm alone |
-| Colorado | SB 24-205 (CAIA) | Repealed May 14, 2026; enforcement stayed April 27, 2026; never took effect | Superseded; see SB 26-189 |
+| Colorado | SB 24-205 (CAIA) | Repealed May 14, 2026; start date deferred to June 30, 2026 by SB 25B-004; enforcement stayed April 27, 2026; never took effect | Superseded; see SB 26-189 |
 | Colorado | SB 26-189 (ADMT) | Enacted; documentation duties and AG rulemaking begin January 1, 2027 | Notice of automated decisions, plain-language explanation of adverse outcomes, human review, three-year records |
+| Colorado | HB 26-1139 | Signed June 2, 2026; effective January 1, 2027 | AI in utilization review must rest on individual clinical circumstances; no medical necessity denial on AI output alone; disclosure and audit records |
 | California | AB 3030 | In effect since January 2025 | Disclosure on AI-generated patient communications, unless reviewed by a licensed provider |
 | EU | AI Act, Annex III high-risk systems | Deferred to December 2, 2027 | Conformity assessment, technical documentation, human oversight, database registration |
 | EU | AI Act, Annex I high-risk systems (includes regulated medical devices) | Deferred to August 2, 2028 | Same obligations, applied through existing product legislation |
 | EU | AI Act, Article 50 transparency duties | Unchanged; apply from August 2, 2026 | Disclosure that a user is interacting with an AI system; labelling of synthetic content |
 
-: Key regulatory milestones for AMC AI governance, current as of August 2026 [@ONC2024-hti1; @FDA2024-pccp; @FDA2026-cds; @HHS2024-1557; @CFR422101; @CMS2024-mafaq; @ColoradoSB24205; @ColoradoSB26189; @CalAB3030-2024; @EUAI2024; @EUOmnibus2026] {#tbl-regulatory-timeline}
+: Key regulatory milestones for AMC AI governance, current as of August 2026 [@ONC2024-hti1; @FDA2024-pccp; @FDA2026-cds; @HHS2024-1557; @CFR422101; @CMS2024-mafaq; @ColoradoSB24205; @ColoradoSB25B004; @ColoradoSB26189; @ColoradoHB26-1139; @CalAB3030-2024; @EUAI2024; @EUOmnibus2026] {#tbl-regulatory-timeline}
 
 ## Professional Sovereignty and Accreditation Standards
 
@@ -260,7 +279,7 @@ is doing most of what certification would require already.
 ## International Requirements for Global Research Partners
 
 For AMCs with international research partnerships, clinical trial enrollment in Europe,
-or data sharing with EU-based institutions, the [EU AI Act](https://artificialintelligenceact.eu/)
+or data sharing with EU-based institutions, the [EU AI Act](https://eur-lex.europa.eu/eli/reg/2024/1689/oj)
 represents a material compliance obligation, though on a later schedule than the one most
 institutional plans were built against [@EUAI2024]. Regulation (EU) 2026/1744, the Digital
 Omnibus on AI, was adopted July 8, 2026, published in the Official Journal on July 24, and
