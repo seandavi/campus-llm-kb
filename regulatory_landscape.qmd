@@ -6,10 +6,13 @@ society accreditation standards, and international requirements for any institut
 global research partnerships — each with different effective dates, different enforcement
 mechanisms, and different definitions of which AI tools they cover. The temptation is to
 treat this as a compliance problem: assemble a checklist, check each box, and move on.
-That approach will fail, because the regulatory landscape is not static. Two major federal
-rules took effect in early 2025, two more significant state laws take effect in 2026, and
-the EU AI Act's high-risk provisions come into force at the same time. Compliance today
-does not guarantee compliance in eighteen months.
+That approach will fail, because the rules do not hold still. Two major federal rules took
+effect in early 2025 and remain in force. In the same period a change of administration
+reversed the federal posture on AI oversight, Colorado enacted the country's most ambitious
+state AI statute and then repealed it before it bound anyone, and the European Union pushed
+its high-risk deadlines out by more than a year. Compliance today does not guarantee
+compliance in eighteen months, and a checklist built against any one of these instruments
+would already be out of date.
 
 The more durable approach is to treat AI governance as a risk management function that
 responds to a shifting grid rather than a fixed list. This chapter gives AMC legal, compliance,
@@ -149,9 +152,10 @@ not.
 | CMS | Medicare Advantage 2025 Rule | January 2025 | AI alone cannot be basis for coverage denial; human review required |
 | Colorado | SB 26-189 (ADMT Act) | January 2027 | Pre-use notice; plain-language explanation and human review after an adverse outcome |
 | California | AB 3030 | January 2025 | Disclosure on AI-generated patient communications |
-| EU | AI Act (high-risk provisions) | August 2026 | High-risk systems in clinical use require conformity assessment and human oversight |
+| EU | AI Act, Annex III high-risk | December 2027 | Standalone high-risk uses such as triage and employment screening require conformity assessment and human oversight |
+| EU | AI Act, Annex I high-risk | August 2028 | AI-enabled medical devices assessed through the existing device conformity route |
 
-: Key regulatory milestones for AMC AI governance, 2024–2026 [@ONC2024-hti1; @FDA2024-pccp; @HHS2024-1557; @CMS2024-maai; @ColoradoSB26189; @CalAB3030-2024; @EUAI2024] {#tbl-regulatory-timeline}
+: Key regulatory milestones for AMC AI governance, 2024–2028 [@ONC2024-hti1; @FDA2024-pccp; @HHS2024-1557; @CMS2024-maai; @ColoradoSB26189; @CalAB3030-2024; @EUAI2024; @EUOmnibus2026] {#tbl-regulatory-timeline}
 
 ## Professional Sovereignty and Accreditation Standards
 
@@ -187,18 +191,33 @@ programs are well positioned to seek ISO 42001 certification with targeted addit
 ## International Requirements for Global Research Partners
 
 For AMCs with international research partnerships, clinical trial enrollment in Europe,
-or data sharing with EU-based institutions, the [EU AI Act](https://artificialintelligenceact.eu/) represents a material compliance
-obligation. The Act's high-risk provisions — applicable from August 2026 — cover AI
-systems used in clinical decision support, medical devices, and management of critical
-infrastructure [@EUAI2024]. High-risk systems must undergo a conformity assessment before
-deployment, maintain technical documentation, implement human oversight measures, and
-register in the EU AI database.
+or data sharing with EU-based institutions, the [EU AI Act](https://eur-lex.europa.eu/eli/reg/2024/1689/oj/eng) represents a material
+compliance obligation [@EUAI2024]. High-risk systems must undergo a conformity assessment
+before deployment, maintain technical documentation, implement human oversight measures,
+and register in the EU AI database.
+
+The timing has moved, and the direction it moved in matters more than the dates themselves.
+The Act originally applied its high-risk obligations from August 2026. The Digital Omnibus
+on AI, adopted 8 July 2026 and in force since 27 July, deferred them substantially
+[@EUOmnibus2026]. Standalone high-risk systems listed in Annex III now carry obligations
+from 2 December 2027. AI that functions as a safety component of a regulated product under
+Annex I, which is the route most clinical AI actually travels, moves to 2 August 2028.
+That distinction is easy to miss and consequential. A clinical decision support tool is
+not high-risk because it supports clinical decisions; it is high-risk when it qualifies as
+a medical device under the device regulations, and it then follows the Annex I timetable
+and the existing device conformity assessment rather than a separate AI process. Annex III
+reaches AMC operations at the edges instead, through uses such as emergency triage and
+dispatch, employment screening, and access to essential services.
 
 The practical implication for AMC research operations is that any AI tool used in a
 clinical study enrolling EU subjects, or any EHR-integrated AI system at an EU affiliate,
-must be assessed against EU AI Act requirements before August 2026. AMC general counsel
-should treat this as a research contracts and technology transfer issue, not solely an
-IT compliance matter.
+needs to be classified now and assessed well before the date that applies to its route,
+which for most clinical tools is August 2028. AMC general counsel should treat this as a
+research contracts and technology transfer issue, not solely an IT compliance matter. The
+deferral is worth reading as a reprieve on paperwork rather than a reprieve on the
+underlying work. Conformity assessment depends on documentation of training data,
+performance, and post-market monitoring that takes years to assemble retroactively, and
+institutions that treat 2028 as permission to wait will be assembling it under deadline.
 
 The "Brussels Effect" — the tendency for EU regulation to become a de facto global standard
 because multinational companies find it easier to apply the highest standard uniformly —
