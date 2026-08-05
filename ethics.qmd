@@ -352,7 +352,8 @@ and no document to point to when a patient asks why an AI tool was used in their
 
 **How to execute:** Draft using the NIST AI RMF as the governance scaffold and the
 FUTURE-AI principles as the technical requirements framework. Review with legal (liability
-and IP), compliance (Section 1557 and Colorado SB 24-205), clinical leadership (standard
+and IP), compliance (Section 1557 and applicable state AI law, which for Colorado
+institutions means SB 26-189 from January 2027), clinical leadership (standard
 of care implications), and patient representatives (consent and disclosure language).
 Publish as institutional policy with a defined review cycle aligned with the annual
 AI governance report.

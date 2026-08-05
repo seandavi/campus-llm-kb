@@ -96,15 +96,30 @@ compliance standard is increasingly set by the most demanding state in which the
 
 ## The State Legislative Wave
 
-Colorado Senate Bill 24-205 — the Colorado Artificial Intelligence Act — is the most
-comprehensive U.S. state AI law currently in effect, with key provisions taking effect
-June 30, 2026 [@ColoradoSB24205]. It covers "high-risk AI systems" used in consequential
-decisions, a category that includes healthcare. Covered entities — AMCs included — must
-conduct and document annual impact assessments of their high-risk AI tools, provide
-patients a meaningful notice of AI use in consequential decisions, and establish a process
-for patients to appeal or seek correction of AI-influenced decisions. The law places the
-compliance burden on the "deployer" — the entity that uses the AI tool in its operations —
-not solely on the developer.
+Colorado is the sharpest available lesson in why a compliance checklist ages badly. Senate
+Bill 24-205, the Colorado Artificial Intelligence Act, was signed in May 2024 and was
+widely described as the most comprehensive state AI statute yet enacted [@ColoradoSB24205].
+It would have required deployers of high-risk AI in consequential decisions, health care
+among them, to conduct annual impact assessments, maintain a risk management program, give
+consumers notice of AI use, and provide a route to appeal an adverse decision. None of it
+ever took effect. The February 2026 start date was pushed to June 30, 2026 during an
+August 2025 special session [@ColoradoSB25B004], and before that date arrived the
+legislature repealed the act outright. Senate Bill 26-189, signed May 14, 2026, replaces
+it with the Automated Decision-Making Technology Act, effective January 1, 2027
+[@ColoradoSB26189].
+
+The replacement is a narrower instrument, and the direction of the change is what AMCs
+should plan against. The duty of reasonable care is gone, as are the risk management
+program and the annual impact assessment. What remains is transparency and recourse.
+Developers must supply deployers with documentation covering intended uses, categories of
+training data, and known limitations. Deployers must give clear and conspicuous notice
+before an automated system takes part in a consequential decision, and within thirty days
+of an adverse outcome must explain in plain language what the system did, what personal
+data it relied on, and how the person can seek correction or meaningful human review.
+Health care services remain a covered consequential decision, so an AMC using automated
+tools in coverage, eligibility, or access decisions is squarely in scope. The compliance
+burden still falls on the deployer, the entity that puts the tool to work, not solely on
+the developer.
 
 California's regulatory posture is more fragmented but cumulatively significant. AB 3030,
 effective January 2025, requires disclosure on AI-generated patient communications
@@ -116,10 +131,15 @@ staff recruitment [@NYCLL144].
 
 The compliance challenge for national AMCs is that these laws have different definitions
 of covered AI, different disclosure requirements, and different enforcement mechanisms.
-The recommended institutional posture is to adopt the most demanding applicable standard
-as the default — which in most cases means Colorado's annual impact assessment and
-California's patient disclosure requirements — rather than attempting to maintain
-state-specific compliance workflows.
+The recommended institutional posture is to adopt the most demanding applicable standard as
+the default, rather than attempting to maintain state-specific compliance workflows.
+Colorado's retreat complicates that rule without overturning it. An institution that built
+an impact assessment process for the 2024 act now has no Colorado mandate to point to, but
+it holds a process that already satisfies the notice and human review duties that replaced
+the mandate, and that will likely absorb whatever the next state enacts. This is the
+argument for building governance to the strictest standard in view rather than to the
+letter of one statute: the first survives the statute being repealed, and the second does
+not.
 
 | Agency / Body | Rule / Law | Effective Date | Key Provision for AMCs |
 |---------------|------------|----------------|------------------------|
@@ -127,11 +147,11 @@ state-specific compliance workflows.
 | FDA | PCCP Guidance | December 2024 | Adaptive AI-SaMD may update within pre-specified bounds without new filing |
 | HHS OCR | Section 1557 Final Rule | May 2025 | Covered entities may not use discriminatory patient care decision-support tools |
 | CMS | Medicare Advantage 2025 Rule | January 2025 | AI alone cannot be basis for coverage denial; human review required |
-| Colorado | SB 24-205 (CAIA) | June 2026 | Annual impact assessments; patient notice and appeal rights for high-risk AI |
+| Colorado | SB 26-189 (ADMT Act) | January 2027 | Pre-use notice; plain-language explanation and human review after an adverse outcome |
 | California | AB 3030 | January 2025 | Disclosure on AI-generated patient communications |
 | EU | AI Act (high-risk provisions) | August 2026 | High-risk systems in clinical use require conformity assessment and human oversight |
 
-: Key regulatory milestones for AMC AI governance, 2024–2026 [@ONC2024-hti1; @FDA2024-pccp; @HHS2024-1557; @CMS2024-maai; @ColoradoSB24205; @CalAB3030-2024; @EUAI2024] {#tbl-regulatory-timeline}
+: Key regulatory milestones for AMC AI governance, 2024–2026 [@ONC2024-hti1; @FDA2024-pccp; @HHS2024-1557; @CMS2024-maai; @ColoradoSB26189; @CalAB3030-2024; @EUAI2024] {#tbl-regulatory-timeline}
 
 ## Professional Sovereignty and Accreditation Standards
 
@@ -201,7 +221,8 @@ its accreditors, or its patients.
 **How to execute:** Use the clinical AI inventory as the starting point. For each tool,
 determine: Does it qualify as a DSI under HTI-1? Does it qualify as SaMD under FDA
 regulations? Is it used in decisions that qualify as "consequential" under Colorado SB
-24-205? Does it generate patient communications covered by California AB 3030? The output
+26-189, which takes effect January 1, 2027? Does it generate patient communications covered
+by California AB 3030? The output
 is a compliance matrix that the legal and compliance teams can use to prioritize remediation.
 
 **Buy vs. build:** Legal analysis and governance work. Some commercial GRC (Governance,
@@ -214,11 +235,13 @@ the analysis itself requires legal judgment that cannot be fully automated.
 state of the AI governance program — deployed tools, regulatory compliance status, adverse
 events, and strategic priorities.
 
-**Why now:** Colorado SB 24-205 requires annual impact assessments for high-risk AI.
-Beyond the legal requirement, board-level visibility into AI governance is increasingly
-expected by accreditors and institutional investors. An AMC that cannot report coherently
-to its board on its AI risk posture is behind the governance standard the field is
-converging toward.
+**Why now:** No rule currently compels this. Colorado's 2024 act would have required annual
+impact assessments for high-risk AI, and its 2026 replacement dropped that requirement
+before it ever bound anyone [@ColoradoSB26189]. That is precisely the reason to build the
+report on institutional judgment rather than on a statutory trigger. An AMC that cannot
+report coherently to its board on its AI risk posture is behind the governance standard the
+field is converging toward, and an institution that waits for a mandate will find itself
+assembling the report under deadline pressure when one arrives.
 
 **How to execute:** Define a standard reporting template that includes: inventory of
 deployed AI tools with risk tiers, compliance status against applicable regulations,
