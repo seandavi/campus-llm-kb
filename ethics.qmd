@@ -9,10 +9,11 @@ individual clinicians. They are structural. A predictive model that systematical
 underestimates the health needs of Black patients does not fail because the clinician
 using it is biased; it fails because it was trained on data that encodes decades of
 inequitable access to care, and deployed without monitoring that would detect the
-systematic underperformance [@Obermeyer2019-bias]. An ambient documentation system that
-malfunctions differently for patients with non-standard accents does not fail because the
-clinician was careless; it fails because the model was trained on data that overrepresented
-certain speech patterns and deployed without demographic performance stratification. The
+systematic underperformance [@Obermeyer2019-bias]. If an ambient documentation system turns
+out to transcribe some patients less accurately than others, it will not be because the
+clinician was careless; it will be because the model was trained on speech that
+overrepresented certain patterns and deployed without anyone stratifying its performance.
+The
 pattern is consistent: the ethical failures that have actually occurred in deployed
 healthcare AI are structural failures, predictable in advance, and correctable through
 governance — if the governance exists.
@@ -37,10 +38,12 @@ management resources away from patients who needed them more.
 
 The finding was not that the algorithm was malicious. It was that the algorithm was
 trained on data that encoded an existing inequity, using a proxy variable that faithfully
-reproduced that inequity at scale. The authors estimated the bias caused the algorithm to
-miss 43% of high-risk Black patients compared to a race-neutral approach [@Obermeyer2019-bias]. Subsequent work
-has documented similar patterns in algorithms for kidney disease (using race as a correction
-factor), cardiac risk assessment, and dermatology imaging models [@Zack2024-gpt4bias].
+reproduced that inequity at scale. Race was never an input. The authors estimated that
+changing the prediction target from cost to illness would raise the share of Black patients
+flagged for additional help from 17.7% to 46.5% [@Obermeyer2019-bias]. Subsequent work has
+documented the same shape of problem in other tools: race correction factors built directly
+into kidney function estimates and cardiac risk calculators [@Vyas2020-racecorrection], and
+dermatology imaging models that lose accuracy on darker skin tones [@Daneshjou2022-ddi].
 
 The structural governance response requires three elements that individual ethical review
 cannot provide alone. First, demographic stratification of performance metrics as a
@@ -53,8 +56,9 @@ the informatics team.
 
 ## Health Equity as a Performance Metric
 
-The framework proposed by Badal and colleagues, introduced in @sec-clinical, includes the
-alleviation of health disparities as the first principle of responsible clinical AI. In
+The framework proposed by Badal and colleagues [@Badal2023-bt], introduced in @sec-clinical,
+includes the alleviation of health disparities as the first principle of responsible
+clinical AI. In
 practice, this requires operationalizing "equity" as a quantitative performance dimension
 alongside accuracy. A model that achieves 85% accuracy overall but 70% accuracy for the
 subpopulation with the highest disease burden is not a high-performing model — it is a
@@ -68,14 +72,18 @@ diverse populations should treat demographic data quality as an AI readiness iss
 return on investment for improving race, ethnicity, and language data completeness comes
 precisely when the institution needs to assess whether its AI tools are performing equitably.
 
-The [FUTURE-AI](https://future-ai.eu/) principles for trustworthy AI in medical imaging establish fairness as one
-of six foundational requirements, alongside universality, traceability, usability,
-robustness, and explainability [@FUTURE-AI2022]. These principles map to operational
-AMC practices: fairness requires subgroup performance evaluation; traceability requires
-audit logging of model outputs; explainability requires that clinicians can access the
-reasoning behind a model recommendation. The NIST AI RMF [@NIST2023-airm] maps these
-same principles to the Govern/Map/Measure/Manage operational structure that AMC governance
-programs can implement directly.
+The [FUTURE-AI](https://future-ai.eu/) international consensus guideline, developed by 117
+experts across 50 countries and published in 2025, establishes fairness as one of six
+guiding principles for trustworthy healthcare AI, alongside universality, traceability,
+usability, robustness, and explainability [@Lekadir2025-futureai]. These principles map to
+operational AMC practices: fairness requires subgroup performance evaluation; traceability
+requires audit logging of model outputs; explainability requires that clinicians can access
+the reasoning behind a model recommendation. The NIST AI RMF [@NIST2023-airm] organizes its
+own trustworthiness characteristics into a Govern/Map/Measure/Manage structure rather than
+FUTURE-AI's, and neither document maps itself onto the other. They are compatible enough in
+practice that an institution can run the FUTURE-AI principles as technical requirements
+inside the NIST functions, but that pairing is a recommendation of this book rather than
+something either framework prescribes.
 
 ## Informed Consent in the Continuous AI Era
 
@@ -93,21 +101,23 @@ specific authorization. The harder case is the background AI: the readmission ri
 the sepsis predictor, the no-show prediction algorithm. These tools affect every patient
 encounter without any patient-facing disclosure.
 
-The emerging consensus from bioethics and patient advocacy is that "invisible" background
-AI requires institutional-level disclosure rather than individual patient consent: the
-institution publishes a clear statement of which AI tools are used in patient care, how
+The position this book takes, and it is a position rather than a settled consensus, is that
+"invisible" background AI calls for institutional-level disclosure rather than individual
+patient consent: the institution publishes a clear statement of which AI tools are used in patient care, how
 they affect clinical decisions, and what patients can do to learn more. This does not
 resolve the ethical tension between efficient deployment and individual autonomy, but it
-addresses the transparency gap. The WHO ethics guidance on AI for health specifically
-recommends meaningful transparency about automated decision-making as a prerequisite for
-the ethical deployment of clinical AI [@WHO2024-ai-ethics].
+addresses the transparency gap. The 2021 WHO guidance on the ethics and governance of AI
+for health treats meaningful transparency about automated decision-making as a prerequisite
+for ethical deployment [@WHO2021-ai-ethics].
 
 ## Intellectual Property and the AI Authorship Gap
 
-The U.S. Copyright Office and the U.S. Patent and Trademark Office have both taken
-consistent positions that AI cannot be an author or an inventor; copyright and patent
-protection requires human creative contribution. For AMCs, this creates several practical
-IP implications.
+The U.S. Copyright Office and the U.S. Patent and Trademark Office have each taken the
+position that AI cannot itself be an author or an inventor, and that protection requires
+human creative or inventive contribution. The line between assisted and generated work is
+still being drawn, and an institution should track the guidance rather than rely on this
+paragraph. For AMCs, the practical IP implications follow regardless of where that line
+finally lands.
 
 Research outputs that are substantially AI-generated — whether grant applications, academic
 papers, or clinical protocol drafts — may not be protectable under copyright if the human
@@ -151,14 +161,15 @@ in AMC values statements and academic papers but carried no specific legal oblig
 The 2024 HHS Section 1557 final rule changed that [@HHS2024-1557final]. Under 45 C.F.R.
 § 92.210, covered entities are required to take reasonable steps to identify and mitigate
 discrimination in patient care decision support tools that are used to make, recommend, or
-facilitate clinical decisions. The rule explicitly covers algorithmic and AI-assisted
-tools. The compliance deadline for covered entities was May 2025.
+facilitate clinical decisions [@eCFR-92-210]. The rule explicitly covers algorithmic and
+AI-assisted tools, and compliance was required by May 1, 2025, three hundred days after the
+rule took effect.
 
-What "reasonable steps" means in practice is not fully defined by the rule, but the
-regulatory record is instructive. HHS explicitly cited the Obermeyer 2019 risk
-stratification algorithm as the paradigmatic case the rule is designed to address.
-The implication is that an institution deploying a care management algorithm — a
-readmission risk model, a care gap identification tool, a utilization management system —
+What "reasonable steps" means in practice is not fully defined by the rule. But the class of
+tool it targets is not mysterious: a care management algorithm that scores patients on a
+proxy for need is exactly the pattern Obermeyer and colleagues documented, and it is the
+pattern the rule's identify-and-mitigate duty is shaped around. An institution deploying a
+readmission risk model, a care gap identification tool, or a utilization management system
 without having assessed its performance across demographic groups cannot demonstrate
 compliance. The assessment does not need to be a clinical trial; it needs to be documented
 evidence that someone looked. The equity audit process in @sec-ethics-start is what that
@@ -297,11 +308,13 @@ Patients have expectations about how their health data is used, how AI figures i
 care, and what control they retain over algorithmic decisions that affect them. Those
 expectations are not uniformly positive, and they are not uniformly distributed.
 
-Survey data from 2024 to 2025 shows that patient trust in AI-assisted healthcare varies
-significantly by demographic group, with Black and Hispanic patients expressing more
-skepticism about clinical AI than white patients in multiple studies. This asymmetry is
-not irrational — it reflects historical experience with healthcare systems that produced
-the very biases that AI tools now replicate at scale. An institution that deploys AI tools
+Patient trust in AI-assisted healthcare is not evenly distributed, and an institution should
+expect that the patients with the most reason to be skeptical of its algorithms are the ones
+whose skepticism is best founded. The argument here does not depend on any particular survey
+estimate of how trust varies by group, and this book does not have one it can stand behind.
+It depends on something simpler: the same populations that were underserved by the systems
+whose records became training data are the populations those models are most likely to serve
+badly. An institution that deploys AI tools
 with demonstrated demographic performance disparities, in service of a patient population
 that has historically been underserved, and then frames the resulting errors as
 "algorithmic" rather than institutional, is trading on trust it may not have fully earned.
@@ -394,8 +407,10 @@ model or an irreducible clinical population difference. Report findings to clini
 leadership and the governance committee. For tools with significant performance disparities,
 develop a remediation plan.
 
-**Buy vs. build:** Analytical work using existing institutional data. Commercial bias
-audit tools (Credo AI, IBM OpenScale) can accelerate the analysis but are not prerequisites.
+**Buy vs. build:** Analytical work using existing institutional data. Commercial AI
+governance and model monitoring platforms are marketed for this purpose and may save
+engineering time, but none of them is a prerequisite, and the subgroup comparisons at the
+core of the audit are ordinary statistics your analysts can already do.
 
 ### Starter Project 2: Clinical AI Ethics and Accountability Policy
 
