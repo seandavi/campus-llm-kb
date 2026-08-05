@@ -1,36 +1,45 @@
 # Regulatory and Policy Landscape {#sec-regulatory}
 
 An AMC operating in 2026 does not face a single AI regulatory framework. It faces a
-patchwork of federal transparency mandates, state anti-discrimination laws, professional
-society accreditation standards, and international requirements for any institution with
-global research partnerships — each with different effective dates, different enforcement
-mechanisms, and different definitions of which AI tools they cover. The temptation is to
+patchwork of federal transparency mandates, state disclosure and anti-discrimination laws,
+professional society standards, and international requirements for any institution with
+global research partnerships, each with its own effective date, its own enforcement
+mechanism, and its own definition of which AI tools it covers. The temptation is to
 treat this as a compliance problem: assemble a checklist, check each box, and move on.
-That approach will fail, because the regulatory landscape is not static. Two major federal
-rules took effect in early 2025, two more significant state laws take effect in 2026, and
-the EU AI Act's high-risk provisions come into force at the same time. Compliance today
-does not guarantee compliance in eighteen months.
+
+That approach fails, and the eighteen months before this chapter was last revised show
+why. Colorado enacted what was widely described as the most demanding state AI law in the
+country, then watched a federal court stay its enforcement in April 2026 and the legislature
+repeal it in May, six weeks before it was to take effect. The European Union deferred the
+high-risk obligations of its AI Act by sixteen months for one class of systems and by two
+years for the class that actually contains medical devices. A compliance matrix built in
+early 2025 would now be wrong in more rows than it is right.
 
 The more durable approach is to treat AI governance as a risk management function that
 responds to a shifting grid rather than a fixed list. This chapter gives AMC legal, compliance,
-and informatics leaders the current state of that grid, with emphasis on the provisions that
-most directly affect clinical and research operations.
+and informatics leaders the state of that grid as of August 2026, with emphasis on the
+provisions that most directly affect clinical and research operations. Dates are given as
+they stand at the time of writing. Readers should assume that at least one of them has moved
+and should confirm anything load-bearing against the primary source before relying on it.
 
 ## The Federal Regulatory Baseline
 
 The foundational federal regulatory layer consists of rules from four agencies: [ONC](https://www.healthit.gov), FDA,
 CMS, and HHS OCR. Each has moved from guidance to enforcement-capable rule since 2024.
 
-The ONC HTI-1 rule, published January 2024 with key provisions effective January 2025,
-is the most operationally significant for clinical informatics teams [@ONC2024-hti1]. It
-creates a new regulatory category — Decision Support Interventions — that covers EHR-based
-predictive algorithms meeting specified criteria for automated clinical guidance. For each
-qualifying tool, certified EHR vendors must make accessible a structured set of source
-attributes: training data sources, performance characteristics on the populations validated,
-known limitations, and update history. The rule does not require AMCs to build new
-infrastructure; it requires AMCs to demand that their EHR vendors fulfill their existing
-compliance obligations, and to incorporate the provided source attributes into their ongoing
-governance processes.
+The ONC HTI-1 rule, published January 2024 with the certification compliance deadline
+falling at the end of that year, is the most operationally significant for clinical
+informatics teams [@ONC2024-hti1]. It creates a new regulatory category, Decision Support
+Interventions, and divides it in two. Evidence-based DSI, the larger and more familiar
+group, covers order sets, alerts, and reference material, and carries a shorter disclosure
+list. Predictive DSI, which covers EHR-based algorithms that generate patient-specific
+output from a statistical or machine-learned model, carries a longer one. For each
+qualifying predictive tool, certified EHR vendors must make accessible a structured set of
+source attributes that includes training data sources, performance characteristics on the
+populations the tool was validated in, known limitations, and update history. The rule does
+not require AMCs to build new infrastructure. It requires AMCs to demand that their EHR
+vendors fulfill their existing compliance obligations, and to incorporate the provided
+source attributes into their ongoing governance processes.
 
 The FDA's Predetermined Change Control Plan guidance, finalized December 2024, provides
 the regulatory pathway for adaptive AI medical devices — systems that update their
@@ -43,95 +52,169 @@ effects. AMCs that have developed or licensed AI-enabled SaMD (Software as a Med
 Device) and intend to update those tools over time should assess whether a PCCP is the
 appropriate regulatory pathway.
 
-HHS OCR's Section 1557 final rule, effective May 2025, extended the nondiscrimination
-provisions of the Affordable Care Act explicitly to clinical AI [@HHS2024-1557]. Covered
-entities — including most AMCs — may not use patient care decision support tools that
-result in discriminatory treatment based on race, color, national origin, sex, age, or
-disability. The rule does not define which algorithms are covered with surgical precision;
-it places the burden on covered entities to assess whether tools they use could produce
-discriminatory outputs and to maintain documentation of that assessment. Institutions that
-have not audited deployed clinical AI for demographic performance parity are not in
-compliance with the spirit of the rule.
+HHS OCR's Section 1557 final rule was published in May 2024 and became effective in July
+of that year, but the provision that matters most here carried its own later deadline
+[@HHS2024-1557]. Section 92.210, which covers patient care decision support tools, had a
+compliance date of May 1, 2025. Covered entities, which include most AMCs, may not use
+patient care decision support tools that result in discriminatory treatment based on race,
+color, national origin, sex, age, or disability. The rule does not define which algorithms
+are covered with surgical precision. It requires covered entities to make reasonable efforts
+to identify the tools they use that employ those characteristics as input variables, and to
+mitigate the risk of discrimination those tools present. OCR has not issued implementing
+guidance, which leaves each institution to decide what a reasonable effort looks like. In
+practice, an institution that cannot produce a written record of which tools it examined and
+what it found will have a hard time demonstrating that it made one.
 
-The CMS Medicare Advantage 2025 final rule addressed a narrower but important point: AI
-outputs may not serve as the sole basis for coverage denials under Medicare Advantage
-[@CMS2024-maai]. The rule responds to documented cases of insurers using AI to systematically
-deny claims with minimal human review, and it establishes that AI cannot substitute for
-the human clinical judgment required under existing utilization review standards.
+Medicare Advantage rules address a narrower but important point: an algorithm may assist a
+coverage determination, but it may not be the thing that makes it. The requirement does not
+originate in a rule about AI. It lives in 42 CFR 422.101(c), which obliges Medicare Advantage
+organizations to base medical necessity determinations on the individual patient's
+circumstances [@CFR422101]. CMS applied that provision to AI directly in a February 2024
+memorandum, stating that an algorithm which determines coverage from a larger data set rather
+than from the individual patient's medical history, the treating physician's recommendations,
+and the clinical notes would not comply [@CMS2024-mafaq]. The same memorandum reminded plans
+that algorithmic tools can exacerbate discrimination and bias, and that Section 1557 reaches
+them.
+
+Whether any of the device rules apply at all turns on a threshold question that AMCs
+building their own tools routinely get wrong. Section 3060(a) of the 21st Century Cures Act
+added section 520(o)(1)(E) to the Food, Drug, and Cosmetic Act, excluding clinical decision
+support software from the device definition when it satisfies four criteria. FDA reissued
+its interpretation of those criteria in January 2026, superseding the 2022 guidance that
+most institutional policies were written against [@FDA2026-cds]. One change is worth
+knowing. Software that returns a single recommendation, rather than a set of options, had
+been read as failing the third criterion and therefore as a device. FDA now says it intends
+to exercise enforcement discretion for such functions where only one option is clinically
+appropriate and every other criterion is met. @fig-cds-decision-tree walks the four criteria
+in the order the statute sets them out.
 
 ```{mermaid}
 %%| label: fig-cds-decision-tree
-%%| fig-cap: "FDA clinical decision support regulatory decision tree under the 21st Century Cures Act. Tools at the bottom right are subject to medical device regulations; tools at the top are exempt."
+%%| fig-cap: "The four Non-Device CDS criteria at section 520(o)(1)(E) of the Food, Drug, and Cosmetic Act, as interpreted by FDA's January 2026 guidance. A software function must satisfy all four to fall outside the device definition. Failing any one of them makes it a device software function."
 flowchart TD
-    A([AI tool displays or\nanalyzes patient data]) --> B{Intended for\nhealthcare provider?}
-    B -->|No — patient-facing| C[CDS exemption\ndoes not apply:\ndevice rules may apply]
-    B -->|Yes| D{Intended for\nserious or critical condition?}
-    D -->|No| E[Non-device CDS:\nexempt from FDA oversight]
-    D -->|Yes| F{Can the clinician\nindependently review\nthe basis for the output?}
-    F -->|Yes — reasoning displayed| G[Non-device CDS\nexempt from FDA oversight]
-    F -->|No — black box output| H[Device CDS:\nFDA clearance or\nPCCP required]
+    A([Software function intended to\nsupport a clinical decision]) --> B{"Criterion 1: Does it acquire, process,\nor analyze a medical image, an IVD\nsignal, or a pattern or signal from a\nsignal acquisition system?"}
+    B -->|Yes| Z[Device software function:\nFDA oversight applies]
+    B -->|No| C{"Criterion 2: Is it intended to display,\nanalyze, or print medical information\nabout a patient, or other medical\ninformation such as guidelines?"}
+    C -->|No| Z
+    C -->|Yes| D{"Criterion 3: Is it intended to support\nor provide recommendations to a health\ncare professional about prevention,\ndiagnosis, or treatment?"}
+    D -->|No — patient-facing or\nnot recommendation-shaped| Z
+    D -->|Yes| E{"Criterion 4: Is it intended to let that\nprofessional independently review the\nbasis for the recommendation, so that\nprimary reliance on it is not the intent?"}
+    E -->|No — basis not reviewable| Z
+    E -->|Yes| Y[Non-device CDS:\noutside the device definition]
 ```
 
 ## The Executive Pivot: Federal Deregulation and State Divergence
 
-The Biden administration's Executive Order 14110 (October 2023) directed federal agencies
-to develop AI risk assessments, transparency requirements, and accountability frameworks
-for government AI use — and signaled an expansive federal regulatory posture. The Trump
-administration revoked EO 14110 in January 2025, replacing it with Executive Order 14179,
-which directs agencies to remove regulatory barriers to AI development and prioritize
-American AI leadership over risk-based oversight frameworks [@EO14179].
+The Biden administration's Executive Order 14110, signed October 30, 2023, directed federal
+agencies to develop AI risk assessments, transparency requirements, and accountability
+frameworks for government AI use, and signaled an expansive federal regulatory posture
+[@EO14110]. The Trump administration revoked it on January 23, 2025, replacing it with
+Executive Order 14179, which directs agencies to identify and remove policies that act as
+barriers to AI development [@EO14179].
 
-For AMCs, the practical implications are specific rather than abstract. Federal agencies
-with AI oversight roles have received signals to reduce enforcement activity and defer
-to industry self-governance where possible. The rules already in effect — ONC HTI-1, FDA
-PCCP, HHS 1557 — remain law and do not require executive guidance to enforce. But the
-regulatory pipeline of proposed rules that would have expanded algorithmic accountability
-requirements has slowed significantly.
+The posture hardened from there. Executive Order 14365, issued December 16, 2025, directs
+the Attorney General to stand up an AI Litigation Task Force whose sole charge is to
+challenge state AI laws, and directs the Department of Commerce to identify state laws for
+referral to it [@EO14365]. That is not a statement of intent that stayed on paper. When
+xAI sued to enjoin the Colorado AI Act in April 2026, the United States moved to intervene
+against the state within two weeks [@XAI2026-weiser].
 
-The consequence is a growing divergence between federal deregulation and state-level
-legislative activity. Colorado and California have enacted, and other states are
-considering, AI transparency and accountability requirements that go beyond the current
-federal floor. For national AMCs serving patients across multiple states, the practical
-compliance standard is increasingly set by the most demanding state in which they operate.
+For AMCs, the practical implication is a division between what has been made and what is
+being unmade. The rules already in effect, including ONC HTI-1, the FDA device pathway,
+and Section 1557, remain law; a revoked executive order does not repeal a promulgated
+regulation, and none of these requires fresh executive guidance to enforce. What has changed
+is the direction of travel at the federal level and, more consequentially for a
+multi-state health system, the durability of the state laws that were expected to set the
+practical ceiling. Colorado and California have enacted, and other states are considering,
+AI transparency and accountability requirements that go beyond the federal floor. Those
+requirements are now themselves contested, which makes the compliance question harder rather
+than easier: an AMC cannot safely build to the most demanding state standard if that standard
+may be enjoined, nor safely ignore it if it may not.
 
 ## The State Legislative Wave
 
-Colorado Senate Bill 24-205 — the Colorado Artificial Intelligence Act — is the most
-comprehensive U.S. state AI law currently in effect, with key provisions taking effect
-June 30, 2026 [@ColoradoSB24205]. It covers "high-risk AI systems" used in consequential
-decisions, a category that includes healthcare. Covered entities — AMCs included — must
-conduct and document annual impact assessments of their high-risk AI tools, provide
-patients a meaningful notice of AI use in consequential decisions, and establish a process
-for patients to appeal or seek correction of AI-influenced decisions. The law places the
-compliance burden on the "deployer" — the entity that uses the AI tool in its operations —
-not solely on the developer.
+Colorado Senate Bill 24-205, the Colorado Artificial Intelligence Act, was for two years
+the reference point for state AI regulation in the United States. It covered "high-risk AI
+systems" used in consequential decisions, a category that included healthcare. It required
+deployers, meaning the entities that put the tools to use rather than the developers who
+built them, to run a risk management program, conduct and document impact assessments,
+give consumers notice of AI use in consequential decisions, and use reasonable care to
+prevent algorithmic discrimination [@ColoradoSB24205]. Many institutions, this book's
+earlier draft included, built their planning around a June 30, 2026 effective date.
 
-California's regulatory posture is more fragmented but cumulatively significant. AB 3030,
-effective January 2025, requires disclosure on AI-generated patient communications
-[@CalAB3030-2024]. The FTC's Operation AI Comply enforcement actions in 2024 targeted
-deceptive AI claims in healthcare marketing and patient-facing tools [@FTC2024-operationai].
-New York City's Local Law 144 requires independent bias audits for AI-assisted hiring
-decisions — a provision directly relevant to AMCs using algorithmic screening for clinical
-staff recruitment [@NYCLL144].
+None of it took effect. xAI sued Colorado's attorney general in April 2026 on First
+Amendment, Commerce Clause, and due process grounds; the United States moved to intervene
+on the same side; and on April 27, 2026 a magistrate judge granted a joint motion staying
+enforcement while the preliminary injunction motion was briefed [@XAI2026-weiser]. Two and
+a half weeks later the legislature made the litigation moot. Senate Bill 26-189, signed
+May 14, 2026, repealed the Colorado AI Act and reenacted it as a considerably narrower
+statute governing "automated decision-making technology" that materially influences a
+consequential decision [@ColoradoSB26189].
+
+What survives matters as much as what does not. The new statute drops the three obligations
+that made the original demanding: the risk management program, the impact assessment, and
+the duty of reasonable care to prevent algorithmic discrimination. In their place it puts a
+disclosure-and-rights framework. Deployers must tell a person when they are interacting with
+an automated system, explain an adverse outcome in plain language within thirty days,
+correct inaccurate personal data on request, and provide meaningful human review and
+reconsideration. Developers must give deployers technical documentation covering intended
+uses, categories of training data, known limitations, and instructions for appropriate use.
+Both sides must retain compliance records for at least three years, and enforcement runs
+through the Colorado Consumer Protection Act. The documentation obligation and the attorney
+general's rulemaking both begin January 1, 2027.
+
+For an AMC, the practical effect is that a governance program built to the old Colorado
+standard is now over-built for Colorado and under-built for nothing in particular. That is
+not an argument for dismantling it. Impact assessments and bias auditing remain the way an
+institution answers the Section 1557 question, and Section 1557 has not moved. But an
+institution that justified those activities to its board solely as Colorado compliance
+should expect to be asked why it is still doing them, and should have a better answer ready.
+
+California's posture is more fragmented but cumulatively significant. AB 3030, effective
+January 2025, requires disclosure on AI-generated patient communications, though it exempts
+communications read and reviewed by a licensed provider [@CalAB3030-2024]. New York City's
+Local Law 144 requires independent bias audits for AI-assisted hiring decisions, a provision
+relevant to AMCs using algorithmic screening, with the caveat that it reaches only positions
+located within New York City [@NYCLL144].
+
+Enforcement in this area has come more from state attorneys general than from the Federal
+Trade Commission, and AMCs should read the FTC's 2024 activity carefully rather than by its
+name. Operation AI Comply, announced September 25, 2024, named five respondents: DoNotPay
+over "robot lawyer" claims, Rytr over a tool for mass-producing fake reviews, and Ascend
+Ecom, Ecommerce Empire Builders, and FBA Machine over AI-branded e-commerce income schemes
+[@FTC2024-operationai]. No health care company was among them, and nothing in the sweep
+addressed clinical tools. The health care AI enforcement action of that period came a week
+earlier from Texas, where the attorney general settled with Pieces Technologies, a clinical
+summarization vendor whose products were in use at four Texas hospitals, over
+representations about the accuracy and hallucination rate of its generative AI
+[@TexasAG2024-pieces]. The settlement imposed no penalty but did impose disclosure and
+documentation obligations. It is the more instructive precedent for AMCs, and not because
+of what it did to the vendor. The claims at issue were performance claims of exactly the
+kind that appear in a procurement deck, and an AMC that accepts them without independent
+verification is relying on a representation a state regulator has already found deceptive.
 
 The compliance challenge for national AMCs is that these laws have different definitions
-of covered AI, different disclosure requirements, and different enforcement mechanisms.
-The recommended institutional posture is to adopt the most demanding applicable standard
-as the default — which in most cases means Colorado's annual impact assessment and
-California's patient disclosure requirements — rather than attempting to maintain
-state-specific compliance workflows.
+of covered AI, different disclosure requirements, and different enforcement mechanisms,
+and that the most demanding of them is now the least stable. Adopting the strictest
+applicable standard as a uniform default is still the right instinct, because it avoids
+maintaining state-specific workflows. It is a weaker guarantee than it was, because the
+strictest standard may not survive the year.
 
-| Agency / Body | Rule / Law | Effective Date | Key Provision for AMCs |
-|---------------|------------|----------------|------------------------|
-| ONC | HTI-1 Algorithm Transparency | January 2025 | EHR vendors must surface DSI source attributes within clinical workflow |
-| FDA | PCCP Guidance | December 2024 | Adaptive AI-SaMD may update within pre-specified bounds without new filing |
-| HHS OCR | Section 1557 Final Rule | May 2025 | Covered entities may not use discriminatory patient care decision-support tools |
-| CMS | Medicare Advantage 2025 Rule | January 2025 | AI alone cannot be basis for coverage denial; human review required |
-| Colorado | SB 24-205 (CAIA) | June 2026 | Annual impact assessments; patient notice and appeal rights for high-risk AI |
-| California | AB 3030 | January 2025 | Disclosure on AI-generated patient communications |
-| EU | AI Act (high-risk provisions) | August 2026 | High-risk systems in clinical use require conformity assessment and human oversight |
+| Agency / Body | Rule / Law | Status as of August 2026 | Key Provision for AMCs |
+|---------------|------------|--------------------------|------------------------|
+| ONC | HTI-1 Algorithm Transparency | In effect; certification deadline December 2024 | EHR vendors must surface DSI source attributes within clinical workflow |
+| FDA | PCCP Guidance | Final, December 2024 | Adaptive AI-SaMD may update within pre-specified bounds without new filing |
+| FDA | Clinical Decision Support Software Guidance | Final, reissued January 2026 | Four criteria determine whether a CDS tool is a regulated device |
+| HHS OCR | Section 1557 Final Rule | In effect; §92.210 compliance date May 1, 2025 | Covered entities may not use discriminatory patient care decision-support tools |
+| CMS | 42 CFR 422.101(c), applied to AI by February 2024 memorandum | In effect | Coverage determinations must rest on the individual patient's circumstances, not on an algorithm alone |
+| Colorado | SB 24-205 (CAIA) | Repealed May 14, 2026; enforcement stayed April 27, 2026; never took effect | Superseded; see SB 26-189 |
+| Colorado | SB 26-189 (ADMT) | Enacted; documentation duties and AG rulemaking begin January 1, 2027 | Notice of automated decisions, plain-language explanation of adverse outcomes, human review, three-year records |
+| California | AB 3030 | In effect since January 2025 | Disclosure on AI-generated patient communications, unless reviewed by a licensed provider |
+| EU | AI Act, Annex III high-risk systems | Deferred to December 2, 2027 | Conformity assessment, technical documentation, human oversight, database registration |
+| EU | AI Act, Annex I high-risk systems (includes regulated medical devices) | Deferred to August 2, 2028 | Same obligations, applied through existing product legislation |
+| EU | AI Act, Article 50 transparency duties | Unchanged; apply from August 2, 2026 | Disclosure that a user is interacting with an AI system; labelling of synthetic content |
 
-: Key regulatory milestones for AMC AI governance, 2024–2026 [@ONC2024-hti1; @FDA2024-pccp; @HHS2024-1557; @CMS2024-maai; @ColoradoSB24205; @CalAB3030-2024; @EUAI2024] {#tbl-regulatory-timeline}
+: Key regulatory milestones for AMC AI governance, current as of August 2026 [@ONC2024-hti1; @FDA2024-pccp; @FDA2026-cds; @HHS2024-1557; @CFR422101; @CMS2024-mafaq; @ColoradoSB24205; @ColoradoSB26189; @CalAB3030-2024; @EUAI2024; @EUOmnibus2026] {#tbl-regulatory-timeline}
 
 ## Professional Sovereignty and Accreditation Standards
 
@@ -141,50 +224,84 @@ mechanisms — credentialing, accreditation, and membership. For AMCs, these sta
 often have more immediate operational effect than distant federal rules, because their
 consequences for day-to-day operations are more direct.
 
-The [NIST AI Risk Management Framework](https://www.nist.gov/itl/ai-risk-management-framework) [@NIST2023-airm] has become the de facto organizational
-scaffold for institutional AI governance in U.S. healthcare. Its Govern/Map/Measure/Manage
-functions provide the structure for AI program design, and multiple state laws and
-professional society standards have incorporated its terminology. The companion Generative
-AI Profile [@NIST2024-gen600] extends the framework to address risks specific to large
-language models — hallucination, data memorization, and bias amplification — that the
-original framework did not fully anticipate.
+The [NIST AI Risk Management Framework](https://www.nist.gov/itl/ai-risk-management-framework)
+supplies the organizational scaffold that most U.S. health systems have adopted for
+institutional AI governance [@NIST2023-airm]. Its four functions, Govern, Map, Measure, and
+Manage, give AI program design a structure that maps onto committee charters and reporting
+lines without much translation. That is the main reason it spread: it is a vocabulary an
+institution can adopt without first agreeing on a definition of AI. The companion Generative
+AI Profile extends the framework to risks specific to large language models, naming
+confabulation, training-data memorization under data privacy, and harmful bias and
+homogenization, none of which the original framework fully anticipated [@NIST2024-gen600].
 
-The AMA's policy on augmented intelligence [@AMA2024-ai-principles] asserts that physicians
-must be able to interpret and act upon AI outputs, and advocates for independent verification
-of developer performance claims. The policy's practical significance is in its framing of
-the physician relationship to AI tools: the physician remains the final arbiter of clinical
-decisions and bears professional accountability for actions taken with or without AI input.
-This is not merely an ethical position; it maps directly to the liability landscape
-discussed below.
+The AMA's November 2024 policy on augmented intelligence is the clearest professional-society
+statement of where accountability sits [@AMA2024-ai-principles]. It holds that clinical
+decisions influenced by AI must include specified qualified human intervention points, and
+defines a qualified human as a physician able to provide the same service independently,
+without the aid of AI. It also holds that physicians should receive enough detail about how
+a tool was trained and validated to judge whether it reasonably applies to the patient in
+front of them, and that transparency and explainability in design and development should be
+mandated by law where feasible. The practical significance is in the framing: the physician
+remains the final arbiter of clinical decisions and bears professional accountability for
+actions taken with or without AI input. This is not merely an ethical position. It is the
+standard a plaintiff's expert will be asked to apply, and it does not soften when the tool
+was validated, procured, and approved by the institution rather than chosen by the physician.
 
-The ISO/IEC 42001:2023 standard for AI management systems [@ISO2023-42001] provides a
-certification pathway for institutions that want to demonstrate systematic AI governance
-to regulators, accreditors, and payers. It is the closest analogue in AI to ISO 27001
-for information security — a voluntary standard that is increasingly required or expected
-by procurement and regulatory processes. AMCs that have built NIST RMF-aligned governance
-programs are well positioned to seek ISO 42001 certification with targeted additional work.
+The ISO/IEC 42001:2023 standard for AI management systems provides a certification pathway
+for institutions that want to demonstrate systematic AI governance to regulators,
+accreditors, and payers [@ISO2023-42001]. It is the closest analogue in AI to ISO 27001 for
+information security, a voluntary management-system standard whose value depends less on its
+content than on whether the parties an institution answers to have begun asking for it. Some
+AMCs report that vendors and payers have started to ask; that is worth confirming in your own
+market rather than assuming. The work is not wasted either way: the control set overlaps
+substantially with the NIST framework, so an institution with a mature NIST-aligned program
+is doing most of what certification would require already.
 
 ## International Requirements for Global Research Partners
 
 For AMCs with international research partnerships, clinical trial enrollment in Europe,
-or data sharing with EU-based institutions, the [EU AI Act](https://artificialintelligenceact.eu/) represents a material compliance
-obligation. The Act's high-risk provisions — applicable from August 2026 — cover AI
-systems used in clinical decision support, medical devices, and management of critical
-infrastructure [@EUAI2024]. High-risk systems must undergo a conformity assessment before
-deployment, maintain technical documentation, implement human oversight measures, and
-register in the EU AI database.
+or data sharing with EU-based institutions, the [EU AI Act](https://artificialintelligenceact.eu/)
+represents a material compliance obligation, though on a later schedule than the one most
+institutional plans were built against [@EUAI2024]. Regulation (EU) 2026/1744, the Digital
+Omnibus on AI, was adopted July 8, 2026, published in the Official Journal on July 24, and
+entered into force on July 27 [@EUOmnibus2026]. It defers the high-risk obligations, and it
+does so unevenly. Systems falling under Article 6(2) and Annex III now become subject to
+those obligations on December 2, 2027. Systems falling under Annex I, which reaches AI
+embedded in products already regulated under EU sectoral legislation and is therefore where
+AI-enabled medical devices actually sit, are deferred further, to August 2, 2028. The stated
+rationale was that harmonised standards and national competent authorities were not ready in
+time.
 
-The practical implication for AMC research operations is that any AI tool used in a
-clinical study enrolling EU subjects, or any EHR-integrated AI system at an EU affiliate,
-must be assessed against EU AI Act requirements before August 2026. AMC general counsel
-should treat this as a research contracts and technology transfer issue, not solely an
-IT compliance matter.
+Two points are worth separating out, because the chapter's earlier framing blurred them.
+The first is that "clinical decision support" is not itself a named high-risk category. A
+clinical AI tool is high-risk under the Act when it qualifies as a medical device requiring
+third-party conformity assessment, which routes it through Annex I and the 2028 date, or
+when it falls into one of the Annex III uses, such as determining access to essential
+services. The second is that the deferral is not general. The Article 50 transparency duties,
+which require disclosing that a person is interacting with an AI system and labelling
+synthetic content, were not moved and apply from August 2, 2026. An AMC running a
+patient-facing chatbot at a European affiliate has an obligation now, not in 2027.
 
-The "Brussels Effect" — the tendency for EU regulation to become a de facto global standard
-because multinational companies find it easier to apply the highest standard uniformly —
-may accelerate EU AI Act adoption even among AMCs without current European operations.
-Vendors seeking to maintain EU market access will increasingly build their products to EU
-standards, and AMCs that adopt those products will inherit the compliance posture.
+The substance of the high-risk obligations is unchanged. Such systems must undergo a
+conformity assessment before deployment, maintain technical documentation, implement human
+oversight measures, and register in the EU AI database. The practical implication for AMC
+research operations is that any AI tool used in a clinical study enrolling EU subjects, or
+any EHR-integrated AI system at an EU affiliate, must be assessed against these requirements
+well before the applicable date, because conformity assessment is not a task that compresses.
+The deferral bought institutions time; it did not remove the work. AMC general counsel should
+treat this as a research contracts and technology transfer issue, not solely an IT compliance
+matter.
+
+The Brussels Effect, Anu Bradford's term for the tendency of EU regulation to become a de
+facto global standard because multinational firms find it cheaper to apply the highest
+standard uniformly than to maintain separate product lines, is the reason this section
+matters to AMCs with no European operations at all [@Bradford2012-brussels]. If a vendor
+builds its product to EU requirements to preserve market access there, an AMC that buys the
+product inherits both the documentation and the design constraints. Whether the deferral to
+2027 and 2028 weakens that mechanism is an open question. A delayed standard exerts less
+pull than an imminent one, and the same omnibus that moved the dates was framed as
+simplification, which is not the direction a regulation travels when it is about to become
+the world's default.
 
 ## Where to Start {#sec-regulatory-start}
 
@@ -194,15 +311,23 @@ standards, and AMCs that adopt those products will inherit the compliance postur
 @sec-clinical-start) against the applicable regulatory frameworks in @tbl-regulatory-timeline,
 identifying which tools are covered by which rules and where compliance gaps exist.
 
-**Why now:** Several rules are already in effect; others take effect in 2025 and 2026.
-An institution that has not completed this mapping cannot certify compliance to its board,
-its accreditors, or its patients.
+**Why now:** Several rules are already in effect and others arrive in 2027 and 2028. An
+institution that has not completed this mapping cannot certify compliance to its board, its
+accreditors, or its patients. The Colorado episode is also the argument for building the
+mapping as a living document rather than a one-time exercise: any institution that completed
+this project in 2025 has at least four rows that are now wrong.
 
 **How to execute:** Use the clinical AI inventory as the starting point. For each tool,
-determine: Does it qualify as a DSI under HTI-1? Does it qualify as SaMD under FDA
-regulations? Is it used in decisions that qualify as "consequential" under Colorado SB
-24-205? Does it generate patient communications covered by California AB 3030? The output
-is a compliance matrix that the legal and compliance teams can use to prioritize remediation.
+determine: Does it qualify as a predictive DSI under HTI-1? Does it satisfy all four
+Non-Device CDS criteria, or is it a device software function? Does it materially influence a
+decision that qualifies as "consequential" under Colorado SB 26-189, which brings notice,
+explanation, and human-review duties from January 2027? Does it generate patient
+communications covered by California AB 3030, and if so, is it exempt because a licensed
+provider reads and reviews the output? Does it use race, color, national origin, sex, age,
+or disability as an input variable, which is the Section 1557 trigger? The output is a
+compliance matrix that the legal and compliance teams can use to prioritize remediation.
+Record the date and the source consulted for each cell, so that the next revision can tell
+what has changed from what merely looks unfamiliar.
 
 **Buy vs. build:** Legal analysis and governance work. Some commercial GRC (Governance,
 Risk, and Compliance) platforms have begun adding AI regulatory mapping capabilities, but
@@ -214,11 +339,17 @@ the analysis itself requires legal judgment that cannot be fully automated.
 state of the AI governance program — deployed tools, regulatory compliance status, adverse
 events, and strategic priorities.
 
-**Why now:** Colorado SB 24-205 requires annual impact assessments for high-risk AI.
-Beyond the legal requirement, board-level visibility into AI governance is increasingly
-expected by accreditors and institutional investors. An AMC that cannot report coherently
-to its board on its AI risk posture is behind the governance standard the field is
-converging toward.
+**Why now:** The legal driver that made this project easy to justify has gone away. Colorado
+SB 24-205 would have required documented impact assessments for high-risk AI; its
+replacement does not, and no other statute imposes a board reporting duty specific to AI.
+The case now has to be made on its own terms, and it can be. Section 1557 still requires
+covered entities to make reasonable efforts to identify and mitigate discrimination in
+patient care decision support tools, and a board-level report is the natural artifact that
+demonstrates those efforts were institutional rather than ad hoc. Colorado SB 26-189 still
+requires deployers to explain adverse automated outcomes within thirty days and to retain
+records for three years, which is difficult to do reliably without a maintained inventory.
+And an AMC that cannot say how many AI tools it is running, who approved them, and how they
+are performing has a governance problem regardless of what any statute requires.
 
 **How to execute:** Define a standard reporting template that includes: inventory of
 deployed AI tools with risk tiers, compliance status against applicable regulations,
