@@ -60,7 +60,20 @@ the people who build and deploy AI tools, how to evaluate vendor claims, how to 
 accountability across the institution, and how to recognize when an AI governance failure
 is occurring before it becomes a patient safety event.
 
-## National Competency Frameworks
+The four tiers are a taxonomy of who — they classify people by their relationship to AI
+tools. They do not yet say what a person whose AI use enters the scientific record must
+know. A bench or clinical investigator using AI in the conduct of research is, by the
+definitions above, a consumer, and consumer-tier literacy as defined here (know what the
+tool does, know its limits, document your use) is not sufficient for someone whose
+AI-assisted literature synthesis, analysis code, or drafting will be published under
+their name and cited by others. The research-specific competencies that fill this gap —
+citation verification, reporting of model versions and parameters, prompt-sensitivity
+testing, disclosure — are developed in the [Research Domain chapter](#sec-research-training),
+which also documents that the national competency frameworks in @tbl-competency-frameworks
+stop at the clinical workforce and do not reach PhD students, postdoctoral fellows, or the
+faculty who supervise them. Those supervisors are the same faculty this chapter's
+development programs must reach, and a workforce program that trains them for clinical AI
+literacy but not research supervision has covered only half of their teaching role.
 
 The [AAMC](https://www.aamc.org) published national AI competency standards for medical education in 2024, defining
 what medical students and residents need to know about AI foundational concepts, ethical
@@ -204,10 +217,12 @@ use governance are out of compliance with the new requirements starting with the
 
 The [LCME](https://lcme.org)'s current standards for medical school accreditation interpret Standards 7.6
 and 8.2 — covering bias and self-directed learning — to require critical appraisal of AI
-outputs as a competency that medical students must demonstrate. The AAMC's 2025 AI
+outputs as a competency that medical students must demonstrate. The AAMC's AI
 Competencies Across the Learning Continuum, developed through a formal Delphi process,
-provides the national standard for what those competencies should include across
-undergraduate, graduate, and continuing medical education [@AAMC2025-competencies].
+is on track to become the national reference for what those competencies should include
+across undergraduate, graduate, and continuing medical education; as of this writing the
+framework is in its community feedback phase, with the final report targeted for fall
+2026 [@AAMC2025-competencies].
 
 For nursing programs, the American Nurses Association's 2025 update to the Code of Ethics
 explicitly addresses machine learning: Provision 7.5 states that AI is integral to nursing
