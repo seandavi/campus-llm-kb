@@ -74,18 +74,18 @@ The rule carries an enforcement problem that the notice does not solve, and an A
 
 @tbl-research-policies summarizes the policy landscape for major journals and funders.
 
-| Organization | AI authorship | Disclosure required? | AI in peer review | Policy date |
-|---|---|---|---|---|
-| ICMJE (all member journals) | Prohibited | Yes, extent of use | Not addressed | May 2023 |
-| *Nature* | Prohibited | Yes, in methods | Prohibited | Jan 2023 |
-| *Science* | Prohibited | Yes | Prohibited | Jan 2023 |
-| *JAMA* | Prohibited | Yes, tool + extent | Not explicitly addressed | 2023 |
-| *NEJM* | Prohibited | Yes | Not explicitly addressed | 2023 |
-| *Cell Press* | Prohibited | Yes, dedicated section | Not explicitly addressed | 2023 |
-| NIH (grants) | N/A | Substantially AI-developed applications not considered (NOT-OD-25-132) | Prohibited (NOT-OD-23-149) | Jun 2023 / Jul 2025 |
-| NSF (grants) | N/A | Expected | Prohibited | 2024 |
+| Organization | AI authorship | Disclosure required? | Originality standard | AI in peer review | Policy date |
+|---|---|---|---|---|---|
+| ICMJE (all member journals) | Prohibited | Yes, extent of use | Not applicable | Journal permission required in advance; use must be disclosed; no upload where confidentiality is not assured | May 2023; AI guidance updated Jan 2026 |
+| *Nature* | Prohibited | Yes, in methods | Not applicable | Prohibited | Jan 2023 |
+| *Science* | Prohibited | Yes | Not applicable | Prohibited | Jan 2023 |
+| *JAMA* | Prohibited | Yes, tool + extent | Not applicable | Not explicitly addressed | 2023 |
+| *NEJM* | Prohibited | Yes | Not applicable | Not explicitly addressed | 2023 |
+| *Cell Press* | Prohibited | Yes, dedicated section | Not applicable | Not explicitly addressed | 2023 |
+| NIH (grants) | Not applicable | Guidance only, not a submission requirement | Applications substantially developed by AI are not treated as the applicant's original ideas and will not be considered; six applications per PI per calendar year (NOT-OD-25-132) | Prohibited (NOT-OD-23-149) | Jun 2023 / Jul 2025 |
+| NSF (grants) | Not applicable | Encouraged, not required | Not stated | Prohibited: reviewers may not upload proposal content to non-approved tools | Dec 2023 |
 
-: AI policy summary for major biomedical journals and funders. Policies are as of early 2026; investigators should check current journal instructions before submission. {#tbl-research-policies}
+: AI policy summary for major biomedical journals and funders. The originality column exists because NIH's 2025 rule is not a disclosure requirement and filing it as one obscures the distinction that matters: disclosure asks what you used, an originality standard asks whose thinking the application represents. The ICMJE, NIH, and NSF rows were verified against their primary sources in August 2026. The publisher rows record positions as published at the dates shown and were not re-verified in that pass; journal instructions change without announcement, and an investigator should check the target journal before submission rather than relying on this table. {#tbl-research-policies}
 
 ## Research Integrity Risks {#sec-research-risks}
 
@@ -143,29 +143,31 @@ A distinct data governance issue that has emerged from NIH's 2023 Data Managemen
 
 ```{mermaid}
 %%| label: fig-research-lifecycle
-%%| fig-cap: "The biomedical research lifecycle with generative AI tool applicability. Green nodes indicate mature, lower-risk AI applications. Yellow nodes indicate useful but higher-risk applications requiring human verification. Red indicates institutional or regulatory prohibition."
+%%| fig-cap: "The biomedical research lifecycle, coded by the risk that an unverified AI output reaches the permanent record. Green marks stages where a bad output is cheap to discard and its failure is obvious. Yellow marks stages where the failure is silent and verification is the control: citation misattribution in literature review, analysis code that runs and is wrong, fabricated references in drafting, and the NIH originality bar in grant preparation. Red marks regulatory prohibition. Grey marks stages this chapter does not address, where AI is in real use and the guidance belongs elsewhere in the book."
 
 flowchart LR
-    A([Idea\nGeneration]) --> B([Literature\nReview])
-    B --> C([Hypothesis\nFormation])
-    C --> D([Study\nDesign])
-    D --> E([IRB\nSubmission])
-    E --> F([Data\nCollection])
-    F --> G([Analysis &\nCoding])
-    G --> H([Manuscript\nDrafting])
-    H --> I([Peer\nReview])
-    I --> J([Publication &\nDissemination])
+    A([Idea<br/>Generation]) --> B([Literature<br/>Review])
+    B --> C([Hypothesis<br/>Formation])
+    C --> D([Study<br/>Design])
+    D --> K([Grant<br/>Preparation])
+    K --> E([IRB<br/>Submission])
+    E --> F([Data<br/>Collection])
+    F --> G([Analysis &<br/>Coding])
+    G --> H([Manuscript<br/>Drafting])
+    H --> I([Peer<br/>Review])
+    I --> J([Publication &<br/>Dissemination])
 
     style A fill:#90EE90
-    style B fill:#90EE90
-    style C fill:#FFD700
+    style B fill:#FFD700
+    style C fill:#90EE90
     style D fill:#90EE90
-    style E fill:#FFD700
-    style F fill:#FFD700
-    style G fill:#90EE90
-    style H fill:#90EE90
+    style K fill:#FFD700
+    style E fill:#D3D3D3
+    style F fill:#D3D3D3
+    style G fill:#FFD700
+    style H fill:#FFD700
     style I fill:#FF6B6B
-    style J fill:#90EE90
+    style J fill:#D3D3D3
 ```
 
 ## Where to Start: Two Starter Projects {#sec-research-starter}
