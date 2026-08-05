@@ -282,28 +282,54 @@ how they affect care decisions, community engagement in AI governance processes,
 audit process that reports findings publicly, and a willingness to suspend tools that
 produce harm even when the RO business case for them is positive.
 
-The [Coalition for Health AI](https://www.coalitionforhealthai.org)'s 2024 patient trust survey found that 51 percent of patients
-reported trusting healthcare less due to AI, but 80 percent said their trust would increase
-if they knew who was accountable for the AI's decisions and that training on those
-decisions was documented [@CHAI2024-trust]. The accountability and training documentation
-that this book's governance chapters describe are not just operational mechanisms. They
-are the substance of the social license that AMC AI requires to function.
+The [Coalition for Health AI](https://www.chai.org)'s patient survey, fielded by NORC and
+released in January 2026, found that 51 percent of patients said AI makes them trust health
+care less, while more than 80 percent said their trust would increase if clear accountability
+measures were in place [@CHAI2026-trust]. The survey asked about accountability, not about
+documentation of training, so it does not by itself vindicate every mechanism this book
+recommends. What it does establish is that the thing patients say would move them is
+knowing who answers for the decision. Accountability structures are not only operational
+machinery. They are the substance of the social license that AMC AI requires to function.
 
 ## Liability, the Standard of Care, and the Duty to Use
 
-The liability landscape for clinical AI is developing, not settled, but the direction is
-clear in both directions. Clinicians and institutions face potential liability both for
-harms caused by following AI recommendations without adequate oversight, and — as AI tools
-become validated for specific clinical tasks — for failing to use tools that have become
-part of the standard of care.
+Liability for clinical AI is developing rather than settled, and the honest summary is that
+almost all of the settled part runs one way. Clinicians and institutions face recognized
+exposure for harms caused by following AI recommendations without adequate oversight. The
+mirror-image exposure, liability for failing to use a tool, has not been established by any
+court, and this section should not be read as reporting that it has.
 
-The second direction is counterintuitive but increasingly argued in the literature. As
-AI tools for specific diagnostic tasks — retinal disease screening, dermatology imaging,
-sepsis prediction — accumulate evidence of performance at or above specialist-level
-accuracy, the ethical argument for using them begins to shade into a professional
-obligation [@Zemmar2023-duty]. A radiologist who does not use an FDA-cleared AI tool
-to detect pneumothorax, when the tool has demonstrated sensitivity superior to
-unassisted reading, may eventually face liability for the missed diagnosis.
+What the legal literature does establish is narrower and more interesting. Price, Gerke, and
+Cohen laid out the template that most subsequent analysis works from: under existing tort
+doctrine, a physician's liability turns on whether the course taken matched the standard of
+care, not on whether an algorithm was consulted [@Price2019-liability]. The practical
+consequence is that current law protects the physician who follows standard care and
+declines the AI, and offers the least protection precisely where AI would add the most
+value, when the model correctly identifies that the standard course is wrong for this
+patient. On that reading, tort law is a brake on AI adoption rather than an engine of it.
+
+The experimental evidence complicates that picture. Tobia, Nielsen, and Stremitzer put four
+vignettes to a nationally representative sample of 2,000 U.S. adults, varying whether an AI
+system recommended standard or nonstandard care and whether the physician accepted or
+rejected the recommendation, with harm resulting in every case. Potential jurors judged
+physicians who accepted standard-care AI advice less harshly than those who rejected it,
+and there was no comparable protection from rejecting nonstandard advice in favor of the
+standard course. The authors concluded that tort law is unlikely to undermine the use of
+medical AI and may encourage it [@Tobia2021-jurors]. A later replication extended the design
+to German physicians and German adults, testing whether the pattern survives in a regime
+where court-appointed experts rather than lay jurors determine liability. It did
+[@Tacconelli2026-crossnational].
+
+Read together, these are evidence about how decisions get evaluated after the fact, not a
+holding that a duty to use AI exists. The extrapolation this book makes from them is its
+own: as tools for specific tasks accumulate evidence of performance at or above
+specialist-level accuracy, and as the people who judge reasonableness come to treat
+consulting those tools as the ordinary thing a careful clinician does, the gap between
+ethical argument and professional expectation narrows. A radiologist who does not use an
+FDA-cleared tool for pneumothorax detection, where that tool has demonstrated sensitivity
+superior to unassisted reading, is in a position that will be harder to defend in 2032 than
+in 2026. That is a prediction. Institutions should plan for it without treating it as
+current law.
 
 The prudent governance posture is to document, for each deployed clinical AI tool, the
 institutional reasoning about when and how it should be used — not just the existence of
