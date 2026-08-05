@@ -4,6 +4,7 @@ project:
 website:
   llms-txt: true
   description: "A comprehensive guide to implementing and governing AI in academic medicine, covering clinical, research, education, and business domains."
+  open-graph: true
 
 book:
   google-analytics: "G-KHM6W9PRES"
