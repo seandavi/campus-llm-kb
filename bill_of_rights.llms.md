@@ -32,4 +32,4 @@ Second, the Blueprint is nonbinding. Institutions that have aligned their AI gov
 - Applying the Blueprint — sector-specific guidance: <https://www.whitehouse.gov/ostp/ai-bill-of-rights/applying-the-blueprint-for-an-ai-bill-of-rights/>
 - Executive Order 14179, Removing Barriers to American Leadership in Artificial Intelligence (January 2025) ([Executive Office of the President 2025](#ref-EO14179))
 
-Executive Office of the President. 2025. “Removing Barriers to American Leadership in Artificial Intelligence.” In *Federal Register*, No. 8741, vol. 90. <https://www.federalregister.gov/documents/2025/01/23/2025-01953/removing-barriers-to-american-leadership-in-artificial-intelligence>.
+Executive Office of the President. 2025. “Removing Barriers to American Leadership in Artificial Intelligence.” In *Federal Register*, Executive Order 14179, vol. 90. <https://www.federalregister.gov/documents/2025/01/31/2025-02172/removing-barriers-to-american-leadership-in-artificial-intelligence>.

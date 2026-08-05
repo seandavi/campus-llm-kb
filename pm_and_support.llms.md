@@ -138,7 +138,7 @@ The Return on Health framework does not resolve the measurement challenge; quant
 
 **Buy vs. build:** The analytics infrastructure is primarily a configuration project layered on existing institutional systems. Commercial MLOps platforms (Azure AI, Arize AI) offer purpose-built model monitoring capabilities that can accelerate the build for institutions with active internal AI development programs. For vendor-managed tools, performance monitoring obligations should be included in vendor contracts at procurement — with data export rights specified — so that vendor-provided metrics can be integrated into the central dashboard rather than reviewed only in vendor portals.
 
-American Medical Association. 2024. *AMA Principles for Augmented Intelligence Development, Deployment, and Use*. <https://www.ama-assn.org/practice-management/digital/ama-principles-augmented-intelligence-development-deployment-and-use>.
+American Medical Association. 2024. *Augmented Intelligence Development, Deployment, and Use in Health Care*. <https://www.ama-assn.org/system/files/ama-ai-principles.pdf>.
 
 Finlayson, Samuel G, Adarsh Subbaswamy, Karandeep Singh, et al. 2021. “The Clinician and Dataset Shift in Artificial Intelligence.” *New England Journal of Medicine* 385: 283–86. <https://doi.org/10.1056/NEJMc2104626>.
 
@@ -148,7 +148,7 @@ National Institute of Standards and Technology. 2023. *Artificial Intelligence R
 
 Office of the National Coordinator for Health Information Technology. 2024. “Health Data, Technology, and Interoperability: Certification Program Updates, Algorithm Transparency, and Information Sharing (HTI-1).” In *Federal Register*, No. 8, vol. 89. <https://www.federalregister.gov/documents/2024/01/09/2023-28824/health-data-technology-and-interoperability-certification-program-updates-algorithm-transparency-and>.
 
-Parasuraman, Raja, and Dietrich H Manzey. 2010. “Complacency and Bias in Human Use of Automation: An Updated Understanding.” *Human Factors* 52 (3): 381–410. <https://doi.org/10.1177/0018720810376055>.
+Parasuraman, Raja, and Dietrich H Manzey. 2010. “Complacency and Bias in Human Use of Automation: An Attentional Integration.” *Human Factors* 52 (3): 381–410. <https://doi.org/10.1177/0018720810376055>.
 
 Sendak, Mark P, William Ratliff, Dina Sarro, et al. 2020. “Real-World Integration of a Sepsis Deep Learning Technology into Routine Clinical Care: Implementation Study.” *JMIR Medical Informatics* 8 (7): e15182. <https://doi.org/10.2196/15182>.
 

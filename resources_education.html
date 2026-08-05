@@ -465,7 +465,7 @@ cookieconsent.run({
 
 
 <p>The conversation about generative AI in health professions education has been dominated, since late 2022, by two questions that are increasingly beside the point: Can students use AI to cheat? Can we detect it if they do? Both questions assume that the problem is a student behavior problem, and that better enforcement will solve it. Neither assumption holds, and the obsession with both has distracted education leaders from the more consequential question: what does it mean to teach and assess clinical reasoning when a language model can pass the USMLE?</p>
-<p>In January 2023, ChatGPT passed all three steps of the United States Medical Licensing Examination at or above the passing threshold for human test-takers <span class="citation" data-cites="Kung2023-usmle">(<a href="references.html#ref-Kung2023-usmle" role="doc-biblioref">Kung et al. 2023</a>)</span>. That benchmark has since been exceeded: GPT-4 achieves approximately 86% accuracy on Step 1 questions and 87% on Step 2 Clinical Knowledge, performance that meets or exceeds the median medical student <span class="citation" data-cites="Garabet2024-step1 Dhakal2024-step2">(<a href="references.html#ref-Garabet2024-step1" role="doc-biblioref">Garabet et al. 2024</a>; <a href="references.html#ref-Dhakal2024-step2" role="doc-biblioref"><span class="nocase">Dhakal et al.</span> 2024</a>)</span>. The boards were designed to certify that physicians had internalized a body of medical knowledge. They were not designed to certify that a physician could distinguish their own reasoning from AI-generated reasoning. Those are now different things.</p>
+<p>In early 2023, ChatGPT performed at or near the passing threshold on all three steps of the United States Medical Licensing Examination, with no specialized training <span class="citation" data-cites="Kung2023-usmle">(<a href="references.html#ref-Kung2023-usmle" role="doc-biblioref">Kung et al. 2023</a>)</span>. Later models did better. ChatGPT-4 answered 86% of 1,300 Step 1-style questions correctly against an estimated passing score of 60% <span class="citation" data-cites="Garabet2024-step1">(<a href="references.html#ref-Garabet2024-step1" role="doc-biblioref">Garabet et al. 2024</a>)</span>, and 87.2% of 109 Step 2 Clinical Knowledge practice questions <span class="citation" data-cites="Shieh2024-step2ck">(<a href="references.html#ref-Shieh2024-step2ck" role="doc-biblioref">Shieh et al. 2024</a>)</span>. It is worth stating what these studies did not do, since the headlines did not: none administered an operational examination, and none benchmarked the models against a median student. The defensible summary is narrower than the one in circulation, and still sufficient to force the question. On the multiple-choice material that stands in for the boards, current models score well above the passing line. The boards were designed to certify that physicians had internalized a body of medical knowledge. They were not designed to certify that a physician could distinguish their own reasoning from AI-generated reasoning. Those are now different things.</p>
 <p>This chapter is not an argument against rigor or assessment. It is an argument that the assessment infrastructure of health professions education needs to be rebuilt around what AI cannot yet do — authentic clinical reasoning, communication under uncertainty, integration of patient values — and that the institution’s job is to support that rebuilding rather than defend the examination infrastructure that preceded it.</p>
 <section id="sec-education-proxy" class="level2" data-number="8.1">
 <h2 data-number="8.1" class="anchored" data-anchor-id="sec-education-proxy"><span class="header-section-number">8.1</span> The Collapse of the Proxy</h2>
@@ -476,14 +476,15 @@ cookieconsent.run({
 <section id="sec-education-detection" class="level2" data-number="8.2">
 <h2 data-number="8.2" class="anchored" data-anchor-id="sec-education-detection"><span class="header-section-number">8.2</span> The Detection Trap</h2>
 <p>The institutional response that gained the most traction in 2023 was enforcement: updated honor codes prohibiting AI use, mandatory disclosure requirements for AI assistance, and AI detection tools. The detection tools — <a href="https://www.turnitin.com">Turnitin</a>’s AI writing detection, <a href="https://gptzero.me">GPTZero</a>, <a href="https://copyleaks.com">Copyleaks</a> — were marketed at a moment of institutional anxiety and adopted widely before their limitations were understood.</p>
-<p>Those limitations are substantial. Detection accuracy varies significantly across writing styles, assignment types, and AI models. False-positive rates — flagging human-written work as AI-generated — disproportionately affect non-native English speakers, whose more formal and pattern-consistent prose is more likely to trigger detection thresholds <span class="citation" data-cites="Liang2023-aidetect">(<a href="references.html#ref-Liang2023-aidetect" role="doc-biblioref">Liang et al. 2023</a>)</span>. Students who have been falsely accused of AI use in high-stakes grading contexts have documented the experience as deeply damaging, and at least one institution faced legal exposure over a misapplied detection finding.</p>
-<p>The Federal Trade Commission’s enforcement posture on AI detection tools — including actions against companies that overstated their detection accuracy — has added a compliance dimension to adoption decisions <span class="citation" data-cites="FTC2024-operationai">(<a href="references.html#ref-FTC2024-operationai" role="doc-biblioref">Federal Trade Commission 2024</a>)</span>. An institution that implements a detection tool based on vendor accuracy claims without independent validation is making a factual representation it may not be able to defend.</p>
+<p>Those limitations are substantial, and the important one is not aggregate accuracy but who absorbs the errors. Liang and colleagues ran seven widely used GPT detectors over 91 TOEFL essays written by non-native English speakers and 88 essays by US eighth-graders <span class="citation" data-cites="Liang2023-aidetect">(<a href="references.html#ref-Liang2023-aidetect" role="doc-biblioref">Liang et al. 2023</a>)</span>. On the US students the detectors were near-perfect. On the non-native writers the average false-positive rate was 61.3%, and at least one detector flagged 97.8% of the TOEFL essays as machine-generated. The mechanism is perplexity rather than formality: detectors read limited vocabulary and grammatical range as a machine signature, and that is also what second-language writing looks like. Two follow-on experiments finish the argument. Asking a model to enrich the vocabulary of the non-native essays dropped the false-positive rate from 61.3% to 11.6%, and asking it to rewrite genuinely AI-generated text in more literary language drove detection to near zero. The tool fails in both directions that matter, and it fails hardest against the students least able to contest the finding.</p>
+<p>No federal enforcement action has yet targeted an AI-detection vendor, and it would be wrong to suggest otherwise. What the Federal Trade Commission has established is the general principle. Its September 2024 sweep, Operation AI Comply, brought cases against a company selling “robot lawyer” services, a tool that generated fake reviews, and three online-storefront earnings schemes, on the theory that there is no AI exemption from the laws already on the books and that claims about what an AI system can do must be substantiated <span class="citation" data-cites="FTC2024-operationai">(<a href="references.html#ref-FTC2024-operationai" role="doc-biblioref">Federal Trade Commission 2024</a>)</span>. Detection vendors sell exactly such a claim. An institution that adopts a detection tool on the strength of a vendor accuracy figure it has not independently validated, and then disciplines a student on that basis, is making a factual representation about a person that it cannot defend. The exposure there is less regulatory than it is the ordinary exposure of accusing someone of something you cannot prove.</p>
 <p>Prohibition without a structural alternative produces the same behavior with added incentive to hide it. Students who are prohibited from using AI but who observe that their future clinical colleagues use it constantly experience the prohibition as arbitrary rather than principled. The honest conversation with students is not “AI use is prohibited” but “here is what you need to be able to do on your own, here is why, and here is how we assess that.”</p>
 </section>
 <section id="sec-education-framing" class="level2" data-number="8.3">
 <h2 data-number="8.3" class="anchored" data-anchor-id="sec-education-framing"><span class="header-section-number">8.3</span> A Workable Framing: Tiered Policies and Process Grading</h2>
 <p>The framing that has produced the most defensible and educationally coherent institutional policies is a tiered approach that distinguishes among assignment types rather than making a blanket determination about AI use.</p>
-<p>Ethan Mollick and Lilach Mollick’s work on assigning AI <span class="citation" data-cites="Mollick2023-assigning">(<a href="references.html#ref-Mollick2023-assigning" role="doc-biblioref">Mollick and Mollick 2023</a>)</span> describes a spectrum of pedagogical stances: AI prohibited (where unaided performance is the learning objective), AI as a tool to be used transparently (where the process of working with AI is part of what is being taught), and AI use as contextually unrestricted (where the product quality matters more than the production process, as it often does in practice). The same framework applies in health professions education, where the three stances correspond roughly to high-stakes clinical reasoning assessments (unaided performance required), literature review and synthesis tasks (AI as tool, process documented), and clinical note drafting and patient communication practice (AI use mirrors professional reality).</p>
+<p>Ethan Mollick and Lilach Mollick propose seven roles a language model can play in a classroom, each with its own pedagogical benefits and risks: AI-tutor, AI-coach, AI-mentor, AI-teammate, AI-tool, AI-simulator, and AI-student <span class="citation" data-cites="Mollick2023-assigning">(<a href="references.html#ref-Mollick2023-assigning" role="doc-biblioref">Mollick and Mollick 2023</a>)</span>. Their point is that “using AI” is not one instructional decision but a choice among quite different ones, and that the risks differ by role rather than by whether AI is present.</p>
+<p>For assessment policy specifically, that insight collapses usefully into three stances an assignment can take. AI can be prohibited, where unaided performance is itself the learning objective. It can be a tool used transparently, where the process of working with the model is part of what is being taught. Or it can be unrestricted, where product quality matters more than how the product was made, as it often does in practice. In health professions education these correspond roughly to high-stakes clinical reasoning assessments, to literature review and synthesis tasks with the process documented, and to clinical note drafting and communication practice where AI use mirrors professional reality.</p>
 <p><a href="#fig-ed-assessment-decision" class="quarto-xref">Figure&nbsp;<span>8.1</span></a> shows a decision tree an educator can use to assign assessment tier.</p>
 <div class="cell" data-layout-align="default">
 <div class="cell-output-display">
@@ -517,81 +518,70 @@ Figure&nbsp;8.1: Assessment redesign decision tree for health professions educat
 </section>
 <section id="sec-education-usmle" class="level2" data-number="8.4">
 <h2 data-number="8.4" class="anchored" data-anchor-id="sec-education-usmle"><span class="header-section-number">8.4</span> The USMLE and the Limits of Licensing Exam Reform</h2>
-<p>The licensing exam context deserves specific attention because it is the external constraint that shapes so much of undergraduate medical education. When AI passes Step 2 CK at 87%, the natural question is: what are we preparing students for?</p>
-<p>The answer from the National Board of Medical Examiners — which has been studying AI performance on its exams since 2023 — is nuanced <span class="citation" data-cites="Yaneva2024-clinreasoning">(<a href="references.html#ref-Yaneva2024-clinreasoning" role="doc-biblioref"><span class="nocase">Yaneva et al.</span> 2024</a>)</span>. High AI performance on multiple-choice clinical vignettes does not mean that AI can replicate authentic clinical reasoning. The vignettes test pattern recognition on structured information; clinical practice requires integrating incomplete, contradictory, and affectively complex information in real time, with a patient whose presentation does not fit the textbook pattern. AI is weaker on these tasks, and considerably weaker on the communicative and relational dimensions of clinical care that licensing exams do not currently measure.</p>
+<p>The licensing exam context deserves specific attention because it is the external constraint that shapes so much of undergraduate medical education. When a language model answers 87% of Step 2 CK practice questions correctly, the natural question is: what are we preparing students for?</p>
+<p>The most careful published answer comes from researchers at the National Board of Medical Examiners, and it is largely a warning about the question itself <span class="citation" data-cites="Yaneva2024-sampleitems">(<a href="references.html#ref-Yaneva2024-sampleitems" role="doc-biblioref">Yaneva et al. 2024</a>)</span>. Examining ChatGPT on publicly available USMLE sample items, they found scores above 60%, which is an approximate indicator of meeting the passing standard, and then spent the paper explaining why that number should not be read as passing an examination. Sample items are not calibrated the way operational forms are. The simulation component of Step 3 was excluded. Responses varied across repeated submissions of the same item for 20% of items tested, which is not a property any assessment would tolerate in a human examinee. And performance was significantly worse on items relating to practice-based learning.</p>
+<p>That last finding is the one worth sitting with. The material these models handle least well on a licensing exam is the material closest to what practice actually demands: applying evidence to a particular patient, recognizing the limits of one’s own knowledge, and revising a plan when the case does not fit. Licensing exams measure that thinly. They do not measure the communicative and relational dimensions of care at all.</p>
 <p>The implication for medical education is not that the boards are irrelevant but that they are increasingly insufficient. Competency-based medical education (CBME) frameworks — the ACGME milestones, the entrustable professional activities — provide a structure for assessing the capabilities that board exams do not capture. Educators who redesign assessment to emphasize direct observation, structured clinical encounters, and oral examination of reasoning are building toward an assessment model that remains meaningful in an AI-augmented world. Educators who optimize for multiple-choice performance are not.</p>
 </section>
 <section id="sec-education-literacy" class="level2" data-number="8.5">
 <h2 data-number="8.5" class="anchored" data-anchor-id="sec-education-literacy"><span class="header-section-number">8.5</span> AI Literacy as Curriculum</h2>
-<p>The question of what medical students should know about AI was the subject of a foundational 2020 paper by McCoy et al.&nbsp;in <em>npj Digital Medicine</em> <span class="citation" data-cites="McCoy2020-ai-literacy">(<a href="references.html#ref-McCoy2020-ai-literacy" role="doc-biblioref">McCoy et al. 2020</a>)</span>. Their argument — that medical students need literacy in AI as users and evaluators rather than as developers — remains the right framework. The specific competencies have been elaborated since then, and as of 2025 the question has moved from “should we teach this?” to “what exactly are we required to teach and how do we demonstrate compliance?”</p>
-<p>The AAMC’s 2025 AI Competencies Across the Learning Continuum, developed through a formal Delphi process involving medical educators across the country, provides a national standard for AI competency across undergraduate, graduate, and continuing medical education <span class="citation" data-cites="AAMC2025-competencies">(<a href="references.html#ref-AAMC2025-competencies" role="doc-biblioref">Association of American Medical Colleges 2025</a>)</span>. The ACGME’s July 2025 Common Program Requirements include explicit provisions on human-AI teamwork and require residency programs to have institutional policies on AI use — the first time ACGME has required programs to govern AI specifically <span class="citation" data-cites="ACGME2025-CPR">(<a href="references.html#ref-ACGME2025-CPR" role="doc-biblioref">Accreditation Council for Graduate Medical Education 2025</a>)</span>. Programs without documented AI governance are out of compliance starting with the 2025 to 2026 accreditation year. The American Medical Informatics Association has proposed a competency framework for health professionals that distinguishes among AI consumers (who use AI tools in clinical work), AI translators (who evaluate AI tools and advocate for appropriate use), and AI developers (who build and validate AI systems) <span class="citation" data-cites="AMIA2024-competencies">(<a href="references.html#ref-AMIA2024-competencies" role="doc-biblioref">American Medical Informatics Association 2024</a>)</span>.</p>
-<p>The consumer/translator/developer distinction is useful for curriculum design because it implies that different learners need different things. Every medical student needs consumer-level AI literacy: how to evaluate AI-generated clinical information, how to recognize hallucinations and errors, how to document AI use in clinical settings, and how to have an informed conversation with a patient about AI’s role in their care. Only some students will become translators or developers, and the curriculum should not require developer-level technical knowledge of everyone.</p>
+<p>The question of what medical students should know about AI was the subject of a 2020 paper by McCoy et al.&nbsp;in <em>npj Digital Medicine</em> <span class="citation" data-cites="McCoy2020-ai-literacy">(<a href="references.html#ref-McCoy2020-ai-literacy" role="doc-biblioref">McCoy et al. 2020</a>)</span>. Their answer was a dual-focused one: substantial data-science content added to the baseline health research curriculum for everyone, paired with extracurricular programs to cultivate leadership in the field. That is more technically ambitious than most of what schools have actually built, and the gap between the two is worth noticing.</p>
+<p>The specific competencies have been elaborated since then. What has not happened, despite a widespread impression to the contrary, is that any accreditor made them mandatory. This deserves precision, because the belief that the requirement already exists is itself an obstacle to acting. It invites a program to wait for guidance that is not coming on the schedule it imagines, and it invites a compliance office to write a policy against a standard nobody published.</p>
+<p>The AAMC is developing a national set of AI competencies spanning undergraduate, graduate, and continuing medical education, and it is a serious effort, but it is a draft. As of this writing the project is in its feedback-gathering phase, with a modified Delphi process and focus groups still underway and the final report targeted for fall 2026 <span class="citation" data-cites="AAMC2025-competencies">(<a href="references.html#ref-AAMC2025-competencies" role="doc-biblioref">Association of American Medical Colleges 2025</a>)</span>. The ACGME Common Program Requirements say nothing about AI. A full-text search of the residency requirements effective July 2026, including the FAQs incorporated into them, returns no occurrence of “artificial intelligence,” “machine learning,” or “AI,” and neither does the July 2025 version they replaced <span class="citation" data-cites="ACGME2025-CPR">(<a href="references.html#ref-ACGME2025-CPR" role="doc-biblioref">Accreditation Council for Graduate Medical Education 2026</a>)</span>. The LCME standards are silent as well. The two that come closest are 6.3, which requires self-directed learning experiences including appraisal of the credibility of information sources, and 7.6, which requires that students learn to recognize and address bias in themselves, in others, and in the care delivery process <span class="citation" data-cites="LCME2026-functions">(<a href="references.html#ref-LCME2026-functions" role="doc-biblioref">Liaison Committee on Medical Education 2025</a>)</span>.</p>
+<p>Reading those two standards to cover the appraisal of AI output is a defensible institutional interpretation, and a school that adopts it is on solid ground. It is not a published requirement, and a dean who presents it to faculty as one will lose the room the first time someone opens the standard. The honest version is more useful anyway: nobody is going to make you do this yet, the students are already using these tools, and the schools that move now will be the ones with something to show when the requirements do arrive.</p>
+<p>For curriculum design, the distinction that earns its keep is among three kinds of learner: the consumer who uses AI tools in clinical work, the translator who evaluates tools and advises on appropriate use, and the developer who builds and validates systems. The distinction is useful because it implies that different learners need different things. Every medical student needs consumer-level AI literacy: how to evaluate AI-generated clinical information, how to recognize hallucinations and errors, how to document AI use in clinical settings, and how to have an informed conversation with a patient about AI’s role in their care. Only some students will become translators or developers, and the curriculum should not require developer-level technical knowledge of everyone.</p>
 <p>What this means concretely: a required AI literacy module in medical school should cover the basic capabilities and limitations of language models (without requiring programming), the specific failure modes relevant to clinical use (hallucination, bias, over-confidence), the disclosure and documentation standards expected by major journals and by the clinical record, and how to evaluate an AI tool for fitness in a specific clinical task. This module is not optional enrichment — it is basic preparation for the clinical environment students are about to enter.</p>
 <p><a href="#tbl-ed-literacy-frameworks" class="quarto-xref">Table&nbsp;<span>8.1</span></a> summarizes the major competency frameworks proposed for health professions AI literacy.</p>
 <div id="tbl-ed-literacy-frameworks" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-tbl figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-ed-literacy-frameworks-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Table&nbsp;8.1: Major AI literacy competency frameworks for health professions education, with target audience and emphasis. The 2025 AAMC and ACGME entries reflect requirements that became effective for the 2025–2026 academic year; programs should verify current language directly with each organization.
+Table&nbsp;8.1: Published sources on AI literacy for health professions education. None of these is an accreditation requirement. The ACGME Common Program Requirements and the LCME accreditation standards contain no AI language as of August 2026, and the AAMC competency set is a draft. Verify current status directly with each organization before citing it to faculty.
 </figcaption>
 <div aria-describedby="tbl-ed-literacy-frameworks-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <table class="caption-top table">
 <colgroup>
-<col style="width: 17%">
-<col style="width: 20%">
-<col style="width: 9%">
-<col style="width: 27%">
-<col style="width: 24%">
+<col style="width: 16%">
+<col style="width: 26%">
+<col style="width: 12%">
+<col style="width: 16%">
+<col style="width: 30%">
 </colgroup>
 <thead>
 <tr class="header">
-<th>Framework</th>
+<th>Source</th>
 <th>Organization</th>
 <th>Year</th>
-<th>Target audience</th>
+<th>Status</th>
 <th>Core emphasis</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>AI Literacy for Medical Students</td>
+<td>What do medical students actually need to know about AI?</td>
 <td>McCoy et al., <em>npj Digital Med</em></td>
 <td>2020</td>
-<td>Medical students</td>
-<td>Evaluation, bias, communication</td>
+<td>Peer-reviewed commentary</td>
+<td>Data science in the core curriculum plus extracurricular leadership</td>
 </tr>
 <tr class="even">
-<td>Principles for Responsible AI Use</td>
+<td>Principles for the Responsible Use of AI in and for Medical Education</td>
 <td>AAMC</td>
 <td>2024</td>
-<td>Medical educators</td>
+<td>Published principles</td>
 <td>Faculty development, equity</td>
 </tr>
 <tr class="odd">
 <td>AI Competencies Across the Learning Continuum</td>
 <td>AAMC</td>
-<td>2025</td>
-<td>UME/GME/CME programs</td>
-<td>National standard; Delphi-developed competency set</td>
+<td>2025–</td>
+<td>Draft; modified Delphi in feedback phase, final report targeted fall 2026</td>
+<td>Competency set spanning UME, GME, and CME</td>
 </tr>
 <tr class="even">
-<td>AI Competencies for Health Professionals</td>
-<td>AMIA</td>
-<td>2024</td>
-<td>Health professionals</td>
-<td>Consumer/translator/developer tiers</td>
-</tr>
-<tr class="odd">
-<td>Common Program Requirements (AI provisions)</td>
-<td>ACGME</td>
-<td>2025</td>
-<td>Residency programs</td>
-<td>Human-AI teamwork; institutional AI policies required</td>
-</tr>
-<tr class="even">
-<td>Preparing Clinicians for AI</td>
+<td>Preparing Clinicians for a Clinical World Influenced by AI</td>
 <td>James, Wachter, &amp; Woolliscroft, <em>JAMA</em></td>
 <td>2022</td>
-<td>All clinicians</td>
+<td>Peer-reviewed viewpoint</td>
 <td>Reasoning under AI uncertainty</td>
 </tr>
 </tbody>
@@ -603,61 +593,54 @@ Table&nbsp;8.1: Major AI literacy competency frameworks for health professions e
 <section id="sec-education-policies" class="level2" data-number="8.6">
 <h2 data-number="8.6" class="anchored" data-anchor-id="sec-education-policies"><span class="header-section-number">8.6</span> Institutional Policies: What Has Actually Been Published</h2>
 <p>The most useful institutional AI policies in health professions education are the ones that specify which tools are permitted, under what data handling conditions, and with what disclosure requirements — not the ones that simply declare a principle of “responsible use.” Several health professions schools have published policies worth examining.</p>
-<p>UCSF’s School of Medicine has implemented a tiered system (AI-1 through AI-4) that signals permitted AI use levels for each assessment, with AI-4 designating full integration of approved tools. The system uses an institutional AI environment (“Versa Chat”) that keeps patient-related data within a HIPAA-compliant boundary. The explicit data-security specification — which tool, under what conditions — is the element most often absent from general university policies and most necessary for a clinical training environment.</p>
-<p>Johns Hopkins University has published a red/yellow/green framework for courses, with green indicating that AI use consistent with professional norms is expected, yellow indicating that AI use is permitted with documentation, and red indicating that AI use is prohibited and the assessment tests unaided performance. The color system is simple enough for students to internalize without reading a policy document for every course.</p>
-<p>The common element across the most effective policies is that they specify the institutional tool rather than deferring to student choice of tool. This is a data governance decision as much as an educational one: medical students on clinical rotations are surrounded by patient information, and a policy that permits “any AI tool the student finds useful” is a policy that permits HIPAA exposure.</p>
-<p><a href="#tbl-ed-policies" class="quarto-xref">Table&nbsp;<span>8.2</span></a> shows a comparison of selected health-professions AI policies.</p>
+<p>UCSF’s Bridges Curriculum policy, approved in December 2024 by the Committee on Curriculum and Educational Policy, sets a default and then names the exception. AI use is prohibited for any activity in which students are evaluated as representing their own knowledge or skills, unless a faculty member explicitly grants permission, and the burden is on the student to find out which applies. The policy pairs that with a hard data boundary: generative AI running inside UCSF’s own cloud environment is approved for UCSF data including patient information, while commercial platforms are prohibited for identified or de-identified patient data, personnel records, and other sensitive institutional material <span class="citation" data-cites="UCSF2024-genai-policy">(<a href="references.html#ref-UCSF2024-genai-policy" role="doc-biblioref">University of California, San Francisco School of Medicine 2024</a>)</span>.</p>
+<p>The Keck School of Medicine at USC reaches a similar default by a different route, prohibiting AI on assignments unless the course director permits it, requiring students to verify the accuracy and bias of anything they submit, requiring disclosure of AI use in scholarly work, and barring AI from documentation of patient care outright. It names no approved tool, which leaves the tool question to the health system <span class="citation" data-cites="USC2025-genai-policy">(<a href="references.html#ref-USC2025-genai-policy" role="doc-biblioref">Keck School of Medicine of USC 2025</a>)</span>. The Jacobs School at the University at Buffalo goes the other way and names two, Microsoft Copilot behind institutional login and a clinical chatbot, while stating that AI must never be used to input, analyze, or transmit identifiable patient information and that faculty may not impose blanket bans without consultation <span class="citation" data-cites="Buffalo2026-genai-policy">(<a href="references.html#ref-Buffalo2026-genai-policy" role="doc-biblioref">Jacobs School of Medicine and Biomedical Sciences, University at Buffalo 2026</a>)</span>.</p>
+<p>The instructive thing is what all three share. Each sets a default rather than a principle, each puts the permission decision with a named person, and each draws the patient-data line separately from the academic-integrity line. Those are different problems and policies that conflate them tend to fail at both. A policy that permits “any AI tool the student finds useful” is a policy that permits HIPAA exposure, and a policy that says only “use AI responsibly” gives a course director nothing to enforce.</p>
+<p><a href="#tbl-ed-policies" class="quarto-xref">Table&nbsp;<span>8.2</span></a> compares the three on the dimensions that determine whether a policy is operable.</p>
 <div id="tbl-ed-policies" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-tbl figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-ed-policies-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Table&nbsp;8.2: Comparison of health-professions institutional AI policies on key implementation dimensions. Policies were documented in early 2026; institutions update these frequently.
+Table&nbsp;8.2: Three published health-professions AI policies, compared on the dimensions that determine whether a policy can actually be applied. Verified against the published policies in August 2026; institutions revise these frequently.
 </figcaption>
 <div aria-describedby="tbl-ed-policies-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <table class="caption-top table">
 <colgroup>
 <col style="width: 12%">
-<col style="width: 17%">
-<col style="width: 25%">
-<col style="width: 25%">
+<col style="width: 26%">
+<col style="width: 21%">
+<col style="width: 18%">
 <col style="width: 20%">
 </colgroup>
 <thead>
 <tr class="header">
 <th>Institution</th>
-<th>Tier/color system</th>
-<th>Approved tools specified?</th>
-<th>Data security requirement</th>
-<th>Disclosure required?</th>
+<th>Default for evaluated work</th>
+<th>Approved tools named</th>
+<th>Patient-data rule</th>
+<th>Disclosure required</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td>UCSF School of Medicine</td>
-<td>AI-1 to AI-4</td>
-<td>Yes (Versa Chat)</td>
-<td>HIPAA-compliant only</td>
+<td>Prohibited unless faculty permit</td>
+<td>Yes, institutionally hosted platform</td>
+<td>Institutional platform only; commercial platforms barred for sensitive data</td>
 <td>Yes</td>
 </tr>
 <tr class="even">
-<td>Johns Hopkins University</td>
-<td>Red/Yellow/Green</td>
-<td>Partial</td>
-<td>Not specified</td>
-<td>Yes</td>
+<td>Keck School of Medicine, USC</td>
+<td>Prohibited unless course director permits</td>
+<td>No</td>
+<td>Never enter PHI unless health system approves; no AI for patient-care documentation</td>
+<td>Yes, for scholarly work</td>
 </tr>
 <tr class="odd">
-<td>Mayo Clinic College</td>
-<td>None (principled guidance)</td>
-<td>No</td>
-<td>“De-identified only”</td>
-<td>Yes</td>
-</tr>
-<tr class="even">
-<td>Harvard Medical School</td>
-<td>Case-by-case faculty decision</td>
-<td>No</td>
-<td>Not specified</td>
-<td>Yes</td>
+<td>Jacobs School, University at Buffalo</td>
+<td>Course-specific, set by syllabus</td>
+<td>Yes, Microsoft Copilot and a clinical chatbot</td>
+<td>Never input, analyze, or transmit identifiable patient information</td>
+<td>Yes, per syllabus</td>
 </tr>
 </tbody>
 </table>
@@ -668,7 +651,7 @@ Table&nbsp;8.2: Comparison of health-professions institutional AI policies on ke
 <section id="sec-education-safety" class="level2" data-number="8.7">
 <h2 data-number="8.7" class="anchored" data-anchor-id="sec-education-safety"><span class="header-section-number">8.7</span> Academic Integrity as a Patient Safety Issue</h2>
 <p>The stakes of academic integrity in health professions education are not equivalent to the stakes in a general undergraduate program. A student who outsources a history paper to AI has submitted fraudulent work, and the consequence is primarily to their own learning. A medical student who outsources clinical reasoning to AI during training — who presents AI-generated differentials and management plans as their own reasoning through repeated assessments — has learned to operate a clinical workflow they do not understand. The consequence is potentially borne by future patients.</p>
-<p>James, Wachter, and Woolliscroft made this argument directly in their 2022 JAMA piece on preparing clinicians for an AI-influenced clinical world <span class="citation" data-cites="James2022-preparing">(<a href="references.html#ref-James2022-preparing" role="doc-biblioref">James et al. 2022</a>)</span>. The concern is not that AI will replace clinical reasoning but that clinicians who have not developed strong independent reasoning will not be equipped to recognize when AI reasoning is wrong. Automation bias — the tendency to accept automated system output without adequate critical evaluation — is well documented in aviation and other high-stakes domains, and there is no reason to believe clinical medicine is immune.</p>
+<p>James, Wachter, and Woolliscroft argued in JAMA in 2022 that medical education has to change to prepare clinicians for a clinical world influenced by AI <span class="citation" data-cites="James2022-preparing">(<a href="references.html#ref-James2022-preparing" role="doc-biblioref">James et al. 2022</a>)</span>. The specific concern here is not that AI will replace clinical reasoning but that a clinician who never developed independent reasoning has no basis on which to notice that the machine’s reasoning is wrong. The failure mode has a name and a literature. Parasuraman and Manzey’s review of automation complacency and automation bias documents both across decades of work in aviation and process control: operators under-monitor automation they have come to trust, and they accept its recommendations without the independent verification they would apply to a colleague <span class="citation" data-cites="Parasuraman2010-automation">(<a href="references.html#ref-Parasuraman2010-automation" role="doc-biblioref">Parasuraman and Manzey 2010</a>)</span>. Nothing about clinical medicine exempts it, and a trainee who has been graded on AI-assisted output for four years has been trained into precisely the trust the literature warns about.</p>
 <p>This reframes the academic integrity conversation from “students are cheating” to “we are responsible for training clinicians who can function safely when AI fails.” That is a more honest and more motivating frame for curriculum redesign. It also makes the argument for genuine investment in assessment reform: not detection systems that catch cheaters, but assessment methods that require demonstrating the reasoning that makes a physician safe.</p>
 </section>
 <section id="sec-education-starter" class="level2" data-number="8.8">
@@ -676,55 +659,70 @@ Table&nbsp;8.2: Comparison of health-professions institutional AI policies on ke
 <section id="project-1-ai-literacy-module-for-all-health-professions-students" class="level3" data-number="8.8.1">
 <h3 data-number="8.8.1" class="anchored" data-anchor-id="project-1-ai-literacy-module-for-all-health-professions-students"><span class="header-section-number">8.8.1</span> Project 1: AI Literacy Module for All Health Professions Students</h3>
 <p><strong>What it is.</strong> Develop and deploy a required, one-hour AI literacy module covering: how language models work at a conceptual level (no programming), what they are good for and where they fail, how to evaluate AI-generated clinical information critically, how to document AI use in clinical records per institutional policy, and how to discuss AI with patients. The module is assessed with a short practical exercise — evaluate a clinical AI output and document its errors — not a multiple-choice knowledge test.</p>
-<p><strong>What you need to start.</strong> A course director or clinical informatics faculty member willing to champion it, two to four weeks of faculty time to write and pilot the content, and an LMS slot in a required course. The AAMC’s published principles and the McCoy et al.&nbsp;framework provide the content scaffold; you are writing the local application, not the theory.</p>
-<p><strong>Build or buy?</strong> Write locally. National-level modules are available (the AMA and AAMC have published resources) but they are not calibrated to your institutional tools and policies. The module needs to name your approved AI tools, your data classification rules, and your disclosure requirements — none of which a generic national module will include.</p>
+<p><strong>What you need to start.</strong> A course director or clinical informatics faculty member willing to champion it, two to four weeks of faculty time to write and pilot the content, and an LMS slot in a required course. The AAMC’s published principles for responsible AI use in medical education <span class="citation" data-cites="AAMC2024-ai-principles">(<a href="references.html#ref-AAMC2024-ai-principles" role="doc-biblioref">Association of American Medical Colleges 2024</a>)</span> and the McCoy et al.&nbsp;framework <span class="citation" data-cites="McCoy2020-ai-literacy">(<a href="references.html#ref-McCoy2020-ai-literacy" role="doc-biblioref">McCoy et al. 2020</a>)</span> provide the content scaffold; you are writing the local application, not the theory.</p>
+<p><strong>Build or buy?</strong> Write locally. National-level material exists, but it is not calibrated to your institutional tools and policies. The module needs to name your approved AI tools, your data classification rules, and your disclosure requirements — none of which a generic national module will include.</p>
 <p><strong>What done looks like.</strong> Within one academic year: every student in the graduating class has completed the module, the practical exercise has been piloted and revised, at least one faculty group has reviewed it for currency, and the module is integrated into the orientation or first-year curriculum on a recurring basis.</p>
 </section>
 <section id="project-2-assessment-redesign-workshop-for-course-directors" class="level3" data-number="8.8.2">
 <h3 data-number="8.8.2" class="anchored" data-anchor-id="project-2-assessment-redesign-workshop-for-course-directors"><span class="header-section-number">8.8.2</span> Project 2: Assessment Redesign Workshop for Course Directors</h3>
 <p><strong>What it is.</strong> A half-day faculty development workshop that walks course directors through the tiered assessment framework, gives them a structured process for auditing their current assignments against AI capability, and supports them in redesigning one high-stakes assignment per course to assess process rather than product. The output of the workshop is a concrete revised assignment, not an abstract policy commitment.</p>
 <p><strong>Why this matters more than policy.</strong> Policy says “use AI responsibly.” A redesigned assignment with a prompt log requirement and a structured reflection makes “responsible use” measurable and teaches the skills that matter. Faculty who have redesigned one assignment understand the framework well enough to apply it to others.</p>
-<p><strong>What you need to start.</strong> A facilitator familiar with writing-studies pedagogy and clinical education (or one from each), three to five volunteers from courses that have explicit writing or reasoning components, and a half day in the academic calendar. The Mollick &amp; Mollick SSRN paper <span class="citation" data-cites="Mollick2023-assigning">(<a href="references.html#ref-Mollick2023-assigning" role="doc-biblioref">Mollick and Mollick 2023</a>)</span> and the UCSF tier system provide the conceptual scaffolding.</p>
-<p><strong>Build or buy?</strong> Design locally and run it yourself. National faculty development resources on AI exist (AAMC, AACME), but they are not structured to produce revised assignments. The workshop only produces value if it ends with a concrete artifact.</p>
+<p><strong>What you need to start.</strong> A facilitator familiar with writing-studies pedagogy and clinical education (or one from each), three to five volunteers from courses that have explicit writing or reasoning components, and a half day in the academic calendar. The Mollick and Mollick paper <span class="citation" data-cites="Mollick2023-assigning">(<a href="references.html#ref-Mollick2023-assigning" role="doc-biblioref">Mollick and Mollick 2023</a>)</span> and the published UCSF and Buffalo policies provide the conceptual scaffolding <span class="citation" data-cites="UCSF2024-genai-policy Buffalo2026-genai-policy">(<a href="references.html#ref-UCSF2024-genai-policy" role="doc-biblioref">University of California, San Francisco School of Medicine 2024</a>; <a href="references.html#ref-Buffalo2026-genai-policy" role="doc-biblioref">Jacobs School of Medicine and Biomedical Sciences, University at Buffalo 2026</a>)</span>.</p>
+<p><strong>Build or buy?</strong> Design locally and run it yourself. National faculty development resources on AI exist, but they are not structured to produce revised assignments. The workshop only produces value if it ends with a concrete artifact.</p>
 <p><strong>What done looks like.</strong> Five course directors have revised one assignment each, the revised assignments have been piloted for one academic cycle, and a follow-up session has been held to share what worked and what needed adjustment. The materials from the workshop — the assessment audit rubric, the redesign process — are available for any course director who wants to use them independently.</p>
 
 
 <div id="refs" class="references csl-bib-body hanging-indent" role="list" style="display: none">
 <div id="ref-ACGME2025-CPR" class="csl-entry" role="listitem">
-Accreditation Council for Graduate Medical Education. 2025. <em>Common Program Requirements: <span>July</span> 2025 Updates</em>. <a href="https://www.acgme.org/what-we-do/accreditation/common-program-requirements/" class="uri">Https://www.acgme.org/what-we-do/accreditation/common-program-requirements/</a>. <a href="https://www.acgme.org/what-we-do/accreditation/common-program-requirements/">https://www.acgme.org/what-we-do/accreditation/common-program-requirements/</a>.
+Accreditation Council for Graduate Medical Education. 2026. <em>Common Program Requirements (Residency), Including <span>FAQs</span></em>. <a href="https://www.acgme.org/what-we-do/accreditation/common-program-requirements/" class="uri">Https://www.acgme.org/what-we-do/accreditation/common-program-requirements/</a>. <a href="https://www.acgme.org/globalassets/pfassets/programrequirements/2026-prs/cprresidency_2026.pdf">https://www.acgme.org/globalassets/pfassets/programrequirements/2026-prs/cprresidency_2026.pdf</a>.
 </div>
-<div id="ref-AMIA2024-competencies" class="csl-entry" role="listitem">
-American Medical Informatics Association. 2024. <em><span>AI</span> Competencies for Health Professionals</em>. <a href="https://amia.org/education-events/ai-competencies">https://amia.org/education-events/ai-competencies</a>.
+<div id="ref-AAMC2024-ai-principles" class="csl-entry" role="listitem">
+Association of American Medical Colleges. 2024. <em>Principles for the Responsible Use of Artificial Intelligence in and for Medical Education</em>. <a href="https://www.aamc.org/about-us/mission-areas/medical-education/principles-responsible-use-artificial-intelligence-and-medical-education">https://www.aamc.org/about-us/mission-areas/medical-education/principles-responsible-use-artificial-intelligence-and-medical-education</a>.
 </div>
 <div id="ref-AAMC2025-competencies" class="csl-entry" role="listitem">
 Association of American Medical Colleges. 2025. <em><span>AI</span> Competencies Across the Learning Continuum</em>. <a href="https://www.aamc.org/about-us/mission-areas/medical-education/ai-competencies" class="uri">Https://www.aamc.org/about-us/mission-areas/medical-education/ai-competencies</a>. <a href="https://www.aamc.org/about-us/mission-areas/medical-education/ai-competencies">https://www.aamc.org/about-us/mission-areas/medical-education/ai-competencies</a>.
 </div>
-<div id="ref-Dhakal2024-step2" class="csl-entry" role="listitem">
-<span class="nocase">Dhakal, Prithvi et al.</span> 2024. <span>“Evaluation of <span>GPT-4</span> on <span>USMLE</span> Step 2 Clinical Knowledge Questions.”</span> <em>JMIR Medical Education</em>.
-</div>
 <div id="ref-FTC2024-operationai" class="csl-entry" role="listitem">
-Federal Trade Commission. 2024. <em>Operation <span>AI</span> Comply: Continuing Actions Against <span>AI</span>-Related Deceptive Practices</em>. <a href="https://www.ftc.gov/news-events/press-releases/2024/09/ftc-announces-operation-ai-comply">https://www.ftc.gov/news-events/press-releases/2024/09/ftc-announces-operation-ai-comply</a>.
+Federal Trade Commission. 2024. <em><span>FTC</span> Announces Crackdown on Deceptive <span>AI</span> Claims and Schemes</em>. <a href="https://www.ftc.gov/news-events/news/press-releases/2024/09/ftc-announces-crackdown-deceptive-ai-claims-schemes">https://www.ftc.gov/news-events/news/press-releases/2024/09/ftc-announces-crackdown-deceptive-ai-claims-schemes</a>.
 </div>
 <div id="ref-Garabet2024-step1" class="csl-entry" role="listitem">
-Garabet, Liana, Alexei Kasparov, Marc Minciullo, John Tran, and Medhat Sarhan. 2024. <span>“Performance of <span>GPT-4</span> on <span>USMLE</span> Step 1–Style Questions.”</span> <em>Medical Science Educator</em> 34: 89–97. <a href="https://doi.org/10.1007/s40670-023-01968-3">https://doi.org/10.1007/s40670-023-01968-3</a>.
+Garabet, Razmig, Brendan P Mackey, James Cross, and Michael Weingarten. 2024. <span>“<span>ChatGPT-4</span> Performance on <span>USMLE</span> Step 1 Style Questions and Its Implications for Medical Education: A Comparative Study Across Systems and Disciplines.”</span> <em>Medical Science Educator</em> 34 (1): 145–52. <a href="https://doi.org/10.1007/s40670-023-01956-z">https://doi.org/10.1007/s40670-023-01956-z</a>.
+</div>
+<div id="ref-Buffalo2026-genai-policy" class="csl-entry" role="listitem">
+Jacobs School of Medicine and Biomedical Sciences, University at Buffalo. 2026. <em>Generative Artificial Intelligence Use Policy for Medical Students in the Medical Curriculum</em>. <a href="https://medicine.buffalo.edu/offices/ome/current/policies/ai-policy.html" class="uri">Https://medicine.buffalo.edu/offices/ome/current/policies/ai-policy.html</a>. <a href="https://medicine.buffalo.edu/offices/ome/current/policies/ai-policy.html">https://medicine.buffalo.edu/offices/ome/current/policies/ai-policy.html</a>.
 </div>
 <div id="ref-James2022-preparing" class="csl-entry" role="listitem">
-James, Casey A, Robert M Wachter, and James O Woolliscroft. 2022. <span>“Preparing Clinicians for a Clinical World Influenced by Artificial Intelligence.”</span> <em>JAMA</em> 327 (14): 1333–34. <a href="https://doi.org/10.1001/jama.2022.3580">https://doi.org/10.1001/jama.2022.3580</a>.
+James, Cornelius A, Robert M Wachter, and James O Woolliscroft. 2022. <span>“Preparing Clinicians for a Clinical World Influenced by Artificial Intelligence.”</span> <em>JAMA</em> 327 (14): 1333–34. <a href="https://doi.org/10.1001/jama.2022.3580">https://doi.org/10.1001/jama.2022.3580</a>.
+</div>
+<div id="ref-USC2025-genai-policy" class="csl-entry" role="listitem">
+Keck School of Medicine of USC. 2025. <em>Medical Student Use of Generative Artificial Intelligence <span>(AI)</span> Tools Policy</em>. <a href="https://keck.usc.edu/md-student-portal/medical-student-use-of-generative-artificial-intelligence-ai-tools-policy/" class="uri">Https://keck.usc.edu/md-student-portal/medical-student-use-of-generative-artificial-intelligence-ai-tools-policy/</a>. <a href="https://keck.usc.edu/md-student-portal/medical-student-use-of-generative-artificial-intelligence-ai-tools-policy/">https://keck.usc.edu/md-student-portal/medical-student-use-of-generative-artificial-intelligence-ai-tools-policy/</a>.
 </div>
 <div id="ref-Kung2023-usmle" class="csl-entry" role="listitem">
 Kung, Tiffany H, Morgan Cheatham, Arielle Medenilla, et al. 2023. <span>“Performance of <span>ChatGPT</span> on <span>USMLE</span>: Potential for <span>AI</span>-Assisted Medical Education Using Large Language Models.”</span> <em>PLOS Digital Health</em> 2 (2): e0000198. <a href="https://doi.org/10.1371/journal.pdig.0000198">https://doi.org/10.1371/journal.pdig.0000198</a>.
+</div>
+<div id="ref-LCME2026-functions" class="csl-entry" role="listitem">
+Liaison Committee on Medical Education. 2025. <em>Functions and Structure of a Medical School: Standards for Accreditation of Medical Education Programs Leading to the <span>MD</span> Degree, 2026–27</em>. <a href="https://lcme.org/standards-and-rules/" class="uri">Https://lcme.org/standards-and-rules/</a>. <a href="https://lcme.org/standards-and-rules/">https://lcme.org/standards-and-rules/</a>.
 </div>
 <div id="ref-Liang2023-aidetect" class="csl-entry" role="listitem">
 Liang, Weixin, Mert Yuksekgonul, Yining Mao, Eric Wu, and James Zou. 2023. <span>“<span>GPT</span> Detectors Are Biased Against Non-Native <span>English</span> Writers.”</span> <em>Patterns</em> 4 (7): 100779. <a href="https://doi.org/10.1016/j.patter.2023.100779">https://doi.org/10.1016/j.patter.2023.100779</a>.
 </div>
 <div id="ref-McCoy2020-ai-literacy" class="csl-entry" role="listitem">
-McCoy, Liam G, Sulaiman Nagaraj, Farouk Morgado, Vinyas Harish, Sunit Das, and Leo Anthony Celi. 2020. <span>“What Do Medical Students Actually Need to Know about Artificial Intelligence?”</span> <em>Npj Digital Medicine</em> 3 (1): 86. <a href="https://doi.org/10.1038/s41746-020-0294-7">https://doi.org/10.1038/s41746-020-0294-7</a>.
+McCoy, Liam G, Sujay Nagaraj, Felipe Morgado, Vinyas Harish, Sunit Das, and Leo Anthony Celi. 2020. <span>“What Do Medical Students Actually Need to Know about Artificial Intelligence?”</span> <em>Npj Digital Medicine</em> 3 (1): 86. <a href="https://doi.org/10.1038/s41746-020-0294-7">https://doi.org/10.1038/s41746-020-0294-7</a>.
 </div>
 <div id="ref-Mollick2023-assigning" class="csl-entry" role="listitem">
 Mollick, Ethan R, and Lilach Mollick. 2023. <em>Assigning <span>AI</span>: Seven Approaches for Students, with Prompts</em>. <span>SSRN</span>. <a href="https://ssrn.com/abstract=4475995">https://ssrn.com/abstract=4475995</a>.
 </div>
-<div id="ref-Yaneva2024-clinreasoning" class="csl-entry" role="listitem">
-<span class="nocase">Yaneva, Victoria et al.</span> 2024. <span>“Evaluating <span>GPT-4</span> on <span>USMLE</span> Step 2 <span>CK</span>: Implications for Clinical Reasoning Assessment.”</span> <em>Academic Medicine</em>.
+<div id="ref-Parasuraman2010-automation" class="csl-entry" role="listitem">
+Parasuraman, Raja, and Dietrich H Manzey. 2010. <span>“Complacency and Bias in Human Use of Automation: An Attentional Integration.”</span> <em>Human Factors</em> 52 (3): 381–410. <a href="https://doi.org/10.1177/0018720810376055">https://doi.org/10.1177/0018720810376055</a>.
+</div>
+<div id="ref-Shieh2024-step2ck" class="csl-entry" role="listitem">
+Shieh, Allen, Brandon Tran, Gene He, Mudit Kumar, Jason A Freed, and Priyanka Majety. 2024. <span>“Assessing <span>ChatGPT</span> 4.0’s Test Performance and Clinical Diagnostic Accuracy on <span>USMLE</span> <span>STEP</span> 2 <span>CK</span> and Clinical Case Reports.”</span> <em>Scientific Reports</em> 14 (1): 9330. <a href="https://doi.org/10.1038/s41598-024-58760-x">https://doi.org/10.1038/s41598-024-58760-x</a>.
+</div>
+<div id="ref-UCSF2024-genai-policy" class="csl-entry" role="listitem">
+University of California, San Francisco School of Medicine. 2024. <em>Bridges Curriculum Generative Artificial Intelligence Usage Policy</em>. <a href="https://meded.ucsf.edu/policies-procedures/bridges-curriculum-generative-artificial-intelligence-usage-policy" class="uri">Https://meded.ucsf.edu/policies-procedures/bridges-curriculum-generative-artificial-intelligence-usage-policy</a>. <a href="https://meded.ucsf.edu/policies-procedures/bridges-curriculum-generative-artificial-intelligence-usage-policy">https://meded.ucsf.edu/policies-procedures/bridges-curriculum-generative-artificial-intelligence-usage-policy</a>.
+</div>
+<div id="ref-Yaneva2024-sampleitems" class="csl-entry" role="listitem">
+Yaneva, Victoria, Peter Baldwin, Daniel P Jurich, Kimberly Swygert, and Brian E Clauser. 2024. <span>“Examining <span>ChatGPT</span> Performance on <span>USMLE</span> Sample Items and Implications for Assessment.”</span> <em>Academic Medicine</em> 99 (2): 192–97. <a href="https://doi.org/10.1097/ACM.0000000000005549">https://doi.org/10.1097/ACM.0000000000005549</a>.
 </div>
 </div>
 </section>

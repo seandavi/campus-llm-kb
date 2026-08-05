@@ -27,7 +27,26 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
@@ -435,7 +454,7 @@ cookieconsent.run({
 
 
 <p>In order to successfully integrate AI across an academic medical center, it helps to start by acknowledging what an AMC actually is. It is not a single organization with a unified mission, a single budget, and consistent risk tolerance. It is a federation of at least four semi-independent domains — clinical care, research, education, and business operations — that share governance overhead and physical infrastructure but operate under largely independent leadership, funding models, regulatory obligations, and definitions of what success looks like. A tool or policy that makes perfect sense for clinical operations may be irrelevant or actively counterproductive in the research context. An AI use case that is urgent in the business operations domain may be low priority in the education domain, and vice versa.</p>
-<p>This structural reality is the organizing principle of the framework. Rather than specifying a single institutional AI program, the framework recognizes that AI deployment in an AMC has both domain-specific and cross-domain dimensions, and that good governance requires handling each dimension appropriately. The domains are organized vertically, reflecting their semi-independence. The workstreams are organized horizontally, reflecting the shared capabilities and governance functions that cut across all domains. The AI Steering Committee sits above both, providing the portfolio management and accountability function that neither the domains nor the workstreams can provide alone.</p>
+<p>This structural reality is the organizing principle of the framework. Rather than specifying a single institutional AI program, the framework recognizes that AI deployment in an AMC has both domain-specific and cross-domain dimensions, and that good governance requires handling each dimension appropriately. The domains are organized vertically, reflecting their semi-independence. The workstreams are organized horizontally, reflecting the shared capabilities and governance functions that cut across all domains. The AI Steering Committee (AISC) sits above both, providing the portfolio management and accountability function that neither the domains nor the workstreams can provide alone. That acronym recurs throughout the rest of the book, and it always means this body.</p>
 <section id="the-four-domains" class="level2" data-number="3.1">
 <h2 data-number="3.1" class="anchored" data-anchor-id="the-four-domains"><span class="header-section-number">3.1</span> The Four Domains</h2>
 <p>The domain structure reflects a basic fact about how AMCs work: clinical, research, educational, and business operations communities have different relationships to AI risk, different institutional cultures, and different processes for making deployment decisions.</p>
@@ -452,12 +471,14 @@ cookieconsent.run({
 <p><strong>Ethical, Legal, and Social</strong> asks: what are the ethical obligations, regulatory requirements, and social implications of deploying this AI tool in this context? The ethics workstream, described in <a href="ethics.html" class="quarto-xref"><span>Chapter 16</span></a>, is not the same question in all four domains. Research AI raises different equity questions than clinical AI; educational AI raises different accountability questions than business operations AI. The workstream provides shared frameworks and governance structures while leaving domain-specific application to the domain teams.</p>
 <p><strong>Training and Workforce Development</strong> asks: what do the people using, deploying, and overseeing AI tools need to know, and how does the institution build and sustain that capacity? The workforce workstream, described in <a href="workforce.html" class="quarto-xref"><span>Chapter 15</span></a>, includes the four-tier competency model (consumers, translators, developers, governors) and the faculty development programs that prevent AI literacy from degrading as the technology evolves.</p>
 <p><strong>Project Management and Support</strong> asks: how does the institution manage the AI portfolio across its full lifecycle — from intake through deployment through decommissioning — and how does it maintain the organizational infrastructure (champions, architects, governance committees) that makes deployment sustainable? The project management workstream, described in <a href="pm_and_support.html" class="quarto-xref"><span>Chapter 18</span></a>, is the connective tissue that keeps everything else from being a set of independent good intentions.</p>
+<p>A note on the count, since the book’s structure appears to contradict it. Evaluation and monitoring gets its own chapter, <a href="evaluation_monitoring.html" class="quarto-xref"><span>Chapter 19</span></a>, which makes six chapters under a five-workstream framework. That is deliberate. Evaluation and monitoring is governed as part of project management and support, because the same people who run intake are the people who have to decide when a tool comes out of production, and splitting those decisions across two owners is how models end up running for years past their useful life. It earns a separate chapter because the technical depth involved, drift detection, subgroup performance monitoring, and the metric architecture behind both, does not fit inside a chapter that also has to cover portfolio intake. Treat it as a workstream capability with a chapter of its own, not as a sixth column in the matrix.</p>
 </section>
 <section id="why-this-structure" class="level2" data-number="3.3">
 <h2 data-number="3.3" class="anchored" data-anchor-id="why-this-structure"><span class="header-section-number">3.3</span> Why This Structure</h2>
 <p>The value of the matrix structure is not that it is theoretically elegant. It is that it matches the actual decision-making geography of an AMC.</p>
 <p>Domain-level decisions — whether to deploy a specific AI tool in the clinical workflow, which research AI capabilities to invest in, how to address academic integrity in medical education — belong to the domain leadership. The CMO is accountable for clinical AI governance. The VP of Research is accountable for research AI governance. The dean’s office is accountable for educational AI governance. These are not decisions that should be made by a central IT committee or a governance function disconnected from operational reality. Domain ownership is what makes AI governance legible to the people who actually work in those domains.</p>
 <p>Workstream-level decisions — the data governance framework, the institutional API architecture, the workforce development curriculum, the portfolio management process — belong to centralized institutional functions because the alternatives are worse. An institution where each domain maintains its own data governance policy, its own API infrastructure, and its own workforce development program will produce four incompatible frameworks, four redundant technical stacks, and four sets of training content that conflict with each other. The workstreams are shared services not because central control is desirable in principle but because fragmentation in these specific areas is costly in practice.</p>
+<p><a href="#fig-framework" class="quarto-xref">Figure&nbsp;<span>3.1</span></a> shows the two dimensions together. The green ovals are deliberately unlabeled, because what belongs in any given cell is institution-specific and filling them in is the first real exercise. The clinical row crossed with data access, to take one, holds the data use agreements governing which clinical data may train or evaluate a model, the de-identification standard applied before it leaves the clinical environment, and the record of who approved both. Your institution may put those work products somewhere else entirely. The claim of the matrix is not that these are the right twenty cells; it is that every cell has an owner, and that an institution which cannot name the owner has found a gap rather than an exception.</p>
 <div class="cell" data-layout-align="default">
 <div class="cell-output-display">
 <div id="fig-framework" class="quarto-float quarto-figure quarto-figure-center anchored">
@@ -873,6 +894,8 @@ Figure&nbsp;3.1: A schematic framework for organizing workstreams (orange boxes)
 </div>
 </div>
 </div>
+<p>The hardest cases are the tools that land in several domains at once, and a framework built on domain ownership has to say what happens to them. Ambient documentation is the standing example: it is a clinical tool subject to clinical safety review, a revenue cycle tool because the notes it produces drive coding, and an education problem because residents who never draft a note may never learn to think through one <span class="citation" data-cites="Tierney2024-scribe">(<a href="references.html#ref-Tierney2024-scribe" role="doc-biblioref"><span class="nocase">Tierney et al.</span> 2024</a>)</span>. The routing rule I would use is locus of harm. Assign primary ownership to the domain where a failure does the most damage, which for ambient documentation is clinical; name the other domains as consulting parties with standing to raise objections and no power to block unilaterally; and send the tie to the AISC, which exists in part to break exactly this kind of tie. What matters is less which rule you adopt than that you adopt one before the first contested tool arrives, because the alternative is a deployment that stalls for a year while three committees each wait for one of the others to claim it.</p>
+<p>It is worth saying how this relates to the frameworks an AMC governance lead has probably already read. The NIST AI Risk Management Framework <span class="citation" data-cites="NIST2023-airm">(<a href="references.html#ref-NIST2023-airm" role="doc-biblioref">National Institute of Standards and Technology 2023</a>)</span> describes the process functions a mature program performs, but it is organization-agnostic by design and does not tell an institution who decides. ISO/IEC 42001 <span class="citation" data-cites="ISO2023-42001">(<a href="references.html#ref-ISO2023-42001" role="doc-biblioref"><span>ISO/IEC 42001</span> 2023</a>)</span> certifies that a management system exists and is being followed, which is a different question again from whether the right people are in the room. Duke’s ABCDS program <span class="citation" data-cites="Bedoya2022-abcds">(<a href="references.html#ref-Bedoya2022-abcds" role="doc-biblioref">Bedoya et al. 2022</a>)</span> is the closest peer-institution instance of local oversight actually working, and it operates chiefly in the clinical domain. This framework is not an alternative to any of them. It is the allocation layer they leave unspecified: a way of deciding which body owns which decision, into which the NIST functions can then be installed as the process each body runs.</p>
 <p>The AISC is what makes the matrix function as a governance program rather than a conceptual diagram. Without the AISC — a body with actual authority over AI deployment decisions, portfolio visibility, and the power to terminate projects that fail governance review — the domains will optimize for their own priorities at the expense of institutional coherence, and the workstreams will provide advice that no one is required to follow. The AISC’s role in portfolio management is described in detail in <a href="pm_and_support.html" class="quarto-xref"><span>Chapter 18</span></a>. The point here is structural: the domains and workstreams need the AISC the way a matrix organization needs its executive leadership. Remove it and you have a framework diagram without a governance program.</p>
 </section>
 <section id="how-to-use-this-framework" class="level2" data-number="3.4">
@@ -882,6 +905,20 @@ Figure&nbsp;3.1: A schematic framework for organizing workstreams (orange boxes)
 <p>If there is one organizing principle I would ask you to take from this framework, it is this: the question of what AI to deploy is secondary to the question of how to govern what you deploy. The deployment pipeline will fill itself. The governance program will not build itself. The work described in this book is the governance program.</p>
 
 
+<div id="refs" class="references csl-bib-body hanging-indent" role="list" style="display: none">
+<div id="ref-Bedoya2022-abcds" class="csl-entry" role="listitem">
+Bedoya, Armando D, Nicoleta J Economou-Zavlanos, Benjamin A Goldstein, et al. 2022. <span>“A Framework for the Oversight and Local Deployment of Safe and High-Quality Prediction Models.”</span> <em>Journal of the American Medical Informatics Association</em> 29 (9): 1631–36. <a href="https://doi.org/10.1093/jamia/ocac078">https://doi.org/10.1093/jamia/ocac078</a>.
+</div>
+<div id="ref-ISO2023-42001" class="csl-entry" role="listitem">
+<span>ISO/IEC 42001</span>: Information Technology — Artificial Intelligence — Management System (2023). <a href="https://www.iso.org/standard/81230.html">https://www.iso.org/standard/81230.html</a>.
+</div>
+<div id="ref-NIST2023-airm" class="csl-entry" role="listitem">
+National Institute of Standards and Technology. 2023. <em>Artificial Intelligence Risk Management Framework (<span>AI RMF</span> 1.0)</em>. NIST AI 100-1. U.S. Department of Commerce. <a href="https://doi.org/10.6028/NIST.AI.100-1">https://doi.org/10.6028/NIST.AI.100-1</a>.
+</div>
+<div id="ref-Tierney2024-scribe" class="csl-entry" role="listitem">
+<span class="nocase">Tierney, Aaron A, Shreya Bhatt, Aakash Houndie, et al.</span> 2024. <span>“Ambient Artificial Intelligence Scribes to Alleviate the Burden of Clinical Documentation.”</span> <em>NEJM Catalyst Innovations in Care Delivery</em> 5 (1): CAT.23.0404. <a href="https://doi.org/10.1056/CAT.23.0404">https://doi.org/10.1056/CAT.23.0404</a>.
+</div>
+</div>
 </section>
 
 </main> <!-- /main -->

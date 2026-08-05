@@ -6,7 +6,7 @@ August 5, 2026
 
 Every AMC that has published an AI governance framework lists roughly the same values: patient safety, equity, transparency, accountability, privacy, and human oversight. The lists are not wrong. They are also not differentiating. The meaningful question is not which values an institution holds — that convergence is real and appropriate — but whether those values are encoded in governance structures that make them operational, or whether they remain aspirational statements that authorize AI deployments without constraining them.
 
-This distinction matters because value statements are not self-enforcing. An institution can publish a principle of “transparency” and simultaneously deploy clinical AI tools with no documentation of training data provenance, no disclosure to clinicians of the model’s known limitations, and no audit trail connecting AI outputs to clinical decisions. The principle is present. The operational mechanism that would give it meaning is not. The chapters that follow this one are primarily about the mechanisms. This chapter is about why the principles matter and how peer institutions have translated them into governance practice.
+This distinction matters because value statements are not self-enforcing. An institution can publish a principle of “transparency” and simultaneously deploy clinical AI tools with no documentation of training data provenance, no disclosure to clinicians of the model’s known limitations, and no audit trail connecting AI outputs to clinical decisions. The principle is present. The operational mechanism that would give it meaning is not. Three-quarters of U.S. health systems now report deploying at least one AI application ([Fierce Healthcare 2026](#ref-FierceHealthcare2026-adoption)). At that scale, the gap between a values statement and an operational mechanism is not a planning problem. It is already consequential. The chapters that follow this one are primarily about the mechanisms. This chapter is about why the principles matter and how peer institutions have translated them into governance practice.
 
 ## 2.1 Patient Safety and the Primacy of Clinical Judgment
 
@@ -28,7 +28,7 @@ Transparency is now a regulatory requirement, not just an ethical aspiration. Th
 
 For AMCs, this regulatory baseline is a floor, not a ceiling. Mitchell and colleagues’ model card framework — now widely adopted by major AI vendors and required by the [Coalition for Health AI](https://www.coalitionforhealthai.org) — defines a similar set of disclosure requirements that apply to any model, regardless of whether it falls under ONC certification ([Mitchell et al. 2019](#ref-Mitchell2019-modelcards)). An AMC that requires model cards from every vendor providing an AI tool, and publishes equivalent documentation for internally developed tools, has operationalized transparency in a way that the values statement alone never could.
 
-The transparency principle extends to patients. The [WHO](https://www.who.int) ethics guidance on AI for health recommends meaningful disclosure to patients about which AI tools are used in their care and how those tools affect clinical decisions ([World Health Organization 2024](#ref-WHO2024-ai-ethics)). California AB 3030 now requires disclosure on AI-generated patient communications. The operational mechanism here is the consent architecture described in [sec-ethics](#sec-ethics): an institutional policy on when and how patients are informed about clinical AI use, not a case-by-case determination left to individual clinicians.
+The transparency principle extends to patients. The [WHO](https://www.who.int) ethics guidance on AI for health recommends meaningful disclosure to patients about which AI tools are used in their care and how those tools affect clinical decisions ([World Health Organization 2021](#ref-WHO2021-ai-ethics)). California AB 3030 now requires disclosure on AI-generated patient communications. The operational mechanism here is the consent architecture described in [sec-ethics](#sec-ethics): an institutional policy on when and how patients are informed about clinical AI use, not a case-by-case determination left to individual clinicians.
 
 ## 2.4 Human Oversight and the Agentic Threshold
 
@@ -65,12 +65,14 @@ Badal, Kimberly, Carmen M Lee, and Laura J Esserman. 2023. “Guiding Principles
 
 Bedoya, Armando D, Nicoleta J Economou-Zavlanos, Benjamin A Goldstein, et al. 2022. “A Framework for the Oversight and Local Deployment of Safe and High-Quality Prediction Models.” *Journal of the American Medical Informatics Association* 29 (9): 1631–36. <https://doi.org/10.1093/jamia/ocac078>.
 
+Fierce Healthcare. 2026. *75% of US Health Systems Use, Plan to Use an AI in 2026*. Fierce Healthcare. <https://www.fiercehealthcare.com/ai-and-machine-learning/75-us-healthcare-systems-use-plan-use-ai-platform-2026>.
+
 Mitchell, Margaret, Simone Wu, Andrew Zaldivar, et al. 2019. “Model Cards for Model Reporting.” *Proceedings of the Conference on Fairness, Accountability, and Transparency*. <https://doi.org/10.1145/3287560.3287596>.
 
 Obermeyer, Ziad, Brian Powers, Christine Vogeli, and Sendhil Mullainathan. 2019. “Dissecting Racial Bias in an Algorithm Used to Manage the Health of Populations.” *Science* 366 (6464): 447–53. <https://doi.org/10.1126/science.aax2342>.
 
 Office of the National Coordinator for Health Information Technology. 2024. “Health Data, Technology, and Interoperability: Certification Program Updates, Algorithm Transparency, and Information Sharing (HTI-1).” In *Federal Register*, No. 8, vol. 89. <https://www.federalregister.gov/documents/2024/01/09/2023-28824/health-data-technology-and-interoperability-certification-program-updates-algorithm-transparency-and>.
 
-Parasuraman, Raja, and Dietrich H Manzey. 2010. “Complacency and Bias in Human Use of Automation: An Updated Understanding.” *Human Factors* 52 (3): 381–410. <https://doi.org/10.1177/0018720810376055>.
+Parasuraman, Raja, and Dietrich H Manzey. 2010. “Complacency and Bias in Human Use of Automation: An Attentional Integration.” *Human Factors* 52 (3): 381–410. <https://doi.org/10.1177/0018720810376055>.
 
-World Health Organization. 2024. *Ethics and Governance of Artificial Intelligence for Health*. <https://www.who.int/publications/i/item/9789240029200>.
+World Health Organization. 2021. *Ethics and Governance of Artificial Intelligence for Health*. [Https://www.who.int/publications/i/item/9789240029200](https://www.who.int/publications/i/item/9789240029200). <https://www.who.int/publications/i/item/9789240029200>.

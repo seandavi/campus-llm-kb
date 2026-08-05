@@ -103,6 +103,6 @@ The output of this project is a prioritized list of sanctioned alternatives to d
 
 **Buy vs. build:** Survey design and facilitation. Anonymous survey platforms are available institutionally. The analysis is qualitative coding of open-ended responses — two to three weeks of research team time, not a technology project.
 
-Parasuraman, Raja, and Dietrich H Manzey. 2010. “Complacency and Bias in Human Use of Automation: An Updated Understanding.” *Human Factors* 52 (3): 381–410. <https://doi.org/10.1177/0018720810376055>.
+Parasuraman, Raja, and Dietrich H Manzey. 2010. “Complacency and Bias in Human Use of Automation: An Attentional Integration.” *Human Factors* 52 (3): 381–410. <https://doi.org/10.1177/0018720810376055>.
 
 Wong, Andrew, Erkin Otles, John P Donnelly, et al. 2021. “External Validation of a Widely Implemented Proprietary Sepsis Prediction Model in Hospitalized Patients.” *JAMA Internal Medicine* 181 (8): 1065–70. <https://doi.org/10.1001/jamainternmed.2021.2626>.

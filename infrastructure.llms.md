@@ -138,6 +138,6 @@ HL7 International. 2024. *SMART App Launch Framework V2.2.0*. [Https://hl7.org/f
 
 National Institute of Standards and Technology. 2023. *Artificial Intelligence Risk Management Framework (AI RMF 1.0)*. NIST AI 100-1. U.S. Department of Commerce. <https://doi.org/10.6028/NIST.AI.100-1>.
 
-National Institute of Standards and Technology. 2024. *Artificial Intelligence 600-1: Generative Artificial Intelligence Profile*. NIST AI 600-1. U.S. Department of Commerce. <https://doi.org/10.6028/NIST.AI.600-1>.
+National Institute of Standards and Technology. 2024. *Artificial Intelligence Risk Management Framework: Generative Artificial Intelligence Profile*. NIST AI 600-1. U.S. Department of Commerce. <https://doi.org/10.6028/NIST.AI.600-1>.
 
 Thirunavukarasu, Arun James, Darren Shu Jeng Ting, Kabilan Elangovan, Laura Gutierrez, Ting Fang Tan, and Daniel Shu Wei Ting. 2023. “Large Language Models in Medicine.” *Nature Medicine* 29: 1930–40. <https://doi.org/10.1038/s41591-023-02448-8>.
