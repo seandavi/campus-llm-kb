@@ -16,7 +16,7 @@ This distinction matters because value statements are not self-enforcing. An ins
 can publish a principle of "transparency" and simultaneously deploy clinical AI tools with
 no documentation of training data provenance, no disclosure to clinicians of the model's
 known limitations, and no audit trail connecting AI outputs to clinical decisions. The
-principle is present. The operational mechanism that would give it meaning is not. The
+principle is present. The operational mechanism that would give it meaning is not. Three-quarters of U.S. health systems now report deploying at least one AI application [@FierceHealthcare2026-adoption]. At that scale, the gap between a values statement and an operational mechanism is not a planning problem. It is already consequential. The
 chapters that follow this one are primarily about the mechanisms. This chapter is about
 why the principles matter and how peer institutions have translated them into governance
 practice.
