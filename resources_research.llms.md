@@ -2,7 +2,7 @@
 
 Published
 
-August 5, 2026
+August 7, 2026
 
 The academic medical center’s research enterprise has never been easy to sustain. Investigators spend a growing fraction of their time on grant writing and manuscript administration rather than on investigation. The volume of published literature has outpaced any individual’s ability to track it: PubMed held more than 36.5 million records at the close of fiscal year 2023 and has been taking in between 1.5 and 1.7 million new records a year ([National Library of Medicine 2024](#ref-NLM2024-pubmed)). The peer review system strains under submission pressure, and the reproducibility crisis — well documented across biomedical fields for more than a decade — continues to surface failures that call the research enterprise’s integrity into question.
 

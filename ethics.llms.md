@@ -2,7 +2,7 @@
 
 Published
 
-August 5, 2026
+August 7, 2026
 
 The ethical challenges of AI in the AMC are not primarily about individual decisions by individual clinicians. They are structural. A predictive model that systematically underestimates the health needs of Black patients does not fail because the clinician using it is biased; it fails because it was trained on data that encodes decades of inequitable access to care, and deployed without monitoring that would detect the systematic underperformance ([Obermeyer et al. 2019](#ref-Obermeyer2019-bias)). If an ambient documentation system turns out to transcribe some patients less accurately than others, it will not be because the clinician was careless; it will be because the model was trained on speech that overrepresented certain patterns and deployed without anyone stratifying its performance. The pattern is consistent: the ethical failures that have actually occurred in deployed healthcare AI are structural failures, predictable in advance, and correctable through governance — if the governance exists.
 
