@@ -2,7 +2,10 @@
 
 **A guide to governance and principled practice**
 
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.19820586.svg)](https://doi.org/10.5281/zenodo.19820586)
+<!-- Concept DOI (…585), not a version DOI. It always resolves to the latest
+     release. The badge previously used …586, the *version* DOI for the
+     2026-04-27 release, which pinned readers to a frozen version permanently. -->
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.19820585.svg)](https://doi.org/10.5281/zenodo.19820585)
 [![CC BY 4.0](https://img.shields.io/badge/License-CC%20BY%204.0-lightgrey.svg)](LICENSE)
 
 This book provides a governance framework for academic medical centers deploying

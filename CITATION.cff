@@ -33,5 +33,8 @@ url: "https://seandavi.github.io/amc-ai-governance/"
 repository-code: "https://github.com/seandavi/amc-ai-governance"
 version: "2026-08-07"
 date-released: "2026-08-07"
-# Concept DOI — always resolves to the latest version.
-doi: "10.5281/zenodo.19820586"
+# Concept DOI (…585) — always resolves to the latest release.
+# NOT …586, which is the *version* DOI for the 2026-04-27 release. That version
+# DOI was in this file and on the README badge until 2026-08-07, which pinned
+# every citation to a frozen pre-audit version of the book.
+doi: "10.5281/zenodo.19820585"
