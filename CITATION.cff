@@ -1,10 +1,37 @@
 cff-version: 1.2.0
-message: "If you use this software, please cite it as below."
-authors:
-- family-names: "Sean"
-  given-names: "Davis"
-  orcid: "https://orcid.org/0000-0002-8991-6458"
+message: "If you use this book, please cite it as below."
+type: book
 title: "Implementing AI in Academic Medicine: A guide to governance and principled practice"
+# NOTE: family-names and given-names were transposed in every release through
+# 2026-04-27 ("family-names: Sean, given-names: Davis"), so citation managers
+# rendered the author as "Sean, D." Corrected 2026-08-07.
+authors:
+  - family-names: "Davis"
+    given-names: "Sean"
+    email: seandavi@gmail.com
+    affiliation: "University of Colorado Anschutz School of Medicine"
+    orcid: "https://orcid.org/0000-0002-8991-6458"
+abstract: >-
+  A governance framework for academic medical centers deploying AI across
+  clinical care, research, education, and business operations. The book treats
+  an AMC as four semi-independent AI domains rather than one, connected by five
+  cross-cutting workstreams — data access, infrastructure and security, ethics
+  and regulation, workforce capacity, and lifecycle management — and the
+  steering function that ties them together.
+keywords:
+  - artificial intelligence
+  - governance
+  - academic medical center
+  - clinical AI
+  - research AI
+  - medical education
+  - health policy
+  - regulation
+  - ethics
+license: CC-BY-4.0
+url: "https://seandavi.github.io/amc-ai-governance/"
+repository-code: "https://github.com/seandavi/amc-ai-governance"
+version: "2026-08-07"
+date-released: "2026-08-07"
+# Concept DOI — always resolves to the latest version.
 doi: "10.5281/zenodo.19820586"
-date-released: 2026-04-26
-url: "https://github.com/seandavi/amc-ai-governance"
