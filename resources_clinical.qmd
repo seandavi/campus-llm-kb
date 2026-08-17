@@ -271,11 +271,11 @@ for sound clinical AI governance.
 
 The ONC HTI-1 rule is the most operationally significant for clinical informatics teams. It
 defines a new regulatory category — Decision Support Interventions — that includes EHR-based
-algorithms meeting specified criteria for automated decision-making. For each qualifying tool,
-EHR vendors are required to make accessible a structured set of source attributes: the model's
-training data sources, performance characteristics, known limitations, and the populations on
-which it was validated. These attributes must be surfaced within the clinical workflow, not
-buried in procurement contracts. The practical implication is that AMC clinical informatics
+algorithms meeting specified criteria for automated decision-making. For each qualifying
+predictive tool, certified EHR vendors are required to make a defined set of source-attribute
+disclosures available to users: structured information about how the intervention was
+developed and how it performs, with the specific list enumerated in the certification
+criterion. The practical implication is that AMC clinical informatics
 leaders should be engaging their EHR vendor about DSI compliance now, and should verify that
 the source attributes being provided are substantive rather than boilerplate [@ONC2024-hti1].
 
