@@ -6,7 +6,7 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="dcterms.date" content="2026-08-07">
+<meta name="dcterms.date" content="2026-08-17">
 
 <title>7&nbsp; Research Domain – Implementing AI in Academic Medicine</title>
 <style>
@@ -69,7 +69,7 @@ div.csl-indent {
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-36b256307b08637209409b134501aa37.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-a576b5f02e138b12ca67dac448a8d877.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -454,7 +454,7 @@ cookieconsent.run({
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">August 7, 2026</p>
+      <p class="date">August 17, 2026</p>
     </div>
   </div>
   
@@ -504,8 +504,8 @@ cookieconsent.run({
 <section id="sec-research-integrity" class="level2" data-number="7.5">
 <h2 data-number="7.5" class="anchored" data-anchor-id="sec-research-integrity"><span class="header-section-number">7.5</span> Manuscript Drafting, Authorship, and the Policy Landscape</h2>
 <p>The use of AI in manuscript preparation has generated more policy activity than any other AI application in research, and the policies from journals and funders converge on a small number of principles that are worth knowing precisely.</p>
-<p><strong>AI cannot be an author.</strong> The International Committee of Medical Journal Editors updated its authorship recommendations in 2023 to state explicitly that AI tools do not meet authorship criteria because they cannot take responsibility for the work, cannot consent to authorship, and cannot be held accountable for errors <span class="citation" data-cites="ICMJE2023-recommendations">(<a href="references.html#ref-ICMJE2023-recommendations" role="doc-biblioref">International Committee of Medical Journal Editors 2023</a>)</span>. The major biomedical publishers adopted equivalent language within weeks of each other, as <a href="#tbl-research-policies" class="quarto-xref">Table&nbsp;<span>7.1</span></a> records. The responsible corresponding author is accountable for any AI-generated content in the manuscript, including any errors it contains.</p>
-<p><strong>AI use must be disclosed.</strong> The specificity of disclosure requirements varies by journal. <em>Cell Press</em> requires a dedicated “Declaration of Generative AI and AI-Assisted Technologies in the Writing Process” section placed before the references. <em>Nature</em> requires disclosure in the methods. <em>JAMA</em> requires disclosure of the tool, the extent of use, and confirmation that the author has verified the final content <span class="citation" data-cites="JAMA2023-aipolicy">(<a href="references.html#ref-JAMA2023-aipolicy" role="doc-biblioref">JAMA Network 2023</a>)</span>. An investigator drafting a manuscript should check the target journal’s specific requirements; the safe default is to describe in the methods or a dedicated section which AI tools were used and for which tasks.</p>
+<p><strong>AI cannot be an author.</strong> The International Committee of Medical Journal Editors updated its authorship recommendations in 2023 to state explicitly that AI tools do not meet authorship criteria because they cannot take responsibility for the work, cannot consent to authorship, and cannot be held accountable for errors <span class="citation" data-cites="ICMJE2023-recommendations">(<a href="references.html#ref-ICMJE2023-recommendations" role="doc-biblioref">International Committee of Medical Journal Editors 2023</a>)</span>. JAMA’s editors set out the same position and its rationale in a February 2023 editorial that also surveys the near-simultaneous policies at other major journals <span class="citation" data-cites="Flanagin2023-nonhuman">(<a href="references.html#ref-Flanagin2023-nonhuman" role="doc-biblioref">Flanagin et al. 2023</a>)</span>. The responsible corresponding author is accountable for any AI-generated content in the manuscript, including any errors it contains.</p>
+<p><strong>AI use must be disclosed.</strong> The specificity of disclosure requirements varies by journal. <em>JAMA</em>, for example, requires authors to name the tool and describe how it was used, and holds them responsible for the integrity of any content produced with its assistance <span class="citation" data-cites="Flanagin2023-nonhuman">(<a href="references.html#ref-Flanagin2023-nonhuman" role="doc-biblioref">Flanagin et al. 2023</a>)</span>. An investigator drafting a manuscript should check the target journal’s specific requirements; the safe default is to describe in the methods or a dedicated section which AI tools were used and for which tasks.</p>
 <p><strong>AI in peer review is prohibited.</strong> The NIH issued Notice NOT-OD-23-149 in June 2023 prohibiting peer reviewers from using AI tools to analyze or critique NIH grant applications, citing confidentiality requirements for the content of applications <span class="citation" data-cites="NIH2023-NOT-OD-23-149">(<a href="references.html#ref-NIH2023-NOT-OD-23-149" role="doc-biblioref">National Institutes of Health 2023</a>)</span>. The NSF issued parallel guidance for its merit review process <span class="citation" data-cites="NSF2023-ai-merit">(<a href="references.html#ref-NSF2023-ai-merit" role="doc-biblioref">National Science Foundation 2023</a>)</span>. Several large publishers, Springer Nature among them, bar uploading manuscripts to AI tools for review purposes, and ICMJE requires a reviewer to obtain the journal’s permission before using AI at all and to disclose it afterwards <span class="citation" data-cites="ICMJE2026-ai">(<a href="references.html#ref-ICMJE2026-ai" role="doc-biblioref">International Committee of Medical Journal Editors 2026</a>)</span>. The confidentiality rationale is sound: when a reviewer pastes an unpublished manuscript into a commercial AI service, the manuscript has been disclosed to a third party, potentially in violation of the reviewer’s confidentiality agreement. This is true regardless of whether the AI provider claims not to train on the submitted content.</p>
 <p>One caveat belongs on this, for an institution making a five-year infrastructure decision. The confidentiality rationale is about disclosure to a third party, which is a property of where the model runs rather than of the practice itself. A reviewer using a model inside the institution’s own BAA-covered tenant, which is exactly what Project 2 builds, has not disclosed anything to anyone. Current policy does not draw that distinction and an institution should follow current policy. But the rationale the policies give applies to only one of the two cases, and publishers are already piloting AI-assisted triage, so the prohibition is better treated as the present state of the rules than as a settled endpoint.</p>
 <p><strong>Grant applications now face an originality bar, not just a disclosure norm.</strong> Through mid-2025, NIH’s position on AI in application preparation was disclosure-oriented guidance: the intellectual contribution to the science should be the PI’s own. In July 2025 the agency went further. Notice NOT-OD-25-132 states that NIH will not consider applications substantially developed by AI, or containing sections substantially developed by AI, to be the original ideas of the applicant, and the same notice caps each principal investigator at six applications per calendar year <span class="citation" data-cites="NIH2025-NOT-OD-25-132">(<a href="references.html#ref-NIH2025-NOT-OD-25-132" role="doc-biblioref">National Institutes of Health 2025b</a>)</span>. The operative move is a finding of non-originality rather than a disclosure penalty, which is why it sits in its own column of <a href="#tbl-research-policies" class="quarto-xref">Table&nbsp;<span>7.1</span></a>. The practical boundary is unchanged — AI as an editing and drafting tool for standard-form sections (data management plans, biosketches, resource descriptions) versus AI as a substitute for the investigator’s scientific thinking — but the consequence of crossing it is no longer a disclosure lapse. It is an application that will not be reviewed.</p>
@@ -514,7 +514,7 @@ cookieconsent.run({
 <div id="tbl-research-policies" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-tbl figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-research-policies-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Table&nbsp;7.1: AI policy summary for major biomedical journals and funders. The originality column exists because NIH’s 2025 rule is not a disclosure requirement and filing it as one obscures the distinction that matters: disclosure asks what you used, an originality standard asks whose thinking the application represents. The ICMJE, NIH, and NSF rows were verified against their primary sources in August 2026. The publisher rows record positions as published at the dates shown and were not re-verified in that pass; journal instructions change without announcement, and an investigator should check the target journal before submission rather than relying on this table.
+Table&nbsp;7.1: AI policy summary for biomedical journal organizations and funders, limited to policies verified against a primary source (the ICMJE recommendations, JAMA’s policy editorial, and the NIH and NSF notices). Other major journals — <em>Nature</em> and <em>Science</em> among them, as the JAMA editorial records <span class="citation" data-cites="Flanagin2023-nonhuman">(<a href="references.html#ref-Flanagin2023-nonhuman" role="doc-biblioref">Flanagin et al. 2023</a>)</span> — adopted no-AI-authorship positions in the same period, but their current instructions could not be re-verified at source and journal policies change without announcement; check the target journal before submission rather than relying on any table. The originality column exists because NIH’s 2025 rule is not a disclosure requirement and filing it as one obscures the distinction that matters: disclosure asks what you used, an originality standard asks whose thinking the application represents.
 </figcaption>
 <div aria-describedby="tbl-research-policies-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <table class="caption-top table">
@@ -546,44 +546,12 @@ Table&nbsp;7.1: AI policy summary for major biomedical journals and funders. The
 <td>May 2023; AI guidance updated Jan 2026</td>
 </tr>
 <tr class="even">
-<td><em>Nature</em></td>
+<td><em>JAMA</em> Network</td>
 <td>Prohibited</td>
-<td>Yes, in methods</td>
+<td>Yes, tool and how it was used</td>
 <td>Not applicable</td>
-<td>Prohibited</td>
-<td>Jan 2023</td>
-</tr>
-<tr class="odd">
-<td><em>Science</em></td>
-<td>Prohibited</td>
-<td>Yes</td>
-<td>Not applicable</td>
-<td>Prohibited</td>
-<td>Jan 2023</td>
-</tr>
-<tr class="even">
-<td><em>JAMA</em></td>
-<td>Prohibited</td>
-<td>Yes, tool + extent</td>
-<td>Not applicable</td>
-<td>Not explicitly addressed</td>
-<td>2023</td>
-</tr>
-<tr class="odd">
-<td><em>NEJM</em></td>
-<td>Prohibited</td>
-<td>Yes</td>
-<td>Not applicable</td>
-<td>Not explicitly addressed</td>
-<td>2023</td>
-</tr>
-<tr class="even">
-<td><em>Cell Press</em></td>
-<td>Prohibited</td>
-<td>Yes, dedicated section</td>
-<td>Not applicable</td>
-<td>Not explicitly addressed</td>
-<td>2023</td>
+<td>Not addressed in the policy editorial</td>
+<td>Feb 2023</td>
 </tr>
 <tr class="odd">
 <td>NIH (grants)</td>
@@ -729,6 +697,9 @@ Chelli, Mikaël, Jules Descamps, Vincent Lavoué, et al. 2024. <span>“Hallucin
 <div id="ref-Collins2024-tripodai" class="csl-entry" role="listitem">
 <span class="nocase">Collins, Gary S, Karel G M Moons, Paula Dhiman, et al.</span> 2024. <span>“<span>TRIPOD+AI</span> Statement: Updated Guidance for Reporting Clinical Prediction Models That Use Regression or Machine Learning Methods.”</span> <em>BMJ</em> 385: e078378. <a href="https://doi.org/10.1136/bmj-2023-078378">https://doi.org/10.1136/bmj-2023-078378</a>.
 </div>
+<div id="ref-Flanagin2023-nonhuman" class="csl-entry" role="listitem">
+Flanagin, Annette, Kirsten Bibbins-Domingo, Michael Berkwits, and Stacy L. Christiansen. 2023. <span>“Nonhuman <span>‘Authors’</span> and Implications for the Integrity of Scientific Publication and Medical Knowledge.”</span> <em>JAMA</em> 329 (8): 637–39. <a href="https://doi.org/10.1001/jama.2023.1344">https://doi.org/10.1001/jama.2023.1344</a>.
+</div>
 <div id="ref-Gao2023-chatgpt-abstracts" class="csl-entry" role="listitem">
 Gao, Catherine A, Frederick M Howard, Nikolay S Markov, et al. 2023. <span>“Comparing Scientific Abstracts Generated by <span>ChatGPT</span> to Real Abstracts with Detectors and Blinded Human Reviewers.”</span> <em>Npj Digital Medicine</em> 6: 75. <a href="https://doi.org/10.1038/s41746-023-00819-6">https://doi.org/10.1038/s41746-023-00819-6</a>.
 </div>
@@ -740,9 +711,6 @@ International Committee of Medical Journal Editors. 2023. <em>Recommendations fo
 </div>
 <div id="ref-ICMJE2026-ai" class="csl-entry" role="listitem">
 International Committee of Medical Journal Editors. 2026. <em>Artificial Intelligence (<span>AI</span>)-Assisted Technology in Manuscript Preparation, and <span>AI</span> Use by Reviewers</em>. <a href="https://www.icmje.org/recommendations/browse/artificial-intelligence/">https://www.icmje.org/recommendations/browse/artificial-intelligence/</a>.
-</div>
-<div id="ref-JAMA2023-aipolicy" class="csl-entry" role="listitem">
-JAMA Network. 2023. <em>Instructions for Authors: Use of Artificial Intelligence, Language Models, Machine Learning, or Similar Technologies</em>. <a href="https://jamanetwork.com/journals/jama/pages/instructions-for-authors">https://jamanetwork.com/journals/jama/pages/instructions-for-authors</a>.
 </div>
 <div id="ref-Liang2023-aidetect" class="csl-entry" role="listitem">
 Liang, Weixin, Mert Yuksekgonul, Yining Mao, Eric Wu, and James Zou. 2023. <span>“<span>GPT</span> Detectors Are Biased Against Non-Native <span>English</span> Writers.”</span> <em>Patterns</em> 4 (7): 100779. <a href="https://doi.org/10.1016/j.patter.2023.100779">https://doi.org/10.1016/j.patter.2023.100779</a>.
