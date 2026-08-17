@@ -20,3 +20,12 @@ index.tex
 *.bak
 
 **/*.quarto_ipynb
+
+# quartobot
+_book/
+_freeze/
+.quarto/
+references.resolved.bib
+references.json
+*.bak-*
+*_files/

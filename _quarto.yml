@@ -1,5 +1,6 @@
 project:
   type: book
+  pre-render: quartobot resolve --from-scan . --id-mode citation-key
 
 website:
   llms-txt: true
@@ -74,7 +75,9 @@ book:
 
 
 
-bibliography: references.bib
+bibliography:
+  - references.bib
+  - references.resolved.bib
 
 format:
   html:
